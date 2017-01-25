@@ -2,7 +2,8 @@
   "name": "react-typescript-boilerplate",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --progress --inline --hot"
+    "start": "webpack-dev-server --progress --inline --hot",
+    "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap"
   },
   "devDependencies": {
     "@types/react": "^15.0.4",
