@@ -1,0 +1,26 @@
+{
+  "name": "react-typescript-boilerplate",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --progress --inline --hot"
+  },
+  "devDependencies": {
+    "@types/react": "^15.0.4",
+    "@types/react-dom": "^0.14.21",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.26.0",
+    "ts-loader": "^2.0.0",
+    "style-loader": "^0.13.1",
+    "typescript": "^2.1.5",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-transition-group": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "reactstrap": "^4.0.1"
+  }
+}
