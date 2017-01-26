@@ -1,9 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Hello from "./Hello";
+import { Container } from 'reactstrap';
+import Login from './containers/Login';
+
+class App extends React.Component<{},{}> {
+  render() {
+    return (
+      <Login/>
+    );
+  }
+}
 
 ReactDOM.render(
-  <Hello name="Willson" />,
+  <App />,
   document.getElementById("root")
 );

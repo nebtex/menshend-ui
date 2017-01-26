@@ -1,6 +1,6 @@
 # React Typescript Boilerplate
 
-then install the required packages
+install the required packages
 
     npm install
 
