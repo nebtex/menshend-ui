@@ -4,6 +4,7 @@ import LoginForm from '../components/login/LoginForm';
 import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
+let styles = require<any>('./Login.scss');
 
 const mockService = {
   name: "Github",

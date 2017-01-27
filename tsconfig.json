@@ -2,12 +2,13 @@
   "compilerOptions": {
     "jsx": "react",
     "module": "commonjs",
-    "typeRoots" : ["types"],
+    "typeRoots" : ["types", "./node_modules/@types"],
     "noImplicitAny": true,
     "outDir": "./dist/",
     "preserveConstEnums": true,
     "removeComments": true,
-    "target": "ES5"
+    "target": "ES5",
+    "types": ["node"]
   },
   "exclude": [
     "node_modules",

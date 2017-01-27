@@ -22,7 +22,11 @@ var config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
+      },
+      {
+        test: /\.scss$/,
+        loader: '!style-loader!css-loader!sass-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
       }
     ]
   },
