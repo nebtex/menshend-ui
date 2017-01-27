@@ -4,7 +4,7 @@ import LoginForm from '../components/login/LoginForm';
 import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
-let styles = require<any>('./Login.scss');
+let styles = require('./Login.scss');
 
 const mockService = {
   name: "Github",
@@ -24,7 +24,7 @@ export default class Login extends React.Component<{}, {}>{
   render(){
     return (
       <Container>
-        <Row>
+        <Row className={styles.loginContainer}>
           <Col md="6">
              <EnvironmentCard 
               name={mockEnvironment.name}
