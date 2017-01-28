@@ -26,4 +26,9 @@ declare namespace ReactStrap {
     export function Popover(props: any): React.Component<any, any>
     export function PopoverTitle(props: any): React.Component<any, any>
     export function PopoverContent(props: any): React.Component<any, any>
+    export function TabContent(props: any): React.Component<any, any>
+    export function TabPane(props: any): React.Component<any, any>
+    export function Nav(props: any): React.Component<any, any>
+    export function NavItem(props: any): React.Component<any, any>
+    export function NavLink(props: any): React.Component<any, any>
 }

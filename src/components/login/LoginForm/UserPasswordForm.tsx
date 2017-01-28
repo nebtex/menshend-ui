@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Form, FormGroup, Label, Input, Button , Card, CardBlock } from 'reactstrap';
 
-class LoginForm extends React.Component<{},{}> {
+export default class UserPasswordForm extends React.Component<{}, {}>{
   render(){
     return (
       <Card>
@@ -9,7 +9,7 @@ class LoginForm extends React.Component<{},{}> {
           <Form>
             <FormGroup>
               <Label for="user">User</Label>
-              <Input type="text" name="user" id="email" />
+              <Input type="text" name="user" id="user" />
             </FormGroup>
             <FormGroup>
               <Label for="password">Password</Label>
@@ -22,5 +22,3 @@ class LoginForm extends React.Component<{},{}> {
     );
   }
 }
-
-export default LoginForm;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import LoginForm from '../components/login/LoginForm';
+import LoginForm from '../components/login/LoginForm/LoginForm.tsx';
 import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
