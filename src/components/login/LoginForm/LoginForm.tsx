@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Form, FormGroup, Label, Input, Button , Card, CardBlock, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button , Card, CardBlock, TabContent, TabPane, Nav, NavItem, NavLink, Col, Row } from 'reactstrap';
 import * as classnames from 'classnames';
 import UserPasswordForm from './UserPasswordForm';
 import TokenForm from './TokenForm';
@@ -41,7 +41,18 @@ class LoginForm extends React.Component<{},{}> {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-            <UserPasswordForm />
+            <Card>
+              <CardBlock>
+                <Row>
+                  <Col md="5" style={{borderRight: '1px solid rgba(0,0,0,.125)'}}>
+                    <Button style={{width:'100%'}}><i className="fa fa-github fa-lg"/> | Github Login</Button>
+                  </Col>
+                  <Col md="7">
+                    <UserPasswordForm />
+                  </Col>
+                </Row>  
+              </CardBlock>
+            </Card>
           </TabPane>
           <TabPane tabId="2">
             <TokenForm />
