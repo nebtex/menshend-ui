@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Popover, PopoverContent } from 'reactstrap';
+import * as ReactMarkdown from 'react-markdown';
 let styles = require('./ServiceCard.scss');
 
 type BackendErrorType = "PermissionError" | "NotResponseError" | void;
@@ -44,7 +45,9 @@ export default class ServiceCard extends React.Component<IService, {}>{
           </Col>
         </Row>
         <Popover placement="bottom" isOpen={this.state.longDescriptionOpen} target="serviceLongDescription" toggle={this.toggleDescription}>
-          <PopoverContent>{ this.props.long_description }</PopoverContent>
+          <PopoverContent>
+            <ReactMarkdown source={ this.props.long_description }/>
+          </PopoverContent>
         </Popover>
       </Card>
     );

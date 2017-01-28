@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactMarkdown from 'react-markdown';
 import { Container, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
 interface IEnvironment {
@@ -24,7 +25,9 @@ export default class EnviromentCard extends React.Component<IEnvironment, {}>{
         <h1>{ this.props.name }</h1>
         <p>{ this.props.short_description } <a href="#" onClick={this.toggle} id="environmentLongDescription"> View more </a></p>
         <Popover placement="bottom" isOpen={this.state.longDescriptionOpen} target="environmentLongDescription" toggle={this.toggle}>
-          <PopoverContent>{ this.props.long_description }</PopoverContent>
+          <PopoverContent>
+            <ReactMarkdown source={ this.props.long_description }/>
+          </PopoverContent>
         </Popover>
       </Container>
     );

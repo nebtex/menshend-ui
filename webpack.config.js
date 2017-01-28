@@ -32,6 +32,10 @@ var config = {
           'resolve-url',
           'sass?sourceMap'
         ]
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },

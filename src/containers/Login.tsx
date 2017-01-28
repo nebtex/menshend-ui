@@ -16,7 +16,7 @@ const mockService = {
 const mockEnvironment = {
   name: "Kooper",
   short_description: "This is the short description", 
-  long_description: "This is the long description",
+  long_description: "This is the <br/> long description",
   logo: "https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
 }
 

@@ -13,6 +13,7 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.26.0",
+    "json-loader": "^0.5.4",
     "node-sass": "^4.3.0",
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^4.1.1",
@@ -33,6 +34,7 @@
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-markdown": "^2.4.4",
     "reactstrap": "^4.0.1"
   }
 }
