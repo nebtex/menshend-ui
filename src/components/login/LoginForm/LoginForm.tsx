@@ -3,6 +3,7 @@ import { Form, FormGroup, Label, Input, Button , Card, CardBlock, TabContent, Ta
 import * as classnames from 'classnames';
 import UserPasswordForm from './UserPasswordForm';
 import TokenForm from './TokenForm';
+let styles = require('./LoginForm.scss');
 
 class LoginForm extends React.Component<{},{}> {
   state = {
@@ -19,7 +20,7 @@ class LoginForm extends React.Component<{},{}> {
 
   render(){
     return (
-      <div>
+      <div className={styles.container}>
         <Nav tabs>
           <NavItem>
             <NavLink
