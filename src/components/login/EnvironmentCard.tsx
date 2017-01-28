@@ -5,7 +5,6 @@ interface IEnvironment {
     name: string  //kuper environment name (default is kuper)
     short_description: string //kuper environment short description (default is the kuper short description)
     long_description: string //kuper environment short description (default is the kuper long description)
-    logo: string // kuper environment logo (default is the kuper logo)
 }
 
 export default class EnviromentCard extends React.Component<IEnvironment, {}>{
@@ -27,7 +26,6 @@ export default class EnviromentCard extends React.Component<IEnvironment, {}>{
         <Popover placement="bottom" isOpen={this.state.longDescriptionOpen} target="environmentLongDescription" toggle={this.toggle}>
           <PopoverContent>{ this.props.long_description }</PopoverContent>
         </Popover>
-        <img src={this.props.logo} />
       </Container>
     );
   }

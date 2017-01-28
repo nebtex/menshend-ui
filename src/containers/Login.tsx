@@ -23,27 +23,31 @@ const mockEnvironment = {
 export default class Login extends React.Component<{}, {}>{
   render(){
     return (
-      <Container className={styles.container}>
-        <Row>
-          <Col md="6">
-             <EnvironmentCard 
+      <div className={styles.container} > 
+        <Container>
+          <Row>
+            <EnvironmentCard 
               name={mockEnvironment.name}
               short_description={mockEnvironment.short_description}
-              long_description={mockEnvironment.long_description}
-              logo={mockEnvironment.logo}/>
-          </Col>
-          <Col md="6">
-            <h3>You are trying to login to:</h3>
-            <ServiceCard
-              name={mockService.name}
-              short_description={mockService.short_description}
-              long_description={mockService.long_description}
-              logo={mockService.logo}/>
-            <ErrorsPanel/>
-            <LoginForm/>
-          </Col>
-        </Row>
-      </Container>
+              long_description={mockEnvironment.long_description}/>
+          </Row>
+          <Row>
+            <Col md="6">
+              <img src={mockEnvironment.logo} />
+            </Col>
+            <Col md="6">
+              <h3>You are trying to login to:</h3>
+              <ServiceCard
+                name={mockService.name}
+                short_description={mockService.short_description}
+                long_description={mockService.long_description}
+                logo={mockService.logo}/>
+              <ErrorsPanel/>
+              <LoginForm/>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
