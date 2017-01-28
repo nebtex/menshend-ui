@@ -4,6 +4,6 @@ let styles = require('./ErrorsPanel.scss');
 
 export default class ErrorsPanel extends React.Component<{}, {}>{
   render(){
-    return <Card style={{height:'4rem'}} className={styles.container}/>
+    return <Card className={styles.container}/>
   }
 }

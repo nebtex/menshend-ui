@@ -35,7 +35,7 @@ export default class Login extends React.Component<{}, {}>{
             <Col md="6">
               <img src={mockEnvironment.logo} />
             </Col>
-            <Col md="6">
+            <Col md="6" style={{display:'flex', flexDirection:'column'}}>
               <h3>You are trying to login to:</h3>
               <ServiceCard
                 name={mockService.name}
