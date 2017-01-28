@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle } from 'reactstrap';
+import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Popover, PopoverContent } from 'reactstrap';
+let styles = require('./ServiceCard.scss');
 
 type BackendErrorType = "PermissionError" | "NotResponseError" | void;
 
@@ -14,32 +15,38 @@ export interface IService {
 }
 
 export default class ServiceCard extends React.Component<IService, {}>{
+  state = {
+    longDescriptionOpen: false
+  }
+
+  toggleDescription = () => {
+    this.setState({
+      longDescriptionOpen: !this.state.longDescriptionOpen
+    });
+  }
+
   render(){
     return (
-      <Container>
+      <Card className={styles.serviceCard} onClick={this.toggleDescription} id="serviceLongDescription">
         <Row>
-          <h3>You are trying to login to:</h3>
+          <Col md='2'>
+            <CardBlock>
+              <CardImg width="64" height="64" src={this.props.logo}/>
+            </CardBlock>
+          </Col>
+          <Col md='10'>
+            <CardBlock>
+              <CardTitle> {this.props.name} </CardTitle>
+              <CardText>
+                {this.props.short_description}
+              </CardText>
+            </CardBlock> 
+          </Col>
         </Row>
-        <Row>
-          <Card style={{width:'100%'}}>
-            <Row>
-              <Col md='2'>
-                <CardBlock>
-                  <CardImg width="64" height="64" src={this.props.logo}/>
-                </CardBlock>
-              </Col>
-              <Col md='10'>
-                <CardBlock>
-                  <CardTitle> {this.props.name} </CardTitle>
-                  <CardText>
-                    {this.props.short_description}
-                  </CardText>
-                </CardBlock> 
-              </Col>
-            </Row>
-          </Card>
-        </Row>
-      </Container>
+        <Popover placement="bottom" isOpen={this.state.longDescriptionOpen} target="serviceLongDescription" toggle={this.toggleDescription}>
+          <PopoverContent>{ this.props.long_description }</PopoverContent>
+        </Popover>
+      </Card>
     );
   }
 }

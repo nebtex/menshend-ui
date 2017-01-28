@@ -23,8 +23,8 @@ const mockEnvironment = {
 export default class Login extends React.Component<{}, {}>{
   render(){
     return (
-      <Container>
-        <Row className={styles.loginContainer}>
+      <Container className={styles.container}>
+        <Row>
           <Col md="6">
              <EnvironmentCard 
               name={mockEnvironment.name}
@@ -33,6 +33,7 @@ export default class Login extends React.Component<{}, {}>{
               logo={mockEnvironment.logo}/>
           </Col>
           <Col md="6">
+            <h3>You are trying to login to:</h3>
             <ServiceCard
               name={mockService.name}
               short_description={mockService.short_description}
