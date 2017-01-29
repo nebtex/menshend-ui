@@ -32,10 +32,10 @@ export default class Login extends React.Component<{}, {}>{
               long_description={mockEnvironment.long_description}/>
           </Row>
           <Row>
-            <Col md="6">
+            <Col md="12" lg="6" className={styles.environmentLogo}>
               <img src={mockEnvironment.logo} />
             </Col>
-            <Col md="6" style={{display:'flex', flexDirection:'column'}}>
+            <Col className={styles.rightSide}>
               <h3>You are trying to login to:</h3>
               <ServiceCard
                 name={mockService.name}
