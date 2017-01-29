@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, , ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
+import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import * as ReactMarkdown from 'react-markdown';
 let styles = require('./ServiceCard.scss');
 

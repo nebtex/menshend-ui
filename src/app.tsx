@@ -5,10 +5,14 @@ import * as ReactDOM from "react-dom";
 import { Container } from 'reactstrap';
 import Login from './containers/Login';
 
+let mockUser = {
+  isLogged: true
+}
+
 class App extends React.Component<{},{}> {
   render() {
     return (
-      <Login/>
+      <Login isLogged={mockUser.isLogged}/>
     );
   }
 }
