@@ -6,13 +6,16 @@ import { Container } from 'reactstrap';
 import Login from './containers/Login';
 
 let mockUser = {
-  isLogged: true
+  user: 'myuser',
+  pass: 'mypass',
+  isLogged: true,
+  expiresAt: 1485770407948
 }
 
 class App extends React.Component<{},{}> {
   render() {
     return (
-      <Login isLogged={mockUser.isLogged}/>
+      <Login user={mockUser}/>
     );
   }
 }

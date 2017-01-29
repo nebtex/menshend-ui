@@ -22,7 +22,11 @@ const mockEnvironment = {
   logo: "https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
 }
 
-export default class Login extends React.Component<IUser, {}>{
+interface ILogin {
+  user: IUser;
+}
+
+export default class Login extends React.Component<ILogin, {}>{
   githubLogin = () => {
     console.log('Getting logged in github');
   };
@@ -36,11 +40,12 @@ export default class Login extends React.Component<IUser, {}>{
   };
 
   getActiveComponents = () => {
-    if (this.props.isLogged){
+    let user = this.props.user;
+    if (user.isLogged){
       return (
         <Col>
-          <LoginCounter />
-          <Button color="danger">Logout</Button>
+          <LoginCounter expiresAt={user.expiresAt}/>
+          <Button color="danger" className={styles.logout} >Logout</Button>
         </Col>
       );
     } else {

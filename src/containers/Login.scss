@@ -5,14 +5,18 @@
   padding-top: 2.5rem; 
 }
 
-.rightSide{
+.rightSide {
   display: flex;
   flex-direction: column;
 }
 
-.environmentLogo{
+.environmentLogo {
   justify-content: center;
   align-items: center;
   display: flex;
   min-height: 608px;
+}
+
+.logout {
+  float:right;
 }
