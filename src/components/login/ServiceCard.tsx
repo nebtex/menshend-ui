@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Popover, PopoverContent } from 'reactstrap';
+import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, , ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import * as ReactMarkdown from 'react-markdown';
 let styles = require('./ServiceCard.scss');
 
@@ -28,7 +28,7 @@ export default class ServiceCard extends React.Component<IService, {}>{
 
   render(){
     return (
-      <Card className={styles.serviceCard} onClick={this.toggleDescription} id="serviceLongDescription">
+      <Card className={styles.serviceCard} onClick={this.toggleDescription}>
         <Row>
           <Col md='2'>
             <CardBlock>
@@ -44,11 +44,15 @@ export default class ServiceCard extends React.Component<IService, {}>{
             </CardBlock> 
           </Col>
         </Row>
-        <Popover placement="bottom" isOpen={this.state.longDescriptionOpen} target="serviceLongDescription" toggle={this.toggleDescription}>
-          <PopoverContent>
+        <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
+          <ModalHeader toggle={this.toggleDescription}> {this.props.name} </ModalHeader>
+          <ModalBody>
             <ReactMarkdown source={ this.props.long_description }/>
-          </PopoverContent>
-        </Popover>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={this.toggleDescription}>OK</Button>
+          </ModalFooter>
+        </Modal>
       </Card>
     );
   }

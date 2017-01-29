@@ -31,4 +31,8 @@ declare namespace ReactStrap {
     export function Nav(props: any): React.Component<any, any>
     export function NavItem(props: any): React.Component<any, any>
     export function NavLink(props: any): React.Component<any, any>
+    export function Modal(props: any): React.Component<any, any>
+    export function ModalHeader(props: any): React.Component<any, any>
+    export function ModalBody(props: any): React.Component<any, any>
+    export function ModalFooter(props: any): React.Component<any, any>
 }
