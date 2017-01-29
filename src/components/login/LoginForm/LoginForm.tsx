@@ -1,11 +1,18 @@
 import * as React from 'react';
-import { Form, FormGroup, Label, Input, Button , Card, CardBlock, TabContent, TabPane, Nav, NavItem, NavLink, Col, Row } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Card, CardBlock, TabContent, TabPane, Nav, NavItem, NavLink, Col, Row } from 'reactstrap';
 import * as classnames from 'classnames';
-import UserPasswordForm from './UserPasswordForm';
+import UserPassForm from './UserPassForm';
 import TokenForm from './TokenForm';
+import GithubLogin from './GithubLogin';
 let styles = require('./LoginForm.scss');
 
-class LoginForm extends React.Component<{},{}> {
+interface ILoginForm {
+  githubLogin() : void;
+  tokenLogin(token:string) : void;
+  userPassLogin(user:string, pass:string) : void;
+}
+
+class LoginForm extends React.Component<ILoginForm, {}> {
   state = {
     activeTab: '1'
   };
@@ -45,17 +52,17 @@ class LoginForm extends React.Component<{},{}> {
               <CardBlock>
                 <Row>
                   <Col md="5" style={{borderRight: '1px solid rgba(0,0,0,.125)'}}>
-                    <Button style={{width:'100%'}}><i className="fa fa-github fa-lg"/> | Github Login</Button>
+                    <GithubLogin handleLogin={this.props.githubLogin}/>
                   </Col>
                   <Col md="7">
-                    <UserPasswordForm />
+                    <UserPassForm handleLogin={this.props.userPassLogin}/>
                   </Col>
                 </Row>  
               </CardBlock>
             </Card>
           </TabPane>
           <TabPane tabId="2">
-            <TokenForm />
+            <TokenForm handleLogin={this.props.tokenLogin}/>
           </TabPane>
         </TabContent>
       </div>
