@@ -35,7 +35,7 @@ export default class ServiceCounter extends React.Component<IServiceCounter, {}>
 
   getDisplayComponent = () => {
     return (
-      <div className={styles.display}>
+      <div>
         <div className={styles.displayItem}>
           <div>{this.state.hours}</div>
           <div>Hours</div>
@@ -56,7 +56,7 @@ export default class ServiceCounter extends React.Component<IServiceCounter, {}>
     let display = this.getDisplayComponent();
 
     return (
-      <Card className={styles.container}>
+      <Card>
         <CardBlock>
           <p>Your session will expire in :</p>
           {display}

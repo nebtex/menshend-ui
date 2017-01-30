@@ -5,7 +5,6 @@ import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
 import { IUser } from '../models/interface.tsx';
-import LoginCounter from '../components/login/ServiceCounter';
 let styles = require('./Login.scss');
 
 const mockService = {
@@ -22,11 +21,14 @@ const mockEnvironment = {
   logo: "https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
 }
 
-interface ILogin {
-  user: IUser;
+let mockUser = {
+  user: 'myuser',
+  pass: 'mypass',
+  isLogged: true,
+  expiresAt: 1485770407948
 }
 
-export default class Login extends React.Component<ILogin, {}>{
+export default class Login extends React.Component<{}, {}>{
   githubLogin = () => {
     console.log('Getting logged in github');
   };
@@ -39,40 +41,7 @@ export default class Login extends React.Component<ILogin, {}>{
     console.log('Login with these credentials: ', user, pass);
   };
 
-  getActiveComponents = () => {
-    let user = this.props.user;
-    if (user.isLogged){
-      return (
-        <Col>
-          <LoginCounter expiresAt={user.expiresAt}/>
-          <Button color="danger" className={styles.logout} >Logout</Button>
-        </Col>
-      );
-    } else {
-      return (
-        <Row>
-          <Col className={styles.rightSide}>
-            <h3>You are trying to login to:</h3>
-            <ServiceCard
-              name={mockService.name}
-              short_description={mockService.short_description}
-              long_description={mockService.long_description}
-              logo={mockService.logo}/>
-            <ErrorsPanel/>
-            <LoginForm
-              githubLogin={this.githubLogin}
-              tokenLogin={this.tokenLogin}
-              userPassLogin={this.userPassLogin}
-            />
-          </Col>
-        </Row>
-      );
-    }
-  };
-
   render(){
-    let activeComponents = this.getActiveComponents();
-
     return (
       <div className={styles.container} > 
         <Container>
@@ -86,7 +55,21 @@ export default class Login extends React.Component<ILogin, {}>{
             <Col md="12" lg="6" className={styles.environmentLogo}>
               <img src={mockEnvironment.logo} />
             </Col>
-            { activeComponents }
+            <Col className={styles.rightSide}>
+              <h3>You are trying to login to:</h3>
+              <ServiceCard
+                name={mockService.name}
+                short_description={mockService.short_description}
+                long_description={mockService.long_description}
+                logo={mockService.logo}/>
+              <ErrorsPanel/>
+              <LoginForm
+                githubLogin={this.githubLogin}
+                tokenLogin={this.tokenLogin}
+                userPassLogin={this.userPassLogin}
+                user={mockUser}
+              />
+            </Col>
           </Row>
         </Container>
       </div>
