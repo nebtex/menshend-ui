@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { Form, FormGroup, Label, Input, Button , Card, CardBlock } from 'reactstrap';
 
-interface ITokenForm {
+interface ITokenFormProps {
   handleLogin(token:string) : void;
 }
 
-export default class TokenForm extends React.Component<ITokenForm, {}>{
+interface ITokenFormState {
+  token:string;
+}
+
+export default class TokenForm extends React.Component<ITokenFormProps, ITokenFormState>{
   state = {
     token: ''
   };

@@ -5,17 +5,21 @@ import UserPassForm from './UserPassForm';
 import TokenForm from './TokenForm';
 import GithubLogin from './GithubLogin';
 import { IUser } from '../../../models/interface';
-import ServiceCounter from '../ServiceCounter';
+import SessionCounter from '../SessionCounter';
 let styles = require('./LoginForm.scss');
 
-interface ILoginForm {
+interface ILoginFormProps {
   githubLogin() : void;
   tokenLogin(token:string) : void;
   userPassLogin(user:string, pass:string) : void;
   user: IUser;
 }
 
-class LoginForm extends React.Component<ILoginForm, {}> {
+interface ILoginFormState {
+  activeTab:string;
+}
+
+class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
   state = {
     activeTab: '1'
   };
@@ -34,7 +38,7 @@ class LoginForm extends React.Component<ILoginForm, {}> {
     if (user.isLogged){
       return (
         <div className={styles.container}>
-          <ServiceCounter expiresAt={user.expiresAt}/>
+          <SessionCounter expiresAt={user.expiresAt}/>
           <Button color="danger" className={styles.logout} >Logout</Button>
         </div>
       );

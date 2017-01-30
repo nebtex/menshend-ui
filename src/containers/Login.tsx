@@ -46,10 +46,7 @@ export default class Login extends React.Component<{}, {}>{
       <div className={styles.container} > 
         <Container>
           <Row>
-            <EnvironmentCard 
-              name={mockEnvironment.name}
-              short_description={mockEnvironment.short_description}
-              long_description={mockEnvironment.long_description}/>
+            <EnvironmentCard environment={mockEnvironment}/>
           </Row>
           <Row>
             <Col md="12" lg="6" className={styles.environmentLogo}>
@@ -57,11 +54,7 @@ export default class Login extends React.Component<{}, {}>{
             </Col>
             <Col className={styles.rightSide}>
               <h3>You are trying to login to:</h3>
-              <ServiceCard
-                name={mockService.name}
-                short_description={mockService.short_description}
-                long_description={mockService.long_description}
-                logo={mockService.logo}/>
+              <ServiceCard service={mockService}/>
               <ErrorsPanel/>
               <LoginForm
                 githubLogin={this.githubLogin}

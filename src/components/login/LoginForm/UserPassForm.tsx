@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { Form, FormGroup, Label, Input, Button , Card, CardBlock } from 'reactstrap';
 
-interface IUserPassForm {
+interface IUserPassFormProps {
   handleLogin(user:string, pass:string) : void;
 }
-export default class UserPassForm extends React.Component<IUserPassForm, {}>{
+
+interface IUserPassFormState {
+  user:string;
+  pass:string;
+}
+
+export default class UserPassForm extends React.Component<IUserPassFormProps, IUserPassFormState>{
   state = {
     user: '',
     pass: ''

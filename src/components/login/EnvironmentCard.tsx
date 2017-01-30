@@ -1,14 +1,17 @@
 import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { Container, Popover, PopoverTitle, PopoverContent, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
+import { ISpace} from '../../models/interface';
 
-interface IEnvironment {
-    name: string  //kuper environment name (default is kuper)
-    short_description: string //kuper environment short description (default is the kuper short description)
-    long_description: string //kuper environment short description (default is the kuper long description)
+interface IEnvironmentCardProps {
+    environment:ISpace;
 }
 
-export default class EnviromentCard extends React.Component<IEnvironment, {}>{
+interface IEnvironmentCardState {
+  longDescriptionOpen:boolean;
+}
+
+export default class EnvironmentCard extends React.Component<IEnvironmentCardProps, IEnvironmentCardState>{
   state = {
     longDescriptionOpen: false
   }
@@ -20,14 +23,15 @@ export default class EnviromentCard extends React.Component<IEnvironment, {}>{
   }
 
   render(){
+    let environment = this.props.environment;
     return (
       <Container>
-        <h1>{ this.props.name }</h1>
-        <p>{ this.props.short_description } <a href="#" onClick={this.toggleDescription}> View more </a></p>
+        <h1>{ environment.name }</h1>
+        <p>{ environment.short_description } <a href="#" onClick={this.toggleDescription}> View more </a></p>
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
-          <ModalHeader toggle={this.toggleDescription}> {this.props.name} </ModalHeader>
+          <ModalHeader toggle={this.toggleDescription}> {environment.name} </ModalHeader>
           <ModalBody>
-            <ReactMarkdown source={ this.props.long_description }/>
+            <ReactMarkdown source={ environment.long_description }/>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggleDescription}>OK</Button>

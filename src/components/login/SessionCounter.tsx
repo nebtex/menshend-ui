@@ -1,20 +1,26 @@
 import * as React from 'react';
 import { Card, CardBlock } from 'reactstrap';
-let styles = require('./ServiceCounter.scss');
-
-interface IServiceCounter {
-  expiresAt: number;
-};
+let styles = require('./SessionCounter.scss');
 
 const HOUR = 3600000;
 const MINUTE = 60000;
 const SECOND = 1000;
 
-export default class ServiceCounter extends React.Component<IServiceCounter, {}>{
+interface ISessionCounterProps {
+  expiresAt: number;
+}
+
+interface ISessionCounterState {
+  hours:number;
+  minutes:number;
+  seconds:number;
+}
+
+export default class SessionCounter extends React.Component<ISessionCounterProps, ISessionCounterState>{
   state = {
-    hours: '',
-    minutes: '',
-    seconds: ''
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   };
 
   componentDidMount(){
