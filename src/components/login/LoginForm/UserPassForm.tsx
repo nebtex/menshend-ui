@@ -8,6 +8,7 @@ interface IUserPassFormProps {
 interface IUserPassFormState {
   user:string;
   pass:string;
+  error?:boolean;
 }
 
 export default class UserPassForm extends React.Component<IUserPassFormProps, IUserPassFormState>{

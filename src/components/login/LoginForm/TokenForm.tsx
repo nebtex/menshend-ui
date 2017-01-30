@@ -7,6 +7,7 @@ interface ITokenFormProps {
 
 interface ITokenFormState {
   token:string;
+  error?:boolean;
 }
 
 export default class TokenForm extends React.Component<ITokenFormProps, ITokenFormState>{
