@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
-import LoginForm from '../components/login/LoginForm/LoginForm.tsx';
+import LoginForm from '../components/login/LoginForm/LoginForm';
 import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
-import { IUser } from '../models/interface.tsx';
+import { IUser } from '../models/interface';
 let styles = require('./Login.scss');
 
 const mockService = {
