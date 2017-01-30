@@ -42,6 +42,8 @@ export default class Login extends React.Component<{}, {}>{
   };
 
   render(){
+    let message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
+
     return (
       <div className={styles.container} > 
         <Container>
@@ -53,7 +55,7 @@ export default class Login extends React.Component<{}, {}>{
               <img src={mockEnvironment.logo} />
             </Col>
             <Col className={styles.rightSide}>
-              <h3>You are trying to login to:</h3>
+              <h3>{message}</h3>
               <ServiceCard service={mockService}/>
               <ErrorsPanel/>
               <LoginForm
