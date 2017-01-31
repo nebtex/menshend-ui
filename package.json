@@ -8,9 +8,11 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@types/classnames": "^0.0.32",
     "@types/node": "^7.0.4",
     "@types/react": "^15.0.4",
     "@types/react-dom": "^0.14.21",
+    "@types/react-test-renderer": "^15.4.2",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.26.0",
@@ -27,7 +29,6 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
-    "@types/classnames": "^0.0.32",
     "bootstrap": "4.0.0-alpha.6",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",

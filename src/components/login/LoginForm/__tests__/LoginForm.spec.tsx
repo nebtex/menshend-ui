@@ -1,4 +1,6 @@
-import { ILoginFormProps } from '../LoginForm';
+import * as renderer from 'react-test-renderer';
+import * as React from 'react';
+import  LoginForm, { ILoginFormProps } from '../LoginForm';
 
 interface Cases{
   [id:string]:ILoginFormProps
@@ -70,3 +72,14 @@ cases["Token error"] = {
     loginError: "Token"
   }
 }
+
+it('renders correctly', () => {
+  const tree = renderer.create(
+    <LoginForm
+      githubLogin={cases['default'].githubLogin}
+      tokenLogin={cases['default'].tokenLogin}
+      userPassLogin={cases['default'].userPassLogin}
+      user={cases['default'].user} />
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
