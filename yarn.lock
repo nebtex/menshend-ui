@@ -109,6 +109,10 @@
   dependencies:
     "@types/react" "*"
 
+"@types/jest@^18.1.0":
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-18.1.0.tgz#ed18f4c75b3d76de966f543fb6e3bad77d3caa17"
+
 "@types/node@^7.0.4":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.4.tgz#9aabc135979ded383325749f508894c662948c8b"

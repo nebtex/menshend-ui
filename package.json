@@ -30,6 +30,7 @@
   "dependencies": {
     "@kadira/storybook": "^2.35.3",
     "@types/enzyme": "^2.7.2",
+    "@types/jest": "^18.1.0",
     "bootstrap": "4.0.0-alpha.6",
     "classnames": "^2.2.5",
     "enzyme": "^2.7.1",
@@ -50,7 +51,6 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(scss)$": "identity-obj-proxy"
     },
-
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
