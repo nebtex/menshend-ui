@@ -24,7 +24,7 @@ const mockEnvironment = {
 let mockUser = {
   user: 'myuser',
   pass: 'mypass',
-  isLogged: true,
+  isLogged: false,
   expiresAt: 1485770407948
 }
 

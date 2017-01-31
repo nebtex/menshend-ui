@@ -14,11 +14,10 @@
     "@types/react-dom": "^0.14.21",
     "@types/react-test-renderer": "^15.4.2",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^2.26.0",
     "jest": "^18.1.0",
     "json-loader": "^0.5.4",
     "node-sass": "^4.3.0",
+    "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^4.1.1",
@@ -26,7 +25,7 @@
     "ts-jest": "^18.0.2",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.5",
-    "webpack": "^1.14.0"
+    "webpack": "^2.2.1"
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",

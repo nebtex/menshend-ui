@@ -1,7 +1,4 @@
-
 var path = require("path");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
   devtool: 'inline-source-map',
@@ -18,7 +15,7 @@ var config = {
       {
         test: /\.tsx?$/,
         loader: "ts-loader",
-        exclude: /node_modules/
+        exclude: [/node_modules/, /__tests__/]
       },
       {
         test: /\.css$/,
@@ -38,13 +35,7 @@ var config = {
         loader: 'json'
       }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin("bundle.css"),
-    new HtmlWebpackPlugin({
-      template: './src/templates/index.html'
-    })
-  ]
+  }
 };
 
 module.exports = config;
