@@ -4,7 +4,8 @@
     "build": "webpack",
     "start": "webpack-dev-server --progress --inline --hot",
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap",
-    "postinstall": "yarn fix-types"
+    "postinstall": "yarn fix-types",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/node": "^7.0.4",
@@ -16,9 +17,11 @@
     "jest": "^18.1.0",
     "json-loader": "^0.5.4",
     "node-sass": "^4.3.0",
+    "react-test-renderer": "^15.4.2",
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "ts-jest": "^18.0.2",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.5",
     "webpack": "^1.14.0"
@@ -37,5 +40,16 @@
     "react-dom": "^15.4.2",
     "react-markdown": "^2.4.4",
     "reactstrap": "^4.0.1"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   }
 }

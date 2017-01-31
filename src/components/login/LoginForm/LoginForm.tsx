@@ -8,7 +8,7 @@ import { IUser } from '../../../models/interface';
 import SessionCounter from '../SessionCounter';
 let styles = require('./LoginForm.scss');
 
-interface ILoginFormProps {
+export interface ILoginFormProps {
   githubLogin() : void;
   tokenLogin(token:string) : void;
   userPassLogin(user:string, pass:string) : void;
@@ -19,7 +19,7 @@ interface ILoginFormState {
   activeTab:string;
 }
 
-class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
+export default class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
   state = {
     activeTab: '1'
   };
@@ -92,5 +92,3 @@ class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
     return activeComponent;
   }
 }
-
-export default LoginForm;
