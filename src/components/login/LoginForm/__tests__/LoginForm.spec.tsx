@@ -69,21 +69,21 @@ describe('Login form', () => {
 
     it('should render the inputs and the formGroups with danger color', () => {
       let userPassForm = loginForm.find('UserPassForm').first();
-      let firstFormGroup = userPassForm.find('FormGroup').first();
-      let secondFormGroup = userPassForm.find('FormGroup').last();
-      let nameInput = firstFormGroup.find('Input').first();
-      let passInput = secondFormGroup.find('Input').first();
+      let userFormGroup = userPassForm.find('FormGroup').first();
+      let passFormGroup = userPassForm.find('FormGroup').last();
+      let nameInput = userFormGroup.find('Input').first();
+      let passInput = passFormGroup.find('Input').first();
 
-      expect(secondFormGroup.props().color).toEqual('danger');
-      expect(firstFormGroup.props().color).toEqual('danger');
+      expect(passFormGroup.props().color).toEqual('danger');
+      expect(userFormGroup.props().color).toEqual('danger');
       expect(nameInput.props().state).toEqual('danger');
       expect(passInput.props().state).toEqual('danger');
     });
 
     it('should render a form feedback', () => {
       let userPassForm = loginForm.find('UserPassForm').first();
-      let secondFormGroup = userPassForm.find('FormGroup').last();
-      expect(secondFormGroup.find('FormFeedback').length).toEqual(1);
+      let passFormGroup = userPassForm.find('FormGroup').last();
+      expect(passFormGroup.find('FormFeedback').length).toEqual(1);
     });
 
     it('should render with the user/pass tab as active tab', () => {
