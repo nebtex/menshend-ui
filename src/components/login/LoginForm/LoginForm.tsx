@@ -8,31 +8,19 @@ import { IUser } from '../../../models/interface';
 import SessionCounter from '../SessionCounter';
 let styles = require('./LoginForm.scss');
 
+export type ActiveTab = 'UserPassTab' | 'TokenTab';
+
 export interface ILoginFormProps {
   githubLogin() : void;
   tokenLogin(token:string) : void;
   userPassLogin(user:string, pass:string) : void;
   user: IUser;
+  activeTab: ActiveTab;
+  toggleTab(tab?:ActiveTab) : void;
 }
 
-interface ILoginFormState {
-  activeTab:string;
-}
-
-export default class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
-  state = {
-    activeTab: '1'
-  };
-
-  toggle = (tab:string) => {
-    if (this.state.activeTab !== tab) {
-      this.setState({
-        activeTab: tab
-      });
-    }
-  };
-
-   getActiveComponent = () => {
+export default class LoginForm extends React.Component<ILoginFormProps, {}> {
+  getActiveComponent = () => {
     let user = this.props.user;
 
     if (user.isLogged){
@@ -48,45 +36,43 @@ export default class LoginForm extends React.Component<ILoginFormProps, ILoginFo
           <Nav tabs>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.activeTab === '1' })}
-                onClick={() => { this.toggle('1'); }}
-              >
+                className={classnames({ active: this.props.activeTab === 'UserPassTab' })}
+                onClick={() => { this.props.toggleTab('UserPassTab'); }} >
                 User/password
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.activeTab === '2' })}
-                onClick={() => { this.toggle('2'); }}
-              >
+                className={classnames({ active: this.props.activeTab === 'TokenTab' })}
+                onClick={() => { this.props.toggleTab('TokenTab'); }} >
                 Token
               </NavLink>
             </NavItem>
           </Nav>
-          <TabContent activeTab={this.state.activeTab}>
-            <TabPane tabId="1">
+          <TabContent activeTab={this.props.activeTab}>
+            <TabPane tabId="UserPassTab">
               <Card>
                 <CardBlock>
                   <Row>
-                    <Col md="5" style={{borderRight: '1px solid rgba(0,0,0,.125)'}}>
-                      <GithubLogin handleLogin={this.props.githubLogin}/>
+                    <Col md="5" style={{borderRight: "1px solid rgba(0,0,0,.125)"}}>
+                      <GithubLogin handleLogin={this.props.githubLogin} error={this.props.user.loginError === 'Github'}/>
                     </Col>
                     <Col md="7">
-                      <UserPassForm handleLogin={this.props.userPassLogin}/>
+                      <UserPassForm handleLogin={this.props.userPassLogin} error={this.props.user.loginError === 'Username/Password'}/>
                     </Col>
                   </Row>  
                 </CardBlock>
               </Card>
             </TabPane>
-            <TabPane tabId="2">
-              <TokenForm handleLogin={this.props.tokenLogin}/>
+            <TabPane tabId="TokenTab">
+              <TokenForm handleLogin={this.props.tokenLogin} error={this.props.user.loginError === 'Token'}/>
             </TabPane>
           </TabContent>
         </div>
       );
     }
   };
-
+ 
   render(){
     let activeComponent = this.getActiveComponent();
     return activeComponent;

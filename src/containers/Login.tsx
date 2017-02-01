@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
-import LoginForm from '../components/login/LoginForm/LoginForm';
+import LoginForm, { ActiveTab } from '../components/login/LoginForm/LoginForm';
 import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
@@ -28,7 +28,18 @@ let mockUser = {
   expiresAt: 1485770407948
 }
 
-export default class Login extends React.Component<{}, {}>{
+interface ILoginState {
+  loginFormActiveTab: ActiveTab;
+}
+
+export default class Login extends React.Component<{}, ILoginState>{
+  constructor(props:any){
+    super(props);
+    this.state = {
+      loginFormActiveTab: 'UserPassTab'
+    }
+  }
+
   githubLogin = () => {
     console.log('Getting logged in github');
   };
@@ -39,6 +50,12 @@ export default class Login extends React.Component<{}, {}>{
 
   userPassLogin = (user:string, pass:string) => {
     console.log('Login with these credentials: ', user, pass);
+  };
+
+  toggleTabLoginForm = (tab:ActiveTab) => {
+    this.setState({
+      loginFormActiveTab: tab
+    });
   };
 
   render(){
@@ -62,6 +79,8 @@ export default class Login extends React.Component<{}, {}>{
                 githubLogin={this.githubLogin}
                 tokenLogin={this.tokenLogin}
                 userPassLogin={this.userPassLogin}
+                activeTab={this.state.loginFormActiveTab}
+                toggleTab={this.toggleTabLoginForm}
                 user={mockUser}
               />
             </Col>

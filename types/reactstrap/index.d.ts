@@ -17,6 +17,7 @@ declare namespace ReactStrap {
     export function Label(props: any): React.Component<any, any>
     export function Form(props: any): React.Component<any, any>    
     export function FormGroup(props: any): React.Component<any, any>
+    export function FormFeedback(props: any): React.Component<any, any>
     export function ButtonDropdown(props: any): React.Component<any, any>
     export function DropdownToggle(props: any): React.Component<any, any>
     export function DropdownItem(props: any): React.Component<any, any>
