@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginForm';
-import ServiceCard from '../components/login/ServiceCard';
-import EnvironmentCard from '../components/login/EnvironmentCard';
+import ServiceCard from '../components/login/ServiceCard/ServiceCard';
+import EnvironmentCard from '../components/login/EnvironmentCard/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
 import { IUser } from '../models/interface';
 let styles = require('./Login.scss');

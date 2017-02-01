@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { Container, Row, Popover, PopoverTitle, PopoverContent, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { ISpace} from '../../models/interface';
+import { ISpace} from '../../../models/interface';
 
-interface IEnvironmentCardProps {
+export interface IEnvironmentCardProps {
     environment?:ISpace;
 }
 

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import * as ReactMarkdown from 'react-markdown';
-import { IService } from '../../models/interface';
+import { IService } from '../../../models/interface';
 let styles = require('./ServiceCard.scss');
 
-interface IServiceCardProps {
+export interface IServiceCardProps {
   service?:IService;
 }
 
@@ -19,8 +19,8 @@ export default class ServiceCard extends React.Component<IServiceCardProps, ISer
 
   static defaultProps:IServiceCardProps = {
     service:{
-      name: 'Unknow',
-      short_description: 'Unknow service',
+      name: 'Unknown',
+      short_description: 'Unknown service',
       long_description: '',
       logo: ''
     }
@@ -45,7 +45,7 @@ export default class ServiceCard extends React.Component<IServiceCardProps, ISer
           </Col>
           <Col md='10'>
             <CardBlock>
-              <CardTitle> {service.name} </CardTitle>
+              <CardTitle>{service.name}</CardTitle>
               <CardText>
                 {service.short_description}
               </CardText>
