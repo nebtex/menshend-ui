@@ -1,5 +1,5 @@
 
-import  LoginForm, { ILoginFormProps, ActiveTab } from '../LoginForm';
+import  LoginForm, { ILoginFormProps, ActiveTabType } from '../LoginForm';
 
 let githubLogin = () => {
     console.log('Getting logged in github');
@@ -13,7 +13,7 @@ let userPassLogin = (user: string, pass: string) => {
     console.log('Login with these credentials: ', user, pass);
 };
 
-let toggleTab = (tab:ActiveTab) => {};
+let toggleTab = (tab:ActiveTabType) => {};
 
 let Cases: {[id: string]: ILoginFormProps} = {};
 

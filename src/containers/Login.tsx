@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
-import LoginForm, { ActiveTab } from '../components/login/LoginForm/LoginForm';
+import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginForm';
 import ServiceCard from '../components/login/ServiceCard';
 import EnvironmentCard from '../components/login/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel';
@@ -29,7 +29,7 @@ let mockUser = {
 }
 
 interface ILoginState {
-  loginFormActiveTab: ActiveTab;
+  loginFormActiveTab: ActiveTabType;
 }
 
 export default class Login extends React.Component<{}, ILoginState>{
@@ -52,7 +52,7 @@ export default class Login extends React.Component<{}, ILoginState>{
     console.log('Login with these credentials: ', user, pass);
   };
 
-  toggleTabLoginForm = (tab:ActiveTab) => {
+  toggleTabLoginForm = (tab:ActiveTabType) => {
     this.setState({
       loginFormActiveTab: tab
     });

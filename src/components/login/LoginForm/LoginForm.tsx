@@ -8,15 +8,15 @@ import { IUser } from '../../../models/interface';
 import SessionCounter from '../SessionCounter';
 let styles = require('./LoginForm.scss');
 
-export type ActiveTab = 'UserPassTab' | 'TokenTab';
+export type ActiveTabType = 'UserPassTab' | 'TokenTab';
 
 export interface ILoginFormProps {
   githubLogin() : void;
   tokenLogin(token:string) : void;
   userPassLogin(user:string, pass:string) : void;
   user: IUser;
-  activeTab: ActiveTab;
-  toggleTab(tab?:ActiveTab) : void;
+  activeTab: ActiveTabType;
+  toggleTab(tab?:ActiveTabType) : void;
 }
 
 export default class LoginForm extends React.Component<ILoginFormProps, {}> {
