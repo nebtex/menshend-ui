@@ -5,7 +5,7 @@ import { IService } from '../../models/interface';
 let styles = require('./ServiceCard.scss');
 
 interface IServiceCardProps {
-  service:IService;
+  service?:IService;
 }
 
 interface IServiceCardState {
@@ -15,6 +15,15 @@ interface IServiceCardState {
 export default class ServiceCard extends React.Component<IServiceCardProps, IServiceCardState>{
   state = {
     longDescriptionOpen: false
+  }
+
+  static defaultProps:IServiceCardProps = {
+    service:{
+      name: 'Unknow',
+      short_description: 'Unknow service',
+      long_description: '',
+      logo: ''
+    }
   }
 
   toggleDescription = () => {
@@ -31,7 +40,7 @@ export default class ServiceCard extends React.Component<IServiceCardProps, ISer
         <Row>
           <Col md='2'>
             <CardBlock>
-              <CardImg width="64" height="64" src={service.logo}/>
+              {service.logo ? (<CardImg width="64" height="64" src={service.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
             </CardBlock>
           </Col>
           <Col md='10'>

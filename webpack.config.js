@@ -5,6 +5,7 @@ var config = {
   entry: ["./src/app.tsx"],
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: '/assets/',
     filename: "bundle.js"
   },
   resolve: {

@@ -7,20 +7,6 @@ import ErrorsPanel from '../components/login/ErrorsPanel';
 import { IUser } from '../models/interface';
 let styles = require('./Login.scss');
 
-const mockService = {
-  name: "Github",
-  short_description: "This is the short description", 
-  long_description: "This is the long description",
-  logo: "https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
-}
-
-const mockEnvironment = {
-  name: "Kooper",
-  short_description: "This is the short description", 
-  long_description: "This is the <br/> long description",
-  logo: "https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
-}
-
 let mockUser = {
   user: 'myuser',
   pass: 'mypass',
@@ -65,16 +51,13 @@ export default class Login extends React.Component<{}, ILoginState>{
       <div className={styles.container} > 
         <Container>
           <Row>
-            <EnvironmentCard environment={mockEnvironment}/>
-          </Row>
-          <Row>
             <Col md="12" lg="6" className={styles.environmentLogo}>
-              <img src={mockEnvironment.logo} />
+              <EnvironmentCard />
             </Col>
             <Col className={styles.rightSide}>
               <h3>{message}</h3>
-              <ServiceCard service={mockService}/>
-              <ErrorsPanel/>
+              <ServiceCard />
+              <ErrorsPanel />
               <LoginForm
                 githubLogin={this.githubLogin}
                 tokenLogin={this.tokenLogin}
