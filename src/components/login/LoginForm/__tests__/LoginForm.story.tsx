@@ -1,6 +1,6 @@
 
 import * as React from "react";
-import { storiesOf } from "@kadira/storybook";
+import { storiesOf, action } from "@kadira/storybook";
 import Cases from "./LoginForm.cases";
 import LoginForm from '../LoginForm';
 
@@ -9,7 +9,10 @@ let key: string;
 
 function element(iKey: string) {
     return function () {
-        return <LoginForm {...Cases[iKey]} />
+        return <LoginForm {...Cases[iKey]}
+         userPassLogin={action("userPassLogin (user:string, password: string)")}
+         tokenLogin={action("tokenLogin (token:string)")}
+         githubLogin={action("githubLogin ()")}/>
     }
 }
 

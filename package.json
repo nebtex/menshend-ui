@@ -5,7 +5,8 @@
     "start": "webpack-dev-server --progress --inline --hot",
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap",
     "postinstall": "yarn fix-types",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",
@@ -25,7 +26,8 @@
     "ts-jest": "^18.0.2",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.5",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "@kadira/storybook": "^2.21.0"
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",

@@ -1,5 +1,5 @@
 
-import  LoginForm, { ILoginFormProps, ActiveTabType } from '../LoginForm';
+import LoginForm, { ILoginFormProps, ActiveTabType } from '../LoginForm';
 
 let githubLogin = () => {
     console.log('Getting logged in github');
@@ -13,10 +13,11 @@ let userPassLogin = (user: string, pass: string) => {
     console.log('Login with these credentials: ', user, pass);
 };
 
-let toggleTab = (tab:ActiveTabType) => {};
+let toggleTab = (tab: ActiveTabType) => { };
 
-let Cases: {[id: string]: ILoginFormProps} = {};
+let Cases: { [id: string]: ILoginFormProps } = {};
 
+let now = new Date()
 Cases["default"] = {
     githubLogin,
     tokenLogin,
@@ -24,7 +25,7 @@ Cases["default"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: 1485770407948
+        expiresAt: now.getMilliseconds() + 3600000
     },
     activeTab: 'UserPassTab'
 }
@@ -36,7 +37,7 @@ Cases["User is logged"] = {
     toggleTab,
     user: {
         isLogged: true,
-        expiresAt: 1485770407948
+        expiresAt: now.getMilliseconds() + 3600000
     },
     activeTab: 'UserPassTab'
 }
@@ -48,7 +49,7 @@ Cases["Github error"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: 1485770407948,
+        expiresAt: now.getMilliseconds() + 3600000,
         loginError: "Github"
     },
     activeTab: 'UserPassTab'
@@ -61,7 +62,7 @@ Cases["Username error"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: 1485770407948,
+        expiresAt: now.getMilliseconds() + 3600000,
         loginError: "Username/Password"
     },
     activeTab: 'UserPassTab'
@@ -74,7 +75,7 @@ Cases["Token error"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: 1485770407948,
+        expiresAt: now.getMilliseconds() + 3600000,
         loginError: "Token"
     },
     activeTab: 'TokenTab'

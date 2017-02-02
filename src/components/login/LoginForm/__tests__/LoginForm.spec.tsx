@@ -2,13 +2,13 @@
 /// <reference types='jest' />
 
 import * as React from 'react';
-import  LoginForm from '../LoginForm';
-import  Cases from './LoginForm.cases';
+import LoginForm from '../LoginForm';
+import Cases from './LoginForm.cases';
 import { shallow, mount, render } from 'enzyme';
 
 describe('Login form', () => {
   describe('Default', () => {
-    let loginForm:any;
+    let loginForm: any;
 
     beforeEach(() => {
       loginForm = mount(<LoginForm {...Cases['default']} />);
@@ -19,6 +19,7 @@ describe('Login form', () => {
       expect(loginForm.props().userPassLogin).toBeDefined();
       expect(loginForm.props().tokenLogin).toBeDefined();
       expect(loginForm.props().user).toBeDefined();
+    
     });
 
     it('should render correctly', () => {
@@ -29,7 +30,7 @@ describe('Login form', () => {
   });
 
   describe('User is logged', () => {
-    let loginForm:any;
+    let loginForm: any;
 
     beforeEach(() => {
       loginForm = mount(<LoginForm {...Cases['User is logged']} />);
@@ -42,7 +43,7 @@ describe('Login form', () => {
   });
 
   describe('Github error', () => {
-    let loginForm:any;
+    let loginForm: any;
 
     beforeEach(() => {
       loginForm = mount(<LoginForm {...Cases['Github error']} />);
@@ -61,7 +62,7 @@ describe('Login form', () => {
   });
 
   describe('Username error', () => {
-    let loginForm:any;
+    let loginForm: any;
 
     beforeEach(() => {
       loginForm = mount(<LoginForm {...Cases['Username error']} />);
@@ -88,12 +89,12 @@ describe('Login form', () => {
 
     it('should render with the user/pass tab as active tab', () => {
       expect(loginForm.find('TabContent').props().activeTab).toEqual('UserPassTab');
-      expect(loginForm.props().activeTab).toEqual('UserPassTab');      
+      expect(loginForm.props().activeTab).toEqual('UserPassTab');
     });
   });
 
   describe('Token error', () => {
-    let loginForm:any;
+    let loginForm: any;
 
     beforeEach(() => {
       loginForm = mount(<LoginForm {...Cases['Token error']} />);
@@ -115,8 +116,8 @@ describe('Login form', () => {
     });
 
     it('should render with the token tab as active tab', () => {
-      expect(loginForm.find('TabContent').props().activeTab).toEqual('TokenTab');      
-      expect(loginForm.props().activeTab).toEqual('TokenTab');      
+      expect(loginForm.find('TabContent').props().activeTab).toEqual('TokenTab');
+      expect(loginForm.props().activeTab).toEqual('TokenTab');
     });
   });
 });
