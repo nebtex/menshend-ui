@@ -5,7 +5,6 @@ var config = {
   entry: ["./src/app.tsx"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: '/assets/',
     filename: "bundle.js"
   },
   resolve: {
@@ -30,6 +29,10 @@ var config = {
           'resolve-url',
           'sass?sourceMap'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'url-loader'
       },
       {
         test: /\.json$/,

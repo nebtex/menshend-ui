@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { Container, Row, Popover, PopoverTitle, PopoverContent, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { ISpace} from '../../../models/interface';
+let octopusLogo = require('../../../assets/octopus-logo.svg');
 
 export interface IEnvironmentCardProps {
     environment?:ISpace;
@@ -21,7 +22,7 @@ export default class EnvironmentCard extends React.Component<IEnvironmentCardPro
       name: 'Kuper',
       short_description: 'Kuper is a modern  auth proxy that use vault and consul for manage access policies',
       long_description: '',
-      logo: '/assets/octopus-logo.svg'
+      logo: octopusLogo
     }
   }
 
