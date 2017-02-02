@@ -1,4 +1,5 @@
 import ServiceCard, { IServiceCardProps } from '../ServiceCard';
+let testLogo = require('../../../../assets/testLogo.svg');
 
 let Cases : {[id:string]:IServiceCardProps} = {};
 
@@ -7,7 +8,7 @@ Cases['Defined Service'] = {
     name: 'My Test Service', 
     short_description: 'My test service short description',
     long_description: 'My test service long description', 
-    logo: 'myTestServiceLogo.svg'
+    logo: testLogo
   }
 }
 
