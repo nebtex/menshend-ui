@@ -17,7 +17,6 @@ let toggleTab = (tab: ActiveTabType) => { };
 
 let Cases: { [id: string]: ILoginFormProps } = {};
 
-let now = new Date()
 Cases["default"] = {
     githubLogin,
     tokenLogin,
@@ -25,7 +24,7 @@ Cases["default"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: now.getMilliseconds() + 3600000
+        expiresAt: Date.now() + 3600000
     },
     activeTab: 'UserPassTab'
 }
@@ -37,7 +36,7 @@ Cases["User is logged"] = {
     toggleTab,
     user: {
         isLogged: true,
-        expiresAt: now.getMilliseconds() + 3600000
+        expiresAt: Date.now() + 3600000
     },
     activeTab: 'UserPassTab'
 }
@@ -49,7 +48,7 @@ Cases["Github error"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: now.getMilliseconds() + 3600000,
+        expiresAt: Date.now() + 3600000,
         loginError: "Github"
     },
     activeTab: 'UserPassTab'
@@ -62,7 +61,7 @@ Cases["Username error"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: now.getMilliseconds() + 3600000,
+        expiresAt: Date.now() + 3600000,
         loginError: "Username/Password"
     },
     activeTab: 'UserPassTab'
@@ -75,7 +74,7 @@ Cases["Token error"] = {
     toggleTab,
     user: {
         isLogged: false,
-        expiresAt: now.getMilliseconds() + 3600000,
+        expiresAt: Date.now() + 3600000,
         loginError: "Token"
     },
     activeTab: 'TokenTab'

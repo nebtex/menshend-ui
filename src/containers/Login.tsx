@@ -11,7 +11,7 @@ let mockUser = {
   user: 'myuser',
   pass: 'mypass',
   isLogged: false,
-  expiresAt: 1485770407948
+  expiresAt: Date.now() + 3600000
 }
 
 interface ILoginState {

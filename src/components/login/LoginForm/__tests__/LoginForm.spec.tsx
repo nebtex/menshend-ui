@@ -52,7 +52,7 @@ describe('Login form', () => {
     it('should render the github button with warning color and outlined', () => {
       let githubLogin = loginForm.find('GithubLogin').first();
       let button = githubLogin.find('Button');
-      expect(button.props().color).toEqual('warning');
+      expect(button.props().color).toEqual('danger');
       expect(button.props().outline).toEqual(true);
     });
 
