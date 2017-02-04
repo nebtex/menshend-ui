@@ -22,7 +22,7 @@ export interface IService {
     short_description: string; // short description of the service
     long_description: string; // service long description
     logo: string; // service logo
-    subDomain: string;
+    subDomain?: string;
     rule?: string;
     error?: BackendErrorType;
 	roles?: [string];

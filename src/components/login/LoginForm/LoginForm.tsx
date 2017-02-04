@@ -5,7 +5,7 @@ import UserPassForm from './UserPassForm';
 import TokenForm from './TokenForm';
 import GithubLogin from './GithubLogin';
 import { IUser } from '../../../models/interface';
-import SessionCounter from '../SessionCounter';
+import SessionCounter from '../SessionCounter/SessionCounter';
 let styles = require('./LoginForm.scss');
 
 export type ActiveTabType = 'UserPassTab' | 'TokenTab';
