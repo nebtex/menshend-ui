@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
-import * as Infinite from 'react-infinite';
+import Infinite = require('react-infinite');
 
 export interface IServicesPanelProps {
   roles: string[];
