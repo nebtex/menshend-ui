@@ -1,7 +1,7 @@
-import ServiceCard, { IServiceCardProps } from '../ServiceCard';
+import ServiceInfoCard, { IServiceInfoCardProps } from '../ServiceInfoCard';
 let testLogo = require('../../../../assets/testLogo.svg');
 
-let Cases : {[id:string]:IServiceCardProps} = {};
+let Cases : {[id:string]:IServiceInfoCardProps} = {};
 
 Cases['Defined Service'] = {
   service: {

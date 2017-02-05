@@ -2,22 +2,22 @@ import * as React from 'react';
 import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import * as ReactMarkdown from 'react-markdown';
 import { IService } from '../../../models/interface';
-let styles = require('./ServiceCard.scss');
+let styles = require('./ServiceInfoCard.scss');
 
-export interface IServiceCardProps {
+export interface IServiceInfoCardProps {
   service?:IService;
 }
 
-interface IServiceCardState {
+interface IServiceInfoCardState {
   longDescriptionOpen:boolean;
 }
 
-export default class ServiceCard extends React.Component<IServiceCardProps, IServiceCardState>{
+export default class ServiceInfoCard extends React.Component<IServiceInfoCardProps, IServiceInfoCardState>{
   state = {
     longDescriptionOpen: false
   }
 
-  static defaultProps:IServiceCardProps = {
+  static defaultProps:IServiceInfoCardProps = {
     service:{
       name: 'Unknown',
       short_description: 'Unknown service',
@@ -36,7 +36,7 @@ export default class ServiceCard extends React.Component<IServiceCardProps, ISer
     let service = this.props.service;
 
     return (
-      <Card className={styles.serviceCard} onClick={this.toggleDescription}>
+      <Card className={styles.ServiceInfoCard} onClick={this.toggleDescription}>
         <Row>
           <Col md='2'>
             <CardBlock>

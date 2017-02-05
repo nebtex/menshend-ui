@@ -3,6 +3,7 @@ export as namespace ReactStrap;
 import * as React from "react";
 
 declare namespace ReactStrap {
+    export function Badge(props: any): React.Component<any, any>    
     export function Card(props: any): React.Component<any, any>
     export function CardBlock(props: any): React.Component<any, any>
     export function CardTitle(props: any): React.Component<any, any>

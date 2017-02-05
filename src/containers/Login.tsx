@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginForm';
-import ServiceCard from '../components/login/ServiceCard/ServiceCard';
+import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard';
 import EnvironmentCard from '../components/login/EnvironmentCard/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel/ErrorsPanel';
 import { IUser } from '../models/interface';
@@ -56,7 +56,7 @@ export default class Login extends React.Component<{}, ILoginState>{
             </Col>
             <Col className={styles.rightSide}>
               <h3>{message}</h3>
-              <ServiceCard />
+              <ServiceInfoCard />
               <ErrorsPanel />
               <LoginForm
                 githubLogin={this.githubLogin}
