@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",
+    "@types/fuse": "^2.5.1",
     "@types/node": "^7.0.4",
     "@types/react": "^15.0.4",
     "@types/react-dom": "^0.14.21",

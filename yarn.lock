@@ -109,6 +109,10 @@
   dependencies:
     "@types/react" "*"
 
+"@types/fuse@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@types/fuse/-/fuse-2.5.1.tgz#d154acf6a6c19e0920b9f41a6f0632eb26578075"
+
 "@types/jest@^18.1.0":
   version "18.1.0"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-18.1.0.tgz#ed18f4c75b3d76de966f543fb6e3bad77d3caa17"

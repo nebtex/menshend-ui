@@ -21,8 +21,8 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   getRolesBadges = () => {
     return (
       <div>
-        {this.props.service.roles.map(role => {
-          return <Badge className={styles.roleBadge}>{role}</Badge>
+        {this.props.service.roles.map((role, index) => {
+          return <Badge className={styles.roleBadge} key={index}>{role}</Badge>
         })}      
       </div>
     );
@@ -55,7 +55,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
         rolesBadges = this.getRolesBadges();
 
     return (
-      <Card onClick={this.toggleDescription}>
+      <Card onClick={this.toggleDescription} className={styles.card}>
         <Container>
           <Row>
             <Col xs='auto'>
