@@ -10,7 +10,11 @@ declare namespace ReactStrap {
     export function CardText(props: any): React.Component<any, any>
     export function CardImg(props: any): React.Component<any, any>
     export function CardSubtitle(props: any): React.Component<any, any>
-    export function Container(props: any): React.Component<any, any>    
+    export function Dropdown(props: any): React.Component<any, any>
+    export function DropdownMenu(props: any): React.Component<any, any>
+    export function DropdownItem(props: any): React.Component<any, any>
+    export function DropdownToggle(props: any): React.Component<any, any>
+    export function Container(props: any): React.Component<any, any>
     export function Row(props: any): React.Component<any, any>
     export function Col(props: any): React.Component<any, any>
     export function Button(props: any): React.Component<any, any>
@@ -33,6 +37,10 @@ declare namespace ReactStrap {
     export function Nav(props: any): React.Component<any, any>
     export function NavItem(props: any): React.Component<any, any>
     export function NavLink(props: any): React.Component<any, any>
+    export function Navbar(props: any): React.Component<any, any>
+    export function NavbarToggler(props: any): React.Component<any, any>
+    export function NavbarBrand(props: any): React.Component<any, any>
+    export function Collapse(props: any): React.Component<any, any>
     export function Modal(props: any): React.Component<any, any>
     export function ModalHeader(props: any): React.Component<any, any>
     export function ModalBody(props: any): React.Component<any, any>

@@ -13,6 +13,7 @@
     "@types/node": "^7.0.4",
     "@types/react": "^15.0.4",
     "@types/react-dom": "^0.14.21",
+    "@types/react-infinite": "^0.0.29",
     "@types/react-test-renderer": "^15.4.2",
     "css-loader": "^0.26.1",
     "jest": "^18.1.0",
@@ -26,8 +27,7 @@
     "ts-jest": "^18.0.2",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.5",
-    "webpack": "^2.2.1",
-    "@kadira/storybook": "^2.21.0"
+    "webpack": "^2.2.1"
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",
@@ -45,6 +45,7 @@
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-infinite": "^0.10.0",
     "react-markdown": "^2.4.4",
     "reactstrap": "^4.0.1"
   },

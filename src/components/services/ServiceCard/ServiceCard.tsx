@@ -55,7 +55,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
         rolesBadges = this.getRolesBadges();
 
     return (
-      <Card onClick={this.toggleDescription} ref='card'>
+      <Card onClick={this.toggleDescription}>
         <Container>
           <Row>
             <Col xs='auto'>
