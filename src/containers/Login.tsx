@@ -5,7 +5,7 @@ import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard
 import EnvironmentCard from '../components/login/EnvironmentCard/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel/ErrorsPanel';
 import { IUser } from '../models/interface';
-import * as Fuse from 'fuse';
+// import * as Fuse from 'fuse';
 let styles = require('./Login.scss');
 
 let mockUser = {
@@ -45,32 +45,32 @@ export default class Login extends React.Component<{}, ILoginState>{
     });
   }
 
-  searchTest = () => {
-    var books = [{
-      id: 1,
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald'
-    }, {
-      id: 2,
-      title: 'The DaVinci Code',
-      author: 'Dan Brown'
-    }, {
-      id: 3,
-      title: 'Angels & Demons',
-      author: 'Dan Brown'
-    }];
-    var options = {
-      keys: ['author', 'title'],   // keys to search in
-      id: 'id'                     // return a list of identifiers only
-    };
-    var f = new Fuse(books, options);
-    var result = f.search('brwn');
-    console.log(result);
-  }
+  // searchTest = () => {
+  //   var books = [{
+  //     id: 1,
+  //     title: 'The Great Gatsby',
+  //     author: 'F. Scott Fitzgerald'
+  //   }, {
+  //     id: 2,
+  //     title: 'The DaVinci Code',
+  //     author: 'Dan Brown'
+  //   }, {
+  //     id: 3,
+  //     title: 'Angels & Demons',
+  //     author: 'Dan Brown'
+  //   }];
+  //   var options = {
+  //     keys: ['author', 'title'],   // keys to search in
+  //     id: 'id'                     // return a list of identifiers only
+  //   };
+  //   var f = new Fuse(books, options);
+  //   var result = f.search('brwn');
+  //   console.log(result);
+  // }
 
   render(){
     let message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
-    this.searchTest();
+    // this.searchTest();
 
     return (
       <div className={styles.container} > 
