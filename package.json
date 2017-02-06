@@ -4,6 +4,7 @@
     "build": "webpack",
     "start": "webpack-dev-server --progress --inline --hot",
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap",
+    "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types",
     "test": "jest",
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
