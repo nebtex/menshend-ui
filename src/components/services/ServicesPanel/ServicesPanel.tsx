@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IService, IUser } from '../../../models/interface';
 import { Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import ServicesList from './ServicesList/ServicesList';
+import Fuse = require('fuse.js');
 let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
@@ -30,9 +31,15 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   }
 
   selectRole = (role:string) => {
+    let filteredServices = this.props.services.filter((service) => {
+      return service.roles.indexOf(role) > -1;
+    });
+
+    console.log(filteredServices);
+
     this.setState({
       activeRole: role
-    })
+    });
   }
 
   getRolesDropdown = () => {
@@ -58,7 +65,14 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
 
   search = (evt:any) => {
     evt.preventDefault();
-    // @TODO: Execute Query
+
+    var options = {
+      keys: ['name']
+    };
+
+    var f = new Fuse<IService>(this.props.services, options);;
+    var result = f.search(this.state.searchValue);
+    console.log(result);
   }
 
   render(){
