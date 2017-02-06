@@ -6,8 +6,9 @@
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
+    "pretest": "node scripts/mockTestsData/index.js",
     "test": "jest",
-    "storybook": "node scripts/storybook.js && start-storybook -p 6006"
+    "storybook": "node scripts/mockTestsData/index.js && node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",
@@ -18,6 +19,7 @@
     "@types/react-infinite": "^0.0.29",
     "@types/react-test-renderer": "^15.4.2",
     "css-loader": "^0.26.1",
+    "dummy-json": "^2.0.0",
     "jest": "^18.1.0",
     "json-loader": "^0.5.4",
     "node-sass": "^4.3.0",

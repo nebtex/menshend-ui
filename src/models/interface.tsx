@@ -25,5 +25,5 @@ export interface IService {
     subDomain?: string;
     rule?: string;
     error?: BackendErrorType;
-	roles?: [string];
+	roles?: string[];
 }
