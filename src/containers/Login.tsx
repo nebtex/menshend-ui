@@ -5,7 +5,8 @@ import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard
 import EnvironmentCard from '../components/login/EnvironmentCard/EnvironmentCard';
 import ErrorsPanel from '../components/login/ErrorsPanel/ErrorsPanel';
 import { IUser } from '../models/interface';
-import { Fuse } from 'fuse.js';
+import Fuse = require('fuse.js');
+let logo = require('../assets/octopus-logo.svg');
 let styles = require('./Login.scss');
 
 let mockUser = {
@@ -77,8 +78,11 @@ export default class Login extends React.Component<{}, ILoginState>{
       <div className={styles.container} > 
         <Container>
           <Row>
-            <Col md="12" lg="6" className={styles.environmentLogo}>
-              <EnvironmentCard />
+            <EnvironmentCard />
+          </Row>
+          <Row>
+            <Col md="12" lg="6" className={styles.logoContainer}>
+              <img src={ logo } className={styles.logo}/>
             </Col>
             <Col className={styles.rightSide}>
               <h3>{message}</h3>

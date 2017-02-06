@@ -10,9 +10,13 @@
   flex-direction: column;
 }
 
-.environmentLogo {
+.logoContainer {
   justify-content: center;
   align-items: center;
   display: flex;
   min-height: 608px;
+}
+
+.logo {
+  width: 100%;
 }

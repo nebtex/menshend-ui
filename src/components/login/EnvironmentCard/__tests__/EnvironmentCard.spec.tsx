@@ -19,13 +19,11 @@ describe('EnvironmentCard', () => {
     it('should render correctly when environment is passed via props', () => {
       expect(environmentCard.find('h1').first().text()).toEqual(testProps.environment.name);
       expect(environmentCard.find('p').first().text()).toMatch(testProps.environment.short_description);
-      expect(environmentCard.find('img').first().props().src).toEqual(testProps.environment.logo);
     });
 
     it('should have the expected props', () => {
       expect(environmentCard.props().environment.name).toEqual(testProps.environment.name);
       expect(environmentCard.props().environment.short_description).toMatch(testProps.environment.short_description);
-      expect(environmentCard.props().environment.logo).toEqual(testProps.environment.logo);
       expect(environmentCard.props().environment.long_description).toEqual(testProps.environment.long_description);
     });
   });
@@ -41,7 +39,6 @@ describe('EnvironmentCard', () => {
     it('should have default props defined', () => {
       expect(environmentCard.props().environment.name).toBeDefined();
       expect(environmentCard.props().environment.short_description).toBeDefined();
-      expect(environmentCard.props().environment.logo).toBeDefined();
       expect(environmentCard.props().environment.long_description).toBeDefined();
     });
   });
