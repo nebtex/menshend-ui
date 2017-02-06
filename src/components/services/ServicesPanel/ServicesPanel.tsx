@@ -68,7 +68,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         <Row>
           <Form onSubmit={this.search}>
             <FormGroup>
-              <Input type="test" placeholder="Search"/>
+              <Input type="test" placeholder="Search" onChange={this.searchOnChange}/>
             </FormGroup>
           </Form>
           {rolesDropdown}
