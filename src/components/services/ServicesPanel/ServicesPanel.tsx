@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as classnames from 'classnames';
 import { IService, IUser } from '../../../models/interface';
 import { Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import ServicesList from './ServicesList/ServicesList';
@@ -12,15 +13,19 @@ export interface IServicesPanelProps {
 
 interface IServicesPanelState {
   dropdownOpen: boolean;
+  loadingSearch: boolean;
   searchValue: string;
   activeRole: string;
 }
+
+let searchTimeout:any;
 
 export default class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
   state = {
     dropdownOpen: false,
     searchValue: '',
-    activeRole: 'All'
+    activeRole: 'All',
+    loadingSearch: false
   }
 
   toggle = () => {
@@ -70,8 +75,21 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   }
 
   searchOnChange = (evt:any) => {
+    evt.persist();
+    let searchValue:any = evt && evt.target ? evt.target.value : null;
+
+    if(searchTimeout)
+      clearTimeout(searchTimeout);
+
+    searchTimeout = setTimeout(() => {
+      this.setState({
+        loadingSearch: false
+      });
+    }, 1000);
+    
     this.setState({
-      searchValue: evt.target.value
+      searchValue: searchValue,
+      loadingSearch: true  
     });
   }
 
@@ -86,7 +104,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     }
 
     // Apply search criteria
-    if(this.state.searchValue !== ''){
+    if(this.state.searchValue !== '' && !this.state.loadingSearch){
       var options = {
         keys: ['name', 'long_description', 'short_description']
       };
@@ -98,19 +116,39 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return services;
   }
 
+  cleanSearch = () => {
+    this.setState({
+      searchValue: ''
+    });
+  }
+
+  getSearchIndicator = () => {
+    let searchIndicator:any = null;
+    if(this.state.searchValue && !this.state.loadingSearch){
+      searchIndicator = <i className={classnames("fa fa-times fa-lg", styles.cleanSearchBtn)} onClick={this.cleanSearch}/>;
+    }else if(this.state.loadingSearch){
+      searchIndicator = <i className={classnames("fa fa-pulse fa-spinner", styles.searchIndicator)}/>;
+    }
+    return searchIndicator;
+  }
+
   render(){
     let rolesDropdown = this.getRolesDropdown(),
-        services = this.getServices();
+        services = this.getServices(),
+        searchIndicator = this.getSearchIndicator();
 
     return (
       <Container>
         <Row>
-          <Form onSubmit={(evt:any) => {evt.preventDefault()}}>
+          <Form onSubmit={(evt:any) => {evt.preventDefault()}} inline>
+            <FormGroup className={styles.searchFormGroup}>
+              <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={this.state.searchValue}/>
+              {searchIndicator}
+            </FormGroup>
             <FormGroup>
-              <Input type="test" placeholder="Search" onChange={this.searchOnChange}/>
+              {rolesDropdown}
             </FormGroup>
           </Form>
-          {rolesDropdown}
         </Row>
         <Row>
           <ServicesList services={services} user={this.props.user}/>
