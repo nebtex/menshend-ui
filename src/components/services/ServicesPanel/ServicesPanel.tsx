@@ -6,7 +6,6 @@ import Fuse = require('fuse.js');
 let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
-  roles: string[];
   services: IService[];
   user: IUser;
 }
@@ -37,6 +36,23 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   }
 
   getRolesDropdown = () => {
+    let roles:string[] = [];
+    this.props.services.forEach( service => {
+      service.roles.forEach( role => {
+        if(roles.indexOf(role) === -1){
+          roles.push(role);
+        }
+      });
+    });
+
+    roles.sort(function(a, b){
+      if(a.toLowerCase() < b.toLowerCase()){
+        return -1;
+      }else {
+        return 1;
+      }
+    });
+
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle caret>
@@ -45,7 +61,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         <DropdownMenu>
           <DropdownItem onClick={() => {this.selectRole('All')}}>{'All'}</DropdownItem>
           <DropdownItem divider />
-          {this.props.roles.map((role, index) => {
+          {roles.map((role, index) => {
             return <DropdownItem key={index} onClick={() => {this.selectRole(role)}}>{role}</DropdownItem>
           })}
         </DropdownMenu>
@@ -72,7 +88,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     // Apply search criteria
     if(this.state.searchValue !== ''){
       var options = {
-        keys: ['name']
+        keys: ['name', 'long_description', 'short_description']
       };
 
       var f = new Fuse<IService>(services, options);;
@@ -85,7 +101,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   render(){
     let rolesDropdown = this.getRolesDropdown(),
         services = this.getServices();
-        
+
     return (
       <Container>
         <Row>
