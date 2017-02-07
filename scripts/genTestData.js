@@ -2,7 +2,7 @@ var fs = require('fs');
 var dummyjson = require('dummy-json');
 
 var template = `
-  let services = [
+  [
     {{#repeat 1000}}
     {
       "name": "{{company}}",
