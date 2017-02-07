@@ -13,32 +13,13 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
   state = {
     isInfiniteLoading: false
   }
-  
-  handleInfiniteLoad = () => {
-    console.log('loading more services');
-    this.setState({
-      isInfiniteLoading:true
-    });
-  }
-
-  elementInfiniteLoad = () => {
-    return (
-      <div className={styles.loadItem}>
-        Loading <i className="fa fa-spinner fa-pulse"/>
-      </div>
-    );
-  }
 
   render(){
     let user = this.props.user;
     return (
       <Infinite 
         containerHeight={400} 
-        elementHeight={200}
-        infiniteLoadBeginEdgeOffset={200}
-        onInfiniteLoad={this.handleInfiniteLoad}
-        loadingSpinnerDelegate={this.elementInfiniteLoad()}
-        isInfiniteLoading={this.state.isInfiniteLoading} >
+        elementHeight={200}>
           {this.props.services.map((service, index)=>{
             return (
               <div className={styles.servicesListItem} key={index} style={{height:200}}>
