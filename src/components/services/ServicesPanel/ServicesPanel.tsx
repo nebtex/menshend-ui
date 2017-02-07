@@ -31,12 +31,6 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   }
 
   selectRole = (role:string) => {
-    let filteredServices = this.props.services.filter((service) => {
-      return service.roles.indexOf(role) > -1;
-    });
-
-    console.log(filteredServices);
-
     this.setState({
       activeRole: role
     });
@@ -91,6 +85,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   render(){
     let rolesDropdown = this.getRolesDropdown(),
         services = this.getServices();
+        
     return (
       <Container>
         <Row>
