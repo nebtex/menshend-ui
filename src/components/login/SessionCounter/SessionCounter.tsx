@@ -16,6 +16,8 @@ interface ISessionCounterState {
   seconds:number;
 }
 
+let counterInterval:any;
+
 export default class SessionCounter extends React.Component<ISessionCounterProps, ISessionCounterState>{
   state = {
     hours: 0,
@@ -24,7 +26,7 @@ export default class SessionCounter extends React.Component<ISessionCounterProps
   };
 
   componentDidMount(){
-    setInterval(() => {
+    counterInterval = setInterval(() => {
       let time = this.props.expiresAt - Date.now();
 
       let seconds = Math.floor((time / SECOND) % 60);
@@ -38,6 +40,10 @@ export default class SessionCounter extends React.Component<ISessionCounterProps
       });
     }, 1000);
   };
+
+  componentWillUnmount(){
+    clearInterval(counterInterval);
+  }
 
   getDisplayComponent = () => {
     return (

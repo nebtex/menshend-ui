@@ -63,7 +63,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         <DropdownToggle caret>
           {this.state.activeRole}
         </DropdownToggle>
-        <DropdownMenu>
+        <DropdownMenu className={styles.rolesDropdown}>
           <DropdownItem onClick={() => {this.selectRole('All')}}>{'All'}</DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
