@@ -2,10005 +2,11006 @@ import ServicesPanel, { IServicesPanelProps } from '../ServicesPanel';
 let testLogo = require('../../../../assets/testLogo.svg');
 let Cases : {[id:string]:IServicesPanelProps} = {};
 
-let services = [
-    {
-      "name": "Nitrocam",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing adipiscing accumsan nulla imperdiet, ipsum tortor sodales vehicula est. Tincidunt mi et justo sagittis morbi lobortis orci diam mi felis porttitor, diam orci magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis facilisis orci faucibus nam tempor mattis. Rhoncus e fringilla vestibulum dignissim dui, accumsan augue tempor purus vestibulum ornare proin, dolor dolor elementum sodales pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus placerat eu arcu ligula. Purus nisl quis aliquet mollis sagittis rhoncus, vestibulum est i sed, et in tempor felis massa lacinia consequat sagittis scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Condimentum lacinia adipiscing dictum purus. Pulvinar faucibus a nam ultricies ornare consequat, ornare cras accumsan felis, sit ante enim pellentesque erat, scelerisque eu quis dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt pretium morbi lobortis mollis cursus purus. Tortor vehicula etiam pharetra ultricies proin neque. Arcu lorem dolor ac vestibulum ut proin, natoque vestibulum ut vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus consequat ornare aliquet dignissim est. Hendrerit imperdiet maecenas ligula commodo ultrices. Lacus lectus non euismod tempus tristique dolor sit elementum id, aliquet tempor ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
+let services = 
+  [
     {
       "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus amet gravida maecenas quis tempor e. Tincidunt sollicitudin risus ornare suscipit lacinia, elit quisque cras pretium id sed. Vel non iaculis ex ligula consectetur.",
+      "short_description": "short description Est aenean pharetra condimentum lectus est sem nisl sit pharetra.",
+      "long_description": "long description Natoque condimentum eget placerat elementum eti. Sapien quisque gravida lobortis lacus placerat amet sollicitudin morbi. Justo id natoque placerat ultricies, tincidunt porttitor morbi scelerisque sed natoque, enim et tempus nisi.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Scelerisque.",
+          "At.",
+          "Etiam."
       ]
     },
     {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur eget rhoncus neque quisque ac, rhoncus enim etiam natoque cursus. Enim ipsum ex laoreet elit, non maximus non erat morbi lacinia blandit amet hendrerit.",
+      "name": "Westercom",
+      "short_description": "short description Mauris neque gravida imperdiet amet tempus donec, pulvinar tincidunt etiam.",
+      "long_description": "long description In non natoque leo nunc fringilla quis eros. Et tortor diam risus vel. Ultrices bibendum arcu neque erat proin suscipit. Nunc laoreet sit arcu cras, tristique justo natoque amet leo.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
+          "Pharetra.",
+          "Ultrices.",
+          "Viverra."
       ]
     },
     {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla turpis hendrerit lobortis ultricies. Diam cursus eti vulputate elit consectetur sapien. Ligula aliquam placerat at porttitor. Dui massa vehicula pretium ex sagittis aenean ex.",
+      "name": "Optiplex",
+      "short_description": "short description Rhoncus justo morbi massa amet hendrerit tincidunt pellentesque pellentesque ipsum.",
+      "long_description": "long description Mauris enim proin pulvinar lobortis. Tincidunt facilisis mi porttitor massa accumsan. Massa massa imperdiet curabitur tristique nunc tempus ex nulla. Dui lectus magna facilisis magna et euismod donec sodales accumsan.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Cursus.",
+          "Eget.",
+          "Etiam."
       ]
     },
     {
-      "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices gravida vitae etiam erat tincidunt magna tempor lacinia sem vitae, hendrerit adipiscing lacinia tempor. Eu aenean purus massa velit vestibulum consectetur. Quisque ultricies proin.",
+      "name": "CoreRobotics",
+      "short_description": "short description Nam ornare a sagittis eu viverra. Arcu ornare auctor consectetur.",
+      "long_description": "long description Ultrices dictum rhoncus pretium euismod. Metus faucibus suscipit cras accumsan non auctor gravida massa suscipit a augue. Consequat mi dolor sit tristique. Gravida elit neque scelerisque natoque, nisl viverra faucibus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Bibendum.",
+          "Est.",
+          "Quisque."
       ]
     },
     {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus in metus cras commodo bibendum mauris vulputate mi enim, amet augue rhoncus mattis neque. Eti au vestibulum cursus id at. Iaculis posuere enim vel.",
+      "name": "Creatonix",
+      "short_description": "short description Lobortis hendrerit dictum sed vestibulum blandit tempor viverra mattis nibh.",
+      "long_description": "long description Placerat massa maximus porttitor eros vestibulum est ultricies non. Natoque etiam auctor est rhoncus justo ac. Rhoncus viverra nunc sodales lacinia. Cursus quis diam massa porttitor amet, consectetur rhoncus porttitor.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae morbi tristique tristique lacinia mi, aliquet placerat consectetur euismod, amet rhoncus sit a facilisis a, id pharetra scelerisque elementum donec orci, facilisis nibh adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus lobortis maecenas tempus bibendum porttitor. Eros natoque ac ex morbi cras, mattis lacus felis etiam nam dolor erat quis gravida ligula elit laoreet vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac proin ex tortor lobortis turpis diam lacinia sodales ipsum. Suscipit viverra eros lacinia auctor turpis metus curabitur risus commodo, ex amet condimentum ac purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elementum pretium etiam justo etiam. Nam eu fringilla tortor. Hendrerit euismod est augue, rhoncus diam posuere pulvinar sed sit mi i imperdiet est gravida porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti nisi nibh commodo tempor. Scelerisque ipsum imperdiet lacinia fringilla cras consectetur sit. Morbi lorem lorem laoreet ligula ante pulvinar morbi, mi proin fringilla sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla consequat nam sodales euismod ex amet tempus ac i lorem elementum vitae faucibus maecenas magna vestibulum iaculis, erat iaculis vestibulum morbi, posuere natoque lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Proin lobortis consectetur posuere pellentesque, metus natoque commodo sed erat au. Commodo amet sed justo pellentesque sagittis nisl metus ac dignissim. Scelerisque blandit aliquam nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description In blandit quis ornare adipiscing sodales adipiscing. Arcu i enim facilisis sapien. Maximus sollicitudin donec aenean curabitur suscipit maximus tristique, nisi laoreet lacinia cursus ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor aenean neque neque dictum quis in tristique dictum. Mi tincidunt enim pulvinar iaculis tincidunt ornare, maecenas sem vehicula nulla suscipit, enim diam aliquam aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae erat tempor aenean mattis placerat consequat laoreet, lectus elementum ante nibh vitae, a ante blandit imperdiet eget sapien maecenas. Gravida natoque amet vestibulum nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus finibus at accumsan eget auctor eget ex, eros ultricies sodales enim. Elit mauris imperdiet a. Lectus ligula viverra accumsan dolor dignissim sagittis elit ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi proin facilisis est non eti, vestibulum massa tristique augue sollicitudin nulla morbi adipiscing. Porttitor lacinia auctor justo morbi nisi. Nisl vel quis fringilla rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus posuere pretium scelerisque erat ipsum. Sodales lobortis blandit nam sed, rhoncus nam au hendrerit condimentum, quisque ut purus tortor pellentesque eti aliquet elementum pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum vehicula accumsan vel dui in velit sodales lectus vestibulum ultrices nisl augue at turpis ac pellentesque in au e. Mauris condimentum consequat hendrerit rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi lacinia maecenas sagittis dolor, tincidunt consequat bibendum lacinia. Non posuere nunc non natoque maximus commodo maecenas consequat nam condimentum nam et donec placerat ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut justo metus massa ut ex bibendum massa, elit ipsum quis scelerisque massa, nisl sodales arcu ex est adipiscing lobortis dignissim quis. Orci ut quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt ut sodales est ultricies. Non ipsum au mauris posuere. Vitae dictum ornare eget i pulvinar dolor nam. Mi velit consectetur sagittis dui arcu rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida sapien nibh sapien sollicitudin porttitor lorem ex justo lorem suscipit eti arcu lobortis eti nisi quisque, sapien pulvinar hendrerit imperdiet est mauris nibh maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non velit natoque elementum dictum nibh lacinia. Dictum aenean ex diam, quis nulla facilisis neque, i augue dui tempus. Fringilla nulla arcu ac adipiscing sapien.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et bibendum leo lobortis consectetur est lacinia turpis sed consequat maecenas maecenas consequat ultricies, magna eros placerat ultrices blandit, posuere gravida erat dignissim sodales elementum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description E faucibus et sit neque turpis ante dolor proin auctor dignissim, sit rhoncus blandit laoreet nisi. Porttitor placerat lacus viverra. Tincidunt iaculis sapien leo sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida gravida porttitor a gravida eros tincidunt imperdiet. Laoreet risus au elementum ante tempus ante velit. Iaculis arcu cursus suscipit posuere vitae quisque in dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Magna velit est bibendum enim cras euismod ultricies. Ut cras placerat eu. Quisque lorem metus etiam quisque cursus, scelerisque leo at justo natoque tempus aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui tristique eget imperdiet vitae nibh massa magna. Magna mattis vitae eget arcu lobortis risus nibh cras morbi nibh accumsan turpis turpis tempor turpis risus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sodales euismod nulla consectetur nibh sodales, ac proin amet eu est non dolor lobortis ornare. Tincidunt maximus id justo. Pulvinar tincidunt tristique pellentesque dolor mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
+          "Blandit.",
+          "Vulputate.",
+          "Placerat."
       ]
     },
     {
       "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor sit vel accumsan viverra ligula. Vel natoque maximus dictum. Facilisis eget aenean lacinia. Tempus iaculis velit mollis. Proin vel blandit tortor ipsum vehicula gravida.",
+      "short_description": "short description Nunc vitae ac massa risus at vulputate a lorem maximus.",
+      "long_description": "long description Sapien lobortis maximus dolor sagittis laoreet, enim ante maximus elit dolor faucibus sagittis velit vulputate tempor nisl imperdiet rhoncus. Nulla quis aliquam cursus eu scelerisque. Non lacinia mattis imperdiet vehicula.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan rhoncus id maximus sem facilisis, cras gravida morbi etiam nam. Ipsum magna rhoncus tincidunt pharetra pretium risus vestibulum lobortis consequat ligula finibus ornare facilisis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus au id purus dignissim. Ligula faucibus elit lacinia tempor faucibus commodo. Finibus fringilla in sem lacinia lobortis sit. At nibh cursus eros vestibulum id.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit placerat augue condimentum mauris nulla amet. Lectus ultricies magna tempor adipiscing. Mi mollis blandit dignissim adipiscing lacinia quisque pharetra, metus tristique faucibus pharetra finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
+          "Ultrices.",
+          "Elementum.",
+          "Cursus."
       ]
     },
     {
       "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem tincidunt dui proin sit, iaculis in pellentesque dignissim a sollicitudin. Tortor i augue commodo hendrerit. Viverra bibendum rhoncus tristique a velit et lacinia id.",
+      "short_description": "short description I cursus in nunc cursus sollicitudin purus non massa in.",
+      "long_description": "long description Vulputate felis risus posuere tincidunt eros id suscipit diam diam ultricies eget vehicula, tempus maecenas au ultricies lacinia enim. Dictum mollis porttitor vestibulum euismod mollis mollis aenean. Nunc natoque arcu.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 5"
+          "Lorem.",
+          "Cras.",
+          "Nisl."
       ]
     },
     {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur finibus maximus etiam vulputate, ut e quisque at elementum. Lacinia tortor ante elementum vulputate, consectetur iaculis et vestibulum aliquet. Metus sit sollicitudin ut vehicula.",
+      "name": "Solexis",
+      "short_description": "short description Eti diam lorem augue bibendum tempor, consectetur erat aliquam nisl.",
+      "long_description": "long description Curabitur aliquam rhoncus pulvinar pretium augue mattis. Quisque iaculis ligula massa sodales augue elementum mollis. Laoreet enim elementum cras. Suscipit suscipit ipsum felis purus, velit maximus nam lacus sodales ex.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit enim mollis rhoncus tincidunt ante morbi felis, pellentesque vestibulum erat eti. Proin mi risus hendrerit ultrices. Aliquet augue tortor ornare tempus, risus id pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Seelogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra vulputate euismod enim facilisis, eros faucibus tempus aliquam suscipit, eti eros nunc proin et dictum dolor, sit et bibendum velit cras maecenas risus ut.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan arcu ut ante a. Est lectus sed dui. Tempus ante id quisque, facilisis sem ipsum pulvinar ante ultricies, viverra vestibulum cras consectetur neque enim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque tempus iaculis eget turpis. Lectus tincidunt aliquam adipiscing. Id lobortis cursus sapien pellentesque commodo proin eget. Donec placerat nam placerat tempor facilisis elit ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis quis turpis sapien magna adipiscing at bibendum ex nunc, cursus vitae id sit elit maximus au posuere magna, in i aenean vulputate sollicitudin maximus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus aenean aenean ipsum lacus donec metus vulputate au non donec. Sollicitudin arcu quisque aliquet in dictum. Orci cursus aliquam purus. Condimentum auctor curabitur amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Condimentum etiam ligula placerat a, auctor ligula au ac i consectetur sodales tristique lectus. Placerat massa eu placerat ornare nibh imperdiet et. Ex pellentesque iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit cursus proin euismod iaculis maecenas curabitur ultrices ex fringilla dolor nam justo felis. Felis vulputate ultricies diam enim posuere. Turpis hendrerit nunc mauris curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elit eros lorem placerat facilisis, tempor cursus aliquet quis vestibulum lacinia. Turpis gravida mi ante, cursus mauris erat sem ante natoque posuere lacus enim facilisis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras ultricies maximus iaculis suscipit facilisis nulla. Porttitor quis id sapien, leo dictum tincidunt ligula, purus ac cras auctor. Non eros euismod felis consequat ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis vulputate massa sollicitudin lacinia. Cras quis nibh non gravida sagittis non natoque lobortis risus, lacus augue auctor arcu, diam nisl velit justo scelerisque ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur pharetra elementum fringilla maecenas erat sollicitudin, nibh magna donec tristique, mollis consectetur nisi justo morbi maximus pharetra lorem, mollis laoreet natoque donec ornare sapien.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit amet porttitor magna sem leo bibendum dui dui ultrices placerat vehicula eti, ultrices condimentum nibh imperdiet cursus elementum vulputate magna nisi mauris maximus sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultricies vulputate sagittis non sit. Purus id imperdiet morbi lacinia quisque hendrerit turpis adipiscing curabitur, risus ultrices magna ornare. Vel finibus cras eros aenean sodales.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis et dolor maecenas donec erat bibendum sagittis natoque i. Fringilla nisl aenean nam, nulla a vehicula sapien nulla imperdiet. Maximus metus fringilla commodo est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod commodo dolor maximus est rhoncus eget viverra purus rhoncus ornare, euismod vel natoque ornare. Eget velit lacinia vitae. Dictum maximus dolor dui est amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum consequat morbi turpis hendrerit elit adipiscing tortor blandit nisi lacinia. Ultricies i lacinia scelerisque sodales in nam. Ac sit sem neque. Lacinia sollicitudin blandit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt proin etiam gravida justo tristique, eu pretium facilisis faucibus dolor ac, porttitor consectetur aenean maximus adipiscing dignissim natoque, mollis commodo vel nibh augue mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis placerat mattis tristique sem viverra sodales, felis a tincidunt nulla sodales lobortis tristique tristique lectus augue pellentesque augue. Ipsum eros commodo morbi mi facilisis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eu donec pharetra quisque id purus lacinia risus, facilisis lacinia augue pulvinar. Maximus a vitae nibh dignissim tempus magna neque. Felis vitae aenean in faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus finibus tincidunt porttitor cursus. I facilisis vestibulum maecenas metus placerat orci natoque eros. Tristique iaculis neque neque, gravida cras cras dictum, sem sollicitudin eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit nunc laoreet amet quisque iaculis. Aliquet facilisis lectus vel, pellentesque ligula ultrices etiam, curabitur ut lacus eu nisi pulvinar quis eu gravida scelerisque tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eu nibh ligula quis erat orci etiam justo aliquam, i velit laoreet tempus, sit dignissim massa facilisis nunc accumsan, proin pharetra arcu euismod curabitur viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consequat facilisis eget eu etiam auctor. Facilisis porttitor et euismod morbi. Pretium mi ante finibus. Eti cursus diam at amet quis tristique vitae vulputate pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description I sem sollicitudin facilisis mollis. Arcu at sed vehicula donec arcu a. Vehicula nam laoreet pulvinar. Sagittis enim mollis felis. Quisque sed laoreet ornare sollicitudin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pulvinar mauris hendrerit sollicitudin maecenas. Facilisis vitae pellentesque ex i hendrerit eros. In natoque elementum scelerisque. Morbi pharetra adipiscing ex. Erat erat aliquet suscipit pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus ligula gravida elit lacus arcu risus, pulvinar elit nibh sapien. Nisi felis eti lobortis, sagittis fringilla magna tortor. Ultricies ex nam etiam purus lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis eget posuere augue mauris vulputate accumsan magna placerat adipiscing elementum tempor imperdiet etiam consectetur. Posuere ut et bibendum risus ante. Dolor turpis proin donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet dignissim fringilla metus felis. Facilisis diam natoque nam. Posuere sit quisque nisi, at e leo placerat tortor amet ornare natoque finibus. Ac sodales dolor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia at bibendum donec rhoncus. Eget bibendum mollis finibus suscipit eu. Cursus justo tempor sit nunc sagittis pulvinar neque amet. Porttitor eu mollis e lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis euismod suscipit pellentesque vitae orci felis. Bibendum erat lacinia nibh dignissim lobortis fringilla ornare. Auctor risus nisi lectus mauris mattis dignissim eget natoque iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl sagittis velit dictum aliquam. Sem nunc neque adipiscing massa sodales. Consectetur nam dignissim et etiam. Vulputate erat vehicula sit elit, blandit maecenas nisi nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet nisi viverra lorem turpis. Consequat pellentesque eti sapien, dictum vitae eu etiam bibendum, commodo quis tristique sodales accumsan. Mollis morbi eti sit mollis metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet massa mattis adipiscing ac felis, laoreet proin sapien quis scelerisque natoque mattis tempor, mattis magna cras nisi eros. Tristique natoque etiam elit id dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat elit vulputate leo tortor ac bibendum viverra ligula ligula magna. Finibus lacus mollis cursus ut maximus enim. Enim lacinia bibendum hendrerit velit tortor pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur natoque commodo hendrerit pulvinar orci vehicula iaculis tincidunt vestibulum eget ut est gravida fringilla. Suscipit erat au mi. Felis enim aliquam sodales ex fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor morbi vehicula vulputate accumsan erat ante, risus rhoncus justo eros finibus. Placerat non risus leo iaculis mattis. Bibendum id tempus lorem pulvinar in natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex cras ligula cursus ornare, lectus ipsum cursus vitae in sagittis lobortis orci velit mattis vestibulum, tristique cursus elementum nibh. Pretium nunc lacus auctor dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla viverra aenean lectus turpis lorem nisl. At morbi iaculis dui ultricies. Blandit scelerisque porttitor a. At sagittis dolor aliquet at nibh vulputate id a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus velit erat lacinia ultrices consectetur vitae, arcu tristique lacus velit. Risus risus placerat amet viverra porttitor nunc. Sed pretium est risus nam sed tortor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit sed consequat bibendum a e maecenas in tincidunt e vel dignissim blandit, ex placerat nulla erat. Ligula purus mattis leo sit bibendum sed commodo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris quisque tristique ex nibh diam elementum sagittis pellentesque, amet ornare au rhoncus, e diam risus tristique, metus sed turpis ultrices elit elementum risus dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Connic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non vulputate id nunc iaculis, commodo natoque maecenas aliquam, sollicitudin imperdiet aliquet vitae imperdiet. Risus quis donec vestibulum, consequat quis proin vehicula. Suscipit e lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor eu adipiscing etiam in nisi tempor dolor elementum lacinia velit proin. Aenean amet placerat tempus metus elit nulla orci in, nisi pellentesque natoque euismod.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hypervision",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus lectus id tristique i suscipit porttitor turpis. Cursus nisl velit turpis blandit nam. Pulvinar viverra lorem ultrices imperdiet. Enim lacus et orci magna sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et eti lectus ultrices blandit, imperdiet ipsum in mi ex sit, maximus blandit justo sit dignissim gravida, sodales hendrerit porttitor i aliquam ornare lorem tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra rhoncus nulla justo purus bibendum augue nulla tristique nunc, mauris lacus in rhoncus, metus pulvinar magna est. Dignissim sollicitudin lacinia maximus, sit massa risus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia augue proin vulputate justo tempus est, faucibus nunc vitae sed, nulla enim aenean ex aliquam cursus. Aenean quisque nisl ipsum fringilla. Ornare finibus risus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla pulvinar pretium bibendum curabitur ultricies. Consequat ultricies iaculis sollicitudin donec quisque nibh, sollicitudin ornare ipsum cras in lectus pulvinar. Est curabitur dignissim est cursus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl eget nulla scelerisque augue bibendum lectus viverra lacinia amet non, cursus fringilla vestibulum at. Sollicitudin sapien mollis adipiscing vitae. Pellentesque eros tortor justo auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui purus sit dignissim sodales. Orci consectetur nibh maximus hendrerit tempor tempus dictum, pretium neque justo etiam enim proin viverra dolor neque turpis ornare nisi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis vitae blandit ultrices pharetra elit pulvinar, condimentum sodales natoque neque, sapien mollis turpis elementum eget fringilla eti. Curabitur i diam eu at eu eget.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est purus justo au ultrices dignissim risus id. Bibendum at condimentum nam sodales. Lobortis proin bibendum elit ut lobortis velit. Morbi tincidunt natoque amet tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus etiam ultrices au ac nam et nisl, commodo nunc mi dui pellentesque sodales e blandit vehicula, enim faucibus pretium dui magna elementum in vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sollicitudin lorem ex ex condimentum scelerisque justo vitae hendrerit. Risus ultrices purus mollis aliquam suscipit vestibulum quisque dignissim. Nibh posuere et consequat pulvinar finibus aenean.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus purus in leo vehicula condimentum metus auctor, pharetra lorem elit orci erat, finibus massa natoque sodales. Imperdiet magna sed au cursus a arcu et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus ligula nunc sit augue pretium turpis lectus auctor dolor. Viverra leo ipsum leo. Mattis amet sodales nisi, hendrerit ultrices tristique consequat quisque in nam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus lectus justo risus ipsum lectus. Id morbi auctor hendrerit elit lobortis ipsum ante. Porttitor lacus i auctor. Condimentum purus bibendum sed, commodo diam ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor suscipit at tortor turpis eros maecenas proin magna. Ut id i eros eget ligula e pellentesque lobortis, ultrices ligula donec purus nam lacus natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla rhoncus a quis accumsan i neque lorem morbi, porttitor finibus nisi auctor felis, lacinia donec lacinia curabitur accumsan augue, sem leo dictum accumsan e.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod scelerisque fringilla purus eros sit justo sagittis, turpis blandit porttitor diam a ut justo sollicitudin i lorem, consequat sit turpis sit, posuere in neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eu pharetra nunc ligula et. Imperdiet curabitur justo pellentesque e. Natoque ultrices mattis diam consectetur in. Morbi elementum mauris condimentum nulla condimentum lobortis posuere suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium dignissim nisl donec mattis mattis massa quisque elit ipsum, accumsan ac massa lacinia. Tincidunt iaculis velit lobortis, sem natoque euismod ultricies in lobortis ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem leo commodo placerat consequat, enim euismod mauris placerat. Consectetur tortor nibh purus viverra. Dictum id placerat pretium natoque. Ac pretium turpis nisl sagittis at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hypervision",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eget non eget cras bibendum. Leo hendrerit ac arcu condimentum curabitur pulvinar metus ipsum. Lobortis sit lacinia consequat condimentum, vehicula quis aliquam finibus laoreet tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elit ante adipiscing cras scelerisque. Ex fringilla consequat sit sit pulvinar. Dui quis pretium maximus. Porttitor arcu diam et ligula, pharetra metus a enim quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod porttitor lobortis iaculis e ornare. Proin consectetur hendrerit cras cras. Vitae lobortis imperdiet maecenas ut. Dictum lacus pellentesque nulla. Tortor condimentum fringilla sem imperdiet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum pharetra commodo cras curabitur arcu diam auctor, ex risus cras tempor vitae. Proin curabitur et rhoncus. Consectetur etiam laoreet pellentesque pulvinar neque pharetra pellentesque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan pretium proin leo iaculis. Lorem accumsan tincidunt lacinia ligula scelerisque purus dictum sagittis at, auctor id dignissim eget pellentesque tincidunt tempor cursus tincidunt et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Thermolock",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus elit morbi viverra diam a, pharetra cras accumsan mi. Lacinia rhoncus faucibus dictum id lacinia eu auctor cursus e. Gravida vehicula fringilla condimentum a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros hendrerit finibus non cras sodales, iaculis tristique sodales mi viverra. Facilisis pretium metus augue mollis porttitor neque, sit auctor dictum aliquam etiam auctor blandit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Amet justo lobortis lorem aliquam adipiscing. Vulputate nunc enim velit. Lectus amet sapien sollicitudin. Erat non amet augue erat, curabitur enim nisi arcu ante auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au bibendum ex vestibulum ante. Suscipit ex maximus mi facilisis maecenas, cras sagittis rhoncus blandit porttitor. Id metus vestibulum laoreet, nisl amet dictum nam scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Viverra et nisl aliquam dignissim consequat maximus lacus, lorem ut nibh ut. Auctor enim aenean fringilla. Felis augue adipiscing lacinia erat elit mollis eros commodo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam proin aenean pharetra leo risus lacinia viverra non. Donec ultrices tempor tortor neque accumsan hendrerit arcu eu justo etiam bibendum euismod dolor sodales ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam cursus e felis elit. Iaculis etiam hendrerit sem sagittis in vulputate ornare sollicitudin euismod. Lacinia dictum curabitur donec scelerisque. Quisque nam bibendum id tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat vestibulum id felis eu elementum finibus aenean. Curabitur suscipit hendrerit elit curabitur bibendum lacinia quis. Diam a diam tortor augue. Ut nam erat hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Citisys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet viverra pretium diam consequat ante lectus tristique. Nibh lorem quisque sapien. Iaculis cursus suscipit mi quis. Mauris finibus quisque aliquet rhoncus nulla at sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia ut aenean id nisl. Facilisis arcu a ultricies, accumsan augue pharetra bibendum tortor. Posuere i eros tristique massa, lacinia ipsum cursus quisque posuere nisi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed gravida adipiscing augue mollis tristique dignissim faucibus, commodo purus laoreet auctor, ornare augue ultricies e velit at. Pellentesque velit vestibulum aliquet magna vestibulum non.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis elit laoreet augue gravida. Lacinia mattis massa ornare lectus ligula. Rhoncus amet ante donec iaculis vitae vitae sit sem neque, eget proin i vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit nibh placerat ipsum tempus, laoreet leo pellentesque lacinia id. Neque quis vel eros aenean elit orci diam bibendum magna pulvinar risus ligula proin turpis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Unilogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus sit condimentum orci ultrices commodo vitae adipiscing nisi elit. Scelerisque mollis sagittis dolor vitae ornare mi proin. Nunc sem auctor nisi tristique ac pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
+          "Pellentesque.",
+          "Natoque.",
+          "Magna."
       ]
     },
     {
       "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat mollis ligula ornare magna magna. Quisque euismod donec lacus. Sem at sapien placerat a facilisis rhoncus non. Sit erat lectus e sit ac vel.",
+      "short_description": "short description Pellentesque mauris enim pharetra rhoncus. Finibus commodo posuere scelerisque e.",
+      "long_description": "long description Nibh diam placerat maecenas lacinia aenean ac risus erat amet auctor donec leo. Ante leo lacinia mauris arcu mattis mauris sollicitudin in natoque. Imperdiet curabitur aliquam enim ornare vestibulum i.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus adipiscing sem erat facilisis iaculis eu. Posuere e non pellentesque ornare porttitor metus neque. Quisque i in a e suscipit, non mi vitae arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description A nisi sagittis lobortis etiam commodo arcu commodo. Ante ultricies imperdiet ipsum tempus sed, cras vehicula nisi dictum condimentum, est erat rhoncus felis adipiscing enim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit est proin finibus metus curabitur tincidunt vitae. Erat consequat orci maximus mattis au. Aliquam donec donec imperdiet. Fringilla nam ultrices sed nulla augue cursus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare sapien lectus tempor blandit. Nisi blandit posuere tempor erat porttitor velit gravida ipsum diam nisi tempor, eu tincidunt ac faucibus. Magna est sagittis lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet euismod lorem tortor ligula pulvinar morbi viverra pulvinar ornare, au finibus lobortis viverra. Lobortis gravida est purus gravida quis eget consectetur eget imperdiet diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor vel metus pharetra dignissim dui maximus, fringilla morbi sem consequat ante fringilla non id finibus finibus, accumsan nibh a nam. Enim lacinia at mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis erat purus i pellentesque lacus blandit mi vestibulum. Pharetra cras dolor dignissim dignissim. Aliquam eti nisi leo. Nam natoque ligula cursus eros natoque aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Citisys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum faucibus est mi turpis proin. Et mauris pharetra tincidunt turpis scelerisque. Ligula sollicitudin quisque diam faucibus mollis, hendrerit cursus scelerisque eu eget et aliquam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Leo finibus elit leo vestibulum vulputate ornare ante vulputate, nibh cras ex velit mollis, ultricies lacus cursus ultrices eros sit. Felis ultricies justo est laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt ac a et amet. Mauris lobortis elit posuere nibh dictum natoque eti mi in tortor, massa donec tincidunt ac lorem quisque justo a tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lorem tristique dignissim porttitor ut erat blandit vel tincidunt justo, pellentesque sem ipsum laoreet. Sem mauris condimentum tincidunt maecenas sollicitudin natoque massa placerat mollis accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description E sollicitudin id velit iaculis lacinia. Eu ante mollis scelerisque nunc lacinia. Sodales ex mi consequat tempor finibus. Sodales auctor posuere e nisl elit condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Natoque posuere sagittis turpis velit natoque. Ultrices erat quisque erat, rhoncus justo laoreet aliquam. Iaculis eros consequat nam adipiscing viverra i lacinia. Iaculis placerat mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem sit nunc et lacinia ante gravida sodales ex. Tortor finibus enim rhoncus bibendum metus, ex nibh natoque morbi lacus. Consectetur ipsum id ex tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit ante ante nisi lectus. Mollis pellentesque e suscipit. Aliquet donec aliquam mollis, erat elementum natoque maximus maximus metus enim, elementum cursus turpis i arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan natoque sodales condimentum commodo turpis in. Ex sollicitudin tempus amet ac, lorem neque fringilla eget, vehicula elit mauris bibendum. Consequat tempor consequat risus sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel dignissim posuere augue quis ligula elit ut. Porttitor dictum porttitor pretium est erat commodo. Nulla elementum neque dolor lorem, magna vulputate consequat ante tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit eros tempus sem mauris eu tristique consequat. Dolor maximus lobortis auctor velit vulputate. Laoreet ante natoque nisi aliquam, commodo velit dignissim condimentum mauris donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla e ipsum amet amet aenean lectus. Eti a ac vulputate consectetur pulvinar. Ac gravida natoque vestibulum, felis viverra tortor ac justo sapien eti orci.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula adipiscing commodo vel risus. Ultrices pellentesque quis at. Mattis a maecenas amet mauris sodales arcu. Risus tempor nisl tempor consequat mattis bibendum turpis placerat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quisque nibh lorem nibh augue nulla maecenas vitae tincidunt turpis. Sed enim hendrerit ac. Mattis erat aenean consectetur, diam nibh massa vulputate gravida maecenas lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque bibendum blandit nisl diam vel velit pulvinar. Dolor nam ligula ac. Pharetra in bibendum ultricies. Curabitur dui turpis posuere, tempor massa euismod ipsum metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh imperdiet cras vestibulum nam elit eget neque donec magna tincidunt a et tempus. Donec lorem tristique euismod finibus, cras proin sed vehicula pellentesque mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat mauris accumsan gravida mattis donec tortor dictum pellentesque. Dignissim dictum ultricies vestibulum orci risus, lacinia curabitur erat viverra lectus fringilla, magna velit massa ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor laoreet adipiscing a au. Ac maecenas auctor elit i risus massa magna a erat adipiscing lacus. Consectetur sapien vestibulum at aliquet adipiscing dignissim aliquam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra maximus et laoreet pretium elit in. Eros suscipit aenean eget est magna. Viverra ultricies tempor maximus, vitae id auctor porttitor aliquam. Vitae proin magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non magna viverra massa dictum adipiscing suscipit augue. Proin nulla morbi lobortis sed vel i id quisque sapien sagittis suscipit elit lacus vestibulum ornare condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti enim proin nulla aenean quisque tortor ac. Aliquam quis blandit vehicula, sagittis consectetur au cras erat. Pulvinar ante ligula faucibus laoreet consequat au pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Leo bibendum orci aliquet felis vehicula sodales et. Tempus maximus magna ac. Nisi elementum ligula vitae. Purus bibendum pellentesque blandit, tristique quis in ultrices at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum maximus non fringilla ornare etiam nulla. Aliquam felis pharetra amet erat, quis commodo nibh lorem. Natoque posuere aliquet dignissim, nam dolor eu lacinia purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras ac maximus consequat quisque a scelerisque pharetra nunc leo tempor eget pulvinar mauris porttitor. Sapien nulla lacinia vel felis, lacinia pretium fringilla quisque eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Condimentum dignissim fringilla sapien ornare. Rhoncus ligula mauris nulla velit. Ut elit bibendum bibendum. Ornare natoque sollicitudin nisi dui nam metus. Cras lorem suscipit vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla at in ligula orci viverra euismod ac, metus finibus elementum enim nunc vitae hendrerit porttitor. Id ornare justo dui est blandit vitae lorem mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros iaculis erat lorem quis lorem cras, mauris dignissim condimentum nisl morbi lacus, maecenas fringilla nunc sagittis. Vehicula lorem aenean et, condimentum felis quis curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Magna donec lorem e dignissim. Dui id metus vitae felis purus. Eu vestibulum mi nunc placerat. Pharetra ultrices ipsum aenean placerat laoreet, velit dignissim tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus auctor aliquet consequat enim euismod velit eti. Commodo non sem tempus ut. Finibus maecenas ante adipiscing. Proin ornare placerat metus magna justo metus arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maximus lacinia in massa nisi. Ligula diam gravida turpis fringilla faucibus felis. Sem non dui et. Viverra vel scelerisque non dui eget, lacinia blandit ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula adipiscing facilisis lorem diam erat. Tempus lacinia cras leo, sodales viverra eu magna. Purus iaculis pharetra dignissim i, lacinia imperdiet sapien finibus at vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor sodales nulla rhoncus tortor risus sapien iaculis scelerisque accumsan etiam lobortis rhoncus auctor lorem eros magna, pharetra vehicula consequat i. Nisi curabitur tortor elementum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc non bibendum ornare amet sollicitudin nisi pharetra tristique, sollicitudin sapien diam ipsum. Tortor enim purus donec lacinia sagittis nibh pellentesque est neque laoreet adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis aliquam massa tempor elementum tempor, donec neque pretium bibendum pretium tempor nulla finibus pretium, neque imperdiet facilisis hendrerit eu pulvinar, tincidunt purus lacinia consectetur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus ligula vel nam aliquet ac lectus est nibh pulvinar leo nulla hendrerit vestibulum. Mi augue ligula augue sapien e sodales nibh tristique orci sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maecenas erat morbi enim ultricies nulla, amet diam arcu maecenas. Pellentesque risus sit scelerisque. Vel non mattis viverra aliquam. Consectetur proin nam purus ac laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus at consectetur fringilla non lacinia metus hendrerit ultricies ipsum metus, proin massa nulla laoreet nunc ut natoque. Mollis iaculis eget scelerisque vulputate erat sollicitudin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Leo cras condimentum eget tristique. Elit cursus orci donec. Quisque vel gravida purus sollicitudin augue ac enim vestibulum laoreet at. Pharetra vel vehicula faucibus magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo viverra erat cursus laoreet. Sapien i lorem metus rhoncus tortor consectetur. A sagittis velit vulputate elit diam vitae ultricies, sodales lorem lacinia tincidunt nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis dui nam eros ultrices. Finibus et turpis enim dolor ac aenean. Dolor dolor pretium tristique, blandit aliquam suscipit faucibus tempus eros euismod donec suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur velit aenean vestibulum sagittis pulvinar. Risus lectus tortor euismod. Iaculis sed auctor dictum. Pulvinar tortor euismod porttitor mauris donec sed. Ultrices ac i nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra at ipsum lobortis vehicula et vitae pretium orci, augue a au est cras neque blandit dui. Iaculis ut velit hendrerit vitae nibh lacinia gravida.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maecenas dui justo viverra consectetur laoreet. Lacinia vestibulum euismod aliquam. Erat nibh massa nunc quis, augue nunc magna aliquet risus. E id au ornare lorem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
+          "Lorem.",
+          "Gravida.",
+          "Massa."
       ]
     },
     {
       "name": "Connic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor porttitor sodales eti ultrices arcu placerat aliquam au. Aenean lorem pellentesque sem. Ante neque ut laoreet imperdiet velit ornare tortor, ac adipiscing accumsan natoque.",
+      "short_description": "short description Faucibus mollis nunc justo mollis purus. Suscipit non lacinia felis.",
+      "long_description": "long description Metus e et consequat quis dignissim tristique euismod vitae ultrices a natoque facilisis, lacinia enim dolor gravida, diam bibendum cras ut dolor curabitur auctor, sodales scelerisque ac et au et.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Pretium.",
+          "Nulla.",
+          "Morbi."
       ]
     },
     {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Arcu dui auctor bibendum aenean lobortis neque eu i proin tortor dui eget vestibulum sapien metus, id consectetur vulputate eros iaculis. Ipsum purus tortor nibh.",
+      "name": "Citisys",
+      "short_description": "short description Ornare aliquet bibendum eti pharetra. Lectus tempor sapien hendrerit aliquet.",
+      "long_description": "long description Nibh fringilla tempus sem tortor ex sodales orci tincidunt dolor nulla ut vitae pharetra. Suscipit curabitur quisque i. Vestibulum nisi ex ultricies etiam eu, mattis curabitur mattis velit elit pellentesque.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Nisi.",
+          "Non.",
+          "Consectetur."
       ]
     },
     {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae imperdiet hendrerit tortor suscipit condimentum. Sit pretium ex eros eti mollis erat hendrerit ultrices. Viverra accumsan neque sed accumsan blandit blandit. Curabitur curabitur ultricies.",
+      "name": "DynaAir",
+      "short_description": "short description Nulla etiam tempus elit vestibulum. Auctor vestibulum dui neque sem.",
+      "long_description": "long description Id au sagittis dui mollis, sapien et purus purus dui, purus sagittis a nisl velit elit pellentesque blandit elementum, dignissim aenean et dui velit. Sit cursus placerat tincidunt natoque leo.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Nibh.",
+          "Tortor.",
+          "Iaculis."
       ]
     },
     {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac pharetra vehicula sodales nibh ut purus, enim ultrices turpis id aenean. Etiam sit ligula quis mattis, tortor ut aliquam vitae vestibulum accumsan a iaculis.",
+      "name": "Logico",
+      "short_description": "short description I vehicula sollicitudin sagittis maximus diam porttitor i magna purus.",
+      "long_description": "long description Lectus condimentum nulla maecenas magna, sed aliquam in sem facilisis. Sit neque cursus imperdiet, consequat et lacinia consectetur. Pellentesque facilisis maecenas imperdiet eros diam, purus rhoncus tincidunt maximus amet sodales.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Eu.",
+          "Elit.",
+          "Donec."
       ]
     },
     {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut sollicitudin diam vulputate aenean, amet erat ornare hendrerit massa consequat lacinia gravida, viverra quis consectetur ultrices. Aenean lacinia faucibus eget proin erat consequat adipiscing.",
+      "name": "Bellgate",
+      "short_description": "short description Ex suscipit euismod curabitur condimentum consequat euismod at commodo laoreet.",
+      "long_description": "long description Ac scelerisque ac dui lacus etiam lacinia ante. Eget nisl ligula vel orci metus eros dictum, ac natoque pharetra justo. Purus elit sit aenean suscipit. Cursus felis e iaculis eros.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
+          "Faucibus.",
+          "Eu.",
+          "Dui."
       ]
     },
     {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum tristique imperdiet maximus orci turpis ligula purus, nunc laoreet non turpis. Rhoncus e sed cursus leo. Erat sapien blandit ultrices accumsan curabitur sed auctor.",
+      "name": "Logico",
+      "short_description": "short description Mauris massa erat eros purus. Tempor leo turpis ultricies quisque.",
+      "long_description": "long description Au placerat lacinia i condimentum nibh ultricies id, nam vel quis mollis fringilla, i facilisis vehicula amet. Fringilla tincidunt mollis elit sed augue, et quis tempus i, eget morbi lacinia.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Non.",
+          "Eget.",
+          "Aliquam."
+      ]
+    },
+    {
+      "name": "Logico",
+      "short_description": "short description Velit aliquet gravida enim massa, vulputate morbi gravida sed in.",
+      "long_description": "long description Id rhoncus sed donec dui. Quisque erat gravida facilisis auctor purus. Metus dui iaculis lacus. Faucibus est lacus tristique. Et vel mauris laoreet nam augue tempor vulputate eti sodales condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quisque.",
+          "Sapien.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description Aliquet cursus eget nam vulputate. Nam cursus et curabitur quisque.",
+      "long_description": "long description Pharetra adipiscing rhoncus sollicitudin mollis purus consectetur non mauris. Rhoncus lectus tortor blandit consectetur laoreet eget sem lacinia natoque. Cras metus viverra gravida hendrerit sollicitudin. Eti pretium eti vitae tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Ex.",
+          "Au."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Ligula orci ultrices nibh arcu. Etiam felis ipsum placerat dui.",
+      "long_description": "long description Lacinia quisque ut hendrerit eti. Elit scelerisque ipsum vehicula. Aliquet sapien curabitur elementum. Auctor eu lectus tempor tortor natoque imperdiet sit. Placerat adipiscing maecenas consectetur scelerisque. Lorem id massa tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ante.",
+          "Amet.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "Viewtopia",
+      "short_description": "short description Fringilla tempor vel sem leo fringilla a turpis sem eu.",
+      "long_description": "long description Facilisis lorem diam posuere dolor. Ac sapien neque nisl. Sapien massa suscipit euismod commodo blandit ac sem in a. Imperdiet cursus pellentesque lorem mauris diam. Nibh bibendum velit tristique eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Suscipit.",
+          "Ligula."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Gravida imperdiet suscipit lacinia amet i vel iaculis suscipit eti.",
+      "long_description": "long description Pharetra vehicula metus donec pellentesque vestibulum leo tincidunt vel massa suscipit tempus, iaculis mollis ante adipiscing. Pulvinar nunc tristique placerat maximus nulla risus hendrerit mi mattis. Mollis commodo proin viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Vel.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Accumsan sem massa nisi ultricies. Dui hendrerit iaculis ultrices nisl.",
+      "long_description": "long description Nulla condimentum facilisis euismod metus elit vehicula dignissim sodales, adipiscing dictum diam tempus eros, maecenas non lacinia maximus, gravida morbi purus at. Blandit massa elementum iaculis orci, elementum lectus dignissim.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Donec.",
+          "Morbi.",
+          "Erat."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Imperdiet rhoncus natoque vel tempus sollicitudin mollis lacinia natoque quis.",
+      "long_description": "long description Natoque aliquam faucibus ut pellentesque metus euismod arcu tortor, vulputate in vel ac, a at elementum purus eget iaculis porttitor aenean. Maecenas amet neque et. Condimentum arcu massa accumsan etiam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vestibulum.",
+          "Suscipit.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "DynaAir",
+      "short_description": "short description Faucibus risus commodo morbi non erat bibendum eget turpis mi.",
+      "long_description": "long description Risus et commodo i enim imperdiet accumsan, suscipit vulputate dolor facilisis blandit orci aenean, e mollis finibus etiam. Auctor bibendum risus pretium tortor tortor. Risus nam velit lacus hendrerit eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Sapien.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Vulputate sollicitudin rhoncus aenean metus erat nibh euismod neque id.",
+      "long_description": "long description Eu pellentesque aliquam pulvinar porttitor aenean. Metus leo a turpis felis felis. Velit pharetra eti pellentesque pellentesque commodo elementum etiam mi massa mi, consequat morbi lobortis blandit, fringilla leo proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Ante.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description Augue enim quisque blandit cursus eti tempus condimentum condimentum metus.",
+      "long_description": "long description Iaculis justo lectus aliquam morbi curabitur pretium iaculis, cursus maximus natoque faucibus. Gravida eros accumsan mattis cras tortor tempus ex suscipit neque erat viverra tortor felis lobortis elit i vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Proin.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Commodo pulvinar cras etiam lacinia sed nulla ante eu lacinia.",
+      "long_description": "long description Ultrices tempus morbi morbi auctor metus pharetra lacinia au sapien. Lacus metus dignissim lacinia condimentum porttitor, est placerat pellentesque pellentesque auctor pulvinar elit, tristique faucibus enim aliquet ante nibh consequat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "Nam.",
+          "Eti."
       ]
     },
     {
       "name": "FastMart",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au et dolor ornare blandit. Curabitur tortor sodales amet. Vehicula purus magna finibus, mollis laoreet enim hendrerit velit gravida vehicula. In ultrices neque enim mi.",
+      "short_description": "short description Ipsum tortor finibus ex eu, purus velit mattis hendrerit orci.",
+      "long_description": "long description Curabitur massa ante eget mi, cras pulvinar lacinia diam proin pretium leo. Augue lectus tortor ipsum sagittis at. Lacus maximus ex erat i. Posuere ut pretium mauris rhoncus metus pretium.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis auctor lacinia hendrerit e. Porttitor quis accumsan turpis. Ipsum metus eros faucibus. Vulputate est au posuere viverra ante aenean. Ligula porttitor etiam pellentesque ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt ex euismod turpis mi leo dictum felis erat leo arcu, amet et ut sollicitudin. Erat mauris nam arcu, quis a turpis vel est nisl.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Id curabitur viverra proin consectetur, eu curabitur tristique i mollis ipsum. Fringilla curabitur ac mattis maximus. Dolor risus amet posuere a eu. Nibh vel proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate neque consectetur in a. Enim metus non sodales, tempus erat pretium laoreet ac, pharetra augue ultricies nisi. Metus sagittis risus lorem viverra fringilla donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Scelerisque mollis consequat sem auctor amet dui, arcu diam pretium etiam sollicitudin risus metus velit massa. Auctor et eu erat, turpis turpis a lobortis augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra lectus blandit felis dui. Nunc est id proin, eti bibendum mauris gravida massa. Pretium elementum sit tortor. Dolor elementum pharetra fringilla. Suscipit aenean condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh amet nunc dolor viverra vitae accumsan elementum, posuere laoreet ultricies aliquet mollis viverra lorem, euismod vestibulum in sem euismod lacinia. Auctor a ultrices ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus ut fringilla tortor adipiscing. Lacus lorem iaculis purus amet gravida vitae. Donec amet nibh id a, ac magna dignissim i lobortis finibus vulputate amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec sapien mollis tempor dolor. Quis lectus vulputate cras placerat. Euismod pulvinar vehicula porttitor. Dignissim auctor euismod ac, mauris cursus elementum neque nisl mattis rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac lorem dignissim aliquam tempus amet eros. Vestibulum tortor lorem in sapien. Hendrerit condimentum est sollicitudin sed suscipit justo erat, ex magna erat nulla felis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla posuere gravida e vel erat viverra aliquam erat consectetur, pharetra a curabitur massa posuere pellentesque ex ex maecenas tincidunt pellentesque, tortor purus eti aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Optiplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus porttitor fringilla suscipit iaculis eti fringilla hendrerit ante. Facilisis id sagittis dolor ut tempor finibus ultrices accumsan enim ornare, dictum sodales bibendum maecenas donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elementum vestibulum commodo sed maecenas sagittis. Vel non vestibulum risus porttitor pretium erat e tempus leo gravida, consectetur enim tristique justo hendrerit. Justo tincidunt aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor etiam tempor cras placerat eros, mauris tincidunt ut bibendum nam euismod. Vestibulum lorem nulla rhoncus. Neque quis id elementum pharetra dolor sodales consequat mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit pellentesque mollis eget hendrerit dictum scelerisque mauris sollicitudin, ipsum at nulla aliquet lacinia adipiscing sodales nibh natoque lectus. Mattis sed arcu leo et rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra nisi mollis i dignissim. Eti rhoncus sed vitae adipiscing cras dui. Eu arcu tempus euismod sed lectus. Magna tristique pharetra sem at augue arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis vel commodo magna erat lacus hendrerit, eu sagittis nunc tristique amet. Ante orci blandit auctor, finibus arcu dictum nisl, justo tortor natoque lobortis purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor velit lectus donec lobortis adipiscing ex. Neque scelerisque in ex sed vestibulum a. Ultrices dui nunc sapien au facilisis velit lacus vulputate mauris lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam purus elit aliquet maecenas gravida, iaculis au gravida a natoque amet amet mi metus nunc mi. Tempor eti accumsan suscipit mauris e suscipit dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc nisi faucibus blandit nisl lacinia sagittis a et cras condimentum vulputate sagittis. Ex tincidunt orci gravida turpis iaculis, orci donec nisl nulla placerat tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus dui id ultrices donec dignissim. Nisi tortor diam blandit ultricies, ex sagittis sagittis etiam morbi posuere bibendum faucibus, enim ante imperdiet dui tristique ut.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Leo lectus at purus i. Ut porttitor vehicula est vitae. A ultricies maecenas justo erat maximus nisl. I aenean vestibulum blandit sed accumsan turpis lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et eget facilisis mi justo scelerisque ex cursus at ornare. Tempus lacus aliquet nulla ut nam sollicitudin quisque lacinia tristique pulvinar. Proin lacinia lacinia aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eu sit suscipit accumsan consectetur augue imperdiet bibendum au. Gravida lacus consectetur rhoncus. Gravida scelerisque vestibulum gravida in nam. Tristique morbi arcu euismod tristique aliquam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elementum hendrerit consequat maximus nunc euismod ipsum et. Dictum purus pharetra ut erat sem maecenas gravida justo, condimentum et non viverra, sapien facilisis donec natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus mattis faucibus hendrerit aliquam sagittis i lobortis elementum quis. Diam ipsum aliquet aliquam, lobortis facilisis curabitur justo bibendum. Eu at dignissim sodales sit a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Amet pellentesque suscipit id donec pellentesque est auctor dictum. Eu arcu elit proin eget arcu eros sed vulputate. Orci etiam est gravida vulputate etiam vestibulum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida sodales tristique euismod scelerisque. Dignissim ultricies leo ornare vel eros. Auctor ante ut nibh pellentesque mi turpis. Auctor lobortis sapien id tempus augue viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maximus rhoncus au mattis posuere. Lectus lobortis tristique aenean sapien, est ipsum in erat, nisi tincidunt arcu amet. Consequat tincidunt et nunc sollicitudin hendrerit nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla pellentesque ultricies orci mauris. Consequat aenean sodales e. Ultricies ac lacinia au. Aenean at ipsum neque. Ultricies eget mauris etiam lacinia donec bibendum a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt aliquam elit natoque eget tristique facilisis scelerisque in fringilla tristique proin bibendum commodo augue cras sollicitudin imperdiet sit neque tristique lacus accumsan vulputate auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Proin leo elementum tortor placerat. Quisque lorem placerat hendrerit. Maecenas risus iaculis turpis, finibus risus rhoncus bibendum. A cras condimentum mauris tristique gravida eget turpis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit id sodales at mi a eget placerat, nisl tempus hendrerit massa ligula sapien eros neque turpis erat quisque a. Bibendum pulvinar facilisis purus velit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vestibulum fringilla finibus porttitor laoreet pellentesque. Faucibus dolor neque blandit justo au erat, ornare ante placerat sit, facilisis sodales diam au euismod aenean au sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula mi amet natoque suscipit placerat magna, tempus lacus pretium metus quisque auctor tortor pretium. Pharetra ipsum viverra imperdiet a. Quisque ultrices tempor et mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi tempus nulla lacus pretium vel bibendum curabitur. Cursus cras vehicula cursus sodales. Porttitor massa mauris ligula quis. At accumsan aliquam facilisis, euismod laoreet cursus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed quisque lorem justo nisl in lacinia. Vulputate arcu commodo magna etiam tempor au mauris et. Non massa lobortis magna, dictum ipsum risus dolor tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus etiam neque nisl non dictum pretium sem, eti condimentum ut ex at in. Nunc facilisis diam consectetur lorem hendrerit tortor cras nibh justo eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit ipsum placerat lacinia tempor mollis magna. Imperdiet fringilla viverra mauris facilisis vitae nam natoque eti. Fringilla sit sit sem turpis orci lacus aliquam scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Logico",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor dolor massa vulputate lorem. Scelerisque posuere sodales dictum ante scelerisque facilisis. Diam risus pretium eget ante, aliquam pulvinar aliquet leo elementum, finibus lobortis at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis a suscipit mattis eget vehicula, laoreet mattis vel sed hendrerit pharetra nibh augue lobortis scelerisque neque neque bibendum. Tristique nam accumsan quisque consequat diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla tincidunt maximus ex bibendum erat felis condimentum, viverra purus ultricies consectetur ex. Maximus lobortis lorem at dolor. Bibendum nunc cursus ut, dolor dui au.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing ultricies dictum enim magna euismod lectus sagittis tempor curabitur ut posuere tempor orci cras tortor amet. Diam neque nisi diam. Elementum risus facilisis sapien.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis et amet sodales mollis facilisis donec, pretium mauris id etiam tempus sagittis dignissim. Vestibulum arcu sollicitudin dolor laoreet laoreet, proin sodales sollicitudin imperdiet pellentesque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus nunc metus euismod enim ornare. Id aliquam lacinia vulputate adipiscing tempor morbi aenean. Arcu sapien felis ipsum, tincidunt adipiscing accumsan ligula tortor dignissim e.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo dolor tempus dolor iaculis finibus suscipit sollicitudin tempor a. Sit nisi fringilla purus purus eti, accumsan vehicula massa neque. Pharetra eti diam fringilla vitae.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl lacinia dolor ante gravida massa nisl vehicula. Nam scelerisque elit finibus orci. Nisl ligula i neque au quis. Vestibulum orci pharetra sapien consequat metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aenean nulla aenean porttitor sagittis turpis. Nunc imperdiet dignissim auctor, vehicula auctor pellentesque massa, eu sapien blandit natoque vestibulum, faucibus ornare elit dignissim lobortis tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh viverra non lobortis enim, rhoncus natoque eget tristique ligula ornare eti ipsum, eros est lorem eu erat. Rhoncus lacinia nam i dignissim dignissim a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros viverra at ultricies mauris lacinia et, aliquam blandit at cras nam a erat pulvinar, rhoncus cras felis justo sed quisque, quisque lacinia lacinia leo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis metus lacinia elementum lobortis. Suscipit sem quisque id lobortis gravida, at faucibus ultricies nisi. Vulputate imperdiet donec maecenas tempus. Fringilla donec eros iaculis imperdiet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui mauris eget vestibulum maecenas lorem, pulvinar dignissim pulvinar scelerisque, scelerisque enim eget dictum blandit. Ultrices dictum purus ac quis enim arcu. Lobortis suscipit sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros posuere dictum curabitur tortor, rhoncus id ante bibendum neque nunc mauris auctor. Laoreet euismod bibendum a dolor nisi nibh justo. Auctor eros auctor dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui aliquet euismod vehicula euismod. I aliquet tempor erat, mollis faucibus dictum euismod, sapien gravida risus augue sodales nibh laoreet porttitor laoreet aliquet laoreet eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Proin tempor finibus vitae ultrices. Eu cras cursus justo dignissim vulputate. Magna lacinia metus hendrerit sollicitudin nulla dignissim dictum justo imperdiet iaculis, posuere eros sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc iaculis eti pellentesque sapien. Non ac morbi erat mauris. Etiam mattis lectus quisque. Est fringilla mattis mollis scelerisque risus. Sapien vitae quisque faucibus mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Citisys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus lacinia placerat consequat quis consequat lacinia tincidunt ex dignissim sollicitudin nam condimentum ex pretium. Posuere cursus dictum nisi curabitur vehicula ipsum, ac adipiscing sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus augue ultricies nulla nisi eti. Mattis ligula finibus elit nunc donec ante, augue cursus nulla erat. Ac aliquam adipiscing felis. Auctor elit proin et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur au auctor accumsan vel adipiscing, erat bibendum eget pellentesque. Lacinia dolor nulla maecenas curabitur, est hendrerit posuere augue non. At est accumsan erat dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia lobortis finibus dolor velit. Lacinia lacinia sollicitudin sapien viverra, proin id ac euismod etiam accumsan lorem fringilla ligula eti commodo. Eu ornare erat faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros a tincidunt pharetra magna elit, ex ante ac nunc, a maximus elementum ante scelerisque maximus vulputate consequat vehicula. Iaculis non adipiscing eti mi et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat leo risus pulvinar nunc dignissim blandit tristique, elementum etiam aliquet sodales mauris iaculis accumsan, velit mattis risus maximus eti nam quis dignissim pretium dolor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor aliquet ultricies dui nam consequat sed ex. Sodales maecenas et dolor. Ante pharetra a etiam dignissim lobortis suscipit. Viverra tempus dolor dolor dui tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia lobortis lobortis etiam elementum tempor. Lacinia leo ligula aliquet pellentesque tortor donec est, id sodales ut at eget. Quis lectus neque pulvinar proin nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Viverra sapien dictum facilisis cras laoreet. Donec turpis quisque nisl, vulputate aliquet tincidunt augue, pretium finibus dignissim mi. Viverra eu velit adipiscing aliquam dolor finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris ultricies enim ante et augue, cursus nunc non mauris eti rhoncus massa dolor ac auctor facilisis orci faucibus diam. Sem dolor velit mi euismod.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus tempus ultricies vestibulum sodales ipsum, natoque tempus sodales placerat nunc leo elit scelerisque eti pulvinar maecenas pretium bibendum. Mi aliquet pretium in leo aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nam consectetur sagittis faucibus lacus dictum. Dignissim in vel nibh auctor leo quis. Adipiscing eti finibus sapien. Vel maximus etiam posuere aliquam vestibulum turpis pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh lorem ipsum lectus pellentesque sodales dui dui. Enim diam finibus tincidunt, blandit elementum nulla ante imperdiet. Quis quisque pharetra sapien maecenas, mattis faucibus i.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au elit non dictum vestibulum mollis, gravida curabitur maecenas tincidunt, vel lectus vehicula maecenas ultrices vulputate, erat turpis maximus diam nisi suscipit. Et rhoncus tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Arcu viverra orci erat ultricies amet sodales diam in pellentesque, lectus pulvinar ex iaculis. Leo dolor vehicula maecenas auctor neque. Accumsan sollicitudin lacinia quisque suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac consectetur nulla natoque in iaculis bibendum mi risus lorem. Est amet aliquam fringilla fringilla. Aenean euismod commodo e dignissim aenean. Sapien tincidunt ante a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
+          "Magna.",
+          "Consectetur.",
+          "Orci."
       ]
     },
     {
       "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non ultricies erat est quisque, natoque non commodo est lacinia natoque. Accumsan sapien au est imperdiet bibendum blandit lacinia lectus imperdiet natoque vulputate ultricies tincidunt.",
+      "short_description": "short description Turpis morbi commodo condimentum posuere sodales scelerisque dignissim tempus tristique.",
+      "long_description": "long description Commodo non mattis nulla justo vitae, adipiscing erat mauris nulla mollis tortor erat, curabitur adipiscing auctor felis donec ipsum condimentum vitae velit. Ornare cursus consectetur nam enim leo tortor mauris.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Tempus.",
+          "Imperdiet.",
+          "Metus."
       ]
     },
     {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare sollicitudin fringilla leo sed nulla. Ipsum maecenas leo sem nam. Curabitur au sit lorem mattis tortor enim. Lobortis ut quis eros curabitur justo dolor.",
+      "name": "WestGate",
+      "short_description": "short description Massa sollicitudin non consequat ultrices proin finibus purus justo accumsan.",
+      "long_description": "long description I auctor cursus leo eu aliquet curabitur leo. Aliquam elit pharetra lobortis dolor etiam iaculis euismod, lectus vitae augue eros suscipit gravida commodo est finibus amet neque eti risus tristique.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Morbi.",
+          "Neque.",
+          "Tempor."
       ]
     },
     {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis diam non metus sagittis. Accumsan eros donec sagittis, lorem id proin faucibus vitae aliquam dignissim ligula ipsum erat sem ex. Aenean cursus proin au.",
+      "name": "Amsquare",
+      "short_description": "short description Elementum blandit justo nam felis eros elementum tristique est rhoncus.",
+      "long_description": "long description Vulputate et elementum sagittis porttitor et, sagittis id magna a, curabitur lobortis a amet. Augue magna turpis gravida vestibulum consectetur imperdiet dignissim iaculis maecenas nam. Lobortis ex nulla ultrices justo.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Placerat.",
+          "Donec.",
+          "Mattis."
       ]
     },
     {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida bibendum nunc pharetra au ultricies, ex nam quisque cursus sagittis posuere. Auctor consequat accumsan vestibulum in morbi, lobortis pretium in adipiscing. Ac dictum suscipit.",
+      "name": "Anaplex",
+      "short_description": "short description Diam au dui lobortis justo. Turpis nunc fringilla mollis cursus.",
+      "long_description": "long description Accumsan auctor enim nulla i tempor. Rhoncus metus eros justo. Sem auctor neque pretium aliquet facilisis, augue ultricies a orci nisi, maximus accumsan rhoncus dignissim enim pulvinar e tempor pharetra.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Accumsan.",
+          "Proin.",
+          "Lobortis."
       ]
     },
     {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Augue aliquam vitae quis purus euismod vitae ac neque, sapien ultrices turpis tincidunt. Cursus justo nibh mi diam elementum. Massa aliquam suscipit eu sit placerat.",
+      "name": "Optiplex",
+      "short_description": "short description Sit laoreet ultricies ex sapien, vestibulum nunc elit eros iaculis.",
+      "long_description": "long description Nisi lacinia sollicitudin ipsum purus, fringilla adipiscing finibus risus viverra, mauris faucibus a dolor diam faucibus quis eu, natoque leo nunc elementum, amet mauris sodales lectus nam nibh nibh hendrerit.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Justo.",
+          "Posuere.",
+          "Etiam."
       ]
     },
     {
       "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula nibh cras viverra nibh sapien lobortis auctor pulvinar quis lacus sed, mauris turpis a aliquet dui tristique curabitur pretium mollis turpis tempus maecenas ipsum.",
+      "short_description": "short description Velit rhoncus proin est nunc auctor faucibus. Ultrices tincidunt dignissim.",
+      "long_description": "long description Eros curabitur i viverra id metus euismod quis erat blandit, id fringilla maximus sollicitudin, lacinia euismod posuere turpis, consectetur dictum faucibus sed pulvinar arcu. Massa ex rhoncus felis laoreet finibus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Magna.",
+          "Proin.",
+          "Arcu."
       ]
     },
     {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor cras adipiscing sollicitudin hendrerit dolor, pellentesque nibh commodo a facilisis nam. Erat aenean quis aliquet vel tempus. Vestibulum proin aliquam erat mi vestibulum pulvinar.",
+      "name": "Cameratek",
+      "short_description": "short description Sit fringilla ipsum pulvinar tincidunt viverra lacinia sagittis tempus commodo.",
+      "long_description": "long description Cras felis natoque sagittis ipsum ac aliquet quis. Orci pulvinar tempor vel augue vulputate aenean quis, mauris proin condimentum tempus felis gravida sapien nibh nibh condimentum suscipit, ultricies cursus metus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Sapien.",
+          "Dignissim.",
+          "Et."
       ]
     },
     {
-      "name": "Thermolock",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla turpis hendrerit eti tristique. Pulvinar elementum consectetur viverra, elementum gravida ornare faucibus diam ac imperdiet quisque. Tempor maecenas maximus euismod sed ex faucibus suscipit.",
+      "name": "Creatonix",
+      "short_description": "short description Rhoncus leo et ultrices accumsan pharetra commodo amet sem mollis.",
+      "long_description": "long description Iaculis euismod ut porttitor euismod euismod, adipiscing elementum metus eu, vehicula imperdiet enim maximus. Etiam consectetur ac euismod porttitor, amet aenean elit at mauris amet tempus ac. Enim scelerisque au.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sodales posuere dictum velit vehicula a tortor ipsum. Porttitor erat a sagittis. Facilisis elit diam purus facilisis lacinia augue proin mi condimentum nunc bibendum maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lorem mollis diam amet nam donec orci, velit mauris imperdiet aliquet amet et suscipit, bibendum et nibh sem eu felis purus consectetur viverra dictum bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam bibendum eti i aenean dignissim sem elit, consequat eu euismod au rhoncus enim, aliquam sem mauris quisque elementum. Condimentum lacus fringilla ornare in suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique dolor non ipsum ac. Et dignissim proin metus fringilla massa, dolor tincidunt sagittis mauris lobortis. Ex ultrices sollicitudin lacinia. Dolor id amet mattis quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis turpis enim nisl ac tristique. Sed natoque magna ex nisi ultricies eti, maximus ex fringilla mauris aenean laoreet lobortis nam tincidunt. Etiam nunc morbi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
+          "Donec.",
+          "Cursus.",
+          "Fringilla."
       ]
     },
     {
       "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Proin facilisis pellentesque ultrices sed fringilla vitae natoque. Ipsum nunc cras tempor, ante pharetra in maecenas posuere. Velit euismod iaculis vulputate amet non diam sodales.",
+      "short_description": "short description Proin pharetra faucibus arcu maecenas, nibh posuere tincidunt maximus aliquam.",
+      "long_description": "long description Nibh imperdiet adipiscing id orci, mi elit est diam, posuere neque pulvinar consectetur. Adipiscing nisi placerat vitae ipsum consectetur mattis gravida morbi. Ultrices nam non massa purus. Sodales tempor erat.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Augue.",
+          "Accumsan.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Cras tristique gravida augue pharetra in nulla. Tempor mattis ultrices.",
+      "long_description": "long description Mi au curabitur dignissim lectus adipiscing eti. Accumsan lobortis pharetra ante. Metus sollicitudin augue tempus vehicula iaculis. Ultrices eu ut ex tempus vestibulum gravida ornare ultrices, eget tristique non cursus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Ultrices.",
+          "Risus."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Bibendum mi dignissim pretium vitae, elit nam velit scelerisque velit.",
+      "long_description": "long description Felis pretium dictum mi a bibendum quis nam mollis rhoncus, ultrices lectus pharetra neque. Et donec eu adipiscing e diam, lobortis ipsum gravida sem, nunc mauris euismod sed aliquet est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Quis.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Nibh au curabitur finibus viverra iaculis, et vehicula turpis turpis.",
+      "long_description": "long description Eros pretium vehicula neque nunc. Et quis at ligula diam, vitae au nulla fringilla arcu vulputate condimentum massa euismod dictum. Tincidunt eti au morbi. Finibus mauris turpis justo lectus augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Justo.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Porttitor neque at placerat sit at porttitor, pulvinar sodales dignissim.",
+      "long_description": "long description Lobortis leo leo elit vitae blandit ante. Neque maecenas adipiscing dolor, quisque vulputate scelerisque ornare suscipit aliquet lobortis. Mattis dictum morbi iaculis sed hendrerit, pretium in commodo ex maximus tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "E.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Pulvinar sodales euismod non suscipit quisque elit lacinia turpis diam.",
+      "long_description": "long description Neque nulla lacus pulvinar ultricies elementum ipsum curabitur nisi sodales porttitor eti nunc. Nisi purus ac quisque nam auctor blandit. Natoque ex erat purus. Metus vehicula felis laoreet diam eget.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "Natoque.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Pellentesque mi sem blandit diam donec. Facilisis rhoncus facilisis maximus.",
+      "long_description": "long description Leo sodales quis nam mi justo fringilla scelerisque consequat tempor fringilla. Mi nulla dui vehicula au consequat lobortis porttitor sed id nisl pharetra id nisi porttitor aliquam hendrerit imperdiet consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Lorem.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Cras nisl dui hendrerit in diam morbi. Mauris morbi ut.",
+      "long_description": "long description Nam in a imperdiet purus natoque, au bibendum euismod a pellentesque maximus cras ut tincidunt. Justo metus dui accumsan. Fringilla gravida sollicitudin morbi a sollicitudin cursus. Sodales neque mi a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Porttitor.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "WestGate",
+      "short_description": "short description Placerat morbi ex felis metus porttitor. Mauris risus sagittis nibh.",
+      "long_description": "long description Dictum lacinia dolor cras mollis posuere ac ex suscipit morbi, euismod dictum fringilla aliquet tortor curabitur, purus ac finibus ex. Lacinia velit proin pulvinar ultricies augue. Tempor proin eti dolor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Nibh.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Adipiscing dignissim faucibus elit blandit. Metus nunc dictum natoque proin.",
+      "long_description": "long description Felis maecenas tristique auctor blandit. Nulla cras dictum tempor et, purus quis tristique iaculis, viverra natoque in purus. Nunc mi i faucibus imperdiet, augue sagittis facilisis lobortis. Turpis lacinia ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Neque.",
+          "A."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Commodo ipsum eros faucibus finibus. Risus a eget erat porttitor.",
+      "long_description": "long description Est ut commodo elementum mattis, massa vulputate at dolor euismod justo, iaculis elementum elit magna donec dignissim ante. Tincidunt neque sodales nibh enim condimentum maecenas, porttitor rhoncus cursus quisque blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Facilisis.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Diam mollis faucibus pretium a aliquam, in nisl nisi suscipit.",
+      "long_description": "long description Amet ultrices auctor elementum tortor. Dictum gravida ligula felis nisl pretium leo quisque, tempor ligula dolor aenean lacinia nulla. Nisl pulvinar sem quisque. Euismod auctor euismod et dignissim risus fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Tempor.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Aenean eti auctor non eget vel, lacinia ut morbi tempor.",
+      "long_description": "long description Etiam id enim nisl mauris fringilla placerat nam, cursus enim leo vulputate vitae vehicula lobortis. Gravida faucibus accumsan sodales. Porttitor tincidunt nisi eget ante hendrerit, ante ac metus mollis ornare.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Pharetra.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Turpis arcu morbi maecenas fringilla mattis dui. Orci metus dui.",
+      "long_description": "long description Nulla nulla ligula quis pretium, vel sit fringilla quis sagittis lobortis. Elementum lectus erat facilisis vulputate. Viverra lacus sodales arcu lacinia, mauris ligula sodales ultrices. Eros sem morbi ultricies placerat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Tortor.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Baramax",
+      "short_description": "short description Vulputate justo placerat quis ante, sodales quisque tortor felis ultrices.",
+      "long_description": "long description Sit ipsum tempus non non, e maecenas auctor maximus consequat elementum quisque pretium natoque sagittis tempor i curabitur ut sollicitudin, ipsum pharetra iaculis dignissim scelerisque. Ante fringilla sem in nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Est.",
+          "Ex."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Lacinia viverra tempus lacinia maximus est. Erat amet eti vehicula.",
+      "long_description": "long description Magna metus au a est lectus mattis aenean ut. Purus lectus consectetur imperdiet. Felis suscipit viverra bibendum. Aenean turpis posuere et est diam lacus diam vehicula justo, iaculis tristique hendrerit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vestibulum.",
+          "Justo.",
+          "Lacus."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Laoreet vulputate dictum consequat nunc purus quisque dui augue magna.",
+      "long_description": "long description Cras sed imperdiet massa ut. Velit est tempor au, a leo etiam cursus. Commodo ultrices augue euismod. Quisque nunc leo nunc ut cras blandit sapien bibendum dui, curabitur vulputate orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "E.",
+          "Diam.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Pulvinar adipiscing tempor dolor tempus in gravida in vehicula massa.",
+      "long_description": "long description Eu scelerisque purus ante vitae. Tristique bibendum nam commodo. Cursus vehicula arcu nisl placerat, gravida nibh mauris mi fringilla et. A lorem justo pharetra. Ipsum mauris vitae diam tristique maximus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Ex.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Euismod leo turpis purus metus mi gravida viverra velit at.",
+      "long_description": "long description Blandit elit mattis eti nisi ut natoque, aliquam tortor nam hendrerit nisi vitae, ligula faucibus placerat ipsum viverra sodales orci pellentesque, condimentum lorem elementum eget sem ornare. Eu etiam nunc.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cursus.",
+          "Arcu.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Tortor pharetra in ut quisque sapien, facilisis ultricies ultricies quis.",
+      "long_description": "long description E blandit i adipiscing sem erat elit accumsan finibus adipiscing at. A justo ligula est pharetra sagittis viverra lacinia. Condimentum magna nulla ante, nulla ultrices lacinia morbi accumsan condimentum maximus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Neque.",
+          "Aliquet."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Fringilla mollis e cursus massa porttitor erat porttitor sed a.",
+      "long_description": "long description Felis ligula ligula nulla amet lectus gravida finibus. Sit aliquet enim bibendum lobortis justo hendrerit lectus sodales. Purus nunc etiam aliquam. Iaculis maecenas maecenas vestibulum, morbi vestibulum viverra elit tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Auctor.",
+          "E."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Morbi cras nunc erat neque. Tortor eti pellentesque sagittis vehicula.",
+      "long_description": "long description Dignissim in vitae vitae bibendum lobortis. Eti suscipit turpis at non id cras id lacinia. Etiam viverra mauris donec. Vitae fringilla maecenas lacus donec donec accumsan. Blandit lectus justo lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Suscipit.",
+          "Aliquet."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Tincidunt diam nulla condimentum gravida justo, hendrerit lectus viverra dui.",
+      "long_description": "long description Hendrerit tristique e erat etiam. Justo lacinia cras neque euismod e morbi bibendum nam lacinia arcu sit maximus gravida mollis adipiscing, diam elementum etiam suscipit. Maecenas ornare e finibus eu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Scelerisque.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Rhoncus tristique mattis tortor sodales, facilisis elementum suscipit ultrices aliquet.",
+      "long_description": "long description Eget e euismod eti etiam facilisis turpis. Eget elit viverra commodo, nunc tempus pellentesque e. Lorem ex tempus metus magna eget. Euismod massa consectetur i, sapien euismod aliquam pretium tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Natoque.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Curabitur blandit condimentum consequat dui, aliquam rhoncus maecenas morbi scelerisque.",
+      "long_description": "long description Quisque justo auctor e aenean neque, aliquam massa arcu pellentesque nunc ornare vehicula. Ligula pretium commodo vitae nulla mollis pulvinar amet neque turpis morbi orci maximus metus lacinia vitae justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Aliquam.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Pulvinar turpis felis tortor porttitor. Curabitur nulla ornare nulla massa.",
+      "long_description": "long description I neque consectetur et nisi etiam. Non eget gravida at, pretium quis elit i. At ex finibus suscipit, nulla condimentum vel nulla sapien tempus viverra eu rhoncus turpis placerat vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Sagittis.",
+          "Non."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Porttitor lacinia adipiscing dignissim ipsum scelerisque sagittis dictum ultrices cras.",
+      "long_description": "long description Arcu iaculis imperdiet mollis leo euismod consequat mi metus. Ornare turpis condimentum amet dui porttitor. Ante quis lectus iaculis. Blandit iaculis ut sagittis, in viverra auctor ultricies. Donec condimentum rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "Aenean.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Ex maecenas id justo aliquet. Sapien mauris vehicula lobortis laoreet.",
+      "long_description": "long description Ex ultricies diam lacus suscipit ante pharetra, cras metus dignissim elementum, nam nibh tincidunt mattis scelerisque vel nibh etiam orci, metus augue in donec imperdiet a mollis ligula ipsum eget.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Eget.",
+          "Quis."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Id aliquet amet purus e maximus ante. Faucibus viverra nibh.",
+      "long_description": "long description Commodo scelerisque tortor enim auctor. Mollis nulla pulvinar dictum donec viverra, morbi pretium ultrices aenean vestibulum cursus tristique dictum dictum. Et pulvinar euismod donec eu placerat posuere cursus vulputate donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Placerat.",
+          "Ornare.",
+          "Est."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Ante lacinia scelerisque ornare felis suscipit, fringilla ex nam vel.",
+      "long_description": "long description Ut lobortis nisl nulla massa. Orci faucibus rhoncus vel. Erat amet eget dui iaculis condimentum arcu nunc, posuere massa mauris auctor turpis. Ante curabitur nunc natoque. Diam ac viverra imperdiet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Non.",
+          "Erat.",
+          "Donec."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Tempor amet dolor pretium magna elit proin. Vehicula lectus ante.",
+      "long_description": "long description Faucibus vestibulum sollicitudin consequat mauris donec. Orci hendrerit eti scelerisque. Elit lectus massa sodales, maximus aliquam mauris metus sapien donec velit maecenas, facilisis aenean porttitor placerat donec velit pellentesque facilisis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Orci.",
+          "Viverra."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Finibus finibus imperdiet dolor consequat risus aliquam purus id lorem.",
+      "long_description": "long description Lacinia scelerisque scelerisque laoreet purus, imperdiet lorem auctor mauris. Au accumsan magna morbi. Mauris ornare maximus risus est nam suscipit finibus ut. I consequat augue amet justo. Nam consectetur aliquam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Diam.",
+          "Felis.",
+          "Mauris."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Eu est donec posuere nisi rhoncus amet ligula morbi vitae.",
+      "long_description": "long description Etiam ligula hendrerit pharetra sagittis nisi. Au scelerisque quisque ultricies rhoncus natoque sollicitudin, auctor accumsan nisi ornare. Risus metus diam commodo. Posuere erat placerat aenean, ex scelerisque i magna natoque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Sed.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Sapien dignissim justo blandit enim. Nibh blandit amet vulputate maecenas.",
+      "long_description": "long description Etiam cras iaculis mattis donec pharetra turpis ex nisi non faucibus a maecenas dictum nisi, risus proin morbi maecenas e sollicitudin. Curabitur aenean ut iaculis, blandit sollicitudin vulputate hendrerit vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Vehicula.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "MediaDime",
+      "short_description": "short description Diam lobortis hendrerit vitae non suscipit nisl elit nibh eget.",
+      "long_description": "long description Pellentesque turpis adipiscing nisl accumsan natoque cras. Eros aenean vehicula viverra, a ante dui aliquam aliquet ante nisl, natoque sed cras dictum nam enim morbi ut. Dui posuere vehicula nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Suscipit.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Arcu velit massa ornare et at iaculis sodales ornare finibus.",
+      "long_description": "long description Felis purus orci posuere adipiscing, vehicula sit dignissim condimentum etiam gravida accumsan arcu neque. Scelerisque blandit tristique sagittis velit mattis curabitur eget id, dignissim viverra vitae dignissim velit gravida consequat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Laoreet.",
+          "Velit.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Sit donec diam dignissim finibus, nunc vulputate nibh orci sollicitudin.",
+      "long_description": "long description Viverra non suscipit sem cursus a, consectetur e elit turpis. Eu ante aliquet elit. Mi orci est rhoncus, enim tempor ligula velit tortor. Sit lacinia eros sem in suscipit metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Lectus.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Tortor sit arcu eget natoque sodales adipiscing pellentesque nisi maximus.",
+      "long_description": "long description Sagittis ut sem ornare vitae dignissim massa morbi. Mattis enim finibus eget, quis augue mattis in, diam vulputate orci maximus consectetur blandit, tempus euismod ac fringilla eti quis ipsum elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Eros.",
+          "Nulla."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Laoreet sodales gravida a ultrices maecenas au. Lectus au risus.",
+      "long_description": "long description Proin bibendum enim cras vitae. Tincidunt aenean velit bibendum cursus. Gravida iaculis viverra at vulputate pharetra accumsan. Viverra quisque curabitur pellentesque. Scelerisque faucibus cras morbi e. Mattis vitae a fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "Dui.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Purus i facilisis tempus erat porttitor, hendrerit risus donec tortor.",
+      "long_description": "long description Au cras orci orci enim nibh, ipsum pretium ac curabitur lectus orci posuere, sollicitudin pulvinar nisi non leo tristique arcu. Non lobortis gravida lectus elit tempus accumsan, consequat suscipit posuere.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dui.",
+          "Arcu.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description Etiam pharetra ornare lacus blandit euismod consectetur mattis quisque massa.",
+      "long_description": "long description Mauris purus nisl nam eget sagittis mattis sodales vel e aliquam. Ex lorem a quis tempus sagittis diam imperdiet sit. Lobortis at ipsum dignissim elit lacinia. Morbi ipsum quis vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Nisi.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Erat erat pulvinar amet blandit. At suscipit sodales consequat sed.",
+      "long_description": "long description Blandit lacinia pellentesque consectetur faucibus. Morbi dignissim quisque pharetra tortor pharetra auctor tortor. Natoque velit dictum ultricies mauris sem iaculis ut placerat vestibulum. Ipsum eti pharetra mi. Est eu pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Porttitor.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Eget etiam eti tempor orci aenean, ornare ligula sem fringilla.",
+      "long_description": "long description Faucibus lacus blandit ac tempor. Sollicitudin dignissim et placerat, etiam i non condimentum. Maximus id mi iaculis facilisis mollis lectus. Pharetra lacus eti purus tincidunt. Nulla justo sapien morbi diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "Dictum.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description In nibh purus dui fringilla euismod viverra aliquet mollis proin.",
+      "long_description": "long description Nisi turpis morbi tempus dui condimentum i nisl. Nisl non nam condimentum. Sollicitudin finibus condimentum natoque, nibh viverra ut ligula maximus. Nibh erat tortor vestibulum eget. Facilisis gravida lectus vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Lectus.",
+          "Vestibulum."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description Nunc pulvinar tempor tristique ultricies pharetra posuere ut mollis lorem.",
+      "long_description": "long description Elit erat pulvinar ultricies turpis faucibus ipsum pellentesque ultrices. Velit ipsum quis in, cursus vel i ac. Facilisis mauris dignissim vestibulum dignissim. A velit donec eti suscipit. Mauris finibus amet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Velit.",
+          "Aliquam."
       ]
     },
     {
       "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et sodales sodales vulputate turpis facilisis at. Turpis scelerisque amet sit, placerat lobortis tristique lectus gravida justo. Gravida neque ut gravida ultrices quis orci felis.",
+      "short_description": "short description Aliquet imperdiet eu iaculis turpis. Leo morbi magna laoreet diam.",
+      "long_description": "long description Quisque sed tempor dui sed. Facilisis cras aliquet elit, ex mollis nam arcu natoque ornare. Risus felis sapien fringilla vestibulum dolor est placerat viverra viverra euismod adipiscing viverra hendrerit finibus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Tortor.",
+          "Augue.",
+          "Viverra."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Sed ipsum tincidunt vel at tortor dolor curabitur cras vulputate.",
+      "long_description": "long description Bibendum scelerisque aliquet sollicitudin turpis. Lacus ex non vulputate pretium erat tempus. Mollis nisl laoreet euismod velit porttitor placerat. Nisi ex at nam. Mi laoreet quis maecenas i lobortis etiam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "Gravida.",
+          "Cursus."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description Sollicitudin elementum enim ultricies tristique hendrerit i turpis pretium sapien.",
+      "long_description": "long description Dignissim non lobortis sed quis pharetra a, tristique sit mollis sagittis magna eros dignissim enim magna faucibus i aenean, vitae dignissim magna diam laoreet scelerisque justo imperdiet justo sollicitudin ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Sit.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Coolinga",
+      "short_description": "short description Pretium in eu curabitur dui i aliquam blandit porttitor purus.",
+      "long_description": "long description Massa bibendum proin e posuere ex vitae nisl. Sed est justo nisi sit ligula iaculis vel, au at dignissim laoreet placerat leo nunc. Et consectetur et gravida id porttitor porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Maximus.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Aenean mattis sagittis massa elementum condimentum quis consectetur sodales elementum.",
+      "long_description": "long description Natoque aliquet posuere dictum lectus. Purus sed a cursus ex sodales felis ac, cursus gravida natoque nibh etiam nibh sem pulvinar felis. Tempus massa sit placerat mollis ante est ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisl.",
+          "Neque.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Magna vehicula donec pretium etiam enim gravida ex mi ut.",
+      "long_description": "long description Finibus natoque bibendum scelerisque cras mauris. Mattis nunc eti nulla. Tempor vitae auctor felis, tincidunt lacinia consequat lectus vestibulum eros. Gravida pharetra ante felis. Aliquet lobortis erat risus arcu in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Au.",
+          "Tristique."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Mi scelerisque lacinia auctor nam eros ex aliquet quisque maecenas.",
+      "long_description": "long description Elementum diam nisi vel mauris nibh pulvinar arcu bibendum. Purus metus eti est maecenas tempus, quis felis nisl quisque lorem. Neque bibendum tortor tortor lacinia id. Quis tempus aenean eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Finibus.",
+          "Justo."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Imperdiet sed neque sagittis sollicitudin, mattis elementum dictum e condimentum.",
+      "long_description": "long description Sem ultricies pharetra mattis sit sem vel eti eros lorem arcu neque felis scelerisque i i. Maecenas euismod aliquam adipiscing. Non nisi consequat viverra. Leo dignissim bibendum dui ultricies viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Blandit.",
+          "Laoreet."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Lacinia at i lobortis finibus quis purus imperdiet rhoncus vitae.",
+      "long_description": "long description Quis commodo enim tristique id orci, leo lorem dui non massa arcu morbi aliquam. Neque mauris amet gravida, purus a pellentesque finibus laoreet aenean, placerat ornare vitae placerat gravida i.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Consectetur.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description E euismod sollicitudin lorem euismod aenean sit finibus commodo faucibus.",
+      "long_description": "long description Quisque augue eti adipiscing felis placerat euismod, sit auctor rhoncus au. Id metus mollis iaculis aliquam ornare elementum, nibh e ultricies quis et a, pulvinar ipsum neque sapien dignissim ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Ligula.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Nisl elementum sapien sagittis dictum sed aliquet purus natoque nam.",
+      "long_description": "long description E nunc massa at eget. Sem nisi ut auctor augue turpis, au quisque scelerisque ultrices dui, nibh natoque et neque. A rhoncus sodales proin, tortor mi auctor turpis sed vel.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Vulputate.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Curabitur mi vestibulum non velit ipsum morbi nunc non facilisis.",
+      "long_description": "long description Tortor nisl pharetra elementum nisl erat tempor, etiam lorem lorem vestibulum. Et ac turpis sem aenean porttitor eti morbi. Enim laoreet eget mollis. Gravida dictum porttitor nam scelerisque pellentesque viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Ultricies.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Fringilla laoreet arcu mollis suscipit quis nisi tincidunt ligula posuere.",
+      "long_description": "long description Commodo auctor orci donec facilisis natoque placerat, eu posuere cursus nunc iaculis. At elit enim consequat velit proin vehicula at velit, ante accumsan vitae arcu blandit vulputate. Leo id facilisis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Leo.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Au ante a nam vel quisque maximus quis accumsan ornare.",
+      "long_description": "long description Ornare at tortor lacinia lorem. Orci pellentesque turpis pulvinar dictum vestibulum est mattis, ut ut nisl quis, turpis sodales dignissim nibh. Dui mollis scelerisque ultricies suscipit pretium proin etiam risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Turpis.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description At nulla tincidunt mauris sodales curabitur, et mollis fringilla lobortis.",
+      "long_description": "long description Dictum bibendum ex imperdiet sit finibus mauris, lobortis donec mi turpis, quisque scelerisque faucibus ultrices massa, sed aenean sit hendrerit. Maximus pulvinar ante massa. Cras sit iaculis consectetur mollis morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quisque.",
+          "Tempor.",
+          "Ex."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Maximus laoreet elementum vitae orci vitae ultrices. Velit justo facilisis.",
+      "long_description": "long description Proin porttitor posuere pellentesque neque quisque massa consequat, mauris hendrerit eti a aliquet sit. Lobortis consectetur pellentesque aliquet scelerisque ultrices. Dolor amet tincidunt ac. Dignissim pretium natoque diam amet auctor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dictum.",
+          "Diam.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Ligula placerat eget vitae ligula. Leo mattis neque adipiscing i.",
+      "long_description": "long description Purus nulla suscipit rhoncus risus. Vel purus sem nisl morbi arcu ante ante. In faucibus lectus i. Laoreet id a diam tempor felis. Nisl id augue erat. Faucibus vestibulum ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Ligula.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Laoreet ornare i metus quisque maecenas. Adipiscing euismod sem est.",
+      "long_description": "long description Dolor adipiscing cras etiam ultricies vitae euismod facilisis. Ex turpis natoque tempor maximus. Lacinia blandit placerat rhoncus eros lacinia e. Au morbi sollicitudin lacinia dignissim enim arcu nisl metus commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nulla.",
+          "E.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Fringilla nisi tincidunt accumsan natoque viverra purus aenean fringilla eget.",
+      "long_description": "long description Elementum tortor adipiscing euismod et tempus lacus sem curabitur. Commodo est aliquet facilisis ut ultrices etiam massa aenean proin massa. Aliquam turpis lorem accumsan sapien leo velit, pulvinar massa sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Laoreet.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description Lobortis e viverra mauris augue hendrerit viverra. Morbi pretium ultricies.",
+      "long_description": "long description Iaculis gravida in aenean sodales. Arcu ut consequat cras. Lectus aenean eu lorem, eu lorem mattis pellentesque. Ornare mauris dignissim posuere, purus dignissim finibus maecenas mi ac magna tristique consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Blandit.",
+          "Id."
+      ]
+    },
+    {
+      "name": "Nitrocam",
+      "short_description": "short description Vitae massa lobortis hendrerit dolor bibendum. Dictum morbi pretium in.",
+      "long_description": "long description Porttitor eti porttitor ultrices maximus accumsan tristique neque, eget laoreet bibendum quisque eti ultrices, tortor lorem eget diam elementum. Suscipit au magna leo, eget posuere sed mauris. Dignissim magna magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Felis.",
+          "Sapien.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Vel aliquet maximus lobortis vestibulum pharetra neque finibus pharetra sit.",
+      "long_description": "long description Dignissim velit vestibulum fringilla finibus posuere non. Hendrerit mollis massa vitae lobortis arcu magna, ornare ornare tincidunt neque vitae velit elementum metus consectetur, morbi finibus facilisis pharetra tempus massa justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mattis.",
+          "Maecenas.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Nisi euismod condimentum consectetur vel magna imperdiet quisque nunc au.",
+      "long_description": "long description Scelerisque tristique leo dignissim tempus, nam adipiscing leo felis blandit eget. Eget tempus sodales risus nisi pretium pulvinar nulla lacinia nisi enim augue. Tempor aliquam lacus au nisl vestibulum cursus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Ornare.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Curabitur tristique posuere i turpis, sit facilisis eget tincidunt mattis.",
+      "long_description": "long description Ut nisl tempor est consequat. Ipsum mattis justo risus non. Tempus orci nam auctor. Pulvinar ac nulla ex aliquet dolor justo. Ut faucibus curabitur vel ligula. Risus mollis est neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Lobortis.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Ligula commodo e auctor blandit maecenas condimentum bibendum massa maecenas.",
+      "long_description": "long description Tincidunt tristique aliquam euismod massa, imperdiet tristique vehicula cursus commodo felis eu facilisis pharetra ex ultrices eget sit justo vestibulum diam. Ultrices tempor risus posuere blandit dui nibh commodo metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Porttitor.",
+          "In."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Nunc fringilla tempus proin quisque, nunc fringilla sed adipiscing aliquet.",
+      "long_description": "long description Blandit nisl commodo lacus purus. Magna morbi faucibus nunc natoque enim vel adipiscing, tristique elementum dui iaculis e, suscipit ut lobortis nam. Turpis sagittis mattis ultricies orci diam massa nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Ornare.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description I in a nam non nibh. Vitae amet mi placerat.",
+      "long_description": "long description Arcu sollicitudin consequat viverra tincidunt, est placerat morbi pharetra accumsan sagittis est mollis diam tincidunt dictum. Bibendum non in posuere mi cras ex placerat, morbi elementum iaculis maximus nibh et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Felis.",
+          "Adipiscing.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Massa porttitor ex laoreet cursus nisi augue laoreet tincidunt accumsan.",
+      "long_description": "long description Est elit proin a velit curabitur, ante diam eu nunc finibus placerat laoreet est donec id finibus aliquet. Ut leo aliquam curabitur augue sed. Eros pulvinar ultricies suscipit enim imperdiet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Id.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Donec aliquam facilisis bibendum faucibus cursus accumsan ultricies tempor arcu.",
+      "long_description": "long description Est nam porttitor facilisis cursus nibh. Proin facilisis maecenas a eros dignissim eu lacinia. Tincidunt nam dictum non nisi enim consectetur eu aliquam proin non i. Tortor blandit diam sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Erat.",
+          "Ex."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Rhoncus condimentum sem lacinia ultricies vulputate rhoncus ex mollis vehicula.",
+      "long_description": "long description Proin amet tempus maecenas risus mauris. Nunc ornare enim ex sagittis amet lobortis proin, in gravida est accumsan ultricies euismod risus mollis, condimentum est proin vulputate metus vehicula scelerisque tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Justo.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Metus etiam cursus nibh quisque. Consectetur augue nam lobortis lobortis.",
+      "long_description": "long description Nam i dolor in vehicula adipiscing pellentesque, leo ante elementum eros aliquam laoreet natoque au, commodo mi pulvinar vel augue, scelerisque pulvinar id pretium ipsum, fringilla lobortis etiam felis et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "Tempor.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Massa orci ipsum ut pretium eti eti ipsum dignissim maximus.",
+      "long_description": "long description Placerat elit mauris morbi sollicitudin, eget sit metus sed blandit, curabitur non porttitor at elit, suscipit lacinia lacinia hendrerit leo, sollicitudin fringilla lacinia eget, cras vel ex eu ultricies vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sagittis.",
+          "Quis.",
+          "A."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Blandit magna mollis vel massa bibendum ligula. Imperdiet cursus eros.",
+      "long_description": "long description Ac mattis pulvinar dolor quisque. Scelerisque diam tempor lacus leo eti a pellentesque sem vestibulum adipiscing, nunc elementum augue natoque accumsan ex lacinia tempus mauris adipiscing leo viverra tortor auctor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Magna.",
+          "Mattis."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Gravida elit etiam non e maecenas hendrerit ut laoreet condimentum.",
+      "long_description": "long description Velit ultricies quis lacinia aliquet diam, sed felis mattis hendrerit proin facilisis imperdiet natoque lectus viverra. Accumsan elementum ipsum erat, justo a consequat etiam at. Condimentum natoque posuere aliquam mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "Proin.",
+          "Arcu."
       ]
     },
     {
       "name": "FastMart",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam hendrerit dictum nisi hendrerit finibus imperdiet. Dignissim nibh nam lectus tristique, maecenas orci pellentesque aliquam sagittis at. Ornare metus consequat pellentesque non tristique ligula.",
+      "short_description": "short description Amet lobortis maecenas enim erat aliquam. Gravida tempus facilisis porttitor.",
+      "long_description": "long description Aliquam i dolor faucibus consequat sollicitudin a, justo finibus sagittis dui, sollicitudin tristique massa vulputate iaculis sodales vestibulum ultricies amet. Consectetur adipiscing rhoncus cursus finibus amet. Tincidunt commodo neque blandit.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Id.",
+          "Fringilla.",
+          "Sodales."
       ]
     },
     {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ante maecenas ac lobortis nisi arcu consectetur. Metus elit nam ipsum suscipit, ipsum vestibulum blandit ornare. Lacinia iaculis magna dolor, ligula augue elit vestibulum elit.",
+      "name": "Terralabs",
+      "short_description": "short description Hendrerit sollicitudin vitae amet nisl aliquet fringilla. Metus finibus commodo.",
+      "long_description": "long description Etiam maximus ultricies iaculis elit risus velit. Auctor consequat quis lacinia. Sagittis nam imperdiet lacus vel ipsum, elit donec eros massa etiam metus lobortis, pellentesque turpis neque vel non quis.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Mauris.",
+          "Gravida.",
+          "Vitae."
       ]
     },
     {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat accumsan ante tempus nibh. Ante pellentesque commodo aenean maecenas. Consectetur i suscipit blandit arcu consequat pharetra curabitur quisque pretium lacinia scelerisque, accumsan pellentesque dolor.",
+      "name": "Infracom",
+      "short_description": "short description Vel e maximus proin metus mauris pretium porttitor faucibus commodo.",
+      "long_description": "long description Pellentesque lectus aliquam neque risus, ex nunc risus elementum curabitur nibh, pellentesque facilisis leo sollicitudin et ligula dictum placerat sollicitudin leo faucibus i, mattis ultricies massa sem ante scelerisque orci.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Hendrerit.",
+          "Etiam.",
+          "Proin."
       ]
     },
     {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat ipsum ligula lacinia morbi lacinia facilisis tortor ex. Facilisis facilisis ultricies natoque quisque neque lacus tortor ligula tincidunt, augue nulla tristique consequat viverra cursus.",
+      "name": "FastFreight",
+      "short_description": "short description Proin consequat sed orci erat. Dui rhoncus nulla nam maximus.",
+      "long_description": "long description Mi mauris hendrerit leo et, consequat magna commodo sollicitudin, cursus velit rhoncus cras diam, posuere iaculis nulla justo cras id morbi aliquam, arcu aliquet ut et nisl ante orci sem.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare orci iaculis lacinia eti ultricies, facilisis scelerisque rhoncus iaculis dui, elit orci erat scelerisque placerat eti faucibus, arcu sem eget sapien commodo mattis sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa posuere maximus vestibulum erat non consequat, finibus est nisl turpis. Id ultricies accumsan mi. Cursus pulvinar euismod sodales ornare rhoncus proin est tempor lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac felis e vulputate viverra enim id fringilla et dignissim et condimentum lacinia vehicula nam. Ut enim metus curabitur suscipit mi. Hendrerit scelerisque pellentesque cursus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor in eget nibh porttitor finibus. Rhoncus porttitor euismod sagittis, facilisis au quisque vehicula faucibus, non elementum purus auctor euismod. Morbi massa velit mi ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus et metus consequat blandit, cursus dui vestibulum imperdiet elementum, laoreet et nisl risus. Etiam au leo euismod amet iaculis posuere rhoncus, vitae sem pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices fringilla est eu consequat eros. Imperdiet risus eti aliquam elementum ultricies. Vitae id ipsum arcu auctor quis. Ut lacus elit tempus. Accumsan ornare nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TurboSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit sem dui amet ligula rhoncus neque. Aenean felis natoque amet accumsan lectus, gravida tincidunt etiam mauris ut suscipit felis mattis. Sagittis elit tempor dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus risus au lobortis nulla id. Placerat au curabitur ultricies, pulvinar fringilla ultrices maecenas etiam. Pulvinar sagittis erat leo dui tincidunt etiam lectus blandit lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam curabitur pharetra tempus imperdiet imperdiet curabitur aliquet. Nunc condimentum nunc augue. Vestibulum tincidunt augue elit fringilla etiam. Non elementum non pellentesque sagittis scelerisque quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus tortor facilisis felis ligula metus proin at. Ex viverra maximus scelerisque aliquam proin mattis pulvinar gravida. Vel porttitor hendrerit mi ipsum ante condimentum i.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis posuere vel dui eros. Imperdiet consequat placerat sagittis. Faucibus aenean lacinia neque. Dui natoque vestibulum diam sollicitudin aenean nisl. Ex mattis euismod erat felis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus sit enim nunc ultricies eti placerat ex orci viverra finibus tristique. Maximus donec facilisis cras lobortis, eget ac adipiscing pharetra commodo. Au id mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consequat fringilla aliquam commodo vehicula. Sed sapien pretium facilisis scelerisque. Nam fringilla nulla felis ultrices nisi magna, maximus lectus sollicitudin condimentum euismod hendrerit bibendum ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis mi consequat dolor lorem. Natoque rhoncus ultricies purus. Eti non sagittis vulputate mattis maecenas a mi erat posuere, aliquet lobortis tincidunt velit cras sapien.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit eu cursus elit gravida lacinia. Morbi tempus orci aenean blandit nam, laoreet turpis condimentum vel. Neque pellentesque metus dolor etiam nunc in pellentesque viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Morbi sit ut tempus condimentum. Vitae porttitor at curabitur curabitur nunc nibh felis lectus. Bibendum tempor mauris elit enim morbi tristique non ut a vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit mauris ac aliquet leo accumsan. Ex finibus e aliquet pellentesque, lobortis mollis tortor lobortis et ultrices tortor, mollis enim aliquet erat, placerat condimentum natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate ac adipiscing elit sollicitudin fringilla maximus, scelerisque lobortis mattis dignissim. Risus sapien diam diam curabitur pharetra pellentesque felis dignissim euismod ex sem sagittis proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate sagittis ligula e quis non sagittis, ultrices mi sollicitudin mollis magna id tristique dictum, vitae massa mauris lectus mollis cursus maecenas maecenas nibh fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus lorem mattis adipiscing bibendum iaculis augue. Lacinia maecenas blandit in. Posuere nisl magna iaculis bibendum. Ligula faucibus ornare eu, e nisl velit pellentesque pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis sed ligula consequat in. A adipiscing sed posuere morbi at est mi. Lorem risus id morbi, dolor gravida curabitur curabitur. Dolor sodales gravida tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor eu diam hendrerit massa curabitur leo mauris condimentum faucibus. Tempus tempus metus massa turpis porttitor metus lobortis eget nibh. Dolor elit au risus mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac mattis cras maximus consectetur tortor. Purus ut sed at. Consequat purus enim nisi. Sagittis nam mollis dolor velit, curabitur id orci proin commodo ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis finibus nisl donec fringilla pellentesque eti eti tincidunt facilisis id vitae pulvinar mi in proin natoque elit ligula. Dictum cras accumsan lobortis dolor mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Haltheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula sapien sagittis lacinia posuere pretium. Pharetra sodales ac eti, maximus mollis maecenas lacus, quis proin nisi ex aliquet sed. Massa nibh natoque etiam tortor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis nam non tortor mi, ipsum aliquam tortor ex. At lobortis turpis consectetur sed mauris scelerisque. Consequat sodales augue ultricies porttitor, eros nam erat tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus pretium etiam nisl laoreet finibus adipiscing. Sit lectus ultrices lorem, lobortis accumsan suscipit au ultricies, vel pellentesque sit lacinia eros. Consectetur ipsum etiam finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor pretium ultrices neque pellentesque. Sed lorem ornare at, aliquet eti ultrices ligula. Vestibulum eros elit quis sem. Cursus lacinia scelerisque nam lacinia maecenas aliquam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat nam aenean maximus finibus, erat est pulvinar ultricies, purus in gravida id. Ornare tincidunt etiam rhoncus, tortor purus lacinia erat. Pharetra lectus vehicula vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh placerat metus arcu mauris facilisis adipiscing gravida, ac lectus at magna vitae. Tempor ultricies justo ut. Tristique mauris rhoncus mauris ac, aliquet orci rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description E eu dolor et vestibulum at. Lectus ac lobortis tempor. Enim ornare maximus facilisis, risus dolor justo massa tortor maximus, donec nisi sodales ante finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor eu au dictum non tincidunt. Orci bibendum vehicula felis aliquam morbi, iaculis vestibulum facilisis sollicitudin risus, accumsan fringilla elementum tortor ipsum dui lobortis justo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet massa maximus ligula consectetur accumsan et id ultricies ac ligula auctor, pellentesque aenean dolor lectus lacinia, placerat ex cras facilisis, ultrices consectetur mollis ac.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti consectetur scelerisque ultricies leo. Mattis vehicula elementum pretium ligula commodo, mattis finibus ex tristique lacinia, gravida sodales tristique lobortis eti. Nisi sit mi sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh vestibulum viverra augue vehicula pharetra et fringilla. Mauris sapien pellentesque lacinia nam sodales cras, rhoncus sit condimentum eti etiam sollicitudin pellentesque lectus tempor porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
+          "In.",
+          "Sapien.",
+          "Laoreet."
       ]
     },
     {
       "name": "Optiplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description E hendrerit rhoncus leo nam, gravida gravida blandit est mi eget quisque ultricies felis laoreet aliquam scelerisque tempor pretium. Bibendum orci cras ac ipsum ante.",
+      "short_description": "short description Sodales mollis ultricies dui bibendum dictum au. Dictum felis proin.",
+      "long_description": "long description Metus sollicitudin sed ex lorem eget sagittis etiam et arcu sagittis ultricies. Lacinia etiam leo neque aenean pulvinar, vitae aliquet nisl nisl. Pretium ligula e lectus nulla ultrices arcu justo.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum vulputate orci enim e. Proin aliquet hendrerit tortor aenean turpis. Pretium ornare eget lobortis nulla posuere tincidunt lacinia eu. Tincidunt fringilla placerat accumsan ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor etiam iaculis mollis maximus ultricies consequat. Commodo ornare tempus tortor suscipit sem. Elit tempor sapien adipiscing auctor, ex tristique turpis nibh massa arcu turpis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
+          "Natoque.",
+          "Massa.",
+          "Ultricies."
       ]
     },
     {
       "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor tempor aliquam quis tristique, est aliquet erat quisque morbi blandit maximus facilisis dolor, turpis posuere pulvinar sapien vestibulum massa nulla. Eget au commodo arcu.",
+      "short_description": "short description Enim pulvinar euismod ut maximus. Vulputate dignissim ac tincidunt placerat.",
+      "long_description": "long description Condimentum lorem ut magna lacinia lorem. Dolor dolor amet maximus. Ante etiam mollis leo felis, au gravida imperdiet scelerisque, diam e enim ultrices curabitur. Leo tincidunt vel bibendum nam tempor.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Blandit.",
+          "Adipiscing.",
+          "Cras."
       ]
     },
     {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor elementum facilisis natoque vulputate, erat dui ultrices justo tincidunt. Eget maecenas sit pretium quis, laoreet nisl placerat tempor quisque facilisis proin, ipsum faucibus nunc.",
+      "name": "Hypervision",
+      "short_description": "short description Auctor scelerisque eti nulla est dictum sodales justo purus nunc.",
+      "long_description": "long description Posuere vestibulum ac pharetra metus. Ipsum diam porttitor imperdiet mollis, posuere dignissim natoque nisl quisque et finibus nulla sodales pulvinar, ex bibendum maximus dolor. Vitae tristique placerat nisi lorem ipsum.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien turpis ac faucibus morbi natoque purus leo. Tincidunt proin consectetur cursus. Amet sapien non ante ultricies nulla, aliquam massa dui lacinia. Porttitor pulvinar pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut ante felis diam nulla elit. Justo tempus blandit tristique lobortis sagittis sed vitae vitae tristique. Purus i nisi fringilla, mi at sollicitudin dictum lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
+          "Rhoncus.",
+          "Dui.",
+          "Consectetur."
       ]
     },
     {
       "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus elementum ex nulla aenean eu nunc cras, maximus vehicula tempus adipiscing, elementum gravida hendrerit aliquet. Quis iaculis magna proin faucibus pharetra iaculis gravida auctor.",
+      "short_description": "short description Aliquet aenean lectus mauris nisl. Purus pellentesque massa sollicitudin est.",
+      "long_description": "long description Dictum gravida donec purus felis pharetra sapien, risus sit eu lacinia, tempor porttitor turpis natoque dui curabitur natoque e, sodales ipsum tempus maximus, elit eros turpis placerat. Condimentum vehicula lacinia.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Magna pharetra lacinia cras pulvinar eget eget tempus aliquam. Morbi lacinia gravida ante. Sem bibendum leo a porttitor. Suscipit morbi sem ante id ipsum et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod tortor blandit eget sem nibh massa elit scelerisque vehicula aenean. Consectetur pretium purus laoreet. Sodales lobortis sodales est. Mi au vestibulum ipsum eros scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus neque consectetur elementum tortor consectetur neque mi quis curabitur curabitur. Sed facilisis ultrices eu, vehicula purus mattis tempor in eti a finibus tincidunt viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi sed euismod scelerisque maximus. E ligula pretium leo aliquet dui cras ultrices, tristique imperdiet velit vitae a neque nibh. Nam risus massa posuere mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description In mi nisl diam adipiscing, finibus purus condimentum cursus ante condimentum, lacinia eti pellentesque et vitae, condimentum au felis lacinia, ac velit au lacus lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo elit pellentesque pharetra arcu tristique. Justo leo sollicitudin i enim, magna diam enim laoreet, porttitor elit ut quisque nulla. Ut finibus ultricies condimentum lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium lorem commodo finibus ut, cursus maximus non finibus vehicula. A ultricies hendrerit condimentum cursus proin aenean. Tincidunt dignissim dignissim diam, maximus erat sodales lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor non eget lacinia curabitur in suscipit bibendum proin sem magna. Posuere augue enim bibendum orci. Neque consequat pretium vitae sed dui leo donec mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis ac lobortis nisi felis. Placerat diam natoque vulputate euismod sagittis ipsum dolor a, lectus erat curabitur blandit dolor sollicitudin curabitur, sodales amet lectus auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consequat posuere mauris justo posuere massa aenean mattis rhoncus felis elit, blandit tristique pellentesque metus cursus ipsum lobortis nibh nunc mauris turpis amet faucibus metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description At tempor imperdiet ultricies ipsum est donec, curabitur maximus est au aenean viverra nibh curabitur sodales sodales hendrerit leo non hendrerit ligula aliquam pretium lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti imperdiet pretium accumsan tempor sit. Eros sem tempor eti, natoque dui eu placerat. Est et ex ac. Ipsum aliquet blandit morbi, turpis natoque ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus aliquam blandit elementum dictum. Lacinia nisi nam sollicitudin natoque curabitur. Pulvinar gravida scelerisque vitae ex. Au diam cursus aenean i fringilla natoque vehicula felis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description E maecenas sollicitudin vitae nunc, velit etiam nunc faucibus risus pharetra. Arcu blandit accumsan consequat, mollis ornare augue in vehicula ornare, quis magna e lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et id sem sapien maecenas cursus natoque mollis accumsan vitae, accumsan diam e imperdiet ipsum ultrices est. Condimentum tristique risus accumsan etiam viverra vitae condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elementum ut non velit ligula placerat mattis velit. Commodo vitae ultricies lacinia pharetra, ipsum consectetur tempus at vel nibh amet. Proin i e ligula blandit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac natoque dignissim morbi lobortis aenean lobortis. At finibus nisl lorem lacus faucibus non. At massa commodo arcu pretium adipiscing mauris elit. Orci massa natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
+          "Adipiscing.",
+          "Velit.",
+          "Ac."
       ]
     },
     {
       "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam natoque viverra finibus quis, consequat non mollis turpis, sit risus sollicitudin adipiscing metus non. Natoque orci dui tempus pharetra. Lacinia eget in mattis augue.",
+      "short_description": "short description Ut quis mauris ipsum vulputate scelerisque. Augue nisi nunc imperdiet.",
+      "long_description": "long description Turpis ultricies auctor i lorem blandit orci finibus blandit lectus dignissim elit risus porttitor dolor lacinia sagittis, lobortis ex lobortis vehicula pretium justo proin lectus pretium mi mi nibh ex.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Lacinia.",
+          "Nam.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Sollicitudin a facilisis eu tristique elementum morbi aenean nisi lectus.",
+      "long_description": "long description Lobortis leo dolor condimentum cursus bibendum nulla, purus etiam finibus auctor donec vitae cursus, mattis leo lacus lorem vel, iaculis e gravida velit euismod euismod neque aenean fringilla ex felis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Facilisis.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Nitrocam",
+      "short_description": "short description Gravida vehicula nisi vehicula nibh ligula dictum. A sodales dictum.",
+      "long_description": "long description Scelerisque condimentum tortor blandit mattis. Curabitur pharetra sed ornare auctor vitae, neque nisl velit massa, neque viverra natoque id faucibus orci. Orci et lacinia suscipit fringilla massa laoreet purus lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Ornare.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Finibus magna consectetur mattis pellentesque. Tempus pellentesque sodales eti ac.",
+      "long_description": "long description Ac i hendrerit orci est faucibus. Justo tempus consectetur euismod proin vitae mauris placerat, erat lectus ac id donec, tempor ante id faucibus. Pretium lectus faucibus proin. Adipiscing au leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Non.",
+          "Blandit."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Mattis tortor aenean sodales tincidunt scelerisque fringilla finibus tristique eget.",
+      "long_description": "long description Commodo vulputate cursus quisque sit. Non i ante scelerisque ex pharetra, a cursus dignissim porttitor vulputate lacinia turpis nibh, dolor lobortis au euismod ac. Gravida ut lacus i sodales ante.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Viverra.",
+          "Maximus.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Curabitur elit lectus donec leo. Vulputate nibh curabitur aliquam id.",
+      "long_description": "long description Nulla in scelerisque ultrices rhoncus ultricies mi, viverra ligula sem sem nunc ante. Ultrices finibus ante rhoncus. Tincidunt neque tortor diam elit viverra finibus vulputate dolor, consequat aliquam dictum e.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Justo.",
+          "Nulla.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Tristique viverra amet aliquam lacus natoque imperdiet leo sem placerat.",
+      "long_description": "long description Placerat arcu adipiscing elit mi enim. Mi posuere eti enim blandit justo felis, finibus maecenas ac fringilla magna lacinia etiam, imperdiet vestibulum eget elit, ante sit eti mollis nunc purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Consectetur.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Dignissim i metus placerat leo, risus lectus dictum diam elementum.",
+      "long_description": "long description Ante cras imperdiet blandit vehicula lacinia ornare nam dolor. Ultrices elit eu ac tortor condimentum placerat. Cursus laoreet lacus condimentum mattis quis. Auctor ultricies quis placerat. Mi suscipit lacinia et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Morbi.",
+          "Auctor."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Ut condimentum pretium dolor lobortis. Laoreet scelerisque facilisis dignissim tempus.",
+      "long_description": "long description Aliquet vitae vehicula leo nibh facilisis ac. Suscipit neque in elit. Vulputate risus velit aliquam quis felis, eget lacinia tristique eti. Mauris iaculis ante pellentesque maecenas a et diam lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Risus.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Maximus elementum sit iaculis eget, consectetur sed vestibulum sollicitudin bibendum.",
+      "long_description": "long description At euismod tempus dictum dictum, tincidunt proin felis amet non nam pulvinar lobortis, fringilla in purus arcu. Morbi erat commodo in. Consequat facilisis magna magna non porttitor aenean ante dolor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Sem.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Tincidunt ultricies mollis nisi nibh donec fringilla turpis diam au.",
+      "long_description": "long description Viverra iaculis enim eu tincidunt morbi sit proin. Turpis vehicula sem ultrices adipiscing felis. Sem purus pulvinar dignissim tortor. Finibus velit nunc sollicitudin maximus vehicula ligula ultrices facilisis tincidunt nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ex.",
+          "Ut.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Mauris dictum e eget adipiscing diam, lorem turpis eu lectus.",
+      "long_description": "long description Tortor facilisis commodo accumsan cras laoreet, lacus id adipiscing tempus pulvinar iaculis, diam mollis eti id tincidunt, scelerisque dignissim quisque arcu auctor donec ipsum curabitur vel nisi ultrices suscipit tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Tempus.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Scelerisque vel lacinia ipsum elementum. Au laoreet purus imperdiet et.",
+      "long_description": "long description In etiam blandit sapien nisi. Cursus in consequat rhoncus ornare nunc velit mattis massa adipiscing aliquet. Mattis nibh nisi nunc vehicula pellentesque pulvinar, elementum velit sed ac, consequat vestibulum ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vestibulum.",
+          "Commodo.",
+          "Proin."
       ]
     },
     {
       "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus au mi e nisl, placerat aenean dolor ultrices morbi justo vel mi placerat et vehicula quis magna. Aliquet a augue lectus facilisis augue porttitor.",
+      "short_description": "short description Ultrices nulla faucibus et orci. Ornare nunc elementum massa nulla.",
+      "long_description": "long description Arcu nisl lobortis tincidunt amet iaculis, natoque vitae iaculis ultrices neque. Sapien consectetur ornare justo sagittis maecenas. Scelerisque ultricies dignissim orci et bibendum commodo augue bibendum, tincidunt velit hendrerit fringilla.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Lobortis.",
+          "Tempus.",
+          "Quis."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Et laoreet vitae leo id turpis quisque vel augue finibus.",
+      "long_description": "long description Nulla cursus scelerisque lacinia sapien lorem nisi auctor quisque sodales felis suscipit condimentum pulvinar id, commodo hendrerit pellentesque ante dui dictum vulputate. Eget in lacinia neque aenean, lectus commodo velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mollis.",
+          "Tincidunt.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Iaculis pulvinar tempor sagittis elit. Rhoncus ac condimentum condimentum ut.",
+      "long_description": "long description Lobortis porttitor au proin dolor morbi consectetur sem orci. Laoreet massa ipsum ultrices. Sed morbi faucibus vel. Commodo eget quisque et laoreet, amet lacinia scelerisque tempus consectetur vulputate au au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eget.",
+          "Velit.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Etiam risus adipiscing metus i, sagittis tincidunt a tristique scelerisque.",
+      "long_description": "long description Sapien imperdiet vehicula enim dictum. Neque i sem maximus i, gravida gravida in at vitae quisque vel mollis pulvinar. Magna lorem eti eu mollis elementum. Ac erat auctor i orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Augue.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Nibh est pellentesque nam quis, metus elit ultrices gravida consequat.",
+      "long_description": "long description Id e in mi pharetra pellentesque magna, tincidunt mauris posuere donec sem, velit i nisl mollis, auctor ornare est leo, iaculis eget diam tempor sollicitudin. Imperdiet pellentesque pretium metus pulvinar.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "A.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "LoopSys",
+      "short_description": "short description Arcu lacus pulvinar in finibus vulputate. Fringilla bibendum leo sollicitudin.",
+      "long_description": "long description Euismod metus amet eros adipiscing commodo pharetra ultrices, tortor vitae nisl ex diam metus placerat vehicula eros justo nunc. Eros dictum tincidunt diam. Sit lectus adipiscing porttitor a nisl augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ut.",
+          "Hendrerit.",
+          "In."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Augue vel lectus orci donec donec faucibus. I lacinia diam.",
+      "long_description": "long description Dolor suscipit lobortis condimentum ac aenean. Viverra vitae i aliquam finibus nulla. Ac purus sem felis justo ante massa. Nibh consectetur quis faucibus quis. Orci neque ultrices pulvinar ipsum justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mauris.",
+          "Velit.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Lorem aenean pulvinar mauris rhoncus ex mattis in nisl eros.",
+      "long_description": "long description Ultricies bibendum ac sem eti ultricies, commodo et viverra etiam hendrerit commodo nam hendrerit. Non felis enim fringilla laoreet. Porttitor accumsan eti condimentum mauris proin iaculis, suscipit porttitor risus vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Vestibulum.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Tempor fringilla dui mollis ut eros. Est ipsum ex orci.",
+      "long_description": "long description Nibh lacinia purus tristique mollis pretium. Laoreet tortor tristique accumsan. Purus curabitur ex lorem. Velit et morbi mauris lacus. Nisi quis natoque magna accumsan ultrices sit condimentum iaculis est sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Faucibus.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Pulvinar et au metus elementum. Fringilla mollis nibh ut felis.",
+      "long_description": "long description Ultricies ligula placerat ipsum au, fringilla arcu mauris mollis hendrerit, posuere eu elit porttitor iaculis magna nunc ut leo. Arcu vehicula pharetra gravida mauris justo vehicula morbi. Hendrerit aliquet amet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tortor.",
+          "Non.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Euismod eget eu amet tortor euismod purus proin tristique pretium.",
+      "long_description": "long description Posuere i eu tempus sed nibh mattis. Quis ornare lacus sed dui rhoncus. Aenean consequat euismod vulputate, massa mattis felis quis. Placerat imperdiet velit scelerisque risus. Eget lacinia mi eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Tortor.",
+          "Pretium."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Placerat tempus natoque ante risus vel, laoreet bibendum erat tortor.",
+      "long_description": "long description Bibendum a aliquam sagittis est dictum. Eget et lacinia sodales dui. Dictum hendrerit tristique vitae et adipiscing imperdiet, mollis tincidunt arcu hendrerit dui dui augue accumsan curabitur au finibus maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Purus.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Sodales et aenean tortor ex. Auctor sapien sed porttitor mauris.",
+      "long_description": "long description Cursus a accumsan purus eti quis accumsan suscipit ex turpis erat nisl felis sit iaculis eros sem lacinia vitae metus e. Nisl non est condimentum. Magna sed hendrerit laoreet proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Etiam.",
+          "At."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description At sagittis magna magna purus, adipiscing mauris natoque consequat elit.",
+      "long_description": "long description Sed facilisis cursus ex nulla purus. Felis adipiscing scelerisque rhoncus diam augue morbi, au augue au tristique. Risus orci etiam dui, faucibus fringilla donec consequat dictum nunc aliquam i laoreet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Risus.",
+          "Non.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Tincidunt scelerisque massa massa laoreet sed nisl non et quis.",
+      "long_description": "long description Vitae etiam dictum donec lacinia. Ante purus sem i aliquet. Mollis blandit natoque dictum. Aenean blandit leo diam aliquet. Nisi curabitur fringilla mattis vulputate augue est proin. Tempus pharetra cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Finibus.",
+          "Lacinia.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Neque tempor id mollis ornare eros. Hendrerit diam tempus mauris.",
+      "long_description": "long description Faucibus quis nunc mattis quisque pretium lacus, pretium mattis mi sit mauris iaculis finibus arcu erat amet, vitae accumsan eget gravida massa pharetra. Vehicula est elementum risus dui maecenas cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Lacinia.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Ornare sollicitudin augue non facilisis. Nunc iaculis in dignissim imperdiet.",
+      "long_description": "long description Finibus dolor id vehicula neque, adipiscing etiam sollicitudin maximus ornare consectetur proin lacinia nunc tempor leo ipsum aenean eros pulvinar accumsan lacinia nisl. Fringilla vel mi adipiscing au nisl aenean.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elit.",
+          "Diam.",
+          "Justo."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Mattis morbi eu posuere ipsum sem turpis. Consectetur sem augue.",
+      "long_description": "long description Scelerisque augue finibus diam fringilla vehicula. Neque tempor purus aenean ut, dui massa vulputate aenean vulputate, commodo massa mi a porttitor. Imperdiet adipiscing augue gravida lacus elit amet elementum nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Au.",
+          "Donec."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Ipsum morbi tempor nibh scelerisque tortor, auctor justo etiam eu.",
+      "long_description": "long description Leo suscipit felis mi accumsan massa. Sapien nunc nunc ac maximus sagittis posuere suscipit, enim in placerat erat nunc i i. Etiam tempus purus pharetra quisque mattis sed auctor laoreet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Accumsan.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "Anaplex",
+      "short_description": "short description Diam dui tempor laoreet lacinia. Ligula ante augue mollis maecenas.",
+      "long_description": "long description Dictum lacinia proin donec dignissim ornare, sollicitudin gravida vestibulum ac, dolor curabitur amet lacinia non dui, bibendum sed tempor aenean justo, eti ex tincidunt porttitor lobortis mi, ut sollicitudin in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Quis.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Vulputate consequat arcu fringilla etiam elementum pellentesque elementum non e.",
+      "long_description": "long description Natoque nam hendrerit cras iaculis condimentum, lacinia euismod finibus est scelerisque nisi. Sagittis aliquam tortor viverra aenean dignissim sollicitudin aliquam nibh au. Dignissim natoque ac neque. Eros sem ultricies nibh.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Donec.",
+          "Mauris."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Auctor euismod est at est. Condimentum nisi ante dictum amet.",
+      "long_description": "long description Aliquet imperdiet rhoncus pretium turpis rhoncus consequat mollis magna commodo vestibulum sapien placerat augue condimentum velit eti posuere elementum. Lacus sit pretium iaculis, ultrices eros scelerisque proin. Nisi laoreet ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Finibus.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Cryptonica",
+      "short_description": "short description Mollis rhoncus accumsan nam posuere arcu proin i i au.",
+      "long_description": "long description Suscipit tempor at justo scelerisque nam, eros faucibus e massa curabitur amet aenean, lacinia aliquam massa tempus nibh, maecenas nisl vulputate ultricies eu posuere consequat sapien nulla laoreet faucibus euismod.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Sem.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Au cursus proin diam pellentesque nunc eros eros neque ipsum.",
+      "long_description": "long description Ut diam mauris dictum ipsum sollicitudin. Curabitur nibh nulla euismod lacinia. Ut tempor euismod ornare rhoncus. Au ornare eu porttitor. Natoque sollicitudin mauris blandit. Viverra diam ante ligula imperdiet sed.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Enim.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Nulla at nisl tortor vulputate elementum cursus mauris neque pretium.",
+      "long_description": "long description Facilisis dignissim ut pellentesque rhoncus proin, lectus eget adipiscing ipsum, ipsum purus nibh purus natoque, gravida auctor porttitor tincidunt nisl lobortis mi dui dui non lorem dictum. Placerat amet etiam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Massa.",
+          "A."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Placerat a arcu felis est fringilla. In dolor blandit amet.",
+      "long_description": "long description Tincidunt dolor vitae consequat morbi condimentum, nam cursus curabitur a finibus. Laoreet risus lobortis neque enim nibh augue. Faucibus donec hendrerit lectus i aliquam enim ac etiam, adipiscing eget est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Quis.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Adipiscing dui sapien tempus dui justo commodo. Risus vel est.",
+      "long_description": "long description Diam dictum eget porttitor lacinia pellentesque sed hendrerit, turpis amet tortor iaculis maximus blandit ultricies finibus nam tempor adipiscing, nam curabitur faucibus morbi, pulvinar morbi elit consequat. Lacinia ultrices eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Euismod.",
+          "Eu.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Sed faucibus a etiam vulputate pretium mauris. At eti vulputate.",
+      "long_description": "long description Id porttitor nisl ultricies lacus nisl. Natoque hendrerit posuere dui, euismod at et aliquet, iaculis porttitor massa rhoncus. Sodales lobortis blandit ornare sed. Lorem sapien magna eti, neque etiam au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Amet.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Euismod aliquet est velit donec quisque. Aenean viverra at commodo.",
+      "long_description": "long description Sed nulla massa tortor vel, aenean e ex sed sagittis dui sed e dui. Massa in quisque lacinia, auctor imperdiet leo et etiam, vestibulum vehicula morbi cursus. At ultricies ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Nulla.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Eu nibh cras lacinia ornare e nibh in mattis erat.",
+      "long_description": "long description Sollicitudin maecenas neque lorem amet blandit morbi quisque justo aliquet. Eu ultricies scelerisque curabitur. Laoreet viverra mi tristique vitae purus auctor, massa nisl tortor tincidunt hendrerit porttitor. Finibus vehicula lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "Sapien.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Curabitur placerat enim erat consectetur lobortis, metus aenean sapien est.",
+      "long_description": "long description Bibendum faucibus faucibus massa adipiscing. Mi tristique tincidunt elementum. Bibendum euismod dictum sollicitudin lacinia. Natoque mollis orci sollicitudin etiam viverra nam bibendum ante mauris bibendum ac ligula, mattis scelerisque magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Laoreet.",
+          "Blandit.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Proin ipsum sit vestibulum porttitor. Ac dignissim elementum tincidunt eros.",
+      "long_description": "long description Hendrerit et quis ex augue blandit euismod erat est turpis vitae, elementum cursus vestibulum pellentesque. Vel justo ante cras donec. Vitae est metus id augue, erat ultricies felis finibus commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Facilisis.",
+          "Laoreet."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Risus enim ligula a fringilla imperdiet bibendum sapien quis cursus.",
+      "long_description": "long description Au tempor lorem risus lobortis. Lorem metus placerat diam imperdiet id facilisis augue erat hendrerit, viverra laoreet pellentesque ligula. Velit eget aliquam velit diam, blandit massa bibendum nulla quisque consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Posuere.",
+          "Ultricies."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Lacus lacus maximus commodo enim proin ante consectetur au orci.",
+      "long_description": "long description Suscipit faucibus vulputate consectetur sit aliquam hendrerit vulputate dui e pharetra, condimentum lorem consectetur elementum imperdiet hendrerit sollicitudin pretium. Mi elit mi turpis ornare pharetra commodo. Natoque magna pretium ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Nunc.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Cursus eu sollicitudin fringilla blandit mauris ipsum massa maximus lobortis.",
+      "long_description": "long description Aliquet eget au dui tristique ante sit sed id. Dui amet mattis nunc natoque maecenas cras dignissim massa lobortis purus. Diam nam viverra felis. Etiam at tristique elementum tempus porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Tempus.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Vehicula lorem pulvinar sapien nunc cras pulvinar, mauris au id.",
+      "long_description": "long description Vehicula elementum i ante i ultricies nam lacinia. Mollis ipsum eros fringilla ut, consequat au blandit amet, ac massa lacinia scelerisque, consequat iaculis au enim, magna etiam ipsum porttitor gravida.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Viverra.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Amet tortor maecenas vel massa proin, e vitae velit sapien.",
+      "long_description": "long description Sapien sit gravida eu fringilla. Facilisis at mauris non risus maecenas. Maecenas maecenas sagittis posuere curabitur ultrices enim auctor sit donec orci sagittis ornare tortor faucibus est. Sed condimentum id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Consectetur.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Maecenas condimentum elementum orci enim. Aenean at massa orci lacinia.",
+      "long_description": "long description Sapien dictum sollicitudin felis quisque hendrerit morbi sed. Turpis arcu curabitur ligula euismod, posuere felis ante ex i. Est nisi vitae mauris. Curabitur consequat mollis sapien erat scelerisque arcu aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Enim.",
+          "Facilisis.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Pretium eros viverra ornare rhoncus hendrerit in placerat mauris mattis.",
+      "long_description": "long description Dui nunc nunc mollis dignissim mi condimentum porttitor sodales, ipsum lorem velit condimentum nibh diam lacinia, arcu tempus in lacinia i adipiscing, purus consequat et placerat porttitor lobortis natoque ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Vehicula.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Aliquam erat sagittis sed accumsan. Scelerisque faucibus auctor au finibus.",
+      "long_description": "long description Condimentum lorem dignissim purus pharetra leo pellentesque e sagittis tristique nunc pulvinar, ultrices purus i maximus ultricies aenean e sodales consequat sit et nunc. Hendrerit eget bibendum tortor lectus erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisl.",
+          "Accumsan.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Posuere sit eros curabitur lacinia ligula tortor donec pulvinar placerat.",
+      "long_description": "long description Sapien mi turpis blandit aliquam iaculis tempus iaculis, justo ante nibh ipsum nibh aliquam in, nam vitae ipsum sodales nunc ut mollis magna dictum. Facilisis vulputate accumsan nibh rhoncus elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Donec.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Quis commodo maecenas adipiscing metus, elementum vel dolor fringilla ultricies.",
+      "long_description": "long description Tempor elit pharetra etiam purus. Enim eu metus consectetur iaculis, ex bibendum donec eget mauris in. Ipsum mauris suscipit lobortis aliquam, dui at tortor mauris ornare. Massa dui elit non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Tempus.",
+          "Non."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Dictum proin non leo posuere orci eget diam cras tempor.",
+      "long_description": "long description Aliquet viverra quis lobortis at quis placerat rhoncus at mi dictum pellentesque ante gravida, sem nunc elementum a arcu, ac placerat magna leo arcu. Quis sodales ut tempor pretium posuere.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Tristique.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Iaculis nisl consequat imperdiet cras vitae commodo finibus hendrerit lacinia.",
+      "long_description": "long description Bibendum gravida dolor pretium sit arcu finibus. Velit finibus id id, au imperdiet nibh au ultricies, non bibendum a ex sodales. Blandit dolor tristique magna felis vitae sodales i arcu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Massa.",
+          "Bibendum."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Finibus faucibus justo donec ornare nisi morbi. In vel hendrerit.",
+      "long_description": "long description Curabitur dictum hendrerit lectus amet consectetur, rhoncus lacus at natoque. Eu imperdiet iaculis suscipit gravida mollis. Lobortis at nisi euismod, lacinia arcu amet metus vulputate scelerisque ornare cras posuere tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Dolor.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Mi suscipit tempus erat aenean. Et bibendum morbi faucibus proin.",
+      "long_description": "long description Ex ex tincidunt ante placerat pulvinar nibh, laoreet rhoncus faucibus placerat sagittis. Ornare aliquam nunc nisl ornare. Sapien sed ante maximus viverra neque neque. Donec lacus dignissim sagittis auctor ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Ultricies.",
+          "Viverra."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Eros blandit tortor tristique nulla, purus vulputate mollis consequat risus.",
+      "long_description": "long description I neque turpis lacinia finibus tempor consectetur. Natoque ligula lacus eti lorem laoreet eti cras tincidunt quis, posuere pellentesque auctor leo vehicula sollicitudin dui erat. Augue tortor elementum mattis id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Pellentesque.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Sapien gravida maecenas pharetra purus. Orci mi arcu auctor diam.",
+      "long_description": "long description Velit condimentum aenean rhoncus vulputate iaculis. Gravida ultrices ac consectetur proin natoque. Metus lobortis sed laoreet suscipit vulputate. Pretium aliquet consequat sed eti imperdiet justo. Tortor bibendum risus est nunc.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sit.",
+          "I.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Erat magna elementum ac lacus arcu, dui sapien dolor mollis.",
+      "long_description": "long description Gravida nulla consectetur maecenas ante pharetra sem tempus at cursus nulla, lacinia enim ligula tempor natoque mattis imperdiet vehicula mollis tincidunt neque erat condimentum lacus scelerisque. Nulla quis etiam lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Consequat.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Vestibulum scelerisque scelerisque mollis auctor. Vehicula nunc dignissim ex adipiscing.",
+      "long_description": "long description Sem proin vitae finibus vitae lobortis accumsan sollicitudin mauris. Mollis a lobortis tempus ut orci, ante imperdiet iaculis dui dui scelerisque tincidunt euismod magna sollicitudin commodo, accumsan laoreet eu pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Pretium.",
+          "In."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Amet ultrices mi pharetra bibendum, orci felis consequat laoreet bibendum.",
+      "long_description": "long description Tempor cras tristique euismod nisl sapien ultrices. Lacus in aenean gravida consectetur dignissim nibh neque aliquam. Est sapien nisi nibh, aliquet suscipit gravida pulvinar erat eget nulla mattis porttitor metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Dignissim.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Aenean a eti ante accumsan diam sagittis vehicula posuere turpis.",
+      "long_description": "long description Magna est dui elementum justo. Nunc augue purus fringilla sodales. Augue curabitur ultrices accumsan hendrerit arcu posuere gravida. Auctor hendrerit eti natoque i euismod, tincidunt laoreet natoque sapien dignissim au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nulla.",
+          "Consequat.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description In proin aliquet cras pharetra cursus, mattis vel natoque eti.",
+      "long_description": "long description Cras eti iaculis erat lacus felis. Sagittis non hendrerit ligula. Pretium ultricies magna sodales mauris aenean gravida quisque. Pretium amet sollicitudin lacinia tristique consectetur neque, metus ornare vestibulum enim lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vestibulum.",
+          "Nulla.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Polygan",
+      "short_description": "short description Finibus vestibulum felis sagittis non. Aliquam etiam id felis justo.",
+      "long_description": "long description Commodo laoreet imperdiet et sed. Sapien lacus in turpis sit dignissim, non natoque blandit vulputate. Aenean maximus pellentesque nibh ut, ante condimentum commodo aenean. Eti nulla eros tempus consequat rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Magna.",
+          "Sollicitudin.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description Eti maximus felis au nam felis condimentum purus hendrerit et.",
+      "long_description": "long description Quis eros nulla auctor nam. Sed mollis aliquet in facilisis, eu quisque consectetur maecenas accumsan cras eros finibus, maximus porttitor velit elit magna dui posuere cras ut ultrices sagittis nisl.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Massa.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Risus amet justo natoque mauris morbi quisque. Pellentesque i felis.",
+      "long_description": "long description Nam posuere i cursus viverra pulvinar. Sodales posuere vehicula lacinia. Vulputate lobortis tempor enim proin orci morbi, ultrices curabitur arcu elementum ligula, pellentesque suscipit accumsan ante, morbi metus imperdiet maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Scelerisque.",
+          "Faucibus."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Vitae i vehicula mi vulputate curabitur aliquam ornare mattis posuere.",
+      "long_description": "long description Aliquet vestibulum lorem vehicula aliquam ante. Tempus justo aliquet at, imperdiet turpis consectetur pharetra dolor. Orci nulla suscipit justo, eros sodales justo nulla quisque. Cursus ac au tempus ultricies eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Dignissim.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Ornare enim finibus i dignissim turpis laoreet posuere lectus nisl.",
+      "long_description": "long description Quisque commodo consequat tempor aliquet augue, tempus ex pharetra imperdiet maximus, erat eti ultricies condimentum dui. Natoque vehicula bibendum viverra. Facilisis elit massa lacinia tortor nulla condimentum aenean auctor non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Dui.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Ipsum placerat amet pellentesque posuere. Ac amet ex adipiscing i.",
+      "long_description": "long description Aliquet sit lacinia placerat ultrices quis. Enim et nisi nisi nunc, imperdiet nisi blandit eget, elementum eros donec massa vehicula condimentum ut vehicula, vitae viverra est aliquam maecenas maecenas lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "A.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Ex aliquet dignissim risus ultricies. Leo maecenas consequat erat lobortis.",
+      "long_description": "long description Suscipit adipiscing neque maximus accumsan. Ex curabitur nam felis sollicitudin. Facilisis ipsum natoque i, nam nulla lacinia pellentesque, i vulputate quisque vel dignissim ac quis maecenas ultrices. Mauris commodo in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Vitae.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Massa neque tempor erat lacinia maecenas. Dui magna maximus a.",
+      "long_description": "long description Ligula quisque commodo ipsum aenean consectetur risus tempus aliquam neque est. Turpis vel ligula augue massa mauris. Blandit consectetur vestibulum faucibus consequat ultrices. Curabitur aliquet scelerisque tristique dolor sapien e.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Mauris.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Tempor vitae tincidunt facilisis fringilla, elit est hendrerit elementum sagittis.",
+      "long_description": "long description Augue maecenas curabitur aliquet enim, e id cursus eti commodo. Vestibulum velit commodo tempus lorem, dictum risus fringilla gravida porttitor, nunc i consequat non lacinia elit auctor adipiscing gravida aenean.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Tempor.",
+          "Auctor."
+      ]
+    },
+    {
+      "name": "WestGate",
+      "short_description": "short description Dui erat bibendum tristique tortor pulvinar euismod hendrerit cras placerat.",
+      "long_description": "long description Aenean suscipit quis mauris leo tristique. Consectetur eros justo et elementum bibendum eget ut. E euismod adipiscing in nunc purus. Vitae bibendum e augue vehicula a curabitur massa euismod eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "Tristique.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "Nitrocam",
+      "short_description": "short description Metus dolor ante nam ex, risus elit purus eros ultrices.",
+      "long_description": "long description Euismod lorem suscipit massa donec non tortor posuere. Eget auctor lacinia euismod lobortis ante tristique, nam vel pretium accumsan. I blandit pharetra cras porttitor ipsum, nibh massa lectus enim ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "Quis.",
+          "Vulputate."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Velit tristique sapien rhoncus aliquam ligula eget risus dui nisl.",
+      "long_description": "long description Sapien ornare fringilla pellentesque iaculis tempor iaculis a natoque mauris, lacus aenean est eros fringilla faucibus mollis posuere ante est iaculis. Amet dolor sem ex vehicula vehicula lectus gravida lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Ac.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Mi faucibus ligula cras suscipit laoreet tincidunt eu ligula sem.",
+      "long_description": "long description Tempus viverra ornare justo a hendrerit condimentum ante lacinia. Et in at vel proin scelerisque. Sodales purus eros a, mollis tempor et elit, pretium etiam lobortis id etiam purus vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Etiam.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Tincidunt au suscipit felis ut bibendum, curabitur pharetra nibh vel.",
+      "long_description": "long description Orci nunc nisi tempor nulla massa pellentesque justo massa mauris. Lacinia elementum elementum au, iaculis imperdiet natoque tempor euismod id consequat imperdiet velit e ultrices pellentesque dictum pretium ligula id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Sodales.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Imperdiet finibus magna metus faucibus. Mattis erat scelerisque ipsum auctor.",
+      "long_description": "long description Lectus tempus mattis etiam turpis eget. Eget nibh facilisis magna, et eros sagittis massa justo est lorem, e at ipsum arcu natoque euismod aenean. Finibus vehicula gravida metus in ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Sit.",
+          "Est."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Enim dignissim risus in massa suscipit vestibulum lorem pellentesque e.",
+      "long_description": "long description Justo iaculis a faucibus sollicitudin ultrices fringilla mattis vel, felis blandit magna velit in. Turpis fringilla maximus tempus. Eros amet tempor hendrerit mauris euismod. Enim quis in enim vel condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Posuere.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Diam tempor elit quis fringilla gravida maximus turpis tempus mollis.",
+      "long_description": "long description Porttitor at nisi at fringilla, fringilla aliquam ornare nam eti. Faucibus ex fringilla vestibulum sodales lacinia mattis massa eget. Turpis dignissim ipsum elementum. In lobortis suscipit finibus turpis diam metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Arcu.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Pharetra gravida aliquam elementum fringilla morbi magna neque leo orci.",
+      "long_description": "long description Quisque quis pulvinar enim vel lobortis dignissim, adipiscing elit fringilla sagittis, nulla sodales accumsan imperdiet euismod lectus pharetra. Id nulla aenean lobortis ultricies sagittis hendrerit. Gravida consequat laoreet magna in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Ante.",
+          "Mauris."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description E sodales mattis sit iaculis. Faucibus donec erat tincidunt commodo.",
+      "long_description": "long description Eget pellentesque tincidunt sagittis mauris. Sapien ut cursus pharetra posuere ornare morbi, lobortis rhoncus metus elementum. Eu magna purus ultrices leo, accumsan turpis quis vel, lectus curabitur et i elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Nisl.",
+          "Metus."
+      ]
+    },
+    {
+      "name": "Polygan",
+      "short_description": "short description Turpis sed diam in pharetra pretium hendrerit. Lacus pulvinar ante.",
+      "long_description": "long description Metus cras ex curabitur gravida gravida tortor aenean velit risus vitae, gravida non eget natoque cursus. Metus condimentum mi vulputate non curabitur purus tempor consequat tristique mattis mollis viverra massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Fringilla.",
+          "Metus."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Tortor est iaculis lacus sagittis sagittis. Augue aliquet aliquam ornare.",
+      "long_description": "long description Suscipit ante aliquam morbi dolor cursus in rhoncus, vestibulum proin eu pulvinar orci lacus dui aenean eu lacus, facilisis a a donec i, arcu rhoncus commodo mattis scelerisque sapien consequat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Mattis.",
+          "Eu."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Pretium rhoncus pharetra ex accumsan. Porttitor non imperdiet dignissim natoque.",
+      "long_description": "long description Vel tempus mi et ipsum neque dictum natoque, viverra morbi felis faucibus ornare rhoncus justo. Vehicula vehicula donec imperdiet blandit mattis au sem vulputate. Tincidunt sagittis ultricies lobortis lacus lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Ornare.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Finibus vehicula morbi mi turpis ornare pretium massa maximus tincidunt.",
+      "long_description": "long description Donec aliquam tincidunt donec purus facilisis morbi vehicula placerat cursus orci felis non eget commodo dictum mollis vestibulum lacinia curabitur sollicitudin placerat, tortor faucibus vestibulum eti posuere sollicitudin au maximus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dictum.",
+          "Aliquam.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Accumsan lacus facilisis turpis ultrices eget, tristique suscipit sem lacinia.",
+      "long_description": "long description Lacinia pulvinar hendrerit sagittis id mi. Cursus proin sodales lorem. Augue sem aliquam eros tincidunt purus scelerisque vehicula finibus, vestibulum pretium proin finibus rhoncus nam id ultrices a ultrices blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Nunc.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Justo blandit eu mi e, aenean eu enim sagittis a.",
+      "long_description": "long description Aliquam dolor e lacinia neque scelerisque commodo lacinia metus lorem. Ligula etiam vulputate bibendum ultricies etiam dui rhoncus aliquet sollicitudin. Ornare turpis hendrerit lectus imperdiet. I ultrices nam imperdiet ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dui.",
+          "Mi.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Velit iaculis cras viverra nunc dignissim vestibulum facilisis au sit.",
+      "long_description": "long description Ac leo ultricies risus magna tristique felis e. Risus blandit pellentesque enim. Mauris est tempus eu. Sit magna aenean ultrices eti. Facilisis hendrerit mattis fringilla eu ultricies lacinia nisi vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Elementum.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Auctor lacinia dui justo au nisl, blandit id orci pretium.",
+      "long_description": "long description Nisi justo cras augue maximus, lectus dictum nunc porttitor, dolor quisque consequat nisi, condimentum justo orci leo gravida consectetur fringilla pulvinar, sodales turpis eros sodales dictum, quis magna commodo dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Neque.",
+          "Dolor.",
+          "Tempus."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Ligula donec condimentum ac nulla eget morbi blandit mattis donec.",
+      "long_description": "long description Rhoncus laoreet tincidunt imperdiet cras neque ligula, dolor pretium erat au ligula, e non enim a lacinia suscipit neque, vitae donec ut felis. Aliquet cursus turpis metus. Ante faucibus suscipit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Id.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Ex risus laoreet erat consectetur finibus. Sagittis scelerisque tempus euismod.",
+      "long_description": "long description Aenean tempor donec auctor fringilla eti sodales euismod pretium. Maximus vel curabitur ex eti ornare fringilla et. Lacinia ac et vulputate, vitae pulvinar nulla euismod maecenas placerat. Orci dui proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Quisque.",
+          "Risus."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Pulvinar tempor hendrerit rhoncus etiam mollis lacus dictum adipiscing leo.",
+      "long_description": "long description Laoreet velit fringilla cursus au. Amet placerat ornare aliquet. Tortor sagittis lacinia rhoncus maecenas in. Pulvinar vitae eu sollicitudin quis turpis commodo, dui vel ac id nisi. Eti aliquam lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Blandit.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Sagittis sed proin maximus i purus e tincidunt accumsan et.",
+      "long_description": "long description Placerat morbi sagittis tincidunt finibus et, cursus donec ut lectus orci. Imperdiet diam neque felis facilisis neque. Cursus metus condimentum ante mattis sed, consectetur donec dignissim dignissim ipsum velit est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Lacinia.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Viverra auctor pharetra metus etiam finibus. Neque enim lacinia elementum.",
+      "long_description": "long description Mattis risus nisl arcu felis cursus mollis. Felis aliquet vulputate aenean sit. Imperdiet blandit viverra sodales. Quis dolor aliquam at leo hendrerit, dolor diam quisque cras vel pharetra imperdiet in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Eros.",
+          "Ipsum."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description E sapien lobortis bibendum diam dolor, justo porttitor e suscipit.",
+      "long_description": "long description Consequat eti porttitor dui porttitor aliquet fringilla. Iaculis sem elit lacus sapien. Magna lobortis ipsum placerat facilisis lacinia mi maecenas. E a placerat imperdiet tortor. Velit viverra sapien tempor nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Lacus.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Finibus metus pharetra auctor morbi bibendum ligula commodo tristique tempor.",
+      "long_description": "long description Etiam sit viverra tortor risus maximus. Nunc eros consectetur augue sodales, sodales condimentum dolor au augue. Facilisis neque lacus cras purus elit. Porttitor adipiscing consectetur quis auctor arcu velit morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cursus.",
+          "Suscipit.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Turpis risus adipiscing pharetra ligula. Accumsan lorem est nibh viverra.",
+      "long_description": "long description Tortor donec turpis massa nunc curabitur quisque ligula natoque orci blandit et, lobortis lorem lacinia natoque mi. Gravida nibh at massa, ipsum sem nunc vitae arcu, finibus tempor vehicula nibh.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "Tortor.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Eros sagittis sed bibendum etiam. Finibus lobortis nunc vehicula eti.",
+      "long_description": "long description Porttitor ipsum quis porttitor arcu dolor maximus felis accumsan. Enim magna porttitor tortor. Imperdiet auctor magna quis risus mattis, hendrerit tempus etiam cras. Lorem a augue ex. Est blandit eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ante.",
+          "Ultrices.",
+          "Lacus."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Suscipit iaculis quis tempor amet eu, mi aenean orci id.",
+      "long_description": "long description Magna vestibulum nunc tempor eros sollicitudin maximus posuere. Tempus lacinia vitae orci facilisis. Bibendum adipiscing lorem mollis. Porttitor tempus ultricies ligula aliquam i vulputate consectetur, eros mattis augue placerat sapien.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultricies.",
+          "Sit.",
+          "Et."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Commodo proin tempus elit magna diam vestibulum curabitur dictum ultrices.",
+      "long_description": "long description Auctor ipsum eti amet lectus in. Commodo tincidunt lacinia tempor, mauris orci orci proin. Pulvinar erat massa lectus ipsum. Sem sollicitudin iaculis ex sit accumsan orci fringilla tempus faucibus sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Finibus.",
+          "Commodo.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Sit ultrices facilisis nisl eget. Amet eget vitae ut nisi.",
+      "long_description": "long description Vitae nibh in arcu quis. Au ultricies aliquam dolor, hendrerit massa diam aliquet eti bibendum, risus sed tortor aenean mollis sollicitudin nisl. Diam felis lacinia dignissim placerat dui vulputate mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "Ipsum.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description Maecenas diam at magna a lacus leo ex elementum natoque.",
+      "long_description": "long description Finibus suscipit lectus arcu neque ultricies lacus pretium nisi risus laoreet pretium sollicitudin aliquam eget. Proin ac au pulvinar. Proin dictum turpis nam a. Sollicitudin euismod faucibus sollicitudin porttitor et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "Sit.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Tincidunt aliquam risus auctor felis. Maximus aliquam sodales lacinia cursus.",
+      "long_description": "long description Arcu a consequat lacinia pellentesque, elit dignissim lacinia pretium. Mollis eti gravida aliquet au, morbi facilisis facilisis tincidunt adipiscing ex proin. Ut faucibus condimentum cras cursus non lacus risus est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Mauris.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Gravida scelerisque adipiscing proin ornare. Finibus facilisis nisl neque finibus.",
+      "long_description": "long description Eros lacus sit placerat i porttitor pharetra. A eros at euismod nulla, eu eti vel au et aliquam velit dui sed, maximus mollis justo pretium iaculis sem a bibendum vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Eu.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Faucibus nulla sit au quis ultrices. Gravida scelerisque pharetra maximus.",
+      "long_description": "long description Bibendum ante tincidunt lacinia au. Et metus sagittis justo suscipit porttitor est, placerat ultricies vel viverra. Eu id cursus in. Sapien maecenas cursus imperdiet vitae nisi. Orci magna sem aenean.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Donec.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Pretium imperdiet morbi suscipit tortor posuere, nulla i scelerisque eget.",
+      "long_description": "long description Enim morbi nisi proin vitae non tempor orci arcu eget, viverra consequat morbi lacus. Nulla a purus etiam. Diam vulputate maximus au dolor dictum ultrices imperdiet pulvinar lorem nisl lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Consequat.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Elementum lectus pharetra metus vitae bibendum aliquam sed maecenas iaculis.",
+      "long_description": "long description Iaculis tincidunt id adipiscing est. Donec adipiscing posuere ornare, sem aliquam maximus pretium, posuere sollicitudin auctor elit mi, aliquam et vehicula enim quisque. Porttitor hendrerit etiam e euismod leo fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Commodo.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Mollis gravida curabitur maximus curabitur. Vehicula ultricies arcu lectus sit.",
+      "long_description": "long description Adipiscing ex enim blandit commodo, maximus mollis suscipit sed. Scelerisque morbi maecenas ex mauris commodo facilisis. Purus consequat cursus ipsum eros. Vestibulum vitae eti fringilla, pretium a massa eros eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Eros.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Eti ornare sit elit tincidunt neque. Lectus elit a augue.",
+      "long_description": "long description Sollicitudin auctor auctor ex dignissim porttitor eget, ut nisi suscipit est. Vulputate ex proin nunc bibendum lacinia ut nunc, hendrerit nisl scelerisque faucibus, eros mi maecenas in posuere facilisis ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "Mi.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "Polygan",
+      "short_description": "short description Vitae au elementum adipiscing rhoncus. Nam accumsan lacus ligula non.",
+      "long_description": "long description Auctor ornare amet neque i vitae. Elementum tristique gravida nunc aliquet sollicitudin nulla nibh quisque, dui pharetra sagittis nisl, vestibulum suscipit metus nam ligula scelerisque augue. Quis auctor tempus erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dolor.",
+          "Orci.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Sit mauris sollicitudin turpis neque leo, lobortis dui quisque nibh.",
+      "long_description": "long description Condimentum ex massa ultrices est, orci vel bibendum massa ante au dolor vitae aliquet gravida sem i etiam augue ultrices. Velit bibendum faucibus nam purus cras. Eros bibendum dolor consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Faucibus.",
+          "Felis."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Erat nunc hendrerit pretium imperdiet non bibendum. Turpis dolor velit.",
+      "long_description": "long description Lectus vehicula e vel ac. Orci est curabitur augue natoque, eros aliquam nam maecenas tristique. Curabitur dolor pretium eros quis. Quisque erat ex dictum risus, iaculis tortor eros non elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Pellentesque.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Cursus ex cras consectetur pharetra mauris. Enim aliquam cursus ex.",
+      "long_description": "long description Ut lacinia sodales arcu dignissim blandit. Aliquet lacus amet orci hendrerit adipiscing. Velit maecenas maximus neque massa vel. Natoque lobortis vulputate au suscipit purus placerat. Sed vitae orci morbi eu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "In.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Cras felis maximus lacinia nisi iaculis. Leo lacinia vulputate donec.",
+      "long_description": "long description Lacinia ultrices sodales pharetra aliquam, e tristique a lacinia at velit amet sit lacinia neque, felis purus mollis facilisis, aliquet amet iaculis vestibulum. In i mauris sodales faucibus maecenas tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Neque.",
+          "Erat.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Accumsan consequat quisque vel posuere. Lacinia cursus vehicula consectetur amet.",
+      "long_description": "long description Ornare augue hendrerit leo ultrices. Condimentum dictum aenean ultrices nunc. Commodo diam sollicitudin pulvinar orci mauris ornare lacinia. Laoreet blandit quis eros cursus tempus hendrerit blandit aenean. Vitae pulvinar velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Ut.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Nulla lacinia sem elementum tristique. Scelerisque et viverra elementum ligula.",
+      "long_description": "long description Posuere maecenas ultricies tincidunt vel fringilla, turpis condimentum dui e fringilla, dignissim leo tortor dignissim au, i lacus pretium at. Lobortis maximus laoreet lacinia. Felis pharetra diam pellentesque mollis et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Sapien.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description I sodales ac eros auctor quis. Mauris iaculis leo mauris.",
+      "long_description": "long description Tempus condimentum nulla quis neque sem, nulla posuere pellentesque scelerisque accumsan i aliquet blandit morbi ultricies in vehicula neque. Mollis lacinia lectus sodales. Tempus nunc tortor pellentesque dictum massa justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Turpis.",
+          "Bibendum."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Porttitor vitae posuere condimentum lectus, mollis quisque lobortis hendrerit nam.",
+      "long_description": "long description Quis in mi lacinia commodo sed diam risus felis. Purus porttitor vestibulum at. Vel porttitor est diam. Ultrices risus viverra pretium. Morbi cras morbi hendrerit dignissim finibus curabitur lectus aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Diam.",
+          "Finibus.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Donec maecenas auctor amet in, blandit velit finibus sem iaculis.",
+      "long_description": "long description Id ornare etiam vitae ac, bibendum nisi justo etiam facilisis dui dignissim elementum. Purus fringilla risus diam, purus nulla et non. Nulla justo i a. Ultrices ligula dolor tortor turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Ornare.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Aenean mollis cursus in facilisis nulla sollicitudin nulla tempus lectus.",
+      "long_description": "long description Massa pretium quisque auctor tincidunt natoque ultrices ultricies, maximus ut gravida risus in velit eu eu lacinia lectus ante rhoncus laoreet mollis arcu cursus mattis ut nisi, a pellentesque velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "In.",
+          "Sapien.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Tincidunt bibendum nisl eti pellentesque auctor viverra laoreet consectetur finibus.",
+      "long_description": "long description Sit laoreet dignissim nisi au erat dignissim. Sapien eti laoreet natoque orci, faucibus amet id arcu, hendrerit faucibus adipiscing sollicitudin commodo elit accumsan non, ut aliquam magna sollicitudin donec sem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sagittis.",
+          "Vulputate.",
+          "Iaculis."
       ]
     },
     {
       "name": "FastMart",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ipsum risus ipsum fringilla at. Eget tincidunt placerat eget eu, risus ante dui consequat pulvinar quisque. Enim porttitor nisl sollicitudin. Faucibus nisl quis ipsum nam.",
+      "short_description": "short description Turpis donec ex e eros pretium, cras sapien eu facilisis.",
+      "long_description": "long description Fringilla a ante diam vel pharetra maecenas. Vitae ipsum tempor gravida. Iaculis imperdiet elementum vestibulum elementum consectetur lacinia. Purus tristique eget aliquet pulvinar, leo lacinia dictum nisl i neque enim.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis sagittis adipiscing proin aliquam. Auctor maximus et proin i. Posuere e mollis rhoncus suscipit erat. Nam au bibendum mi sodales mollis et ante bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description A amet arcu pretium aenean, donec euismod pulvinar curabitur ligula pharetra. Lacinia aliquet pulvinar sed, pharetra mollis maximus sagittis vulputate eu nunc aliquet augue consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus placerat quisque i sed, a nibh arcu sem. Cras a suscipit finibus, e nibh lorem purus ante, sollicitudin pharetra mi euismod vestibulum rhoncus erat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae euismod sagittis elit placerat tempor. Massa nibh lectus a rhoncus mauris laoreet. Ac sem mollis cras scelerisque tincidunt accumsan auctor orci sit iaculis augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis est tincidunt purus condimentum. Quisque massa hendrerit magna accumsan sapien, felis proin ante mollis at tempus gravida nibh. Mi dui lacinia purus iaculis accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eu arcu ligula a finibus magna commodo turpis bibendum orci, natoque scelerisque au mattis eros, nam cras pharetra lorem non vel facilisis euismod erat scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus tincidunt ultricies mauris justo lorem bibendum elementum vitae sem nam finibus consequat aliquam dictum quis ultrices quis. Ante sem amet elementum augue eget purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sollicitudin diam accumsan tempor pellentesque elit vitae consequat, quisque condimentum lorem imperdiet tempor ultricies quis mattis vehicula, consequat ante eu quisque. Imperdiet cras maecenas ut.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit proin morbi nulla lacinia nisl donec ultricies. Laoreet dolor aenean at mollis. Vehicula condimentum nulla ultricies ante sem in, lectus magna turpis hendrerit at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet vehicula dignissim viverra sodales augue. Augue turpis consequat mollis. Nunc et at a. I euismod aliquet adipiscing, nam consequat pharetra magna justo posuere proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis ante eu felis maximus consectetur id diam elit eros, au consectetur enim nisl faucibus, ultricies rhoncus ultrices sagittis gravida. Consectetur accumsan tempor maximus sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum massa vehicula bibendum elit sollicitudin. Sapien arcu consequat neque cursus aenean proin, enim sapien lacinia blandit adipiscing. Sem erat id ac ultrices sagittis erat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris vestibulum lobortis sed auctor maximus, ante nisi fringilla bibendum orci leo blandit, eros i tristique faucibus arcu tincidunt maecenas vestibulum, i tincidunt euismod tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam lorem proin velit pulvinar placerat iaculis nibh morbi, in eget a tristique massa, faucibus mollis massa eti lorem eu ornare, est posuere posuere quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque cras nunc nunc condimentum i, ac erat id hendrerit, tortor maximus cursus eros eu quis ultrices lobortis maecenas dictum ut eti nibh tortor nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus faucibus ligula felis quisque leo, auctor est vestibulum vel justo sollicitudin maecenas tortor accumsan cras maecenas, in enim et tristique, au placerat pharetra proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Thermolock",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus justo elementum viverra hendrerit. Pulvinar nunc etiam metus massa ante. Massa placerat e aliquet, ante etiam cursus hendrerit sagittis finibus ornare mattis ornare nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor ante eros nisl dolor suscipit quis facilisis porttitor erat tempus nisi lacus hendrerit eti. Vitae ultricies imperdiet bibendum tempus nisi facilisis. Et turpis lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor id magna placerat amet, id dignissim lacus nulla ligula mi aliquet. Pharetra proin morbi maximus erat porttitor mi magna pulvinar. Velit vitae ut orci.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis purus nisi eget vel dui. Quis suscipit fringilla dignissim arcu, leo curabitur eti cras tortor, fringilla dictum aenean facilisis. Euismod hendrerit dolor dui vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
+          "Aliquet.",
+          "A.",
+          "Enim."
       ]
     },
     {
       "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod tristique ligula ultricies risus commodo, nibh risus leo vestibulum et consectetur, mattis aliquam tortor etiam orci magna, et lacus blandit viverra diam mauris mauris.",
+      "short_description": "short description Mollis placerat fringilla eu eu felis aliquam lorem eti mauris.",
+      "long_description": "long description Adipiscing arcu elit mi finibus et. Non laoreet rhoncus vel eget cras felis. Purus ligula dolor sollicitudin dolor, consequat euismod sodales aenean etiam sagittis, quis faucibus bibendum ornare scelerisque aenean.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt sed au pulvinar blandit maecenas ipsum, velit au e sagittis aenean pulvinar mi ac, sodales tincidunt sodales sapien dignissim. Ultrices ultricies tempor curabitur pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Optiplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien nulla a lacinia ex. Nulla lorem tincidunt sit euismod massa vulputate mauris nibh sed vitae ultricies, vestibulum at eti placerat elit nisi curabitur morbi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa imperdiet vel aliquam e ipsum, nam tempor adipiscing enim tristique vulputate leo leo. Sapien gravida aliquet auctor. Id condimentum aliquet tincidunt, et nulla eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan at mollis nisi morbi pulvinar mi mattis, dui maximus lacinia sit eget aliquet morbi. Cursus ante sed massa nisl. Viverra ipsum quisque nisl nam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui sem aliquet ac cras gravida. Sit enim morbi elit, id augue donec adipiscing, velit tristique enim accumsan rhoncus nisi id lacinia. Eros sem eget.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Posuere sapien aenean ante facilisis. Tempus laoreet cursus e. Bibendum vehicula scelerisque non aliquam. Tincidunt blandit pharetra non id eros maecenas. Aenean faucibus commodo tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt eu lectus cursus faucibus sodales ultricies mauris consectetur nisi. Sit scelerisque ipsum mattis mauris elementum morbi velit ut tempor auctor tristique tempor proin rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description E elit ante au e ex curabitur mollis, id amet viverra rhoncus metus, velit est id pellentesque tristique dignissim, viverra cursus sollicitudin posuere nibh accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Citisys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Natoque dictum dui dui porttitor bibendum lacinia. Massa felis auctor erat. Accumsan natoque auctor rhoncus magna eros sed tristique donec elit. Ac et vel elit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae tristique blandit justo ultricies euismod aliquet accumsan suscipit. Dictum cras ornare lectus posuere auctor ut posuere faucibus euismod mauris ornare turpis nisl nibh ut.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis felis vitae a enim dolor bibendum porttitor iaculis porttitor enim quisque gravida. Natoque at pulvinar consequat id lorem. Purus arcu faucibus proin cras ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Risus eros et dignissim nisl. Id condimentum adipiscing imperdiet quisque. Risus velit non dictum, condimentum sollicitudin porttitor tincidunt orci, est etiam enim ut tristique non.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim au turpis tempus risus et ut felis pellentesque est. Laoreet natoque eu in natoque ex maximus aenean, aenean amet nunc nisi curabitur hendrerit aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat massa lacinia quisque laoreet curabitur nam au commodo consectetur fringilla at mi lacinia sapien bibendum. Est eti sed hendrerit vulputate, ex mollis tortor lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem auctor fringilla ac sem dolor bibendum. Aenean pulvinar maecenas vitae. Arcu sapien tincidunt ipsum, aliquet nibh nisi vel viverra lobortis natoque. Vestibulum dignissim mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non porttitor etiam condimentum pharetra rhoncus, nam turpis pellentesque laoreet, enim sollicitudin orci tortor. Fringilla lacinia cras elementum au, imperdiet aenean rhoncus sed sed rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque proin augue lacus gravida scelerisque pulvinar cursus amet sem, mollis nisi lacinia blandit ac, au enim ipsum consectetur morbi consequat finibus. Nisi vehicula tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au elementum vestibulum nibh id. Au ex purus aenean vel tincidunt. Proin vestibulum purus vel ut, porttitor rhoncus dolor scelerisque pulvinar facilisis. Pulvinar leo sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti amet nibh viverra porttitor. Lorem euismod non cras vestibulum arcu pellentesque justo. Donec lobortis sagittis est pharetra tempus. Bibendum hendrerit at placerat donec consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus curabitur at blandit nisi augue, imperdiet massa mattis a. Pretium gravida eros ac, tortor ante sem sed sodales mauris accumsan elementum, tortor lacinia faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate leo proin pretium est lacinia mollis donec donec nibh donec. Pulvinar magna mauris maecenas ipsum imperdiet natoque nibh placerat enim diam imperdiet pellentesque tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus mi eros euismod eti vel suscipit tempus diam nibh rhoncus ultricies e nisl sagittis faucibus i lacinia adipiscing tincidunt. Consectetur ut arcu mi vestibulum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis sollicitudin dui ex fringilla vestibulum bibendum diam cras. Blandit elit felis et vitae tortor quisque dignissim. Tristique felis nulla donec pulvinar. Nam mattis accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Unilogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris elit aenean nibh facilisis nisi. Tempor consectetur lectus metus. Ultrices tempus cras leo tortor elementum vulputate. Suscipit risus imperdiet sem ornare, est orci dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui natoque aliquam mollis purus faucibus accumsan mollis, iaculis viverra ornare dolor, lobortis erat erat cursus a purus. Eti dignissim lorem proin, adipiscing arcu ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est lacus suscipit sed ut. Iaculis gravida suscipit sodales posuere ante est aenean. Vitae ipsum enim justo pretium, justo sapien mi mauris quisque placerat lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum sapien ac faucibus proin. Maximus bibendum ultrices pellentesque donec erat. Eu nulla ut tristique. Facilisis maecenas nunc cras tristique massa mollis, ex est natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec tempus vel bibendum dictum sodales, arcu eu nisl posuere vestibulum, vestibulum imperdiet lacus vestibulum elit lacinia tristique non fringilla felis euismod justo scelerisque tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description A blandit non i arcu, aliquet morbi dui placerat lacinia magna cursus cursus sagittis ante metus lacinia, mattis iaculis ornare scelerisque proin. Turpis lacinia sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis est erat leo etiam. Sit mauris sapien laoreet nisi pulvinar. Mi sem scelerisque consequat quis rhoncus. Pretium pellentesque ut massa, elementum lobortis i sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis adipiscing purus nisi bibendum sed dui erat suscipit sem. Elementum felis augue etiam dignissim. Sollicitudin purus vehicula nibh felis sapien cras vitae nisi mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elit laoreet nibh ac nisl. Accumsan in aliquam est aliquam dictum. Commodo enim condimentum vel. At vehicula vestibulum arcu erat tristique imperdiet ipsum dignissim nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat lorem ligula metus at iaculis vehicula lorem. Aliquet lacinia elit porttitor vulputate eros sagittis erat, proin tempor tempus nibh mauris felis, felis justo pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus cras erat lobortis vulputate orci sit, mollis aenean ornare condimentum arcu ultrices. Augue curabitur nisi dolor, curabitur neque ex facilisis euismod vel dictum dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras ex maecenas rhoncus etiam vehicula sem, laoreet leo sapien accumsan ut turpis elementum quisque mi. Erat leo ut e au, hendrerit aenean imperdiet ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TurboSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Orci condimentum e sapien diam iaculis, gravida pharetra lobortis nam, neque neque risus pellentesque, scelerisque viverra cursus lorem amet erat. Tortor posuere dignissim id eu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Orci lobortis fringilla sollicitudin proin. Orci hendrerit et ultricies ultrices tempus accumsan mattis lacinia ut dignissim adipiscing laoreet proin, mollis elit i viverra ante vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique commodo etiam tempus suscipit leo velit massa elementum, auctor eget dignissim tempus, accumsan laoreet in felis condimentum curabitur donec sed augue ipsum pulvinar vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque proin faucibus nam vulputate ornare. Augue velit sollicitudin nibh. Natoque vitae condimentum pharetra facilisis lorem. Nam imperdiet sagittis tincidunt, tempus maximus quis pretium accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis scelerisque hendrerit massa posuere sed accumsan bibendum ultrices. Hendrerit vitae lorem felis. Accumsan eros arcu tempus. Vestibulum fringilla diam dictum faucibus, amet fringilla nam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa commodo eros e quis. Nisl ut ut sagittis sem blandit leo orci, porttitor laoreet suscipit ipsum. Blandit aliquam adipiscing justo posuere lacinia rhoncus lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Citisys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique metus imperdiet sollicitudin vel velit ac condimentum enim commodo. Ante i velit pharetra ac i in massa. Posuere felis pretium felis i ultricies ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium enim vulputate lacinia maximus adipiscing nibh tincidunt sollicitudin dolor justo. Iaculis imperdiet nibh maecenas lacinia donec maecenas. Ac condimentum tincidunt non morbi eu aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti vulputate eros hendrerit i elit tincidunt. Sem cursus quis orci, hendrerit scelerisque ac nisi placerat. Augue eti leo at, finibus purus proin faucibus magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
+          "Turpis.",
+          "Ultricies.",
+          "Iaculis."
       ]
     },
     {
       "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis justo rhoncus finibus ac aenean posuere lobortis nulla adipiscing condimentum, tincidunt tempor augue iaculis justo. Massa sodales ac consequat enim metus etiam vehicula mattis.",
+      "short_description": "short description Felis neque mattis orci pharetra ac, pharetra vulputate metus laoreet.",
+      "long_description": "long description Tortor mauris augue sagittis ligula posuere nulla, curabitur pretium ante felis porttitor tempor, purus suscipit bibendum dui felis. I ex ac erat. Ac magna tincidunt natoque. Ipsum vulputate velit aenean.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au tempus commodo pellentesque lacinia id consequat euismod hendrerit, faucibus vehicula ac auctor. Nulla est ipsum cursus lacinia nam lacinia. Id etiam natoque justo vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Connic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Leo pulvinar tristique ac eti lectus elementum, nisi nisi imperdiet elit. Turpis vel proin a diam, elit posuere orci pharetra nisl nisl mauris viverra consectetur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maximus fringilla mollis dui maecenas tempus maximus, ornare placerat at eros orci maecenas auctor sapien ut. A orci ligula diam, ut cursus quis at accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Optiplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut sollicitudin est dignissim i, vestibulum elit euismod rhoncus sed lectus mollis. Facilisis metus pellentesque hendrerit imperdiet tristique eti commodo amet finibus euismod finibus est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vestibulum leo mattis sed felis dolor at nibh dolor ipsum proin. Felis aenean massa gravida. Vitae imperdiet suscipit maximus aliquam vulputate. Justo ligula cursus dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis eu augue sagittis neque sollicitudin nisl. Laoreet erat ipsum velit dignissim dui. Commodo ut metus sem, orci tempus augue viverra lectus. Mattis risus curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum non aliquet tristique sed placerat. Sed tincidunt e eti lobortis eros, risus sapien consectetur amet laoreet, posuere leo lacus amet neque hendrerit scelerisque ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula vitae sed consectetur ut nulla nisi. Adipiscing euismod nisl eu ultricies lorem cras aenean felis ex, amet consequat sit elit finibus. At pulvinar curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum mi i eu dolor bibendum viverra, vehicula et risus tempor elit, sit quis adipiscing tortor, eti laoreet gravida amet, sed ultrices at turpis velit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis lorem a tincidunt tempus vestibulum mattis. Consectetur cursus lectus eu consectetur, lacus pellentesque morbi turpis. A id vulputate sodales. Scelerisque tortor bibendum sollicitudin augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum scelerisque at a dui elit vestibulum eti ultrices, iaculis porttitor eti lacus neque condimentum. Elit nibh auctor hendrerit. Mattis vel viverra etiam dui augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa augue euismod imperdiet sapien sagittis, quis bibendum suscipit ante, pellentesque neque ex vitae dictum pharetra vel. Lacinia commodo e aenean ac velit suscipit diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo facilisis pharetra elit sapien orci. Cursus in eget maximus, vitae amet mi tempor dolor mi vehicula. Ligula eu mi a nunc. Vulputate auctor at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque orci ac tortor fringilla nisi gravida aliquet lacinia sodales, mi pharetra porttitor leo mauris vulputate pharetra iaculis sit tempus pretium lacus etiam facilisis nisl.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Id gravida et turpis vulputate sit, placerat augue lectus posuere bibendum. In diam placerat faucibus quisque etiam turpis leo. Natoque aenean sit turpis quisque finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pulvinar tempus morbi morbi vel. Sed lectus blandit velit augue pellentesque. Cras nam sollicitudin mi viverra condimentum in auctor, dictum fringilla laoreet cursus morbi risus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim vehicula dui mi cras euismod dui, curabitur accumsan placerat mattis nam. Justo euismod faucibus leo. Au porttitor suscipit augue blandit tempus mollis vulputate dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique felis velit lorem tempor tristique ultricies elit euismod nisl, viverra blandit natoque eget lacinia laoreet proin in vulputate. Quis pulvinar enim porttitor turpis purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac eti sit tempor aliquam sem non, dictum hendrerit gravida justo lobortis pretium pharetra, curabitur pulvinar adipiscing ut. Curabitur facilisis id purus. Iaculis lacus id.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc consectetur sollicitudin eu ultrices. Quis enim pulvinar i tempor velit consequat eget sollicitudin amet tortor ultrices eu, ligula posuere porttitor tempus, magna imperdiet ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis gravida scelerisque pellentesque tempus natoque mi ultrices tristique tristique mi. Non blandit justo lorem blandit vulputate blandit eti au. Finibus sodales ex viverra eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Connic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus eu vulputate sem finibus rhoncus, hendrerit nisl sollicitudin pellentesque. Maximus ligula sit velit ipsum finibus lacinia proin erat. Pulvinar augue gravida enim pharetra pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras sagittis nisl dignissim pharetra vulputate risus diam mauris scelerisque. Enim et adipiscing tempor. Sollicitudin faucibus sodales nam viverra. Vehicula ultrices consectetur ut bibendum eget.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor metus mauris imperdiet justo rhoncus eti vehicula nulla nunc id purus quisque leo diam lacinia. Id finibus augue magna cras aenean sem et rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet placerat id etiam nisl auctor. Adipiscing felis non suscipit aliquet fringilla morbi ultricies curabitur. Sapien eu nunc sagittis in mauris sem posuere ligula dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pharetra mollis pharetra lorem nulla aliquam. Felis sem massa i auctor, finibus mi maximus justo, augue massa augue e, tempus rhoncus bibendum elit ut eget.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate suscipit diam sodales risus id natoque, ultricies eu neque massa e, tristique enim nulla augue auctor aliquam ultrices, maximus consectetur elementum faucibus gravida tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisi dignissim nulla pulvinar curabitur. Dui vehicula metus vehicula non ultricies elit. Eget diam eros cras consequat sollicitudin, proin tristique quisque quis tincidunt lacus laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dignissim vel pretium fringilla porttitor neque, condimentum nam lacus magna. Purus euismod ultrices mollis aliquet, a placerat ultrices sodales et eget erat ac sagittis lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
+          "Eget.",
+          "Hendrerit.",
+          "Elit."
       ]
     },
     {
       "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus augue hendrerit nisi suscipit i iaculis condimentum. Viverra risus rhoncus arcu iaculis. Massa ipsum magna rhoncus elementum, aliquet ac hendrerit arcu placerat justo lacinia.",
+      "short_description": "short description Maecenas mollis lorem hendrerit et. Blandit laoreet nisi nisl non.",
+      "long_description": "long description Mollis eros sodales rhoncus ultrices finibus condimentum mi, vel iaculis posuere laoreet nisl etiam condimentum enim maecenas sit non. Aliquam eros eti turpis. Iaculis eros hendrerit fringilla lectus cras gravida.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Adipiscing.",
+          "Maximus.",
+          "In."
+      ]
+    },
+    {
+      "name": "Logico",
+      "short_description": "short description Tempor dolor suscipit facilisis mattis pharetra magna id sit viverra.",
+      "long_description": "long description Bibendum scelerisque purus purus dictum turpis commodo. Enim vehicula at posuere commodo, risus lorem erat finibus tortor tortor. Dui tortor sit hendrerit. Porttitor morbi ipsum donec. Ultricies maecenas sem massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Dui.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Porttitor lorem eros gravida faucibus mattis proin. At tempor vulputate.",
+      "long_description": "long description Mi auctor maecenas proin etiam nisi. Gravida eti ex bibendum felis, mi suscipit commodo dui. Etiam scelerisque tristique suscipit. Curabitur felis natoque orci cursus bibendum elementum lacinia. Ac neque mauris.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Justo.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description Felis felis placerat auctor gravida rhoncus est donec dignissim lacinia.",
+      "long_description": "long description Ipsum ornare et risus laoreet mauris. Leo ornare sapien facilisis, fringilla adipiscing mi mauris porttitor etiam. Ut curabitur pulvinar dignissim sodales at vel natoque suscipit augue. Eti consequat elit morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Non.",
+          "Pharetra.",
+          "Lorem."
       ]
     },
     {
       "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis vitae non fringilla est. Finibus vitae tempus felis iaculis, etiam tempor pretium dictum, hendrerit quisque nisl sem. Morbi cras ante cursus. Id lorem ex.",
+      "short_description": "short description Tortor nisl velit vestibulum e ante gravida, ut dignissim turpis.",
+      "long_description": "long description Massa leo felis laoreet lobortis lacus. Mollis sodales auctor at tortor faucibus tincidunt iaculis ornare augue i aenean vehicula, nulla euismod erat suscipit elit rhoncus nulla, ornare etiam placerat tortor.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut a leo sem metus. Maximus massa blandit dolor, natoque adipiscing elit proin sed. Turpis natoque vulputate a non laoreet etiam. Bibendum diam tempor eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur euismod ex tempus metus. Laoreet tempus nunc suscipit lobortis felis, pulvinar dolor in sodales fringilla. Facilisis maximus lacinia aenean augue velit etiam vitae mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
+          "Consectetur.",
+          "Metus.",
+          "Consectetur."
       ]
     },
     {
       "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description At placerat quis diam a ligula i, augue adipiscing ut lorem, tempor ornare donec massa tortor arcu. Cursus hendrerit nisi aliquam. Diam hendrerit non cursus.",
+      "short_description": "short description Est pharetra e rhoncus cras imperdiet viverra accumsan sagittis hendrerit.",
+      "long_description": "long description Maximus dictum laoreet diam amet at. Dictum ex leo euismod, eti tortor gravida quisque tempor. Vel amet a iaculis blandit est neque, ac finibus tempus tortor mi magna eti nibh.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis quisque ultricies mi sapien ultricies amet bibendum maecenas posuere ante metus. Ex donec lacinia massa felis ante vehicula faucibus quis. Porttitor purus i ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum eu accumsan sapien maximus au laoreet auctor massa. Imperdiet eget consequat ligula. Cras a suscipit eu sit. Suscipit fringilla quisque cras lobortis in arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est maximus e sodales sodales aliquet vel adipiscing in vehicula facilisis tortor tincidunt placerat. Fringilla orci sapien ut lectus nibh pretium diam nibh condimentum tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi viverra dignissim nunc curabitur elementum euismod. Proin velit neque in vitae. Cras lorem maecenas lacinia mollis nibh id tempor magna lacinia dignissim eti consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit est mauris tempor est natoque imperdiet natoque. Quis cursus ac lectus, felis aliquam nulla turpis diam. Elit fringilla leo arcu, erat tempus lobortis ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque vehicula cras id ligula commodo. Consequat enim blandit lacinia. Turpis donec eu velit. Nisi vel aliquam pellentesque at ornare enim tempor quis bibendum auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex facilisis i tempus cras eget augue nam pharetra neque pellentesque. Eti fringilla tincidunt ante. Turpis in sollicitudin ligula nibh dictum lacinia erat erat aenean.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur ornare ultrices commodo consequat sollicitudin, sed tortor non ut. Facilisis dolor ipsum id. Metus vitae massa aenean. Tempus ornare in vel. Adipiscing donec felis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
+          "Lacinia.",
+          "Ultrices.",
+          "In."
       ]
     },
     {
       "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc ligula lacinia sed dictum nibh pellentesque. Non eti gravida finibus a proin, e ex in maximus ut, in elementum aliquam mollis consequat mattis enim.",
+      "short_description": "short description Mattis ultrices augue lobortis consectetur. Pretium at lorem tortor sapien.",
+      "long_description": "long description Erat blandit turpis eti nunc, at nisl placerat orci dolor sit. Sapien est morbi nisi. Accumsan ac at lacus augue quis iaculis ornare pellentesque eu. Ut justo consequat ex morbi.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Logico",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis a nulla nisl morbi ut purus. Neque vestibulum auctor quisque hendrerit. Placerat id proin gravida morbi euismod, blandit tristique in vestibulum hendrerit id natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
+          "Sollicitudin.",
+          "Faucibus.",
+          "Nam."
       ]
     },
     {
       "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris quisque ultricies e est, ut cras condimentum tincidunt blandit leo mi mattis, nisl e lacinia erat enim. Commodo vel erat dui facilisis consectetur eros.",
+      "short_description": "short description Et cras amet sem dui finibus ac, eget accumsan ex.",
+      "long_description": "long description Elementum nisi tincidunt elit tortor, aliquet vehicula risus massa tempor rhoncus morbi metus au leo risus ultrices pulvinar maecenas ac, i eget finibus elit pretium lacinia, nam maximus elit tristique.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Eros.",
+          "Porttitor.",
+          "Arcu."
       ]
     },
     {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis justo dolor mauris neque, at nunc dignissim vehicula. Gravida donec tempor maximus proin velit sed eu finibus dictum. Risus enim porttitor maximus risus euismod.",
+      "name": "Solexis",
+      "short_description": "short description Erat tincidunt neque gravida morbi risus diam. I ex tempus.",
+      "long_description": "long description Etiam pharetra faucibus accumsan au gravida, amet condimentum a rhoncus ultricies posuere. Dolor pretium mollis tempor diam facilisis dolor ante, consequat ac vitae faucibus vestibulum ipsum, elit viverra adipiscing elementum.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet laoreet pretium porttitor lacinia risus. Viverra neque faucibus condimentum ultrices curabitur quis velit, tristique pharetra consequat laoreet mi. Id pretium felis mi non enim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet bibendum ipsum lacinia ligula, sed ut ante hendrerit velit. Nulla lacus fringilla hendrerit a consequat. Enim eros sem at pretium. Risus vehicula purus sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis laoreet ac eu curabitur ante. Mollis eros erat lacinia proin vel. Commodo nisl imperdiet accumsan, curabitur consectetur eget eget a. Ultrices laoreet risus sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sollicitudin sed sed ligula eu vel maecenas commodo dolor, sapien nisl quisque est sapien. Facilisis iaculis donec donec augue porttitor, et accumsan sagittis nisi lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi nisi neque suscipit ex. Lobortis ex nibh lectus. Adipiscing lacus nisl maximus cursus dignissim. Enim viverra lacus non. Cursus nisi gravida mauris faucibus laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Id vehicula mauris augue quisque non, et pellentesque maecenas faucibus. Dolor justo proin eti. Tempus gravida at viverra nibh. Maximus felis accumsan in scelerisque risus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit neque eget posuere tempor velit nisi quisque dictum, tempus curabitur justo neque. Metus lorem adipiscing blandit nunc arcu finibus proin suscipit. Eu posuere ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est morbi imperdiet sit eget lorem donec sagittis bibendum et nisi pharetra. Condimentum nulla est maximus ante non lacus. Enim ligula ante eti mauris accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor erat velit nisi ipsum lacinia laoreet nam sem pharetra. Ex imperdiet orci justo sem. Eget mi felis condimentum sit aliquam dignissim mollis suscipit aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "TurboSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nam finibus ligula et eu placerat proin. Ornare velit id au vel gravida mi a euismod, placerat adipiscing enim cursus aenean mauris imperdiet a ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Logico",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo blandit eros eget posuere commodo lobortis est et velit diam aliquet. Eget pulvinar ornare cras quisque. Hendrerit tempor neque tristique sit tempor finibus lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description In vestibulum gravida hendrerit id tincidunt quis nibh lacinia. Aliquet iaculis risus a justo. Id sed porttitor suscipit, ligula curabitur maecenas eu etiam gravida eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque adipiscing proin placerat eti vestibulum est eros est purus massa felis. Sodales mattis at mauris. Dictum blandit consequat ultrices pharetra laoreet vulputate consequat elementum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis dolor sit eget aliquet nibh. A orci aenean magna nulla. Est pellentesque morbi in nulla mauris sed orci vestibulum purus pulvinar sodales nibh natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod justo massa sodales magna ligula, dictum tempus finibus tempor vulputate maecenas quisque imperdiet elit. Dictum augue blandit ultricies mollis amet, purus maecenas consectetur pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac vulputate velit euismod cursus metus e lectus, placerat nulla id enim lobortis elementum vestibulum tristique pretium quisque mollis. Hendrerit nisi non facilisis blandit nisi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac velit proin quisque dictum felis vulputate ligula, scelerisque elit tortor e, i lacinia nisl nisi risus, maecenas neque au orci felis. Lobortis euismod aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam sodales rhoncus non erat et donec. Ut suscipit pharetra mollis placerat accumsan. Proin quis imperdiet elementum sed, sodales lorem mollis nibh dolor bibendum ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan imperdiet donec ante pellentesque. Nibh morbi viverra a sit lacinia lorem velit in ac. Arcu tincidunt ultricies mattis. Eu tincidunt a cras magna purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultricies risus nunc ut curabitur viverra et imperdiet, facilisis elementum ac cras lacinia pulvinar turpis morbi sodales nunc, aenean at pharetra maecenas in auctor scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa sollicitudin elit justo blandit, magna placerat nisi tempor euismod tempus. Commodo sed scelerisque aenean. Blandit scelerisque condimentum facilisis, consequat amet vel nunc maecenas erat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet mollis arcu ut iaculis. Placerat consequat tincidunt velit non tincidunt fringilla ante mollis posuere arcu lacinia i eu sem, ex ornare accumsan sagittis ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Nitrocam",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus erat etiam sit bibendum augue aenean euismod aenean. Justo lobortis cursus sed adipiscing. Lacinia velit hendrerit magna sollicitudin, dignissim velit lectus iaculis velit donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maecenas ipsum mi enim tempor dui facilisis. Tortor lacinia arcu metus mattis sed, eu dolor pellentesque ante condimentum magna condimentum in vitae. Vel orci maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Haltheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien leo enim vel scelerisque metus porttitor a viverra dolor augue metus, amet felis nam donec bibendum massa commodo. Posuere laoreet et ornare arcu lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum nibh sapien sagittis faucibus i tempor pellentesque morbi scelerisque elit amet, non cursus vulputate accumsan quisque mi in vitae a eget, ultrices tristique consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat iaculis pulvinar est augue. Finibus pulvinar finibus maximus, consectetur pulvinar nunc eros tempor. Justo dolor quis mauris. Fringilla nisl magna metus. Placerat sagittis maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quis neque non pretium tincidunt i ligula, risus tristique laoreet tortor consectetur, nibh lacus eros natoque, eu justo tortor porttitor eu, morbi massa e vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit nisl ex proin posuere cursus ante, proin proin ultrices lacus auctor nisi dui. Viverra finibus pretium quis hendrerit. Sodales porttitor tempus auctor erat at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Thermolock",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt bibendum mattis quisque ex elit condimentum. Porttitor pretium ac fringilla donec. Eti at maximus ligula tempus faucibus etiam scelerisque nam vel dui purus tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis vulputate mattis vestibulum eros diam, etiam iaculis lacinia maximus elit pulvinar dolor tortor, erat sagittis pulvinar turpis erat, eti lacinia au elit tristique orci.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam elit magna et morbi ipsum nulla velit curabitur. Nisi sollicitudin sed laoreet mattis condimentum elit felis bibendum. Leo aliquet fringilla mollis enim tempus nisl.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros dolor blandit ornare sollicitudin neque ut purus. Tortor erat quisque ornare in enim ipsum cras fringilla lorem facilisis tempor, eu nisi diam auctor sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices metus morbi viverra posuere tempor sollicitudin enim, amet adipiscing ut vestibulum morbi. Tristique mollis quisque enim bibendum, vitae natoque viverra orci commodo suscipit dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet rhoncus finibus pharetra maecenas. Posuere metus suscipit sit porttitor pharetra enim. Quis aliquam justo neque sagittis, pulvinar rhoncus erat tempus risus mollis enim aenean.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis sollicitudin purus pulvinar elementum velit turpis eros risus magna. Nisi augue e fringilla lectus id donec sodales sit pretium pellentesque, gravida au augue mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis ac nibh dignissim pharetra id neque sed metus nisi sapien quisque aliquam, a scelerisque orci ut lectus mollis a tempor elementum nulla eget purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis scelerisque suscipit elementum ipsum facilisis. Nunc suscipit metus vitae, erat eget vitae maecenas posuere, facilisis condimentum a viverra sed, sollicitudin faucibus aenean commodo maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis porttitor sed dui orci. Tincidunt a quisque ultrices pharetra sed justo. Ex eros faucibus consectetur, iaculis suscipit aliquam massa vestibulum, finibus tempus mauris pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum imperdiet lacus ex laoreet eget imperdiet. In elit lacus elit orci posuere proin. Commodo vel magna mollis curabitur, scelerisque viverra in consequat morbi ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis e eu faucibus au donec mattis dignissim. Auctor lacinia consectetur eget sodales nisi i consectetur. Hendrerit blandit erat nunc dui, felis lacinia cras leo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur mauris condimentum consequat etiam lacinia, vulputate et i nibh donec nunc nibh. Elementum in suscipit ultrices maximus id ac. Auctor sapien sollicitudin au nibh.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel auctor aliquam aliquam magna. Id auctor dolor risus id. Vel vehicula ligula laoreet. Eu cras quisque ac elit vel consectetur eros. Ut tincidunt blandit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras nunc sodales dignissim natoque neque. Mollis laoreet auctor lacinia etiam amet morbi eu. Accumsan commodo nam e, posuere tortor accumsan ex iaculis sed sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh massa fringilla erat i, sollicitudin lobortis nisl bibendum quis cras, quis sem maecenas ex ante scelerisque. Dignissim a pharetra lectus commodo. Justo sem faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit metus tristique sodales sagittis nunc placerat dignissim massa finibus ornare. Pulvinar neque euismod nunc. Nam ut dictum turpis. Mauris euismod maximus lacinia vulputate elit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description At i mattis neque condimentum. Tempus tristique sodales tortor, tincidunt mollis arcu eu e. Quis morbi proin finibus magna enim accumsan maximus sit maximus consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus felis nisi tortor nulla. Sodales curabitur nulla ac. Maecenas sagittis at id. Enim nunc arcu commodo nibh, pulvinar in lacus proin elementum aliquam quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras e enim metus ultrices curabitur arcu neque. Metus sapien lacinia vehicula accumsan euismod, faucibus vehicula elit in. Bibendum consectetur tempus scelerisque ultrices neque magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis ipsum quis diam ornare etiam mi est blandit, aenean porttitor quisque mattis amet mauris e maximus nisl eros ac natoque. Fringilla nisi rhoncus vestibulum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description At fringilla auctor scelerisque lacinia, diam gravida dignissim condimentum, sodales mauris nisi mattis tempus, eu sed elementum arcu vestibulum, ultricies velit nam placerat purus quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est ut lacinia suscipit donec vulputate ornare risus natoque consectetur sem. Rhoncus vitae aliquet lacinia finibus felis ornare. Sodales diam sapien ut et i vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod at ultrices mi donec lacinia maximus. Eu leo ac cursus mattis au nisl hendrerit. Adipiscing purus morbi sollicitudin enim, facilisis au proin cursus dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum laoreet condimentum mauris elit ut lorem sapien. E adipiscing euismod mi, erat posuere tempus sapien vestibulum condimentum e tristique cursus facilisis nunc magna ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Condimentum ultrices diam iaculis nisi facilisis. Dui mi id eget. Sollicitudin lobortis augue felis metus mattis ornare justo a, ut maecenas mattis condimentum sem quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Amet suscipit ex ac id sollicitudin au lacinia scelerisque, i tempor scelerisque nunc posuere at, erat pellentesque faucibus tristique est eu lectus ipsum massa eu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis ultricies ornare mauris massa pulvinar lorem cras. Augue quis eget e bibendum. I eget lectus faucibus sagittis. Turpis amet id maecenas au diam eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula augue dictum suscipit elementum adipiscing, tristique tempor cras mauris lacinia id ligula in. Vitae quis laoreet dictum. Amet adipiscing amet erat sem lacinia quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel ultrices ultrices fringilla consectetur imperdiet id. Placerat amet blandit ipsum lacinia ultrices curabitur pharetra. Nisl iaculis mauris mi. Posuere eget etiam suscipit tincidunt sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium dolor e dictum curabitur diam rhoncus. Lorem quis consectetur turpis. Metus commodo laoreet ex. Dignissim ultricies laoreet augue condimentum nunc amet neque orci vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit mi eti e ipsum leo. Iaculis posuere at sollicitudin aliquet tincidunt dolor erat morbi maximus. Bibendum elit pellentesque metus, dictum orci ex consectetur diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris ultricies curabitur mollis quis sem quisque dictum nisi dignissim. Felis sodales nibh ex ornare vel morbi vitae laoreet vehicula. Magna curabitur sagittis gravida nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Nitrocam",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aenean quis condimentum orci donec, cras eget pharetra nulla, rhoncus neque eti vitae. Augue morbi sed sagittis, eget erat i aliquet sit. Eti purus fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis dolor ac lacus pulvinar eu, mattis sit at etiam est sollicitudin arcu. Orci tortor sed mattis faucibus nam. Magna eros mauris enim vulputate amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aenean nunc mauris enim mauris maximus eu auctor natoque, vestibulum natoque adipiscing turpis. Nam cursus e quisque, arcu ex sagittis mollis i arcu tortor ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla faucibus ornare purus tincidunt quisque auctor ante. Mollis ultricies sodales consequat dictum ornare. Quis ornare aliquet dignissim, euismod eti dignissim e adipiscing in fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque tincidunt eros tristique fringilla ex ornare purus ut, sollicitudin aliquet nulla vulputate. Nunc mi turpis purus sagittis, cras neque tincidunt accumsan, porttitor au rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Orci tristique mattis quisque tempus felis, sollicitudin a enim cursus, mattis sapien tempor maecenas nisi, mauris purus iaculis ipsum. Dictum aenean bibendum proin at proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus sed commodo risus nisi ut vehicula ut, non maximus hendrerit vel vitae. Erat condimentum pulvinar nam lacinia aliquet euismod, vel faucibus eu pulvinar magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eget pharetra finibus dignissim gravida mi eti. Magna erat posuere eu imperdiet tristique lacinia ligula sagittis accumsan auctor maximus. Ultricies posuere nisl gravida non pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis finibus rhoncus sodales cursus. Posuere erat gravida natoque quis ex dictum natoque laoreet. Amet amet eros et eti. Laoreet sit adipiscing vitae proin mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Purus nibh auctor et elementum posuere, posuere eu rhoncus cras maximus aliquam est, magna imperdiet eros orci amet. Quisque orci elit lobortis cursus lacinia donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
+          "Aliquam.",
+          "Suscipit.",
+          "A."
       ]
     },
     {
       "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit nulla au sollicitudin risus, eget sem vestibulum suscipit condimentum, mattis risus metus metus lacinia, rhoncus maecenas ligula fringilla ante, orci iaculis a suscipit aliquet.",
+      "short_description": "short description Sollicitudin pellentesque condimentum bibendum maecenas dignissim accumsan. Tristique felis nisl.",
+      "long_description": "long description Nulla consectetur scelerisque tempus condimentum lorem magna mauris au ultrices porttitor porttitor in. Dictum eget ultricies auctor est magna finibus a nibh consequat, tincidunt donec e sapien curabitur cras arcu.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
+          "Dui.",
+          "Nam.",
+          "Facilisis."
       ]
     },
     {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti pretium et proin velit sapien adipiscing imperdiet scelerisque leo consectetur condimentum, nulla eti scelerisque tortor leo, bibendum bibendum massa velit maximus curabitur tincidunt nibh.",
+      "name": "NitroSystems",
+      "short_description": "short description I ut lobortis ut curabitur lacinia facilisis lacinia ante iaculis.",
+      "long_description": "long description Erat pharetra dictum dictum nisl purus. Lectus ultricies eti tempus in scelerisque ultrices purus, laoreet condimentum sapien velit rhoncus et ultricies purus sem lacinia suscipit gravida, nam dui elit nisl.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Et.",
+          "Tempor.",
+          "Neque."
       ]
     },
     {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et eros i eros laoreet, nulla sapien lectus auctor sollicitudin ipsum eros ornare risus. Faucibus vulputate vitae gravida pretium tristique. Lectus laoreet faucibus pulvinar arcu.",
+      "name": "Terrasys",
+      "short_description": "short description Donec at faucibus mi ante. Sed neque scelerisque consectetur sapien.",
+      "long_description": "long description Est au cras orci hendrerit lectus aliquam elit suscipit amet finibus posuere morbi. Ornare dictum nulla sed imperdiet viverra faucibus sodales ultrices. Finibus sapien maximus quis et natoque lobortis proin.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Vulputate.",
+          "Laoreet.",
+          "Nulla."
       ]
     },
     {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat leo nunc in imperdiet i tempus dignissim dignissim, finibus euismod curabitur posuere proin maximus, sapien viverra ut hendrerit, aliquet tempor tristique nisl commodo sodales.",
+      "name": "SixtySix",
+      "short_description": "short description Ex vel massa ultricies magna sed pretium nisl et eti.",
+      "long_description": "long description Viverra placerat sagittis tempor dictum magna vitae, cursus sed dignissim vestibulum ut lobortis. Natoque nisi lacinia tempor magna elementum non. Finibus pellentesque laoreet purus ac, purus nunc lacus vehicula pellentesque.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Dictum.",
+          "Adipiscing.",
+          "Ligula."
       ]
     },
     {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc i quis cras ultrices scelerisque morbi. Sit laoreet dignissim eget ante, massa maecenas pellentesque diam, placerat tristique pulvinar nibh e. At tempus et dictum.",
+      "name": "CoreXTS",
+      "short_description": "short description Natoque pretium est consequat tempor laoreet id justo risus velit.",
+      "long_description": "long description Condimentum ex bibendum orci magna ut, lectus etiam diam lacinia. Laoreet quis scelerisque ultrices. Lacinia nisl finibus pulvinar natoque i, cras mauris in id bibendum, aenean aliquam nibh velit aenean.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Vestibulum.",
+          "Mauris.",
+          "Lacinia."
       ]
     },
     {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo iaculis purus proin tempor. Eu ut laoreet pretium sapien. Sed vitae elit quisque i neque dui. E lorem nam pulvinar mattis, nunc a sed.",
+      "name": "Tecomix",
+      "short_description": "short description Lorem nisi posuere tincidunt imperdiet suscipit, cursus at adipiscing laoreet.",
+      "long_description": "long description Justo aliquam pretium erat leo vitae. Posuere adipiscing at consectetur pulvinar. Vel eget dui natoque curabitur. Sed natoque tempus massa viverra, dignissim suscipit i diam eti suscipit tempor au bibendum.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
+          "Metus.",
+          "Pellentesque.",
+          "Eros."
       ]
     },
     {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis mauris commodo sed elit aliquet eu sodales lacinia porttitor sit justo elementum, nam cursus diam dictum scelerisque non quis vel felis ante i lacus.",
+      "name": "Creatonix",
+      "short_description": "short description Dictum posuere ut pretium nulla arcu. I quis facilisis proin.",
+      "long_description": "long description Cursus finibus tortor tristique laoreet tempor ultricies, natoque vitae mauris orci laoreet, cursus mi eros in vel vestibulum. Ut nisl eros pharetra, tempus ultricies tempus vel porttitor vel cras placerat.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Ipsum.",
+          "Maximus.",
+          "Nam."
       ]
     },
     {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Viverra tincidunt rhoncus non condimentum i, nisi laoreet dictum eget. Arcu sit cras vulputate scelerisque. Placerat sem tristique gravida leo, elementum posuere lobortis felis auctor.",
+      "name": "Bellgate",
+      "short_description": "short description Posuere sed metus at suscipit, aliquet proin euismod consequat consectetur.",
+      "long_description": "long description At sodales lacinia vestibulum ultrices bibendum finibus ornare blandit curabitur porttitor neque eros lacinia, dignissim lectus eti pulvinar, commodo justo dolor nulla, eti bibendum nunc e erat sapien arcu orci.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Vel.",
+          "Orci.",
+          "Tristique."
       ]
     },
     {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis nisi pretium leo vulputate, et maecenas neque risus at massa, vel maecenas tortor metus, consequat nunc lectus porttitor. Cras finibus leo mi tempor eget.",
+      "name": "Amsquare",
+      "short_description": "short description Eti magna consequat mi nibh mi proin. Massa viverra curabitur.",
+      "long_description": "long description Massa sit id adipiscing auctor dui, neque orci orci suscipit eti enim facilisis dignissim, at aliquam pharetra pulvinar pretium. Morbi lobortis ultrices euismod elit, maecenas finibus magna lacinia dictum augue.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Elit.",
+          "Eget.",
+          "Purus."
       ]
     },
     {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor neque accumsan suscipit nunc, e e arcu nunc blandit condimentum aliquam lacus, cursus vulputate nunc tempus quisque adipiscing vulputate etiam lectus eti eti sapien.",
+      "name": "Polygan",
+      "short_description": "short description Laoreet ipsum tempus massa lacinia sollicitudin pretium in vulputate felis.",
+      "long_description": "long description Gravida etiam amet risus tincidunt laoreet finibus. Elit ante etiam imperdiet. Rhoncus quisque elit eti i euismod. Sed at blandit lacus. Scelerisque augue erat blandit blandit, imperdiet laoreet gravida pulvinar.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Justo.",
+          "Cursus.",
+          "Orci."
       ]
     },
     {
-      "name": "Haltheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi sapien quisque eros vehicula, ac quis elit blandit pretium tempus. Velit maximus mauris orci eget, donec au nunc quisque erat vel elementum hendrerit consequat.",
+      "name": "Terralabs",
+      "short_description": "short description Viverra suscipit posuere pretium i. Leo porttitor risus dui vitae.",
+      "long_description": "long description Ex sollicitudin au placerat i augue quis cras tincidunt tristique, non risus ut donec quis eros e condimentum sagittis, nibh justo ultricies cras nulla lobortis in eti lacus tincidunt justo.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Vel.",
+          "Eti.",
+          "Ultrices."
       ]
     },
     {
-      "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor accumsan commodo elementum lectus posuere, gravida sed vel accumsan orci. Risus turpis eu justo fringilla. Sodales lacinia donec imperdiet. Dui magna lobortis rhoncus orci.",
+      "name": "Superwire",
+      "short_description": "short description Commodo eget est turpis euismod sagittis laoreet vehicula turpis sed.",
+      "long_description": "long description Erat dui arcu et euismod. E arcu au nisl nibh, auctor sagittis sit blandit mattis auctor ipsum. Ultricies pellentesque eti euismod enim. Etiam dictum pulvinar ipsum, ex elit fringilla consequat.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Lacus.",
+          "Suscipit.",
+          "Au."
       ]
     },
     {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description A neque vestibulum neque suscipit facilisis. Lorem vulputate in eti pellentesque accumsan lacinia, morbi aliquam finibus vitae. Eros tincidunt consectetur diam. Eu aliquet quisque lobortis.",
+      "name": "Qualcore",
+      "short_description": "short description Posuere pulvinar bibendum lectus tempus, augue au sed sem sed.",
+      "long_description": "long description Ligula maecenas mi et proin. Metus lacinia curabitur mattis. Adipiscing vitae sollicitudin sagittis adipiscing nunc maecenas, eu maximus ac felis, nisi eti tincidunt mi ante sollicitudin consequat. Augue hendrerit lectus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Lectus.",
+          "Faucibus.",
+          "Imperdiet."
       ]
     },
     {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor est cursus vulputate fringilla, vestibulum in curabitur ligula sapien viverra iaculis risus. Porttitor dictum dictum au lacinia tempus lobortis, quisque bibendum natoque purus condimentum.",
+      "name": "CoreXTS",
+      "short_description": "short description Ex massa felis pharetra enim risus ligula mattis placerat facilisis.",
+      "long_description": "long description Consequat faucibus orci diam neque purus nam, posuere vulputate quis porttitor commodo blandit ut vitae. Et enim est at natoque iaculis i diam. Magna velit sit vitae arcu lacinia mollis.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Iaculis.",
+          "Nisi.",
+          "Dui."
       ]
     },
     {
       "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing amet i tempor turpis blandit neque. Nunc et porttitor proin felis leo diam. Porttitor porttitor ligula porttitor. Sollicitudin bibendum eu natoque nunc id auctor.",
+      "short_description": "short description Pulvinar adipiscing finibus laoreet eti dui ligula nulla blandit cursus.",
+      "long_description": "long description Posuere diam cras bibendum cras tristique. Lectus eu lacus purus nunc dictum porttitor, neque sapien massa facilisis lobortis. Mattis euismod lectus cras. Ultrices tempus ultricies ex placerat. Consequat morbi vehicula.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Laoreet.",
+          "Viverra.",
+          "Leo."
       ]
     },
     {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Morbi tincidunt nunc arcu lacus, id lacinia sit sapien diam maximus proin etiam. In pulvinar sodales pellentesque sit ac proin. Dignissim au magna sollicitudin enim.",
+      "name": "Templatek",
+      "short_description": "short description Augue turpis ipsum posuere facilisis, vel laoreet ultrices quisque aliquam.",
+      "long_description": "long description Tincidunt laoreet ornare tincidunt dolor placerat metus vestibulum natoque turpis iaculis natoque, at scelerisque arcu massa condimentum lectus erat, erat donec magna maecenas vel. Sem placerat finibus diam augue proin.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Massa.",
+          "Felis.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Dolor amet vel est ultricies velit. Condimentum faucibus tristique velit.",
+      "long_description": "long description Faucibus tincidunt curabitur cursus sapien neque, justo elit risus consectetur laoreet hendrerit finibus pretium. Ipsum vulputate imperdiet fringilla suscipit imperdiet i suscipit curabitur risus curabitur, erat morbi aliquam sagittis elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Maximus.",
+          "Nisl."
+      ]
+    },
+    {
+      "name": "VTGrafix",
+      "short_description": "short description Maecenas laoreet elementum sem pellentesque. Consectetur tempus lobortis cursus tempus.",
+      "long_description": "long description Mi nulla turpis sollicitudin euismod dictum cursus commodo dui, tempor felis euismod ex, sapien erat dictum dignissim ex pellentesque justo morbi. Diam dolor tortor accumsan nibh vulputate. Magna tincidunt pellentesque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Aliquet.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Sodales vitae ligula neque ipsum. Accumsan mattis fringilla sapien nulla.",
+      "long_description": "long description Dignissim facilisis neque sollicitudin faucibus. Eu amet tristique lacinia laoreet sollicitudin lobortis felis ipsum neque. Faucibus purus condimentum gravida sagittis elementum. Facilisis quisque purus laoreet maximus bibendum mattis placerat tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Enim.",
+          "Aliquam.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Ante mauris sed eu e bibendum. Metus maximus pellentesque e.",
+      "long_description": "long description Aliquet magna felis pulvinar amet mattis lacinia nunc e morbi gravida i neque ultricies sed aliquam tempor commodo ultricies bibendum condimentum blandit, massa elementum purus lobortis erat iaculis sit pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Rhoncus.",
+          "Turpis.",
+          "Orci."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Blandit viverra enim felis porttitor mauris sed leo risus purus.",
+      "long_description": "long description Nam leo bibendum tempus vitae facilisis. Neque velit justo auctor. Blandit ut rhoncus id finibus at adipiscing morbi finibus. Dolor ultricies non mollis pharetra arcu. Ultrices imperdiet cursus et amet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Neque.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Mollis nam sapien fringilla mi ornare donec aliquam eros fringilla.",
+      "long_description": "long description Ultrices tempus velit dolor tortor tempus nam quis nisl, turpis ac maximus erat at cras adipiscing ante augue. Finibus non metus quisque tempus facilisis, tempus ornare sagittis diam sem facilisis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tortor.",
+          "Dui.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description In imperdiet turpis vehicula dui tristique mauris nulla quisque dolor.",
+      "long_description": "long description Consequat condimentum sagittis eti purus. Vestibulum tempor in justo, i lobortis tincidunt consequat. Cras vitae arcu auctor, arcu sollicitudin ante cras. Sagittis velit elementum magna bibendum proin. Mauris turpis lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Donec.",
+          "Eget.",
+          "Arcu."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Etiam maximus donec quis diam non mi amet ultrices sagittis.",
+      "long_description": "long description Nibh auctor sagittis morbi quisque non, aenean orci pretium risus imperdiet risus mauris dui. Mollis tempus iaculis quisque. Curabitur cursus i tempus, amet ut massa nulla aliquet, diam lorem ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nibh.",
+          "Amet.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Elementum ultricies facilisis ipsum augue. Viverra nulla sit tincidunt nibh.",
+      "long_description": "long description Curabitur lorem quisque fringilla eros aliquam, pulvinar placerat eti consectetur, porttitor rhoncus ultrices viverra. Viverra curabitur neque adipiscing facilisis, commodo rhoncus lectus faucibus turpis felis dui donec vulputate mollis tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultricies.",
+          "Ultricies.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Dignissim pellentesque sodales lobortis e au enim. Sollicitudin suscipit i.",
+      "long_description": "long description Cras cursus posuere erat mauris commodo. Lorem pellentesque velit iaculis euismod dolor finibus velit, quis dui consectetur iaculis nibh gravida bibendum adipiscing eros aliquam. Condimentum arcu ac tincidunt nisl ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Laoreet.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Elit consequat lacus felis dolor consectetur ut euismod suscipit erat.",
+      "long_description": "long description Non enim elementum mi nunc. Quisque quis magna ante donec nisl mauris maecenas. Cras eros risus donec erat at mattis nunc commodo laoreet eget facilisis. Vestibulum at sed mauris tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Amet.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Ipsum erat justo ultrices pellentesque nunc. Fringilla lorem blandit risus.",
+      "long_description": "long description Bibendum nam iaculis ut sit in erat, ipsum nisi scelerisque nulla. Euismod magna condimentum etiam gravida porttitor et lacus. Dui aliquam dictum au. Hendrerit porttitor accumsan au est nibh ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Aliquam.",
+          "Dolor."
       ]
     },
     {
       "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maecenas commodo erat e dictum non pellentesque tortor, pharetra sodales tempor tortor, sit tincidunt ligula velit placerat. Aliquet euismod leo nunc natoque. Metus mi nibh.",
+      "short_description": "short description Ut pellentesque justo id dolor quisque vehicula. Consectetur in ornare.",
+      "long_description": "long description Mi blandit tristique arcu a maximus massa. Mauris gravida imperdiet aenean gravida mauris leo aenean. Massa facilisis massa maximus. Cursus cursus ultricies donec. Aenean tempor vel erat proin sit faucibus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem et consectetur au lacinia sed lorem elementum mattis leo commodo. A pharetra vel lacinia ex sed risus ex vestibulum facilisis. Aliquet maecenas ac maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis curabitur lectus id tristique auctor scelerisque id tempor. Non condimentum felis aliquet euismod. Viverra laoreet lacinia orci, pretium pellentesque nam leo mollis at scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque quisque purus mi aliquet nulla. Aenean pellentesque magna morbi vehicula. In ornare ultrices quis nisi cras scelerisque quis aliquam ligula a, facilisis condimentum i.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia iaculis nisl auctor gravida, suscipit id iaculis dolor viverra mollis. Maecenas consectetur neque neque tristique, aliquet quisque nisi consectetur sit ac hendrerit consectetur velit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Proin hendrerit mollis finibus metus, mauris laoreet cras non natoque lacinia. Euismod ornare viverra felis i tincidunt, placerat nunc maecenas magna pharetra a tincidunt sodales.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem commodo finibus erat non. Condimentum nam accumsan ultricies nam, ligula massa justo tincidunt turpis nam nisi risus purus, ante accumsan ultrices consequat aliquam suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Risus lacus blandit quisque lorem. Vel elit a nunc mi. Ac cursus hendrerit diam pharetra gravida, maecenas sodales mattis iaculis sagittis pellentesque pellentesque nibh adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo erat lacinia a ipsum rhoncus suscipit. Porttitor id lacinia massa ligula nunc felis et. Ante leo nisi neque. Natoque justo suscipit maecenas donec au.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sodales natoque hendrerit suscipit bibendum, enim magna e faucibus. Ultrices morbi proin bibendum. Au gravida adipiscing dignissim. Eu viverra mauris tortor condimentum, finibus turpis mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis eti sollicitudin nisl pellentesque lobortis etiam pharetra pretium sollicitudin dictum. Risus maximus cras neque dignissim lobortis quis accumsan facilisis mauris ante ut ex imperdiet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description E mi ex purus eros consequat felis morbi sagittis aliquet. In vel mi ac vehicula. Amet facilisis lobortis scelerisque condimentum, dolor et ligula lacus id.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor sodales sit erat vehicula curabitur, vehicula vel i purus vitae etiam. Nulla ex eget scelerisque faucibus massa scelerisque ex finibus, sapien commodo mi eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Viverra lacus non facilisis au. Pharetra sagittis cras magna ornare. Viverra pulvinar mattis at porttitor. Elit erat dictum quis consequat etiam id vitae e consectetur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim cras ut adipiscing eu. Lobortis nibh suscipit sagittis auctor, lorem posuere metus quisque, euismod lacinia vitae dictum nisi nulla non magna non lacinia lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Morbi amet sapien pharetra hendrerit massa ante, bibendum orci finibus e. Nisl placerat nunc viverra. Nibh aenean eti dui. Tortor blandit natoque eros elit tortor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Posuere tempor leo vehicula sit, nulla suscipit a ex ultrices mi. Erat nulla iaculis nunc aenean eti finibus consectetur elementum fringilla eros e bibendum tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit elementum nam aliquet vulputate in maecenas erat nulla. Turpis lacinia turpis lobortis faucibus porttitor. Nisl turpis arcu cursus neque, placerat eros erat sem nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque massa diam blandit mollis, proin scelerisque fringilla mollis. Vulputate hendrerit ornare sodales maximus sapien natoque, in sit lorem etiam augue consequat nisl ex dolor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sollicitudin at etiam vitae pretium arcu, lacinia mi commodo nibh, dignissim dictum aliquam commodo amet, quis vitae magna adipiscing aenean enim ex neque maximus sodales.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet nam non metus amet suscipit quisque. Id bibendum velit sem nam neque mi bibendum vulputate imperdiet. Ut justo ultricies elementum condimentum. Eros lectus sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Bellgate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo sem aliquet tincidunt lacinia, morbi lorem ultrices lorem nisl elit hendrerit tincidunt placerat. Donec etiam vehicula arcu vehicula. Eti hendrerit gravida tempor iaculis consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam imperdiet massa tempor accumsan. Commodo curabitur arcu orci quis tortor. Fringilla arcu tempor nam cras donec iaculis. Sagittis justo aliquam tristique tristique justo ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing accumsan hendrerit mi magna. Vitae auctor elit dolor blandit erat lorem, orci placerat tempor diam aliquam ut magna justo. Amet purus a pulvinar vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui lacinia aliquam vestibulum vulputate, lacinia pellentesque eget iaculis ut, amet arcu id eti metus, e adipiscing pellentesque accumsan. Accumsan massa consectetur tempor orci est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit ante mauris maximus eget. Elementum rhoncus mattis cursus, ornare facilisis massa elementum scelerisque enim, pellentesque accumsan lorem lorem aliquet dignissim quisque posuere enim rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan fringilla sem ac leo. Neque ipsum mattis maximus. Dignissim dictum nam pharetra est aenean imperdiet commodo ac lorem, mi facilisis felis diam au euismod.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis sit amet nisi arcu. Leo accumsan nisl etiam dignissim sodales, vestibulum laoreet pharetra adipiscing elementum sem ultrices dui. Dignissim dignissim sodales leo tempus bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor lobortis lacinia arcu i pellentesque, enim dignissim iaculis eget neque. Gravida finibus neque sodales sapien laoreet scelerisque, ultrices suscipit curabitur fringilla, magna facilisis consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo aliquet eu rhoncus sodales. Eti nulla non dolor mauris sit. Risus tempor ante massa nisi gravida, diam finibus imperdiet maximus. Sagittis vehicula at donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit nulla aliquet commodo arcu. Posuere mollis quisque aliquam. Ipsum donec vitae maecenas. Non in eget tristique. Metus dolor scelerisque vestibulum placerat justo lacinia tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis nisl eget ac nisl dictum dolor, fringilla cras augue lacinia au mollis arcu. Eget vehicula diam mauris velit. Aliquet cursus posuere mollis sed ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Connic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus pulvinar nulla quis vulputate quisque faucibus dignissim i, mauris ante risus turpis sagittis vestibulum proin cursus. Eros i vel sollicitudin. Leo diam vulputate porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nam commodo velit dolor lacinia finibus maecenas pretium. Faucibus vestibulum purus lectus vestibulum. Orci e aliquam nunc. Nisl ut sem tempor cras, vel cras elit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae lacinia i leo tristique ex pellentesque donec dolor. Lectus morbi tortor sem vestibulum sollicitudin. Au rhoncus ante gravida ex maecenas. Sed eti ultrices quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis orci nisl elementum accumsan. Neque pharetra tristique eget eget imperdiet diam, sed eu mollis lacus. Dignissim sapien e placerat erat, turpis vitae elit faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description I nisl nulla e commodo. Viverra lacus vel dignissim. Mi sem gravida etiam. Elementum sagittis cras lectus i et in, risus dignissim au sit turpis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque non nisl ante blandit purus. Quisque proin ligula sem aliquet elit. Tincidunt au quisque lacinia tempus ut dui, etiam vulputate curabitur posuere lacinia sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate eti vulputate pretium sagittis. Lacus donec viverra vel au risus ultricies. Viverra pellentesque cursus elementum au vel cras est. Tristique leo pulvinar proin metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Haltheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec facilisis bibendum e consectetur enim pellentesque. Porttitor tristique eti dignissim lectus. Pulvinar est rhoncus consequat, ornare hendrerit tortor nisl in, sollicitudin nibh ac tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium nisi nibh laoreet nam. Eros au ligula enim metus mollis vehicula. Suscipit suscipit cras pulvinar. Vestibulum fringilla ligula mollis nisi fringilla non blandit maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Connic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Augue est leo commodo in, quis proin gravida in. Tempor eu purus massa, risus cras felis non. Maecenas lacinia ante augue proin. Ultrices lacus ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus dolor sapien tortor mauris, dictum nibh maecenas aenean iaculis, pulvinar nibh i massa. Leo vestibulum eu ornare. Lacinia consequat cras maecenas felis tempor a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus massa purus bibendum purus velit tempus consequat. Euismod magna tortor donec. Etiam lacus dignissim enim. Suscipit aliquet sapien magna sem nam at augue hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Seelogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et tortor a sollicitudin facilisis, leo ipsum consectetur cursus. Eros pretium velit metus commodo. Ornare etiam auctor neque, curabitur leo consectetur eti est adipiscing mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus ornare tempus pretium au lorem e diam magna lobortis, sem mi pretium eu condimentum consequat placerat adipiscing ex. A sapien vulputate eros non mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus erat nulla est nulla. Elementum vel sodales vel pharetra. Magna quis ultricies ornare lacus vitae, pellentesque sit ante justo ac suscipit non neque tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh risus mollis eros ligula pharetra mi purus proin bibendum id in au cras, sem non risus nam mollis i. Sit eti adipiscing aliquam diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Scelerisque ipsum quis dolor blandit blandit, tempus sem porttitor mattis, sapien elit rhoncus auctor. Elementum purus finibus consequat non sit nam proin placerat tempor sollicitudin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eget elementum sem aenean proin mi in nunc auctor, vestibulum vestibulum mollis nisi nisi ipsum pretium eros commodo metus. Pellentesque i suscipit metus morbi porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris dictum cras proin bibendum dictum, nunc maecenas donec turpis pretium viverra bibendum diam sapien. Ipsum bibendum purus posuere sodales etiam. Leo nisl vehicula vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium vehicula eti sodales finibus ante elementum pellentesque. In faucibus orci mattis, cursus et arcu lacinia rhoncus. Nisi ligula quis imperdiet, nibh dictum lacinia auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia neque elementum cras finibus, cursus magna sapien amet, enim sodales quis sapien, tristique massa viverra donec at eros, quis dolor consequat sodales condimentum lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel ultricies sapien ut nibh, mollis in et eti maecenas dignissim felis eti. Ultrices dignissim eget enim non. Elit pretium facilisis risus aenean euismod adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maecenas aliquam sapien bibendum bibendum dictum cursus, a facilisis magna morbi gravida, finibus curabitur augue fringilla auctor ligula. Sollicitudin eti ornare risus lacinia aenean tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque posuere purus natoque magna. Nisi ex non vehicula scelerisque dignissim. Cursus erat dui consectetur maecenas. Hendrerit elit imperdiet hendrerit felis. Hendrerit faucibus purus et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam eget justo sollicitudin dictum tempus dignissim accumsan risus turpis mollis, proin suscipit scelerisque consequat. Placerat proin cursus vulputate, nunc neque vulputate mattis cras auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula velit sapien lorem cras risus commodo et, hendrerit commodo mauris ex, et hendrerit dolor diam augue pellentesque viverra. Nam pretium maximus at in adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consequat tristique fringilla vulputate vulputate faucibus blandit. Neque quis felis finibus a nisi. Dui diam natoque lectus. Tempus vestibulum est metus au. Metus posuere i.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo ultricies quisque mi fringilla velit lobortis sodales, ipsum eros nibh posuere faucibus, sem hendrerit massa bibendum tristique elit, faucibus placerat morbi ex diam elementum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit dictum donec placerat dolor hendrerit eti. Tempor tortor aliquam placerat ornare. Lacus cursus aliquam etiam scelerisque, natoque orci cursus pulvinar lacinia mi nulla condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl sollicitudin morbi dignissim vel nulla, arcu lobortis ante pulvinar condimentum elit consequat mauris. Elementum e vel ipsum, in ante et placerat dolor aliquet ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed ligula dictum gravida mauris. Ipsum vulputate gravida nulla consectetur sem a lacinia imperdiet, ultrices gravida finibus velit. Non aliquam e sodales mauris vitae finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium mollis sit ligula maecenas neque leo nunc est ex. Nunc posuere et sollicitudin. Metus cursus donec posuere maximus iaculis aliquet lobortis. Iaculis imperdiet finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus leo pharetra nisi bibendum. Commodo mi tincidunt maecenas vulputate, nibh ultrices risus mi. Blandit cras lorem consequat. Augue placerat mi et diam placerat a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisi pretium lacinia justo faucibus finibus. Maecenas hendrerit risus vulputate viverra iaculis nunc, dictum augue hendrerit ipsum adipiscing sodales gravida. Vulputate non ornare diam viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate dolor eros sem finibus, imperdiet massa nibh lacinia et enim, curabitur elit pellentesque eros at purus vestibulum. Sodales vulputate metus maecenas felis et neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor ante nisi ultricies rhoncus, consectetur sit felis sit velit posuere magna turpis eget, donec augue pulvinar lorem pulvinar. Viverra consectetur at maximus dolor sollicitudin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Risus eget velit consequat pretium morbi gravida placerat dignissim. Proin consequat placerat vestibulum, mattis ultrices tristique mauris curabitur. Suscipit ante id pretium hendrerit neque lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Faucibus felis maecenas sem suscipit turpis auctor neque ipsum lacinia lacus, velit a amet enim sed hendrerit risus quisque. Dolor vehicula condimentum natoque pretium mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus consectetur ac rhoncus ex quis. Massa commodo nunc vulputate consectetur purus ultrices nisl tempus elementum imperdiet gravida massa nam elementum iaculis, maximus lobortis sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Optiplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit est ligula facilisis fringilla purus mauris eti suscipit ante, vel lectus lectus aliquam hendrerit ligula scelerisque aenean. Dictum ornare donec dui euismod sed maximus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula iaculis eu mollis etiam. Velit pellentesque aenean ex blandit posuere lacinia pellentesque consectetur. Ipsum eu in purus euismod mollis nam. Erat mi nunc faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus sagittis lorem amet nunc purus justo ante arcu ut auctor auctor. Sem auctor arcu sem, mi posuere purus tortor fringilla sem ultricies pharetra quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium nam facilisis cras aliquam felis ut vehicula faucibus diam nulla. Dignissim lobortis tempor magna amet vel, at morbi hendrerit ut lacinia mi cras lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit vulputate dignissim tempus ultricies euismod nulla sodales iaculis. Erat pharetra sem fringilla dolor. Dignissim scelerisque mi velit. Ligula diam cras curabitur. Enim porttitor donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit orci lorem aenean au. Mollis bibendum eti amet. Pharetra adipiscing proin posuere aenean lectus nulla. Lobortis mollis facilisis lobortis ipsum ex. Fringilla vehicula porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros erat non tortor lacinia viverra, ultricies nibh nisl imperdiet lacinia condimentum lacinia ac pellentesque, iaculis sit massa ut, commodo nunc ultrices dignissim nam proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida faucibus magna nisi diam quis. Massa aenean sapien finibus nulla aenean quisque placerat tempus. Et hendrerit ac consectetur rhoncus. Consequat scelerisque ipsum est bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus purus vitae au blandit finibus mollis eu. Adipiscing ipsum posuere tempor sagittis mauris adipiscing magna. Dignissim a ipsum erat porttitor aenean sapien aliquam mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Natoque accumsan commodo cursus proin. Ultricies condimentum justo augue at ex accumsan vestibulum, mollis est ipsum imperdiet a ac laoreet pulvinar. Ultricies sagittis laoreet rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ipsum nibh laoreet placerat sollicitudin. Vitae risus eros augue quis viverra nibh rhoncus tortor ut mi viverra imperdiet nulla magna etiam, a hendrerit non eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Posuere viverra ipsum lacinia natoque faucibus i sollicitudin pretium. Sed et vestibulum dignissim vehicula id, maximus id massa neque. Eti accumsan faucibus elementum pretium justo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hypervision",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non ut augue cursus auctor, ornare maximus blandit id. Vitae natoque i ultrices. Finibus imperdiet amet eu sem. Ac pharetra ornare eget, nisl tempor mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description In arcu tempus cursus tortor. Viverra blandit ornare faucibus. I sollicitudin mollis ante pulvinar. Sapien placerat sollicitudin quisque bibendum nulla accumsan sagittis, condimentum viverra lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Seelogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit suscipit risus lacinia lectus, felis faucibus consequat scelerisque lacinia condimentum nulla condimentum laoreet in eget id sapien, nisl tortor rhoncus eu, e a vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus dolor accumsan suscipit ornare maximus vestibulum sem ultrices tempor ultricies. Ante turpis porttitor sem sollicitudin nam lobortis ipsum, cursus consequat tempus cras quis aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Chromaton",
-      "short_description": "This is the service short description",
-      "long_description": "long description Auctor at eros et quisque metus. Nibh morbi tincidunt maecenas vulputate. I sem justo nam ultrices sem augue proin metus cras ut ac au sodales.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Orci ultricies imperdiet tristique felis ultrices augue ut sagittis lorem dui purus morbi vel eu dolor ligula nisi lobortis tortor auctor sem. Curabitur placerat accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare quis euismod natoque nulla eget arcu, ligula eti elementum consequat maecenas facilisis. Blandit est tempus ligula metus. Lacus tortor sem mollis nisi quis hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eget maecenas ipsum curabitur maximus massa sed, hendrerit diam risus arcu erat. Orci donec turpis ut ligula natoque. Scelerisque lectus vestibulum ut eti iaculis tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consequat massa faucibus commodo nisl ipsum. Mauris iaculis cras tortor mollis quis sed rhoncus. Natoque velit est mauris condimentum maximus. Neque eros ante fringilla proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor tempor tempor ex dui scelerisque natoque. In ex maximus posuere augue. Arcu gravida fringilla i fringilla. Blandit maximus adipiscing consequat. Pulvinar massa dolor dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est porttitor condimentum ultricies adipiscing elementum lacinia. Dui scelerisque suscipit quisque aenean. Lobortis viverra mollis viverra dignissim eti vitae ornare ante leo, e facilisis i.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et dignissim laoreet rhoncus auctor arcu est vitae placerat rhoncus. Pretium sem arcu orci nulla laoreet. Dignissim eros euismod lacinia vulputate non. Neque magna auctor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultricies euismod ligula justo condimentum, blandit diam auctor pellentesque mauris, maximus lacinia placerat dolor pretium dictum eu aliquam hendrerit. Porttitor nam a lacinia dictum faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum aenean proin posuere viverra finibus nisl pellentesque, at orci sodales porttitor neque cursus. Tempus diam pulvinar lacus amet id nisi vel tortor enim metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim leo ultricies au ex mattis euismod scelerisque laoreet bibendum cras, nisl porttitor leo sagittis tincidunt amet aenean porttitor a gravida non elementum fringilla eget.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description In accumsan metus faucibus nisi. Pharetra iaculis viverra metus nisl, augue elit pellentesque ultrices, vestibulum enim porttitor id laoreet e ultrices porttitor tortor nisi neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit magna placerat eros finibus tristique lectus natoque diam massa nunc. Arcu nunc lacinia consequat laoreet sem hendrerit dignissim velit i. Nisl maximus consectetur sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quis aenean purus i pellentesque commodo. Lacus porttitor placerat blandit, vulputate fringilla maximus placerat curabitur, augue vitae lacinia natoque consequat curabitur eti blandit hendrerit nibh.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris donec justo consectetur ultrices. Eu accumsan au commodo in orci eti et maecenas. Mi pretium adipiscing ornare adipiscing rhoncus facilisis. Nam eget ligula lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis donec velit bibendum lectus. Iaculis pretium enim laoreet turpis nisi eros, suscipit cursus quisque scelerisque elit. Mattis pellentesque iaculis placerat et. Vehicula lectus ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien pharetra gravida etiam auctor, placerat lectus viverra suscipit mattis. Ut tempor pretium laoreet sit elementum. Lacinia nulla sem mollis natoque, id mattis risus est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque sem laoreet auctor ligula, amet non quisque tempor maximus mauris nunc aliquet, augue pretium sodales pretium enim neque dui. Porttitor mauris sapien sagittis sodales.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui mattis vitae ac suscipit. Nulla tristique commodo a, ornare mauris faucibus viverra nunc, auctor id elit turpis. Turpis arcu hendrerit nibh id mattis pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod quis quisque pellentesque eti pellentesque auctor, sed euismod felis quis mauris dictum sodales velit consectetur pharetra e risus pulvinar vitae, mi ornare dictum laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Morbi tristique condimentum orci tempor tempus imperdiet gravida proin dignissim at. Donec eros neque massa tincidunt. Lacinia eros dolor nibh ex non commodo eget placerat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lorem tincidunt sem eget sed bibendum lobortis erat, erat nulla massa dolor iaculis at finibus consequat, hendrerit blandit viverra blandit, arcu lorem facilisis eros aliquam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus eros vitae nisi risus rhoncus curabitur, quisque quis au vestibulum orci imperdiet adipiscing aliquet eu aliquam. At auctor sollicitudin mattis mattis purus nulla maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus viverra sollicitudin mauris aliquam. Enim ac eget ex. Laoreet magna elementum viverra ac nisi proin mattis condimentum, arcu mi ornare suscipit tristique placerat hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices enim vitae laoreet cursus. Arcu tristique faucibus sed viverra, lacus vulputate lacinia aliquet at arcu. Elementum euismod aliquet accumsan, auctor leo e hendrerit imperdiet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc lobortis gravida viverra pellentesque gravida nulla nisl fringilla arcu. Blandit vehicula accumsan dictum, et dui facilisis turpis sit. Cursus cras condimentum sed metus natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique iaculis tortor suscipit justo sem sollicitudin lacinia, bibendum aliquam ut scelerisque dictum, mauris elementum cursus arcu. A amet quis nunc viverra mi finibus tortor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec accumsan sed aenean vel tempus nibh. Ultricies est nisl pharetra est, dignissim at placerat ornare tempor. Euismod amet justo magna non suscipit tempus a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui enim accumsan sapien est cursus viverra sit. Elementum ligula dui a. Et ut felis ultricies scelerisque dui auctor placerat, vel amet quis et ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Risus orci rhoncus nisi vitae a augue mi. Velit adipiscing quis sollicitudin pulvinar augue enim eti. Maximus sed ac imperdiet sagittis leo mi gravida lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Nitrocam",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus scelerisque amet pharetra vestibulum erat non, erat ornare viverra vulputate pharetra auctor pellentesque eget pharetra. Dolor sodales tempus turpis. Consectetur nunc ornare neque curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Thermolock",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum magna justo lacus gravida id. Lacinia natoque facilisis consequat dolor magna adipiscing sit finibus quisque maximus vestibulum natoque pulvinar. Accumsan pellentesque proin nibh mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elit orci condimentum sollicitudin sem ex. Ultrices mattis maecenas cursus, mauris sodales finibus non maximus cursus lectus au, euismod sapien au fringilla ligula iaculis aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lorem etiam ac facilisis euismod etiam. Hendrerit lacinia viverra ac. Dictum blandit enim massa suscipit lobortis lacinia, auctor aliquam i turpis gravida, placerat elementum at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Haltheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Arcu ultricies ornare ultricies ornare sollicitudin euismod. Diam nisl neque lacinia. Faucibus purus pellentesque eu augue suscipit ultricies. Laoreet faucibus quisque finibus, scelerisque sem metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt natoque i condimentum gravida. Eget vestibulum condimentum etiam. Ipsum ut nunc ornare fringilla justo eget ante diam fringilla tempor faucibus lacinia et elementum curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pulvinar tempus amet felis gravida e, neque ligula maximus pharetra. Mattis ante justo ultricies. Sem facilisis accumsan mi mauris eu nibh. Tempus pellentesque elit fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia porttitor metus pretium maximus, est sapien ornare proin cursus. Eget mollis lacinia ut, diam fringilla mauris ante viverra auctor, scelerisque eget amet tristique posuere.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus vel morbi aliquet ultrices ut ornare, gravida sapien tempor lacinia eros fringilla maximus vestibulum. Velit sagittis accumsan sollicitudin lacinia, elit bibendum eget gravida gravida.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus arcu ac ligula orci. Sagittis condimentum mollis at purus. Cursus pharetra dignissim velit condimentum. Erat purus fringilla sit laoreet mollis lectus, cras sed nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit at vulputate laoreet proin ut, aliquet blandit augue lacinia pretium. Neque e lobortis maecenas at lacus morbi maximus. Imperdiet facilisis faucibus mattis amet cras.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan pretium ut auctor lacinia tristique porttitor lacus, finibus aliquam sit turpis ut sem ipsum, lacinia nulla dictum cras dolor nunc morbi. Dictum a au.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VTGrafix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam dolor fringilla morbi laoreet. Facilisis ultrices facilisis enim. Commodo vestibulum ut amet diam turpis au, condimentum imperdiet blandit et accumsan curabitur. Nam viverra nam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consequat consectetur faucibus pretium vitae quisque quis. Massa pretium tristique condimentum lobortis augue. Nunc ultricies hendrerit neque maximus morbi pretium. Erat lobortis imperdiet neque ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed pretium gravida eget gravida hendrerit e viverra, ante mollis sem ultricies, dignissim quisque placerat euismod pulvinar faucibus sollicitudin adipiscing scelerisque. Pretium lacinia cursus sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia euismod velit scelerisque tristique. Etiam quisque sapien mi et nunc elit maximus aliquam massa pulvinar augue vehicula eu fringilla facilisis non. Posuere erat vestibulum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit e pretium lacinia in aenean, felis elementum natoque ante purus accumsan viverra posuere leo purus. Porttitor sapien ligula nibh eget. Consectetur tincidunt tincidunt dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
+          "Nam.",
+          "Maximus.",
+          "Ultrices."
       ]
     },
     {
       "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit euismod e maecenas maecenas mi. Ex neque arcu lacinia. Lectus justo curabitur ipsum. Ipsum tortor natoque metus. At enim tempor diam ex tortor consequat.",
+      "short_description": "short description Sit condimentum iaculis eget rhoncus rhoncus gravida laoreet nisi au.",
+      "long_description": "long description Cras porttitor tristique nulla sollicitudin suscipit, aliquet suscipit suscipit nisl hendrerit. Massa ac magna risus posuere consequat auctor tempus, fringilla erat vulputate ligula sit, tempus proin metus consectetur lorem leo.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt at orci natoque risus euismod, pellentesque ipsum elit maximus lectus lacus. Neque dignissim dignissim facilisis mattis tempor nisl cursus aliquet. I felis sit lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Logico",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed ex vehicula eti au. Etiam pellentesque lacinia cras in, risus ac nisl non natoque in. Sapien magna hendrerit finibus turpis commodo eti sagittis tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat vestibulum ex mollis condimentum ex maecenas, metus nunc i accumsan etiam, lacinia nulla maecenas cras, in neque tincidunt purus ac, tincidunt aenean scelerisque porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex a scelerisque turpis elit nam ligula quis. Non vel posuere nunc maecenas. Cursus adipiscing lorem iaculis. Vestibulum sem ac tristique, finibus nisl lacus commodo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam ante velit curabitur scelerisque tristique pellentesque, tortor pretium mi commodo, faucibus euismod turpis lectus lacus donec facilisis sit, fringilla tempus lectus sapien enim est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Morbi id donec leo euismod. Vel natoque pulvinar ultrices consequat vitae augue, a sollicitudin finibus au morbi nibh. Eros amet placerat commodo hendrerit vulputate pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel neque laoreet eget gravida, sagittis mattis in maecenas cursus velit. Tempus tempor arcu ante consequat eti lobortis erat, finibus vehicula auctor turpis tincidunt proin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui pellentesque sagittis dolor lacinia augue tortor suscipit, imperdiet felis ultricies eti non. Massa tristique augue faucibus risus vulputate vitae tempus elit proin e in.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis at i elit diam nunc i morbi felis, orci magna finibus ornare nunc dolor ex. Sed lorem scelerisque diam quis. Ut maecenas vestibulum magna.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia faucibus laoreet cursus tristique eros nam. Euismod lacinia accumsan justo. Risus mauris sollicitudin metus eros sollicitudin, amet est sodales nibh massa. Pretium cras bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien iaculis at quis felis etiam sapien ante cras sed. Enim eget risus donec orci fringilla, aliquet imperdiet morbi non, cursus augue vel finibus in.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description E ultricies faucibus ut nibh sed sagittis, curabitur in ornare ornare, felis auctor mi condimentum mollis sit ipsum ornare, vehicula vitae maecenas erat lobortis sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Posuere tempus pretium ornare lobortis tempus. Mi mauris consectetur pellentesque blandit nisl turpis pellentesque adipiscing amet. Quisque orci risus leo natoque. Curabitur tincidunt hendrerit ligula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
+          "Fringilla.",
+          "Nunc.",
+          "Maximus."
       ]
     },
     {
       "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quis scelerisque metus eti sapien cursus au placerat nisi nisi e dictum sit at lacinia porttitor, dui blandit commodo condimentum elit felis tincidunt erat morbi.",
+      "short_description": "short description Dictum euismod sem etiam lacinia rhoncus ornare lobortis sit placerat.",
+      "long_description": "long description Nam auctor ipsum vitae maximus lectus lacus fringilla, mauris ornare erat e metus. Sagittis fringilla sagittis cras sagittis. Ornare ligula aliquam risus. Pellentesque vestibulum adipiscing elementum. Pharetra adipiscing sapien cras.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Mattis.",
+          "Rhoncus.",
+          "Tristique."
       ]
     },
     {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit nisl hendrerit posuere cursus, id tincidunt sodales maximus. Sed maecenas neque amet. Non massa orci augue dolor, cursus est eu nibh. Vulputate viverra dignissim.",
+      "name": "Seelogic",
+      "short_description": "short description Ligula e cras justo augue ligula nibh arcu ac justo.",
+      "long_description": "long description Ante facilisis nisi scelerisque suscipit at lacinia finibus. Consequat ac dui lobortis. Tempor ac ut iaculis, purus curabitur massa hendrerit tempor. Commodo imperdiet ac massa. Lorem consequat suscipit elementum quis.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Viverra justo eti dui gravida dignissim quisque risus nibh elementum adipiscing. Consequat mi condimentum lacus elit mattis ultrices, vel cursus orci au metus tempus et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim lacinia eget lacinia commodo. Elit eros lacinia pulvinar justo enim nam nibh morbi non rhoncus cursus nisl. Metus lobortis posuere enim est au eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris eti lobortis auctor eu, eros lectus ut auctor pretium lectus gravida sem. Diam felis bibendum dignissim vehicula quis sed, tempus aliquam ut vehicula tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus maecenas euismod aliquam nunc. Aliquam lacinia diam dignissim laoreet, nulla i quis felis arcu eu, bibendum ipsum diam ante, id eu et tempor vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien accumsan ut finibus lacinia. Quis sed condimentum mattis. Eu augue eros cras cras pretium vehicula ipsum mattis. Cras neque mi amet aliquet vulputate lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ac mattis e e orci eget nisi, id imperdiet non aliquet tristique iaculis. At maximus eros lacinia sed pharetra, lobortis finibus eu condimentum posuere finibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam maximus ipsum sagittis au, rhoncus erat proin cursus nisl, quisque elit purus hendrerit bibendum in suscipit. Proin aenean ornare at. Etiam commodo in ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Orci erat proin sed etiam lobortis. Eu placerat sapien sagittis, placerat lacinia mauris consequat lobortis nam metus. Porttitor augue sem elit aliquet pellentesque sodales ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit velit et in ex magna mollis laoreet tortor consequat, placerat id pharetra condimentum amet. Lorem magna ultrices id, proin scelerisque lacus eros metus ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Metus vehicula leo aliquet massa, lorem vulputate auctor scelerisque e donec curabitur ipsum mi finibus orci vel in ex nisl. Augue facilisis sagittis magna quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut suscipit ex mollis a gravida maecenas. Scelerisque morbi vitae bibendum sem. Amet maximus bibendum pharetra maecenas. Ac lacinia vulputate bibendum ante nunc in ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
+          "Tempus.",
+          "Sollicitudin.",
+          "Velit."
       ]
     },
     {
       "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pulvinar non cras amet vestibulum e blandit. Tortor nam quisque viverra purus mattis. Eros viverra posuere cras. Turpis rhoncus auctor au nisi facilisis sit neque.",
+      "short_description": "short description Tortor ligula eu nulla lobortis at nam, lacinia nam nunc.",
+      "long_description": "long description Imperdiet ac scelerisque quis posuere aliquam, tristique etiam proin nam gravida aliquam. Vehicula leo natoque finibus augue aliquet ligula. Cursus auctor laoreet auctor pellentesque pulvinar, sed blandit viverra magna eros.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Laoreet.",
+          "Quisque.",
+          "Nisi."
       ]
     },
     {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan consequat vel dictum accumsan. Vulputate nisl au nunc tempor maecenas justo sagittis. Elit rhoncus amet id ante eget, ut ex e maecenas bibendum ipsum.",
+      "name": "Viewtopia",
+      "short_description": "short description Lacinia scelerisque condimentum hendrerit pellentesque ultricies erat turpis tristique tincidunt.",
+      "long_description": "long description Lacinia aenean vitae a augue tempor faucibus risus magna cursus, aliquam lorem i etiam blandit tortor et. Sed maecenas arcu ultricies vulputate, ipsum morbi maximus i bibendum. Donec risus nibh.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Curabitur.",
+          "Mi.",
+          "Dui."
       ]
     },
     {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur posuere posuere pulvinar arcu, scelerisque aliquam sed ultricies etiam lacinia rhoncus, erat vitae enim magna. Leo bibendum lacinia suscipit. Ultrices amet iaculis mattis ante.",
+      "name": "OpenServ",
+      "short_description": "short description Au mollis ipsum etiam nisl sed. Pulvinar suscipit amet diam.",
+      "long_description": "long description Mauris e pretium aenean ipsum, condimentum nulla ex adipiscing curabitur cras. Cras au tempus dui augue diam id. Non tristique ac i fringilla tincidunt. Magna hendrerit finibus quis cursus blandit.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au cursus auctor hendrerit lacinia. Felis nisl sit nisl augue lorem magna curabitur euismod pharetra ultrices vulputate eros aenean nulla. Vitae commodo nam sem quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat finibus vestibulum neque a purus pretium quis ut erat quisque vel. Au in felis non ut velit diam. Consequat accumsan cras nunc gravida consectetur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Augue facilisis justo porttitor lorem vel a orci. Au bibendum aliquet cras nulla tristique, turpis non condimentum tempus, sed faucibus quis id mauris scelerisque iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor sed vitae a amet lacinia tempus sapien vitae nisi rhoncus hendrerit dolor mattis suscipit lorem. Posuere pharetra eu eu, elit sem pulvinar maximus faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
+          "Lorem.",
+          "Ultrices.",
+          "Sapien."
       ]
     },
     {
       "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis aliquam au scelerisque felis lectus ultrices diam justo, at amet imperdiet arcu. Finibus rhoncus orci ex at. Cras quis eti bibendum, tempor lacinia dui.",
+      "short_description": "short description I mi lectus donec nam nisl i mi tincidunt amet.",
+      "long_description": "long description Justo vitae lacinia ultricies commodo dictum ornare i donec, magna mollis vitae vitae. Hendrerit cursus vestibulum blandit consequat vulputate, lacinia eti at pretium donec turpis morbi, metus eros donec lectus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Eti.",
+          "Est.",
+          "Au."
       ]
     },
     {
-      "name": "Unilogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare ultrices tincidunt maximus natoque curabitur vehicula. Consectetur lacus risus vulputate elementum. Tortor vulputate porttitor i ipsum metus bibendum pellentesque auctor rhoncus. Leo ultricies orci.",
+      "name": "WestGate",
+      "short_description": "short description Placerat aenean sem pharetra tempor vulputate. Auctor condimentum vehicula ultrices.",
+      "long_description": "long description Tempus curabitur ut auctor lacus, porttitor vehicula facilisis purus curabitur imperdiet in auctor, auctor sagittis justo ipsum, gravida pellentesque velit au, vel nibh commodo cursus ligula in, eu erat condimentum.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hypervision",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus adipiscing mauris cras scelerisque donec. Lacinia dignissim aenean sapien. Id tempor maecenas nisi id sem augue tempus. Bibendum dolor porttitor accumsan consectetur tempor hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque diam proin tortor curabitur mattis, imperdiet tortor cursus eu. Lobortis imperdiet ultricies condimentum, amet etiam iaculis viverra. Proin natoque ornare nisl nisl mauris quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia faucibus mauris vulputate aliquam ligula felis, tincidunt pellentesque sodales pellentesque. Ligula aenean vel dolor sagittis tempor curabitur commodo i consequat id erat pellentesque facilisis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing nisi viverra lobortis quis amet sagittis at suscipit. Auctor at at morbi sapien mauris. Adipiscing laoreet auctor eget eget dolor. Ligula au lacinia sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hypervision",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros orci augue lorem erat sagittis nunc in laoreet eti nunc at scelerisque auctor curabitur lacinia nam natoque faucibus finibus eti curabitur at arcu placerat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description In adipiscing sit pretium enim posuere, iaculis maecenas morbi et gravida, euismod quis id tristique sodales maecenas nam enim elit sem nunc lobortis amet a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vestibulum sollicitudin aenean maecenas sodales id. Erat id sapien nibh, eu leo ex morbi neque a faucibus viverra. Maecenas facilisis consequat quisque ornare mauris est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis blandit eget erat nisi. Dignissim rhoncus aliquet consequat consectetur amet. Blandit sodales turpis posuere aliquam nunc finibus morbi quisque blandit suscipit nibh tristique eget.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Helixicon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Leo fringilla placerat nulla ultricies ornare euismod commodo etiam. Id lobortis id magna, sed et ornare tortor nam, quis suscipit commodo sodales tortor laoreet dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam scelerisque erat suscipit risus. I ac vehicula dolor. Eget facilisis at euismod. Vehicula tortor mauris sem. Vehicula eti dui iaculis iaculis, lacinia morbi bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras lobortis auctor velit magna sollicitudin. Auctor ligula i amet. Dignissim ac ipsum sodales morbi accumsan diam sapien ultrices ante donec aliquam scelerisque leo gravida.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrueXT",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus maximus lacinia quis elementum. Ligula lacinia et proin, turpis porttitor rhoncus nunc. Nulla eti pharetra a, velit aenean pretium leo purus, etiam rhoncus lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices faucibus ex diam elit et. Sed euismod ornare dignissim eget. Porttitor porttitor facilisis commodo in nibh ut bibendum dolor, diam purus pharetra nam tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Id commodo dictum id elit elit hendrerit placerat, arcu donec non in nisl, ante lacinia au lorem mi. Nisi ornare dignissim lectus lacus eu posuere.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat ornare non gravida imperdiet adipiscing, viverra donec curabitur cras, metus nam au elit finibus gravida hendrerit, id dignissim i sagittis enim. Porttitor blandit augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit orci mollis augue maecenas sagittis, lacus pulvinar turpis bibendum, suscipit posuere ante eros. Eti ac fringilla diam. Turpis sem aenean neque. Enim donec maecenas.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
+          "Curabitur.",
+          "Accumsan.",
+          "Cras."
       ]
     },
     {
       "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis sapien purus a nam cras. Scelerisque justo accumsan lacus consectetur aliquet i ex imperdiet magna porttitor, adipiscing rhoncus e neque eu consectetur sollicitudin scelerisque.",
+      "short_description": "short description Aliquet ultrices scelerisque lacinia quisque. E orci commodo non neque.",
+      "long_description": "long description Nunc amet ipsum gravida laoreet, curabitur consequat sodales sed est aliquam, sodales nisl diam bibendum commodo elementum. Ultricies accumsan accumsan a auctor, ut ultrices dignissim ligula, commodo massa erat felis.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet condimentum diam maecenas pharetra magna dui auctor. Quis tristique ligula laoreet, purus placerat ultricies faucibus mattis, sodales eti laoreet sem iaculis nisl viverra hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros est placerat vitae arcu porttitor laoreet gravida. Nam aenean dictum dui sapien. Nunc condimentum ac bibendum vestibulum, pulvinar orci at est, aenean metus nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Unilogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description I non id mauris ut elit hendrerit. Consectetur tristique augue leo mollis diam gravida dignissim augue sed laoreet nunc justo mauris, non tempor rhoncus in.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras sagittis sollicitudin amet iaculis tempor sed ac finibus, tristique vulputate quisque eu scelerisque aliquet sodales amet in nulla posuere vestibulum. Augue commodo leo ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla dictum risus mi posuere amet. Lobortis bibendum id ultricies vulputate. Lorem aliquam mollis id lobortis consectetur imperdiet mi pharetra. Non posuere ligula lacinia gravida.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet sodales curabitur ligula suscipit accumsan aliquet sed, eti aenean dignissim sapien bibendum, sit dictum facilisis etiam, dignissim elementum aliquam aenean maecenas mattis faucibus bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit aenean sagittis vulputate vulputate natoque ante. Consequat natoque nisi tincidunt. Finibus quis pellentesque massa aliquet, quis ligula enim pretium. Pharetra placerat neque orci e.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia mi dictum lacinia turpis et. Sapien eros elit vel, magna consectetur consequat porttitor rhoncus ex, quis quisque justo nulla pellentesque eu, consequat ultricies sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti maximus laoreet scelerisque aenean, mattis neque scelerisque pretium, euismod euismod nibh finibus eros erat, nulla lobortis vehicula arcu commodo viverra. Ex et lectus facilisis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo a nunc tortor accumsan ipsum sit. Sit diam porttitor elementum massa dictum sodales. Massa dictum rhoncus ligula vehicula fringilla. Iaculis accumsan cursus neque viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare rhoncus i erat sodales auctor. Euismod ac vulputate sapien eros pellentesque lectus sapien, aliquet pretium tempus maximus au vulputate augue facilisis ornare dolor nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo arcu porttitor justo ut ultricies mauris vehicula. Consectetur eget risus nibh pulvinar scelerisque magna tristique. Sollicitudin mi massa nisl. Pretium non sed faucibus commodo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus sit etiam aenean aenean, commodo ultrices morbi magna aliquam, cras natoque nam aenean sem leo, mauris at et et. Pulvinar faucibus cursus cras leo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Amet at euismod gravida quis metus, est tortor hendrerit pharetra lacinia, mauris bibendum imperdiet ultricies nisl lorem dictum nunc mauris enim. Risus vitae nulla purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui et blandit in arcu, dolor donec in donec, sapien mauris aliquam laoreet commodo, eros tempor felis tristique enim ut. Lectus dolor dictum i mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Id euismod at auctor fringilla vehicula lacus aliquam. Iaculis condimentum vestibulum euismod fringilla ac ex, auctor pulvinar at pulvinar sodales nulla faucibus. Dignissim ante condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit dui sodales est mattis. Fringilla mattis ante donec vestibulum tempor. Commodo tincidunt eti lobortis, pellentesque eti cursus facilisis. Ex ornare scelerisque proin nisi nisi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maximus eros iaculis mauris natoque, vitae ultrices sem ex nulla lobortis. Felis ipsum dui commodo augue a tempus. Vehicula nisl ultrices ex nisi i ac.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit est tristique posuere tempor. Quis ante felis auctor vel accumsan auctor. Suscipit nisl lorem purus accumsan. Dignissim suscipit at sodales mattis. Suscipit ex dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis i turpis ante a aenean. Lacus pretium i nulla. Neque laoreet vitae laoreet. Maecenas aenean tincidunt tempus ante. In nisi metus ultrices ex eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreMax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Natoque ipsum nisi hendrerit ex erat i vehicula sapien elementum sit est laoreet mollis, faucibus non lectus dolor leo, vestibulum i rhoncus vel blandit rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim bibendum purus risus lacinia pulvinar posuere rhoncus ut. Pretium euismod magna vehicula vestibulum viverra. Magna viverra gravida enim aliquam nibh turpis. Proin risus pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi ex risus mattis eti, rhoncus mauris suscipit nisi sit enim massa sollicitudin euismod pretium, pretium porttitor leo eros velit bibendum tempor nisl aliquam tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aenean nisi ultrices vitae leo scelerisque vitae, nulla viverra justo adipiscing. Aliquam pretium suscipit leo, accumsan imperdiet orci euismod ac. Scelerisque pellentesque sagittis posuere nam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut elementum ex posuere felis ornare, tristique tincidunt pellentesque morbi vulputate facilisis lobortis nisl accumsan turpis, curabitur lobortis non quisque, diam nisi ultricies aliquet leo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa pharetra pellentesque mollis tempor bibendum lacinia turpis cras. Consequat tempus at elementum. Lacinia gravida porttitor at ex e elementum. Magna velit finibus ante donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description I mattis au purus nulla, quis scelerisque quisque ac, lacinia nam ac faucibus proin felis blandit, placerat tempor quisque etiam imperdiet. Nisi blandit quisque posuere.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Est ipsum ante consectetur neque fringilla. Eu commodo etiam tristique ac. Turpis mauris tincidunt tortor. Scelerisque tincidunt sodales sodales massa ac risus. Blandit magna dictum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet faucibus ut morbi au condimentum tortor, velit morbi elit purus ultricies etiam, orci eti eu ligula hendrerit purus blandit. Auctor turpis eget natoque ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cirpria",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sollicitudin ornare laoreet scelerisque natoque aliquet consequat natoque purus mi quis ex felis sollicitudin au commodo aliquet tempor. Sapien quis purus sapien, id fringilla laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla a id natoque felis. Lacinia au donec pulvinar mollis nunc nisi imperdiet natoque natoque. Ultricies orci bibendum facilisis, justo ornare mi ex dolor arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ipsum elementum euismod vehicula maecenas auctor. Et elementum est adipiscing vehicula leo cras commodo i arcu facilisis. Accumsan quis augue mauris tristique placerat massa dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Facilisis blandit cras quisque aliquam proin tristique, lectus dictum etiam aliquam, sed nibh posuere placerat orci sodales massa eti sit tortor tempus bibendum proin tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor maximus id facilisis eget, facilisis eros turpis ante sollicitudin. Sed et aliquam tortor ac turpis aenean tempus lectus natoque pellentesque turpis. Aenean eros pellentesque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elementum cursus proin vehicula pellentesque, nisl facilisis cursus lectus turpis, nunc ornare sed consectetur vehicula. Natoque quis mi ex vel. Augue eros pharetra vehicula arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum lacinia vulputate sagittis at fringilla neque. Tristique pharetra vestibulum ante orci e. Magna id commodo lectus velit est, pellentesque quisque purus dolor dignissim quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur i bibendum imperdiet tempus nibh, magna vitae erat ornare eti. Cursus neque leo maecenas aliquam tortor faucibus sodales. Mollis adipiscing dui ipsum id quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit ultrices ante ut finibus aenean viverra finibus auctor. Au purus magna sagittis, massa elementum consequat mauris, sem dictum porttitor at nisl ante dui condimentum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maximus sed dui eu a aliquet scelerisque, suscipit placerat mollis iaculis viverra ac ultrices adipiscing. Facilisis faucibus ligula purus arcu tristique in gravida maximus elit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis curabitur proin pretium proin, enim in nam etiam etiam. Magna auctor nisi facilisis lacus pharetra vel mattis felis ante nam, posuere elementum sollicitudin vitae.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti felis consequat sodales justo ante. Sem in pulvinar elementum. Pharetra vulputate porttitor mollis lacinia orci faucibus placerat sem nulla. Faucibus eu id nunc arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Polycore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur orci morbi quis pharetra ac. Scelerisque rhoncus euismod mollis, neque posuere sollicitudin euismod vel elementum nunc, adipiscing diam porttitor e au tortor morbi rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium etiam natoque donec est. Elementum erat nisl quisque non. Lacinia condimentum morbi vel lectus rhoncus, eu nunc placerat suscipit. Viverra lacinia amet lacinia mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hypervision",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum metus posuere vulputate dignissim. Rhoncus erat justo tristique, vitae orci accumsan massa au elit ac lacinia nisi ex etiam. Accumsan turpis condimentum bibendum pellentesque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempus i blandit turpis pulvinar aliquet a cursus placerat maximus viverra nisl, commodo consequat au tortor euismod, commodo nisi bibendum mi a justo ac bibendum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quisque pretium risus ante aliquet, ultrices au proin aenean. Gravida orci sed sollicitudin lectus diam eget nisi posuere. Ex blandit gravida non lectus sem suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nulla erat gravida eu viverra aenean. Lacus laoreet elit dictum pretium consequat. Vehicula fringilla facilisis imperdiet. Vulputate viverra accumsan placerat mauris quis blandit laoreet cursus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis sapien finibus posuere condimentum suscipit enim natoque blandit. Commodo scelerisque tempus quisque dolor mi fringilla turpis placerat mi placerat vehicula lacinia quisque cras neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis faucibus facilisis placerat tincidunt dui dolor. Donec pharetra orci consectetur faucibus sodales. Quisque bibendum id donec scelerisque. Lacus eu at maximus elit tristique vitae.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "OmniTouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut eget non au velit ante ut. Accumsan tortor et elementum nulla eget. Facilisis finibus velit elementum. Velit maecenas donec sed eros cursus pharetra lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Scelerisque ut risus eget elementum turpis. Eti mi etiam nunc pellentesque accumsan. Nibh elementum leo pretium, au adipiscing blandit augue, vitae vitae euismod lacinia e.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed ac imperdiet cursus lacus ut ante cursus est cras, amet augue viverra mollis finibus natoque, magna diam arcu nunc justo fringilla velit dui blandit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ante sollicitudin auctor maximus accumsan sodales euismod blandit. Non lacus sodales curabitur a. Lectus au neque nisl mattis ornare nisl nulla pretium consequat sollicitudin vel.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description In ut mollis pellentesque eget. Nunc vel augue vel, erat viverra at magna nam bibendum vulputate iaculis, amet facilisis curabitur ac eti consequat cras laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam mauris placerat nulla faucibus, risus justo vitae au cursus condimentum eget eget, imperdiet pellentesque adipiscing dui, vel tempus lorem lacinia, i imperdiet blandit dui.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultricies nisi a viverra aliquam nibh maecenas mi ultricies augue vehicula, porttitor blandit magna e. Natoque blandit at lorem, sagittis velit commodo leo e ipsum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium placerat sapien mi consectetur iaculis cras ultrices. Lacinia sed iaculis felis. Natoque finibus suscipit fringilla massa, dolor maximus donec lacus blandit tincidunt ultrices tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor etiam amet tincidunt nibh lobortis viverra, eu suscipit auctor dui facilisis proin porttitor leo cras lacinia. Euismod id condimentum tempor non. Sagittis in etiam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit dolor dictum tempor imperdiet. Posuere velit quis cras, fringilla mattis sem ultricies nibh. Lacinia eget dignissim est mi commodo. Adipiscing elit vestibulum ipsum tortor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem bibendum augue finibus mauris nibh nisi, nunc adipiscing auctor magna vestibulum natoque dolor, neque euismod etiam sem est, e nisi sit vestibulum orci sollicitudin.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Helixicon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elementum eget eti porttitor eu. Donec aliquam suscipit maecenas nisi auctor. Mollis blandit imperdiet ut ut massa, scelerisque magna vulputate au, aliquam facilisis ac id.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Scelerisque vel ac tincidunt scelerisque enim non, vestibulum maximus risus lacinia. Sagittis ipsum a eros lacus sapien purus, augue faucibus imperdiet sollicitudin accumsan vehicula nisi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Posuere vehicula condimentum nibh est ut quis, mauris dignissim aliquet lobortis amet, vehicula i porttitor ante, sed amet aenean eu nisi vulputate neque scelerisque rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Helixicon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ipsum natoque donec nulla sit lacinia consequat faucibus donec, aliquam ornare pretium ligula diam sollicitudin ornare euismod consequat, mi quisque maximus donec cursus vel neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis cras vehicula turpis nisi viverra dictum. Vitae et eu mauris vehicula sapien natoque ligula. Sem imperdiet aenean mauris laoreet sodales risus rhoncus ipsum a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia eget tincidunt felis e, velit enim rhoncus cras. Facilisis magna vulputate cursus. Gravida sed risus velit mollis blandit dictum, cras dictum ac mauris turpis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl dui sagittis ut maecenas, finibus posuere justo leo. Orci arcu orci ut risus sapien purus. Felis tortor eu cras commodo at lacinia natoque iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
+          "Aliquam.",
+          "Donec.",
+          "Non."
       ]
     },
     {
       "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis erat lorem dictum amet blandit aliquam ante metus scelerisque tortor. Id lorem eros lobortis sollicitudin pretium, justo elementum vestibulum elit, sollicitudin velit et bibendum.",
+      "short_description": "short description Lectus purus in turpis dolor. Pellentesque nulla commodo mauris nunc.",
+      "long_description": "long description Adipiscing erat faucibus morbi sollicitudin arcu turpis. Nulla eros nisi scelerisque. Sagittis bibendum eu tempor lorem, neque justo vel dui. Accumsan lobortis est tempus. Diam eget ut euismod nulla in.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Justo aliquet etiam suscipit pharetra aliquam at metus, dui laoreet pellentesque sapien aliquam lobortis eros, porttitor nunc ultrices vehicula eget. Orci sem dignissim lectus scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros pharetra sodales morbi felis. Eros posuere bibendum lacus dictum erat etiam maecenas hendrerit tristique curabitur, orci sapien ac morbi, auctor vehicula turpis velit pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Rhoncus faucibus placerat ante nunc lacus, mollis donec vitae vitae. Donec condimentum mollis sem. Lacus tempor etiam massa. Dui non vitae lacinia faucibus dui nulla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod ex lobortis sit pellentesque. Metus ultrices suscipit metus metus e consectetur. Ultrices sollicitudin ex eget erat. Laoreet ultrices dictum laoreet sit ac gravida turpis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Citisys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mauris rhoncus est mauris facilisis dignissim. Eu neque ipsum augue. Bibendum euismod elit sollicitudin maecenas arcu velit lacinia enim erat lorem dui. Iaculis eti eu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis fringilla orci ut vel. Enim vehicula ipsum condimentum, curabitur massa euismod tempor. Diam consectetur placerat neque sodales. Sollicitudin adipiscing ultrices velit tempus eget pellentesque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet tortor vehicula scelerisque vulputate maximus auctor nam morbi. Dictum aenean tempor sagittis nunc amet. Vitae vestibulum tristique curabitur consectetur, enim quis erat porttitor tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque augue gravida vestibulum tincidunt erat hendrerit ante. Blandit laoreet dignissim neque tempor, lacus vel at placerat curabitur erat. Sodales nisl mi nisi amet sed.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description At laoreet tempus dignissim tortor mollis tempor. Posuere mauris tristique erat viverra scelerisque nibh, est tempus id magna sagittis condimentum. At tortor lacinia consequat tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisi eros auctor dui mi et lacinia mauris eros tempus pulvinar. Sapien mauris lacinia pellentesque. Pellentesque ante hendrerit consequat pharetra mauris. Adipiscing justo facilisis rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl laoreet metus vulputate elit ultrices. Pulvinar pellentesque mollis hendrerit erat nunc vel. Cras elit porttitor quisque. Vestibulum nunc i amet scelerisque, elit erat diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat accumsan eu quis enim enim. Porttitor cursus eu bibendum. Quisque aliquam ornare rhoncus facilisis e. Justo finibus justo sodales bibendum est maximus augue consectetur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Risus pellentesque facilisis lacinia finibus, consequat metus scelerisque vulputate purus, massa vestibulum elementum blandit, vehicula dolor vitae ante gravida, donec erat ac eu magna tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "GrafixMedia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eget ante eros mollis cursus, aliquam mauris augue pulvinar sagittis. Donec nulla quisque au, mattis commodo augue augue nunc tincidunt gravida ex sed mi iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et porttitor ac in aliquam. Mi etiam lobortis mi adipiscing consectetur at sagittis diam tincidunt nunc accumsan suscipit vestibulum hendrerit bibendum a tempor elit pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis non ultrices velit nunc pretium i, quisque morbi adipiscing diam vestibulum a erat quis. Maximus e aliquet i curabitur bibendum. Natoque consequat cras mauris.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cras est vestibulum dictum elit aliquet sagittis imperdiet non auctor. Rhoncus maecenas iaculis quisque nisi nisl hendrerit lacus blandit. Placerat sagittis imperdiet quisque pretium aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur in amet porttitor nisl mattis i tempus diam a a viverra i, sed gravida ante augue fringilla. Au enim est pharetra. Consequat metus non.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet scelerisque at turpis ultricies natoque, dui laoreet ante pharetra. Massa est eros tortor vulputate maecenas, blandit ex au vestibulum nam aliquam dui consectetur ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vestibulum arcu eros sollicitudin aenean donec elementum laoreet. Sem commodo vel pretium. Velit sapien quisque cras mattis commodo rhoncus, sed tristique pulvinar donec mollis viverra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo nisi hendrerit aliquet vestibulum dictum faucibus eu lacinia, vestibulum nunc vestibulum gravida orci viverra laoreet finibus consectetur id nibh laoreet rhoncus. Ac turpis ultrices.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex cras aliquam sed augue leo elit pellentesque, cras nisl placerat non i purus natoque magna commodo at nam blandit lacinia. Mauris euismod lacinia nisl.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "LoopSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Amet cras dui dignissim amet consectetur sapien viverra, fringilla amet etiam commodo auctor id lacus elementum rhoncus, sit sollicitudin facilisis etiam hendrerit porttitor gravida massa.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis viverra sapien sodales eros neque amet, neque aliquam scelerisque sed nisi. Tincidunt natoque natoque euismod non, at purus iaculis donec ipsum dolor pellentesque arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Arcu placerat velit vehicula laoreet mi at aenean. Bibendum a felis mollis ultricies, faucibus posuere sagittis massa lacus. Velit viverra facilisis e. Justo vitae au.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros nulla mattis i faucibus tristique bibendum, sit hendrerit est metus at id tempor cursus. Nisl ex ligula bibendum natoque accumsan tempus scelerisque proin non.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus au consequat elit posuere mattis. Commodo lacus leo condimentum auctor justo quis. Eget placerat lectus accumsan lacus aliquet at. Dignissim maecenas nulla massa lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod vehicula elit nunc morbi consequat posuere tincidunt ultricies, adipiscing purus natoque aenean consequat porttitor cras. Ut dignissim fringilla sollicitudin, velit massa mollis neque lectus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Consectetur id laoreet ultrices risus consectetur proin. Sed lobortis quis id felis purus. Nunc cursus imperdiet ac aliquam elementum felis tempor. Natoque imperdiet orci quis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet eros au nulla ligula maximus in pretium. Metus nulla aenean et lacus felis sem id imperdiet nisi. Pellentesque morbi neque morbi turpis amet cras.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut natoque pretium iaculis rhoncus. Euismod posuere viverra e. Non massa velit aliquam orci, vestibulum e nunc tortor au sagittis nisl, viverra nunc viverra erat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "CoreRobotics",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam erat a blandit mi aliquam, eget finibus mattis nulla consequat sagittis. Magna sem elementum pulvinar imperdiet sollicitudin eti nam arcu. Erat lectus sapien amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Curabitur mauris mi sodales au turpis, ultricies vitae turpis eu, e finibus rhoncus consequat curabitur suscipit consectetur tristique au finibus proin. Eros vel id pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique quis au nibh quisque sapien. Sed tincidunt nibh consequat donec, quis vulputate lobortis tincidunt, faucibus bibendum maecenas felis. Lorem neque nulla posuere lectus vitae.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description In quis commodo facilisis aliquam non finibus, etiam ipsum velit nam mollis pharetra id. Turpis hendrerit nam vehicula. Vitae pharetra justo pharetra at condimentum fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis etiam quisque aliquam tortor, massa bibendum placerat cras aliquet, sit sollicitudin laoreet iaculis ut dictum. Auctor orci e fringilla quisque, at at sapien etiam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lectus sagittis pharetra euismod id nunc suscipit neque ultricies lacinia, curabitur sapien mollis facilisis, a ornare eget pharetra. Pharetra fringilla lacus curabitur eu pretium ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pulvinar suscipit iaculis at eros consequat risus laoreet, donec turpis scelerisque adipiscing massa ut sit tempus, bibendum suscipit orci tristique id gravida eti ac morbi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sem eu nunc mauris amet sapien, leo ipsum dolor a gravida cras eget lectus blandit viverra orci facilisis in, au non pretium massa lacinia au.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ante ultrices lacinia auctor scelerisque nisl cursus eget quisque leo vestibulum purus, curabitur lectus sodales est sapien blandit. At elit nulla dictum purus mollis tincidunt.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor consequat nam dui aliquam. Ornare vehicula metus bibendum. E magna nunc nibh dolor ex et ultricies lacus quisque ex ac consectetur. Quis orci ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex elit dignissim pellentesque auctor fringilla. Rhoncus ligula justo adipiscing maecenas tincidunt. Eget porttitor nisl nulla. Ipsum a ipsum sodales, consequat placerat sapien nunc augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Terralabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum ligula neque faucibus posuere tempor suscipit pulvinar blandit sagittis laoreet ultricies auctor, faucibus mollis pharetra pellentesque purus. Metus in au erat, lacinia mauris massa.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida mauris blandit mi fringilla quis laoreet. Mauris consequat nisi ultrices sem. Id maximus fringilla mi posuere sollicitudin, nisi ac sodales maecenas consectetur aliquet tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non eros donec i finibus. Fringilla aliquam placerat nam neque, neque lectus eros nibh augue, nisl eget scelerisque sodales cursus condimentum morbi. Imperdiet sodales ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat elementum eti eget enim dignissim ultricies ex enim facilisis a cras condimentum. Nunc accumsan eu elit velit lacus blandit. Eu etiam bibendum vel cras.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula maximus nam lacinia e lorem, amet dolor ipsum facilisis ultrices in, in erat finibus orci laoreet suscipit eros, massa viverra cursus mattis tristique lorem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynaroc",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultricies lectus mi mollis nulla natoque. Tempus erat ultrices accumsan nibh, nulla facilisis faucibus dictum. Adipiscing vitae pretium vehicula nibh consectetur. Sem enim consectetur est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quis hendrerit placerat metus sapien elementum condimentum velit ante placerat. Tristique donec pretium in. Magna commodo dictum iaculis. Hendrerit sapien pellentesque dolor risus leo est.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex gravida erat pellentesque vehicula at. E vulputate lobortis arcu, orci tincidunt adipiscing mi iaculis, massa adipiscing non vulputate. Mattis at magna leo commodo ex.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Helixicon",
-      "short_description": "This is the service short description",
-      "long_description": "long description In facilisis posuere ornare cras. Aliquam sapien aenean purus laoreet. E tempus at diam. Sapien at ex enim dui, velit amet sem hendrerit sapien dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description I maximus amet nam placerat dolor. Purus ornare tincidunt et eget, natoque massa placerat dui. Curabitur lobortis iaculis pharetra eros ipsum, nisi arcu nisi eti.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
+          "Mattis.",
+          "Tincidunt.",
+          "Dignissim."
       ]
     },
     {
       "name": "TurboSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi ligula dui cursus morbi dignissim, nulla quisque pulvinar fringilla mi. Pulvinar sem sit nunc aliquet lobortis est tempor commodo accumsan bibendum sollicitudin dictum maximus.",
+      "short_description": "short description Vehicula non donec vulputate suscipit iaculis. Ornare eget ligula condimentum.",
+      "long_description": "long description Nibh neque velit lacinia sem pulvinar a lectus. Cursus neque mauris adipiscing. Facilisis lacinia adipiscing sagittis aliquam eget mattis mauris. Tristique aliquet eti quisque magna, est aliquam ut maximus vitae.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis viverra donec consectetur pretium neque, aliquam nam aenean eti, dictum purus neque sem mollis ac. Sapien pretium justo mollis justo amet, eros erat mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet lacus nam euismod consectetur gravida. Lacinia nisl ultricies quis, vulputate et dui proin augue e diam consectetur, sollicitudin gravida pharetra cursus. Cras ex laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Commodo lobortis pharetra metus porttitor. Mauris tortor lacinia quis rhoncus. Tristique diam lectus cursus orci vestibulum, lorem quis metus elementum, risus enim e bibendum natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut sem magna eget iaculis mollis scelerisque proin commodo donec sed laoreet laoreet vel leo scelerisque. Turpis magna vel risus mauris ante iaculis risus placerat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pulvinar orci hendrerit euismod posuere condimentum ultricies mauris orci, lacus scelerisque lectus proin vestibulum. Id cursus facilisis accumsan posuere. Ut iaculis elementum massa cras diam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Amsquare",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi dictum aliquam aenean massa non. Commodo non ut vitae, vestibulum neque nam hendrerit aenean elementum lorem, facilisis tempus neque et. Lorem augue nibh ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium pulvinar auctor laoreet eget auctor lobortis, aliquam i vel nisl. Leo nisi nam eu facilisis. Tortor tincidunt fringilla iaculis sapien nam cursus risus lacus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula eget finibus maecenas eu eros. Bibendum erat tincidunt sem eget. Non tincidunt fringilla elit sem euismod vitae. Commodo vestibulum blandit mauris. Quis maecenas sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Iridimax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet mollis sagittis tempor aenean vulputate sagittis porttitor orci vulputate lorem et laoreet felis. Au neque dictum imperdiet curabitur, massa eget aliquet curabitur lectus tempus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc sodales imperdiet eros magna vehicula ante. Ligula vestibulum finibus commodo, hendrerit natoque commodo enim eti sodales. Orci erat tempus risus, adipiscing iaculis auctor et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium pretium velit sem purus nam. Elementum e tristique cursus purus commodo vulputate erat ante ultricies nunc et, magna justo lobortis eros nisl laoreet fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquam tortor id nunc maximus. Vestibulum consectetur bibendum donec, euismod faucibus ipsum sem lobortis. Consectetur consequat donec augue iaculis lectus posuere, orci et etiam pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sagittis hendrerit vehicula pellentesque au sagittis lorem rhoncus quis non vehicula. Mollis i rhoncus aliquam curabitur. Viverra mollis mauris nunc pretium. Proin pharetra scelerisque vestibulum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Laoreet id natoque felis ultricies proin imperdiet lobortis nulla amet dui au rhoncus dictum vulputate, ultrices cras pulvinar natoque sem blandit. Elementum turpis turpis mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Protheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sollicitudin i curabitur mi euismod pharetra, ut quis pretium et pulvinar, aliquam ante ligula ante, rhoncus orci adipiscing mattis. Tempor consectetur mauris tempus donec adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Logico",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec adipiscing magna ligula i. Amet felis turpis et id a morbi, ex auctor augue mattis, leo eros nisi turpis, nisi orci amet iaculis ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec nam magna at mauris tincidunt, lobortis aliquam arcu sollicitudin. Elementum eros faucibus lacus ut accumsan, condimentum suscipit rhoncus ut, pretium consectetur posuere curabitur ultricies.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Felis neque leo dictum et. Tempor fringilla accumsan amet adipiscing lacinia. Leo condimentum et metus a cursus. Mauris etiam mattis viverra. Erat morbi sapien dolor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut aliquet pellentesque justo curabitur. Ultrices finibus ultrices etiam ultrices. Donec placerat sit leo. Elit auctor sem condimentum, adipiscing nisl etiam placerat velit arcu ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et tempor maecenas erat lacus. Enim orci nulla consectetur risus pretium sollicitudin. Lacinia felis accumsan finibus gravida suscipit dignissim a laoreet pretium donec maecenas pretium.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis eros felis iaculis porttitor, etiam pharetra consequat lacinia. Sed lobortis dui maximus enim. Et ornare eget felis. Aenean quis viverra lacinia. Tempor hendrerit au.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Kancom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Natoque ante eti tempor commodo eget justo scelerisque ut nunc dolor vehicula. Vestibulum est elementum quis tristique lacinia. Ligula quis suscipit sem vel purus tempor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis lectus lacinia blandit iaculis au mauris imperdiet sapien. Iaculis aliquet nisi leo ornare mi nulla maecenas, lacinia curabitur justo aenean etiam iaculis consequat mi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Posuere nisi viverra vel eros mi, enim natoque nam proin consectetur. Maecenas sodales ac sem ut eget. E bibendum eti aliquet ut dolor et nibh.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dictum e aliquet ex pellentesque orci erat. Bibendum natoque curabitur elementum erat. Aliquet eu hendrerit mi tempus, blandit ipsum aliquam tincidunt au vitae erat maximus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Haltheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description E maximus commodo condimentum mattis, morbi lacus dignissim donec pulvinar ut i, blandit ante bibendum tempor. Lectus vulputate quis auctor posuere i. Pellentesque lacinia a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sapien cras tincidunt metus pellentesque pulvinar adipiscing, quisque non au sit. Consectetur imperdiet a sed. Euismod pulvinar maecenas aenean risus. Pretium enim erat justo ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Helixicon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia eu id sagittis nam porttitor imperdiet ultrices sapien dignissim. Lacinia vel proin amet iaculis iaculis. Iaculis elementum nibh mauris lectus donec. Rhoncus blandit purus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Zatheon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis lorem dui elit risus curabitur. Adipiscing bibendum i et enim aliquet nibh dignissim lacus. E nulla diam tincidunt cursus hendrerit ac rhoncus sagittis elit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis gravida mattis est dui, pharetra donec vehicula purus, neque cursus adipiscing maecenas. Vel laoreet nunc rhoncus ante au eti turpis proin porttitor in posuere.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description A vitae sapien eti pretium, viverra ac orci aenean at sed, laoreet proin sem enim et. Eros nisi proin lacinia imperdiet scelerisque, ligula ligula nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Thermatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Accumsan maximus hendrerit mollis at dui hendrerit nulla bibendum. Diam nisi pellentesque pharetra posuere sit nam condimentum facilisis purus nulla i. Dolor etiam aliquet metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "StrategyLine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pellentesque turpis felis lorem ex est. Sapien vulputate mollis iaculis placerat. Aenean nam turpis porttitor. Vehicula tristique tempor rhoncus sollicitudin finibus imperdiet, vestibulum cursus fringilla.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt ultricies purus rhoncus lacus auctor sagittis, ipsum eget etiam vitae gravida, blandit accumsan ultricies maximus metus neque ante dui. Lacinia condimentum lacinia elit aliquam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis quis nam nisl commodo, eti augue au nunc. Scelerisque condimentum condimentum gravida, felis hendrerit porttitor risus. Eti orci vitae tortor condimentum placerat lacus vestibulum.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "PeerSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et etiam curabitur lectus elementum etiam aenean consequat facilisis maximus. Ligula sollicitudin pulvinar tortor ut euismod. Hendrerit diam auctor proin. Gravida imperdiet quis rhoncus massa.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet elit nisl adipiscing lorem nisi. Ultricies diam morbi vulputate. Aliquam in nunc lacinia. Rhoncus bibendum blandit dictum. Diam tortor lectus vehicula nam eros neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Acousticom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit nisi viverra proin quisque mauris non. Fringilla facilisis leo placerat ac. Elementum lacinia enim non dolor eu. Sollicitudin amet sagittis finibus et donec in.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sit erat ornare ornare eti dui lacus. Aliquet sit massa ac lobortis. Pellentesque neque commodo maximus gravida. Nisi non quis aliquet cras sodales vel consectetur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Baramax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel euismod elit sit viverra. Pellentesque justo commodo tristique at vehicula consectetur. Purus ipsum arcu et augue tempus nunc est posuere. Facilisis nisl morbi at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing ex iaculis lobortis blandit ipsum quisque mollis auctor mauris nam. Sodales aliquet lacus finibus. Dui lectus maximus est, viverra ipsum ligula a placerat faucibus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing magna tempus elit enim turpis eti finibus. Ante suscipit vehicula ex. Quisque erat rhoncus est dui lacinia ac tristique erat sollicitudin vitae sagittis facilisis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus eti elementum eti tincidunt cursus. Cras ultrices ex vitae, ante et tempus nulla. Maximus elementum dignissim non, lorem accumsan nulla risus faucibus velit metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quisque sem etiam justo enim eros. Aenean dictum e suscipit scelerisque, maximus sit elementum ante, consectetur felis lacinia proin leo. A commodo ipsum adipiscing justo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros lacinia nibh amet vestibulum placerat. Velit imperdiet a laoreet leo. Accumsan dictum consequat eti dui, lorem donec est ornare maecenas. Auctor mattis nisl felis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia natoque augue orci cursus dignissim. Ipsum nisi consequat viverra, cras risus arcu bibendum. Quis tristique elementum nisl facilisis, etiam et magna i quisque nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Optiplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor blandit vehicula sollicitudin sed accumsan. Eros proin imperdiet maximus e i neque tincidunt finibus accumsan vestibulum. Sapien facilisis maximus quisque, commodo et diam vulputate.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel aenean erat sodales faucibus aliquam cursus erat neque. Augue hendrerit commodo natoque, aliquam maximus imperdiet elit mollis nam. Cursus sapien ligula donec suscipit laoreet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "DynaAir",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices aenean non massa condimentum quisque, fringilla maximus posuere aenean maecenas, posuere mollis nibh ligula ipsum, arcu dolor accumsan eu justo velit est scelerisque lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Polygan",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mattis i vehicula nisl sit magna vestibulum placerat. Ultrices pulvinar i diam sagittis. Pulvinar lacinia placerat mollis augue. Velit facilisis est purus eget nisi lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ante sollicitudin dui eu suscipit arcu vestibulum curabitur maximus ut nisl. Lacinia pellentesque adipiscing gravida. Lorem augue tempus quisque. Risus tortor vulputate commodo ac lobortis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
+          "Tortor.",
+          "Auctor.",
+          "Natoque."
       ]
     },
     {
       "name": "Ulogica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Diam eti vel ac erat. Leo nisi aliquet nunc viverra auctor maximus mauris, maecenas purus ipsum adipiscing. Consectetur quisque vulputate sagittis. Iaculis proin tempus dui.",
+      "short_description": "short description Hendrerit lacinia enim velit e gravida mollis suscipit ligula euismod.",
+      "long_description": "long description Nisl dui curabitur eu nisi maecenas au lacinia tempor auctor ut cursus mattis elementum, leo nisi porttitor placerat condimentum pharetra purus massa ex nisi natoque felis, dolor pretium orci ut.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Ipsum.",
+          "Nisi.",
+          "Imperdiet."
       ]
     },
     {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor viverra imperdiet finibus elementum nisi aliquet au lorem ornare cursus cras non. Elementum rhoncus suscipit tristique. Rhoncus donec augue velit. Nam au dictum natoque.",
+      "name": "SmartSystems",
+      "short_description": "short description Hendrerit vitae erat turpis consectetur tincidunt, au mattis massa pharetra.",
+      "long_description": "long description Proin tristique vestibulum quisque sed au eget orci blandit curabitur eros velit turpis, leo risus augue nibh orci lacinia suscipit. Mattis facilisis au tortor neque eros, sapien placerat quisque cursus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Proline",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vel dui lacus ac etiam consectetur turpis curabitur arcu auctor. Nunc vitae vitae amet mollis. Laoreet ipsum facilisis dui lectus a arcu sed dignissim natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit purus vestibulum consequat dictum vulputate, nibh porttitor aenean consequat auctor, lacinia nisl ultricies vulputate. Enim imperdiet quis hendrerit vel dui viverra blandit dolor non.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Sunopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl lacus sem mattis euismod faucibus condimentum. Pretium sit justo in nisl vehicula turpis. Magna amet lacinia eti sodales eu enim sed sapien tortor neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Unilogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description I morbi cras magna faucibus placerat fringilla, sem lacinia eget fringilla mollis, lectus donec neque velit leo vestibulum ex mauris nunc vestibulum id rhoncus ante.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh lectus dictum pellentesque nisi tincidunt ipsum au etiam in quis ac nam suscipit natoque i laoreet sapien, nibh nam faucibus pulvinar cursus nam lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Massa nibh nulla sit in proin arcu. Lacinia i tincidunt leo vel nisi ultricies etiam ultricies diam scelerisque, nunc ex pharetra pellentesque, id mattis porttitor.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sealine",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl tristique accumsan finibus hendrerit faucibus dignissim sagittis elementum auctor risus curabitur sodales mi, sit velit commodo elit cursus curabitur felis vulputate iaculis dolor aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description At sapien et lacinia lorem. Cursus porttitor hendrerit vulputate sem felis consectetur auctor, lobortis lacinia aenean placerat, hendrerit vestibulum sit condimentum mollis sem lorem pharetra.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Conixco",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula cras purus maximus consequat pharetra. Pulvinar ut hendrerit blandit. Suscipit metus vestibulum quis mollis lectus eu eti ut condimentum. Turpis at sem lacinia cras.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet nulla mattis diam aenean velit rhoncus, sit mattis accumsan nunc tempus vitae, fringilla maximus leo dolor ultrices est lectus viverra. Leo dictum dictum mollis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Turpis at ultricies ex donec mollis. Vulputate aenean morbi non auctor. Aliquet laoreet dignissim curabitur. Arcu ex adipiscing justo. Donec au eu mauris diam in.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisi eros dictum est pretium pulvinar non, nam i non proin, suscipit donec sit quis faucibus in. Sapien blandit tristique lobortis nunc. Velit consectetur morbi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Viewtopia",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacinia faucibus bibendum est aliquam accumsan au aliquam mollis dictum. Lacinia donec laoreet vulputate donec lectus, blandit laoreet scelerisque lacinia sodales aliquet vel pulvinar et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus neque risus magna at id ac. Suscipit vel est enim eros risus sollicitudin auctor tristique velit mauris etiam bibendum mi adipiscing suscipit ante curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Euismod ipsum aliquam accumsan eu vel placerat, accumsan non consectetur ornare eget velit ipsum, blandit justo scelerisque nulla, amet sit au vehicula. Lorem condimentum non.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Storex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Magna turpis a ligula commodo at, cras dolor ac viverra proin. Et consequat vulputate sit. Est arcu vel accumsan consequat et. Scelerisque augue scelerisque rhoncus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros adipiscing cursus tempor tristique imperdiet iaculis dui i. Mauris dolor imperdiet augue. Massa sem quisque faucibus nisl hendrerit lectus suscipit tortor. Nibh elementum sapien.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CorpTek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex consectetur fringilla a faucibus risus gravida. Laoreet magna placerat scelerisque. Lobortis at scelerisque posuere nisi hendrerit. Vulputate laoreet sapien eget euismod faucibus curabitur augue.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "VenStrategy",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl tristique sit arcu iaculis magna. Arcu massa pellentesque eros i magna dolor pharetra pulvinar iaculis, dictum tortor vulputate orci enim lacinia mauris proin natoque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Cameratek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices vestibulum commodo bibendum suscipit aliquam. Faucibus tempus dolor cras maecenas euismod etiam, ac ut aenean pulvinar cras placerat. Hendrerit amet est curabitur vel neque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Templatek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim donec pellentesque donec non adipiscing augue cras iaculis dictum pretium donec vestibulum ligula lacinia, accumsan quisque leo lacinia gravida. Aliquet pretium laoreet scelerisque hendrerit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Quadtek",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dignissim vel lacinia vestibulum ultricies. Nibh ornare orci cras pulvinar tristique. Justo augue est mattis, sagittis vel velit tempus lectus felis eu tortor lacinia iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Freecast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ornare tortor vulputate curabitur adipiscing a elit, aliquet consectetur pretium lectus fringilla euismod. Ultricies lorem blandit nibh posuere consectetur ultrices dictum. Lobortis sem aliquet morbi.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "NitroSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Gravida rhoncus tristique vitae pretium viverra, metus donec nisi sodales et auctor. Sit sapien nisl risus. Velit imperdiet curabitur fringilla etiam. Etiam quis blandit orci.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Thermolock",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vitae lobortis ligula eu felis aenean et. Sodales blandit justo non proin, bibendum lacus elementum tempus. Nisl tincidunt ultrices enim vulputate. Cras enim et sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Keycast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Aliquet felis porttitor tortor eget curabitur. Elementum ante mi augue ipsum nisi accumsan in rhoncus a dui. Nibh imperdiet eget au in. Tempus sed a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Iaculis dolor cursus sodales lobortis risus eget commodo. Morbi donec orci i lacinia donec aliquam. Sollicitudin nisl faucibus sed, lacinia tempor condimentum lacus pulvinar donec.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "TrioSys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Viverra aenean lobortis lobortis lacinia lectus, e au vehicula lacinia vehicula fringilla nisi, justo au erat sollicitudin. Scelerisque pellentesque pretium morbi amet, diam enim arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ut est au sit eget dui hendrerit, tempor cursus purus sed. Porttitor ultricies aenean gravida, posuere elit cras tortor faucibus mi aenean lorem lectus sagittis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Nitrocam",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique mi proin vestibulum tempor massa. Velit tempor pretium mi, natoque a pulvinar sodales magna condimentum pulvinar, pellentesque erat mattis pellentesque mollis bibendum proin tristique.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Fringilla maecenas gravida blandit proin. Finibus scelerisque quisque consequat tortor ligula velit rhoncus sagittis, ipsum nulla elit tristique. Posuere elit felis eget. Porttitor lacus a.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt mattis tempor e au. Scelerisque et eu aenean pretium augue aenean facilisis adipiscing vitae, natoque adipiscing eu nunc. Imperdiet rhoncus eros enim vel adipiscing.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Erat sodales vehicula arcu eu amet fringilla. Orci condimentum fringilla blandit, velit tempus vel eget. Condimentum condimentum ligula justo i euismod porttitor, i sollicitudin dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Tecomix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor erat lectus fringilla curabitur posuere maecenas, mattis nulla sit sed consectetur pellentesque orci curabitur ut mauris eget, vehicula suscipit metus laoreet lacus mollis pellentesque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
+          "Massa.",
+          "Placerat.",
+          "Nulla."
       ]
     },
     {
       "name": "LexiconLabs",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quis eti pharetra augue hendrerit diam, finibus sapien sollicitudin cras au est. Euismod sed tempus sit nisl leo orci tristique sapien, mi sapien ultrices posuere.",
+      "short_description": "short description Ac scelerisque magna vitae i nulla vehicula turpis consequat ex.",
+      "long_description": "long description Aliquam ac elementum ex maecenas. Natoque neque faucibus imperdiet nibh, suscipit felis tristique arcu auctor a sagittis laoreet morbi. Ante sagittis ultrices e suscipit. Maximus erat pretium faucibus massa arcu.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Dictum.",
+          "Maximus.",
+          "Facilisis."
       ]
     },
     {
-      "name": "Helixicon",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ex purus augue iaculis amet, non nam nisl sagittis euismod neque. At faucibus bibendum non ultrices nulla commodo. Placerat ac tristique ante, erat eti bibendum.",
+      "name": "Keycast",
+      "short_description": "short description Erat id non pretium suscipit quisque. Massa sit hendrerit enim.",
+      "long_description": "long description Lacinia e tristique erat vitae nulla, vulputate metus lacinia tempor, vestibulum aenean nam pulvinar justo vitae tristique amet. Aenean commodo velit bibendum. Dictum lacinia maximus lectus. Curabitur diam lorem ex.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Dui.",
+          "Eti.",
+          "Lectus."
       ]
     },
     {
-      "name": "FortyFour",
-      "short_description": "This is the service short description",
-      "long_description": "long description Velit ante maximus dignissim vehicula, cras natoque commodo pretium e aliquam, amet aliquam dignissim id, turpis commodo vel proin ac, morbi mauris ultrices eti tortor.",
+      "name": "CoreRobotics",
+      "short_description": "short description I consequat ex dui cursus in porttitor, eros blandit commodo.",
+      "long_description": "long description Vehicula non arcu in ultricies vitae. Mattis velit nisi pharetra, gravida aliquam tortor bibendum tortor fringilla et pulvinar at neque elementum, pretium metus a sit elit, id consequat laoreet tristique.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Dolor.",
+          "Id.",
+          "Felis."
       ]
     },
     {
-      "name": "MultiServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui maecenas lacinia dolor dignissim suscipit a neque faucibus, neque tortor lacus euismod nisi. Eros nam consequat tortor. Ex hendrerit lacinia posuere purus et non.",
+      "name": "Sunopia",
+      "short_description": "short description Donec scelerisque mollis vehicula gravida, arcu eti bibendum tortor et.",
+      "long_description": "long description Sodales vehicula turpis ex risus enim eu cursus lorem justo eros. Justo turpis donec tortor au faucibus elementum nisl curabitur. Quis eu metus lacinia. Ante cras a donec ultricies eros.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
+          "Iaculis.",
+          "Aliquam.",
+          "Pulvinar."
       ]
     },
     {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sodales euismod augue au lobortis tortor. Felis morbi vestibulum erat sagittis pharetra. Lacinia quis maximus commodo, eu sodales ultrices ligula sagittis. Elit eget metus dui.",
+      "name": "Sunopia",
+      "short_description": "short description Condimentum non nisl scelerisque placerat. Neque quisque felis diam blandit.",
+      "long_description": "long description Bibendum sed dui vulputate blandit eu. Imperdiet sagittis adipiscing morbi maximus, sollicitudin dictum nam ut lacus, ex cursus turpis nulla gravida ipsum, a justo non etiam, purus ac commodo ultricies.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Eget.",
+          "Suscipit.",
+          "Tempor."
       ]
     },
     {
-      "name": "Maxcast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eget tempor mi pharetra facilisis laoreet auctor enim au, tristique au et vitae ultrices bibendum vitae. Mi vitae posuere sem tempus i erat donec magna.",
+      "name": "CorpTek",
+      "short_description": "short description Nulla quisque i lorem dolor orci tristique sagittis et placerat.",
+      "long_description": "long description Massa morbi adipiscing cursus sodales sed magna nunc mollis, quisque morbi rhoncus ut et. Vitae natoque lacus commodo. Facilisis adipiscing mauris pharetra pretium id. Curabitur dui bibendum nisi nunc risus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Commodo.",
+          "Proin.",
+          "Lacus."
       ]
     },
     {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus tincidunt blandit orci tempus. Lacinia bibendum i nunc pretium ut tristique euismod. Nisl rhoncus bibendum au, justo cras scelerisque tempus vitae eti metus accumsan.",
+      "name": "Hypervision",
+      "short_description": "short description Curabitur justo porttitor pellentesque hendrerit dignissim. In facilisis felis ac.",
+      "long_description": "long description Finibus ipsum hendrerit au vel ac id, facilisis massa blandit dictum, quisque mollis imperdiet pretium lacinia aliquam. Massa non sapien commodo ornare mauris mi tincidunt proin. Velit ipsum leo lectus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Tempus.",
+          "Ipsum.",
+          "Metus."
       ]
     },
     {
-      "name": "Hivemind",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mollis vehicula euismod sodales mi scelerisque, mollis laoreet aenean eu tempus quisque pellentesque viverra. Elit maecenas adipiscing lacinia. Massa dictum bibendum nisi proin maecenas pharetra.",
+      "name": "Protheon",
+      "short_description": "short description Tempus cras cursus fringilla auctor fringilla nam, cras purus blandit.",
+      "long_description": "long description Nibh metus ornare erat i porttitor sapien accumsan. Rhoncus eti tempus ac vel at ut. Au orci faucibus porttitor sapien lorem felis. Mauris vitae bibendum mauris. Lacinia nulla ut risus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "SkyCenta",
-      "short_description": "This is the service short description",
-      "long_description": "long description Sed viverra lobortis vestibulum justo dui purus vestibulum porttitor, aliquet tortor consectetur ut, vulputate natoque tempus mi pellentesque maximus. Tincidunt ipsum sed sit mi et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Proin metus lacinia et dui aliquet, proin lobortis pellentesque sapien nulla, facilisis mollis dignissim ipsum donec vulputate. Natoque sit proin cras. Gravida mattis turpis commodo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "SixtySix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nibh arcu consequat sodales tincidunt, vel quisque tortor a hendrerit. Laoreet commodo augue nunc scelerisque, id sapien non eti sagittis. Turpis a lobortis vulputate eu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description In lacus diam ornare aliquam eu maecenas tortor elementum vitae. Etiam i turpis nulla, iaculis morbi lacinia quisque ultricies, felis sit natoque non au pulvinar.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Infracom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Augue nisi ex lacus nam diam rhoncus fringilla eti ornare nunc lobortis quis curabitur blandit a quis lorem. Consequat bibendum lacinia rhoncus neque dolor consequat.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Keysoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Mi facilisis pharetra pharetra metus elit pretium aenean eros ipsum. Purus est blandit mauris est. Dignissim enim aliquam est ac ultricies, sit enim suscipit scelerisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eros gravida velit risus arcu. Proin maecenas sed nam e nulla nisi amet. Eget lectus pretium viverra, lorem facilisis facilisis ipsum vel auctor porttitor mattis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lobortis at ligula proin iaculis, neque facilisis est ultricies etiam. Nam morbi dui cras quis natoque lacinia rhoncus morbi, est ac mi scelerisque a iaculis.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dalserve",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt accumsan pharetra viverra e. Finibus elementum tristique quisque mattis sit vulputate lacinia eti pretium e mattis lacinia. Felis rhoncus augue viverra tortor tempus accumsan.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description I turpis eti pharetra arcu sit tempus ligula tortor donec risus. Id cursus vitae mi sem nam tristique proin ultricies, velit sollicitudin curabitur dolor nibh.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "MediaDime",
-      "short_description": "This is the service short description",
-      "long_description": "long description Enim lectus cras maximus scelerisque pulvinar mauris i. Pulvinar donec diam est tincidunt sagittis, aliquet in ante dui arcu. Hendrerit vestibulum sagittis sem neque amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "CoreXTS",
-      "short_description": "This is the service short description",
-      "long_description": "long description Maecenas quis tincidunt dolor cras elementum tempus leo. Cursus consectetur auctor elit. Magna vulputate scelerisque vel leo posuere nibh commodo, elementum vehicula leo aliquet metus.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Sophis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vehicula au etiam nisi enim consectetur pulvinar. Facilisis nisl sem suscipit tortor cras et nisl gravida, id posuere eu nulla nisl. Natoque ultricies magna eros.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Dynalab",
-      "short_description": "This is the service short description",
-      "long_description": "long description Eti velit orci turpis au, non cras tincidunt ac vulputate facilisis, ultrices vulputate porttitor purus blandit est vel au id imperdiet e, consectetur posuere et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Forecore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au eu finibus lectus dictum gravida erat. Rhoncus rhoncus ut ultrices faucibus pulvinar auctor. Tempor purus sit nibh bibendum nam lacus natoque. Sodales vitae sit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Creatonix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Etiam dolor commodo neque laoreet velit justo ut neque. Magna etiam ligula sagittis at sem felis, elit tincidunt i vestibulum ex in pulvinar commodo lacinia.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Vulputate e rhoncus cras vestibulum natoque nisl, ac pellentesque tristique tristique tempus, nam vestibulum vestibulum sollicitudin leo diam et vulputate. Ultricies nulla rhoncus aliquet suscipit.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Anaplex",
-      "short_description": "This is the service short description",
-      "long_description": "long description Condimentum vulputate lobortis vitae laoreet consequat dictum ante euismod ut erat. Proin tristique vitae aliquet aliquet, justo iaculis ipsum ex pretium pulvinar accumsan ipsum amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Bibendum eget adipiscing mi sollicitudin ultricies maecenas id sed gravida, amet adipiscing pulvinar cras at nulla curabitur ligula eu vitae. Facilisis ut ligula id curabitur.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nunc accumsan tincidunt etiam arcu neque. Augue faucibus au aliquet. Iaculis dolor mi vitae natoque. Et aliquam i eget at quis arcu proin lacinia et.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "QuadNet",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus a cras aliquam dictum metus justo leo eget elit cras maecenas maximus, augue orci aenean curabitur tempus velit lobortis orci, ultrices donec dui gravida.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Hendrerit neque sodales non tortor velit iaculis ipsum, sagittis imperdiet turpis au nisi. Ipsum aliquam fringilla magna velit nunc dolor. Orci mauris velit risus sapien.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Adipiscing augue i imperdiet lobortis neque pretium. Etiam posuere enim pretium fringilla posuere. Ornare sodales in elit vulputate. Neque aliquam ligula auctor condimentum pretium sem.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 4"
-      ]
-    },
-    {
-      "name": "ForeTrust",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dui lorem purus ultricies mauris, nibh leo iaculis est, mi adipiscing nibh amet i pulvinar euismod. Cursus quis vestibulum consectetur nunc, adipiscing pretium imperdiet commodo.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Arcu bibendum leo euismod at, nunc dui leo sodales magna vel. Neque donec metus sem euismod. Viverra vel pretium nisi, vitae tempor at accumsan vehicula.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Solexis",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl pharetra lorem commodo i. Lorem leo aliquet magna dictum aliquet eros sapien ipsum. Magna leo non id scelerisque augue fringilla. Eget ligula i i.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Qualcore",
-      "short_description": "This is the service short description",
-      "long_description": "long description Cursus sodales tempor pellentesque massa consequat. I ultricies ex maximus porttitor ultricies nisi ligula at rhoncus. Nibh tempus tempus hendrerit nulla aliquam, tortor bibendum quisque.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ultrices accumsan faucibus rhoncus natoque. Amet placerat tempor justo. Nisi auctor at at, vestibulum nulla non quis a vestibulum cras nulla dictum nunc lacinia dignissim.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat enim ipsum a elementum dictum ipsum. Fringilla et viverra e laoreet pellentesque sed id in tempus. Gravida elementum fringilla etiam, erat lacinia finibus nunc.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 5"
-      ]
-    },
-    {
-      "name": "OpenServ",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tempor gravida ligula justo pharetra dignissim dolor aenean eros. Aliquam ex ultrices risus. Cursus non velit magna, viverra velit sollicitudin imperdiet consequat adipiscing leo at.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Playtech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Au augue mi lectus morbi lacus commodo in, suscipit finibus vitae maximus. Lobortis diam pulvinar vel ex, eti tempus bibendum dolor at mi nam amet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
+          "Id.",
+          "Curabitur.",
+          "Tristique."
       ]
     },
     {
       "name": "MultiLingua",
-      "short_description": "This is the service short description",
-      "long_description": "long description Dolor leo leo vehicula cursus tincidunt consequat. Sagittis ac et ultricies lectus au, nibh i nam a facilisis tincidunt nam at diam hendrerit sapien lacinia.",
+      "short_description": "short description Condimentum mauris pulvinar nisi consequat eget, pellentesque sed euismod lobortis.",
+      "long_description": "long description Mi consequat dui maecenas purus ornare. Lacus mattis et arcu sit elit nisi. Bibendum proin nisi maximus ornare elementum faucibus ultrices. Aliquet accumsan hendrerit blandit vitae adipiscing. Sapien amet et.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Facilisis.",
+          "Sagittis.",
+          "Eget."
       ]
     },
     {
-      "name": "Infratouch",
-      "short_description": "This is the service short description",
-      "long_description": "long description Suscipit sit consectetur est cras pellentesque, laoreet sed tristique au scelerisque maecenas rhoncus eti erat aliquam. Metus aliquam gravida aenean curabitur auctor, nulla purus suscipit.",
+      "name": "Coolinga",
+      "short_description": "short description Suscipit ante maximus gravida morbi. Tempor nam nunc tempus elit.",
+      "long_description": "long description Facilisis orci vulputate laoreet nunc facilisis justo consequat. Accumsan vitae mattis fringilla, massa ipsum lorem lorem enim amet quisque aenean vel aenean finibus. Massa condimentum massa mattis. A scelerisque ligula.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Ante.",
+          "Lacinia.",
+          "Facilisis."
       ]
     },
     {
-      "name": "Hassifix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque laoreet ut augue cras, aliquet commodo consectetur pellentesque ac. Blandit tristique vel morbi magna vel aliquam eros cursus purus lacus pharetra. Sodales adipiscing blandit.",
+      "name": "QuadNet",
+      "short_description": "short description Est aenean aliquet ipsum lectus cursus, sodales cursus laoreet posuere.",
+      "long_description": "long description Nam aenean dolor non eu suscipit id imperdiet bibendum eu lectus suscipit maecenas curabitur, id erat mi ultricies magna, vulputate pellentesque nunc mi, etiam tempor au est pharetra erat lacus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Orci.",
+          "Viverra.",
+          "Mollis."
       ]
     },
     {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Porttitor aliquet bibendum curabitur ornare tincidunt. Au lacinia vulputate vulputate. Nunc viverra eget cursus felis ante, risus blandit hendrerit metus aliquet, cras mollis et sollicitudin.",
+      "name": "Dalserve",
+      "short_description": "short description Nisl magna sit viverra leo rhoncus curabitur a erat vestibulum.",
+      "long_description": "long description Arcu scelerisque quisque et maecenas sollicitudin. Sodales condimentum pulvinar neque imperdiet e scelerisque. Cras enim eget pellentesque imperdiet ex eti, dolor scelerisque bibendum lacinia nulla consequat finibus. Metus pulvinar quisque.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 4"
+          "Commodo.",
+          "Aenean.",
+          "Neque."
       ]
     },
     {
-      "name": "Galcom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Blandit ut a auctor euismod, viverra natoque nibh sed. Gravida ultricies lorem fringilla massa lacus mauris quis cras ultrices, porttitor e ipsum blandit commodo neque.",
+      "name": "VTGrafix",
+      "short_description": "short description Laoreet diam lobortis condimentum risus ut ligula nisi in condimentum.",
+      "long_description": "long description Commodo quis cras commodo ex, ultricies enim tincidunt neque augue dolor nulla. Enim cursus cras accumsan bibendum risus maecenas leo nisi. Faucibus posuere vel donec elementum arcu. Iaculis curabitur curabitur.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Amet.",
+          "Lectus.",
+          "I."
       ]
     },
     {
-      "name": "Westercom",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt amet id lorem ut quisque non. Mauris ac cursus fringilla, auctor condimentum eu sagittis fringilla curabitur tempus, laoreet hendrerit in maecenas massa vulputate lobortis.",
+      "name": "LexiconLabs",
+      "short_description": "short description Mattis vehicula a lacus in, adipiscing donec porttitor sagittis sodales.",
+      "long_description": "long description Lorem i facilisis blandit ligula sollicitudin velit sed tortor hendrerit. Posuere enim ex au elementum tristique viverra dignissim faucibus. Curabitur justo lorem ipsum quis id nam ipsum maximus maecenas in.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Hendrerit.",
+          "Vestibulum.",
+          "Mauris."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Mauris a cras proin lobortis etiam orci, tortor vestibulum ex.",
+      "long_description": "long description Morbi hendrerit quis fringilla lorem diam condimentum elit. Et ultrices magna sapien. Proin dui ipsum commodo. Maximus sapien sodales pulvinar orci iaculis. Auctor cursus vel tincidunt ac dictum turpis mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Turpis.",
+          "Cras.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Adipiscing dui tristique sed consectetur condimentum scelerisque. Risus aliquet mollis.",
+      "long_description": "long description Blandit nunc velit consequat ac. Condimentum lorem leo eget. Diam leo risus non sagittis lacinia, sapien iaculis enim nam. Laoreet nisi au ligula iaculis. Nisi bibendum elit tempor purus justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Dolor.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Suscipit elit elit cras au eget finibus dictum tempor magna.",
+      "long_description": "long description Enim maecenas tristique porttitor finibus, morbi maximus aliquam aliquet dolor mi accumsan, enim hendrerit accumsan lacinia iaculis non eget fringilla. Id ut aliquet tortor amet. Magna velit euismod tempus sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Ut.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Mi laoreet ligula mollis tristique dui. A sed mauris orci.",
+      "long_description": "long description I magna sodales donec iaculis donec natoque, faucibus lacinia gravida rhoncus. Aliquam erat nunc ante auctor lacinia orci ornare. Dignissim nibh porttitor tortor natoque. Tempor cursus massa accumsan nam aliquam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elementum.",
+          "Consequat.",
+          "Donec."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Ut gravida facilisis nisl felis. Quis id id massa e.",
+      "long_description": "long description Aenean pharetra vehicula dolor leo, finibus dolor magna suscipit vestibulum. Cras commodo tortor amet neque. Pellentesque au ultrices faucibus mauris mattis pharetra placerat mattis eros, ac pretium mollis ornare lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Aliquam.",
+          "Eget."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Vulputate vitae justo felis elementum nam mi aenean bibendum sagittis.",
+      "long_description": "long description Vestibulum adipiscing magna laoreet vel nulla cras, sapien proin magna orci, sapien pulvinar arcu tincidunt. Quis eti tortor curabitur. Ac nulla a aliquet pretium vestibulum lobortis. Elementum condimentum rhoncus lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Lacus.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Risus in lectus id sed auctor in, rhoncus consectetur etiam.",
+      "long_description": "long description Sodales mollis auctor risus nulla felis leo. Gravida euismod risus lacinia sed. Ligula nulla purus lobortis au leo eu tempor lorem risus, quis ultrices pellentesque lobortis neque nisi pellentesque pellentesque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Tincidunt.",
+          "Elit."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Dictum curabitur eros velit ipsum purus risus massa facilisis velit.",
+      "long_description": "long description Consequat e natoque cursus mollis eti ultrices. Mauris mauris vitae massa id sodales eros. Mattis sapien sit sapien lacus, nisl lobortis suscipit sapien aenean tristique placerat et tempor lorem sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "Dui.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Leo pharetra massa lacus enim, hendrerit amet nisi quisque dictum.",
+      "long_description": "long description Sapien elementum enim eu pretium cursus felis. Cras dui ultricies mattis, dolor mauris i nibh, dignissim eti facilisis morbi commodo tempus. Bibendum neque tortor bibendum posuere risus, porttitor eti natoque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisl.",
+          "Aenean.",
+          "Tempus."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Suscipit eti ligula nibh tempus hendrerit suscipit metus posuere nulla.",
+      "long_description": "long description Finibus vestibulum metus pulvinar sem, maecenas tincidunt id fringilla non mattis quisque scelerisque mattis e. Erat aenean consectetur ac quisque eros placerat, magna nibh au id. Risus est natoque scelerisque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "E.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Quis nisi facilisis pretium at nisl lacinia finibus vitae eu.",
+      "long_description": "long description E etiam enim pharetra sollicitudin tempus, e justo arcu augue, a velit purus ipsum dictum mauris. Dignissim nulla et tempor diam posuere, pellentesque vestibulum iaculis dignissim. Donec aliquam ut et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Et.",
+          "Ipsum."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Bibendum metus viverra et e morbi. Dignissim au eros dui.",
+      "long_description": "long description Adipiscing mollis sed auctor au. Diam nulla ante aliquet, proin ligula vulputate risus fringilla faucibus. Bibendum faucibus mattis vitae dictum ultrices. Vitae natoque proin erat i proin, bibendum maecenas nisl.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eget.",
+          "Ipsum.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Quadtek",
+      "short_description": "short description Finibus vulputate ac mauris eu velit donec. Sodales non fringilla.",
+      "long_description": "long description In augue quis ipsum purus sapien, donec neque pellentesque tempor. Adipiscing purus risus ligula in risus justo. Turpis sed arcu metus tortor, sit adipiscing curabitur ac, quisque enim curabitur leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Turpis.",
+          "Ligula."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Nunc tempor tincidunt est morbi blandit a dolor donec imperdiet.",
+      "long_description": "long description E eti etiam ornare sapien au, maecenas justo morbi ac mauris. Lacinia ipsum consequat est natoque donec. Vulputate ornare donec suscipit et, finibus risus quis nibh magna ut arcu ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Euismod.",
+          "Maximus.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Accumsan erat euismod tempor sapien. Faucibus quis in ante nisl.",
+      "long_description": "long description Tempus fringilla sollicitudin turpis sodales e ex suscipit, ornare viverra ut accumsan. Dolor velit eget sapien au consequat elit nisi, porttitor finibus lobortis finibus. Posuere cras at at blandit lectus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Etiam.",
+          "Lectus.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "OpenServ",
+      "short_description": "short description Vel justo natoque viverra tempus donec, enim ut in amet.",
+      "long_description": "long description Iaculis quisque eti lacinia lacinia. Quis elit lacinia at. Consequat finibus turpis ante, morbi tristique rhoncus lacus eti. Ante nam ornare at etiam fringilla ante. Pulvinar dui tristique sollicitudin ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Posuere.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "Coolinga",
+      "short_description": "short description Faucibus sapien quisque arcu etiam, felis nibh lacinia a blandit.",
+      "long_description": "long description Rhoncus est aliquet sollicitudin adipiscing aliquet euismod. Maecenas aliquam enim accumsan, scelerisque aliquet condimentum pharetra ac. Curabitur vulputate purus eti, non iaculis ex suscipit, bibendum auctor ligula posuere sapien magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Cursus.",
+          "Pellentesque."
       ]
     },
     {
       "name": "Tomiatech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Et vestibulum vulputate magna tempor. Elementum aliquet eget imperdiet dui ante pharetra donec. Sem ut nisl ut maecenas magna, lacinia elit hendrerit quis nam neque.",
+      "short_description": "short description Ut turpis e iaculis nisl elementum, ut tristique proin augue.",
+      "long_description": "long description Imperdiet consequat tristique sagittis dignissim arcu aliquam ut. Nulla suscipit felis justo. Imperdiet tortor mattis dui cursus dolor. Laoreet facilisis pulvinar quis eget ante, vitae nam id aenean quisque i.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Laoreet.",
+          "Dictum.",
+          "Adipiscing."
       ]
     },
     {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Elit nam purus blandit eros nisl orci. Lacinia vestibulum lectus sapien a aliquet sapien. Ligula neque sollicitudin faucibus suscipit leo. Eu posuere tortor morbi lectus.",
+      "name": "Opticast",
+      "short_description": "short description Maecenas sagittis lobortis facilisis vulputate. Id hendrerit fringilla leo bibendum.",
+      "long_description": "long description Maecenas maximus morbi pharetra dui nisl. Tristique mi eget orci natoque cursus commodo. Dolor in nibh in. Dictum adipiscing vestibulum ex lacus, lacinia lectus pulvinar cras, ultrices vestibulum tristique tincidunt.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 5"
+          "Auctor.",
+          "Enim.",
+          "Tristique."
       ]
     },
     {
-      "name": "FastFreight",
-      "short_description": "This is the service short description",
-      "long_description": "long description Pretium facilisis vulputate cursus viverra scelerisque. Cursus pulvinar curabitur faucibus accumsan ultricies lectus neque sollicitudin. Condimentum auctor et imperdiet aenean lobortis, maecenas diam risus eti.",
+      "name": "CoreMax",
+      "short_description": "short description E accumsan ac ultrices tincidunt ut, bibendum amet condimentum proin.",
+      "long_description": "long description Maximus aliquet orci aliquam lectus, iaculis risus ornare ultricies lacinia lobortis adipiscing nulla iaculis velit natoque aliquet, ultricies auctor orci nisi pretium, magna consequat condimentum auctor, felis eu cursus e.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
-      ]
-    },
-    {
-      "name": "Seelogic",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non lacinia dignissim natoque lobortis, ante ex blandit lorem justo est lobortis. Elit magna nunc accumsan, eget suscipit lorem mattis cras, sagittis eros accumsan posuere.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Eluxa",
-      "short_description": "This is the service short description",
-      "long_description": "long description Augue laoreet lobortis justo purus nisi pretium. Erat eu cursus lacinia nunc. Pharetra lorem bibendum tempus vestibulum lacinia rhoncus purus at. Ac commodo consequat nam.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 4"
-      ]
-    },
-    {
-      "name": "Pancast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisl pretium at nunc maecenas sem. Suscipit nibh dictum felis pulvinar. Curabitur condimentum rhoncus lacinia. Massa proin ac lorem sollicitudin, dolor justo dictum pulvinar e.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 6"
+          "Aliquet.",
+          "Ligula.",
+          "Dignissim."
       ]
     },
     {
       "name": "Airconix",
-      "short_description": "This is the service short description",
-      "long_description": "long description Non in quis rhoncus posuere felis diam rhoncus. Ut vulputate scelerisque curabitur tristique justo e arcu non adipiscing hendrerit. Sit enim faucibus nisi viverra tempor.",
+      "short_description": "short description Sem nam felis porttitor rhoncus. Purus laoreet curabitur tempus vestibulum.",
+      "long_description": "long description Porttitor faucibus nam faucibus a, lorem augue sagittis ultricies nunc. Leo tristique tempus magna. Facilisis purus vulputate hendrerit. Consectetur non pharetra est donec curabitur. Aliquet e vehicula mollis imperdiet aliquet.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Au.",
+          "I.",
+          "Scelerisque."
+      ]
+    },
+    {
+      "name": "Anaplex",
+      "short_description": "short description Sodales leo viverra hendrerit dignissim, aliquam sem nunc hendrerit vulputate.",
+      "long_description": "long description Metus nam felis adipiscing aenean ultrices ipsum orci. Erat dignissim amet non, ultrices elit e morbi enim. Cursus condimentum natoque ornare lobortis in bibendum id. Eros ut leo purus viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Et.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Pretium adipiscing fringilla vitae scelerisque. I sem enim id sit.",
+      "long_description": "long description Sed curabitur sed eros nam, tortor aenean sem at sem quis massa. Hendrerit e sed mi massa au rhoncus blandit tempus nulla elit diam cursus. Purus pharetra quis nam a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quisque.",
+          "Pretium.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Quisque pharetra cras ornare arcu tristique. Dignissim sem est curabitur.",
+      "long_description": "long description Elementum gravida velit lobortis massa scelerisque purus vestibulum. Cursus laoreet eget ligula. Consequat sagittis ex et, porttitor pharetra lobortis sapien nam ac rhoncus eu elementum euismod. Cras rhoncus velit au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Posuere.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Ligula non ut dolor mattis, eu nibh mollis consequat massa.",
+      "long_description": "long description Vel eti neque mauris maximus. Neque ac sed quisque et. Purus velit maecenas nisl dictum ligula curabitur posuere. Sapien tincidunt turpis ornare non ex turpis accumsan, magna placerat elit dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Dui.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Quisque sodales curabitur quis viverra a imperdiet nisi posuere justo.",
+      "long_description": "long description Pulvinar hendrerit a i condimentum. Vel ex pretium vulputate non laoreet et erat. A eget sem ultrices tempor, bibendum mollis vitae donec i. At ultricies aliquet eros. Sit eu gravida.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempor.",
+          "Facilisis.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Sollicitudin ac ornare turpis viverra i, a augue viverra sodales.",
+      "long_description": "long description Consectetur vel massa cursus id lacinia, lacinia commodo elit purus commodo nibh tempus turpis lobortis, purus eros justo magna quis lectus. Massa blandit posuere nibh commodo, i augue vel arcu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Ultrices.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Tincidunt e at accumsan curabitur metus nunc augue posuere felis.",
+      "long_description": "long description Tempus nisi i vehicula eti eu iaculis condimentum natoque blandit eros natoque, massa aliquam eget diam sodales. Lobortis tristique ut iaculis nam. Leo tincidunt pulvinar id eu pretium faucibus iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Nisl.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Lobortis eti est et commodo ultricies mattis aliquam laoreet ut.",
+      "long_description": "long description Placerat nisl vestibulum scelerisque rhoncus finibus tempor, sollicitudin suscipit fringilla accumsan natoque maximus. Ligula hendrerit mattis lectus. Nibh etiam dictum elementum sollicitudin. Risus neque eti finibus massa consequat magna sagittis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Mi.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Tincidunt ornare eu eros viverra blandit leo neque ut arcu.",
+      "long_description": "long description Elementum finibus nunc justo nam nunc adipiscing maximus ut. Finibus id tincidunt tincidunt hendrerit condimentum suscipit nisi, nunc donec porttitor pharetra bibendum erat sagittis sollicitudin. Proin laoreet justo donec mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "Amet.",
+          "Aliquet."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Donec sit placerat felis gravida lacinia. Lobortis vestibulum gravida elementum.",
+      "long_description": "long description A pretium lorem a morbi. Bibendum dictum vestibulum diam ante eros aenean, faucibus est risus dolor dictum, sodales tortor felis sed. Imperdiet nisi vulputate nisi. Augue enim ultrices non ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Justo.",
+          "Finibus.",
+          "Etiam."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Quisque et vehicula facilisis gravida elementum tristique sapien purus pharetra.",
+      "long_description": "long description Quis eros finibus euismod commodo euismod, sed pulvinar tempor lectus justo enim a sodales sollicitudin accumsan. Mauris e quis facilisis amet tristique. Morbi neque dolor quisque, aliquet porttitor dignissim bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vestibulum.",
+          "Consectetur.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Suscipit nibh ac cras eros. Ultrices turpis suscipit eu vulputate.",
+      "long_description": "long description Quis est sollicitudin sodales turpis in, rhoncus amet pharetra in amet vel, orci curabitur eu placerat id gravida ex auctor viverra blandit erat donec sapien lacinia curabitur commodo eti turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "I.",
+          "Cras.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Tristique maecenas felis tempor turpis ligula. Facilisis eros ligula mollis.",
+      "long_description": "long description Nam nunc scelerisque mattis eros, leo gravida et nunc ornare diam, lacus nisi suscipit diam mi elementum rhoncus placerat. Bibendum sollicitudin mauris adipiscing mi lacinia auctor maximus fringilla sed lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Aliquam.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Eros accumsan ipsum in blandit eros metus amet nisi mattis.",
+      "long_description": "long description Tempor tortor lacinia blandit quisque vehicula nibh. Mollis consequat aliquet finibus. Commodo elementum risus amet nunc tincidunt lacus at pretium posuere. Neque placerat risus amet lorem sodales, bibendum ut ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Condimentum.",
+          "Ligula."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Ipsum leo ante enim finibus lectus lectus consequat ultrices imperdiet.",
+      "long_description": "long description Quisque diam vitae laoreet aliquet lacinia cras. Nulla iaculis tristique ut lectus purus mauris, est eti elementum eros pharetra elit lacus. Nulla porttitor leo justo donec turpis lobortis nam imperdiet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Est.",
+          "Mauris."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Finibus at pretium etiam risus. Au aliquam scelerisque adipiscing finibus.",
+      "long_description": "long description Ex curabitur accumsan erat vestibulum sit elementum lobortis. Leo erat pulvinar rhoncus tristique sapien tempor, aenean auctor bibendum turpis tortor purus donec. Tortor lacus etiam sollicitudin, erat lacus placerat tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dictum.",
+          "Natoque.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Dictum est facilisis amet lacinia est. Sem vel ex vulputate.",
+      "long_description": "long description Nunc enim rhoncus suscipit porttitor sem felis pulvinar justo adipiscing massa tempor donec sagittis nulla. Lacinia facilisis accumsan nam nam massa id in dictum. Tristique tempus ex tempor lectus turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "In.",
+          "Facilisis.",
+          "Eget."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Cras lacinia velit mauris curabitur. Vehicula viverra morbi ut adipiscing.",
+      "long_description": "long description Placerat ex sagittis augue sit nisl laoreet est purus. Dignissim sem maecenas nunc quisque metus rhoncus tincidunt lobortis nulla tempus placerat euismod, tincidunt e ante vitae in ultrices e metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Morbi.",
+          "Maecenas."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Lobortis eros lacinia elementum ultricies elit consequat vestibulum leo metus.",
+      "long_description": "long description Tincidunt curabitur ligula commodo leo consectetur, leo pellentesque vestibulum hendrerit curabitur, magna consequat leo pretium condimentum. Vestibulum laoreet mauris aliquet amet enim accumsan maecenas etiam, suscipit aenean tempus metus condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Dolor.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Donec quis massa auctor gravida. Purus placerat enim elementum lorem.",
+      "long_description": "long description Ligula posuere erat gravida at. Hendrerit bibendum pretium aenean. Felis rhoncus velit arcu sagittis tempor, ex augue dolor lorem vestibulum scelerisque, a eti ex bibendum blandit erat. Suscipit lectus faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Imperdiet.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Ac lobortis curabitur bibendum lacinia. Dui erat nisl id ut.",
+      "long_description": "long description Ipsum mi i tortor nam, mattis au lacinia sodales bibendum lorem lacinia morbi tortor pellentesque risus dui, massa mi enim et iaculis ligula in. Magna in dignissim morbi aliquam nisl.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Eti.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Dolor etiam rhoncus ornare a vel pretium aenean etiam pharetra.",
+      "long_description": "long description Porttitor lacus iaculis iaculis elementum velit morbi. Sed consectetur morbi amet quis iaculis aliquam, scelerisque consequat faucibus ex. Quisque vitae ut velit, eu mauris vel laoreet, cursus leo sapien i.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Non.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Ultrices orci eu turpis rhoncus augue quis diam consequat nisl.",
+      "long_description": "long description Elementum sollicitudin risus cursus massa. Id aliquam maecenas laoreet finibus arcu nibh rhoncus ex. Elementum dignissim mollis amet nisl. Tempor donec turpis suscipit in mollis tincidunt ultrices maximus pellentesque commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Neque.",
+          "A.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Condimentum neque dui metus orci. Etiam erat sed mollis leo.",
+      "long_description": "long description Ac accumsan eti ac ut. Aenean iaculis erat aliquam, metus mattis elit mi. Sodales arcu quisque tortor proin. Vestibulum tortor eti augue dictum nulla, ligula iaculis curabitur tempor consequat scelerisque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "Vel.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description Risus tristique eget proin consectetur gravida vitae. Fringilla pulvinar e.",
+      "long_description": "long description Massa iaculis vel tristique felis donec dolor. Tristique diam neque lobortis, tempor sodales imperdiet natoque. Eu commodo purus vitae. Dolor adipiscing viverra porttitor fringilla pellentesque fringilla ornare vulputate vestibulum etiam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Lobortis.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Iaculis ut hendrerit aliquam non felis ultrices. Pellentesque ex cursus.",
+      "long_description": "long description Consectetur faucibus nisl eu nam bibendum gravida. Accumsan orci pulvinar natoque bibendum proin dictum, vestibulum magna dignissim dui accumsan mi ornare, pellentesque tortor tempus eget, tortor facilisis ex eros risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Ipsum.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Magna condimentum condimentum mauris suscipit nisi erat pellentesque porttitor ante.",
+      "long_description": "long description A pulvinar dictum justo au eget. Donec massa facilisis sagittis, posuere vitae nulla eti justo dictum quisque. Finibus curabitur e diam posuere gravida leo. Eu i in arcu au id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Ut.",
+          "Erat."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Aliquam aenean mollis sollicitudin pellentesque sed, felis consectetur sapien lectus.",
+      "long_description": "long description Blandit tincidunt suscipit posuere nisl viverra. Risus euismod vehicula in blandit nam, lobortis vehicula erat tempus, iaculis risus gravida justo. I tristique turpis maecenas. Tortor i curabitur posuere sit amet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mattis.",
+          "Faucibus.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description I tempus nulla ligula nibh elit. Erat lacus ipsum id.",
+      "long_description": "long description Nisl ex lectus etiam sapien, aliquet diam proin lacinia donec i finibus mattis risus cursus. Enim turpis justo lacinia, adipiscing id sagittis sit elementum dolor sodales diam risus euismod curabitur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elit.",
+          "Pellentesque.",
+          "E."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Sagittis id magna faucibus risus suscipit commodo a sollicitudin au.",
+      "long_description": "long description In sodales dictum nunc iaculis auctor ornare. Non a ex tempor. Ipsum quisque consequat pulvinar. Nunc vitae donec neque augue aenean aliquet. Nisl velit lectus orci, euismod metus nibh finibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Ex.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Mattis ornare mauris pharetra fringilla. Donec sollicitudin a sed eget.",
+      "long_description": "long description Purus sodales elit ornare rhoncus cras est. Massa cras eti diam. Dignissim tincidunt quisque non lorem eti aliquet pretium vehicula arcu, tristique ut vel amet aenean. Nam tempus ante arcu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Scelerisque.",
+          "Posuere."
       ]
     },
     {
       "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Condimentum pharetra pellentesque eros placerat, pulvinar ipsum elementum faucibus gravida, cursus scelerisque purus pulvinar porttitor eget. Est et tempor id, ut adipiscing ac etiam condimentum.",
+      "short_description": "short description Ultrices auctor rhoncus magna posuere pulvinar imperdiet id ipsum laoreet.",
+      "long_description": "long description Posuere laoreet pellentesque sodales nibh ultrices bibendum. Orci at diam nam nunc, hendrerit mollis suscipit consequat proin proin. Cursus blandit lacus aenean purus. Nisi dolor porttitor nunc ligula ante vestibulum.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Purus.",
+          "Tincidunt.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Non vel cras nisl est consequat consectetur, tempor nisl dolor.",
+      "long_description": "long description Orci finibus ultrices faucibus hendrerit massa tempor etiam ut imperdiet. Mauris hendrerit vehicula felis in faucibus velit, vulputate eti nam eu. Tincidunt sollicitudin nunc dictum tristique eget. Mattis risus lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Placerat.",
+          "Tincidunt.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Polygan",
+      "short_description": "short description Aenean pulvinar aliquam metus faucibus. Vel et velit auctor tincidunt.",
+      "long_description": "long description Natoque e nunc nulla nibh augue euismod au nunc, porttitor elit mollis scelerisque dui. Blandit mi in quis. Dolor cursus euismod justo blandit pharetra. Neque etiam ornare pulvinar posuere pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elit.",
+          "I.",
+          "Risus."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Eros vitae auctor a sapien turpis tortor, adipiscing eu ornare.",
+      "long_description": "long description Commodo neque mauris cras tempor justo viverra justo ipsum sed, consectetur consectetur ultrices id, tempus orci massa mauris etiam a eu fringilla. Ut lacinia pretium cras. Nisl maximus fringilla commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "I.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Non aliquet lacinia nisi imperdiet dictum proin, natoque lacus lacinia.",
+      "long_description": "long description Faucibus vulputate et consectetur mi, eros facilisis at tempor nulla sodales. Sapien lacus risus nunc elementum sagittis ornare faucibus, dui tristique quis neque nunc. Velit morbi placerat placerat sit proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Sollicitudin.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Magna massa e nunc cursus. Quis vestibulum nunc et nunc.",
+      "long_description": "long description Est nisi gravida ex gravida e condimentum, ac bibendum nibh bibendum justo cras elementum, risus viverra dui mauris facilisis ex facilisis hendrerit natoque ligula proin gravida. Elit pulvinar aliquam ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Augue.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Maecenas morbi ut sed lectus. Nibh commodo pellentesque natoque vehicula.",
+      "long_description": "long description Consectetur felis imperdiet nibh nibh amet suscipit. Massa sodales magna vestibulum tristique tincidunt, turpis ante turpis pulvinar, eti curabitur eros rhoncus elementum ante porttitor donec vitae. Risus consectetur posuere tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Nisl.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Fringilla aliquam felis fringilla hendrerit erat. Proin fringilla condimentum finibus.",
+      "long_description": "long description Pellentesque condimentum tempus purus proin enim neque et. Pulvinar i maximus sed viverra sollicitudin. Lacus diam leo bibendum justo ligula. Lacinia condimentum elementum bibendum auctor, augue quis sem lacus posuere.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elit.",
+          "I.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Arcu accumsan e ornare rhoncus sem tristique nibh et risus.",
+      "long_description": "long description Eti velit blandit justo vehicula ac tempus tortor, quis vehicula consequat non e, aenean au etiam hendrerit, diam arcu sollicitudin condimentum, elit sollicitudin eros i eget ornare tincidunt felis eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mauris.",
+          "Quisque.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Placerat commodo ultricies metus pretium neque massa proin augue sit.",
+      "long_description": "long description Cras aliquam mauris finibus ipsum magna iaculis turpis elit tristique purus e, leo ultricies tempor arcu. Faucibus commodo ultricies hendrerit, porttitor sollicitudin commodo a, diam orci bibendum tortor mi nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Scelerisque.",
+          "Elementum."
       ]
     },
     {
       "name": "Britech",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ante fringilla erat quis dui donec, dignissim mollis tincidunt iaculis, fringilla lacinia elementum tristique quis ultricies maximus. Ut dui au consequat. Cras laoreet aliquam ut.",
+      "short_description": "short description Aliquet maecenas ex neque ultricies natoque ultrices, imperdiet mattis dui.",
+      "long_description": "long description Condimentum quis sem ultrices suscipit est faucibus, quis ligula mi auctor ante maximus a condimentum morbi enim consequat, tristique metus condimentum risus sagittis sollicitudin pharetra hendrerit lacinia scelerisque vitae ornare.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 5"
+          "Viverra.",
+          "Gravida.",
+          "Diam."
       ]
     },
     {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nisi quisque commodo dolor ipsum pretium, tortor proin quis lacinia etiam sodales lacinia. Aliquet placerat lectus ipsum mattis viverra, elementum mattis diam quis turpis nunc.",
+      "name": "Keycast",
+      "short_description": "short description Fringilla augue imperdiet est pulvinar. Pulvinar natoque accumsan magna quisque.",
+      "long_description": "long description Risus at eget au mauris ac nisl laoreet tempor. I laoreet aenean velit i gravida. Diam condimentum aliquam quisque sem arcu nam, id ex nam erat. Augue aenean magna a.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 6"
+          "Sed.",
+          "Iaculis.",
+          "Ipsum."
       ]
     },
     {
-      "name": "SmartSystems",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tortor ex viverra euismod vestibulum purus, neque eu at fringilla non lacus quis. Auctor ipsum at suscipit lacus curabitur orci nisl sodales dictum elit viverra.",
+      "name": "Sophis",
+      "short_description": "short description Est turpis cras rhoncus ligula proin nibh rhoncus ut consectetur.",
+      "long_description": "long description Quisque blandit auctor i morbi. Ultrices hendrerit et eti tempus eti sagittis nunc orci cursus consequat, imperdiet ante ultrices justo morbi aliquam eu tempus au laoreet. Imperdiet porttitor cursus ligula.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Blandit.",
+          "E.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Orci augue tincidunt nisl sem cursus. A proin massa in.",
+      "long_description": "long description Pharetra felis lacinia pretium eros nibh vehicula aliquam euismod diam lectus tincidunt ac eu proin tempor natoque ut. Blandit id lacus vestibulum. Cursus sollicitudin ut felis i dolor tempor gravida.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Metus.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Ipsum ante magna e e. Ex eu diam lacinia mattis.",
+      "long_description": "long description Ultrices nibh rhoncus leo rhoncus eros aenean aliquet eget tincidunt viverra id. Risus sodales mollis pretium suscipit eti pharetra ante diam. Non posuere eros faucibus curabitur suscipit augue dolor quisque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Nunc.",
+          "Est."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Scelerisque consectetur mauris maecenas posuere auctor nisl metus ex quisque.",
+      "long_description": "long description Vestibulum elit etiam orci ultricies e pulvinar lacinia viverra vitae, nunc aliquam proin lacinia risus sem pharetra nulla. Cursus auctor id nisl. Adipiscing consequat lorem vel etiam lacus scelerisque iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Consequat.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Finibus nulla laoreet leo cras sapien posuere, quis iaculis et.",
+      "long_description": "long description Lacus diam sapien at condimentum. Nibh amet sagittis enim suscipit. Gravida lorem lectus pulvinar mollis purus iaculis vestibulum. Ultrices vehicula mollis tempus laoreet ornare consectetur adipiscing. Proin adipiscing vel vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "Elementum.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Pharetra elementum augue aliquam in nunc. Porttitor vel finibus tempor.",
+      "long_description": "long description Curabitur pretium orci posuere arcu. Pulvinar maecenas vehicula nibh ultrices sollicitudin, risus nisi sapien blandit lacinia id neque auctor a porttitor enim mollis sollicitudin etiam lacus, sit lorem eti cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Neque.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Viverra consequat placerat aenean neque. Rhoncus augue felis vestibulum est.",
+      "long_description": "long description Laoreet nibh quisque scelerisque amet tincidunt. Eti aliquam vehicula vehicula gravida, pharetra ut proin augue, ante velit nibh quisque hendrerit rhoncus placerat leo sed. Lectus nunc suscipit non finibus fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Lacus.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Adipiscing iaculis aenean finibus lacus morbi auctor. Eu risus metus.",
+      "long_description": "long description Erat pellentesque cras rhoncus posuere velit, pellentesque lorem sodales nam. Vulputate magna facilisis ultricies. Commodo pharetra mattis sed ultrices pharetra facilisis in erat blandit. Maecenas lectus pellentesque consectetur proin massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Adipiscing.",
+          "Mattis."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Tempus mattis dictum mi arcu. Ut iaculis rhoncus cursus magna.",
+      "long_description": "long description Vestibulum facilisis et risus pulvinar ex massa. Placerat lobortis velit tempus consequat. Sagittis e in etiam velit magna curabitur natoque. Dui dolor finibus sollicitudin sodales. Imperdiet risus etiam eti sapien.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Vitae.",
+          "Eu."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Metus id vulputate eros neque rhoncus justo iaculis ipsum at.",
+      "long_description": "long description Vulputate sodales leo ultrices enim sem mollis. Ligula i natoque accumsan ex. Commodo sodales au e massa lorem metus dolor lectus nisl, magna lacinia vehicula eti e aliquam a a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Elit.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Erat consectetur auctor leo maximus mauris eget maecenas ultricies ut.",
+      "long_description": "long description Lectus pulvinar sodales lorem curabitur sollicitudin erat mattis rhoncus. Amet accumsan proin vulputate, etiam vehicula gravida aliquet ex au a lacinia. Dignissim nunc metus elementum mi. Pretium lobortis tincidunt sagittis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Erat.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "MultiServ",
+      "short_description": "short description Placerat erat placerat cras neque, lacus id augue risus a.",
+      "long_description": "long description Erat enim enim nulla tortor pulvinar, quis accumsan enim massa, dui vel posuere viverra. Tortor leo nam laoreet, mauris magna sapien vulputate lobortis viverra. Lobortis laoreet et id aliquam maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Viverra.",
+          "Quis.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Arcu metus e nunc consequat ligula elementum sit tincidunt diam.",
+      "long_description": "long description Metus enim a scelerisque vulputate. Lacinia erat mattis maecenas sollicitudin sed tempus rhoncus. Blandit dignissim risus consectetur. Etiam nunc vestibulum auctor fringilla posuere dolor hendrerit, lacinia ex pulvinar iaculis iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Rhoncus.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Eros velit metus vehicula cras. Sit vulputate pellentesque maximus ex.",
+      "long_description": "long description Porttitor lacinia elit eu adipiscing ex. Quisque aliquet pharetra ipsum. In elementum leo vehicula, velit nibh a turpis. Viverra nam nulla nibh. Felis ante elementum nisi, etiam aenean pulvinar tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "Sagittis.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Elit enim mollis cras laoreet tristique au. Fringilla euismod faucibus.",
+      "long_description": "long description Id id sem tortor pharetra at. Mattis blandit facilisis nunc placerat in. Auctor suscipit facilisis a lobortis. Accumsan tempor sapien lobortis dictum non dui lorem maecenas id nulla blandit mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Risus.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Suscipit purus maecenas scelerisque donec lobortis dignissim pulvinar facilisis mauris.",
+      "long_description": "long description Au elit dui nam quisque leo. Sollicitudin ante elit e auctor lacinia nibh orci eu consequat dignissim magna vestibulum. Mauris nulla ultrices sollicitudin commodo tempus lacus. Leo amet a elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Blandit.",
+          "Elementum."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Ante fringilla pulvinar proin sodales ex. Eti adipiscing ex porttitor.",
+      "long_description": "long description Orci purus et posuere ut, placerat amet sem blandit at placerat maximus dui, vel nisl sed leo. Suscipit natoque bibendum vulputate ultrices ex condimentum aenean nunc arcu. Aenean metus morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Dui.",
+          "Blandit."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description In erat sapien sed diam i dictum tempus commodo tortor.",
+      "long_description": "long description Diam ipsum vitae proin orci diam, aliquet sodales etiam metus. Morbi sodales eget nam sollicitudin. Leo sollicitudin faucibus cursus a diam imperdiet turpis erat erat, porttitor tempor maximus eros ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Neque.",
+          "Turpis."
       ]
     },
     {
       "name": "Coolinga",
-      "short_description": "This is the service short description",
-      "long_description": "long description Quis ante commodo auctor donec dui aenean neque mattis porttitor erat purus velit. Pharetra diam sit mollis tristique. Iaculis in lacinia placerat auctor proin mollis.",
+      "short_description": "short description Sed donec fringilla aenean consectetur. Vel est mauris sollicitudin finibus.",
+      "long_description": "long description Eget maximus ante ligula pretium. Aliquet sit ut porttitor est. Erat consectetur eget vestibulum. Dignissim auctor nisi est sodales faucibus risus ante maximus. Cursus ante i laoreet. Pellentesque pretium maecenas.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Tempor.",
+          "Viverra.",
+          "Aliquet."
       ]
     },
     {
-      "name": "Xenosys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tincidunt sit i accumsan i lacinia, gravida magna dignissim nulla massa sapien, quisque sagittis nisi rhoncus nam, proin non imperdiet vel erat est tincidunt ultrices.",
+      "name": "DynaAir",
+      "short_description": "short description Eros au leo nulla finibus lobortis, donec eget purus risus.",
+      "long_description": "long description Non facilisis neque eget commodo ultricies neque lectus, mi accumsan viverra nulla. Metus fringilla ut at, justo nunc aliquam magna a. Nunc dolor maecenas purus eget dui sagittis massa mauris.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Sollicitudin.",
+          "Eti.",
+          "Ex."
       ]
     },
     {
-      "name": "DuoServe",
-      "short_description": "This is the service short description",
-      "long_description": "long description Ligula risus arcu nibh e. Porttitor etiam viverra ligula lobortis. Pretium lacinia scelerisque porttitor, lorem erat ipsum purus lacinia aliquam morbi. Rhoncus vel sed euismod.",
+      "name": "SixtySix",
+      "short_description": "short description Iaculis faucibus cursus tincidunt maecenas adipiscing maximus lectus euismod magna.",
+      "long_description": "long description Velit accumsan in sagittis ante eti, mi dui pellentesque mattis consectetur posuere sapien justo tristique accumsan lacinia. Nisl tincidunt consequat in. Vulputate mattis eros auctor donec maximus ac arcu vulputate.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 4"
+          "Diam.",
+          "Vehicula.",
+          "Aliquet."
       ]
     },
     {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Finibus nam dolor scelerisque tincidunt curabitur lectus eu. Diam et au sodales dignissim purus rhoncus nulla accumsan rhoncus tristique at. Tristique et aliquet diam placerat.",
+      "name": "Protheon",
+      "short_description": "short description Nisl id lacinia aliquam enim pellentesque dictum imperdiet sed curabitur.",
+      "long_description": "long description Eti tincidunt diam eti aliquet dignissim nisi vestibulum id sit consectetur purus quisque nibh. Lacinia dui iaculis gravida. Augue neque in non, pretium ornare felis vulputate, turpis purus ligula sollicitudin.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Maximus.",
+          "Ante.",
+          "Non."
       ]
     },
     {
-      "name": "Celmax",
-      "short_description": "This is the service short description",
-      "long_description": "long description Tristique commodo ligula nulla pellentesque proin nibh consectetur quisque est ipsum at. Bibendum commodo auctor augue eget adipiscing ex vulputate. Sapien tempor justo ornare nisi.",
+      "name": "Tomiatech",
+      "short_description": "short description Vitae auctor morbi quisque augue nunc. Mauris hendrerit quis mi.",
+      "long_description": "long description Tempor etiam proin pulvinar arcu diam i ultricies gravida i proin est placerat cursus vitae. Consequat pretium mattis enim enim maecenas auctor au massa dignissim. Erat morbi non maecenas orci.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 3",
-        "role 5"
+          "Viverra.",
+          "Suscipit.",
+          "Sollicitudin."
       ]
     },
     {
-      "name": "Superwire",
-      "short_description": "This is the service short description",
-      "long_description": "long description Lacus nisl sit sem tristique orci ex ultrices imperdiet dolor. Commodo ultricies tempus laoreet aliquet augue accumsan orci vitae, cras erat viverra eget a enim.",
+      "name": "MultiServ",
+      "short_description": "short description Aenean scelerisque curabitur imperdiet morbi. Non ornare ut quisque vehicula.",
+      "long_description": "long description Aliquet erat augue faucibus elementum pellentesque adipiscing porttitor ante. Orci euismod e commodo, arcu non lobortis sapien, suscipit pretium pellentesque ipsum a, erat natoque sagittis leo, lobortis cras metus et.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
-      ]
-    },
-    {
-      "name": "WestGate",
-      "short_description": "This is the service short description",
-      "long_description": "long description Placerat cras purus vel augue. Ultricies lacinia fringilla vehicula scelerisque. Massa amet erat faucibus dignissim blandit dictum a tempor finibus enim scelerisque erat lacus arcu.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 2",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Terrasys",
-      "short_description": "This is the service short description",
-      "long_description": "long description Imperdiet felis tristique mattis eti ac tortor tortor eu mattis turpis aliquam posuere posuere sed vulputate elementum. Imperdiet tincidunt dolor est non, tortor euismod ornare.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 3",
-        "role 6"
-      ]
-    },
-    {
-      "name": "Opticast",
-      "short_description": "This is the service short description",
-      "long_description": "long description Neque nam e mollis et, vel vestibulum tempor facilisis a. Facilisis neque cursus in lobortis nunc adipiscing tristique turpis maecenas mi. Sodales consequat consequat aliquet.",
-      "logo": "http://placehold.it/64x64",
-      "roles": [
-        "role 1",
-        "role 4"
+          "Pretium.",
+          "Sollicitudin.",
+          "Mauris."
       ]
     },
     {
       "name": "Cryosoft",
-      "short_description": "This is the service short description",
-      "long_description": "long description Augue sodales quisque lectus sit. Pharetra tincidunt leo ut, ultrices sit commodo sollicitudin aenean i, natoque quisque facilisis pharetra neque vel. Tortor scelerisque amet bibendum.",
+      "short_description": "short description Felis diam ipsum eti nam tristique. Est nisi arcu quis.",
+      "long_description": "long description Maecenas amet facilisis mattis elit dui commodo turpis, lorem blandit sit finibus tincidunt condimentum tempus ac lobortis faucibus metus ipsum. Consequat mollis nulla sodales. Ac pretium adipiscing sollicitudin mollis risus.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 2",
-        "role 6"
+          "Imperdiet.",
+          "Purus.",
+          "Eu."
       ]
     },
     {
-      "name": "Logico",
-      "short_description": "This is the service short description",
-      "long_description": "long description Donec maximus eros lacinia at vehicula purus est vitae finibus. Nisi velit cursus fringilla faucibus. Tempus metus imperdiet adipiscing eget natoque. Lacus pulvinar pharetra augue.",
+      "name": "Galcom",
+      "short_description": "short description Nisl a iaculis non eros ipsum dignissim consectetur ultrices lacinia.",
+      "long_description": "long description Sed dignissim nisi cursus lacinia pulvinar. I lectus etiam sapien i tincidunt vitae elit laoreet risus. Iaculis faucibus felis finibus. Tristique hendrerit at tristique nibh lacinia non, quis sed eu.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 6"
+          "Iaculis.",
+          "Eu.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Risus sapien imperdiet sed lacinia enim faucibus orci leo faucibus.",
+      "long_description": "long description Hendrerit lectus condimentum non augue arcu, purus ut ornare nisl. Pellentesque iaculis lacus sagittis consequat non, nunc auctor diam adipiscing. Et pulvinar nam felis dui commodo tortor natoque accumsan elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elit.",
+          "Diam.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Viverra finibus cras consectetur elit. Leo ante aenean est at.",
+      "long_description": "long description Amet tempor vel fringilla commodo posuere lacinia, a eget tempus eu. Vulputate eros ante consequat, ex nisl lacus adipiscing, sem mauris fringilla aliquet sed orci scelerisque est nunc purus pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Vestibulum.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Quadtek",
+      "short_description": "short description Nisl auctor eu eros sed laoreet consequat. Hendrerit tortor vulputate.",
+      "long_description": "long description E erat felis porttitor at. Ac lacinia enim nulla auctor, lectus morbi mattis cursus dolor et. Et lacinia tristique aenean. Commodo dui laoreet eti. Pretium iaculis cras nisl vel velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Euismod.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Nunc felis maximus accumsan accumsan sem aenean vestibulum nisi pretium.",
+      "long_description": "long description Dignissim maximus turpis ipsum imperdiet. Velit vel placerat cursus facilisis. Mattis ornare i quisque accumsan, viverra in metus laoreet condimentum bibendum, faucibus i aliquam i ultrices, commodo ligula cras e.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Iaculis.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Zatheon",
+      "short_description": "short description Purus diam et magna consequat blandit sed tortor laoreet orci.",
+      "long_description": "long description Hendrerit lacinia sapien orci consequat. Dignissim ligula est bibendum tempus laoreet velit, dui leo bibendum tristique. Sapien mollis justo vestibulum a. Felis accumsan viverra sagittis, posuere tristique mollis ultricies elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Fringilla.",
+          "Elit."
       ]
     },
     {
       "name": "Cryptonica",
-      "short_description": "This is the service short description",
-      "long_description": "long description Nam risus morbi sem accumsan sagittis purus. Amet felis tristique adipiscing etiam est posuere suscipit neque, sagittis euismod metus sed. Eros lobortis ac ipsum consectetur.",
+      "short_description": "short description Ex in accumsan gravida elementum donec, cras auctor a proin.",
+      "long_description": "long description Sodales in id a tempor ornare pellentesque in, lacus aliquet condimentum nibh est neque lobortis vulputate sem, maecenas aliquam condimentum cursus orci, dictum dui ligula sapien. Sed in cras ipsum.",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role 1",
-        "role 5"
+          "Tortor.",
+          "Lobortis.",
+          "Orci."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Id mattis elit tristique lacus, bibendum velit maximus consectetur velit.",
+      "long_description": "long description Augue purus sem pulvinar eros lobortis et blandit. Non neque eros aliquam. Finibus ligula laoreet condimentum eu scelerisque. Mi justo dictum au, mollis maximus accumsan id, suscipit tristique posuere ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Neque.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Nibh id cursus mauris neque lorem. Porttitor facilisis nunc gravida.",
+      "long_description": "long description Ipsum curabitur nunc eu fringilla, maximus maecenas justo etiam tempus. Hendrerit arcu at dignissim. In lobortis amet est morbi et nisi vestibulum mollis morbi proin sagittis quisque facilisis aenean consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Ex.",
+          "Ex."
+      ]
+    },
+    {
+      "name": "DuoServe",
+      "short_description": "short description Tempus e sapien est aliquam ex, quisque natoque au ligula.",
+      "long_description": "long description Scelerisque et sed fringilla eu, vel posuere curabitur lacinia laoreet. Sapien vehicula au imperdiet. Rhoncus maximus auctor morbi tempus augue nunc massa est felis cursus. Ultricies aenean scelerisque lacinia et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "In.",
+          "Sollicitudin.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "Coolinga",
+      "short_description": "short description Justo dignissim lacinia laoreet a diam placerat curabitur enim mollis.",
+      "long_description": "long description Finibus non neque accumsan erat erat lacinia proin. Rhoncus justo vel eget ipsum nibh curabitur pellentesque hendrerit ornare consectetur mattis suscipit sit. Leo mollis mollis nulla etiam at dolor lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Rhoncus.",
+          "Natoque.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Nunc sed velit iaculis metus, maximus nisl scelerisque eti nisl.",
+      "long_description": "long description Au est finibus pharetra nisl, iaculis ante nisi sapien justo maecenas placerat dolor porttitor lobortis e lectus, justo tincidunt risus augue. Tincidunt scelerisque placerat erat. In fringilla sollicitudin a aliquam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Purus.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Tempus au gravida tristique ligula. Blandit turpis neque enim hendrerit.",
+      "long_description": "long description Posuere velit est commodo mauris. Eget pretium rhoncus faucibus commodo vitae sodales suscipit, tincidunt a proin vehicula aenean nisl, metus laoreet mattis non. Nunc pretium vestibulum tempus. Eu nam et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "E.",
+          "Arcu.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Etiam risus auctor velit ultrices sit, adipiscing condimentum adipiscing i.",
+      "long_description": "long description Viverra pretium sit donec nisi, arcu placerat vehicula erat, consequat i scelerisque ultrices. Aliquet et et scelerisque. Dignissim tristique blandit placerat elit, sed i nunc nibh faucibus donec etiam nunc.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Risus.",
+          "Ex.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Ultricies maecenas aliquam risus massa amet. Ornare nunc adipiscing accumsan.",
+      "long_description": "long description Consectetur diam i donec pretium. Pellentesque ligula velit ipsum neque, at mauris eros neque quisque consectetur ut. Quisque sem neque quisque. Sem justo metus tristique. Consectetur et et aliquam sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "Accumsan.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Finibus nunc sed ac iaculis metus vehicula e id risus.",
+      "long_description": "long description Consequat dui velit elementum vestibulum, lacinia quis tincidunt id erat ornare, e aenean vulputate leo. Dolor diam ante tristique leo vulputate id, i nisi pharetra lacinia. Pulvinar tempor sem vel.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Augue.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Finibus etiam mattis quis blandit, ornare pellentesque ultrices cursus curabitur.",
+      "long_description": "long description E cras scelerisque dictum morbi. Laoreet nam arcu pretium. Vehicula aenean felis elit au, justo lacinia vitae nulla sapien. Curabitur neque dictum id, eros consequat pretium tincidunt ornare aliquet purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Ex.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Eros est nisi lacinia viverra euismod justo mattis ante commodo.",
+      "long_description": "long description Faucibus id ligula hendrerit iaculis facilisis eti. Morbi proin in enim amet est. Auctor est risus rhoncus purus, enim dictum curabitur at mi et lacus augue vel aliquam auctor ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Laoreet.",
+          "Lacus.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Bibendum ex quis cursus maximus, vehicula ante vestibulum accumsan vulputate.",
+      "long_description": "long description Accumsan finibus purus e e finibus, sagittis pharetra quis tempor commodo dignissim a lorem facilisis, magna bibendum blandit sapien posuere a placerat eros consequat tortor. Tincidunt leo euismod posuere in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Enim.",
+          "Tempor.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Pretium est diam velit ornare mi eu fringilla orci elementum.",
+      "long_description": "long description Lorem maximus id non sodales ultricies eget. Cras nibh diam faucibus erat, placerat elit accumsan orci sit, risus aliquet risus lacinia eu lacus. Sapien auctor diam faucibus. Viverra turpis dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Commodo.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Nisi consequat facilisis diam ultricies rhoncus au sagittis blandit pellentesque.",
+      "long_description": "long description Euismod elit eget gravida ut adipiscing au porttitor mi. Ante turpis dignissim arcu ornare. Accumsan proin ultricies consequat. Dui justo posuere fringilla, tempus enim magna ex scelerisque sodales arcu nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "Nisi.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Sem at vestibulum morbi accumsan at nam ut ac mollis.",
+      "long_description": "long description Dignissim vitae mollis magna nibh dignissim consequat lobortis sollicitudin. Mollis arcu dui lacinia donec ligula imperdiet viverra massa ultricies turpis. Tempor euismod quis aliquet posuere in. Maximus aenean suscipit vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Purus.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "DuoServe",
+      "short_description": "short description Suscipit adipiscing pharetra aliquam natoque dui. Purus ut nulla eros.",
+      "long_description": "long description Ultrices eu dolor imperdiet elementum arcu ante, placerat lacinia pellentesque lacus, posuere vitae vulputate eu quis, lectus accumsan pellentesque ex. Cursus felis felis eget maximus, au orci lacinia massa tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Nisl.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "CoreRobotics",
+      "short_description": "short description I metus mi bibendum vestibulum lacinia. Viverra i pellentesque ut.",
+      "long_description": "long description Pharetra e aliquet vel pellentesque, sit iaculis vel neque sit imperdiet dictum lacus i mattis vestibulum. Lectus elit cursus cursus. Mollis lorem mauris posuere aenean elit suscipit, finibus accumsan elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Enim.",
+          "Nulla."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Euismod aliquet maximus purus dui. Gravida vestibulum finibus dui metus.",
+      "long_description": "long description Lacinia condimentum turpis facilisis pretium leo lacinia dictum nisi augue, curabitur curabitur vulputate e, ligula sapien orci leo. Cras mollis in mi pulvinar lectus ex mi iaculis, ornare pharetra quisque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ut.",
+          "Blandit.",
+          "Viverra."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Euismod lobortis facilisis dolor proin purus eti mattis accumsan tempus.",
+      "long_description": "long description Pretium quisque blandit magna nisi dui et. Fringilla maecenas vehicula morbi auctor, sed ac metus sem, aliquam cursus amet finibus neque, sed ligula ex turpis donec. Justo morbi augue proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "Elit.",
+          "Ut."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description E sapien a faucibus turpis vestibulum, dignissim ultrices donec neque.",
+      "long_description": "long description At lobortis posuere accumsan commodo i. Bibendum turpis amet ultricies aenean. Facilisis ut dui dui. Adipiscing id laoreet quis ac hendrerit lobortis a pharetra est consectetur lorem velit iaculis donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dui.",
+          "Erat.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Diam aliquam proin morbi au, lacinia au dui ligula ut.",
+      "long_description": "long description Pharetra ipsum magna mauris scelerisque, tincidunt turpis condimentum est eti auctor erat turpis eget pulvinar elementum, lectus pellentesque cursus sapien consectetur. Dictum aliquet lorem est ultricies iaculis turpis auctor purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Dolor.",
+          "Felis."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Mollis lacus dignissim hendrerit rhoncus. Scelerisque ac tempus tempus proin.",
+      "long_description": "long description Proin a sed vehicula scelerisque posuere elementum tristique pretium id sollicitudin auctor tempor, dolor ante vehicula eros proin tempus lacinia, dolor neque nisi metus tortor ac lacinia. Eros mattis aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nibh.",
+          "Elementum.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Viewtopia",
+      "short_description": "short description Dolor lacus lacus quisque et adipiscing porttitor hendrerit imperdiet mi.",
+      "long_description": "long description Iaculis eros pretium tortor curabitur aliquam vehicula nibh nulla vestibulum. Vitae nibh vestibulum euismod, tincidunt finibus donec maecenas iaculis sagittis id. Eu ligula lacinia et metus leo, eros augue velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Consequat.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Consectetur eros pulvinar ac lectus est rhoncus. Sapien massa faucibus.",
+      "long_description": "long description Enim dui maximus sit felis. At dignissim ligula iaculis cras donec ligula mattis suscipit augue. Elit aliquam dolor aenean imperdiet, cursus euismod aenean maecenas, au laoreet vulputate et enim vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Finibus.",
+          "Sollicitudin.",
+          "Laoreet."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Maecenas sit elit lobortis maximus morbi auctor eu augue lobortis.",
+      "long_description": "long description Ut ultrices auctor donec nibh, mollis condimentum facilisis id. Nulla maximus viverra ipsum, iaculis velit quisque orci elit enim adipiscing a, posuere etiam lobortis placerat. Erat et i eget magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Ipsum.",
+          "Diam."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Ut sagittis leo natoque est amet. Tempor turpis sapien at.",
+      "long_description": "long description Finibus mattis posuere placerat tempor. Bibendum sit mattis sagittis. In ipsum eget vel est ultrices. Lectus consequat pellentesque est laoreet leo. Ut vestibulum cursus imperdiet lacus ex, dignissim dolor condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ut.",
+          "Nam.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Tempus iaculis accumsan purus laoreet sapien. Suscipit pellentesque augue eu.",
+      "long_description": "long description Vulputate maecenas dignissim a in ut magna. Eti ex ultrices turpis ante ante curabitur, scelerisque lobortis pretium lacinia auctor sodales donec faucibus cras, e orci aliquam vitae quis bibendum cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Finibus.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Tempus fringilla tempor in id quisque porttitor consectetur adipiscing ut.",
+      "long_description": "long description Au sapien pretium quisque consequat, et pretium au lacus vehicula, mattis tincidunt eu proin commodo, nisi condimentum augue donec. Vitae dignissim euismod eu, tortor lacus at velit commodo sed maximus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Quis.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Vestibulum eget eget fringilla pharetra eti, rhoncus mollis vel scelerisque.",
+      "long_description": "long description Ultricies eu nisi elementum pellentesque curabitur, mi iaculis viverra sodales nisl consectetur felis purus est, augue quisque dignissim gravida nisl neque lectus finibus pretium enim. Viverra dolor dignissim ante quis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Ornare.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "WestGate",
+      "short_description": "short description E auctor mi tempus placerat ac lacinia consectetur nisi blandit.",
+      "long_description": "long description Ornare nunc ante mattis facilisis donec id nunc justo, lacus donec facilisis ex nisl id viverra amet diam ac au sem sagittis. Morbi diam nulla a massa. Sed id ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Enim.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Etiam dolor in consectetur nunc tortor auctor. Sit faucibus ultrices.",
+      "long_description": "long description Lorem viverra vehicula ut cras blandit. Euismod nam eget porttitor lacus et porttitor. Ac etiam auctor pulvinar sollicitudin, curabitur eros condimentum ornare mi blandit et hendrerit, nisl ex ligula leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Iaculis.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Eti tristique iaculis aenean fringilla pharetra, sodales laoreet est laoreet.",
+      "long_description": "long description Bibendum posuere dignissim lobortis mollis sit, velit ornare suscipit orci maximus ornare eget porttitor suscipit mauris ante, justo magna dignissim arcu, natoque ipsum posuere au, turpis vestibulum rhoncus suscipit pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Bibendum.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Morbi nisl aenean vitae maximus nibh, placerat bibendum sit eu.",
+      "long_description": "long description Lobortis leo vel imperdiet tincidunt vehicula aenean faucibus accumsan i aliquam diam quisque i tempor elementum ligula. Mauris a velit auctor lectus. Ut morbi lectus imperdiet mi, posuere ut lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Quisque.",
+          "Auctor."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Ultrices mattis posuere scelerisque ultrices at commodo mi eti proin.",
+      "long_description": "long description Natoque etiam placerat vestibulum eti accumsan dui nulla au orci enim. Fringilla faucibus leo nunc nibh purus scelerisque scelerisque au lacinia vel proin sed dictum amet, placerat pellentesque nam diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "I.",
+          "Justo.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Nam et ornare aliquam e proin in sagittis massa fringilla.",
+      "long_description": "long description At magna neque orci vel vestibulum quis e sodales, tempus maecenas nam massa at consequat aliquet. Tincidunt arcu morbi donec dolor, vestibulum eti sed justo viverra fringilla donec ac pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Fringilla.",
+          "Metus.",
+          "Aliquam."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Lacinia lobortis arcu vestibulum vehicula nam ultricies vel mauris elit.",
+      "long_description": "long description Viverra eu condimentum felis tincidunt at orci, ligula diam gravida mollis ut aliquam. Ultricies porttitor mattis nulla velit consequat. Lacus consequat amet commodo maecenas, orci consequat tristique pretium vitae vel.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Magna.",
+          "Viverra.",
+          "Laoreet."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Massa vulputate aenean nunc vel nunc. Nulla posuere vulputate i.",
+      "long_description": "long description Accumsan sed accumsan rhoncus proin dui. Maximus nunc adipiscing eget tristique, suscipit at amet rhoncus amet, diam maecenas condimentum ultrices, aliquam enim ac id est, scelerisque sollicitudin nisi diam hendrerit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Elit.",
+          "A."
+      ]
+    },
+    {
+      "name": "DynaAir",
+      "short_description": "short description Blandit felis at dui augue amet. Amet vestibulum leo a.",
+      "long_description": "long description Neque i justo gravida ultrices ipsum. Dictum euismod mollis arcu sapien erat. Tempor consectetur i mattis sodales mauris quisque lorem, lectus non donec vulputate lacinia cursus pellentesque natoque facilisis sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Aliquet.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Sollicitudin eti tortor viverra elementum ultrices, pharetra neque mollis tortor.",
+      "long_description": "long description Ut justo maximus nunc pharetra aliquet massa sem ligula bibendum iaculis, blandit facilisis posuere risus morbi sodales aliquam. Condimentum aliquet adipiscing nam orci facilisis. Commodo cursus orci ligula fringilla et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Lacinia.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Maecenas amet est nunc nisl auctor, ligula quis ex bibendum.",
+      "long_description": "long description Ligula quis risus au massa nulla. Euismod sit non risus pulvinar laoreet donec. Mauris nulla mi pellentesque sit enim tempor, elit hendrerit condimentum amet elit. Ornare posuere consectetur quisque pellentesque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Auctor.",
+          "Tempus.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Quis commodo i elit at, scelerisque aliquet donec dui pulvinar.",
+      "long_description": "long description Sodales lacinia dictum nibh amet dolor vulputate tincidunt aliquet viverra lorem iaculis elit. Est consectetur ac porttitor augue. Condimentum suscipit imperdiet aliquet leo turpis. Sollicitudin mauris sed at gravida blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempor.",
+          "Neque.",
+          "Maecenas."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Arcu sodales quisque eros adipiscing. Diam vestibulum dui neque nunc.",
+      "long_description": "long description Sem risus aliquet consectetur mi finibus etiam risus accumsan, a pellentesque proin sit et sed nibh nisl sapien. Tristique sagittis condimentum enim lacus curabitur metus proin at cursus ultricies augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "Sagittis.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description A maecenas massa aliquam erat, mattis lectus eti arcu proin.",
+      "long_description": "long description Sem pharetra sed blandit nibh auctor suscipit dui, porttitor dictum nibh lobortis ex lacus sagittis, ipsum sollicitudin ultricies lacinia. Cras proin nulla aenean, metus justo aenean hendrerit. Aliquet tincidunt est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Consectetur.",
+          "Nulla."
+      ]
+    },
+    {
+      "name": "LoopSys",
+      "short_description": "short description Lacinia accumsan pretium mi viverra. Lacus nunc finibus tortor sit.",
+      "long_description": "long description Ornare quis eget est ut, commodo viverra curabitur felis tempus est aliquet, scelerisque pharetra sagittis cras mattis accumsan sollicitudin. Euismod lacinia tincidunt sem ipsum natoque. Mi pretium nisl elit nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "In.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Felis blandit ante purus justo non imperdiet proin metus adipiscing.",
+      "long_description": "long description Lobortis ex adipiscing mauris condimentum, fringilla morbi quis a maximus erat. Suscipit enim nisl au maximus laoreet felis. Mi id tortor i. Suscipit aliquet curabitur id nibh a amet ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mollis.",
+          "Erat.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Sollicitudin etiam nisi massa augue. Massa iaculis tempor scelerisque nunc.",
+      "long_description": "long description Nisl velit commodo id mi nam pulvinar. Lorem sem dui hendrerit imperdiet ex. Risus nisi cursus eti maecenas ac dolor dictum purus neque. Mollis viverra justo erat, nam posuere eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Ipsum.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Sed lacinia proin risus est magna quis ultrices finibus mattis.",
+      "long_description": "long description E ultrices velit lacus lacinia vitae. Nibh tempus vestibulum id et bibendum cras scelerisque. Ex vehicula sagittis pharetra, amet proin consectetur vel vulputate sem e aenean rhoncus purus est erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Arcu.",
+          "Ultricies."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description Scelerisque lorem turpis tempor aenean, rhoncus pretium neque consectetur blandit.",
+      "long_description": "long description I in sollicitudin turpis sed etiam turpis eti maximus non accumsan erat. Nisi commodo nisl consectetur diam eti, pretium dignissim vitae diam amet vestibulum ultrices. Scelerisque cursus pretium leo au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Blandit.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Non porttitor arcu i sollicitudin ultrices. Vestibulum dictum dolor imperdiet.",
+      "long_description": "long description Adipiscing a diam lorem a lobortis risus velit adipiscing amet neque. Sem maximus lectus dictum lorem natoque. Blandit euismod massa ipsum mi lectus. Leo porttitor ut elementum aliquet accumsan rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Adipiscing.",
+          "Cursus.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Lacinia facilisis aliquet maecenas arcu id tincidunt ornare tempus est.",
+      "long_description": "long description Velit ornare mi neque metus posuere, lobortis finibus non porttitor ornare porttitor i consectetur. Ligula ante ex diam elit sed consectetur nisi. Viverra fringilla amet sed at elementum consectetur ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Lacinia.",
+          "Est."
+      ]
+    },
+    {
+      "name": "MultiServ",
+      "short_description": "short description Natoque accumsan id aliquet mollis sed enim placerat quis fringilla.",
+      "long_description": "long description Dui condimentum ipsum neque dui, sed massa diam nulla pretium. Justo adipiscing aliquam auctor. Au orci adipiscing commodo et tempor, scelerisque est metus ultricies nunc eu. Imperdiet pulvinar nam mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Auctor.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Elit pulvinar erat viverra rhoncus. Consequat eros sollicitudin orci mollis.",
+      "long_description": "long description Ornare nisi au cras lacus eget placerat. Eget sit magna i. Mi felis finibus auctor mi leo pharetra, enim ut elit ipsum erat ex mollis cursus nibh fringilla mattis curabitur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Quisque.",
+          "Cursus."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description In natoque sit placerat aliquam. Pulvinar natoque neque ut auctor.",
+      "long_description": "long description Tristique mollis vehicula adipiscing adipiscing metus vulputate metus enim nam curabitur, auctor gravida etiam donec rhoncus accumsan ultrices viverra eros porttitor consequat rhoncus. Adipiscing velit augue ligula neque natoque eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Lobortis.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Placerat vulputate sed nunc sollicitudin velit mauris diam nibh vitae.",
+      "long_description": "long description Natoque nulla morbi commodo facilisis tortor morbi. Sagittis au scelerisque sem elit quis felis lobortis imperdiet rhoncus facilisis, mattis e felis elementum fringilla tincidunt elementum ac. Nam velit bibendum lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "I.",
+          "Felis."
+      ]
+    },
+    {
+      "name": "CoreRobotics",
+      "short_description": "short description At tristique curabitur facilisis maximus nam. Tincidunt condimentum nibh pellentesque.",
+      "long_description": "long description Dui imperdiet neque facilisis mattis quis scelerisque quis vel magna nulla erat risus, nam felis ut lacinia. Sem amet maecenas iaculis auctor a mi adipiscing imperdiet. Nulla suscipit erat viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Mollis.",
+          "Metus."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Metus hendrerit mauris au cursus natoque dignissim sodales elementum adipiscing.",
+      "long_description": "long description Vitae accumsan cras sagittis fringilla, cursus dui metus bibendum aliquam proin. Velit aliquam finibus ultrices. Suscipit orci vitae donec. Finibus vestibulum nam ipsum condimentum at lobortis magna, placerat au dignissim.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mattis.",
+          "Viverra.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Risus nunc lectus felis euismod. Pretium pulvinar quisque bibendum risus.",
+      "long_description": "long description Dui sollicitudin nisi posuere eu tempus ex metus. Risus cursus sollicitudin sodales dignissim, nisi nibh mauris bibendum. Finibus magna suscipit fringilla risus in lectus tortor augue, ornare cursus scelerisque mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Diam.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Nisi consequat lacinia eu sagittis vel, mattis sagittis velit ligula.",
+      "long_description": "long description Tempor nam sit pulvinar mi, ante sapien vulputate felis lectus morbi pellentesque ex. Fringilla fringilla cursus amet id ex consectetur morbi ipsum ante quis arcu, eget natoque bibendum id metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Tempor.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Viewtopia",
+      "short_description": "short description Fringilla maecenas quis velit nam, e tincidunt eu curabitur lacus.",
+      "long_description": "long description Sed hendrerit fringilla maximus nisi, laoreet e a a. Sagittis quis eu mi. Eros eget etiam imperdiet neque, curabitur imperdiet nibh imperdiet. Lacinia tincidunt iaculis ex eti turpis imperdiet cursus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Mi.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Diam risus condimentum lacinia mi eros eget nisi erat felis.",
+      "long_description": "long description Dignissim eti aliquet dui sit. Dolor ex nisi aliquet viverra, placerat lacinia maecenas orci. Ac vel a mi. At facilisis cras augue tempor cursus adipiscing, lectus a nulla eti ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Mollis.",
+          "Elit."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Dolor ligula curabitur dictum lectus arcu euismod nibh facilisis quis.",
+      "long_description": "long description Sapien diam quisque a au sollicitudin pellentesque. Eu lectus facilisis leo. Pulvinar orci at fringilla. Placerat donec laoreet sed felis magna neque. Maecenas morbi donec faucibus mi. Morbi sed aenean.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "I.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Commodo leo e nam maecenas, viverra maximus consequat aliquet sollicitudin.",
+      "long_description": "long description Enim pellentesque finibus pellentesque diam iaculis vehicula lacinia tincidunt elit. Ac curabitur ante felis consectetur velit, suscipit consequat orci elit sodales purus rhoncus aenean. Magna eu quis velit scelerisque ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Eget.",
+          "Auctor."
+      ]
+    },
+    {
+      "name": "MediaDime",
+      "short_description": "short description Accumsan dignissim dolor justo vehicula quisque vitae auctor diam non.",
+      "long_description": "long description Massa lorem felis orci metus au. Elementum eget finibus i mattis lacinia, condimentum bibendum augue laoreet. Tincidunt eu pellentesque nam enim. Natoque adipiscing vel ipsum posuere. Ligula dignissim pharetra placerat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Lorem.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Anaplex",
+      "short_description": "short description Scelerisque elit sed vel cras accumsan orci mauris etiam mollis.",
+      "long_description": "long description Cursus vestibulum eget posuere nam consequat porttitor tortor donec, a porttitor turpis eu natoque condimentum nisl sollicitudin maximus. Massa nunc e vitae lacinia sit id condimentum blandit magna pharetra non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Scelerisque.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Fringilla sodales nisl laoreet cras nulla, curabitur lacinia hendrerit sapien.",
+      "long_description": "long description Lacinia aenean justo amet sem vitae at pharetra, mauris pharetra et consequat posuere pretium, at nisi amet aenean. Ante aliquet dignissim augue non porttitor. Ligula mattis curabitur nam velit fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Turpis.",
+          "Id.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Non ligula mauris morbi mauris, diam iaculis eti etiam nam.",
+      "long_description": "long description In sapien et rhoncus ante, accumsan curabitur augue quis pharetra id mauris iaculis et. Massa purus faucibus mollis iaculis blandit vel. Justo etiam nisl porttitor euismod gravida proin faucibus non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Eros.",
+          "Turpis."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Aenean nulla vestibulum imperdiet amet, diam eti cursus imperdiet a.",
+      "long_description": "long description E dictum augue sagittis a, vehicula nisi gravida porttitor, tempus lorem commodo dignissim. Mi lacinia donec tempus ornare fringilla fringilla eu condimentum faucibus. Ultricies imperdiet e ante quisque non elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dui.",
+          "Mi.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Justo eti pretium au a risus. Euismod sapien cras nibh.",
+      "long_description": "long description Tristique a pharetra risus au sodales magna placerat. Ornare leo eti et curabitur blandit proin tortor, massa non euismod i. Maximus placerat dui sapien orci, lacinia sem natoque sem ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "I.",
+          "Vestibulum."
+      ]
+    },
+    {
+      "name": "VTGrafix",
+      "short_description": "short description Sed ultrices diam condimentum aliquet gravida non. Aliquet mi quisque.",
+      "long_description": "long description Eti dignissim donec mollis adipiscing. I ultrices tristique consectetur leo finibus proin lorem. Risus natoque purus vel. At est mattis eget, ligula mollis bibendum ante magna. Diam viverra metus sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Turpis.",
+          "Sit.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Est neque vulputate massa vel turpis, dolor tempus vehicula quis.",
+      "long_description": "long description Eti faucibus auctor ac sem nisl gravida lectus, natoque lacus purus cursus in dignissim. Velit ac etiam faucibus neque commodo, vestibulum lacus ligula metus lacinia. Lacinia amet eget nibh ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Id.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Elementum mattis euismod nisi nisi tempus porttitor placerat condimentum placerat.",
+      "long_description": "long description Lacus mauris lacinia ipsum sapien pellentesque hendrerit natoque ut aliquam aliquam finibus e porttitor. Tempor pulvinar porttitor adipiscing iaculis et i adipiscing tincidunt nibh facilisis elit ex, sagittis porttitor nunc.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Ultrices.",
+          "Ligula."
+      ]
+    },
+    {
+      "name": "Sunopia",
+      "short_description": "short description Cursus ex au dignissim leo ac tempor, dui donec ipsum.",
+      "long_description": "long description Donec tincidunt lectus nisl felis, lacus gravida placerat curabitur dictum, est viverra ut ut ut maximus tortor quis lacinia cursus pharetra au enim sollicitudin lorem. Cursus sapien quis velit dictum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ante.",
+          "Sodales.",
+          "Pretium."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Cursus sollicitudin adipiscing vel nibh viverra elementum quis velit orci.",
+      "long_description": "long description Proin auctor dui eu sed mauris. Iaculis lectus condimentum dui finibus. Ligula facilisis enim aliquet e. Enim eti ultrices donec aliquam eros tincidunt consequat condimentum. Ac turpis tristique commodo at.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Ornare.",
+          "Pellentesque."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Amet leo mollis erat enim. Quis nisl aliquam velit at.",
+      "long_description": "long description Scelerisque dui vehicula quisque placerat scelerisque. A diam condimentum mattis aenean condimentum id, at i ante gravida vulputate faucibus, justo aliquet consectetur felis. Etiam vulputate eros aenean eti aenean ante.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Sapien.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Nulla mollis ultricies sapien aliquet purus nibh. Cursus donec sed.",
+      "long_description": "long description Sem nibh consequat ornare id elementum ligula posuere quisque lectus amet augue pharetra dui, erat risus ornare aliquam felis blandit mattis. Lacinia vestibulum metus metus. Hendrerit lectus bibendum consectetur elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Lobortis.",
+          "Mattis."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Aliquam sodales gravida eros magna enim. Ac nisl diam nibh.",
+      "long_description": "long description Porttitor orci morbi consequat ante est hendrerit. Lorem eros dolor ipsum est. Consequat et ante lacinia, lobortis lacinia curabitur vestibulum viverra natoque. Vulputate erat pellentesque gravida sapien, dignissim vel mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Ornare.",
+          "Non."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Donec sit dui ex rhoncus mollis leo ante vitae placerat.",
+      "long_description": "long description Ornare aliquet sagittis ante morbi, hendrerit aenean nisl scelerisque sem. Sit mi nunc rhoncus, turpis amet sollicitudin ut vel vel non faucibus finibus et sollicitudin au, natoque suscipit leo porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Curabitur.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Eros id nulla in mollis, ac dictum leo morbi gravida.",
+      "long_description": "long description Aenean est purus ultricies felis nisi pulvinar sit lorem, accumsan imperdiet bibendum faucibus sagittis id turpis. Dignissim dolor ultrices dolor metus. Amet ultricies suscipit accumsan. Elementum faucibus ex ornare lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Rhoncus.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Gravida viverra ante posuere diam nibh consequat mattis dictum tempor.",
+      "long_description": "long description Ante faucibus laoreet proin diam auctor sit donec laoreet. Auctor ac ornare i faucibus cursus maecenas nisl ultricies viverra natoque, a euismod lorem lorem eget. Vehicula at purus aliquet lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Adipiscing.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Sit etiam lorem tristique blandit arcu vehicula aliquam cras e.",
+      "long_description": "long description Tortor arcu sit est natoque quisque ante et morbi ac ligula enim consequat, a pharetra aliquet vel, dignissim commodo ornare maximus sollicitudin, tincidunt vel sit suscipit metus, amet ultricies cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Eros.",
+          "Scelerisque."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Aliquam mi tempor ex rhoncus eget dictum morbi vulputate sit.",
+      "long_description": "long description Orci finibus lacus condimentum blandit ornare lorem. Ultricies sit hendrerit accumsan, morbi au ligula eros. Placerat vulputate magna nisl ac etiam eget at. Massa nulla magna maecenas. Ultricies tincidunt ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Faucibus.",
+          "Blandit."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Commodo vestibulum ante quis euismod, eros sem vehicula natoque laoreet.",
+      "long_description": "long description Orci nunc porttitor au magna diam eti imperdiet mollis a ipsum, sed velit ornare vel leo. Dictum sapien gravida curabitur, diam nam cras sit, arcu sodales consectetur eros dui felis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Turpis.",
+          "Velit.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Tristique lacinia dui tortor nunc vehicula, sapien morbi quis eget.",
+      "long_description": "long description Augue accumsan auctor ipsum mauris adipiscing ac, a consequat vehicula donec non e ipsum, aenean tempus maximus purus bibendum. Augue sodales eti e massa vulputate vulputate aliquet finibus condimentum bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pretium.",
+          "Dignissim.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Eget accumsan mollis lectus dui e pulvinar, nulla ligula quis.",
+      "long_description": "long description Dolor sapien justo pharetra ac lacinia lacinia eget. E magna ipsum amet felis eu velit etiam. Proin augue cursus erat lacinia a, adipiscing nisi aenean turpis e cursus erat diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Finibus.",
+          "Aliquet.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Au dictum dui dignissim vulputate consectetur lobortis dignissim massa consectetur.",
+      "long_description": "long description Viverra consequat elementum nam risus. Nisi amet tempor viverra aenean suscipit pharetra scelerisque finibus mauris maecenas, consectetur lorem sollicitudin quisque. Orci tincidunt augue ultrices. Vestibulum risus risus natoque a dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultricies.",
+          "Hendrerit.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Lorem pretium non leo sagittis, nisi maecenas morbi lacinia ligula.",
+      "long_description": "long description Faucibus adipiscing dolor mi bibendum at proin, felis sed vel enim sed. Vel non a dictum e eros iaculis nisl sed ut hendrerit. Tempor risus sagittis tristique laoreet quisque condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Sed.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Tortor sed tempor iaculis sollicitudin condimentum nam. Enim diam dictum.",
+      "long_description": "long description Pharetra scelerisque nulla lectus facilisis turpis. Enim faucibus i neque. Eros maecenas sapien lacinia imperdiet, vulputate enim bibendum ligula. Eros tempor quis placerat dictum. Non orci velit tincidunt porttitor nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Ac.",
+          "Tristique."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Justo amet condimentum aenean velit natoque lectus vestibulum imperdiet leo.",
+      "long_description": "long description Eros id auctor proin natoque. Dictum lorem i sagittis curabitur augue a. Placerat placerat a turpis auctor ornare. Ut placerat eget nisi cras auctor in vel ante, natoque eu vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sagittis.",
+          "Vestibulum.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Ante donec dictum in laoreet, porttitor dignissim tristique neque augue.",
+      "long_description": "long description Tempor proin aenean nam aliquet fringilla nulla, massa felis condimentum aliquam nibh elementum, bibendum maecenas rhoncus tristique vestibulum quisque vulputate lacinia sed nisl quisque blandit dui elementum dui amet dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Euismod.",
+          "Eget.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Placerat ultricies lobortis sed ultrices neque posuere sollicitudin cursus nulla.",
+      "long_description": "long description At at enim aliquam elit facilisis ante id. Ultrices tristique metus ipsum vehicula laoreet tempor, pellentesque orci tortor orci. Sit finibus neque iaculis adipiscing lacinia vestibulum, leo eti ultricies mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mi.",
+          "Cursus.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Faucibus adipiscing quis ex sapien. Aenean finibus gravida mauris finibus.",
+      "long_description": "long description Aliquet nibh tortor lacinia non. Porttitor turpis scelerisque cras, velit mi justo placerat non nulla suscipit natoque lacus, gravida mollis ultrices sagittis. Lobortis mollis cras eti vestibulum id ultricies placerat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Lectus.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Mauris lectus tristique dignissim nulla finibus. Nisl sem et nibh.",
+      "long_description": "long description Augue fringilla blandit dolor lacus, aenean ut consequat massa dolor at pulvinar ultrices porttitor. Diam quis hendrerit augue. Est vel mauris eu elit felis vel. Iaculis elementum ipsum lectus id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Dui.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description Ante consequat fringilla sodales elementum. Vehicula quis risus sapien lectus.",
+      "long_description": "long description Nisl lacinia bibendum sed aliquet sollicitudin ante non, nulla vestibulum est placerat ultrices vitae, non natoque metus laoreet. Suscipit eros non nisl pharetra ligula iaculis pulvinar sagittis maecenas est mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Eros.",
+          "Erat."
+      ]
+    },
+    {
+      "name": "Viewtopia",
+      "short_description": "short description Tempor tincidunt ac sed vulputate. Mattis vestibulum nibh elementum pulvinar.",
+      "long_description": "long description Dolor viverra nisi justo ipsum eros ex, arcu proin nulla i. E elit morbi au diam dui consectetur, eu id commodo maecenas tristique aliquet. Amet commodo hendrerit nibh vulputate mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Neque.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Dui sagittis ut aliquet at. Massa ipsum velit massa dui.",
+      "long_description": "long description Pharetra euismod elit fringilla purus mollis, aenean risus lectus mauris. Faucibus etiam ultricies sodales tortor consectetur. Mauris bibendum hendrerit sem, justo ut faucibus aliquet lacus maximus, placerat nam elementum lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Porttitor.",
+          "Curabitur.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Turpis augue dui consequat magna, aliquet aliquet ut lectus sapien.",
+      "long_description": "long description Neque eget sit i elit. Consectetur arcu nibh accumsan. Lacus blandit tortor at in. Gravida sem diam mi ligula. Sollicitudin vel vulputate metus ante eu pulvinar ac vitae leo nisl.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Suscipit.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description In sed eget velit lorem imperdiet. Sodales faucibus tristique eti.",
+      "long_description": "long description Et nisl nunc sollicitudin ex, adipiscing magna aenean maximus. Sem accumsan tempor vitae nunc dignissim dui. A porttitor fringilla nulla arcu, bibendum nam nulla dignissim non ex. Sollicitudin morbi neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Vulputate.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Eget maximus est fringilla et donec viverra, mi sapien quis.",
+      "long_description": "long description Maximus vestibulum cras ipsum scelerisque tempus. Tincidunt pellentesque arcu lacinia, consectetur at rhoncus scelerisque, porttitor porttitor justo in, justo cras elit tempor finibus cras laoreet a, risus pharetra sollicitudin proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Tincidunt.",
+          "I."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Viverra magna quis finibus gravida. Nibh hendrerit etiam ligula aenean.",
+      "long_description": "long description Nibh vulputate sagittis felis donec amet fringilla nisl tristique imperdiet auctor. Vulputate a aliquam sed laoreet lacinia. Adipiscing gravida risus tincidunt. E eti quis fringilla enim pharetra gravida ipsum vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Augue.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Eti nisi eu bibendum bibendum ac enim maximus in quisque.",
+      "long_description": "long description Sollicitudin imperdiet porttitor dignissim vestibulum adipiscing. Felis commodo a consequat aliquam sed quisque purus. Tempor placerat sollicitudin eros, risus aliquam auctor blandit eu adipiscing mi nunc felis aliquet magna a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dictum.",
+          "Vulputate.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Sodales dictum suscipit enim neque nibh sollicitudin. Hendrerit tempor et.",
+      "long_description": "long description Metus e ante sollicitudin nam. Sed bibendum proin tempor consectetur posuere vehicula consectetur consectetur tempus, condimentum ultrices nisl tortor suscipit eros ultrices, ex nulla nisi finibus vitae, tempor natoque vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Magna.",
+          "Et."
+      ]
+    },
+    {
+      "name": "LoopSys",
+      "short_description": "short description Nulla sodales et iaculis scelerisque, non sapien fringilla gravida pellentesque.",
+      "long_description": "long description Aliquet nibh posuere orci sed pulvinar cursus tempor sed, in sed nisi eti etiam, elit maecenas gravida ante mollis donec imperdiet imperdiet, at lorem dolor faucibus au. Ipsum vel rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "Vestibulum.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "OpenServ",
+      "short_description": "short description Gravida eu lacinia id pharetra risus maximus maximus tincidunt finibus.",
+      "long_description": "long description Eu metus dignissim maecenas ut id amet et diam pharetra nulla faucibus sodales. Lacinia felis lacus eget purus. Arcu vulputate fringilla mattis, aenean cras proin a auctor diam turpis ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Viverra.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Elementum euismod et consequat elementum, tincidunt maecenas ut fringilla pellentesque.",
+      "long_description": "long description Maecenas eti scelerisque gravida tempus fringilla cursus dui tempus, erat sapien i rhoncus, in posuere facilisis ultricies curabitur erat sit auctor magna risus. Est nunc hendrerit condimentum pulvinar scelerisque metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Est.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Placerat justo enim lobortis felis adipiscing, elit ut velit erat.",
+      "long_description": "long description Ante ante nisl tristique etiam nunc suscipit lobortis. Vehicula sodales nibh placerat, purus lectus sit mollis felis. Euismod nisl sodales lacinia pulvinar id ante nunc, commodo est posuere donec mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Lectus.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Iaculis risus consequat facilisis euismod mollis, diam aliquam faucibus purus.",
+      "long_description": "long description Aliquam sit lacus in vel. In maecenas elementum ut consequat, eget e ornare quis, mollis ligula cras at lacinia tincidunt tristique placerat ante. Metus non nunc augue. Consequat lorem euismod.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Cras.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description Lectus porttitor ultricies lobortis a, e ut i lacinia metus.",
+      "long_description": "long description Scelerisque felis lectus imperdiet ultricies. Nibh scelerisque ultrices consectetur a finibus elit et lacinia enim, erat orci dui sagittis proin placerat. Viverra vel arcu hendrerit au sollicitudin. Tristique mi accumsan.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Euismod.",
+          "Ante.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Non blandit in leo commodo pellentesque rhoncus, metus consectetur ultricies.",
+      "long_description": "long description Est adipiscing ac nisi tincidunt mauris. Lectus maximus vehicula aliquam. Nam sed lorem aliquam. Iaculis aenean ultricies vehicula. Eti ligula massa lacinia consectetur. Dolor adipiscing placerat arcu tincidunt arcu tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Fringilla.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Maximus ac placerat tempor velit accumsan nulla. Natoque morbi lacinia.",
+      "long_description": "long description Morbi in sodales turpis neque tempus. Aliquam blandit pulvinar velit. Pellentesque mauris ante mattis at ligula faucibus viverra diam ut orci. Au dictum etiam sem nunc commodo felis faucibus metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "Finibus.",
+          "Quis."
+      ]
+    },
+    {
+      "name": "DuoServe",
+      "short_description": "short description Curabitur eu felis pretium nisl curabitur ligula. Suscipit consequat eti.",
+      "long_description": "long description Pellentesque nulla commodo amet ac ex. Quisque vel blandit lectus eu, e nisi arcu nunc suscipit neque aliquam. Metus leo gravida elementum eu, elementum iaculis viverra pharetra. Vitae vel lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Leo.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "CorpTek",
+      "short_description": "short description Ultricies velit placerat nunc curabitur aliquet. Vel tincidunt placerat au.",
+      "long_description": "long description Commodo maximus au nam ac au quis metus scelerisque, vulputate consequat lectus bibendum porttitor viverra, ac sodales vestibulum euismod, rhoncus suscipit aenean ac massa. Tempus sem purus i elementum dictum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Aliquet.",
+          "Vestibulum."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Quis mollis risus ut etiam lacus dolor condimentum imperdiet justo.",
+      "long_description": "long description Ex eu imperdiet dictum consequat, tincidunt pharetra bibendum proin. Condimentum tempus aliquam rhoncus suscipit. Faucibus sem imperdiet nulla, finibus mauris nunc nisl. Eros quis vitae sagittis, lorem massa aliquam mauris.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "A.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Diam nisi neque finibus eros maximus quis eros proin non.",
+      "long_description": "long description Iaculis finibus ante mollis dignissim. Lacinia euismod lobortis imperdiet auctor dolor suscipit nisl rhoncus massa. Bibendum elit vehicula pulvinar sodales pharetra. Et aenean sit neque nam. Lacinia imperdiet dolor vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Faucibus.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Tincidunt aenean fringilla in au, consectetur eti lacinia ornare placerat.",
+      "long_description": "long description Nam porttitor id id ipsum dignissim orci justo nisi. Ornare au faucibus non sed cursus amet sed quis dignissim augue vel mauris bibendum neque. Euismod at at ut non tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "At.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Maximus imperdiet condimentum eget e enim. Gravida tincidunt magna ac.",
+      "long_description": "long description Laoreet nunc faucibus maecenas condimentum faucibus, fringilla mollis erat non eget dui. Rhoncus ac cras accumsan nisl ornare donec justo, imperdiet in dolor aenean. Sodales ut justo lacinia erat pulvinar.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Vulputate.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Accumsan justo consequat viverra id donec hendrerit est porttitor viverra.",
+      "long_description": "long description Bibendum vestibulum condimentum porttitor dolor, iaculis i pulvinar ornare ultricies viverra elementum faucibus ornare dolor, mi fringilla maximus ultricies proin natoque posuere. Vehicula vehicula orci eros. Tortor viverra finibus at.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Pharetra.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Etiam lorem nisl euismod tempus quis imperdiet viverra leo au.",
+      "long_description": "long description Vehicula viverra pulvinar faucibus porttitor. Bibendum lacinia lacinia eget aliquam. Ornare elementum a metus. Nibh lacinia nibh placerat. E pulvinar orci est euismod accumsan tempus sollicitudin cursus etiam nam mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Lorem.",
+          "Ex."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Sagittis blandit maximus consectetur sem risus i consequat augue risus.",
+      "long_description": "long description Metus pulvinar maximus pharetra fringilla. Curabitur nisl nam aliquet i. Natoque eti sollicitudin suscipit, tempor pulvinar erat cras nam auctor. Leo massa sagittis nisi enim nam etiam accumsan id accumsan.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Natoque.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Elit sollicitudin lectus tempor scelerisque, mollis tempor velit pellentesque quis.",
+      "long_description": "long description Gravida nunc velit est lacus natoque elementum, massa iaculis lorem nam, fringilla sed sollicitudin tristique aliquam arcu cursus, cursus sagittis vestibulum au sem lacinia vehicula in orci. Sed ultrices suscipit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Auctor.",
+          "Lacinia.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Maecenas vehicula eti sodales felis felis. Bibendum est cras sapien.",
+      "long_description": "long description Au maecenas mi sit hendrerit. Elit arcu nibh nam, at vestibulum pellentesque in non. Mollis nunc nisl tortor. Mi eti sagittis faucibus orci eti. Rhoncus posuere proin pretium velit commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Magna.",
+          "At."
+      ]
+    },
+    {
+      "name": "CoreRobotics",
+      "short_description": "short description Nisl nunc consequat sollicitudin lacinia. Mauris eu neque condimentum tristique.",
+      "long_description": "long description Aliquam tristique nisi e dui enim. Sapien rhoncus curabitur nibh neque, hendrerit metus iaculis sollicitudin justo, risus sem donec lacinia. A viverra pellentesque placerat scelerisque posuere eti. Nunc mollis id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Nam.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Morbi adipiscing risus mi viverra in. Lacinia consectetur quisque fringilla.",
+      "long_description": "long description Felis consequat suscipit lorem turpis au, blandit ante neque mauris nisl curabitur pulvinar pretium erat lacus ligula sollicitudin, sollicitudin erat donec elementum, e arcu tempus pretium felis. Purus tempus aenean.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Fringilla.",
+          "Pulvinar."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description A tincidunt enim id eget. Consequat tempor porttitor facilisis vehicula.",
+      "long_description": "long description Nulla cras ac lobortis i. Cursus gravida auctor ultricies in ac massa. I velit eget maximus aliquam lobortis, lacus vehicula imperdiet lacinia ultrices sed. Turpis leo purus eti sollicitudin euismod.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "Euismod.",
+          "Risus."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Justo diam elementum proin scelerisque morbi au sagittis ultricies consequat.",
+      "long_description": "long description Lobortis sem elit blandit ultrices consequat nibh, ac justo velit facilisis arcu adipiscing proin nisi commodo massa, vel orci risus sed risus felis. Sit turpis aenean lobortis neque leo a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "Faucibus.",
+          "Eu."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Lobortis cursus erat blandit eti posuere tortor. Nisi quis placerat.",
+      "long_description": "long description Vulputate lacus lectus ultricies consectetur. Sem sapien eros gravida, eget ex leo porttitor maecenas. Ornare iaculis ultricies pulvinar. Faucibus elit sapien ipsum fringilla. Donec sit bibendum est quisque massa lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Justo.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Eget i vestibulum ipsum blandit amet commodo. Sodales accumsan diam.",
+      "long_description": "long description Diam mi eget purus ex vitae. E ut sagittis dignissim. Maecenas pellentesque ut nam etiam. Accumsan aenean vel elementum sed posuere aliquet sollicitudin. I dignissim tempor laoreet sit iaculis condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Dui.",
+          "Elementum."
+      ]
+    },
+    {
+      "name": "Sophis",
+      "short_description": "short description Iaculis au maecenas tincidunt cursus in, nam adipiscing magna aliquam.",
+      "long_description": "long description Ultrices tincidunt fringilla tristique mattis ultricies massa bibendum risus eti, sed pretium au quis dictum curabitur tortor mi scelerisque leo ut mollis morbi. Condimentum pharetra purus gravida maximus quisque lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Fringilla.",
+          "Diam."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Nunc consequat massa sodales justo lacinia orci. I mi est.",
+      "long_description": "long description Vitae augue mi lobortis nunc sem fringilla mattis. Quisque lacinia elementum consequat bibendum dignissim lobortis, erat i maximus tincidunt auctor iaculis. Mollis neque orci non ultrices. Lectus vulputate sodales est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Est.",
+          "Donec."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description In mi a nisl cras magna leo. Consectetur lacinia ex.",
+      "long_description": "long description Eros posuere fringilla eros dictum dolor dignissim dui tempor, id hendrerit tortor lacinia ornare mattis sollicitudin vel, faucibus metus elementum id. Euismod ut eti risus sapien nibh sapien diam leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Dui.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Morbi diam arcu posuere accumsan, lacinia dictum maximus ligula cursus.",
+      "long_description": "long description Nulla maximus euismod at posuere tempus lorem. Ac morbi porttitor posuere. Lobortis sollicitudin sed tempus, sapien nisi massa diam scelerisque pharetra e ut eget. Ligula pharetra sodales adipiscing felis dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Tincidunt.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Euismod risus consequat maecenas eti mattis sagittis mollis ligula enim.",
+      "long_description": "long description Auctor velit eti commodo aenean mollis purus. Leo pulvinar accumsan viverra ultricies vel ac, pellentesque turpis porttitor laoreet felis nulla lobortis leo nisl dui lorem elementum velit, at vel consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Sapien.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Lorem ut sagittis consequat iaculis est. Suscipit sagittis pretium nibh.",
+      "long_description": "long description Ac massa maximus tempor gravida. Mollis euismod tempor risus aliquet. E consectetur vulputate proin consectetur lacinia nibh laoreet scelerisque au, accumsan sapien ut bibendum sapien. I amet facilisis elit enim.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Bibendum.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "WestGate",
+      "short_description": "short description Quisque felis sapien cursus vulputate et. Cursus tristique a i.",
+      "long_description": "long description Vulputate vestibulum velit dignissim quisque pretium nulla. Sem donec pharetra sagittis ut non. Tempus ac facilisis cras, accumsan rhoncus sed consectetur. Tempus risus diam hendrerit tempus ultricies tortor condimentum dignissim.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Proin.",
+          "Quis."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Leo magna justo nulla ex, eu accumsan diam imperdiet lacus.",
+      "long_description": "long description Metus pellentesque rhoncus in nulla quisque faucibus accumsan eget lacus facilisis. Posuere natoque accumsan est velit, ac purus maecenas ornare quis lacinia e eti erat ornare quisque condimentum quisque auctor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Mollis.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Iaculis consequat magna nibh hendrerit in id sapien nisi vel.",
+      "long_description": "long description Eros dolor vestibulum natoque magna eti maximus eu scelerisque vulputate faucibus in proin scelerisque commodo aliquam curabitur, mattis at aliquam ipsum. Pellentesque tempor leo vestibulum auctor. Sagittis i ante massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Pulvinar.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Sapien lacinia sapien velit quis porttitor vehicula iaculis felis condimentum.",
+      "long_description": "long description Natoque quis velit lobortis ex, ultrices orci ac non curabitur vestibulum accumsan velit vitae i condimentum. Amet pretium vestibulum dui e. Imperdiet cursus tincidunt elit. Ante lectus dignissim euismod nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Eget.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Natoque at mattis mollis gravida metus euismod pharetra dignissim lacinia.",
+      "long_description": "long description Consequat curabitur quisque nisi ultrices lobortis, laoreet etiam mi hendrerit e id hendrerit. Nunc maximus nibh au morbi orci, lectus bibendum eu consequat tempor nulla, dignissim faucibus nunc natoque erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Maximus.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Dignissim ut tortor nulla vel elit mollis amet tempus scelerisque.",
+      "long_description": "long description Dui est tempor maximus id, aliquet consequat pulvinar augue. Lacinia risus donec mi ornare. Dictum sodales turpis vehicula, finibus leo enim faucibus facilisis tempus tristique aliquet maximus eros eros lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "Suscipit.",
+          "I."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Id donec donec viverra mollis pellentesque nulla. Viverra tincidunt porttitor.",
+      "long_description": "long description Sapien pharetra leo turpis hendrerit vitae, massa finibus magna auctor iaculis at au tincidunt. Finibus posuere sed purus. Gravida ac fringilla au velit mi metus enim, vulputate porttitor vel donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Justo.",
+          "Pulvinar."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Lacinia eget facilisis dolor orci, posuere quis tortor vestibulum ornare.",
+      "long_description": "long description Cursus finibus curabitur tristique curabitur erat quis. Mattis non mollis mi, nulla porttitor laoreet accumsan. Laoreet maximus quis arcu. A tincidunt velit quisque nam, vehicula sagittis maximus aenean aliquet condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "Ipsum.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Tortor morbi i tortor ac. Porttitor accumsan arcu mauris felis.",
+      "long_description": "long description Turpis pulvinar nisi pulvinar proin fringilla gravida diam, elementum ex metus nam id maximus. Tempor lacinia hendrerit maecenas, at i et non ante sapien tempus. Aenean blandit turpis turpis adipiscing.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Justo.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "LoopSys",
+      "short_description": "short description Est augue blandit facilisis orci. Mattis suscipit vehicula ornare blandit.",
+      "long_description": "long description Suscipit orci massa nibh aliquet pretium, pulvinar est eti dignissim sagittis, hendrerit rhoncus tempus dignissim elit, nisl finibus euismod nunc neque justo. Elit vehicula laoreet gravida lorem. Pellentesque et sem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Lacinia.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Pretium dignissim sapien condimentum aliquet vestibulum ultrices posuere massa cursus.",
+      "long_description": "long description Vitae aenean bibendum tempus tempus, elementum non lacinia aliquam sagittis et faucibus suscipit dictum, mollis pulvinar ipsum non, mauris metus a nibh, felis proin metus mauris aenean, mollis porttitor aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Felis.",
+          "Pellentesque."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Sollicitudin aliquam mauris enim faucibus elementum. Iaculis morbi aenean tortor.",
+      "long_description": "long description Maximus in morbi etiam arcu cras, ac posuere lectus nisi adipiscing, pretium etiam augue enim nulla. Turpis massa tempor ornare, in ex sed amet. Est sodales pulvinar felis nisi sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "I.",
+          "Mattis."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Porttitor au proin lorem risus posuere faucibus. Nulla consectetur porttitor.",
+      "long_description": "long description Dolor bibendum vulputate e vulputate, leo a dui posuere. Vehicula non tortor mauris. Risus cursus nulla pulvinar faucibus pretium. Vehicula velit ut arcu mollis vestibulum vulputate sapien ac leo massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Id.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Au arcu fringilla nibh viverra rhoncus. Augue ex lectus cursus.",
+      "long_description": "long description Morbi adipiscing fringilla quisque metus, viverra euismod fringilla pharetra quis ac. Iaculis etiam lobortis nulla auctor aliquet natoque. Neque nam massa dolor eu at laoreet eget tortor nisi lectus sem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "Nisi.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Laoreet at nulla cras eros metus dictum. Commodo iaculis sit.",
+      "long_description": "long description Dictum pretium fringilla ornare ultricies. Condimentum velit enim scelerisque mattis i. Ex eti sapien nibh blandit mi nunc pharetra nibh maximus. Ipsum iaculis arcu diam. Viverra vestibulum laoreet amet tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Felis.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Id ultricies lobortis diam lacinia pulvinar tristique. Id accumsan lacinia.",
+      "long_description": "long description Orci pellentesque adipiscing augue orci proin accumsan sit nunc eget cras imperdiet ornare pharetra auctor placerat turpis faucibus imperdiet turpis maximus lobortis. Sagittis iaculis pulvinar ultrices felis auctor etiam eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Sed.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Nibh placerat neque nibh sollicitudin morbi adipiscing euismod condimentum auctor.",
+      "long_description": "long description Gravida augue fringilla quis at iaculis sollicitudin risus nam. Lobortis finibus imperdiet euismod. Ut iaculis sed tempus metus mattis cras, nisl condimentum id donec auctor curabitur. Ultricies cras elit justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Pharetra.",
+          "Nisl."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Tincidunt est maximus neque hendrerit i mauris nam commodo consectetur.",
+      "long_description": "long description Ac enim ipsum at ex. Dui porttitor mollis cursus nisl gravida nisi. Curabitur adipiscing gravida au lacus neque turpis tempus vel. Donec lacinia mi donec maximus ornare, arcu ex lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "I.",
+          "In.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Turpis scelerisque nam au finibus. Consectetur cras erat tortor et.",
+      "long_description": "long description Consequat non velit lobortis suscipit lacinia. Et dignissim lacus augue tortor. Lacinia ipsum diam dictum. Enim est quis lobortis nulla non ornare. Bibendum tortor natoque iaculis mi tempor massa ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Dolor.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Tortor elit i vel imperdiet est massa, placerat eros condimentum.",
+      "long_description": "long description Non ligula morbi quis mauris felis porttitor leo. Velit tempus hendrerit ipsum. Metus nulla lacus tempus. Scelerisque est faucibus velit eros sodales, etiam suscipit sollicitudin pellentesque. Lacinia gravida aliquet aliquam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Justo.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description In metus quisque sodales non mollis nibh, nisl hendrerit mattis.",
+      "long_description": "long description Mi scelerisque sodales turpis sem sagittis. Bibendum facilisis mattis suscipit natoque ultricies. Non risus elementum tincidunt. Donec suscipit sapien eget leo elementum non iaculis nisi eros, pellentesque et pellentesque tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mauris.",
+          "Tempor.",
+          "Bibendum."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Aliquet sollicitudin placerat tincidunt quis quis arcu a leo auctor.",
+      "long_description": "long description Vulputate viverra augue ultrices nulla nisl maecenas lobortis massa, risus pretium dignissim porttitor sagittis bibendum turpis. Scelerisque proin porttitor augue, eu sed posuere consectetur, aliquet sodales sit blandit leo arcu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Velit.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Nunc ac vulputate sollicitudin curabitur eu. Massa vel dui quis.",
+      "long_description": "long description Sodales au maecenas morbi nulla, non commodo lorem aliquam dignissim sem et, diam bibendum tincidunt proin ipsum iaculis cras auctor, enim ut sit felis etiam ac leo purus sed orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dolor.",
+          "Gravida.",
+          "Non."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Augue ultricies sem cras scelerisque dui etiam nisl enim lorem.",
+      "long_description": "long description Est porttitor accumsan nisi neque. Viverra quisque tortor posuere viverra lorem, ante a aenean laoreet tristique finibus commodo ante nunc vulputate felis, facilisis iaculis metus justo. Risus natoque et pulvinar.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "E.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Sapien blandit diam lectus pharetra posuere tincidunt vestibulum sit felis.",
+      "long_description": "long description Viverra turpis laoreet nisi diam eu sit sodales non nisi. Proin lorem sapien justo tortor lectus imperdiet, lorem amet lorem lacinia. Et eros gravida at, nisi eti ac leo purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Rhoncus.",
+          "Bibendum.",
+          "Faucibus."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Lacinia vestibulum quis proin id magna eti justo velit ipsum.",
+      "long_description": "long description Dignissim velit maximus nunc dignissim blandit ac mattis vehicula. Accumsan suscipit et tortor, suscipit cursus aenean accumsan rhoncus, mattis nunc tempor quis sapien, id condimentum mattis tincidunt, ultrices id pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ut.",
+          "Maximus.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Facilisis quisque suscipit auctor nunc cursus. Tempus id auctor tortor.",
+      "long_description": "long description Finibus finibus felis imperdiet justo quis ex eros, etiam sem enim gravida dui sodales. Felis viverra eu scelerisque euismod. Orci risus faucibus eti. Aenean viverra lacus iaculis nunc tempor mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Quis.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Elementum a posuere suscipit mi pharetra quis et vel tincidunt.",
+      "long_description": "long description Cras elit ac pulvinar i. Sagittis felis maecenas curabitur, facilisis nam gravida auctor. Amet tortor suscipit pharetra. Ipsum sollicitudin suscipit mattis morbi quis consequat non vel enim elementum fringilla morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Orci.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "MediaDime",
+      "short_description": "short description Augue dui elementum nunc pulvinar id. Tristique e aliquet pretium.",
+      "long_description": "long description Euismod sagittis aenean au tempor neque, fringilla aenean consectetur adipiscing nibh sed natoque imperdiet. Faucibus scelerisque erat mauris iaculis accumsan elementum dignissim tempus lacinia, nisl turpis elementum proin accumsan sagittis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Turpis.",
+          "Gravida.",
+          "Erat."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Proin orci elit mollis nisl mi, aliquam condimentum felis dolor.",
+      "long_description": "long description Imperdiet in ultrices faucibus finibus condimentum ultricies orci orci vel velit dictum. Natoque ante i nisl, lectus lectus lobortis neque, blandit porttitor velit elementum non mollis. Curabitur laoreet vel dictum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tortor.",
+          "Quisque.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Dui velit scelerisque sollicitudin enim etiam. Laoreet ultricies ipsum vestibulum.",
+      "long_description": "long description Eu fringilla nibh sem dui dolor adipiscing consectetur iaculis maecenas. Lacinia non blandit sapien morbi. Tortor mollis ex consectetur, lacus felis nisi eu imperdiet ut lacinia sagittis, auctor mauris ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Nibh.",
+          "Id."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Viverra nam vel sem ipsum. Lorem erat accumsan ultrices nibh.",
+      "long_description": "long description Erat lacus cras pulvinar vehicula e. Felis ornare adipiscing in. Aenean ligula ornare etiam. Faucibus vel euismod suscipit proin finibus nulla pretium lectus nisi cras. Curabitur eros eti tempor ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Accumsan.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Aliquet nisi lacinia diam tempus. Imperdiet scelerisque ornare morbi nisi.",
+      "long_description": "long description Maecenas arcu tristique leo vulputate turpis, ut justo ultrices nam vitae, ex tincidunt et sollicitudin imperdiet laoreet. Tortor bibendum morbi condimentum dolor aenean, felis suscipit sem i sagittis lectus aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Aliquet.",
+          "Maecenas."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Eget faucibus commodo turpis ante maecenas pretium. Cursus velit at.",
+      "long_description": "long description I consequat erat dignissim in ut ut purus a, ac magna etiam bibendum maecenas. Est id lacinia consectetur aliquam. Mattis nulla ipsum i aliquam consectetur e, velit sagittis vel pulvinar.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "At.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Mi dolor hendrerit viverra ut nulla viverra. Dui suscipit orci.",
+      "long_description": "long description Commodo arcu ultrices velit neque sapien posuere. Nisl orci au iaculis, neque elementum nunc faucibus, enim i ipsum est, leo natoque purus lacinia sapien. Gravida felis lectus enim a au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cursus.",
+          "Quisque.",
+          "Diam."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Maecenas commodo lacinia turpis finibus vel condimentum sit quisque gravida.",
+      "long_description": "long description Pretium in leo au arcu pellentesque lacus nisl et vehicula. Tempus tempor purus au ultrices. Dictum consequat velit dolor lacus. Sapien massa sodales amet. Dictum id pulvinar nulla turpis arcu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Tempus.",
+          "Ultricies."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Suscipit dictum faucibus lectus at tortor. Iaculis imperdiet rhoncus blandit.",
+      "long_description": "long description Mauris arcu id tempor ornare posuere dui nisi fringilla. Proin neque sagittis cras iaculis sem non hendrerit quis elit i aliquet ac. Mauris mi euismod cras. Elit velit pharetra pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Maecenas.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Nisi tempus metus sollicitudin a pulvinar rhoncus. Vehicula ligula tincidunt.",
+      "long_description": "long description Natoque erat sagittis id vulputate gravida, sapien ex non ultrices dictum vitae, laoreet accumsan laoreet ante. Leo tempor proin hendrerit iaculis. Mollis auctor euismod in. Ac tincidunt pretium aliquam ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Ultrices.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Pellentesque au sed ante quis tempus maecenas posuere augue aliquet.",
+      "long_description": "long description Lacinia lacinia fringilla rhoncus arcu lectus, id placerat mi at aliquet. Bibendum mauris proin auctor, felis gravida aenean pellentesque suscipit gravida, i vitae elit proin lacus, lacinia vulputate curabitur cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Non.",
+          "Sodales.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Velit lorem tempor ultrices mattis dui. Nunc felis maximus mauris.",
+      "long_description": "long description Placerat at placerat imperdiet au. Massa sollicitudin vitae dui placerat tortor. Mollis cras dolor lectus erat lorem, hendrerit velit laoreet pretium, est mi amet ultrices accumsan. Eu rhoncus facilisis viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Id.",
+          "Est."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Amet dolor dolor magna nibh. Sed ante est elit iaculis.",
+      "long_description": "long description Lobortis lectus nisl scelerisque augue eget e non maximus scelerisque sem. Ligula arcu aliquet lacus. I eti lorem nam. Morbi pretium vel risus nam. Augue et nulla dignissim amet metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Orci.",
+          "E."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Vestibulum tortor facilisis fringilla dui lorem porttitor mollis mattis non.",
+      "long_description": "long description I eu eti et blandit est. Ipsum aliquam magna lacinia non finibus fringilla hendrerit elit ut eros neque, laoreet lobortis sem pulvinar tortor felis. Ipsum maximus e i fringilla risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Vel.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Iaculis tempus pellentesque hendrerit nunc. Mi sollicitudin est vulputate non.",
+      "long_description": "long description Nulla leo turpis in bibendum augue pellentesque. Adipiscing pellentesque felis nisl vestibulum hendrerit vestibulum porttitor tortor, vitae finibus facilisis e lacinia pretium eros. Eu pretium sodales leo lobortis ante ante.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "Viverra.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "OmniTouch",
+      "short_description": "short description Tortor porttitor metus purus rhoncus. Imperdiet eros lacus mi massa.",
+      "long_description": "long description Diam risus ut id nulla nibh proin mattis dignissim sollicitudin, e ligula leo pellentesque, tincidunt facilisis nisi rhoncus nisi neque. Nulla euismod blandit laoreet neque porttitor commodo lectus tristique vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Accumsan.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Pretium eu tortor hendrerit ut nunc lorem ultrices auctor at.",
+      "long_description": "long description Porttitor aliquet sollicitudin lorem velit dictum. Vestibulum tristique eu tincidunt in, massa bibendum quisque ut sit. Pulvinar e ultricies adipiscing elementum. Suscipit sem lacinia nam lorem. Proin vitae tempor elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "Pretium.",
+          "Eget."
+      ]
+    },
+    {
+      "name": "Viewtopia",
+      "short_description": "short description Tincidunt dignissim maecenas adipiscing nam in non, diam diam ultrices.",
+      "long_description": "long description Posuere sollicitudin dictum mauris pellentesque, au sodales e lacinia placerat mauris metus vulputate gravida. Cursus i amet maximus, erat tristique consequat sit, sollicitudin ut dictum vulputate mauris imperdiet orci dui.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sit.",
+          "Eti.",
+          "Quis."
+      ]
+    },
+    {
+      "name": "MediaDime",
+      "short_description": "short description Dolor adipiscing curabitur quis quisque nulla elit tristique arcu ipsum.",
+      "long_description": "long description Lectus magna cursus vehicula ante porttitor morbi lacinia ut tristique hendrerit. Adipiscing quisque tempor rhoncus vehicula elit pulvinar hendrerit ligula lacinia nisi laoreet aliquet non orci. Pretium ipsum quis elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Mi.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Ultricies vehicula lectus nibh tempus aenean quisque porttitor lacus vehicula.",
+      "long_description": "long description Non in ac auctor lacinia commodo. Imperdiet est faucibus amet nunc gravida cursus nulla laoreet mauris orci lobortis pellentesque. Lacinia sit scelerisque i vulputate e, viverra porttitor ac vehicula a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "Blandit.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Lobortis lobortis tempor fringilla commodo ex hendrerit, donec vehicula vitae.",
+      "long_description": "long description Pretium ultricies augue nulla ligula. Tristique ultricies ante pellentesque lacinia consectetur elit lectus. Cursus natoque vestibulum ipsum dignissim vel. Magna sollicitudin lacinia scelerisque. Enim ac blandit scelerisque iaculis mi a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Aenean.",
+          "Donec."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Faucibus vulputate sed neque sollicitudin lectus natoque elementum auctor consequat.",
+      "long_description": "long description Purus erat pharetra rhoncus sollicitudin e tortor vitae placerat at. Ut laoreet nibh ipsum, sit mi natoque eget, bibendum tempus suscipit amet, gravida sit nisi sagittis cras. Mattis elit non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultricies.",
+          "Dignissim.",
+          "Cursus."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Natoque proin dui pretium maecenas ipsum aliquam. Curabitur dictum commodo.",
+      "long_description": "long description Purus orci mi elit ultrices. Nam ac placerat non natoque maximus at. Lectus porttitor natoque sagittis magna. Auctor lobortis id neque i. Erat imperdiet tortor condimentum. Auctor maximus lacus suscipit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mattis.",
+          "Dignissim.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Placerat eu laoreet mi facilisis, ante elit vehicula diam facilisis.",
+      "long_description": "long description Est lorem maecenas lacus orci etiam felis mattis aliquet ultrices cursus, euismod viverra eget justo turpis laoreet ex accumsan, eti auctor eros enim diam, ante consectetur ultricies maecenas sagittis laoreet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Non.",
+          "Commodo.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Amet pharetra a erat ac lacinia felis maximus nibh lobortis.",
+      "long_description": "long description Condimentum dolor non eros ex aenean enim ornare. Adipiscing non nibh placerat turpis iaculis au. Scelerisque quisque augue iaculis maecenas quisque. Massa sollicitudin vitae accumsan. Natoque in amet massa au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Sodales.",
+          "Id."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description I accumsan sagittis consequat e tincidunt i nunc e finibus.",
+      "long_description": "long description Proin vehicula consequat eu vel. Ligula aenean finibus placerat dolor condimentum fringilla facilisis. Aliquam suscipit ante auctor, sapien lacinia sollicitudin at, neque euismod metus natoque tincidunt vel velit vehicula iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Curabitur.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Risus dui eros placerat pulvinar, ultricies ex suscipit sapien non.",
+      "long_description": "long description Est aliquet sit finibus hendrerit etiam suscipit at tempor nisl ultricies ligula. Nibh quis nisi mollis. Scelerisque auctor orci sed metus ligula. Mattis placerat nibh rhoncus arcu sem finibus placerat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "E.",
+          "Eget."
+      ]
+    },
+    {
+      "name": "Cryptonica",
+      "short_description": "short description Quis massa purus posuere at eget justo, imperdiet hendrerit nisi.",
+      "long_description": "long description Amet aliquet curabitur a etiam ultrices etiam massa, sed imperdiet augue tincidunt consectetur consequat vel proin elit metus justo sollicitudin elit sagittis adipiscing commodo tortor donec non, consectetur a tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Non.",
+          "Mollis.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Sit quisque risus diam lectus eti tristique eget commodo sodales.",
+      "long_description": "long description Ex rhoncus aliquam lorem nulla vehicula vulputate in metus nunc, proin curabitur scelerisque ut. Facilisis vehicula dui pharetra lacinia ante turpis sit tortor. Euismod sit consectetur fringilla nisl au gravida.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Finibus.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Enim justo maximus etiam cras dolor, massa ultricies i euismod.",
+      "long_description": "long description Consectetur justo eu mauris nunc ut. Mattis morbi suscipit nam hendrerit. Purus gravida fringilla turpis nunc posuere at diam. Leo felis sodales mollis id, orci ipsum nam nibh felis porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Ultrices.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Ligula dolor vel curabitur nisi ligula finibus. Imperdiet ipsum ligula.",
+      "long_description": "long description Diam est maecenas nibh commodo, faucibus posuere placerat elit justo aenean at sed nisi tincidunt dignissim. Turpis neque ac aliquet nisi non ornare vulputate nibh lacus. Pharetra blandit ut commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Et.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "MediaDime",
+      "short_description": "short description Porttitor commodo gravida lacinia posuere ultrices nunc ornare e donec.",
+      "long_description": "long description Enim orci mi dictum dictum arcu dictum nam mattis ultricies blandit nam, aliquet pulvinar lorem mauris. Commodo finibus augue etiam. Et sem porttitor maximus. Aenean pretium faucibus donec leo ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Felis.",
+          "Nunc.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "Zatheon",
+      "short_description": "short description Diam lorem nisi augue pellentesque. Elementum massa aliquam scelerisque et.",
+      "long_description": "long description Elit vel fringilla massa mauris. Pretium velit quis i ornare etiam nibh. Justo e quisque lacinia condimentum aliquam at, proin vestibulum magna a. Condimentum ante nisl massa nibh ante augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Diam.",
+          "Fringilla.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Pellentesque sagittis id vestibulum sollicitudin. Curabitur gravida dignissim metus placerat.",
+      "long_description": "long description Faucibus mi proin aenean maecenas. Vitae cursus cras arcu rhoncus erat consequat vel. Aliquet ac enim mattis scelerisque vestibulum sit ultrices scelerisque etiam. Morbi turpis sodales elementum auctor lacinia pellentesque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Bibendum.",
+          "Ligula."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Blandit dignissim vitae vulputate lacus tempor accumsan sodales i felis.",
+      "long_description": "long description I nisl consectetur aliquet imperdiet. Scelerisque vestibulum aenean ultricies elementum quisque arcu justo. Orci consectetur imperdiet nisi lobortis. Pellentesque imperdiet at aliquet pharetra, lacinia sed mi dignissim diam dictum bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "I.",
+          "Suscipit.",
+          "Eget."
+      ]
+    },
+    {
+      "name": "DynaAir",
+      "short_description": "short description Maecenas vulputate gravida e mollis vehicula. Ligula suscipit sollicitudin laoreet.",
+      "long_description": "long description Maximus sed aliquam nibh sodales condimentum gravida. Tincidunt aenean ultrices justo iaculis, i blandit nam dignissim, arcu gravida pellentesque non curabitur, gravida mollis pretium blandit. Sem nibh vestibulum etiam fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "I.",
+          "Neque.",
+          "Elit."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Vestibulum euismod posuere i ornare, nisi risus i au magna.",
+      "long_description": "long description Turpis augue accumsan sapien bibendum sagittis lacinia in. Neque posuere dolor finibus aliquam morbi pulvinar donec pellentesque orci. Eget tempor vel purus, euismod nibh aliquet euismod sit erat dignissim diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Donec.",
+          "Ornare.",
+          "Tempus."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Quisque purus amet finibus lacus. Ut tristique eu dictum sollicitudin.",
+      "long_description": "long description Dictum ipsum pharetra mauris dolor. A imperdiet tempus faucibus tempor, felis velit eti fringilla, risus augue lorem facilisis. Commodo mauris faucibus ac. Adipiscing elementum commodo justo consequat, enim lectus turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Tincidunt.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "VTGrafix",
+      "short_description": "short description Sagittis mi felis elementum dignissim, augue elementum curabitur erat consequat.",
+      "long_description": "long description Nunc donec iaculis ac commodo aliquet euismod suscipit sollicitudin massa sit quis. Sodales erat finibus mi cursus enim tristique tortor. Au tincidunt tincidunt turpis purus vehicula. Sagittis e in eu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Donec.",
+          "Ornare.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "Sunopia",
+      "short_description": "short description Quis bibendum ex rhoncus non cras. Vitae augue mattis velit.",
+      "long_description": "long description Vitae ornare faucibus eros dui bibendum sem commodo scelerisque. Et sagittis nunc dolor lacinia cras. Dui id commodo suscipit massa finibus. Curabitur nulla elementum quis laoreet tortor. Enim ac tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Ultricies.",
+          "Etiam."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Enim proin vehicula aenean lacus. Eget ex vehicula id sollicitudin.",
+      "long_description": "long description Aliquam viverra pellentesque id eros, id quisque ultricies gravida ultricies lacinia aliquet viverra e ac elit id accumsan. Consequat blandit facilisis mauris ante. Au id laoreet sollicitudin aliquet ornare augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Ligula.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Eti suscipit fringilla facilisis ac eget tincidunt. Sagittis dignissim tempor.",
+      "long_description": "long description Mattis orci metus aliquet ornare enim suscipit. Cras curabitur dignissim morbi velit purus. Ipsum eu etiam tristique nunc, sapien mattis lacinia accumsan eti, ultrices cras nibh aliquet, proin accumsan dolor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Aenean.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description E curabitur id ligula sed arcu elit consectetur non sagittis.",
+      "long_description": "long description Euismod lobortis aliquam lectus gravida, amet ultricies leo pellentesque consequat in. Fringilla turpis pulvinar non suscipit dignissim massa, felis purus lectus tempus quisque elit, eti ante curabitur lectus proin neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Enim.",
+          "E."
+      ]
+    },
+    {
+      "name": "LoopSys",
+      "short_description": "short description Ultrices mi auctor condimentum amet elementum vehicula dolor faucibus ex.",
+      "long_description": "long description Sodales posuere nibh commodo eti. Tempus pretium consequat ac. Commodo lacus lorem sed. Nam eget pellentesque ante accumsan quisque. Dignissim sollicitudin proin nibh curabitur, ligula facilisis est facilisis vel vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Amet.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Neque euismod morbi metus eti. Nam hendrerit metus porttitor aliquam.",
+      "long_description": "long description Lacinia diam sed justo imperdiet imperdiet. Eros fringilla auctor blandit, dolor maximus vestibulum elit mi sapien, ante mollis nisi et facilisis dui tristique accumsan, magna sit fringilla vitae natoque consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "In.",
+          "Ornare.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Amet porttitor placerat eti porttitor pretium, velit a ex risus.",
+      "long_description": "long description Ipsum maximus natoque i nibh ut lectus ex sapien etiam rhoncus. Auctor enim mollis lacinia gravida amet mauris tincidunt. Pretium sollicitudin eti eget pellentesque imperdiet nunc et laoreet nam tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Pharetra.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Maecenas bibendum curabitur cras turpis dictum. Placerat eget sit in.",
+      "long_description": "long description Lorem at est etiam vel, ex pellentesque pulvinar morbi cursus quis aliquam. Magna purus eu proin, ut vehicula euismod nulla ornare, eti sollicitudin au ante amet orci accumsan mi velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nibh.",
+          "Accumsan.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "Anaplex",
+      "short_description": "short description Mi lorem sit rhoncus ultricies lobortis turpis arcu lobortis adipiscing.",
+      "long_description": "long description Massa elit sollicitudin nisl cras ipsum nisl placerat pretium lacinia sem. Cursus dignissim ante sed, ante maecenas dignissim iaculis lorem au aenean eros. Viverra mollis dui lobortis fringilla turpis tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "Elementum.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Elementum ut ultrices ac nam sollicitudin. Sit elementum dolor maximus.",
+      "long_description": "long description At nunc est e vehicula. Arcu metus elementum ex natoque posuere, sodales i lobortis sed. I diam vehicula ac. A orci natoque nam. Lacus pellentesque elit justo facilisis lacinia sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Gravida.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Vel bibendum lacus eget ultrices. Lacinia maecenas enim orci ante.",
+      "long_description": "long description Ultrices enim pellentesque enim sollicitudin iaculis mauris tristique. Faucibus sagittis sodales justo tincidunt nisi. Adipiscing ex eu mollis maximus dolor blandit tempus. Ut aenean dolor suscipit. Dolor maecenas consequat elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cursus.",
+          "Est.",
+          "I."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Curabitur massa viverra facilisis ex. Au velit viverra ultrices commodo.",
+      "long_description": "long description Amet dictum magna curabitur eti sodales sodales ut pulvinar laoreet, pretium sapien scelerisque risus cras augue. Dolor nisl laoreet vulputate. Iaculis a consequat est viverra. Pulvinar nisi rhoncus massa maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "At.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Accumsan etiam diam et ultrices enim, tempor au sollicitudin pulvinar.",
+      "long_description": "long description Elementum diam porttitor ornare quisque metus. Elit ut auctor arcu. Ipsum imperdiet condimentum blandit auctor cursus sodales tortor cras. Id nam a tristique sem quisque erat, sagittis ultrices fringilla condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Consequat.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Anaplex",
+      "short_description": "short description Aliquet etiam e faucibus ex. Hendrerit elementum aliquam ultrices tortor.",
+      "long_description": "long description Ac scelerisque tristique viverra magna lacus. Mi nisl eros ante at fringilla consectetur tincidunt mollis aliquet pretium, ligula ultricies diam ultricies. Id pellentesque viverra vulputate euismod, aliquam bibendum consectetur ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Tortor.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Lacinia est est ante tincidunt porttitor. Lectus blandit i sed.",
+      "long_description": "long description Felis proin eu mi felis cras. Elit i mollis ultricies, enim massa quisque laoreet dolor. Vulputate pellentesque etiam mauris. Magna eti eu amet, metus magna aenean lorem faucibus sodales tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Natoque.",
+          "Cras.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Nulla vitae mauris eget bibendum pretium finibus. Fringilla tristique tincidunt.",
+      "long_description": "long description Suscipit imperdiet id blandit in, ac quis eget nibh, sed est tincidunt eti aliquet au enim ex tincidunt ipsum erat accumsan adipiscing, magna lacus sollicitudin cras eros felis natoque sagittis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ante.",
+          "Cursus.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Nisl ornare ornare amet velit cras condimentum vestibulum nunc consequat.",
+      "long_description": "long description Sapien nisi finibus bibendum tortor massa lacinia id. Tempus tempor eti dictum donec adipiscing, aliquam justo vulputate sit quis sagittis nunc. Dignissim e tempus augue. Tristique velit eget porttitor aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Adipiscing.",
+          "Dictum.",
+          "Pretium."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Dictum aenean ut imperdiet ligula ante sem lacinia viverra porttitor.",
+      "long_description": "long description Sollicitudin dignissim viverra lacinia orci. Metus diam sit lacinia gravida eti. Vitae aenean elit nam ac condimentum facilisis, leo metus ultrices dictum hendrerit tempor purus ante cras a at lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Maximus.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Aliquet ac orci aenean maecenas. Auctor vulputate hendrerit et accumsan.",
+      "long_description": "long description Tincidunt lobortis dui pulvinar aliquet. Sollicitudin fringilla a fringilla vestibulum au massa in e. Erat eros vehicula in elit pretium mauris. Tincidunt cursus auctor ornare enim. Euismod placerat ex i.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sit.",
+          "Pellentesque.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Amet maximus mauris commodo consequat placerat hendrerit elit elementum mattis.",
+      "long_description": "long description Tempus leo bibendum ultricies facilisis. Eros nibh lobortis dignissim hendrerit aliquam metus eu finibus accumsan tempor, euismod ex posuere sagittis. Dolor fringilla imperdiet turpis pharetra magna posuere. Natoque mollis natoque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vestibulum.",
+          "I.",
+          "E."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Pharetra ex eti tristique curabitur vel, metus lacus condimentum curabitur.",
+      "long_description": "long description Tortor est mi pharetra ex amet ante sem risus eget magna auctor elit, eu orci vitae enim. Tristique est leo lacinia vulputate erat maximus eti. Proin lacus ante magna lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Lobortis.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Natoque eu diam ante sit augue ut pharetra ut quis.",
+      "long_description": "long description Turpis hendrerit curabitur aliquet tincidunt aliquet justo auctor metus quisque blandit faucibus sollicitudin, vulputate eti dolor rhoncus ultrices. Dui et pharetra eti natoque arcu, ultricies aliquam lorem et erat rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Sapien.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Laoreet consequat tempor ex ante ex. Ligula natoque leo accumsan.",
+      "long_description": "long description Cursus ultricies ultrices nulla ultrices posuere pretium nisi. Vitae aliquet au eros pulvinar pellentesque eu, arcu cras velit elementum commodo pharetra proin. Nunc mattis mauris fringilla arcu. Tincidunt est sed.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Nam.",
+          "Eget."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Suscipit turpis morbi elementum est id eu sem pharetra nam.",
+      "long_description": "long description Augue etiam nunc tristique maximus ornare cursus. Elit morbi au nisl natoque. Sollicitudin accumsan tincidunt fringilla tortor, ultrices suscipit imperdiet commodo mi mi tincidunt est auctor, hendrerit dignissim tempor tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Et.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Pulvinar eget pellentesque orci augue lacus facilisis metus neque augue.",
+      "long_description": "long description Gravida diam consectetur nam etiam, natoque massa lorem est et dignissim augue auctor auctor, scelerisque commodo dui laoreet. Sollicitudin curabitur eros laoreet elementum, i ex lacinia enim ultricies erat eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Rhoncus.",
+          "Orci.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Sit curabitur maximus ornare commodo a, et est mattis consequat.",
+      "long_description": "long description Suscipit neque ut ut magna cras eros laoreet. Sapien vel aliquam eti gravida lectus tristique eros. Neque vestibulum dui amet dictum gravida. I faucibus proin scelerisque turpis. Commodo leo ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Erat.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Justo posuere ex vestibulum adipiscing. Justo a maximus consectetur ac.",
+      "long_description": "long description Massa euismod purus vulputate vulputate. Vel non diam magna et nibh aenean lacinia tortor consectetur. Porttitor maximus finibus nam mollis natoque tincidunt posuere, lectus erat quisque pretium. Fringilla commodo augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ut.",
+          "Rhoncus.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Dignissim enim eget sed metus aenean, tincidunt porttitor augue tempor.",
+      "long_description": "long description E at nulla ipsum vel ante magna eti velit mi morbi vestibulum. Eget auctor diam diam. Leo et massa sem maecenas vulputate scelerisque. Pellentesque nam mattis amet scelerisque etiam nisl.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "At.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Natoque tempus in natoque quis commodo mi pellentesque lacinia eti.",
+      "long_description": "long description Elementum ut quis velit viverra finibus. Amet purus porttitor au bibendum quis laoreet imperdiet mattis porttitor turpis. Suscipit nulla ultricies diam etiam eget orci, etiam est ante vulputate erat laoreet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Cras.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Arcu magna tincidunt cursus quis, pretium felis aliquet aenean lacus.",
+      "long_description": "long description Ligula lorem placerat pretium morbi finibus. Pulvinar vestibulum arcu auctor nisl ultrices, ac lacinia tortor nisi lacinia sem nam, natoque consectetur risus ante est a cras sodales sem nunc eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Sodales.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Turpis metus bibendum nisi euismod aliquet in ipsum sit lacinia.",
+      "long_description": "long description Ex arcu e eget eu, tortor sollicitudin enim magna elit nulla. Viverra porttitor au lacinia. Massa risus ligula orci augue, lectus vulputate vel quisque, enim in e imperdiet lorem morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "Cursus.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Eu natoque justo placerat lorem suscipit. Sagittis neque ultricies hendrerit.",
+      "long_description": "long description Vehicula proin condimentum sodales au. Diam purus aenean commodo vehicula. Dictum sodales curabitur pulvinar maximus erat. Est lorem mauris ultricies morbi, nibh est fringilla commodo consectetur eti eti sagittis hendrerit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Aliquam.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Lectus vulputate dignissim dui lacinia rhoncus facilisis imperdiet adipiscing suscipit.",
+      "long_description": "long description Ultrices pulvinar et ante vehicula, bibendum porttitor erat mattis nulla vel. Tortor in sodales risus donec elit proin mauris, lobortis pharetra porttitor eti bibendum maximus accumsan pulvinar. Nulla aliquet at.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Placerat.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Bibendum turpis at lectus risus, in vehicula ultrices sollicitudin ultricies.",
+      "long_description": "long description Pretium maximus ex commodo pharetra lacus dui etiam viverra pharetra condimentum. Lacinia enim id mattis. Eros et dui quis. Curabitur amet condimentum elit amet. Augue cursus facilisis viverra aliquet natoque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Laoreet.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Lacus dui quis tristique aliquam cras nulla euismod sodales ligula.",
+      "long_description": "long description Ex metus leo eget purus natoque vehicula sagittis sollicitudin dignissim. Elit posuere euismod viverra tincidunt facilisis massa aliquet sollicitudin cursus a natoque aliquam gravida lacinia nunc. Vulputate risus massa tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Bibendum.",
+          "Ex."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description Ligula blandit cursus cras ligula. Dolor sapien i lacinia vitae.",
+      "long_description": "long description Pellentesque cras ultrices ac diam ornare maximus sit. Tincidunt donec vestibulum in eti posuere, i neque e felis at ornare amet cras. A mattis leo posuere, consectetur blandit fringilla neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Adipiscing.",
+          "Orci."
+      ]
+    },
+    {
+      "name": "OpenServ",
+      "short_description": "short description Magna enim mattis lacinia eros metus. Rhoncus nulla blandit ultricies.",
+      "long_description": "long description Bibendum condimentum tristique nibh tincidunt adipiscing enim. Elit est ultrices lorem magna elementum, et adipiscing purus sodales nunc. Eti eti facilisis eti suscipit sit etiam mauris. Turpis enim iaculis faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Sollicitudin.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Commodo morbi commodo tincidunt ac, in e velit gravida pulvinar.",
+      "long_description": "long description Ultrices erat mauris fringilla accumsan sed. Lacinia finibus sapien dui, quisque neque ipsum et turpis. Elit sodales dui consequat. Pharetra enim blandit ultricies sit felis id imperdiet cursus dolor tempor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Leo.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Ultrices elit e vel commodo eu ante curabitur vulputate commodo.",
+      "long_description": "long description Lacus sagittis vel mauris elementum suscipit ligula. Morbi e aliquet ornare est ultricies, facilisis orci mollis risus commodo lacus accumsan lacinia pretium ut sem felis amet sagittis sagittis placerat morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Laoreet.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Kancom",
+      "short_description": "short description Tortor sem pharetra enim nisl fringilla porttitor morbi pellentesque ipsum.",
+      "long_description": "long description Mollis eti facilisis ligula lacinia elit consequat, non vestibulum a enim. Eu vulputate facilisis dictum viverra. I nisi mi tortor arcu mi metus nam justo nam pretium massa curabitur sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Nibh.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Ex et lectus sem quisque morbi sodales suscipit sem finibus.",
+      "long_description": "long description Sit sagittis pellentesque lacinia posuere bibendum sollicitudin lacus vulputate, morbi lacinia mi natoque viverra aliquam aenean, i vulputate velit tristique elementum enim tempor, condimentum laoreet dui blandit nam ligula blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Sed.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Maecenas maximus tempor felis elementum augue accumsan donec dolor dignissim.",
+      "long_description": "long description Scelerisque donec lacinia metus hendrerit. Eu cras bibendum justo, sapien nisl sem cursus. Massa faucibus leo consectetur at. Lacinia euismod ex sodales mi, tortor sit fringilla quisque pellentesque massa iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Ultricies.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Ac consequat tempus eget vulputate ipsum auctor. Hendrerit facilisis a.",
+      "long_description": "long description Quis diam ex cras at lacus mi sodales aliquet. Turpis fringilla finibus ex ut quis, amet tristique mattis suscipit. Magna dui viverra pulvinar tempor. Suscipit leo erat lacinia est bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Consequat.",
+          "Turpis."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Pellentesque maecenas mollis adipiscing elit. Tempus quisque metus eget etiam.",
+      "long_description": "long description Bibendum metus accumsan posuere tempor, bibendum mollis sodales neque dolor diam sapien. Eu adipiscing eros neque nisl non accumsan fringilla maximus maecenas ipsum. Dui finibus scelerisque tempor lacus eu imperdiet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Imperdiet.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Maecenas magna lacinia eros finibus eu neque finibus mi felis.",
+      "long_description": "long description Lectus eu ultricies facilisis placerat, bibendum vitae massa e elit, erat ultricies mattis aliquet maximus bibendum. Sed quisque sagittis fringilla justo adipiscing velit. Nunc eget ex metus posuere etiam gravida.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Ultricies.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Iaculis imperdiet donec sit leo, tortor au felis mollis neque.",
+      "long_description": "long description E diam ultricies tempor eu. Mattis auctor eros pretium consectetur posuere, placerat dolor lacinia scelerisque. Dolor augue ultricies eros commodo erat magna. Viverra quisque maximus vestibulum, eros donec posuere neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Facilisis.",
+          "Elementum."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Pretium eti velit dictum lorem, maecenas ex vitae vehicula ipsum.",
+      "long_description": "long description Arcu porttitor laoreet ultrices placerat lacinia, aliquet ornare quisque sagittis mi, mauris viverra faucibus ac lobortis, tempor nunc ornare non iaculis sapien. Dui euismod leo consectetur magna eti porttitor purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Justo.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "Kancom",
+      "short_description": "short description Vitae non vel non sodales, finibus sapien aenean posuere neque.",
+      "long_description": "long description Dignissim lacinia dignissim ex nulla mi rhoncus eget. Quis amet proin vehicula cras. Nam faucibus dui accumsan, et porttitor cras cursus vitae elit augue, vel sapien erat tortor massa ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Erat.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Est neque tristique non vel mi metus auctor nam velit.",
+      "long_description": "long description Tincidunt euismod massa elit cursus, tincidunt laoreet non nisi aliquet tempor dictum adipiscing, imperdiet tempor diam i sollicitudin, felis etiam maximus mattis elit consequat neque accumsan. Maximus viverra adipiscing ante.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Maximus.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Curabitur e suscipit vestibulum at ultrices posuere. Risus ultrices aliquam.",
+      "long_description": "long description Quis felis gravida finibus imperdiet lacinia sit ultrices aliquet, euismod a tristique elit, sagittis arcu nisl tristique erat. Tempor accumsan mauris mi, facilisis i mi nibh, sollicitudin est ligula nibh.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elit.",
+          "Commodo.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Justo et nisl ex et tristique, faucibus natoque pretium elementum.",
+      "long_description": "long description Dui tempor orci pulvinar pretium sodales dictum a purus condimentum. Ultrices nisl enim enim, magna pulvinar quis ipsum. Quis gravida vehicula cursus. Leo posuere eros elit, e curabitur vehicula sapien.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Augue.",
+          "Id."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Velit nunc lobortis risus lacus. Sed ultrices in turpis felis.",
+      "long_description": "long description Cras nibh sollicitudin placerat vestibulum eu tincidunt pellentesque risus, enim pharetra leo quisque facilisis in, mattis nibh sit vulputate, posuere aliquam tempus lacinia, vulputate ac vel tempor pharetra eu est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dui.",
+          "Vehicula.",
+          "Pulvinar."
+      ]
+    },
+    {
+      "name": "Coolinga",
+      "short_description": "short description Cras dictum massa sem elementum dictum mattis. Aliquet cras ut.",
+      "long_description": "long description Natoque sollicitudin hendrerit nisl sem gravida nulla metus etiam. Velit pretium lacus ex ipsum diam ipsum etiam, enim etiam ligula vel accumsan nunc mollis. Maximus sagittis sed accumsan maximus mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Placerat.",
+          "Hendrerit.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Purus lobortis tempus ex dolor, augue pulvinar enim ligula sit.",
+      "long_description": "long description Pulvinar lectus vehicula lorem posuere tempor. Nisl consequat ultricies maximus mi a dignissim. Pellentesque posuere e lorem ipsum proin etiam purus. Finibus rhoncus imperdiet pharetra porttitor, mollis nisi augue bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Bibendum.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Orci auctor tempor lectus ac at. Lacinia consequat arcu pellentesque.",
+      "long_description": "long description Bibendum sagittis ipsum sapien tincidunt, nibh bibendum dolor dictum risus magna arcu sapien. Condimentum consequat enim diam ut. Nam et leo nunc, nisl proin hendrerit at nunc est gravida magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Lacinia.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Westercom",
+      "short_description": "short description Au dolor turpis eti lacus, etiam laoreet ex in curabitur.",
+      "long_description": "long description Ac faucibus pulvinar finibus sodales ornare a ultrices metus, non id augue rhoncus viverra. Gravida sit suscipit tortor. Tortor sagittis auctor dictum maximus metus. Sed aliquet tincidunt aliquet natoque tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Curabitur.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "CoreRobotics",
+      "short_description": "short description Tincidunt accumsan iaculis etiam scelerisque nibh ligula id porttitor tempor.",
+      "long_description": "long description Sollicitudin proin mi gravida lobortis pellentesque. Nisi mattis elementum nibh purus, nisi eget sed suscipit, natoque augue vehicula lorem justo, blandit eti amet magna enim. Leo dictum id consectetur posuere.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Pellentesque.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Sed justo dignissim sollicitudin ac finibus nibh rhoncus suscipit bibendum.",
+      "long_description": "long description Sem pharetra eti neque nulla imperdiet sodales tortor lobortis purus facilisis nam. Ut tempus cras ipsum, quis tempor sem orci lorem blandit quisque felis e accumsan. Sed aliquam scelerisque tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Pulvinar.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Id nulla felis ligula enim metus bibendum sit pellentesque ultricies.",
+      "long_description": "long description Erat nunc nam nunc finibus vehicula tempus dictum sit dolor et sit blandit faucibus nam sed. Purus dignissim nulla at facilisis auctor placerat, id donec natoque tristique ligula eget adipiscing.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "Eti.",
+          "Nulla."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Finibus maximus cras proin mollis. Vel facilisis sapien vitae imperdiet.",
+      "long_description": "long description Maximus rhoncus lacus in vulputate. Ultrices massa lorem bibendum ligula erat sit placerat justo, aliquet ultrices orci mauris suscipit commodo viverra, lacinia risus ac eti viverra gravida, laoreet velit morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "Consectetur.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Tristique id sapien rhoncus tempus vulputate, fringilla justo et sed.",
+      "long_description": "long description Curabitur morbi nam mollis tortor. Commodo laoreet purus sapien. Vitae ut e ultricies scelerisque iaculis, sapien nisl lobortis arcu velit est condimentum condimentum a consectetur tempus. Massa hendrerit velit orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Natoque.",
+          "Aliquet."
+      ]
+    },
+    {
+      "name": "CorpTek",
+      "short_description": "short description Porttitor at au maximus nunc consectetur, donec commodo ipsum velit.",
+      "long_description": "long description Eu gravida pretium tempor eti enim natoque. Accumsan risus fringilla at etiam, porttitor cras donec imperdiet id ligula au rhoncus. Proin eti justo pretium neque ut vestibulum lorem nunc vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Purus.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Arcu pharetra nunc risus enim ligula nam dolor lectus laoreet.",
+      "long_description": "long description Vehicula tempus dolor mollis vestibulum. Mollis condimentum nunc massa. Arcu curabitur condimentum sem elit sed ligula. Quisque porttitor mauris hendrerit lobortis porttitor porttitor eti dui, metus etiam tortor ultrices eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Pharetra.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Orci maecenas sit eti mollis, cras lacinia id arcu a.",
+      "long_description": "long description Blandit maximus risus id tempus e vitae. Tristique morbi tristique elit et leo nibh e, hendrerit sed ornare dolor, e id sit vitae orci, pharetra diam at lectus at eget.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Vitae.",
+          "E."
+      ]
+    },
+    {
+      "name": "Quadtek",
+      "short_description": "short description Nam accumsan condimentum maximus consequat lectus sed auctor consequat sodales.",
+      "long_description": "long description Ipsum porttitor neque fringilla at leo quis vel rhoncus arcu arcu vitae vehicula. Consequat etiam sollicitudin auctor ac sapien hendrerit. Ante massa aliquam auctor massa viverra magna amet accumsan placerat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "Nulla.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Anaplex",
+      "short_description": "short description Orci commodo a amet proin mattis blandit. Erat risus tortor.",
+      "long_description": "long description Ipsum sodales at tincidunt morbi, vehicula lacinia magna maecenas. At proin tempor enim lacus ultricies. Massa e faucibus pulvinar lobortis magna. E mi finibus cursus. Elit consequat lacinia consequat proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Eget.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Facilisis fringilla non hendrerit placerat mauris, cras enim eros a.",
+      "long_description": "long description Amet a consectetur sed est, blandit mollis neque ex suscipit cras ut, bibendum vehicula i mollis consectetur. Id suscipit euismod pellentesque sed dolor vulputate aenean lacus diam scelerisque commodo tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Ligula.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Metus vulputate dolor cursus ex curabitur nam sollicitudin nisl nam.",
+      "long_description": "long description Elementum condimentum vehicula velit velit in tincidunt mi nisl massa lectus. Pulvinar quisque suscipit a. Eget ipsum adipiscing faucibus curabitur. Magna laoreet ipsum eti iaculis. Nulla aliquam finibus gravida blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Euismod.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "DuoServe",
+      "short_description": "short description Sollicitudin at vehicula arcu amet, aliquam ante ipsum natoque eros.",
+      "long_description": "long description Pretium arcu felis ultricies gravida enim arcu ultrices quisque vehicula lobortis ornare mattis leo ligula dolor aliquet magna maximus nunc, condimentum non maecenas sagittis pellentesque. Vestibulum et vel leo sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Porttitor.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Mi ac scelerisque maecenas nam iaculis. Donec enim metus donec.",
+      "long_description": "long description Commodo commodo commodo ornare sodales pharetra ipsum risus. Sed etiam quisque non ut etiam cras nam. Tortor donec ultrices massa. Lacinia sapien consequat donec lacinia morbi ut. Enim sagittis rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Nulla.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description Maecenas i blandit aliquam commodo dictum massa in tincidunt facilisis.",
+      "long_description": "long description Vel sit adipiscing felis sodales. Aliquam dignissim commodo pulvinar tincidunt lobortis sem. Condimentum nisi eget a vulputate morbi amet. Elit et id finibus nibh mollis porttitor. Vitae maximus nam non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisl.",
+          "Pharetra.",
+          "Bibendum."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Consectetur mattis nisl donec eget enim commodo bibendum condimentum sit.",
+      "long_description": "long description Lobortis enim lacus pulvinar turpis id, cursus ligula dui finibus vestibulum at. Vitae aliquam sed bibendum. Faucibus diam sem pharetra i. Felis cursus ipsum blandit risus sagittis diam viverra faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Nunc.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Nibh velit vestibulum enim morbi, at enim e donec enim.",
+      "long_description": "long description Eu maximus nibh proin arcu. Tempus neque massa proin aliquam purus porttitor. Consectetur imperdiet tincidunt orci nunc mauris. Felis facilisis tempor lectus pretium ac felis. Sollicitudin finibus lectus maximus ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Id.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Bibendum quisque a nam id porttitor, consequat sodales donec mattis.",
+      "long_description": "long description Lacinia vulputate vestibulum commodo at arcu. Consectetur vel gravida dignissim sapien blandit sodales proin sed velit metus. Pharetra eti nulla lacus curabitur ligula justo. Hendrerit ipsum tempor donec hendrerit vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mi.",
+          "Sagittis.",
+          "Tristique."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Faucibus dolor sed et ornare, eu ornare orci dictum sem.",
+      "long_description": "long description Adipiscing augue scelerisque sollicitudin vel, nisi consequat eti purus ante suscipit dui pellentesque hendrerit. Pretium justo augue condimentum orci cursus viverra diam ex, vehicula bibendum vestibulum justo magna a cras.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Scelerisque.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Suscipit i maecenas proin nibh est sem orci eget mauris.",
+      "long_description": "long description Non imperdiet tempor et tempor, diam i pellentesque donec. Arcu magna at nunc, diam augue viverra au elementum donec. Ipsum tempus a i consequat, quis hendrerit pulvinar pretium i orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Risus.",
+          "Purus.",
+          "Vulputate."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Consequat placerat fringilla vulputate dui sem, posuere tortor velit mauris.",
+      "long_description": "long description Vitae etiam risus lacinia pellentesque at, adipiscing dolor a lobortis natoque sit. Dictum elementum justo justo ultricies risus dignissim. Laoreet tristique quis lacinia. Nulla purus curabitur adipiscing, dolor eti felis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Ante.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Pellentesque diam erat pretium lacinia dictum cursus, tempor morbi tortor.",
+      "long_description": "long description Vel magna faucibus aliquet maximus maecenas. Aenean tempus finibus arcu mattis. Diam dignissim mattis finibus, ultricies donec nisi eget, nisl ex donec elementum accumsan est accumsan. Consequat mauris pulvinar tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultricies.",
+          "Scelerisque.",
+          "Tempus."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Id i quis finibus quisque amet sed nibh purus lacus.",
+      "long_description": "long description Quis rhoncus elit donec lacus, consectetur ex tempus metus iaculis ultricies dolor. Est commodo maximus nibh, nisl ligula eget cras ligula imperdiet ex fringilla faucibus, ante leo ultrices ut iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Nam.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Justo pharetra et enim quis elementum lacinia elit vulputate i.",
+      "long_description": "long description Nam i lacinia purus ligula. Maecenas laoreet cursus tempus consequat tempus posuere posuere elit at euismod maximus i. Au ex natoque ac. Finibus felis scelerisque quis placerat proin non donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Finibus.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Vulputate e lacinia massa rhoncus. Lacinia placerat lacinia ex tristique.",
+      "long_description": "long description Maecenas lorem sodales nunc risus sit maecenas tempus, id viverra mi lobortis. Faucibus maximus justo justo. Eget neque vestibulum tortor etiam ut dui, tincidunt sollicitudin adipiscing nisi commodo tincidunt at.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Sem.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Lacus quisque tempus elit pharetra magna finibus eti nulla adipiscing.",
+      "long_description": "long description Consequat curabitur aliquet blandit posuere consequat. Iaculis lorem nam turpis. Rhoncus aliquam magna massa. Finibus ultricies auctor sed, fringilla dolor eros e neque quis imperdiet consequat, vulputate arcu consequat fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Amet.",
+          "Aliquet."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Arcu eget euismod aliquam lobortis. Pretium eti non risus porttitor.",
+      "long_description": "long description Placerat e vulputate nisi pretium a turpis consectetur adipiscing. Lacus elementum faucibus ornare lorem amet ante consequat, fringilla fringilla sit sagittis ac mauris. Maecenas dignissim sollicitudin at, commodo maecenas porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Mauris.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Maximus donec gravida gravida donec eu. Viverra enim maecenas a.",
+      "long_description": "long description Curabitur eros leo sapien turpis a diam i fringilla viverra, i felis posuere ante, au ut gravida metus dolor e, sodales rhoncus blandit nibh enim dolor bibendum sagittis cursus iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mi.",
+          "Sagittis.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Aenean lectus dolor posuere tristique ultrices sodales au curabitur nisl.",
+      "long_description": "long description Vitae ultrices ut purus turpis lobortis nisl nisi sem mauris euismod erat, et placerat tortor proin faucibus sed. Ante placerat mi magna. Natoque gravida vehicula cras lobortis, adipiscing scelerisque e.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Donec.",
+          "E.",
+          "A."
+      ]
+    },
+    {
+      "name": "Sunopia",
+      "short_description": "short description Mauris tristique bibendum augue lorem aliquet au diam risus orci.",
+      "long_description": "long description Rhoncus tincidunt quisque nisl ultrices lorem. Ac lectus dui lacinia auctor ligula. Lorem dignissim neque magna. Quisque bibendum a neque. Mollis adipiscing mollis donec imperdiet dolor, eti eti blandit faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Placerat.",
+          "Vitae.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Nam fringilla ultricies vestibulum sodales. Velit fringilla nam lacinia id.",
+      "long_description": "long description Non eti placerat risus est nulla eget ex ultrices commodo. Dolor curabitur mollis consequat natoque euismod mi nulla. Arcu purus laoreet massa vestibulum felis tristique pretium, au felis dictum morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Est.",
+          "Nunc.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "DuoServe",
+      "short_description": "short description Quis mollis i sollicitudin placerat fringilla. Neque non adipiscing eu.",
+      "long_description": "long description Id vel tortor neque at laoreet ultricies felis nibh a, tempus metus ante natoque curabitur consectetur viverra maecenas tristique sodales vehicula ut condimentum vitae. Tincidunt maecenas maecenas euismod elit eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sit.",
+          "Risus.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Dui dictum nam rhoncus quis. Arcu mauris consequat faucibus magna.",
+      "long_description": "long description Vitae turpis laoreet mauris rhoncus curabitur proin. Dictum pellentesque aliquam at. Sem lobortis ornare risus ut tempor, tristique lacinia arcu felis accumsan maecenas etiam. Cursus vulputate lacinia leo au maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Tincidunt.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Non faucibus elementum non magna ligula orci vulputate imperdiet commodo.",
+      "long_description": "long description Dolor nulla amet turpis orci. Arcu quis scelerisque ipsum purus. Non e morbi ante vulputate etiam, risus eu hendrerit a mauris eros, dui nisi dui mauris bibendum lectus augue eu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Neque.",
+          "Pharetra.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Aliquet et nam vehicula iaculis dignissim accumsan consequat cras diam.",
+      "long_description": "long description Ante ex pulvinar ac ipsum donec au hendrerit. Aliquet et ultrices risus in. Bibendum posuere quis ornare cursus, erat maximus sodales nam. Elit dolor ligula tempus velit, lectus lacinia ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Diam.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Diam maecenas laoreet lectus leo morbi diam consectetur tincidunt mattis.",
+      "long_description": "long description Mollis orci hendrerit ultricies nisl eu lacinia ac tristique suscipit dictum nisi risus enim felis et nisl elementum vel turpis nisl sed, mi maximus metus i mauris. Pretium i ac.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Orci.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Ex tincidunt fringilla sodales morbi nulla. Arcu lectus pharetra accumsan.",
+      "long_description": "long description Dui ut e consectetur scelerisque etiam, pulvinar vel tincidunt curabitur hendrerit. Elit aliquam scelerisque blandit augue. Curabitur vitae augue lacinia mi. Mi erat sapien porttitor, id maecenas nam amet bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Id.",
+          "Felis."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Et tortor consequat dictum adipiscing quisque in eget vel lacinia.",
+      "long_description": "long description Neque quis adipiscing elit ut. Turpis ipsum eros posuere purus fringilla nisi etiam, laoreet et orci aliquam bibendum. Lacinia ultrices consectetur quisque leo eget justo arcu dui rhoncus ante risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Felis.",
+          "A."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Ligula sollicitudin amet proin ex leo nulla, sapien sem vulputate.",
+      "long_description": "long description Enim id erat dolor vel vehicula proin gravida sed. Velit proin viverra mollis cras blandit, massa ornare vel laoreet ligula pretium lacinia. Rhoncus non ipsum suscipit euismod. Ex amet sodales.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Donec.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Lacinia commodo non tincidunt lacinia sagittis quisque metus auctor tempor.",
+      "long_description": "long description Tristique lectus metus cras eget, et consectetur auctor scelerisque est ex tempor. Nibh dui nulla iaculis velit. Cursus lobortis ornare ligula facilisis. Leo tristique ex nisl. Ut aliquam quisque lectus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Quisque.",
+          "Ipsum."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Sit facilisis imperdiet quisque nisi enim. Blandit elementum velit finibus.",
+      "long_description": "long description Ex eros massa sapien vulputate e turpis ut eti ligula placerat au. Maximus consequat pharetra est pharetra sollicitudin cursus metus maecenas fringilla e ante aliquet, aliquet sollicitudin mauris faucibus non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Nisi.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Zatheon",
+      "short_description": "short description Neque vehicula mollis aliquam ornare cursus mauris, auctor consequat velit.",
+      "long_description": "long description Tempor nunc leo eu ex, accumsan nisi elementum ultrices au dignissim tincidunt velit ut lobortis. Mollis magna in pretium a. Quisque velit mauris mauris donec aenean turpis nulla felis lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Viverra.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Commodo justo sagittis dignissim diam sem faucibus bibendum lacinia porttitor.",
+      "long_description": "long description Eros pulvinar metus pellentesque mauris blandit. Massa rhoncus ex eros non ligula. Augue mauris natoque curabitur, auctor consequat accumsan diam cursus suscipit. Vel augue eros rhoncus nibh eget vehicula a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sodales.",
+          "Neque.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Ligula a imperdiet mi turpis. Adipiscing dignissim condimentum proin lorem.",
+      "long_description": "long description Vehicula natoque iaculis lacinia orci tempus suscipit nisi nibh vel arcu. Enim mi accumsan sem. Mauris eros maecenas consectetur lectus, eti ut aliquam pulvinar imperdiet eti e, maecenas sagittis finibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Adipiscing.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Proin metus viverra enim eget. Proin diam hendrerit accumsan neque.",
+      "long_description": "long description Laoreet pellentesque etiam lectus tempus enim vehicula dignissim. Non vitae consequat pretium pulvinar pretium scelerisque non, finibus tincidunt nisi sollicitudin blandit. Eros faucibus dolor tempor ornare. Suscipit diam lectus lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Fringilla.",
+          "Tristique."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Maecenas facilisis suscipit sapien pretium purus, condimentum lacinia dui eu.",
+      "long_description": "long description Sit pulvinar leo finibus mi faucibus. Tempor eu diam vel, ante mi pharetra lacinia. Dolor gravida diam hendrerit aliquet. Enim lectus euismod placerat in. Faucibus sodales lobortis e id mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Felis.",
+          "Sollicitudin.",
+          "I."
+      ]
+    },
+    {
+      "name": "Terralabs",
+      "short_description": "short description Lectus mauris placerat mollis aenean. Laoreet suscipit amet mauris condimentum.",
+      "long_description": "long description Amet consectetur ipsum ut at amet morbi sapien sem nam vulputate neque est lectus condimentum. Lacinia dignissim bibendum leo, leo et nunc i accumsan. Neque arcu placerat sem ut auctor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Sit.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Nulla maximus felis massa mi i hendrerit. Sodales eu leo.",
+      "long_description": "long description Aliquam aliquet risus maecenas finibus condimentum, vulputate tempus ac dui dolor. Tempus condimentum cursus suscipit euismod. Vestibulum cursus tincidunt viverra. Dignissim felis adipiscing finibus, mattis vel erat amet sodales vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Neque.",
+          "Posuere.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description At risus etiam auctor aliquet lacinia eros ligula et sagittis.",
+      "long_description": "long description Metus scelerisque nibh tortor vulputate. Ex nisi nibh pulvinar, proin nisl lobortis nibh sem sodales consectetur maecenas sollicitudin ultricies est aliquam viverra pulvinar. Maecenas vel i ex nunc neque sit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Maecenas.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Au sem donec augue natoque vel. Sagittis adipiscing commodo suscipit.",
+      "long_description": "long description Maecenas natoque bibendum purus scelerisque, adipiscing pharetra porttitor facilisis bibendum massa vel pellentesque in placerat sit. Maximus erat tristique faucibus metus, tempus vulputate diam at lacinia, laoreet lacinia pharetra nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Eu.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description Commodo lobortis donec elit tincidunt. Ut purus vehicula amet proin.",
+      "long_description": "long description Gravida imperdiet vestibulum pretium bibendum natoque, consequat euismod orci nisi ut leo aliquam enim, sapien magna ante nulla arcu sem au, pulvinar sollicitudin finibus at. Commodo quis euismod in tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Justo.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Ac placerat morbi ex eros e id lacinia proin i.",
+      "long_description": "long description Sed blandit dictum vehicula cursus vehicula. Tempor lacinia id pretium sodales, nibh morbi morbi lobortis. Metus curabitur purus dui quisque ut tempor vestibulum iaculis. E natoque eu enim fringilla pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Pulvinar.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Ligula amet gravida tristique enim sollicitudin. Leo risus pretium ante.",
+      "long_description": "long description Leo sagittis pulvinar lacus condimentum. Rhoncus sagittis aliquet gravida scelerisque suscipit eti tempus erat pulvinar. Mauris finibus mollis lorem, consequat adipiscing i tortor euismod. Lacinia mattis ante scelerisque nisi leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Enim.",
+          "Laoreet.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "SmartSystems",
+      "short_description": "short description Nibh finibus morbi bibendum mi condimentum mauris at pellentesque au.",
+      "long_description": "long description Dignissim est sollicitudin sem purus. Mi consectetur aliquam orci accumsan i ultricies id. Ut nunc dolor dui orci. Maecenas consequat lacus viverra leo eros sit non, blandit vehicula gravida magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquet.",
+          "Pulvinar.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description I auctor tempor at vitae id at, arcu lacus amet.",
+      "long_description": "long description Pellentesque facilisis commodo in in auctor justo. Risus eu pharetra rhoncus. Est sollicitudin vel hendrerit auctor augue felis. Ex pharetra eu morbi rhoncus ante consectetur consequat nam mauris in i.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sed.",
+          "At.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Tempus tempor hendrerit mi lacinia, felis placerat tempus au vitae.",
+      "long_description": "long description Dignissim posuere consectetur accumsan pretium posuere nisl tristique nam donec, lorem lacinia posuere accumsan, finibus morbi quis vulputate mi iaculis nibh, hendrerit quisque neque pulvinar tempor rhoncus maecenas a fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Finibus.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Consequat nibh leo blandit placerat bibendum adipiscing. Cursus tincidunt augue.",
+      "long_description": "long description Vehicula sodales sem a proin auctor ipsum eu leo. Augue magna ligula lorem sem blandit eget risus natoque lorem scelerisque, id massa ipsum hendrerit quisque sapien posuere ultrices risus ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Consequat.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Adipiscing consequat natoque tempor pellentesque faucibus vulputate, lobortis nulla quis.",
+      "long_description": "long description Ex porttitor natoque euismod pellentesque finibus lorem. Tristique finibus nunc eget erat. Placerat eti ac laoreet, sit sodales rhoncus a sapien i maximus lacinia tincidunt dolor mattis condimentum euismod commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Au.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "Logico",
+      "short_description": "short description Scelerisque sollicitudin facilisis tempor aliquet mattis gravida laoreet ante tortor.",
+      "long_description": "long description Commodo vestibulum scelerisque etiam quis, lorem in orci neque. Elit lobortis faucibus pretium, mollis nunc consequat i maximus. Mi rhoncus natoque turpis tincidunt, erat nulla tempus quisque id euismod morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Nisi.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Westercom",
+      "short_description": "short description Vitae facilisis mauris purus arcu i. Lacinia orci finibus bibendum.",
+      "long_description": "long description Sodales gravida sit ex scelerisque ut, sit nisi porttitor felis. Lobortis au aliquet tortor. Est euismod aliquet justo dignissim. Tempor viverra dui ante scelerisque maximus placerat dolor posuere vitae dignissim.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consequat.",
+          "Non.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Facilisis proin nunc vitae vulputate vulputate pulvinar dui ligula placerat.",
+      "long_description": "long description Tincidunt suscipit curabitur commodo pharetra, turpis eros faucibus ligula sem leo purus vitae fringilla nulla, maximus adipiscing at velit quis, posuere consectetur gravida pellentesque commodo au, ultrices eti dictum cursus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tortor.",
+          "Felis.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Aliquet tristique porttitor nibh felis eros. Pellentesque hendrerit nisl imperdiet.",
+      "long_description": "long description Ac blandit iaculis euismod scelerisque hendrerit tempor, magna nibh augue placerat commodo, maecenas accumsan curabitur curabitur sollicitudin purus, etiam id a maximus elit lobortis ornare, nibh porttitor euismod auctor ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Eu.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "VenStrategy",
+      "short_description": "short description Adipiscing cras eu tempus iaculis quisque. Blandit ac condimentum sodales.",
+      "long_description": "long description Condimentum placerat euismod consequat elementum, facilisis nulla id lorem accumsan tristique rhoncus imperdiet sodales metus risus enim auctor lacinia e. Enim commodo nunc euismod augue risus nisi dolor quis tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cursus.",
+          "Magna.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Orci quis vestibulum maecenas viverra. Ligula risus purus elementum auctor.",
+      "long_description": "long description Non donec metus vestibulum vitae. Arcu laoreet faucibus blandit vehicula tortor nibh sapien pulvinar sem ligula. Sapien ornare laoreet mi. Eti lacinia mollis blandit maximus pharetra imperdiet i iaculis fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Est.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Vitae tristique leo sagittis risus est purus vel sem ac.",
+      "long_description": "long description Lacinia diam etiam ultrices nibh eros enim porttitor purus nisl, rhoncus ligula maecenas sit magna. Condimentum donec ut mauris. Velit pellentesque ultrices ultricies porttitor est nam metus eros au ornare.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Nam.",
+          "Pulvinar."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Tempus i elementum neque leo sollicitudin, lacus tincidunt tristique nunc.",
+      "long_description": "long description Mi vel lorem sed euismod. Pharetra faucibus imperdiet sem commodo. Posuere lacus lacinia bibendum vel tristique gravida vehicula, proin mauris sed ante vehicula, cras facilisis sapien pharetra, faucibus suscipit porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pretium.",
+          "Mattis.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "LoopSys",
+      "short_description": "short description Lobortis lectus mauris e in blandit iaculis elit consequat mauris.",
+      "long_description": "long description Ac id proin metus felis maecenas massa at mauris, i mauris massa dignissim lobortis. Tristique eu vel sodales ipsum. E e ipsum quisque, felis enim ipsum pharetra eti dignissim augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Mi.",
+          "Laoreet."
+      ]
+    },
+    {
+      "name": "Quadtek",
+      "short_description": "short description Arcu in lacinia lacinia nisi. Ut vel placerat nisi faucibus.",
+      "long_description": "long description Est vehicula euismod euismod etiam rhoncus proin, et ligula maximus hendrerit. Scelerisque posuere natoque tristique tempus suscipit quis ornare. Rhoncus enim sagittis lobortis augue justo, placerat au pellentesque a lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Adipiscing.",
+          "Blandit."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Vehicula viverra ultricies ex bibendum, eti at ut diam erat.",
+      "long_description": "long description Lorem tincidunt bibendum sapien dolor et sodales lacinia, nam sodales vitae justo rhoncus consectetur tortor sem posuere ultrices eu tempor, sodales lectus eros vitae nam vestibulum pulvinar quisque lorem iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Dolor.",
+          "Arcu."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Accumsan tempor lacinia turpis placerat lacinia sapien scelerisque commodo fringilla.",
+      "long_description": "long description Placerat dignissim est mollis cursus. Mattis id elementum maecenas id scelerisque sapien aliquet laoreet, nulla in neque massa metus sapien etiam e cursus ut eti ex, arcu turpis risus id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "At.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Arcu orci mauris pretium mauris curabitur morbi dolor cursus blandit.",
+      "long_description": "long description Ut ante mattis eget e pretium orci sed eu iaculis in. Mollis nulla lacus ac ultrices maximus vulputate laoreet cursus viverra etiam. Posuere proin cursus aliquet mi enim nam vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Facilisis.",
+          "Nisl."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Eu viverra nulla maximus condimentum. Lacinia porttitor au ultricies sed.",
+      "long_description": "long description Erat auctor amet lectus ex. Elit dictum quisque velit sagittis. Neque maecenas mattis non eu morbi posuere, eros justo aliquet eros ante a non. Vel blandit vel accumsan justo tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Lacus.",
+          "A."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description I magna vulputate est at viverra non, commodo eros au.",
+      "long_description": "long description Non purus maximus ex vel cras a est tristique, curabitur nisi laoreet ut dui. Proin posuere tincidunt facilisis fringilla risus. At at erat quis i. Dolor etiam dignissim iaculis est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Facilisis.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "Kancom",
+      "short_description": "short description Ex adipiscing nulla maecenas vitae ex tristique diam sed pharetra.",
+      "long_description": "long description Dui vitae eros quis massa commodo morbi fringilla, pharetra magna at adipiscing. Vitae bibendum pulvinar porttitor elementum, eti leo sed massa. Augue dignissim arcu tincidunt pellentesque quisque. Nam iaculis neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Massa.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Lobortis neque facilisis sollicitudin mi. Elit elementum a vehicula auctor.",
+      "long_description": "long description Cras diam finibus viverra orci euismod. Ex dignissim viverra vulputate, bibendum aliquam ultricies tempus lacinia lorem et fringilla neque elit, risus magna iaculis felis. Risus erat ipsum mauris neque ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Tincidunt.",
+          "Purus."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Velit nisl elit euismod leo consectetur. Morbi mollis lobortis facilisis.",
+      "long_description": "long description Id metus euismod mollis vitae. Blandit eti et elit enim. Curabitur facilisis euismod aliquet dui condimentum orci, lacinia iaculis mattis lectus dui, morbi nulla cursus pretium, faucibus i ultricies ante.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Ligula.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Metus augue donec iaculis ac tristique mi elit mauris pretium.",
+      "long_description": "long description Nunc tempus mollis pharetra elementum. Ornare leo tempor fringilla ut aliquam aenean sit placerat lacus nisl natoque. Donec elit dui nisl aenean elit porttitor eti. Tempor lacus est augue risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisl.",
+          "Vestibulum.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Gravida finibus pulvinar nibh ligula scelerisque. Lacinia augue metus e.",
+      "long_description": "long description Augue ex pharetra posuere rhoncus elementum velit tempor eget. Turpis accumsan vulputate ex maximus tristique vestibulum. Diam nulla consequat dictum est diam elementum a sodales commodo. Viverra ex velit ex.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mauris.",
+          "Orci.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Massa suscipit euismod lectus ac, mi enim aliquam sagittis maximus.",
+      "long_description": "long description Felis id mi ac auctor. Metus vehicula ornare tristique hendrerit maecenas, sem arcu fringilla diam auctor dignissim dictum enim ante neque cursus, risus placerat risus viverra sapien ex ultricies elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Diam.",
+          "Vestibulum."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Sollicitudin sagittis consectetur lacinia ipsum pulvinar aenean nisi vehicula consectetur.",
+      "long_description": "long description Pretium tempus nisi elementum auctor. Augue pharetra at sapien. Auctor cursus massa i ligula at condimentum dolor. Et curabitur au auctor est tempor ut. Sodales cras tortor sodales eu fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "E.",
+          "Ligula.",
+          "Nisl."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description Non enim dignissim sed justo faucibus mi mollis lectus gravida.",
+      "long_description": "long description Curabitur enim sem eros erat suscipit maecenas, bibendum nunc mauris sollicitudin, ipsum sem ut massa elementum. Nam sagittis lobortis aenean elementum. Sagittis dolor tincidunt tristique euismod blandit enim turpis ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "Nam.",
+          "Elementum."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Sodales tempor laoreet adipiscing at viverra nibh. Hendrerit imperdiet lacus.",
+      "long_description": "long description Ex non amet aliquam ut sollicitudin, maximus hendrerit viverra fringilla orci maximus. Nisl ante a pharetra ac ut rhoncus vestibulum, nibh eget augue est mi orci maximus. Rhoncus fringilla ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Gravida.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description Tristique ex non pulvinar condimentum suscipit erat. Scelerisque sed rhoncus.",
+      "long_description": "long description Est au augue nisi euismod, dolor id nam leo cras justo quis lacinia, posuere lacinia ultricies id enim, at dolor augue mi, tortor arcu aliquam eu. Lobortis diam suscipit eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Metus.",
+          "Maecenas.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Natoque vulputate blandit posuere laoreet, turpis sed donec lorem elit.",
+      "long_description": "long description Leo lacinia sed purus justo quisque, nibh rhoncus curabitur viverra, arcu dolor viverra pellentesque. Enim nunc turpis erat. Elementum i tortor scelerisque velit. Viverra auctor nunc lobortis fringilla mi hendrerit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Maximus.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Ipsum lectus sit sodales eti leo natoque eros nam dolor.",
+      "long_description": "long description Sit ante imperdiet erat pellentesque. Amet sit nibh eti maecenas aliquam. Risus imperdiet nisl bibendum. Metus non mauris et. Pulvinar cras cras auctor aenean non massa sapien vel leo in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Rhoncus.",
+          "Erat."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Dolor aliquet tristique mi ipsum finibus accumsan magna ultricies porttitor.",
+      "long_description": "long description Lacus euismod ultricies a neque, cras iaculis purus ornare. Est nulla augue porttitor. Mollis sed etiam non tincidunt massa sollicitudin hendrerit elit pulvinar lorem accumsan, e morbi nunc eu quisque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Dictum.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Vestibulum turpis vehicula orci id lorem, etiam rhoncus vulputate ligula.",
+      "long_description": "long description Euismod ante vel adipiscing tempus consequat quis etiam id dignissim a e morbi, tristique ut maximus velit cras. Auctor bibendum laoreet a non. Viverra ipsum rhoncus tristique, lorem in ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Sodales.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Gravida lorem cras adipiscing i est lobortis maximus sodales placerat.",
+      "long_description": "long description Vestibulum consectetur consequat eget nulla, a leo orci in at proin sapien ultrices ipsum in sit, cras vulputate tempor consequat, bibendum pharetra aenean ornare risus natoque. Enim dictum ornare ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eget.",
+          "Quisque.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Quisque velit i hendrerit metus, elit morbi proin vel justo.",
+      "long_description": "long description Est lacus nulla ut risus leo condimentum. Vitae leo vel vestibulum euismod imperdiet etiam posuere pellentesque. Tincidunt turpis enim natoque. Pharetra id pellentesque tempus elit. Elementum augue erat neque nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Adipiscing.",
+          "Aenean."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Nam aenean porttitor vel sem iaculis amet curabitur auctor massa.",
+      "long_description": "long description Magna ut fringilla et ultricies ultrices, vel sapien lorem ut enim pretium orci morbi tincidunt dignissim fringilla, nulla lacus cursus nibh adipiscing gravida. Imperdiet quis lacinia id. Pellentesque quisque in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Diam.",
+          "Tempor.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Sed risus et sed morbi sit turpis ultricies leo facilisis.",
+      "long_description": "long description Cras quisque amet cras quisque. Mattis curabitur sit mollis nisi lorem cursus. Massa auctor vestibulum sem lacus. Gravida fringilla vehicula sagittis. Lobortis lacinia sapien ligula. Felis leo ultricies sed vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pretium.",
+          "Nam.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Fringilla felis consequat ante nisl. Nisi velit ultrices maecenas elementum.",
+      "long_description": "long description Posuere dictum lacinia velit elit vulputate, au neque porttitor arcu. Nunc tincidunt lacus elementum proin viverra a et dignissim, magna pellentesque ipsum ex. Facilisis laoreet diam eget. Arcu dignissim adipiscing.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pretium.",
+          "Velit.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Nam consectetur purus ut adipiscing commodo. Ultricies mi consequat tristique.",
+      "long_description": "long description Vitae at felis enim elementum, tincidunt tincidunt i lacinia. Donec tempus ultrices lobortis viverra consectetur orci. Velit purus lorem sapien. Placerat mauris cursus diam ac leo. Ligula pellentesque tincidunt turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dictum.",
+          "Lacinia.",
+          "In."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Tristique maecenas ex magna sed. Ante neque ante ex felis.",
+      "long_description": "long description Massa quisque dignissim purus fringilla a au, viverra mattis maximus eros est e dictum vestibulum est nunc cras. Dolor erat nunc tempus amet massa. Ornare quis scelerisque pretium condimentum mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Vitae.",
+          "Arcu."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Imperdiet sit risus id maecenas. Dictum vitae e quisque ac.",
+      "long_description": "long description Dignissim adipiscing purus maximus aliquet orci, ultricies ac consectetur est eu facilisis eti. Morbi tincidunt ornare sapien ultrices, augue ac ligula augue. Lorem lectus sed aliquam. Sollicitudin sapien nunc proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Fringilla.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Hendrerit au augue tristique tortor dignissim cursus vel lacinia aenean.",
+      "long_description": "long description Accumsan ultrices laoreet arcu eros auctor lobortis natoque. Massa ornare au quis, erat proin cursus gravida, ipsum mollis pretium bibendum. Enim vestibulum dui consequat eu natoque, dolor pulvinar elit nibh.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mattis.",
+          "Sem.",
+          "Posuere."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Lorem ultrices blandit ultrices ante. Posuere sollicitudin in purus sem.",
+      "long_description": "long description Nulla donec adipiscing posuere felis ac ac magna est lacinia faucibus au dui. Lorem morbi lorem viverra suscipit dolor enim sit lobortis. Eget fringilla ligula nisl facilisis mollis ligula quis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Justo.",
+          "Lacinia.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Viverra bibendum finibus eget metus. Et pretium risus pulvinar euismod.",
+      "long_description": "long description Mattis nam laoreet hendrerit neque dignissim sed, porttitor at elit at. Lacinia sollicitudin tristique diam. Lorem maximus pulvinar id eu. I cras facilisis amet maecenas vulputate consequat dignissim ante suscipit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "Fringilla.",
+          "Dictum."
+      ]
+    },
+    {
+      "name": "Cryptonica",
+      "short_description": "short description Ut e etiam tempus id aenean pretium. Hendrerit proin metus.",
+      "long_description": "long description Ligula vehicula eu suscipit pellentesque, eget vulputate iaculis imperdiet nisi dui. Neque viverra lacus vehicula mi consequat sapien orci facilisis amet, ante scelerisque tempor pharetra purus facilisis, a sapien ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mi.",
+          "Cursus.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Xenosys",
+      "short_description": "short description Sagittis dui tortor et tristique maximus cursus non faucibus vehicula.",
+      "long_description": "long description Turpis maximus porttitor lacus ipsum metus enim, eu eti faucibus aliquet placerat ex in lacus. Augue lorem etiam ac, erat nam sodales risus nibh sit consequat eget risus curabitur sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Quisque.",
+          "Tempus."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Eros dui scelerisque placerat augue. Mauris adipiscing maecenas dui felis.",
+      "long_description": "long description Dui accumsan nisl ligula finibus accumsan maximus felis. Purus a tincidunt elit, i rhoncus porttitor mauris tempor pellentesque consequat. Dui sagittis nisl quis i. Au leo leo nisl pulvinar proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Donec.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Blandit eros sagittis lacinia au sapien e enim ornare elit.",
+      "long_description": "long description Tortor ac imperdiet e arcu. Metus eti vitae ornare ut in, gravida gravida aenean lectus pellentesque etiam non. In nulla pharetra dictum lacus vehicula leo purus pulvinar tortor vitae diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "In.",
+          "Nisl."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Sodales magna maecenas ac ante. Est proin nam sodales tristique.",
+      "long_description": "long description Non sed mi eget cursus rhoncus massa orci sem gravida nunc donec, lectus mauris euismod turpis non, vestibulum pharetra lacinia placerat adipiscing, metus vel lectus adipiscing iaculis, auctor enim id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "Suscipit.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Porttitor amet non dolor ornare. Cras pharetra quisque i scelerisque.",
+      "long_description": "long description Dignissim dui finibus eros curabitur. Etiam eti nulla sodales. Ante condimentum faucibus mi. Aliquet dignissim sed amet donec ultricies. Enim pharetra dolor elementum. Ligula vulputate elit vel, consectetur dui e.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Etiam.",
+          "Condimentum.",
+          "Risus."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Etiam leo augue posuere at, lacinia nisl turpis tempus maximus.",
+      "long_description": "long description Morbi hendrerit eget turpis curabitur a, maximus placerat amet sollicitudin sollicitudin metus ipsum felis sem ut, leo commodo sem faucibus lacinia. Tempus placerat natoque rhoncus eros accumsan. Cursus pulvinar condimentum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Laoreet.",
+          "Pharetra.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Sit enim tempor turpis ultrices porttitor condimentum e lacus lacinia.",
+      "long_description": "long description Neque dictum imperdiet mauris aenean nam facilisis, nisi suscipit amet adipiscing ex sed. Nam sed felis cursus sollicitudin risus adipiscing ac non turpis morbi etiam. Posuere leo consectetur ac tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Consectetur.",
+          "Finibus."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Ultrices nulla accumsan dolor eros. Velit dui sit e mauris.",
+      "long_description": "long description Arcu morbi massa sem facilisis iaculis eu pulvinar dui. Mauris vel fringilla vestibulum. Est in scelerisque nam orci hendrerit au maecenas quisque eget, erat arcu nibh massa. Sapien quisque massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Orci.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Gravida tincidunt ultrices condimentum vulputate tempor hendrerit arcu nam leo.",
+      "long_description": "long description Iaculis nibh tincidunt nunc aenean placerat enim ligula, mi ac lectus at. Leo iaculis pulvinar iaculis. Orci aenean imperdiet i nulla cras e porttitor augue, sed faucibus sem bibendum elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Porttitor.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Mollis ultrices lectus tristique purus. Rhoncus euismod rhoncus neque et.",
+      "long_description": "long description Curabitur aliquam eros faucibus aenean morbi. Enim massa proin nam eros condimentum mollis. Maecenas tempus proin lacinia maecenas. Dolor placerat cras morbi, consectetur iaculis sollicitudin ipsum tempor imperdiet diam vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Pulvinar.",
+          "Pretium."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Pellentesque pharetra turpis in arcu. Eget ornare sit amet blandit.",
+      "long_description": "long description Massa eu dui porttitor eu tempor hendrerit sit leo blandit finibus, est tristique viverra imperdiet a mauris, ex metus in eros blandit, nisi viverra nulla vestibulum tincidunt massa tristique nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Finibus.",
+          "Lectus.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Vitae donec pulvinar eros neque, donec magna lorem eu aliquet.",
+      "long_description": "long description Arcu fringilla mauris vel aliquam neque, commodo consectetur vel iaculis vitae sagittis. Pretium et nibh ut lacinia ante. Dui neque dui in. Neque condimentum nunc pretium tempus eu tempor nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "Pellentesque.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Auctor condimentum lorem iaculis dictum imperdiet. Tempor suscipit bibendum mattis.",
+      "long_description": "long description Auctor sit curabitur nisi sollicitudin donec. Mattis etiam eu euismod vel quisque, dignissim porttitor amet dignissim augue at viverra ornare scelerisque commodo nam. Commodo sapien faucibus fringilla euismod elementum ornare.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Vel.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Facilisis amet aenean scelerisque nunc non tristique purus cras consequat.",
+      "long_description": "long description Fringilla tincidunt justo dictum dui nisl. Iaculis risus diam curabitur, cras tortor pharetra proin enim. Ligula facilisis purus ante, curabitur cras metus e, tristique tempor imperdiet gravida vulputate scelerisque laoreet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Pellentesque.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Dignissim lacinia mi sapien ut, sem hendrerit pellentesque non bibendum.",
+      "long_description": "long description Ornare diam eu e rhoncus vestibulum enim curabitur dictum auctor sollicitudin diam vel e metus aliquam lorem i. Gravida mauris nam vitae, curabitur tristique turpis sollicitudin tortor elit i ante.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aliquam.",
+          "Ac.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "LexiconLabs",
+      "short_description": "short description Au eu aliquet rhoncus sollicitudin facilisis fringilla. Etiam nibh ultrices.",
+      "long_description": "long description Arcu sed e maecenas metus, tempus hendrerit ornare velit nisi. Curabitur maecenas facilisis pulvinar iaculis. Id fringilla natoque pulvinar sed, mi mattis cursus id lacinia, vitae pellentesque amet eros consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Metus.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description Placerat laoreet vitae id est proin. Laoreet finibus vel euismod.",
+      "long_description": "long description Mauris non lacinia pretium vel blandit leo. Euismod non neque purus, vitae auctor tortor nisl risus nam velit a. Adipiscing lacinia neque rhoncus, natoque ornare tincidunt pharetra. Tempor fringilla massa.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Condimentum.",
+          "Leo.",
+          "Elit."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description Aliquet elit mauris finibus arcu. Ornare velit a purus amet.",
+      "long_description": "long description Arcu ante i bibendum lobortis sed velit dignissim, turpis ligula elit aliquet sagittis. Mollis rhoncus sem curabitur nibh ante bibendum, eget proin non ex, felis massa in vel metus curabitur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Condimentum.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Coolinga",
+      "short_description": "short description Turpis aliquam amet purus ex auctor. Vitae sodales felis maecenas.",
+      "long_description": "long description Dui tempus natoque sodales dictum ornare quis vestibulum i. Vitae auctor lobortis mattis i dignissim sed. Neque e elit vitae ex tempor lectus aenean sed ex velit vehicula iaculis dictum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ornare.",
+          "Iaculis.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "WestGate",
+      "short_description": "short description Scelerisque pulvinar suscipit vel porttitor sapien natoque sed placerat natoque.",
+      "long_description": "long description Tincidunt est blandit dignissim faucibus. Lectus augue tempor lobortis mi lobortis natoque au mattis bibendum consequat euismod mauris nibh commodo nam, magna mollis metus id at purus mattis sapien eget.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Donec.",
+          "Nisl."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Sit sollicitudin faucibus at aenean quisque, i nulla natoque au.",
+      "long_description": "long description Vulputate lobortis euismod est sem. Quisque nibh tristique rhoncus lorem. Maecenas orci leo tempus enim risus dignissim adipiscing, scelerisque sollicitudin orci maecenas vulputate lobortis pulvinar mauris, natoque maximus rhoncus a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Nibh.",
+          "Dolor."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Bibendum vulputate ligula ultricies faucibus augue et justo sapien adipiscing.",
+      "long_description": "long description Sit ante faucibus accumsan mollis consectetur nisl, purus eros mollis e au lorem. Dolor laoreet lorem orci vestibulum maecenas ut. Accumsan blandit lacinia erat bibendum diam tempor. Sapien euismod purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Vestibulum.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Eti maximus mattis et vel, amet ligula mollis rhoncus ante.",
+      "long_description": "long description Scelerisque placerat vehicula i erat eget erat dui dignissim maecenas. Etiam massa accumsan fringilla. Felis amet laoreet massa, dui vel sollicitudin nam risus lobortis. Arcu ante est aliquam velit erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Ac.",
+          "Ipsum."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description At suscipit mi lobortis gravida justo, lobortis commodo finibus aliquam.",
+      "long_description": "long description Non tortor natoque a tristique. Nunc ligula consequat commodo non imperdiet bibendum. Augue id maecenas fringilla, ipsum ligula pretium ipsum lobortis pellentesque iaculis cursus quis leo ligula. Eget auctor tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mauris.",
+          "Sagittis.",
+          "E."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Finibus ligula lectus eros bibendum. Mattis orci lectus bibendum maecenas.",
+      "long_description": "long description Dolor sagittis elementum velit ante. Amet sodales sagittis aliquet eu suscipit laoreet, sapien justo curabitur adipiscing, mauris sit nisi velit nisl elit vitae diam. Lacus morbi nunc ex tristique faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "In.",
+          "Eu."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Accumsan metus fringilla sem in, est faucibus purus ante sem.",
+      "long_description": "long description Nibh sed ultrices aliquet cursus. Fringilla morbi lobortis nisi metus, leo iaculis eti tincidunt, posuere ut turpis lectus purus, tempor pulvinar elit eti id justo tristique, curabitur bibendum donec donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Massa.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Mattis aliquet mollis finibus aliquam lacinia accumsan nibh posuere e.",
+      "long_description": "long description Tempus hendrerit non placerat sed tempor. Elit pharetra velit dui. Accumsan i tincidunt diam. Natoque in augue aliquet tristique ac tempus. Lacinia ultrices hendrerit nibh. Natoque hendrerit nisi neque in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Ornare.",
+          "Justo."
+      ]
+    },
+    {
+      "name": "DynaAir",
+      "short_description": "short description Leo viverra gravida non lacinia. Lobortis condimentum imperdiet hendrerit at.",
+      "long_description": "long description Adipiscing elementum euismod dolor lectus tempor purus sagittis nunc. Auctor mauris nisi vulputate, maecenas nunc morbi ultricies ligula, faucibus massa justo vel commodo vestibulum magna, lorem sagittis ultricies etiam rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "In.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Morbi finibus maximus at blandit, quis mauris e donec sodales.",
+      "long_description": "long description Purus leo sem eros lobortis enim. Ex lacus rhoncus rhoncus lectus ex est id aliquam. Gravida auctor vehicula au elementum hendrerit cursus. Tristique tempus eros natoque augue. Maximus eros mattis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Arcu.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Etiam commodo ipsum neque ipsum eros. Facilisis tristique lacus velit.",
+      "long_description": "long description Ultricies lacinia accumsan rhoncus scelerisque mollis lacinia donec nulla placerat. Etiam pharetra elit consectetur eu. Nam maecenas finibus eu ut ex nunc, lectus aliquet lacinia dui, aliquet maximus ornare etiam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisl.",
+          "Vel.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Non sodales ipsum mauris erat diam dolor. Purus e scelerisque.",
+      "long_description": "long description Turpis ac natoque ex lectus. Dolor enim cursus sed morbi etiam finibus natoque enim. Orci morbi pellentesque aliquet. Arcu a scelerisque ipsum tincidunt vestibulum facilisis blandit. Mauris facilisis vitae vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Arcu.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "ForeTrust",
+      "short_description": "short description Sit dolor neque tortor arcu placerat tortor sit purus nulla.",
+      "long_description": "long description Elit diam in sed pulvinar, felis ac imperdiet nisl maximus eti quis, proin commodo at elementum i non erat, tempor viverra iaculis rhoncus eros, cursus tristique ex vulputate erat vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Mi.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description A non non id tempus, donec pellentesque ac condimentum elementum.",
+      "long_description": "long description Quisque rhoncus metus eu in quisque vitae, a elementum posuere tincidunt condimentum, nisi i nisl massa elementum pretium posuere i. Arcu aliquam felis au. Au ipsum vulputate lacinia proin non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Arcu.",
+          "Orci."
+      ]
+    },
+    {
+      "name": "Dalserve",
+      "short_description": "short description Purus tristique magna enim lectus hendrerit lobortis nunc vehicula lectus.",
+      "long_description": "long description Mi eros ipsum a ultrices ligula. Neque lorem dignissim vestibulum morbi scelerisque. At ex sapien finibus, cursus mi leo blandit aliquam dignissim tristique. Lacinia eu vehicula scelerisque fringilla cursus porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ex.",
+          "In.",
+          "E."
+      ]
+    },
+    {
+      "name": "Kancom",
+      "short_description": "short description Elementum eget rhoncus sollicitudin scelerisque. Lectus hendrerit blandit mi proin.",
+      "long_description": "long description Id etiam facilisis ante consequat erat donec sit, suscipit ex risus au quis magna neque cursus laoreet. Non fringilla au i dignissim vitae condimentum quisque. Eti dui vulputate gravida vel.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Eget.",
+          "A."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Placerat tortor ultricies eu etiam ipsum. Magna ultricies donec posuere.",
+      "long_description": "long description Vel metus ac posuere et vestibulum porttitor mattis est. Erat iaculis dignissim lobortis. Est finibus au i in pretium. Posuere mauris erat mattis in massa, sit pulvinar nibh elementum turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Velit.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Euismod sapien dui pellentesque cursus. Nisl aliquam accumsan condimentum et.",
+      "long_description": "long description Lacinia natoque elementum ultricies vulputate sagittis. Risus lacinia orci sodales, laoreet vulputate quisque maximus ornare, sit massa pellentesque quisque non aliquet risus i mauris bibendum lorem dignissim ultricies sagittis tempus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Etiam.",
+          "Morbi."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Amet felis donec tempor sapien, in auctor neque ligula lorem.",
+      "long_description": "long description Justo lobortis lacinia dui au, dictum mi sit rhoncus ligula fringilla au lorem imperdiet, vitae orci diam iaculis auctor, tincidunt nisl cras arcu erat. Hendrerit id aenean ultricies lectus lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dolor.",
+          "Risus.",
+          "Est."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Blandit suscipit rhoncus vestibulum suscipit sollicitudin metus rhoncus vehicula pellentesque.",
+      "long_description": "long description Placerat eu mollis erat turpis. Eget fringilla sem vel ex risus tempus, lacus nisi nibh risus, natoque tristique vitae quisque, curabitur nulla arcu nisl a cras condimentum iaculis lobortis vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "E.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Tortor consequat nibh diam nunc massa eget eget lacinia aenean.",
+      "long_description": "long description Placerat vel iaculis augue diam. Scelerisque lacinia ipsum fringilla justo metus i eti, maecenas massa morbi arcu, posuere magna ultrices massa. Enim ante vel etiam, enim posuere imperdiet leo viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "In.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Maximus nam facilisis lorem orci. Condimentum augue at suscipit sapien.",
+      "long_description": "long description Scelerisque condimentum lectus cras pulvinar nibh. Vitae euismod id au eti imperdiet e sodales. Sapien quis viverra bibendum diam. Eu maximus accumsan mattis, nunc mattis velit tristique velit cras nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Purus.",
+          "Tortor."
+      ]
+    },
+    {
+      "name": "VTGrafix",
+      "short_description": "short description Morbi risus hendrerit aliquet facilisis nisi. Elementum commodo non commodo.",
+      "long_description": "long description Auctor sem lacus ut lectus orci dignissim vestibulum. Magna elementum dui vitae e. Ut ut amet scelerisque. Aliquam sollicitudin tempus mi consectetur proin dictum metus natoque cursus ut laoreet mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Blandit.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Tincidunt posuere scelerisque vulputate maecenas orci magna. Maecenas condimentum nisi.",
+      "long_description": "long description Ornare sollicitudin auctor scelerisque magna vel eget finibus arcu mauris fringilla quis. At felis eros adipiscing, nisl rhoncus iaculis vehicula, leo suscipit justo facilisis ornare ante porttitor ac faucibus ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Aenean.",
+          "Ac."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Quis suscipit porttitor nisl euismod magna vitae turpis pharetra amet.",
+      "long_description": "long description Elit cras mollis proin eu vulputate tempor faucibus amet. Diam metus erat nisl, at est tempus elit etiam. Imperdiet ultrices aliquam vulputate vel velit vehicula. Nulla nunc maecenas cursus diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dolor.",
+          "Ornare.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Donec ut tortor erat tortor sollicitudin. Laoreet nam sit tempor.",
+      "long_description": "long description Velit cursus fringilla natoque dictum fringilla est au velit placerat dolor natoque a sollicitudin mi amet quisque sagittis bibendum. Nunc quisque orci amet magna, arcu amet au morbi tempus sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Elementum.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "CoreXTS",
+      "short_description": "short description In non pretium massa laoreet pharetra quisque iaculis mollis i.",
+      "long_description": "long description Tempus mattis lobortis vel fringilla etiam nibh. Lacus ornare leo etiam sem nibh. Dignissim tristique est sapien ipsum vestibulum mollis proin felis metus felis justo condimentum natoque blandit aenean au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Scelerisque.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Proin enim aliquet non ante. Tortor mollis at lorem mi.",
+      "long_description": "long description Cras eget lacinia nisl iaculis. In bibendum augue ligula aenean pharetra laoreet. Lacinia sollicitudin dictum vulputate. Mi magna enim quisque amet ultrices. Dignissim eu faucibus non vehicula. Iaculis cras vestibulum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Auctor.",
+          "Vulputate."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Magna nibh in quis adipiscing nunc e ligula pharetra ac.",
+      "long_description": "long description Porttitor mi purus proin tempor lacinia vestibulum tristique. Facilisis neque natoque dignissim purus lectus. Lectus ac arcu quisque risus sollicitudin velit, massa auctor rhoncus vulputate sed, suscipit risus diam fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Sollicitudin.",
+          "I."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Lorem diam cras id dignissim. Nunc lobortis sem nisi elementum.",
+      "long_description": "long description Vulputate sodales nulla facilisis quis. Fringilla consequat at sit pulvinar. Iaculis lacinia cursus eti consectetur tempor dolor viverra dictum vulputate, dui neque rhoncus ipsum bibendum, ligula elementum pretium ornare maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Eu.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description At finibus tincidunt dolor eti eti dictum ligula viverra etiam.",
+      "long_description": "long description Ultricies laoreet sodales blandit ac. Velit sapien maximus lacinia adipiscing. Tristique nam bibendum justo aliquam eget erat pharetra, euismod faucibus proin eu proin enim maximus cras, augue elementum hendrerit eu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Dui.",
+          "Aliquet."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Ipsum pellentesque velit enim porttitor aliquam tempor ultricies vehicula aliquet.",
+      "long_description": "long description Tempor ipsum eti turpis maecenas sapien. Bibendum ligula auctor hendrerit ornare adipiscing proin. Proin felis bibendum curabitur mauris mattis erat, bibendum suscipit sapien i vel, commodo quis viverra diam orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Eros.",
+          "Maecenas."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Diam suscipit i amet aliquam purus in au magna justo.",
+      "long_description": "long description Aenean imperdiet facilisis vehicula risus sed vitae. Lobortis imperdiet imperdiet sagittis laoreet, curabitur diam finibus maecenas etiam vestibulum etiam. Non rhoncus at nibh posuere ligula id, risus viverra est id.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Ut.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Nam vel condimentum vestibulum sem maecenas, tristique tortor eti accumsan.",
+      "long_description": "long description At dictum velit risus adipiscing suscipit. Nunc laoreet nam tempor lectus mi ut. Neque mattis tempor diam id aenean eros. Vulputate at pulvinar mattis eu. Et sed sapien au consequat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Auctor.",
+          "Nibh.",
+          "At."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Elit gravida euismod sodales mattis posuere leo. Pellentesque maximus ante.",
+      "long_description": "long description E nisi eget natoque laoreet vitae dictum, orci a ornare elementum tempus, aenean porttitor consequat vestibulum, in suscipit e sem natoque natoque nam lorem, nunc blandit sit justo aliquam lacinia.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Massa.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Aliquam vehicula ut suscipit faucibus in est augue elementum mollis.",
+      "long_description": "long description Laoreet diam ante ut donec. Lobortis maecenas orci facilisis ornare mauris curabitur aenean, lacinia vitae nam adipiscing, purus consectetur id au in. Dignissim laoreet finibus a hendrerit ut ultricies sit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Enim.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Consectetur ornare etiam diam blandit augue non sollicitudin laoreet tempor.",
+      "long_description": "long description Tincidunt non felis sollicitudin adipiscing nam quisque. Ligula cursus facilisis i, nulla tortor adipiscing placerat etiam. Posuere felis sed lectus. Suscipit elementum mattis arcu lectus. Mattis aliquam curabitur sagittis sollicitudin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Massa.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Cursus aliquet enim quis augue dui pulvinar tincidunt vitae diam.",
+      "long_description": "long description Finibus iaculis ornare metus aliquet. Accumsan lorem dui sit curabitur. Proin eget leo vitae fringilla proin erat, faucibus vehicula eget ante i e mi lorem finibus nisi. Dictum magna faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "E.",
+          "Elit.",
+          "Nibh."
+      ]
+    },
+    {
+      "name": "Infratouch",
+      "short_description": "short description Etiam nisi sodales hendrerit leo. Ornare elit dui i tincidunt.",
+      "long_description": "long description Nulla id erat orci maecenas auctor risus imperdiet nisi in non, quis sapien mauris commodo aenean cras imperdiet elit augue purus at donec, morbi pellentesque dignissim amet, tempor iaculis lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Maecenas.",
+          "Turpis."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Morbi lacinia iaculis sodales leo, euismod curabitur mollis elementum quisque.",
+      "long_description": "long description Suscipit amet etiam imperdiet pellentesque ultricies rhoncus ex aenean mollis. Est magna sagittis lacinia risus. Porttitor tempus auctor vulputate vulputate. Eti etiam tristique pharetra sed curabitur. Mi porttitor ornare vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Suscipit.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "Quadtek",
+      "short_description": "short description Porttitor rhoncus euismod orci elit vel. Id rhoncus maecenas sem.",
+      "long_description": "long description Nam aenean mattis eti justo pulvinar massa pharetra, arcu consectetur fringilla tempus massa accumsan ante sed posuere donec vulputate pretium cras mattis sapien. Eget nulla lacinia mollis non a pulvinar.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Viverra.",
+          "Aliquet.",
+          "Etiam."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Nulla elit etiam viverra commodo ultricies nam porttitor ornare morbi.",
+      "long_description": "long description Ligula ipsum eros vestibulum etiam elit, dolor tempus in proin vulputate dictum eros. Laoreet augue augue finibus a, sapien nunc consequat metus. Nunc lectus facilisis ultricies dolor. Lacinia fringilla consequat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Auctor.",
+          "Velit.",
+          "Sollicitudin."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Dolor vulputate amet sapien sapien vel sollicitudin elementum posuere auctor.",
+      "long_description": "long description Cras lobortis accumsan ultricies fringilla ultrices pulvinar iaculis velit. Donec vestibulum nisl sollicitudin lacus. Bibendum natoque eu faucibus. Eros sit tempus sollicitudin gravida. Lectus dolor au arcu. Euismod morbi nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Diam.",
+          "Au.",
+          "Euismod."
+      ]
+    },
+    {
+      "name": "CorpTek",
+      "short_description": "short description Massa dolor eu sed elit, dolor sollicitudin rhoncus eros quisque.",
+      "long_description": "long description Dolor justo eu turpis nisl, felis dui donec elit, pharetra dictum morbi donec, tincidunt amet nam aliquet tempus ut mollis in metus amet mollis pulvinar ante, tincidunt ultrices tortor au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mi.",
+          "At.",
+          "Maecenas."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description Purus facilisis quisque porttitor magna pulvinar ut ut lacus sed.",
+      "long_description": "long description Pharetra pellentesque cras facilisis lacinia. Maximus placerat rhoncus elementum nisi, eros aliquet sed ex lectus mauris. Erat risus sapien purus. Posuere mi massa scelerisque, justo dictum ornare hendrerit orci velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Vestibulum.",
+          "Natoque."
+      ]
+    },
+    {
+      "name": "MultiLingua",
+      "short_description": "short description Dignissim posuere sem sit eros. Lectus neque mi mollis lacus.",
+      "long_description": "long description I ex nibh auctor dictum. Nulla pellentesque euismod maximus lorem etiam vulputate adipiscing elit turpis. Aliquam tempor mollis finibus sed. Gravida sodales aenean erat tempor lectus, neque risus e velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Enim.",
+          "Vitae.",
+          "Elementum."
+      ]
+    },
+    {
+      "name": "MultiServ",
+      "short_description": "short description I vel commodo erat lacinia finibus. Ante pretium erat mattis.",
+      "long_description": "long description Ut suscipit eget pretium felis natoque vulputate lobortis massa. Suscipit lorem aliquam blandit a. Eros mauris leo condimentum sodales e facilisis aenean etiam. Est ultrices lobortis suscipit sollicitudin au consequat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Nunc.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Sapien aliquam nulla sollicitudin lorem iaculis nisi. Vehicula elementum est.",
+      "long_description": "long description Mauris nisi felis vel e ligula consequat. Curabitur pellentesque quisque maecenas. Arcu posuere non ut massa mollis turpis suscipit viverra. Nisi natoque velit neque. A pretium vulputate porttitor mauris at.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Erat.",
+          "Au."
+      ]
+    },
+    {
+      "name": "Nitrocam",
+      "short_description": "short description Leo a lorem tempus imperdiet. Turpis orci tincidunt a tincidunt.",
+      "long_description": "long description Vestibulum tempus condimentum iaculis rhoncus, suscipit porttitor eget vehicula at, auctor nunc faucibus aliquam. Metus pulvinar vel ultrices et. Sit morbi tempor ultrices lacus, consectetur aliquet lobortis quis auctor natoque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Placerat.",
+          "Arcu."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Auctor euismod risus curabitur tempus lacinia morbi. I sem curabitur.",
+      "long_description": "long description Dolor tristique maximus proin consequat risus. Sed non et id. Accumsan orci nisl nisi. Pulvinar cursus vestibulum sapien nulla. Dictum nibh facilisis mi eti lacinia maximus id sodales aliquet ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Ornare.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Maximus mi etiam enim tristique consectetur. Rhoncus gravida donec pellentesque.",
+      "long_description": "long description Quisque sollicitudin commodo sodales posuere nulla ex nisl. Eros posuere sapien iaculis curabitur nisi lobortis natoque tortor. Vulputate tristique cras hendrerit gravida scelerisque, non lacus condimentum pulvinar maecenas dictum ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Lacus.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Etiam facilisis maecenas consequat adipiscing vestibulum lectus pretium justo sollicitudin.",
+      "long_description": "long description Fringilla lectus mi ornare lorem. Est lectus lacinia vel ornare massa, tristique lectus curabitur eros euismod mi, ornare mollis nam cursus magna. Dolor pharetra tristique dignissim ex augue aliquam eget.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Non.",
+          "Quis.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "MediaDime",
+      "short_description": "short description Sagittis mi sem risus placerat, risus lacus aliquam sagittis diam.",
+      "long_description": "long description Turpis ligula aliquam bibendum aliquet morbi elementum suscipit quisque velit est. Pulvinar nibh donec au. Diam placerat nibh facilisis. Etiam au proin leo. Non lectus finibus tempus posuere donec viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Finibus.",
+          "Maecenas.",
+          "Vestibulum."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Commodo i aliquam velit placerat dignissim at, facilisis sodales est.",
+      "long_description": "long description Metus aenean mattis elementum ornare aliquam sapien ligula. Mauris lobortis erat aliquet, commodo lacus i facilisis elementum dui laoreet risus accumsan vel. Lacus facilisis hendrerit e. Dolor arcu au pretium.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Mi.",
+          "Accumsan."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description A magna leo sagittis maecenas. I aliquet at vulputate dictum.",
+      "long_description": "long description Tempus vel felis ultricies au placerat tortor quisque neque, amet tempus sit maecenas ex blandit enim adipiscing i turpis, laoreet proin ligula elit curabitur proin eti pellentesque dictum diam nibh.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Orci.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Ut lorem vulputate vestibulum iaculis mauris tempor eti lorem orci.",
+      "long_description": "long description Dictum pellentesque adipiscing consequat mollis eu donec orci mauris. Arcu at lacus aenean. Mi vulputate porttitor mollis bibendum adipiscing sem, accumsan morbi facilisis placerat neque mattis orci, blandit imperdiet amet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Risus.",
+          "Lobortis.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Sodales magna viverra ligula magna magna purus dignissim ultrices e.",
+      "long_description": "long description Sed dictum placerat e facilisis tortor au, lectus morbi lacus maximus orci ac massa, quis auctor viverra eget elementum pulvinar elementum placerat i leo. Suscipit curabitur pharetra pellentesque ligula i.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Morbi.",
+          "Vulputate.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Cameratek",
+      "short_description": "short description Consequat diam nam orci turpis et at pretium elit tempus.",
+      "long_description": "long description Aenean dictum dictum enim sem auctor leo e a, sapien ornare quis ultrices arcu lobortis, i finibus suscipit in, e sodales morbi elementum vehicula nibh scelerisque, ligula felis massa purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Velit.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Cras natoque ornare risus risus morbi, pulvinar vitae donec commodo.",
+      "long_description": "long description Tempor ante maecenas i mattis lectus. Eu mollis massa hendrerit posuere iaculis porttitor, nisl aliquam eros lacinia tincidunt. Quisque sed sodales nisl hendrerit sit finibus metus. Ante pulvinar enim vehicula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Viverra.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "Galcom",
+      "short_description": "short description Neque est pulvinar cursus tempus, sollicitudin vel donec pretium mauris.",
+      "long_description": "long description Nunc turpis tempor vehicula sem vulputate. Sagittis id tempor adipiscing tincidunt. Vulputate et vehicula ante eu justo. Leo adipiscing vel leo. Ac ipsum fringilla ac, nisi nisi vulputate consectetur risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Metus.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Orci justo dignissim vehicula est. Sagittis tortor au pharetra sapien.",
+      "long_description": "long description Auctor nulla ornare imperdiet mattis enim facilisis sodales sollicitudin erat nisl gravida, sodales arcu vitae eros tristique sed sed et nunc, mollis ipsum metus ultricies. Et accumsan aenean lacus au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Nam.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Morbi vestibulum erat suscipit aliquet nulla adipiscing, tristique viverra mi.",
+      "long_description": "long description Tempor posuere mattis vulputate gravida. A sed dui diam mattis mi. Blandit condimentum ipsum leo. Enim enim laoreet rhoncus. Tempor fringilla lacinia sapien facilisis. Ac donec facilisis nunc consequat in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Nibh.",
+          "Bibendum."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Ultricies turpis bibendum fringilla gravida in orci lacinia eti placerat.",
+      "long_description": "long description Eti posuere ornare facilisis sit, enim au elit ligula. Aenean aenean facilisis eget sollicitudin finibus, pharetra auctor eu ornare cras, amet amet nibh risus, a vulputate iaculis laoreet proin elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "In.",
+          "Blandit.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Cryosoft",
+      "short_description": "short description Tempus nisl neque tristique purus curabitur sollicitudin faucibus auctor proin.",
+      "long_description": "long description Elementum etiam mi risus maecenas. Metus lectus imperdiet commodo iaculis. Cras nulla vitae at lorem au curabitur nisl. Vehicula proin quisque tempor, nam id purus nulla. Ultrices nunc rhoncus faucibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultrices.",
+          "Nulla.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Pulvinar orci vitae aenean sodales massa quisque. Pellentesque nam placerat.",
+      "long_description": "long description Nibh mauris tempor vehicula tempor dignissim in laoreet arcu lacus curabitur suscipit finibus, mattis lorem aenean condimentum condimentum lacinia finibus fringilla hendrerit. Elit risus nisl imperdiet consequat tempor consectetur commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ex.",
+          "Sem.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description In nisi sagittis commodo consectetur rhoncus faucibus felis orci nulla.",
+      "long_description": "long description Condimentum justo euismod ipsum neque gravida proin auctor magna, mollis est ipsum morbi quis viverra, ut imperdiet mollis i elit, finibus sollicitudin velit mattis arcu. Adipiscing pharetra aliquam turpis tristique.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Placerat.",
+          "Consequat.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Imperdiet non porttitor mattis lacinia. Condimentum curabitur sodales quis orci.",
+      "long_description": "long description Sapien consectetur ultricies aenean sagittis. Condimentum vehicula nulla eget pulvinar nam. Maecenas ante at nibh. Diam a adipiscing tempor, vel orci dignissim id erat eti curabitur scelerisque et magna eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Curabitur.",
+          "Dolor.",
+          "Vel."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Enim lorem suscipit orci pharetra porttitor. Quis felis gravida accumsan.",
+      "long_description": "long description Sit massa ante turpis e finibus ultricies. Dignissim in etiam curabitur euismod natoque dui, risus euismod viverra auctor. Iaculis dignissim iaculis sem. Velit elit velit ante, nam lacinia leo ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Dictum.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Mi metus sollicitudin ac felis, elementum est diam turpis proin.",
+      "long_description": "long description Sollicitudin nisi adipiscing eget ante accumsan fringilla iaculis gravida nam ultricies tempus tristique, dictum vitae sed sodales nulla posuere metus eu et dui sapien, quis nulla laoreet maecenas non adipiscing.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Gravida.",
+          "Pharetra.",
+          "Imperdiet."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Neque lacus vehicula eget aenean, lorem maecenas cras consequat ut.",
+      "long_description": "long description Eros purus curabitur placerat lectus hendrerit nunc blandit mollis, consequat posuere pharetra id. Aenean fringilla lacus orci arcu, quis aenean tortor id. Enim iaculis pellentesque ornare. Consequat pellentesque tortor lectus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "E.",
+          "Ac.",
+          "Arcu."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Dictum e tempor maecenas ex cras elit accumsan commodo vel.",
+      "long_description": "long description Curabitur elementum quisque i id e. Vulputate sodales consequat lobortis mattis ante au pharetra. Dolor cursus condimentum sollicitudin ut lacinia. Consequat e consequat augue metus dignissim, lacinia finibus bibendum vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Et.",
+          "Aenean.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Ornare nisl eros augue i elementum. Eu ornare turpis vitae.",
+      "long_description": "long description Vestibulum aenean accumsan ipsum orci etiam, mauris morbi suscipit lobortis. Purus consequat eros nulla id. Dui cursus facilisis dolor ultricies neque, eros nibh maximus orci tincidunt commodo nisi consequat adipiscing.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Imperdiet.",
+          "Pellentesque.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Ipsum vestibulum pulvinar scelerisque imperdiet. Arcu magna finibus eti quisque.",
+      "long_description": "long description Et tortor eros accumsan amet lobortis mi eros ipsum ligula hendrerit sagittis i. Mollis mollis dui ultricies iaculis. Enim aenean vitae sem ex. Vel eu i mi. Elementum ac maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Augue.",
+          "Dictum.",
+          "Placerat."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Nibh vitae aliquam non quisque a cras placerat vehicula lorem.",
+      "long_description": "long description Est dolor ornare pretium eget. Neque ligula a au risus eu natoque. Nulla vehicula et nisl tortor. At massa justo gravida hendrerit est hendrerit nisl. Sit maximus maximus dui aenean.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Justo.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Aenean commodo adipiscing auctor sem scelerisque nunc, auctor eget justo.",
+      "long_description": "long description Et vehicula erat aliquam neque purus. Pharetra aliquam maximus imperdiet non suscipit, eros maecenas felis elit ut. Enim facilisis enim posuere massa donec dolor maecenas faucibus lacinia sapien eros elit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pretium.",
+          "Mauris.",
+          "Facilisis."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Commodo consectetur tempus leo lacinia, nam tristique scelerisque dolor risus.",
+      "long_description": "long description Dignissim eros nulla e eget posuere ante nisi finibus consequat laoreet blandit nisi felis augue sollicitudin sagittis, felis ligula mi gravida sit, nibh commodo et vitae, quisque nulla purus accumsan.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Felis.",
+          "A."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Lacinia facilisis rhoncus i porttitor ac ultricies tincidunt pulvinar ultricies.",
+      "long_description": "long description Aliquet accumsan vestibulum ultrices gravida. Scelerisque scelerisque pellentesque fringilla ipsum. Velit in consequat tortor. Augue sapien mi faucibus vitae suscipit ante ipsum facilisis non, turpis tristique sed ultricies pulvinar vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Morbi.",
+          "Finibus.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Massa consequat auctor massa lobortis. Quis cras lacinia condimentum leo.",
+      "long_description": "long description Placerat purus blandit sapien eu porttitor aliquam. Tempus mauris quisque porttitor ipsum posuere sollicitudin. Nulla ultrices scelerisque tortor quis dui metus id. I erat lobortis euismod quisque euismod i leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cursus.",
+          "Bibendum.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "VTGrafix",
+      "short_description": "short description Viverra aliquam elementum accumsan faucibus massa. Ligula placerat in augue.",
+      "long_description": "long description Purus orci aenean in sed, cras suscipit tortor ante. Ultricies elit nisl in velit, leo aliquet consequat scelerisque justo, purus viverra maximus viverra pretium eu lobortis eu aliquam vitae sagittis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Elit.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Aenean curabitur porttitor lacus nulla pulvinar. Sem leo elit elit.",
+      "long_description": "long description Orci consequat sed gravida sollicitudin nulla, sed tristique tristique pharetra sed maximus fringilla, in rhoncus tortor imperdiet. Quis curabitur diam imperdiet e curabitur proin metus lobortis curabitur. Mattis metus scelerisque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Dui.",
+          "Pulvinar."
+      ]
+    },
+    {
+      "name": "Optiplex",
+      "short_description": "short description Nunc posuere enim massa lacus et, metus accumsan aliquam ac.",
+      "long_description": "long description Pulvinar erat au purus lorem nam. In condimentum velit nibh. Magna nam pulvinar at, augue sem sapien tortor scelerisque. I sapien mi eros ante e, lacinia mi lacus amet elementum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tortor.",
+          "Faucibus.",
+          "Ipsum."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Non bibendum aenean lorem vel rhoncus aliquam lorem non sollicitudin.",
+      "long_description": "long description Consequat erat erat nisl sollicitudin, sit nibh tortor justo bibendum sem mattis scelerisque. Tristique blandit pharetra adipiscing mattis mollis maecenas id et quis laoreet, metus porttitor nunc ultricies tristique diam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "I.",
+          "Eros.",
+          "Ornare."
+      ]
+    },
+    {
+      "name": "Templatek",
+      "short_description": "short description Non elit accumsan pellentesque morbi non adipiscing posuere ornare morbi.",
+      "long_description": "long description Euismod ante consectetur consectetur pulvinar. Ultricies ac accumsan dignissim, eget nisi porttitor blandit. Vulputate ipsum quis lobortis pellentesque e vel tincidunt erat in, tincidunt pulvinar arcu tempor. Ultrices in non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Posuere.",
+          "Maecenas.",
+          "Felis."
+      ]
+    },
+    {
+      "name": "DynaAir",
+      "short_description": "short description Id justo maecenas elit i elementum iaculis nisi justo augue.",
+      "long_description": "long description Mi amet pharetra i enim, nam scelerisque ultricies iaculis, aenean au felis nunc mauris. Nulla vitae mauris euismod. Magna ipsum cursus tortor felis ipsum adipiscing curabitur magna. Velit pellentesque hendrerit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Tincidunt.",
+          "Eu."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Scelerisque ultricies elementum turpis sem laoreet fringilla consectetur massa tempus.",
+      "long_description": "long description Lacinia rhoncus eros enim aenean condimentum vel facilisis. Rhoncus lacinia nam vel, euismod lorem magna facilisis. Nam lobortis et vehicula augue bibendum commodo. In nulla metus sapien ex bibendum mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ligula.",
+          "Tortor.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "Proline",
+      "short_description": "short description Imperdiet amet lobortis e augue morbi. Orci diam rhoncus tortor.",
+      "long_description": "long description Ante tristique blandit morbi elit e augue, curabitur aliquet arcu dolor ultrices facilisis facilisis, lorem risus ligula pretium ultricies quis. Dignissim dictum euismod nisi ex leo, id tempus aliquet sed.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dictum.",
+          "Justo.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Mi ut e pellentesque placerat. Dui facilisis condimentum maecenas suscipit.",
+      "long_description": "long description Enim iaculis pharetra sollicitudin e eti rhoncus nunc nam nam. Blandit in pulvinar felis bibendum risus. Elementum maecenas metus erat. Nisl tincidunt lacinia mauris erat. Tincidunt sit curabitur arcu lobortis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Sollicitudin.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Justo et et suscipit ligula adipiscing vel. Viverra felis nibh.",
+      "long_description": "long description E condimentum elementum finibus id ante maecenas pellentesque ornare mattis ultricies in etiam justo, nunc scelerisque etiam massa, mattis nisl eget risus curabitur, sem sodales laoreet lacus auctor massa commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Scelerisque.",
+          "Purus.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "MultiServ",
+      "short_description": "short description Donec vehicula sodales maximus commodo sollicitudin amet. Magna enim aliquet.",
+      "long_description": "long description Purus sem nisl consequat nisi metus consequat. Pharetra e arcu mattis ultricies. Aenean imperdiet blandit nisl sagittis ornare morbi. Mi pretium mollis vestibulum gravida vehicula. Adipiscing imperdiet et aenean et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Eti.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description E tempus tristique condimentum eros porttitor ac scelerisque orci diam.",
+      "long_description": "long description Maximus ultricies vitae lorem sed tristique. Ipsum au felis elit ipsum. Massa et mauris augue. Vel eget vulputate vehicula e pellentesque, au risus orci arcu mattis a, velit pellentesque ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Tempus.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "Britech",
+      "short_description": "short description Pharetra tortor lacus augue tortor au ultricies maecenas tempor suscipit.",
+      "long_description": "long description Neque lorem eu proin euismod porttitor, ornare condimentum donec erat, risus gravida morbi lacinia metus, aliquam velit porttitor sagittis. Eget ornare mi metus augue imperdiet, aliquam sed et vulputate bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Porttitor.",
+          "Vulputate."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Finibus ex sapien vestibulum eros, sagittis accumsan ex magna tristique.",
+      "long_description": "long description Faucibus elit mattis laoreet au commodo e. Tempor nibh scelerisque consequat etiam i. Mattis adipiscing blandit nunc curabitur metus donec, scelerisque at hendrerit turpis. Lacinia pharetra blandit ut elit felis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "Sem.",
+          "Vestibulum."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Morbi lobortis laoreet au tincidunt. Posuere quis tempus bibendum adipiscing.",
+      "long_description": "long description Consectetur suscipit dictum mauris ligula natoque, metus etiam cras nam. Morbi ornare felis nunc, pretium amet sapien mattis quis. Aliquet orci au donec. Mollis maximus donec euismod, nunc commodo eros.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "In.",
+          "Maximus."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Condimentum imperdiet commodo dolor faucibus pretium maximus tempor felis ultricies.",
+      "long_description": "long description Neque nibh turpis lobortis id aenean in arcu maecenas quis in dictum au aliquet. Bibendum magna facilisis tincidunt, et faucibus lectus nulla blandit adipiscing pellentesque risus, rhoncus pulvinar augue risus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Eu.",
+          "Aliquam."
+      ]
+    },
+    {
+      "name": "Chromaton",
+      "short_description": "short description Purus in aliquet augue cursus elementum rhoncus, lectus gravida turpis.",
+      "long_description": "long description Ligula eros tempus auctor ligula enim lobortis. Pretium ligula lectus mauris velit leo id pellentesque velit aenean. Elit sagittis ex imperdiet ornare sagittis lacinia amet enim. Vel posuere erat ornare.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eros.",
+          "Eti.",
+          "Maecenas."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Purus iaculis ligula nunc gravida lacinia porttitor. Ante justo sem.",
+      "long_description": "long description Lacinia vel dui nulla ex tincidunt i, nisi i dictum lacus. Ut laoreet eros laoreet massa in velit scelerisque hendrerit tempor tortor. Justo sapien auctor in sodales ornare sodales aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "In.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Adipiscing finibus nibh lorem blandit, ultrices et finibus quisque tortor.",
+      "long_description": "long description Quisque dignissim ultrices posuere ut. Mauris vitae ultrices fringilla lobortis velit, metus metus finibus tortor. Elit commodo mauris quis nisl, aenean eros consequat velit tempus etiam ac. Vehicula faucibus mollis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nibh.",
+          "Nisl.",
+          "Pretium."
+      ]
+    },
+    {
+      "name": "Solexis",
+      "short_description": "short description Blandit curabitur id arcu mollis mauris cursus felis quis lacus.",
+      "long_description": "long description Nibh ornare nisi scelerisque donec lacinia turpis purus felis id rhoncus condimentum accumsan. Accumsan i ut lacinia accumsan amet, vehicula viverra maximus vulputate. Lobortis lacinia magna ornare iaculis mi porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Fringilla.",
+          "Sed.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Vestibulum lacinia nulla etiam blandit justo au at dictum lobortis.",
+      "long_description": "long description Ante sapien bibendum mi e. Pulvinar amet elementum mollis vehicula ultrices tristique aliquet, ultrices nisi in tristique. Leo et condimentum nulla et, amet cras pretium arcu dolor aenean neque aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Hendrerit.",
+          "Elementum.",
+          "Turpis."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description Amet curabitur commodo eget orci. Fringilla nunc pellentesque at aenean.",
+      "long_description": "long description Velit mi condimentum proin lacinia risus aenean posuere ultricies. Vestibulum dictum hendrerit placerat nulla id. Commodo turpis ornare bibendum blandit bibendum adipiscing lacus cursus, consectetur bibendum vehicula purus tortor au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Proin.",
+          "Fringilla."
+      ]
+    },
+    {
+      "name": "MultiServ",
+      "short_description": "short description Vehicula sit ac proin eget non, lacus mauris tempus magna.",
+      "long_description": "long description Pretium mollis augue justo iaculis, faucibus lacus dui mattis. Pellentesque cursus quisque augue a. Accumsan vulputate sit iaculis vestibulum suscipit, eget viverra quis finibus non mi tempus mauris amet nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ante.",
+          "Felis.",
+          "Sem."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Nulla justo nisi lobortis turpis. Viverra ultricies ante dictum pretium.",
+      "long_description": "long description Tempor velit ante elit sem tempor nunc. Aenean justo vitae adipiscing nisi diam ante, vehicula eu lorem velit. Tortor metus lacinia commodo, laoreet imperdiet tincidunt eget sed maecenas velit est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "E.",
+          "Purus.",
+          "Consequat."
+      ]
+    },
+    {
+      "name": "Polycore",
+      "short_description": "short description Pulvinar viverra tempus viverra imperdiet, nulla vestibulum lectus orci finibus.",
+      "long_description": "long description Sollicitudin etiam maecenas gravida sagittis. Diam vestibulum sapien pellentesque tempor dictum. Morbi metus finibus dui, vel justo nisi mi metus placerat posuere sed mi. Amet commodo mollis nisl lacinia vel.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sapien.",
+          "Neque.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Cryptonica",
+      "short_description": "short description Tempus lacus id mauris lacinia. Blandit sodales quis vitae consectetur.",
+      "long_description": "long description Vehicula sit gravida ex iaculis dolor. Purus consectetur pretium id lacinia cras posuere, etiam adipiscing augue vitae dictum scelerisque. Lacus blandit quisque orci ultrices eti auctor maecenas ligula elementum donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Aliquet.",
+          "Suscipit."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Elementum ultricies metus quis dolor, pellentesque cursus nunc turpis diam.",
+      "long_description": "long description Pellentesque nibh aenean curabitur metus natoque et diam vehicula elit aliquet euismod quis sagittis cursus tincidunt. Sit vitae justo ornare vel, nunc tortor in leo bibendum. Nam lacinia quisque accumsan.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Lacinia.",
+          "Diam."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Pulvinar lacinia aliquet non massa lorem nisl adipiscing ac eu.",
+      "long_description": "long description Rhoncus consequat gravida erat magna sem, tristique commodo augue eti porttitor sollicitudin e turpis natoque elementum ultrices scelerisque est i eu. Cursus augue eget dui dignissim metus est euismod magna.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Porttitor.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "TrioSys",
+      "short_description": "short description Elementum nam viverra nunc maecenas. Consequat sapien sapien gravida cursus.",
+      "long_description": "long description Ipsum natoque dignissim rhoncus lacus justo. Est consequat tempor vehicula eti erat ut. Metus sem sodales nunc aliquet dolor, at curabitur at nulla non mattis quis. Ultricies sed nibh curabitur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Arcu.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "Hypervision",
+      "short_description": "short description Lorem vitae eu elementum i nisi. Facilisis facilisis bibendum vulputate.",
+      "long_description": "long description Pretium mauris turpis et vitae justo iaculis. Turpis eros vitae porttitor, nisi laoreet iaculis scelerisque. Enim est ante lacinia metus elementum, arcu in quisque curabitur, elit maecenas sollicitudin placerat pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Etiam.",
+          "Elit.",
+          "Etiam."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Mollis arcu posuere purus blandit, laoreet donec ipsum hendrerit felis.",
+      "long_description": "long description Vulputate tempus in lectus justo, fringilla nulla dignissim risus pretium vehicula. Consectetur amet e dolor tempus. Proin faucibus ornare vel purus, vitae pulvinar est fringilla. Aliquam accumsan risus ornare vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Ut.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Lacinia sodales lobortis et cras dolor porttitor lacinia sollicitudin aliquet.",
+      "long_description": "long description Hendrerit sodales nam iaculis a dictum posuere nisl elementum, quis aliquet cursus elit nisi natoque a viverra, massa scelerisque mollis tempus. In lorem nulla dolor sem enim. Sapien facilisis imperdiet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vulputate.",
+          "Pulvinar.",
+          "Ipsum."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description Lacus orci ornare vulputate leo. Lacinia aliquet metus tortor hendrerit.",
+      "long_description": "long description Ultrices consectetur nulla lorem pellentesque, au dui quisque ac, mollis nam pulvinar vel lobortis sit, porttitor proin facilisis velit eu curabitur vehicula dui. Nisi quis lacinia adipiscing, consequat aenean pulvinar.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Morbi.",
+          "Magna."
+      ]
+    },
+    {
+      "name": "Coolinga",
+      "short_description": "short description Hendrerit rhoncus amet mauris donec ligula. Quisque sit commodo suscipit.",
+      "long_description": "long description Maximus tristique vitae laoreet a, quis tincidunt dolor curabitur. Au vehicula ipsum orci dolor tempor adipiscing. Eget accumsan aenean amet pharetra. Lacus viverra porttitor ut nisi gravida. Arcu quisque felis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Nam.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Adipiscing ultrices mauris morbi neque eu aliquam natoque morbi maximus.",
+      "long_description": "long description Nulla nibh laoreet mi au id finibus ultrices, et tristique ultrices non suscipit sem non cras lectus eti eu pretium, commodo risus arcu facilisis est natoque lacus quisque tristique pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Ac.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Lacinia consequat lorem ultricies morbi vestibulum natoque, e id nibh.",
+      "long_description": "long description E felis pretium lacinia pretium finibus ut vel consequat sed elit eros augue auctor. In sollicitudin proin ut blandit lacinia. Consectetur placerat euismod ligula. Natoque dignissim maximus cras nisl rhoncus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lectus.",
+          "Vulputate.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Kancom",
+      "short_description": "short description Sagittis maximus in imperdiet dui nisl vulputate in blandit sit.",
+      "long_description": "long description Risus pellentesque pellentesque donec tincidunt iaculis, neque bibendum vulputate iaculis justo, lacinia consectetur commodo adipiscing tempor at sem maximus gravida neque, ornare nisl a ultricies erat. Ex lectus rhoncus bibendum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Tempor.",
+          "Diam."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Lacus scelerisque velit erat ex. Sagittis nunc porttitor rhoncus posuere.",
+      "long_description": "long description A mi justo facilisis id nisi sagittis quisque. Pellentesque lacinia est placerat a, consectetur ornare ultrices leo erat justo nisl aliquet pellentesque morbi eu elit. Lobortis mauris ultricies lacinia ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eti.",
+          "Morbi.",
+          "Lobortis."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Nunc turpis pretium ligula faucibus felis. Maecenas nunc etiam adipiscing.",
+      "long_description": "long description Iaculis lacus auctor ipsum quis est vel laoreet proin, vestibulum aliquam pharetra eu facilisis vulputate. Lacus mi in ultricies vestibulum condimentum lacinia finibus tristique imperdiet enim, finibus vitae ornare velit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Maecenas.",
+          "Au."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Eros commodo gravida proin ultricies. Auctor et ut aliquet donec.",
+      "long_description": "long description Velit maximus euismod lorem sodales vitae adipiscing ornare imperdiet ex donec et. Morbi ultrices suscipit suscipit. Nunc i commodo pulvinar gravida quisque. Sodales est ac elit id ornare at leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Elementum.",
+          "Gravida.",
+          "Mollis."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Aenean ac placerat sit in, tortor vehicula suscipit posuere at.",
+      "long_description": "long description Nunc elementum placerat lacus scelerisque quis. Sapien magna metus ac sit mi diam iaculis eu suscipit. Ut sollicitudin ac proin. Massa maximus quisque fringilla vestibulum i blandit eget et curabitur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Felis.",
+          "Metus.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Lacinia tempor lacus neque metus mattis risus non id sem.",
+      "long_description": "long description Hendrerit purus ultrices i imperdiet erat dictum. Est lorem et consequat facilisis nulla, nisl purus vulputate hendrerit lacinia velit magna laoreet cras ultrices, lobortis scelerisque nulla porttitor tempor nulla et.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Diam.",
+          "Ex.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "Infracom",
+      "short_description": "short description Ornare arcu pulvinar non aenean velit fringilla. Ac curabitur faucibus.",
+      "long_description": "long description Lobortis donec eu non nulla. Dictum magna leo risus. Tortor e ut iaculis, dolor non faucibus ornare ultrices vehicula scelerisque, sit finibus eu purus non mollis arcu lacinia orci tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Erat.",
+          "Sapien.",
+          "Felis."
+      ]
+    },
+    {
+      "name": "DuoServe",
+      "short_description": "short description Vitae risus tristique non imperdiet. Arcu consequat est purus morbi.",
+      "long_description": "long description Porttitor i eti mi ac. Fringilla cursus at pharetra at ornare gravida eu mi maecenas. Nisi mauris porttitor purus augue magna faucibus au pharetra placerat. Dolor magna aliquet eu finibus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Accumsan.",
+          "Mattis."
+      ]
+    },
+    {
+      "name": "MultiServ",
+      "short_description": "short description Ipsum pellentesque sed metus enim, eget tempor diam turpis sed.",
+      "long_description": "long description Sagittis lectus proin eros eget maecenas commodo, metus ornare leo fringilla, at i adipiscing ante consequat velit tristique aenean, vitae adipiscing arcu ligula. Erat id sed cras etiam aenean felis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Mollis.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Haltheon",
+      "short_description": "short description Orci adipiscing condimentum porttitor vel quisque ut nibh mollis etiam.",
+      "long_description": "long description Aenean nisl enim sem mi. Scelerisque nam lectus i elit nunc enim ornare. Diam nisi mollis suscipit mi morbi hendrerit mattis orci tristique, risus ante aliquet lorem metus velit ultricies.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Ut.",
+          "Mi."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Laoreet in adipiscing proin purus. Eu nisl lorem cras in.",
+      "long_description": "long description Tristique arcu tempor ex rhoncus, leo massa mattis tristique nisl. Ipsum a mi condimentum curabitur. Enim ligula augue et finibus elit natoque diam pellentesque auctor, mollis aenean vitae suscipit tincidunt.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lobortis.",
+          "Consectetur.",
+          "Cras."
+      ]
+    },
+    {
+      "name": "PeerSys",
+      "short_description": "short description Adipiscing finibus risus quis ultricies. Enim consequat id facilisis lacus.",
+      "long_description": "long description Sed lobortis at finibus quis pretium condimentum diam. Metus velit tortor eu faucibus, quisque quisque et pulvinar quisque. Aenean id natoque nulla erat, elit metus neque nisi. Felis dolor ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "Tortor.",
+          "Cursus."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Velit risus id vestibulum magna. Hendrerit cursus sollicitudin magna risus.",
+      "long_description": "long description Eget gravida sapien dignissim leo pretium. Accumsan finibus cursus hendrerit iaculis risus sagittis dolor maecenas natoque a tempus gravida vestibulum in velit justo tempor, bibendum id nisi magna suscipit fringilla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Quisque.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Sapien dignissim a lectus ut bibendum nunc quisque sem imperdiet.",
+      "long_description": "long description Ligula imperdiet vitae auctor cras. Bibendum pharetra elementum quis nam sit vestibulum viverra e viverra. Tempor bibendum lacinia i sapien, dictum ut scelerisque nulla. Proin tortor lobortis cras etiam turpis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Dictum.",
+          "Orci."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Orci at sodales risus au. Suscipit au laoreet sodales sapien.",
+      "long_description": "long description Iaculis elementum vulputate finibus vel fringilla gravida e dignissim nibh gravida nibh ligula tristique pellentesque sapien facilisis consequat. Est hendrerit justo nam sagittis. Placerat rhoncus massa imperdiet lacinia pellentesque nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Suscipit.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Pancast",
+      "short_description": "short description Proin proin sem a lectus. Elit id vitae lacinia commodo.",
+      "long_description": "long description Magna sed accumsan augue augue, in aliquet aliquam placerat, id leo ex dolor ultrices, aliquet eros neque diam sit aenean au a, mauris mauris neque ultricies eget metus id euismod.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Proin.",
+          "Finibus.",
+          "Arcu."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Imperdiet au porttitor donec aenean sem purus nisl hendrerit lacus.",
+      "long_description": "long description Dolor tristique felis lacinia elit au commodo au lacinia, dignissim dolor ultricies cursus amet tincidunt i nunc tortor ultrices. Eget nunc laoreet turpis est ut non morbi tristique vitae vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Viverra.",
+          "Facilisis.",
+          "Lectus."
+      ]
+    },
+    {
+      "name": "Cirpria",
+      "short_description": "short description Lectus velit diam ante sit tempus tristique pharetra vel vitae.",
+      "long_description": "long description Dignissim justo ultricies fringilla condimentum lobortis euismod elementum. Quisque erat felis nisl magna, mi rhoncus maximus purus nunc tortor. Neque vitae sodales massa pharetra velit eti eti elit aenean consectetur.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ac.",
+          "Non.",
+          "Condimentum."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Scelerisque scelerisque i etiam bibendum tristique vestibulum eros viverra sapien.",
+      "long_description": "long description Placerat adipiscing aliquet leo finibus mattis orci justo ligula au e ultrices natoque, maximus neque tempor eros tempus. Auctor donec dictum vehicula ultricies ultrices curabitur ornare auctor proin etiam cursus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Blandit.",
+          "Aliquam.",
+          "Tempus."
+      ]
+    },
+    {
+      "name": "Baramax",
+      "short_description": "short description Porttitor justo velit ornare vehicula. Blandit vehicula et ornare a.",
+      "long_description": "long description Neque elementum neque id bibendum arcu leo maximus sodales nam scelerisque quisque i turpis, condimentum maximus pharetra purus etiam. Blandit ultrices arcu cursus. Rhoncus risus posuere consequat felis e in.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Augue.",
+          "Metus."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Natoque quis sollicitudin adipiscing donec quisque, eti lacinia adipiscing placerat.",
+      "long_description": "long description Erat a ante imperdiet sollicitudin dui euismod. Proin arcu eget pulvinar turpis cursus eros, in sed leo pretium maximus, risus vel ultricies massa, curabitur nisi i vehicula, hendrerit ipsum nunc.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pulvinar.",
+          "Lacinia.",
+          "Mauris."
+      ]
+    },
+    {
+      "name": "Eluxa",
+      "short_description": "short description Sollicitudin amet gravida eros eu sapien vulputate. Risus pellentesque proin.",
+      "long_description": "long description Ipsum mauris aliquet finibus bibendum, felis vehicula nulla justo lorem morbi in ornare euismod ex mattis, eu eros mi e velit, pretium sapien vel ante enim erat metus commodo erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Auctor.",
+          "Nulla.",
+          "Hendrerit."
+      ]
+    },
+    {
+      "name": "Acousticom",
+      "short_description": "short description Hendrerit at morbi sollicitudin adipiscing mi tincidunt. Lacinia maecenas ligula.",
+      "long_description": "long description Ipsum ligula tempor porttitor dignissim. Vehicula leo ex massa ante ipsum, ipsum ut ornare au. Turpis sagittis eti etiam e justo, nibh nisl velit ultricies facilisis dignissim augue aenean accumsan.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempor.",
+          "Fringilla.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "Iridimax",
+      "short_description": "short description Pharetra nunc hendrerit magna at cursus adipiscing consectetur at accumsan.",
+      "long_description": "long description Eti eu etiam ipsum pretium. Scelerisque hendrerit tempor sodales. Ipsum quis pretium at commodo sollicitudin, pulvinar sagittis rhoncus accumsan vehicula fringilla risus vulputate finibus morbi. Velit au au auctor ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tincidunt.",
+          "Cras.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "FastMart",
+      "short_description": "short description I facilisis pretium finibus ut mollis hendrerit natoque lorem sit.",
+      "long_description": "long description Nibh vitae facilisis erat fringilla gravida sem velit vitae bibendum, porttitor proin amet magna, ligula maximus finibus facilisis pulvinar accumsan. Hendrerit gravida purus vehicula laoreet, orci sit eget tortor laoreet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nunc.",
+          "Pretium.",
+          "Tempor."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Nisl lacus laoreet donec velit. Au pretium leo faucibus pulvinar.",
+      "long_description": "long description Orci nisi proin massa hendrerit. Sagittis eu ipsum ultricies. Nam rhoncus tortor tincidunt sagittis vulputate massa tristique. Condimentum ultrices sem lectus. Suscipit placerat maecenas lorem. Aliquet quis fringilla pellentesque ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dignissim.",
+          "Vehicula.",
+          "Et."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Curabitur placerat leo vestibulum velit proin, cursus quisque bibendum arcu.",
+      "long_description": "long description Suscipit rhoncus curabitur orci elit metus tempor velit. Morbi sagittis etiam arcu nibh ornare faucibus. Sollicitudin cursus eu bibendum mauris vel sed. Justo eget turpis accumsan. Lacinia iaculis bibendum erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Sagittis.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Keycast",
+      "short_description": "short description Sed sagittis tortor a dictum nam, hendrerit nisl etiam consectetur.",
+      "long_description": "long description Ultricies lacus dolor orci i. Scelerisque etiam ornare vitae. Arcu id natoque lacus maecenas. Pellentesque sit consequat quisque aliquam risus accumsan risus curabitur leo. Dolor ultricies lacinia ipsum ac pharetra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "Sed.",
+          "Blandit."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Tortor hendrerit rhoncus bibendum lacinia pharetra. Accumsan laoreet ac auctor.",
+      "long_description": "long description Tempus faucibus vitae lobortis eros. Nunc non nunc lacinia, au aliquet lectus bibendum eros quis finibus tortor purus magna viverra. Maximus ac etiam scelerisque sagittis. Imperdiet nisl lorem adipiscing morbi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mi.",
+          "Id.",
+          "Ultricies."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Pellentesque sodales lectus e et, nulla aliquam turpis sem cras.",
+      "long_description": "long description Ante ornare lobortis consectetur vel quis eget aliquam enim. Eti mollis lacinia proin. Quisque condimentum mollis purus erat donec, ipsum vel adipiscing vitae morbi sollicitudin, augue metus mi amet blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Velit.",
+          "Etiam.",
+          "Augue."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Nisi eti velit et au. Ante commodo suscipit risus vulputate.",
+      "long_description": "long description Tincidunt auctor aliquet id dictum i porttitor, lacinia at suscipit accumsan nisl, sodales laoreet ipsum turpis, in lacinia laoreet turpis vulputate nam, vestibulum ex eget at, ante pellentesque ante donec.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eu.",
+          "Au.",
+          "A."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Eu lacinia mollis aliquet est amet arcu donec dolor suscipit.",
+      "long_description": "long description Ipsum sollicitudin ante posuere viverra tortor rhoncus metus. Pretium et lectus tincidunt elementum proin pulvinar, purus lectus eros at diam. Vitae at quis e, metus arcu morbi cursus tempus ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Dolor.",
+          "Vulputate.",
+          "Proin."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Lectus lectus sem sollicitudin ut morbi. Orci lorem magna accumsan.",
+      "long_description": "long description Ornare sollicitudin magna morbi metus. Pellentesque eget tincidunt lorem ex sagittis imperdiet. Vehicula fringilla nulla commodo, morbi quis maximus dolor condimentum nulla tempor, sollicitudin sed purus dictum e massa au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Quis.",
+          "Arcu.",
+          "Consectetur."
+      ]
+    },
+    {
+      "name": "Protheon",
+      "short_description": "short description At maximus elementum mi rhoncus fringilla eti. Suscipit tristique adipiscing.",
+      "long_description": "long description Risus quis amet ipsum erat, at lobortis elementum au augue augue eu, orci commodo aliquet justo. E dignissim metus nibh turpis vel finibus. Nisi vulputate et at ut imperdiet blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Commodo.",
+          "Tempus.",
+          "Mattis."
+      ]
+    },
+    {
+      "name": "Superwire",
+      "short_description": "short description Vehicula nisi placerat massa lectus morbi nunc condimentum eros amet.",
+      "long_description": "long description Tempus sem elementum accumsan risus nam rhoncus. Eros ultrices sodales proin mi e consectetur. Curabitur au fringilla vitae vehicula, cursus vitae eu facilisis, a i ipsum elit nam quis dignissim.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Facilisis.",
+          "Vulputate."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Curabitur dui nam porttitor quis. Turpis eros augue mollis ex.",
+      "long_description": "long description Pretium arcu ac justo maecenas. Vulputate mi gravida dictum, natoque metus a mi. Finibus iaculis natoque erat accumsan adipiscing. Vel augue dignissim ultrices at consequat vitae, mollis nisi nam orci.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vel.",
+          "Condimentum.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "Quadtek",
+      "short_description": "short description E au condimentum cursus condimentum et, natoque mauris vel adipiscing.",
+      "long_description": "long description Enim eros adipiscing hendrerit eros, posuere neque elementum non laoreet sagittis a dignissim. Pretium massa nisi orci consequat au dolor, blandit donec a in, vitae nisl blandit consequat nulla viverra.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Auctor.",
+          "At.",
+          "Non."
+      ]
+    },
+    {
+      "name": "TrueXT",
+      "short_description": "short description Eu lobortis enim consectetur eros. Enim blandit consectetur velit maecenas.",
+      "long_description": "long description Elementum ultricies mollis ligula orci a justo. Tortor turpis faucibus sapien nunc. Quis mi eget blandit placerat a au tincidunt lectus eget ante. Mauris pharetra neque faucibus purus ultrices nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Neque.",
+          "Ante."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Sem sodales purus natoque sem diam viverra, lacinia ultrices ipsum.",
+      "long_description": "long description Justo vitae ante aliquet et, sed ante accumsan ultricies fringilla felis faucibus tortor morbi. Aliquam justo vulputate viverra aliquam. Pulvinar mollis dui gravida vitae natoque, eros tincidunt ornare justo augue.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "At.",
+          "Proin.",
+          "Erat."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Massa mauris facilisis erat commodo eget nibh vestibulum elementum ligula.",
+      "long_description": "long description In elit mollis dui laoreet enim mollis quisque eu nulla vulputate quis proin lacinia leo tortor mi id consectetur magna condimentum euismod sit lectus, ac cursus neque aliquet hendrerit neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Tristique.",
+          "Curabitur."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Placerat ante quis nunc eti enim nisi dolor lorem facilisis.",
+      "long_description": "long description Eti sit non cras morbi sem, cursus magna sollicitudin eu dictum gravida lacus, maximus ultricies tincidunt elementum gravida. Dolor ac elit cursus mollis. Tristique ultrices dui pharetra etiam eti nibh.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ultricies.",
+          "I.",
+          "Massa."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Pellentesque vitae i non hendrerit pharetra. Rhoncus fringilla erat sollicitudin.",
+      "long_description": "long description Scelerisque lacus pretium vestibulum dolor arcu justo sollicitudin sodales au, tristique aliquet enim aliquet, blandit lorem at ut ac tortor placerat pellentesque pellentesque dictum cras eti blandit accumsan curabitur neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Finibus.",
+          "Ultricies."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Viverra posuere condimentum eu in, bibendum ligula elit massa curabitur.",
+      "long_description": "long description Nibh in dolor sodales nisl vehicula. Faucibus justo dui lorem. Enim pulvinar arcu vel sem, dolor lobortis cursus id sagittis risus natoque, scelerisque blandit est natoque a sit sapien purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Viverra.",
+          "Iaculis.",
+          "Vulputate."
+      ]
+    },
+    {
+      "name": "CorpTek",
+      "short_description": "short description At faucibus eu tincidunt adipiscing turpis lorem, sit pulvinar ex.",
+      "long_description": "long description Magna ligula ac tortor orci nibh placerat ultricies, aliquet diam mollis ultricies. Orci maximus placerat maximus, sodales sollicitudin elementum proin. Leo dolor pulvinar felis natoque. Consectetur pharetra arcu orci mi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Orci.",
+          "Adipiscing."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Sit ultricies maximus ut velit mi dictum metus sed quis.",
+      "long_description": "long description Aliquam bibendum felis ac ultrices nulla, orci elit gravida nisl et turpis, ligula lorem etiam iaculis sed. Natoque nulla mauris morbi pellentesque mattis, at vestibulum pellentesque massa, blandit aliquam nisi.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Laoreet.",
+          "Arcu.",
+          "Pellentesque."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Eti dui mauris neque enim. Pellentesque quis erat orci lacinia.",
+      "long_description": "long description Cursus auctor lectus arcu ligula dignissim fringilla morbi, vehicula risus nunc porttitor. Vel ornare turpis hendrerit. Sed proin i iaculis lacus neque ultrices. Diam lobortis lacinia mollis, eti quis non.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Dictum.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Dynalab",
+      "short_description": "short description Lacinia justo facilisis adipiscing pharetra in. Aenean mollis eros mi.",
+      "long_description": "long description Augue etiam condimentum et sem pretium. Nisl commodo finibus tempus pulvinar. Felis natoque ante maecenas quisque. Dignissim eget tempor augue au. Gravida quisque etiam scelerisque. Imperdiet e donec ac porttitor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Bibendum.",
+          "Quisque.",
+          "At."
+      ]
+    },
+    {
+      "name": "Conixco",
+      "short_description": "short description Lobortis placerat mauris amet rhoncus consequat felis etiam vestibulum ultrices.",
+      "long_description": "long description Ornare ut pharetra mauris posuere proin lacus sagittis adipiscing. Neque pulvinar sodales ut velit facilisis laoreet. Eti ac est lacinia ligula pellentesque aliquet. Nisi ultricies euismod nulla mattis iaculis vulputate.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Purus.",
+          "Dictum.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "Keysoft",
+      "short_description": "short description Maecenas donec nisl ultrices est. Maximus ultrices ex cras massa.",
+      "long_description": "long description Dignissim commodo nunc maecenas pretium. Tempor nulla turpis laoreet donec. Eros bibendum mauris tempus tristique facilisis viverra eu. Erat iaculis sem curabitur auctor ornare, vel est curabitur consequat bibendum purus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vitae.",
+          "Posuere.",
+          "Sit."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Sem augue orci ac condimentum aenean pellentesque, nibh mauris purus.",
+      "long_description": "long description Neque nam ultrices aliquet massa at tristique enim maecenas, turpis eros lectus vestibulum viverra. Nibh commodo mi donec orci vitae. I vitae velit bibendum. Elementum nisi euismod id dolor ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Eget.",
+          "Natoque.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "Citisys",
+      "short_description": "short description Felis pharetra finibus consectetur condimentum leo pharetra posuere tincidunt risus.",
+      "long_description": "long description Pulvinar vehicula leo id bibendum tristique nunc posuere at consectetur, vel ultricies non cursus au gravida. Ornare lobortis nisl imperdiet sed augue. Purus sagittis accumsan commodo porttitor quisque sagittis ipsum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Rhoncus.",
+          "Dictum.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Commodo purus ultrices porttitor faucibus eget bibendum consequat justo morbi.",
+      "long_description": "long description Erat e sed consectetur tortor leo commodo. Orci euismod bibendum mattis bibendum, lorem est gravida nibh maximus dignissim magna sed. Id commodo faucibus hendrerit consequat nunc. Lorem non etiam quis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mattis.",
+          "Proin.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "Bellgate",
+      "short_description": "short description Fringilla turpis a natoque curabitur, blandit dictum e mauris maecenas.",
+      "long_description": "long description Hendrerit morbi ac nisi adipiscing suscipit placerat. Iaculis hendrerit commodo curabitur dui est etiam finibus lobortis magna aliquam facilisis. Ut eget nibh sem, nisl finibus pellentesque massa ultrices sollicitudin blandit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Ornare.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "CoreMax",
+      "short_description": "short description Iaculis adipiscing adipiscing condimentum sem diam placerat, au donec suscipit.",
+      "long_description": "long description Pharetra donec natoque lorem tempor lobortis, mauris eu enim sodales accumsan augue est blandit porttitor nibh purus commodo, auctor felis imperdiet donec sem. Sollicitudin ut iaculis nisl sodales donec adipiscing.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Massa.",
+          "Lectus.",
+          "Faucibus."
+      ]
+    },
+    {
+      "name": "Tecomix",
+      "short_description": "short description Mauris viverra mattis nunc porttitor. Auctor eu facilisis in arcu.",
+      "long_description": "long description Ligula adipiscing eros mattis dui. Ut sapien id ornare. Eti dictum amet enim. Nibh erat massa mi consequat. Magna augue proin natoque ipsum velit mattis nisi vulputate. Pretium lacus ornare.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Orci.",
+          "Vulputate.",
+          "Leo."
+      ]
+    },
+    {
+      "name": "Maxcast",
+      "short_description": "short description Fringilla mollis nam lorem bibendum rhoncus, dolor a purus facilisis.",
+      "long_description": "long description Ac amet turpis i sit cras ligula e, elit cras proin amet tempus, elementum maximus eros auctor. Ut commodo dictum lacus in nam maximus mattis viverra elementum maximus nunc amet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nam.",
+          "Lacinia.",
+          "Sagittis."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description Laoreet accumsan e mauris sem. Tincidunt pharetra ex ornare tortor.",
+      "long_description": "long description Donec imperdiet fringilla auctor placerat euismod nisi fringilla nulla. Elementum tortor vulputate id leo vulputate auctor tincidunt sodales eros, commodo gravida i ligula dolor mattis ipsum, posuere porttitor dui erat.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Vehicula.",
+          "In.",
+          "I."
+      ]
+    },
+    {
+      "name": "Connic",
+      "short_description": "short description Lacinia etiam e facilisis eti rhoncus facilisis ipsum sodales eu.",
+      "long_description": "long description Aenean justo vitae ligula dui mi purus. Ornare mollis metus facilisis sit eti auctor, posuere aenean hendrerit ex scelerisque. Massa magna pharetra euismod dictum etiam non, consectetur sagittis turpis dolor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Aenean.",
+          "Sem.",
+          "Rhoncus."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Blandit ornare nam amet eros curabitur arcu consectetur ac nulla.",
+      "long_description": "long description Ligula gravida a nisl condimentum sodales. Consectetur ex nulla justo, nunc in lobortis laoreet. Lectus mauris velit tristique lectus sagittis a. Pulvinar sed au adipiscing, ultricies cursus morbi natoque auctor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Iaculis.",
+          "Laoreet.",
+          "Pretium."
+      ]
+    },
+    {
+      "name": "Viewtopia",
+      "short_description": "short description Arcu nibh pretium ac nulla eu. Diam lobortis magna i.",
+      "long_description": "long description Sapien tincidunt facilisis amet vehicula ipsum. Curabitur est dictum mi, quisque faucibus risus consequat i id, turpis aenean lobortis commodo sed lacus id. Dictum et elit suscipit, fringilla et sapien.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Cras.",
+          "Id.",
+          "Ultricies."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Sagittis posuere eget curabitur magna. Nulla eu pretium iaculis dictum.",
+      "long_description": "long description Sapien nulla porttitor massa morbi eu sed. Aliquam est quisque cursus, rhoncus blandit nisl natoque. Porttitor suscipit lobortis massa, tempor placerat lacinia curabitur. Eget tristique scelerisque et dignissim iaculis dictum.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ipsum.",
+          "Lectus.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "SkyCenta",
+      "short_description": "short description Augue etiam maecenas lobortis hendrerit, lacinia ante rhoncus arcu eu.",
+      "long_description": "long description Eget quisque ipsum enim sit. Orci leo nulla lectus, tristique pretium nam tortor aenean quis. Ultricies rhoncus finibus ex, amet tortor est euismod etiam sagittis imperdiet nibh lacinia massa natoque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Viverra.",
+          "Mattis.",
+          "Pellentesque."
+      ]
+    },
+    {
+      "name": "Seelogic",
+      "short_description": "short description Commodo pharetra curabitur adipiscing nibh gravida maximus dignissim ipsum erat.",
+      "long_description": "long description Tortor diam consectetur pretium pharetra curabitur consectetur. Quisque augue at finibus, vel ac risus vitae ante placerat. Sapien tempus vestibulum commodo gravida vitae placerat dictum. Mauris metus aliquet dictum aliquet.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Suscipit.",
+          "Amet."
+      ]
+    },
+    {
+      "name": "Storex",
+      "short_description": "short description Pellentesque amet ipsum metus vulputate, cras consequat natoque justo mi.",
+      "long_description": "long description Cursus enim ut accumsan cursus i arcu, nunc dignissim lectus metus nisl nam nisi laoreet accumsan proin proin velit eget, imperdiet ut leo ut. Quis velit maximus eu auctor tortor.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Quisque.",
+          "Quisque."
+      ]
+    },
+    {
+      "name": "Dynaroc",
+      "short_description": "short description Donec consectetur lorem sollicitudin tempor, ante vehicula viverra leo sem.",
+      "long_description": "long description Curabitur ultricies fringilla velit elementum cursus. Mollis mattis est felis diam consequat hendrerit. Neque scelerisque adipiscing vel eti aliquam fringilla, ante aenean gravida au arcu. Eget eu aenean pretium vel.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "A.",
+          "Porttitor.",
+          "Elit."
+      ]
+    },
+    {
+      "name": "Unilogic",
+      "short_description": "short description Ex tempus euismod aliquam lorem, lacinia risus viverra auctor ultricies.",
+      "long_description": "long description Eget commodo lorem pulvinar dolor viverra proin, elementum adipiscing et enim. Cursus scelerisque lacinia enim vehicula ultricies adipiscing, sollicitudin aliquam morbi dignissim posuere blandit. Pharetra eti lacus tortor mattis justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Consectetur.",
+          "Mollis.",
+          "Ultrices."
+      ]
+    },
+    {
+      "name": "TurboSystems",
+      "short_description": "short description Cras ac i proin ac nam. Rhoncus sodales risus condimentum.",
+      "long_description": "long description Risus commodo velit tempor felis aliquam, etiam condimentum lacinia sapien neque. Placerat maecenas nibh magna donec, quisque quis risus aliquam. Nisl dictum laoreet pulvinar. Blandit enim tempus dui ante justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Elit.",
+          "Posuere."
+      ]
+    },
+    {
+      "name": "Celmax",
+      "short_description": "short description E velit faucibus sem commodo aliquet consectetur, scelerisque arcu mattis.",
+      "long_description": "long description Cursus lacus id placerat bibendum velit. Nibh ultrices tortor orci vestibulum. Lectus diam consectetur lacus. Proin vel elit mattis. Eget magna lobortis lorem. Sollicitudin bibendum tortor diam ultricies ultrices metus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pretium.",
+          "Vulputate.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Qualcore",
+      "short_description": "short description Curabitur vel maximus gravida ut curabitur vitae, purus maximus viverra.",
+      "long_description": "long description Consequat i leo suscipit aliquet. Dignissim etiam commodo nunc sollicitudin. Turpis purus orci amet rhoncus mollis. Id finibus et finibus, quis sagittis tempor placerat. Vel tempus vel nibh pulvinar sapien.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Enim.",
+          "Erat.",
+          "Dignissim."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Facilisis mollis lacus leo donec nunc leo nam facilisis eti.",
+      "long_description": "long description Justo pulvinar lacinia donec purus aenean. Nibh sodales commodo nulla arcu diam. Pretium sapien porttitor natoque velit erat bibendum aenean leo lacinia, au diam natoque non lacinia id tincidunt ut.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Arcu.",
+          "Commodo.",
+          "Turpis."
+      ]
+    },
+    {
+      "name": "Tomiatech",
+      "short_description": "short description Nam tincidunt finibus velit fringilla diam et ex morbi vestibulum.",
+      "long_description": "long description Ornare maximus pellentesque massa tempor. Sed ligula risus non, vitae consectetur posuere consectetur gravida, velit commodo felis porttitor vel pharetra. Maecenas tortor curabitur mollis proin, pretium leo id gravida nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Au.",
+          "Posuere.",
+          "Neque."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description Aliquet sagittis enim lobortis au nam pellentesque purus dictum vel.",
+      "long_description": "long description Fringilla maecenas sodales ac eu cras, est maximus rhoncus sodales consequat proin nulla auctor nisl laoreet dictum imperdiet lacus. E euismod eti justo, e sagittis vestibulum est lacinia commodo maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tempus.",
+          "Vitae.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Thermolock",
+      "short_description": "short description Consequat lorem nulla suscipit rhoncus diam. In donec sit consequat.",
+      "long_description": "long description At ac felis e i cras, dolor lacinia mattis eti commodo. Ac nunc facilisis donec tincidunt fringilla amet, orci est quis fringilla ultricies velit erat turpis lacus natoque morbi lacus.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Felis.",
+          "Risus.",
+          "Pulvinar."
+      ]
+    },
+    {
+      "name": "Ulogica",
+      "short_description": "short description Vel nisi vulputate maecenas dui euismod, nunc dui augue risus.",
+      "long_description": "long description Mauris elit finibus dignissim ligula cras curabitur dolor mollis nam augue gravida ornare ac amet accumsan eti, maecenas suscipit bibendum dui neque facilisis arcu a at scelerisque maximus accumsan iaculis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Gravida.",
+          "Eros."
+      ]
+    },
+    {
+      "name": "Opticast",
+      "short_description": "short description Lectus sit maecenas facilisis eu laoreet ac et nam eget.",
+      "long_description": "long description Non pharetra id sollicitudin dolor. Velit augue felis magna, lectus commodo felis ut sem vulputate lacinia, neque id ligula aliquam. Velit tincidunt ex hendrerit blandit ipsum. Pretium dui eti sapien.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lorem.",
+          "Sollicitudin.",
+          "Nisi."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Cursus faucibus lacinia placerat neque curabitur metus lacinia at quis.",
+      "long_description": "long description Ex nisl ornare condimentum bibendum lobortis elementum natoque facilisis adipiscing. Porttitor nam nulla proin lectus. E blandit ligula turpis blandit, morbi non laoreet dictum e magna aenean scelerisque dignissim lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pellentesque.",
+          "Blandit.",
+          "Vehicula."
+      ]
+    },
+    {
+      "name": "StrategyLine",
+      "short_description": "short description Dolor amet fringilla aenean bibendum, dignissim metus lorem diam fringilla.",
+      "long_description": "long description Posuere amet orci sodales sodales turpis enim, lacus ultricies non turpis at diam. Pharetra erat curabitur sagittis eros tempus e euismod, dictum eti nunc commodo at, nisi quis sodales ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Suscipit.",
+          "Mattis.",
+          "Sodales."
+      ]
+    },
+    {
+      "name": "Hivemind",
+      "short_description": "short description Felis vitae ultrices vehicula felis dolor tortor consectetur adipiscing felis.",
+      "long_description": "long description Lectus aenean ultrices mollis suscipit consectetur morbi sed rhoncus ultrices id i, vehicula nisi finibus mi consequat rhoncus, vulputate accumsan diam rhoncus lobortis fringilla curabitur, sem tempus lacus faucibus est.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacus.",
+          "Au.",
+          "Porttitor."
+      ]
+    },
+    {
+      "name": "Freecast",
+      "short_description": "short description Eti ante dignissim nam donec lectus justo et at eu.",
+      "long_description": "long description Tortor donec vehicula au lectus lectus cras mi. Aliquam consequat ultricies imperdiet scelerisque faucibus finibus. Vitae amet mattis ultrices enim at lorem, enim purus dui euismod leo pellentesque faucibus commodo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maecenas.",
+          "Pharetra.",
+          "Tristique."
+      ]
+    },
+    {
+      "name": "Sealine",
+      "short_description": "short description Vestibulum mattis mauris maecenas bibendum purus vehicula ut natoque tempus.",
+      "long_description": "long description Suscipit condimentum in purus rhoncus. Vitae nunc i elementum. Proin facilisis eros lectus cursus tortor curabitur sagittis sagittis dui, laoreet eu vestibulum eros felis, auctor dignissim at elit et leo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Facilisis.",
+          "Rhoncus.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Polygan",
+      "short_description": "short description Pretium morbi blandit ultricies sapien pulvinar. Finibus sem lacinia eros.",
+      "long_description": "long description Purus augue eu diam maecenas, velit nulla viverra tempus nunc mattis sollicitudin mattis dui. Sodales ligula ultricies tempor quis, nibh ac a elit elit facilisis ut. A aenean quis suscipit.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Lacinia.",
+          "Elementum.",
+          "Gravida."
+      ]
+    },
+    {
+      "name": "SixtySix",
+      "short_description": "short description Natoque ultrices consequat consequat mi bibendum elit arcu maecenas mi.",
+      "long_description": "long description Ipsum eros finibus turpis purus nam, aliquet etiam maximus id euismod a neque vel finibus turpis dictum accumsan arcu dui, dignissim risus hendrerit sapien eti, maecenas pellentesque massa enim eti.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Iaculis.",
+          "Nam."
+      ]
+    },
+    {
+      "name": "Forecore",
+      "short_description": "short description Quisque lectus justo imperdiet ante suscipit. Pharetra etiam nunc etiam.",
+      "long_description": "long description Justo maximus sed quis purus nulla metus. Maecenas felis neque morbi dignissim at aenean i enim at leo lacinia donec ligula mi, cras donec ultrices nulla quis vehicula turpis neque.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Id.",
+          "Ex.",
+          "Etiam."
+      ]
+    },
+    {
+      "name": "GrafixMedia",
+      "short_description": "short description A imperdiet commodo aliquam ante. In erat in laoreet adipiscing.",
+      "long_description": "long description Magna tempor arcu erat natoque facilisis eget lobortis fringilla cursus risus natoque e in, aenean sit euismod magna nam rhoncus. Tristique bibendum curabitur gravida. Metus lacinia i aliquam mattis i.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Justo.",
+          "Eu.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Amsquare",
+      "short_description": "short description Nisi gravida leo et turpis cursus sodales rhoncus vel faucibus.",
+      "long_description": "long description Nulla finibus natoque gravida nisi ex ex. Justo vestibulum a quisque amet tempor, nulla ipsum sit tortor neque cras lectus. Blandit elementum accumsan justo dui nulla, purus tincidunt felis ligula.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Tristique.",
+          "Tempus.",
+          "Id."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Vulputate sollicitudin vulputate consectetur maximus. Nisi maecenas dui e in.",
+      "long_description": "long description Placerat a pulvinar finibus nisl magna nulla adipiscing. Diam ex posuere maximus. Tristique placerat enim nam, suscipit dolor lacus dolor, donec erat auctor consectetur fringilla, tempor sit tincidunt id ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Faucibus.",
+          "Ex.",
+          "Vitae."
+      ]
+    },
+    {
+      "name": "Nitrocam",
+      "short_description": "short description Est amet curabitur maecenas cras maximus, eros augue lacus sem.",
+      "long_description": "long description Mauris dui dignissim augue suscipit aliquam. Facilisis elit pulvinar nunc. Mauris placerat gravida dui finibus. Enim cursus adipiscing e. Etiam natoque donec justo lobortis nunc auctor. Gravida ligula quisque vitae.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Bibendum.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "Creatonix",
+      "short_description": "short description Maecenas sit id felis gravida risus auctor. Nisi mauris turpis.",
+      "long_description": "long description Dignissim nisi ipsum at imperdiet. Gravida ante vel tempus lorem. Neque amet lectus ante tempus. Ornare vulputate vestibulum lacus, lacinia placerat diam facilisis erat pharetra cras. Maximus bibendum placerat nulla.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "In.",
+          "Augue.",
+          "Sed."
+      ]
+    },
+    {
+      "name": "NitroSystems",
+      "short_description": "short description Pellentesque tortor i condimentum scelerisque morbi velit ultricies consectetur faucibus.",
+      "long_description": "long description Sollicitudin et est dignissim felis auctor sapien. Dui elementum nulla tempus i e. Pulvinar turpis gravida tempor faucibus i. Aenean viverra placerat in. A dictum ac justo. Ultrices lectus arcu.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Elementum.",
+          "Iaculis."
+      ]
+    },
+    {
+      "name": "Helixicon",
+      "short_description": "short description Viverra sit imperdiet iaculis diam elementum aliquet porttitor sagittis tempor.",
+      "long_description": "long description Mattis cursus eget nisi elit, lacus elit scelerisque consectetur ipsum a nisl ipsum, sed condimentum cursus pulvinar condimentum, purus viverra adipiscing magna. Maecenas eros arcu ac turpis eti cursus nam.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Mollis.",
+          "Pharetra.",
+          "Enim."
+      ]
+    },
+    {
+      "name": "OpenServ",
+      "short_description": "short description Cras pharetra eros adipiscing donec, tristique sodales magna etiam eti.",
+      "long_description": "long description Nibh consequat ultrices purus faucibus sem eu purus eget accumsan sem quisque eros aliquet. Eti vestibulum natoque metus, porttitor amet donec lorem sapien lectus gravida. Vulputate metus dignissim i a.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Nisi.",
+          "Natoque.",
+          "Pharetra."
+      ]
+    },
+    {
+      "name": "FastFreight",
+      "short_description": "short description Faucibus rhoncus magna consectetur pulvinar. Au lectus ipsum porttitor neque.",
+      "long_description": "long description Commodo enim nisl nisi condimentum in i. Tortor pretium posuere in erat. Consectetur in cras sagittis turpis lacinia purus au ultricies etiam sodales auctor eros amet orci sollicitudin mi ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sollicitudin.",
+          "Suscipit.",
+          "Lacinia."
+      ]
+    },
+    {
+      "name": "QuadNet",
+      "short_description": "short description Tempor proin hendrerit ac mattis. Suscipit mattis eti quis rhoncus.",
+      "long_description": "long description Justo sed au fringilla ac. Nunc orci fringilla tempor. Turpis lobortis vehicula laoreet curabitur, lacinia at dolor commodo ante nam mattis consequat arcu, sagittis ex curabitur nunc tempor nunc sagittis.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Ut.",
+          "Accumsan.",
+          "Tincidunt."
+      ]
+    },
+    {
+      "name": "FortyFour",
+      "short_description": "short description Natoque placerat lacinia neque bibendum ac. Non e metus bibendum.",
+      "long_description": "long description Eros vel natoque scelerisque vestibulum. Risus leo diam turpis. Fringilla ultricies neque vestibulum vehicula accumsan, accumsan enim erat vestibulum. Sed enim donec euismod finibus. Sed etiam aliquam metus quis ornare.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Sem.",
+          "Proin.",
+          "Dui."
+      ]
+    },
+    {
+      "name": "OpenServ",
+      "short_description": "short description Pellentesque eros faucibus id eu est sodales. Vel aliquam porttitor.",
+      "long_description": "long description Imperdiet in ipsum neque suscipit ex sodales ex aliquam lectus nisi. Ultricies neque eu at gravida iaculis, aenean lobortis facilisis erat enim eros adipiscing a mi quisque tempor neque lorem.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Donec.",
+          "Nibh.",
+          "Lorem."
+      ]
+    },
+    {
+      "name": "Thermatek",
+      "short_description": "short description Orci rhoncus dictum tempor rhoncus, id augue at dictum curabitur.",
+      "long_description": "long description Magna curabitur ante sit ultrices. Rhoncus gravida maximus elit, lobortis lacinia nisl a euismod. Tortor e tempor hendrerit proin justo tortor non. Hendrerit maecenas et et metus lacinia lectus maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Leo.",
+          "Amet.",
+          "Velit."
+      ]
+    },
+    {
+      "name": "Hassifix",
+      "short_description": "short description Leo velit id adipiscing arcu. Lacus finibus metus lacinia dui.",
+      "long_description": "long description Pellentesque eti ante facilisis hendrerit. Erat i bibendum arcu sed et elementum tincidunt vestibulum risus cursus, cursus dolor pellentesque nisi metus posuere. At sodales turpis quis sed neque imperdiet maecenas.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Maximus.",
+          "Nunc."
+      ]
+    },
+    {
+      "name": "Kancom",
+      "short_description": "short description Eu scelerisque rhoncus purus eti, tempor vitae tortor ultrices elit.",
+      "long_description": "long description Neque consectetur lorem lobortis pellentesque vehicula augue nisl blandit sollicitudin ac mi sodales dictum bibendum, natoque gravida lectus porttitor quis, hendrerit lectus nam massa magna. Eti sed maecenas in gravida.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Pharetra.",
+          "Cursus.",
+          "Sapien."
+      ]
+    },
+    {
+      "name": "Terrasys",
+      "short_description": "short description Quisque tempor iaculis scelerisque ligula ex adipiscing, commodo elementum eu.",
+      "long_description": "long description Mauris viverra aenean ex sodales, aliquet cras at ultricies. Sodales natoque enim vitae eget condimentum maecenas. At sodales hendrerit elit aliquet sagittis. Suscipit natoque at sollicitudin lacinia. Massa lacinia justo.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Fringilla.",
+          "Ut.",
+          "Commodo."
+      ]
+    },
+    {
+      "name": "Playtech",
+      "short_description": "short description Aliquam consequat pulvinar erat pellentesque elit natoque ipsum hendrerit dolor.",
+      "long_description": "long description Dolor turpis tempus vehicula leo. Vehicula quisque erat sem, eros vulputate consequat aliquet nibh curabitur tristique purus sollicitudin tortor pellentesque tristique consequat. Morbi tempus ut diam mollis quisque mi proin.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Amet.",
+          "Finibus.",
+          "Blandit."
+      ]
+    },
+    {
+      "name": "Airconix",
+      "short_description": "short description Pharetra sit eu ante tempor. Maecenas dolor adipiscing quis dictum.",
+      "long_description": "long description Elit tempor pulvinar tempor eros, imperdiet sem vehicula tempor tempus ornare, i dignissim ut vehicula hendrerit pulvinar, massa condimentum purus tristique adipiscing posuere sapien. Tempor magna tincidunt posuere non ultrices.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Accumsan.",
+          "Suscipit.",
+          "Eti."
+      ]
+    },
+    {
+      "name": "Polygan",
+      "short_description": "short description Nisl a dolor sapien etiam etiam. Mauris vulputate iaculis au.",
+      "long_description": "long description Quisque vel fringilla ultricies nam quisque sodales i. Pellentesque etiam bibendum leo blandit. Mi arcu elit ultricies. Est aenean facilisis vestibulum. Nulla justo ligula ac viverra quis condimentum pellentesque au.",
+      "logo": "http://placehold.it/64x64",
+      "roles": [
+          "Maximus.",
+          "Tempus.",
+          "Euismod."
       ]
     }
   ];

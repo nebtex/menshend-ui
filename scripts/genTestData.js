@@ -6,12 +6,13 @@ var template = `
     {{#repeat 1000}}
     {
       "name": "{{company}}",
-      "short_description": "This is the service short description",
-      "long_description": "long description {{lorem}}",
+      "short_description": "short description {{lorem 10}}",
+      "long_description": "long description {{lorem 30}}",
       "logo": "http://placehold.it/64x64",
       "roles": [
-        "role {{int 1 3}}",
-        "role {{int 4 6}}"
+        {{#repeat 3}}
+          "{{lorem 1}}"
+        {{/repeat}}
       ]
     }
     {{/repeat}}

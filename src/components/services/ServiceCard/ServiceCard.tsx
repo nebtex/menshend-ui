@@ -20,7 +20,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
 
   getRolesBadges = () => {
     return (
-      <div>
+      <div className={styles.rolesContainer}>
         {this.props.service.roles.map((role, index) => {
           return <Badge className={styles.roleBadge} key={index}>{role}</Badge>
         })}      
