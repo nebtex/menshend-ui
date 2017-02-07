@@ -49,6 +49,8 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           {this.state.activeRole}
         </DropdownToggle>
         <DropdownMenu>
+          <DropdownItem onClick={() => {this.selectRole('All')}}>{'All'}</DropdownItem>
+          <DropdownItem divider />
           {this.props.roles.map((role, index) => {
             return <DropdownItem key={index} onClick={() => {this.selectRole(role)}}>{role}</DropdownItem>
           })}
@@ -63,24 +65,36 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
   }
 
-  search = (evt:any) => {
-    evt.preventDefault();
+  getServices = () => {
+    let services = this.props.services;
 
-    var options = {
-      keys: ['name']
-    };
+    // Active Filter
+    if(this.state.activeRole !== 'All'){
+      services = services.filter((service) => {
+        return service.roles.indexOf(this.state.activeRole) > -1;
+      });
+    }
 
-    var f = new Fuse<IService>(this.props.services, options);;
-    var result = f.search(this.state.searchValue);
-    console.log(result);
+    // Apply search criteria
+    if(this.state.searchValue !== ''){
+      var options = {
+        keys: ['name']
+      };
+
+      var f = new Fuse<IService>(services, options);;
+      services = f.search(this.state.searchValue);
+    }
+
+    return services;
   }
 
   render(){
-    let rolesDropdown = this.getRolesDropdown();
+    let rolesDropdown = this.getRolesDropdown(),
+        services = this.getServices();
     return (
       <Container>
         <Row>
-          <Form onSubmit={this.search}>
+          <Form onSubmit={(evt:any) => {evt.preventDefault()}}>
             <FormGroup>
               <Input type="test" placeholder="Search" onChange={this.searchOnChange}/>
             </FormGroup>
@@ -88,7 +102,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           {rolesDropdown}
         </Row>
         <Row>
-          <ServicesList services={this.props.services} user={this.props.user}/>
+          <ServicesList services={services} user={this.props.user}/>
         </Row>
       </Container>
     );
