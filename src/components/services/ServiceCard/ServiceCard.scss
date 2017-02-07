@@ -1,5 +1,6 @@
 .card {
   cursor: pointer;
+  height: 100%;
 }
 
 .container {
@@ -23,4 +24,8 @@
 
 .rolesContainer{
   padding: 0 15px;
+}
+
+.secondBlock {
+  padding: 1.25rem 0;
 }

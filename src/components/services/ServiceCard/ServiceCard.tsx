@@ -58,22 +58,22 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
       <Card onClick={this.toggleDescription} className={styles.card}>
         <Container>
           <Row>
-            <Col xs='auto'>
+            <Col xs="6">
               <CardBlock>
                 {service.logo ? (<CardImg width="64" height="64" src={service.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
               </CardBlock>
+              <Row className={styles.rolesBadgesRow}>
+                {rolesBadges}
+              </Row>
             </Col>
-            <Col>
-              <CardBlock>
+            <Col xs="6">
+              <CardBlock className={styles.secondBlock}>
                 <CardTitle>{service.name}</CardTitle>
                 <CardText>
                   {service.short_description}
                 </CardText>
               </CardBlock> 
             </Col>
-          </Row>
-          <Row className={styles.rolesBadgesRow}>
-            {rolesBadges}
           </Row>
           <Row className={styles.buttonsRow}>
             {deleteButton}

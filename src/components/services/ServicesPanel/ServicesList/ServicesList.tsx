@@ -16,7 +16,7 @@ interface IServicesListProps {
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{
   state = {
-    itemsPerRow: 3
+    itemsPerRow: 2
   }
 
   getRows = () => {
@@ -30,12 +30,12 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
         rows.push(tempArray);
     }
     
-    rows.forEach((row:any) => {
+    rows.forEach((row:any, rowIndex:number) => {
       rowComponents.push(
-        <Row style={{height:'200px'}}>
-          {row.map( (service:IService) =>{
+        <Row style={{height:'300px'}} key={rowIndex}>
+          {row.map( (service:IService, rowItemIndex:number) =>{
             return (
-              <Col xs={12 / this.state.itemsPerRow}>
+              <Col xs={12 / this.state.itemsPerRow} className={styles.col} key={rowItemIndex}>
                 <ServiceCard service={service} user={user}/>
               </Col>
             );
@@ -52,7 +52,8 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
     return (
       <Infinite 
         containerHeight={400} 
-        elementHeight={200}
+        elementHeight={300}
+        timeScrollStateLastsForAfterUserScrolls={0}
         useWindowAsScrollContainer>
           {rowComponents}
       </Infinite>
