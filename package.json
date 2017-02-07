@@ -7,7 +7,7 @@
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "test": "jest",
-    "storybook": "node scripts/genTestData.js && node scripts/storybook.js && start-storybook -p 6006"
+    "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",
