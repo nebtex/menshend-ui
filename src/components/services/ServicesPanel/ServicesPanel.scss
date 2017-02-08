@@ -1,15 +1,19 @@
 .searchFormGroup {
+  margin: 8px;
+  flex-basis: 70% !important;
+  flex-grow: 1 !important;
   position: relative;
 }
 
 .searchInput {
   padding-right: 32px;
+  width: 100% !important;
 }
 
 .searchIndicator {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
 }
 
 .cleanSearchBtn {
@@ -20,7 +24,7 @@
   }
 }
 
-.rolesDropdown {
+.rolesContainer {
   overflow-y: scroll;
   height: 160px;
 }
@@ -36,4 +40,29 @@
 .panelContainer{
   background-color: #fafafa;
   padding-top: 8px;
+}
+
+.searchForm {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.rolesFormGroup {
+  flex-wrap: nowrap !important;
+  flex-grow: 1 !important;
+  flex-basis: 250px !important;
+  margin: 8px;
+}
+
+.rolesDropdown {
+  flex-grow: 1;
+  >button {
+    width:100%;
+    text-align: left;
+    &::after{
+      float:right;
+      margin-top: 8px;
+    }
+  }
 }

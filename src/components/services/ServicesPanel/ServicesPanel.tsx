@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import { IService, IUser } from '../../../models/interface';
-import { Col, Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { Col, Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
 import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
 let styles = require('./ServicesPanel.scss');
@@ -59,11 +59,11 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
 
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className={styles.rolesDropdown}>
         <DropdownToggle caret>
           {this.state.activeRole}
         </DropdownToggle>
-        <DropdownMenu className={styles.rolesDropdown}>
+        <DropdownMenu className={styles.rolesContainer}>
           <DropdownItem onClick={() => { this.selectRole('All') }}>{'All'}</DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
@@ -140,20 +140,18 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return (
       <Container fluid className={styles.panelContainer}>
         <Row className={styles.rowHead}>
-          <Form onSubmit={(evt: any) => { evt.preventDefault() }} inline>
-            <Col>
-              <FormGroup className={styles.searchFormGroup}>
-                <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={this.state.searchValue} />
-                {searchIndicator}
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup>
-                Role: &nbsp;{rolesDropdown}
-              </FormGroup>
-            </Col>
-          </Form>
-
+          <Col>
+            <Form onSubmit={(evt: any) => { evt.preventDefault() }} className={styles.searchForm} inline>
+                <FormGroup className={styles.searchFormGroup}>
+                  <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={this.state.searchValue} />
+                  {searchIndicator}
+                </FormGroup>
+                <FormGroup className={styles.rolesFormGroup}>
+                  <Label>Role: &nbsp;</Label>
+                  {rolesDropdown}
+                </FormGroup>
+            </Form>
+          </Col>
         </Row>
         <Row>
           <ServicesList services={services} user={this.props.user} />

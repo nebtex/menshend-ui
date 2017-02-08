@@ -21,3 +21,8 @@
   display: flex;
   margin-bottom: 32px;
 }
+
+.lastInfiniteRow {
+  composes: infiniteRow;
+  justify-content: flex-start;
+}

@@ -44,7 +44,6 @@ declare namespace ReactStrap {
     export function DropdownToggle(props: any): React.Component<any, any>
     export function DropdownMenu(props: any): React.Component<any, any>
     export function DropdownItem(props: any): React.Component<any, any>
-
     export function Collapse(props: any): React.Component<any, any>
     export function Modal(props: any): React.Component<any, any>
     export function ModalHeader(props: any): React.Component<any, any>
