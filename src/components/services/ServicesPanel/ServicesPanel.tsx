@@ -69,7 +69,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           <DropdownItem onClick={() => { this.selectRole('All') }}>{'All'}</DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
-            return <DropdownItem key={index} onClick={() => { this.selectRole(role) }}>{role}</DropdownItem>
+            return <DropdownItem key={index} onClick={() => { this.selectRole(role) }} className="role">{role}</DropdownItem>
           })}
         </DropdownMenu>
       </Dropdown>
