@@ -51,8 +51,8 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
     let service = this.props.service,
         user = this.props.user;
         
-    let editButton = user.isAdmin ? (<Button onClick={this.editService} className={styles.button}>Edit</Button>) : null,
-        deleteButton = user.isAdmin ? (<Button onClick={this.deleteService} className={styles.button} color="danger">Delete</Button>) : null,
+    let editButton = user.isAdmin ? (<Button onClick={this.editService} className={styles.button} color="primary" outline>Edit</Button>) : null,
+        deleteButton = user.isAdmin ? (<Button onClick={this.deleteService} className={styles.button} color="danger" outline>Delete</Button>) : null,
         rolesBadges = this.getRolesBadges();
 
     return (
@@ -79,7 +79,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
           <Row className={styles.buttonsRow}>
             {deleteButton}
             {editButton}
-            <Button className={styles.button} onClick={this.goToService} color="primary">Go</Button>
+            <Button className={styles.button} onClick={this.goToService} color="success" outline>Go</Button>
           </Row>
         </Container>
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >

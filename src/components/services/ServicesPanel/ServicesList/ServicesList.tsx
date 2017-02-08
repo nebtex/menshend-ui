@@ -51,8 +51,8 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
     let rowComponents = this.getRows();
     return (
       <Infinite 
-        containerHeight={1024} 
-        elementHeight={256}
+        containerHeight={1152} 
+        elementHeight={288}
         timeScrollStateLastsForAfterUserScrolls={0}
         useWindowAsScrollContainer>
           {rowComponents}

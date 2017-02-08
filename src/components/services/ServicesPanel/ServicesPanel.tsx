@@ -138,7 +138,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
       searchIndicator = this.getSearchIndicator();
 
     return (
-      <Container fluid>
+      <Container fluid className={styles.panelContainer}>
         <Row className={styles.rowHead}>
           <Form onSubmit={(evt: any) => { evt.preventDefault() }} inline>
             <Col>
