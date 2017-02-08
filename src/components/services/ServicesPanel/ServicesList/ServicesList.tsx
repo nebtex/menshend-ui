@@ -4,7 +4,7 @@ import { Col, Row } from 'reactstrap';
 import { IService, IUser } from '../../../../models/interface';
 import ServiceCard from '../../ServiceCard/ServiceCard';
 let styles = require('./ServicesList.scss');
-
+let classNames = require("classnames")
 interface IServicesListState {
   itemsPerRow:number;
 }
@@ -16,7 +16,7 @@ interface IServicesListProps {
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{
   state = {
-    itemsPerRow: 2
+    itemsPerRow: 3
   }
 
   getRows = () => {
@@ -32,10 +32,10 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
     
     rows.forEach((row:any, rowIndex:number) => {
       rowComponents.push(
-        <Row style={{height:'300px'}} key={rowIndex}>
+        <Row className={styles.infiniteRow} key={rowIndex}>
           {row.map( (service:IService, rowItemIndex:number) =>{
             return (
-              <Col xs={12 / this.state.itemsPerRow} className={styles.col} key={rowItemIndex}>
+              <Col  className={styles.col} key={rowItemIndex}>
                 <ServiceCard service={service} user={user}/>
               </Col>
             );
@@ -51,8 +51,8 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
     let rowComponents = this.getRows();
     return (
       <Infinite 
-        containerHeight={400} 
-        elementHeight={300}
+        containerHeight={1024} 
+        elementHeight={256}
         timeScrollStateLastsForAfterUserScrolls={0}
         useWindowAsScrollContainer>
           {rowComponents}

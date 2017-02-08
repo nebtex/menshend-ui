@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import { IService, IUser } from '../../../models/interface';
-import { Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { Col, Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
 let styles = require('./ServicesPanel.scss');
@@ -18,7 +18,7 @@ interface IServicesPanelState {
   activeRole: string;
 }
 
-let searchTimeout:any;
+let searchTimeout: any;
 
 export default class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
   state = {
@@ -34,26 +34,26 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
   }
 
-  selectRole = (role:string) => {
+  selectRole = (role: string) => {
     this.setState({
       activeRole: role
     });
   }
 
   getRolesDropdown = () => {
-    let roles:string[] = [];
-    this.props.services.forEach( service => {
-      service.roles.forEach( role => {
-        if(roles.indexOf(role) === -1){
+    let roles: string[] = [];
+    this.props.services.forEach(service => {
+      service.roles.forEach(role => {
+        if (roles.indexOf(role) === -1) {
           roles.push(role);
         }
       });
     });
 
-    roles.sort(function(a, b){
-      if(a.toLowerCase() < b.toLowerCase()){
+    roles.sort(function (a, b) {
+      if (a.toLowerCase() < b.toLowerCase()) {
         return -1;
-      }else {
+      } else {
         return 1;
       }
     });
@@ -64,21 +64,21 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           {this.state.activeRole}
         </DropdownToggle>
         <DropdownMenu className={styles.rolesDropdown}>
-          <DropdownItem onClick={() => {this.selectRole('All')}}>{'All'}</DropdownItem>
+          <DropdownItem onClick={() => { this.selectRole('All') }}>{'All'}</DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
-            return <DropdownItem key={index} onClick={() => {this.selectRole(role)}}>{role}</DropdownItem>
+            return <DropdownItem key={index} onClick={() => { this.selectRole(role) }}>{role}</DropdownItem>
           })}
         </DropdownMenu>
       </Dropdown>
     );
   }
 
-  searchOnChange = (evt:any) => {
+  searchOnChange = (evt: any) => {
     evt.persist();
-    let searchValue:any = evt && evt.target ? evt.target.value : null;
+    let searchValue: any = evt && evt.target ? evt.target.value : null;
 
-    if(searchTimeout)
+    if (searchTimeout)
       clearTimeout(searchTimeout);
 
     searchTimeout = setTimeout(() => {
@@ -86,10 +86,10 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         loadingSearch: false
       });
     }, 1000);
-    
+
     this.setState({
       searchValue: searchValue,
-      loadingSearch: true  
+      loadingSearch: true
     });
   }
 
@@ -97,14 +97,14 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     let services = this.props.services;
 
     // Active Filter
-    if(this.state.activeRole !== 'All'){
+    if (this.state.activeRole !== 'All') {
       services = services.filter((service) => {
         return service.roles.indexOf(this.state.activeRole) > -1;
       });
     }
 
     // Apply search criteria
-    if(this.state.searchValue !== '' && !this.state.loadingSearch){
+    if (this.state.searchValue !== '' && !this.state.loadingSearch) {
       var options = {
         keys: ['name', 'long_description', 'short_description']
       };
@@ -123,35 +123,40 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   }
 
   getSearchIndicator = () => {
-    let searchIndicator:any = null;
-    if(this.state.searchValue && !this.state.loadingSearch){
-      searchIndicator = <i className={classnames("fa fa-times fa-lg", styles.cleanSearchBtn)} onClick={this.cleanSearch}/>;
-    }else if(this.state.loadingSearch){
-      searchIndicator = <i className={classnames("fa fa-pulse fa-spinner", styles.searchIndicator)}/>;
+    let searchIndicator: any = null;
+    if (this.state.searchValue && !this.state.loadingSearch) {
+      searchIndicator = <i className={classnames("fa fa-times fa-lg", styles.cleanSearchBtn)} onClick={this.cleanSearch} />;
+    } else if (this.state.loadingSearch) {
+      searchIndicator = <i className={classnames("fa fa-pulse fa-spinner", styles.searchIndicator)} />;
     }
     return searchIndicator;
   }
 
-  render(){
+  render() {
     let rolesDropdown = this.getRolesDropdown(),
-        services = this.getServices(),
-        searchIndicator = this.getSearchIndicator();
+      services = this.getServices(),
+      searchIndicator = this.getSearchIndicator();
 
     return (
-      <Container>
-        <Row>
-          <Form onSubmit={(evt:any) => {evt.preventDefault()}} inline>
-            <FormGroup className={styles.searchFormGroup}>
-              <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={this.state.searchValue}/>
-              {searchIndicator}
-            </FormGroup>
-            <FormGroup>
-              {rolesDropdown}
-            </FormGroup>
+      <Container fluid>
+        <Row className={styles.rowHead}>
+          <Form onSubmit={(evt: any) => { evt.preventDefault() }} inline>
+            <Col>
+              <FormGroup className={styles.searchFormGroup}>
+                <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={this.state.searchValue} />
+                {searchIndicator}
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                Role: &nbsp;{rolesDropdown}
+              </FormGroup>
+            </Col>
           </Form>
+
         </Row>
         <Row>
-          <ServicesList services={services} user={this.props.user}/>
+          <ServicesList services={services} user={this.props.user} />
         </Row>
       </Container>
     );

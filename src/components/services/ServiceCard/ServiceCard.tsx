@@ -56,7 +56,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
 
     return (
       <Card onClick={this.toggleDescription} className={styles.card}>
-        <Container>
+        <Container fluid>
           <Row>
             <Col xs="6">
               <CardBlock>

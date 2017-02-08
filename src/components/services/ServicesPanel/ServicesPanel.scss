@@ -3,18 +3,18 @@
 }
 
 .searchInput {
-  padding-right: 35px;
+  padding-right: 32px;
 }
 
-.searchIndicator{
+.searchIndicator {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
 }
 
-.cleanSearchBtn{
-  composes:searchIndicator;
-  &:hover{
+.cleanSearchBtn {
+  composes: searchIndicator;
+  &:hover {
     cursor: pointer;
     color: #0275d8;
   }
@@ -23,4 +23,12 @@
 .rolesDropdown {
   overflow-y: scroll;
   height: 160px;
+}
+
+.rowHead {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
 }

@@ -6,6 +6,18 @@
   text-align: center;
 }
 
-.col {
-  padding: 4px;
+
+
+.infiniteRow {
+  height: 256px;
+  padding-left: 16px;
+  padding-right: 16px;
+  >{
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 512px;
+  }
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 32px;
 }
