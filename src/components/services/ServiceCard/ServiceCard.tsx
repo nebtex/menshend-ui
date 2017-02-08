@@ -1,3 +1,4 @@
+import * as classnames from 'classnames';
 import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { Container, Row, Col, Card, CardBlock, CardImg, CardTitle, CardText, Button, Badge, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -49,16 +50,16 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   render(){
     let service = this.props.service,
         user = this.props.user;
-
+        
     let editButton = user.isAdmin ? (<Button onClick={this.editService} className={styles.button}>Edit</Button>) : null,
-        deleteButton = user.isAdmin ? (<Button onClick={this.deleteService} className={styles.button}>Delete</Button>) : null,
+        deleteButton = user.isAdmin ? (<Button onClick={this.deleteService} className={styles.button} color="danger">Delete</Button>) : null,
         rolesBadges = this.getRolesBadges();
 
     return (
       <Card onClick={this.toggleDescription} className={styles.card}>
-        <Container fluid>
-          <Row>
-            <Col xs="6">
+        <Container fluid className={styles.cardContainer}>
+          <Row className={styles.rowHeader}>
+            <Col xs="4">
               <CardBlock>
                 {service.logo ? (<CardImg width="64" height="64" src={service.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
               </CardBlock>
@@ -66,7 +67,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
                 {rolesBadges}
               </Row>
             </Col>
-            <Col xs="6">
+            <Col>
               <CardBlock className={styles.secondBlock}>
                 <CardTitle>{service.name}</CardTitle>
                 <CardText>

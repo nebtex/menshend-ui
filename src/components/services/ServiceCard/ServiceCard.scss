@@ -32,3 +32,13 @@
 .secondBlock {
   padding: 1.25rem 0;
 }
+
+.cardContainer{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rowHeader{
+  flex-grow: 1;
+}
