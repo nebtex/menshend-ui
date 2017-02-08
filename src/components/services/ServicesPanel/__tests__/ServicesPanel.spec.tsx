@@ -27,8 +27,6 @@ describe('ServicesPanel', () => {
         }
       });
     });
-
-    servicesPanel.setState({dropdownOpen:true});
     expect(servicesPanel.find('DropdownItem .role').length).toEqual(roles.length);    
   });
 
