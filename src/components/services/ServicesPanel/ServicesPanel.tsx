@@ -21,6 +21,8 @@ interface IServicesPanelState {
 let searchTimeout: any;
 
 export default class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
+  previousServices:IService[];
+
   state = {
     dropdownOpen: false,
     searchValue: '',
@@ -105,12 +107,14 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
 
     // Apply search criteria
     if (this.state.searchValue !== '' && !this.state.loadingSearch) {
-      var options = {
+      let options = {
         keys: ['name', 'long_description', 'short_description']
       };
-
-      var f = new Fuse<IService>(services, options);;
+      let f = new Fuse<IService>(services, options);
       services = f.search(this.state.searchValue);
+      this.previousServices = services;
+    } else if(this.state.loadingSearch){
+      services = this.previousServices;
     }
 
     return services;
