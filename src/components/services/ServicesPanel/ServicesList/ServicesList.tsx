@@ -13,6 +13,7 @@ interface IServicesListState {
 interface IServicesListProps {
   services: IService[];
   user: IUser;
+  loading: boolean;
 }
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{
@@ -47,7 +48,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
 
   getRows = () => {
     let user = this.props.user
-    let services = this.props.services;
+    let services = this.props.services || [];
     let rowComponents:any[] = [];
     let rows:any[] = [], tempArray:any;
 
@@ -73,6 +74,14 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
         </Row>
       );
     });
+
+    if(rowComponents.length < 1 && !this.props.loading){
+      rowComponents.push(
+        <Col key={1} className={styles.notFound}>
+          <h3> No services found </h3>
+        </Col>
+      );
+    }
 
     return rowComponents;
   }
