@@ -157,7 +157,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
             </Form>
           </Col>
         </Row>
-        <Row>
+        <Row className={styles.serviceList}>
           <ServicesList services={services} user={this.props.user} />
         </Row>
       </Container>
