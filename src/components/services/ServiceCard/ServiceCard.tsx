@@ -57,7 +57,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
 
     return (
       <Card onClick={this.toggleDescription} className={styles.card}>
-        <Container fluid className={styles.cardContainer}>
+        <div className={styles.cardContainer}>
           <Row className={styles.rowHeader}>
             <Col xs="4">
               <CardBlock>
@@ -81,7 +81,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
             {editButton}
             <Button className={styles.button} onClick={this.goToService} color="success" outline>Go</Button>
           </Row>
-        </Container>
+        </div>
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
           <ModalHeader toggle={this.toggleDescription}> {service.name} </ModalHeader>
           <ModalBody>
