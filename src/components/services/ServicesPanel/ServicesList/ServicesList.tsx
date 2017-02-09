@@ -78,7 +78,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
     if(rowComponents.length < 1 && !this.props.loading){
       rowComponents.push(
         <Col key={1} className={styles.notFound}>
-          <h3> No services found </h3>
+          <h3>No services found</h3>
         </Col>
       );
     }
