@@ -105,8 +105,10 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
       });
     }
 
-    // Apply search criteria
-    if (this.state.searchValue !== '' && !this.state.loadingSearch) {
+    if (this.state.searchValue === ''){
+      this.previousServices = services;
+    } else if (this.state.searchValue !== '' && !this.state.loadingSearch) {
+      // Apply search criteria
       let options = {
         keys: ['name', 'long_description', 'short_description']
       };
