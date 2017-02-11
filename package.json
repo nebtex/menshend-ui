@@ -49,6 +49,7 @@
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-highlight": "^0.9.0",
     "react-infinite": "^0.10.0",
     "react-markdown": "^2.4.4",
     "reactstrap": "^4.0.1"
