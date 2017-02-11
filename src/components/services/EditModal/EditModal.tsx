@@ -96,7 +96,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </TabContent>
           </div>
           <h3>Backend rule</h3>
-          <Row>
+          <Row className={styles.rolesRow}>
             <FormGroup check>
               <Label check>
                 <Input type="checkbox" />{' '}
@@ -122,6 +122,9 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
               </DropdownMenu>
             </Dropdown>
           </Row>
+          <FormGroup>
+            <Input type="textarea"></Input>
+          </FormGroup>
         </ModalBody>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
