@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --progress --inline --hot",
-    "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap",
+    "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-highlight&&ln -s `pwd`/types/react-highlight `pwd`/node_modules/@types/react-highlight",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "test": "jest",

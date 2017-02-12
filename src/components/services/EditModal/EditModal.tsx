@@ -124,6 +124,9 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </Dropdown>
           </Row>
           <FormGroup>
+            <Highlight innerHTML={true}>
+              {"html with multiple code snippets"}
+            </Highlight>
             <Input type="textarea"></Input>
           </FormGroup>
         </ModalBody>

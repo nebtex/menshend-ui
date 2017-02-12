@@ -11,6 +11,7 @@ declare namespace Highlight {
     element?: string
 	}
 
-	export class Highlight extends React.Component<HighlightProps, {}> {
+	export class Highlight extends React.Component<HighlightProps, any> {
+    constructor(props:HighlightProps);
 	}
 }
