@@ -1,8 +1,9 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import { Highlight } from 'react-highlight';
+import 'highlight.js/styles/monokai.css';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 let styles = require('./EditModal.scss');
+
 
 export interface IEditModalProps {
   isOpen: boolean;
@@ -42,7 +43,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   }
 
   render(){
-    console.log(Highlight);
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
         <ModalHeader toggle={this.props.toggle}>Edit service</ModalHeader>
@@ -125,6 +125,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </Dropdown>
           </Row>
           <FormGroup>
+
           </FormGroup>
         </ModalBody>
         <ModalFooter>
