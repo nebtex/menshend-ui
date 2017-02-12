@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --progress --inline --hot",
-    "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-highlight&&ln -s `pwd`/types/react-highlight `pwd`/node_modules/@types/react-highlight",
+    "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-syntax-highlight&&ln -s `pwd`/types/react-syntax-highlight `pwd`/node_modules/@types/react-syntax-highlight",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "test": "jest",
@@ -51,6 +51,7 @@
     "react-dom": "^15.4.2",
     "react-infinite": "^0.10.0",
     "react-markdown": "^2.4.4",
+    "react-syntax-highlight": "^0.0.5",
     "reactstrap": "^4.0.1"
   },
   "jest": {

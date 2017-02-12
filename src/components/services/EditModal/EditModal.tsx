@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import 'highlight.js/styles/monokai.css';
+import CodeEditor from './CodeEditor/CodeEditor';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 let styles = require('./EditModal.scss');
 
@@ -15,12 +15,14 @@ interface IEditModalState {
   dropdownOpen: boolean;
   activeTab: string;
   activeRole: string;
+  codeEditorValue: string;
 }
 
 export default class EditModal extends React.Component<IEditModalProps, IEditModalState>{
   state = {
     activeTab: 'shortDescription',
     activeRole: 'All',
+    codeEditorValue: '--=== Your code here ===',
     dropdownOpen: false
   }
 
@@ -39,6 +41,12 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   toggleDropdown = () => {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+  codeEditorOnChange = (e:any) => {
+    this.setState({
+      codeEditorValue: e.target.innerText
     });
   }
 
@@ -125,7 +133,10 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </Dropdown>
           </Row>
           <FormGroup>
-
+            <CodeEditor 
+              lang="lua"
+              value={this.state.codeEditorValue}
+              onChange={this.codeEditorOnChange} />
           </FormGroup>
         </ModalBody>
         <ModalFooter>
