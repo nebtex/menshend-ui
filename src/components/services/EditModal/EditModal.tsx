@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import * as Highlight from 'react-highlight';
+import { Highlight } from 'react-highlight';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 let styles = require('./EditModal.scss');
 
@@ -42,6 +42,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   }
 
   render(){
+    console.log(Highlight);
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
         <ModalHeader toggle={this.props.toggle}>Edit service</ModalHeader>
@@ -124,10 +125,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </Dropdown>
           </Row>
           <FormGroup>
-            <Highlight innerHTML={true}>
-              {"html with multiple code snippets"}
-            </Highlight>
-            <Input type="textarea"></Input>
           </FormGroup>
         </ModalBody>
         <ModalFooter>
