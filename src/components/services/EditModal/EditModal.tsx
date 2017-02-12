@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
+import * as Highlight from 'react-highlight';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 let styles = require('./EditModal.scss');
 
