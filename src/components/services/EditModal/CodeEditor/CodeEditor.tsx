@@ -10,18 +10,39 @@ interface ICodeEditorProps {
   onChange: any;
 }
 
-export default class CodeEditor extends React.Component<ICodeEditorProps, {}>{
+interface ICodeEditorState {
+  lang:string;
+  value:string;
+}
+
+export default class CodeEditor extends React.Component<ICodeEditorProps, ICodeEditorState>{
+  constructor(props:ICodeEditorProps){
+    super(props);
+    this.state = {
+      value: this.props.value,
+      lang: this.props.lang
+    };
+  }
+
+  onInput = (e:any) => {
+    this.props.onChange(e.target.innerText);
+    this.setState({ value: e.target.innerText });
+  }
+
   render(){
     return (
       <div className={styles.container}>
-        <Highlight lang={this.props.lang} value={this.props.value}/>
+        <Highlight
+          lang={this.state.lang}
+          value={this.state.value}
+        />
         <pre className={styles.pre}>
           <code
-            className={classnames('hljs', styles.textarea)}
-            spellCheck={false}
+            className= {classnames('hljs', styles.textarea)}
             contentEditable
-            onInput={this.props.onChange}>
-            {this.props.value}
+            spellCheck={false}
+            onInput={this.onInput}>
+            {this.props.value /* only init once time */}
           </code>
         </pre>
       </div>

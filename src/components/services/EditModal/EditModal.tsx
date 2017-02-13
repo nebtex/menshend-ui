@@ -22,7 +22,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   state = {
     activeTab: 'shortDescription',
     activeRole: 'All',
-    codeEditorValue: '--=== Your code here ===',
+    codeEditorValue: '',
     dropdownOpen: false
   }
 
@@ -44,9 +44,9 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     });
   }
 
-  codeEditorOnChange = (e:any) => {
+  codeEditorOnChange = (value:string) => {
     this.setState({
-      codeEditorValue: e.target.innerText
+      codeEditorValue: value
     });
   }
 
@@ -133,10 +133,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </Dropdown>
           </Row>
           <FormGroup>
-            <CodeEditor 
-              lang="lua"
-              value={this.state.codeEditorValue}
-              onChange={this.codeEditorOnChange} />
+            <CodeEditor lang="lua" value="__====== Your code here =====" onChange={this.codeEditorOnChange}/>
           </FormGroup>
         </ModalBody>
         <ModalFooter>
