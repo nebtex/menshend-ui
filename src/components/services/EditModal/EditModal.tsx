@@ -4,7 +4,7 @@ import CodeEditor from './CodeEditor/CodeEditor';
 import { IService } from '../../../models/interface';
 let styles = require('./EditModal.scss');
 import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, 
-         FormFeedback, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, 
+         FormFeedback, Label, Input, Nav, NavItem, NavLink, Button, Card, CardBlock, CardTitle, 
          CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 
 
@@ -27,6 +27,9 @@ interface IEditModalState {
   logo: string;
   logoError: boolean;
   shortDescription: string;
+  longDescriptionUrl: string;
+  longDescriptionUrlActive: boolean;
+  longDescription: string;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
@@ -43,7 +46,10 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     nameError: false,
     logo: DEFAULT_LOGO,
     logoError: false,
-    shortDescription: ''
+    shortDescription: '',
+    longDescriptionUrl: '',
+    longDescriptionUrlActive: false,
+    longDescription: ''
   }
 
   toggleTab = (tab:string) => {
@@ -139,6 +145,18 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     );
   }
 
+  longDescriptionUrlOnChange = (e:any) => {
+    this.setState({
+      longDescriptionUrl: e.target.value
+    });
+  }
+
+  longDescriptionUrlActiveOnChange = (e:any) => {
+    this.setState({
+      longDescriptionUrlActive: !this.state.longDescriptionUrlActive
+    });
+  }
+
   formHasNoErrors = () => {
     let nameError = this.state.name.trim() === '',
         subdomainError = this.state.subdomain.trim() === '';
@@ -148,6 +166,12 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   shortDescriptionOnChange = (e:any) => {
     this.setState({
       shortDescription: e.target.value
+    });
+  }
+
+  longDescriptionOnChange = (e:any) => {
+    this.setState({
+      longDescription: e.target.value
     });
   }
 
@@ -198,22 +222,43 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
             </Nav>
             <TabContent activeTab={this.state.activeTab}>
               <TabPane tabId="shortDescription">
-                <Form>
-                  <FormGroup>
-                    <Input 
-                      type="textarea" 
-                      value={this.state.shortDescription} 
-                      maxLength={100} 
-                      onChange={this.shortDescriptionOnChange} />
-                  </FormGroup>
-                </Form>
+                <FormGroup>
+                  <Input 
+                    type="textarea" 
+                    value={this.state.shortDescription} 
+                    maxLength={100} 
+                    onChange={this.shortDescriptionOnChange} />
+                </FormGroup>
               </TabPane>
-              <TabPane tabId="longDescription">
-                <Form>
-                  <FormGroup>
-                    <Input type="textarea"></Input>
-                  </FormGroup>
-                </Form>
+              <TabPane tabId="longDescription" className={styles.longDescriptionPane}>
+                <FormGroup check>
+                  <Label check>
+                    <Input 
+                      type="checkbox" 
+                      checked={this.state.longDescriptionUrlActive} 
+                      onChange={this.longDescriptionUrlActiveOnChange} />{' '}
+                    URL
+                  </Label>
+                </FormGroup>
+                <FormGroup disabled={!this.state.longDescriptionUrlActive} >
+                  <Input 
+                    value={this.state.longDescriptionUrl} 
+                    onChange={this.longDescriptionUrlOnChange} 
+                    disabled={!this.state.longDescriptionUrlActive} />
+                </FormGroup>
+                <p className={styles.longDescriptionMessage}>Put the service long description here, You can use markdown in this field</p>
+                <FormGroup disabled={this.state.longDescriptionUrlActive} 
+                  className={styles.longDescriptionTextAreaContainer}>
+                  <div className={styles.longDescriptionDiv}>
+                    {this.state.longDescription}
+                  </div>
+                  <Input 
+                    type="textarea" 
+                    disabled={this.state.longDescriptionUrlActive} 
+                    className={styles.longDescriptionTextArea} 
+                    value={this.state.longDescription}
+                    onChange={this.longDescriptionOnChange}/>
+                </FormGroup>
               </TabPane>
             </TabContent>
           </div>
