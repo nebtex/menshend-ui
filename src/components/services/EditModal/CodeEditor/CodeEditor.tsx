@@ -39,8 +39,8 @@ export default class CodeEditor extends React.Component<ICodeEditorProps, ICodeE
         />
         <textarea
           className= {classnames('hljs', styles.textarea)}
-          onInput={this.onInput}>
-          {this.props.value /* only init once time */}
+          onInput={this.onInput}
+          defaultValue={this.props.value}>
         </textarea>
       </div>
     );
