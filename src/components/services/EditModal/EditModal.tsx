@@ -26,6 +26,7 @@ interface IEditModalState {
   nameError: boolean;
   logo: string;
   logoError: boolean;
+  shortDescription: string;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
@@ -41,7 +42,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     name: 'Unknown service',
     nameError: false,
     logo: DEFAULT_LOGO,
-    logoError: false
+    logoError: false,
+    shortDescription: ''
   }
 
   toggleTab = (tab:string) => {
@@ -143,6 +145,12 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     return !nameError && !subdomainError ;
   }
 
+  shortDescriptionOnChange = (e:any) => {
+    this.setState({
+      shortDescription: e.target.value
+    });
+  }
+
   saveService = () => {
     // @TODO: set the errors here
     if(this.formHasNoErrors()){
@@ -192,7 +200,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
               <TabPane tabId="shortDescription">
                 <Form>
                   <FormGroup>
-                    <Input type="textarea"></Input>
+                    <Input 
+                      type="textarea" 
+                      value={this.state.shortDescription} 
+                      maxLength={100} 
+                      onChange={this.shortDescriptionOnChange} />
                   </FormGroup>
                 </Form>
               </TabPane>
