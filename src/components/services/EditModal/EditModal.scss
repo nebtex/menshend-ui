@@ -9,3 +9,19 @@
 .modal {
   max-width: 800px;
 }
+
+.logoRow {
+  margin-left: 0;
+  margin-right: 0;
+  align-items: center;
+}
+
+.logo {
+  flex-basis: 64px;
+  margin: 8px 8px 8px 0;
+}
+
+.logoInput {
+  flex-grow: 1;
+  flex-basis: 90%;
+}

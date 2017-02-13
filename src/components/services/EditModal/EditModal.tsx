@@ -1,14 +1,18 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import CodeEditor from './CodeEditor/CodeEditor';
-import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { IService } from '../../../models/interface';
 let styles = require('./EditModal.scss');
+import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, 
+         FormFeedback, Label, Input, Nav, NavItem, NavLink, Button, Card, CardTitle, 
+         CardText, TabContent, TabPane, Row, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 
 
 export interface IEditModalProps {
   isOpen: boolean;
   toggle: any;
   roles: string[];
+  service?: IService;
 }
 
 interface IEditModalState {
@@ -16,14 +20,28 @@ interface IEditModalState {
   activeTab: string;
   activeRole: string;
   codeEditorValue: string;
+  subdomain: string;
+  subdomainError: boolean;
+  name: string;
+  nameError: boolean;
+  logo: string;
+  logoError: boolean;
 }
+
+const DEFAULT_LOGO = 'https://placehold.it/64x64';
 
 export default class EditModal extends React.Component<IEditModalProps, IEditModalState>{
   state = {
     activeTab: 'shortDescription',
     activeRole: 'All',
     codeEditorValue: '',
-    dropdownOpen: false
+    dropdownOpen: false,
+    subdomain: '',
+    subdomainError: false,
+    name: 'Unknown service',
+    nameError: false,
+    logo: DEFAULT_LOGO,
+    logoError: false
   }
 
   toggleTab = (tab:string) => {
@@ -50,24 +68,106 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     });
   }
 
+  subdomainOnChange = (e:any) => {
+    // Only alphanumeric
+    let value = e.target.value,
+        regex = /^[a-z0-9]+$/i;
+
+    if(regex.test(value) || value === ''){
+      this.setState({
+        subdomain: value
+      });
+    }
+  }
+
+  getSubdomainFormGroup = () => {
+    let subdomainError = this.state.subdomainError,
+        subdomain = this.state.subdomain;
+
+    return (
+      <FormGroup color={subdomainError ? "danger" : null}>
+        <Label>Subdomain</Label>
+        <Input onChange={this.subdomainOnChange} value={subdomain} state={subdomainError ? "danger" : null}/>
+        {subdomainError ? <FormFeedback>This field is required</FormFeedback> : null}
+      </FormGroup>
+    );
+  }
+
+  nameOnChange = (e:any) => {
+    this.setState({
+      name: e.target.value
+    });
+  }
+
+  getNameFormGroup = () => {
+    let name = this.state.name,
+        nameError = this.state.nameError;
+
+    return (
+      <FormGroup color={nameError ? "danger" : null}>
+        <Label>Name</Label>
+        <Input value={this.state.name} onChange={this.nameOnChange} state={nameError ? "danger" : null} />
+        {nameError ? <FormFeedback>This field is required</FormFeedback> : null}        
+      </FormGroup>
+    )
+  }
+
+  logoOnChange = (e:any) => {
+    this.setState({
+      logo: e.target.value,
+      logoError: false
+    });
+  }
+
+  logoOnError = () => {
+    this.setState({
+      logoError: true
+    });
+  }
+
+  getLogoFormGroup = () => {
+    return (
+      <FormGroup>
+        <Label>Logo</Label>
+        <Row className={styles.logoRow}>
+          <img src={this.state.logoError ? DEFAULT_LOGO : this.state.logo} height={64} width={64} className={styles.logo} onError={this.logoOnError}/>
+          <Input placeholder='url' value={this.state.logo} className={styles.logoInput} onChange={this.logoOnChange}></Input>
+        </Row>
+      </FormGroup>
+    );
+  }
+
+  formHasNoErrors = () => {
+    let nameError = this.state.name.trim() === '',
+        subdomainError = this.state.subdomain.trim() === '';
+    return !nameError && !subdomainError ;
+  }
+
+  saveService = () => {
+    // @TODO: set the errors here
+    if(this.formHasNoErrors()){
+      console.log('There are no errors');
+    }else{
+      this.setState({
+        nameError: this.state.name.trim() === '',
+        subdomainError: this.state.subdomain.trim() === ''
+      });
+    }
+  }
+
   render(){
+    let subdomainFormGroup = this.getSubdomainFormGroup(),
+        nameFormGroup = this.getNameFormGroup(),
+        logoFormGroup = this.getLogoFormGroup();
+
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
-        <ModalHeader toggle={this.props.toggle}>Edit service</ModalHeader>
+        <ModalHeader toggle={this.props.toggle}>{this.props.service ? 'Edit service' : 'New service'}</ModalHeader>
         <ModalBody>
           <Form>
-            <FormGroup>
-              <Label>Subdomain</Label>
-              <Input placeholder='Company SubDomain'></Input>
-            </FormGroup>
-            <FormGroup>
-              <Label>Name</Label>
-              <Input placeholder='Company Name'></Input>
-            </FormGroup>
-            <FormGroup>
-              <Label>Logo</Label>
-              <Input placeholder='url'></Input>
-            </FormGroup>
+            { subdomainFormGroup }
+            { nameFormGroup }
+            { logoFormGroup }
           </Form>
           <div>
             <Nav tabs>
@@ -105,7 +205,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
               </TabPane>
             </TabContent>
           </div>
-          <h3>Backend rule</h3>
+          <h5>Backend rule</h5>
           <Row className={styles.rolesRow}>
             <FormGroup check>
               <Label check>
@@ -138,7 +238,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
         </ModalBody>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
-          <Button color="primary" onClick={this.props.toggle}>Save</Button>{' '}
+          <Button color="primary" onClick={this.saveService}>Save</Button>{' '}
         </ModalFooter>
       </Modal>
     );
