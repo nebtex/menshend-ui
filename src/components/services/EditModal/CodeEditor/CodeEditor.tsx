@@ -25,8 +25,9 @@ export default class CodeEditor extends React.Component<ICodeEditorProps, ICodeE
   }
 
   onInput = (e:any) => {
-    this.props.onChange(e.target.innerText);
-    this.setState({ value: e.target.innerText });
+    let value = e.target.value;
+    this.props.onChange(value);
+    this.setState({ value: value });
   }
 
   render(){
@@ -36,15 +37,11 @@ export default class CodeEditor extends React.Component<ICodeEditorProps, ICodeE
           lang={this.state.lang}
           value={this.state.value}
         />
-        <pre className={styles.pre}>
-          <code
-            className= {classnames('hljs', styles.textarea)}
-            contentEditable
-            spellCheck={false}
-            onInput={this.onInput}>
-            {this.props.value /* only init once time */}
-          </code>
-        </pre>
+        <textarea
+          className= {classnames('hljs', styles.textarea)}
+          onInput={this.onInput}>
+          {this.props.value /* only init once time */}
+        </textarea>
       </div>
     );
   }
