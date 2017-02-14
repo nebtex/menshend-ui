@@ -249,9 +249,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
                 <p className={styles.longDescriptionMessage}>Put the service long description here, You can use markdown in this field</p>
                 <FormGroup disabled={this.state.longDescriptionUrlActive} 
                   className={styles.longDescriptionTextAreaContainer}>
-                  <div className={styles.longDescriptionDiv}>
-                    {this.state.longDescription}
-                  </div>
                   <Input 
                     type="textarea" 
                     disabled={this.state.longDescriptionUrlActive} 
