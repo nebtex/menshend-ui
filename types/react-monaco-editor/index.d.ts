@@ -41,4 +41,4 @@ declare function MonacoEditor(): React.Component< MonacoEditorProps, {}>;
 
 declare namespace MonacoEditor { }
 
-export = MonacoEditor;
+export default MonacoEditor;

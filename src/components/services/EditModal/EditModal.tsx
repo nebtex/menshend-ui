@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import { IService } from '../../../models/interface';
-import MonacoEditor = require('react-monaco-editor');
+import MonacoEditor from 'react-monaco-editor';
 let styles = require('./EditModal.scss');
 import { Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, 
          FormFeedback, Label, Input, Nav, NavItem, NavLink, Button, Card, CardBlock, CardTitle, 
@@ -288,12 +288,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           </Row>
           <FormGroup>
             <MonacoEditor 
-              requireConfig = {{
-                url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
-                paths: {
-                  'vs': 'https://www.mycdn.com/monaco-editor/0.6.1/min/vs'
-                }
-              }}
+            height='600'
               />
           </FormGroup>
         </ModalBody>
