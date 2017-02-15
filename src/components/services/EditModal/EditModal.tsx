@@ -19,7 +19,7 @@ interface IEditModalState {
   dropdownOpen: boolean;
   activeTab: string;
   activeRole: string;
-  codeEditorValue: string;
+  backendRule: string;
   subdomain: string;
   subdomainError: boolean;
   name: string;
@@ -38,7 +38,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   state = {
     activeTab: 'shortDescription',
     activeRole: 'All',
-    codeEditorValue: '',
+    backendRule: '',
     dropdownOpen: false,
     subdomain: '',
     subdomainError: false,
@@ -70,9 +70,9 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     });
   }
 
-  codeEditorOnChange = (value:string) => {
+  codeOnChange = (newValue:string) => {
     this.setState({
-      codeEditorValue: value
+      backendRule: newValue
     });
   }
 
@@ -298,7 +298,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
               height={300}
               language='lua'
               requireConfig={requireConfig}
-              value="__=== type your code here ==="
+              onChange={this.codeOnChange}
+              defaultValue="__=== type your code here ==="
               options={{
                 theme:'vs-dark'
               }}/>
