@@ -95,9 +95,13 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
         subdomain = this.state.subdomain;
 
     return (
-      <FormGroup color={subdomainError ? "danger" : null}>
-        <Label>Subdomain</Label>
-        <Input onChange={this.subdomainOnChange} value={subdomain} state={subdomainError ? "danger" : null}/>
+      <FormGroup color={subdomainError ? "danger" : null} className={styles.subdomainFormGroup}>
+        <div>
+          <Label>Subdomain</Label>
+        </div>
+        <div>
+          <Input onChange={this.subdomainOnChange} value={subdomain} state={subdomainError ? "danger" : null}/>
+        </div>
         {subdomainError ? <FormFeedback>This field is required</FormFeedback> : null}
       </FormGroup>
     );
@@ -114,9 +118,13 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
         nameError = this.state.nameError;
 
     return (
-      <FormGroup color={nameError ? "danger" : null}>
-        <Label>Name</Label>
-        <Input value={this.state.name} onChange={this.nameOnChange} state={nameError ? "danger" : null} />
+      <FormGroup color={nameError ? "danger" : null} className={styles.nameFormGroup}>
+        <div>
+          <Label>Name</Label>
+        </div>
+        <div>
+          <Input value={this.state.name} onChange={this.nameOnChange} state={nameError ? "danger" : null} />
+        </div>
         {nameError ? <FormFeedback>This field is required</FormFeedback> : null}        
       </FormGroup>
     )
@@ -137,13 +145,15 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
 
   getLogoFormGroup = () => {
     return (
-      <FormGroup>
-        <Label>Logo</Label>
-        <Row className={styles.logoRow}>
+      <div className={styles.logoSection}>
+        <div>
+          <Label>Logo</Label>
+        </div>
+        <div>
+          <Input placeholder='url' value={this.state.logo} onChange={this.logoOnChange}></Input>
           <img src={this.state.logoError ? DEFAULT_LOGO : this.state.logo} height={64} width={64} className={styles.logo} onError={this.logoOnError}/>
-          <Input placeholder='url' value={this.state.logo} className={styles.logoInput} onChange={this.logoOnChange}></Input>
-        </Row>
-      </FormGroup>
+        </div>
+      </div>
     );
   }
 
@@ -178,8 +188,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   }
 
   saveService = () => {
-    // @TODO: set the errors here
     if(this.formHasNoErrors()){
+      // @TODO: Send data here
       console.log('There are no errors');
     }else{
       this.setState({
@@ -281,6 +291,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
               </TabPane>
             </TabContent>
           </div>
+          <hr/>
           <h5>Backend rule</h5>
           <Row className={styles.rolesRow}>
             <FormGroup check>
