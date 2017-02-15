@@ -42,7 +42,7 @@
   flex-wrap: wrap;
   >div:nth-child(1){
     flex-grow: 0;
-    flex-basis: 120px;
+    flex-basis: 110px;
     padding-right: 8px;
     >label{
       margin:0;
@@ -66,7 +66,7 @@
   display: flex;
   flex-wrap: wrap;
   > div:nth-child(1){
-    flex-basis: 120px;
+    flex-basis: 110px;
     padding-right: 8px;
     > label {
       margin-top: 6px;
