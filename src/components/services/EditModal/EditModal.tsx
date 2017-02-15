@@ -32,11 +32,13 @@ interface IEditModalState {
   longDescription: string;
 }
 
-const DEFAULT_LOGO = 'https://placehold.it/64x64';
+const DEFAULT_LOGO = 'https://placehold.it/64x64',
+      SHORT_DESCRIPTION_LENGTH = 100;
+
 
 export default class EditModal extends React.Component<IEditModalProps, IEditModalState>{
   state = {
-    activeTab: 'shortDescription',
+    activeTab: 'general',
     activeRole: 'All',
     backendRule: '',
     dropdownOpen: false,
@@ -165,7 +167,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
 
   shortDescriptionOnChange = (e:any) => {
     this.setState({
-      shortDescription: e.target.value
+      shortDescription: e.target.value.substring(0, SHORT_DESCRIPTION_LENGTH)
     });
   }
 
@@ -203,13 +205,16 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
         <ModalHeader toggle={this.props.toggle}>{this.props.service ? 'Edit service' : 'New service'}</ModalHeader>
         <ModalBody>
-          <Form>
-            { subdomainFormGroup }
-            { nameFormGroup }
-            { logoFormGroup }
-          </Form>
           <div>
             <Nav tabs>
+              <NavItem>
+                <NavLink
+                  className={classnames({ active: this.state.activeTab === 'general' })}
+                  onClick={() => { this.toggleTab('general'); }}
+                >
+                  General
+                </NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink
                   className={classnames({ active: this.state.activeTab === 'shortDescription' })}
@@ -228,14 +233,24 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
               </NavItem>
             </Nav>
             <TabContent activeTab={this.state.activeTab}>
+              <TabPane tabId="general">
+                <Form className={styles.generalForm}>
+                  { subdomainFormGroup }
+                  { nameFormGroup }
+                  { logoFormGroup }
+                </Form>
+              </TabPane>
               <TabPane tabId="shortDescription">
-                <FormGroup>
-                  <Input 
-                    type="textarea" 
-                    value={this.state.shortDescription} 
-                    maxLength={100} 
-                    onChange={this.shortDescriptionOnChange} />
-                </FormGroup>
+                <Form className={styles.shortDescriptionForm}>
+                  <FormGroup>
+                    <Input 
+                      type="textarea" 
+                      value={this.state.shortDescription} 
+                      maxLength={SHORT_DESCRIPTION_LENGTH} 
+                      onChange={this.shortDescriptionOnChange} />
+                      <p>{this.state.shortDescription.length}/{SHORT_DESCRIPTION_LENGTH} </p>
+                  </FormGroup>
+                </Form>
               </TabPane>
               <TabPane tabId="longDescription" className={styles.longDescriptionPane}>
                 <FormGroup check>
