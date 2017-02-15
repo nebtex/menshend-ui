@@ -192,6 +192,13 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
         nameFormGroup = this.getNameFormGroup(),
         logoFormGroup = this.getLogoFormGroup();
 
+    const requireConfig = {
+      url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
+      paths: {
+        'vs': 'https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs'
+      }
+    };
+
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
         <ModalHeader toggle={this.props.toggle}>{this.props.service ? 'Edit service' : 'New service'}</ModalHeader>
@@ -288,8 +295,13 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           </Row>
           <FormGroup>
             <MonacoEditor 
-            height='600'
-              />
+              height={200}
+              language='lua'
+              requireConfig={requireConfig}
+              value="__=== type your code here ==="
+              options={{
+                theme:'vs-dark'
+              }}/>
           </FormGroup>
         </ModalBody>
         <ModalFooter>
