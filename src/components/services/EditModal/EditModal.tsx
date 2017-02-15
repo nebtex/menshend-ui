@@ -295,7 +295,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           </Row>
           <FormGroup>
             <MonacoEditor 
-              height={200}
+              height={300}
               language='lua'
               requireConfig={requireConfig}
               value="__=== type your code here ==="
