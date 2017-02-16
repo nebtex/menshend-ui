@@ -6,7 +6,7 @@
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-monaco-editor&&ln -s `pwd`/types/react-monaco-editor `pwd`/node_modules/@types/react-monaco-editor",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
-    "test": "jest",
+    "test": "jest && codecov -t $CODECOV_TOKEN",
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
@@ -17,6 +17,7 @@
     "@types/react-dom": "^0.14.21",
     "@types/react-infinite": "^0.0.29",
     "@types/react-test-renderer": "^15.4.2",
+    "codecov": "^1.0.1",
     "css-loader": "^0.26.1",
     "dummy-json": "^2.0.0",
     "jest": "^18.1.0",
@@ -56,6 +57,7 @@
   },
   "jest": {
     "collectCoverage": true,
+    "coverageDirectory": "./coverage/",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(scss)$": "identity-obj-proxy"
