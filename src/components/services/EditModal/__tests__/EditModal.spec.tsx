@@ -8,15 +8,19 @@ import { shallow, mount, render } from 'enzyme';
 describe('EditModal', () => {
   let editModal:any;
 
-  describe('default', () => {
+  describe('No service', () => {
 
-    const testProps = Cases['default'];
+    const testProps = Cases['No service'];
 
     beforeEach(() => {
       editModal = mount(<EditModal {...testProps} />);
     });
 
     it('should render correctly', () => {
+      console.log(editModal.html());
+    });
+
+    it('should render correctly when form has an error', () => {
      
      
     });

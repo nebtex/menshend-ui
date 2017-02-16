@@ -1,0 +1,81 @@
+.rolesRow {
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.longDescriptionMessage {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.longDescriptionPane {
+  padding-top: 8px;
+}
+
+.longDescriptionTextArea {
+  min-height: 160px;
+}
+
+.generalForm {
+  padding-top: 8px;
+}
+
+.shortDescriptionForm {
+  padding-top: 8px;
+  p {
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.generalFormGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  >div:nth-child(1){
+    flex-grow: 0;
+    flex-basis: 110px;
+    padding-right: 8px;
+    padding-top: 8px;
+    align-self: stretch;
+    >label{
+      margin:0;
+    }
+  }
+  >div:nth-child(2){
+    flex-grow: 1;
+    flex-basis: 80%;
+  }
+}
+
+.subdomainFormGroup {
+  composes: generalFormGroup;
+}
+
+.nameFormGroup {
+  composes: generalFormGroup;
+}
+
+.logoSection {
+  display: flex;
+  flex-wrap: wrap;
+  > div:nth-child(1){
+    flex-basis: 110px;
+    padding-right: 8px;
+    > label {
+      margin-top: 6px;
+    }
+  }
+
+  > div:nth-child(2){
+    flex-grow: 1;
+    flex-basis: 80%;
+    > img {
+      margin: 8px 0;
+    }
+  }
+}
