@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/NebTex/react-typescript-boilerplate.svg?branch=master)](https://travis-ci.org/NebTex/react-typescript-boilerplate)
+
 # React Typescript Boilerplate
 
 install the required packages
