@@ -7,29 +7,29 @@ import { ModalBody, Nav, NavItem, NavLink, TabContent, TabPane, Form, FormGroup,
 let styles = require('./EditModalBody.scss');
          
 export interface IEditModalBodyProps {
-  activeTab: string;
+  activeTab?: string;
   toggleTab: any;
-  activeRole: string;
+  activeRole?: string;
   selectRole: any;
-  subdomain: string;
+  subdomain?: string;
   subdomainOnChange: any;
-  subdomainError: boolean;
-  name: string;
-  nameError: boolean;
+  subdomainError?: boolean;
+  name?: string;
+  nameError?: boolean;
   nameOnChange: any;
-  logo: string;
-  logoError: boolean;
+  logo?: string;
+  logoError?: boolean;
   logoOnError: any;
   logoOnChange: any;
-  shortDescription: string;
+  shortDescription?: string;
   shortDescriptionOnChange: any;
-  longDescription: string;
+  longDescription?: string;
   longDescriptionOnChange: any;
-  longDescriptionUrl: string;
+  longDescriptionUrl?: string;
   longDescriptionUrlOnChange: any;
-  longDescriptionUrlActive: boolean;
+  longDescriptionUrlActive?: boolean;
   longDescriptionUrlActiveOnChange: any;
-  dropdownOpen: boolean;
+  dropdownOpen?: boolean;
   toggleDropdown: any;
   roles: string[];
   codeOnChange: any;
@@ -39,6 +39,21 @@ const DEFAULT_LOGO = 'https://placehold.it/64x64',
       SHORT_DESCRIPTION_LENGTH = 100;
 
 export default class EditModalBody extends React.Component<IEditModalBodyProps,{}>{
+  static defaultProps = {
+    activeTab: 'general',
+    activeRole: 'All',
+    subdomain: '',
+    subdomainError: false,
+    name: 'Unknown service',
+    nameError: false,
+    logo: DEFAULT_LOGO,
+    logoError: false,
+    shortDescription: '',
+    longDescription: '',
+    longDescriptionUrl: '',
+    longDescriptionUrlActive: false,
+    dropdownOpen: false
+  }
 
   getSubdomainFormGroup = () => {
     let subdomainError = this.props.subdomainError,
@@ -163,7 +178,8 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                   <Input 
                     type="checkbox" 
                     checked={this.props.longDescriptionUrlActive} 
-                    onChange={this.props.longDescriptionUrlActiveOnChange} />{' '}
+                    onChange={this.props.longDescriptionUrlActiveOnChange} 
+                    className="longDescriptionUrlCheckbox"/>{' '}
                   URL
                 </Label>
               </FormGroup>
@@ -171,7 +187,8 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                 <Input 
                   value={this.props.longDescriptionUrl} 
                   onChange={this.props.longDescriptionUrlOnChange} 
-                  disabled={!this.props.longDescriptionUrlActive} />
+                  disabled={!this.props.longDescriptionUrlActive} 
+                  className="longDescriptionUrlInput"/>
               </FormGroup>
               <p className={styles.longDescriptionMessage}>Put the service long description here, You can use markdown in this field</p>
               <FormGroup disabled={this.props.longDescriptionUrlActive} 

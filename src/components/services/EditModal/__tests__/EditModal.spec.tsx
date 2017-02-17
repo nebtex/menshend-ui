@@ -17,12 +17,6 @@ describe('EditModal', () => {
     });
 
     it('should render correctly', () => {
-      console.log(editModal.html());
-    });
-
-    it('should render correctly when form has an error', () => {
-     
-     
     });
   });
 });
