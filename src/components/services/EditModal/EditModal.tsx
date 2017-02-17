@@ -2,9 +2,10 @@ import * as React from 'react';
 import * as classnames from 'classnames';
 import { IService } from '../../../models/interface';
 import MonacoEditor from 'react-monaco-editor';
-import Body from './Body/Body';
+import EditModalBody from './EditModalBody/EditModalBody';
+import EditModalHeader from './EditModalHeader/EditModalHeader';
 let styles = require('./EditModal.scss');
-import { Modal, ModalHeader, ModalFooter, Button, Card, CardBlock, CardTitle, CardText } from 'reactstrap';
+import { Modal, ModalFooter, Button, Card, CardBlock, CardTitle, CardText } from 'reactstrap';
 
 
 export interface IEditModalProps {
@@ -152,8 +153,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   render(){
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
-        <ModalHeader toggle={this.props.toggle}>{this.props.service ? 'Edit service' : 'New service'}</ModalHeader>
-        <Body 
+        <EditModalHeader 
+          service={this.props.service ? true : false}
+          toggle={this.props.toggle}
+        />
+        <EditModalBody 
           activeTab={this.state.activeTab}
           toggleTab={this.toggleTab}
           activeRole={this.state.activeRole}

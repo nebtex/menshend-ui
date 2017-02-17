@@ -4,9 +4,9 @@ import MonacoEditor from 'react-monaco-editor';
 import { ModalBody, Nav, NavItem, NavLink, TabContent, TabPane, Form, FormGroup, 
          FormFeedback, Input, Label, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap';
 
-let styles = require('./Body.scss');
+let styles = require('./EditModalBody.scss');
          
-export interface IBodyProps {
+export interface IEditModalBodyProps {
   activeTab: string;
   toggleTab: any;
   activeRole: string;
@@ -38,7 +38,7 @@ export interface IBodyProps {
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
       SHORT_DESCRIPTION_LENGTH = 100;
 
-export default class Body extends React.Component<IBodyProps,{}>{
+export default class EditModalBody extends React.Component<IEditModalBodyProps,{}>{
 
   getSubdomainFormGroup = () => {
     let subdomainError = this.props.subdomainError,
