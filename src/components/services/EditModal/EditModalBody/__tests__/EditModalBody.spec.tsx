@@ -37,17 +37,21 @@ describe('EditModalBody', () => {
     });
 
     it('should render correctly', () => {
-      
+      expect(editModalBody.find('FormGroup').at(1).props().color).toEqual('danger');
+      expect(editModalBody.find('FormGroup').at(1).find('Input').first().props().state).toEqual('danger');
+      expect(editModalBody.find('FormGroup').at(1).find('FormFeedback').first().text()).toEqual('This field is required');
     });
   });
 
-  describe('Long Description URL Active', () => {
+  describe('Subdomain Error', () => {
     beforeEach(()=> {
       editModalBody = mount(<EditModalBody {...Cases['Subdomain Error']}/>)
     });
 
     it('should render correctly', () => {
-      
+      expect(editModalBody.find('FormGroup').at(0).props().color).toEqual('danger');
+      expect(editModalBody.find('FormGroup').at(0).find('Input').first().props().state).toEqual('danger');
+      expect(editModalBody.find('FormGroup').at(0).find('FormFeedback').first().text()).toEqual('This field is required');
     });
   });
 });

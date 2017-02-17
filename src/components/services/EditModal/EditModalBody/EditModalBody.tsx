@@ -86,8 +86,7 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
           <Label>Name</Label>
         </div>
         <div>
-          <Input 
-            id="nameInput" 
+          <Input
             value={this.props.name} 
             onChange={this.props.nameOnChange} 
             state={nameError ? "danger" : null} />
