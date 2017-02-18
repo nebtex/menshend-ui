@@ -315,7 +315,7 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
             <DropdownMenu className={styles.rolesContainer}>
               <DropdownItem onClick={() => { this.props.selectRole('All') }}>{'All'}</DropdownItem>
               <DropdownItem divider />
-              {this.props.availableRoles.map((role, index) => {
+              {this.props.serviceRoles.map((role, index) => {
                 return <DropdownItem key={index} onClick={() => { this.props.selectRole(role) }} className="role">{role}</DropdownItem>
               })}
             </DropdownMenu>
