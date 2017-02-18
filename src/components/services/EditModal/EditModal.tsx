@@ -38,25 +38,45 @@ const DEFAULT_LOGO = 'https://placehold.it/64x64',
       SHORT_DESCRIPTION_LENGTH = 100;
 
 export default class EditModal extends React.Component<IEditModalProps, IEditModalState>{
-  state = {
-    activeTab: 'general',
-    activeRole: 'All',
-    backendRule: '',
-    dropdownOpen: false,
-    subdomain: '',
-    subdomainError: false,
-    name: 'Unknown service',
-    nameError: false,
-    logo: DEFAULT_LOGO,
-    logoError: false,
-    shortDescription: '',
-    longDescriptionUrl: '',
-    longDescriptionUrlActive: false,
-    longDescription: '',
-    serviceRoles: [''],
-    availableRoles: this.props.roles.slice() // get an array copy
-  }
   
+  constructor(props:IEditModalProps){
+    super(props);
+    this.state = {
+      activeTab: 'general',
+      activeRole: 'All',
+      backendRule: '',
+      dropdownOpen: false,
+      subdomain: this.props.service ? this.props.service.subDomain : '',
+      subdomainError: false,
+      name: this.props.service ? this.props.service.name : 'Unknown service',
+      nameError: false,
+      logo: this.props.service ? this.props.service.logo : DEFAULT_LOGO,
+      logoError: false,
+      shortDescription: this.props.service ? this.props.service.short_description : '',
+      longDescriptionUrl: '',
+      longDescriptionUrlActive: false,
+      longDescription: this.props.service ? this.props.service.long_description : '',
+      serviceRoles: this.props.service ? this.props.service.roles.slice() : [''],
+      availableRoles: this.getAvailableRoles() 
+    }
+  }
+
+  getAvailableRoles = () => {
+    let availableRoles:string[] = this.props.roles.slice(), // get an array copy
+        service  = this.props.service;
+
+    if(service && service.roles){
+      service.roles.forEach((role:string) => {
+        const index = availableRoles.indexOf(role);
+        if(index > -1){
+          availableRoles.splice(index, 1);
+        }
+      });
+    }
+
+    return availableRoles;
+  }
+
   toggleTab = (tab:string) => {
     this.setState({
       activeTab: tab

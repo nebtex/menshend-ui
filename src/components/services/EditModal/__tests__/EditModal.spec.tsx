@@ -17,6 +17,20 @@ describe('EditModal', () => {
     });
 
     it('should render correctly', () => {
+      //@TODO: Check if default values are rendered correctly
+    });
+  });
+
+  describe('Service', () => {
+
+    const testProps = Cases['No service'];
+
+    beforeEach(() => {
+      editModal = mount(<EditModal {...testProps} />);
+    });
+
+    it('should render correctly', () => {
+      //@TODO: Check if the service data is rendered correctly
     });
   });
 });
