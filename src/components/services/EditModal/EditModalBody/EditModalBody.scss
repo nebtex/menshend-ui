@@ -79,3 +79,42 @@
     }
   }
 }
+
+.rolesTabPane {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.availableRolesSection {
+  flex-basis: 300px;
+  flex-grow: 1;
+  padding: 16px 0;
+}
+
+.serviceRolesSection {  
+  flex-basis: 50%;
+  flex-grow: 1;
+  padding: 16px 0;
+}
+
+.serviceRolesSection {
+  padding: 0 8px;
+}
+
+.availableRolesSection {
+  padding: 0 8px;
+}
+
+.rolesForm {
+  padding-top: 8px;
+}
+
+.addRoleBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 0;
+
+  >button {
+    width:100%;
+  }
+}

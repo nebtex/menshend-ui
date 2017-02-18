@@ -49,4 +49,6 @@ declare namespace ReactStrap {
     export function ModalHeader(props: any): React.Component<any, any>
     export function ModalBody(props: any): React.Component<any, any>
     export function ModalFooter(props: any): React.Component<any, any>
+    export function ListGroup(props: any): React.Component<any, any>
+    export function ListGroupItem(props: any): React.Component<any, any>
 }

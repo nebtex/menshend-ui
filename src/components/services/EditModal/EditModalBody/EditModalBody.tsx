@@ -1,8 +1,9 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import MonacoEditor from 'react-monaco-editor';
-import { ModalBody, Nav, NavItem, NavLink, TabContent, TabPane, Form, FormGroup, 
-         FormFeedback, Input, Label, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap';
+import { ModalBody, Nav, NavItem, NavLink, TabContent, TabPane, Form, FormGroup, ListGroup, 
+         ListGroupItem, FormFeedback, Input, Label, Dropdown, DropdownItem, DropdownMenu, 
+         DropdownToggle, Row , Button} from 'reactstrap';
 
 let styles = require('./EditModalBody.scss');
          
@@ -31,8 +32,16 @@ export interface IEditModalBodyProps {
   longDescriptionUrlActiveOnChange: any;
   dropdownOpen?: boolean;
   toggleDropdown: any;
-  roles: string[];
+  availableRoles: string[];
   codeOnChange: any;
+  serviceRoles?:string[];
+  serviceRolesOnDoubleClick:any;
+  availableRolesOnDoubleClick:any;
+  serviceRoleOnAddition:any;
+}
+
+interface IEditModalBodyState {
+  newRole:string;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -52,7 +61,12 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
     longDescription: '',
     longDescriptionUrl: '',
     longDescriptionUrlActive: false,
-    dropdownOpen: false
+    dropdownOpen: false,
+    serviceRoles: ['']
+  }
+
+  state = {
+    newRole:''
   }
 
   getSubdomainFormGroup = () => {
@@ -110,6 +124,54 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
     );
   }
 
+  getAvailableRolesListGroup = () => {
+    return (
+      <FormGroup className={styles.serviceRolesFormGroup}>
+        <Label for="serviceRolesSelect">Available roles</Label>
+          <Input type="select" name="servicesRolesSelect" id="servicesRolesSelect" multiple>
+          {this.props.availableRoles.map((role, index) => {
+            if(role!==''){
+              return (                
+                <option onDoubleClick={() => {this.props.availableRolesOnDoubleClick(role)}} key={index}>{role}</option>
+              );
+            }
+          })}
+        </Input>  
+      </FormGroup>
+    );
+  }
+
+  getServiceRolesListGroup = () => {
+    return (
+      <FormGroup className={styles.availableRolesFormGroup}>
+        <Label for="serviceRolesSelect">Service roles</Label>
+          <Input type="select" name="servicesRolesSelect" id="servicesRolesSelect" multiple>
+          {this.props.serviceRoles.map((role, index) => {
+            if(role!==''){
+              return (
+                <option onDoubleClick={() => {this.props.serviceRolesOnDoubleClick(role)}} key={index}>{role}</option>
+              );
+            }
+          })}
+        </Input>
+      </FormGroup>
+    );
+  }
+
+  newRoleOnChange = (evt:any) => {
+    this.setState({
+      newRole: evt.target.value
+    });
+  }
+
+  addNewRole = (e:any) => {
+    e.preventDefault();
+    this.props.serviceRoleOnAddition(this.state.newRole);
+    this.setState({
+      newRole:''
+    });
+  }
+
   render() {
     const requireConfig = {
       url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
@@ -121,6 +183,9 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
     let subdomainFormGroup = this.getSubdomainFormGroup(),
         nameFormGroup = this.getNameFormGroup(),
         logoFormGroup = this.getLogoFormGroup();
+    
+    let availableRolesListGroup = this.getAvailableRolesListGroup(),
+        serviceRolesListGroup = this.getServiceRolesListGroup();
 
     return (
       <ModalBody>
@@ -148,6 +213,14 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                 onClick={() => { this.props.toggleTab('longDescription'); }}
               >
                 Long description
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.props.activeTab === 'roles' })}
+                onClick={() => { this.props.toggleTab('roles'); }}
+              >
+                Roles
               </NavLink>
             </NavItem>
           </Nav>
@@ -200,6 +273,24 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                   onChange={this.props.longDescriptionOnChange}/>
               </FormGroup>
             </TabPane>
+            <TabPane tabId="roles">
+              <Form className={styles.rolesForm}>
+                <div className={styles.rolesTabPane}>
+                  <div className={styles.availableRolesSection}>
+                    {availableRolesListGroup}
+                  </div>
+                  <div className={styles.serviceRolesSection}>
+                    {serviceRolesListGroup}
+                    <div>
+                      <Input placeholder="New role" value={this.state.newRole} onChange={this.newRoleOnChange}/>
+                    </div>
+                    <div className={styles.addRoleBtnContainer}>
+                      <Button onClick={this.addNewRole}>Add role</Button>
+                    </div>
+                  </div>
+                </div>
+              </Form>
+            </TabPane>
           </TabContent>
         </div>
         <hr/>
@@ -224,7 +315,7 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
             <DropdownMenu className={styles.rolesContainer}>
               <DropdownItem onClick={() => { this.props.selectRole('All') }}>{'All'}</DropdownItem>
               <DropdownItem divider />
-              {this.props.roles.map((role, index) => {
+              {this.props.availableRoles.map((role, index) => {
                 return <DropdownItem key={index} onClick={() => { this.props.selectRole(role) }} className="role">{role}</DropdownItem>
               })}
             </DropdownMenu>

@@ -17,8 +17,11 @@ Cases['Long Description URL Active']={
   longDescriptionUrlActive: true,
   longDescriptionUrlActiveOnChange:function(){},
   toggleDropdown: function(){},
-  roles: roles,
-  codeOnChange: function(){}
+  availableRoles: roles,
+  codeOnChange: function(){},
+  serviceRolesOnDoubleClick: function(){},
+  availableRolesOnDoubleClick: function(){},
+  serviceRoleOnAddition: function(){}
 }
 
 Cases['Long Description URL Inactive']= {
@@ -35,8 +38,11 @@ Cases['Long Description URL Inactive']= {
   longDescriptionUrlActive: false,
   longDescriptionUrlActiveOnChange:function(){},
   toggleDropdown: function(){},
-  roles: roles,
-  codeOnChange: function(){}
+  availableRoles: roles,
+  codeOnChange: function(){},
+  serviceRolesOnDoubleClick: function(){},
+  availableRolesOnDoubleClick: function(){},
+  serviceRoleOnAddition: function(){}
 }
 
 Cases['Subdomain Error']= {
@@ -53,8 +59,11 @@ Cases['Subdomain Error']= {
   longDescriptionUrlOnChange: function(){},
   longDescriptionUrlActiveOnChange:function(){},
   toggleDropdown: function(){},
-  roles: roles,
-  codeOnChange: function(){}
+  availableRoles: roles,
+  codeOnChange: function(){},
+  serviceRolesOnDoubleClick: function(){},
+  availableRolesOnDoubleClick: function(){},
+  serviceRoleOnAddition: function(){}
 }
 
 Cases['Name Error']= {
@@ -72,8 +81,11 @@ Cases['Name Error']= {
   longDescriptionUrlOnChange: function(){},
   longDescriptionUrlActiveOnChange:function(){},
   toggleDropdown: function(){},
-  roles: roles,
-  codeOnChange: function(){}
+  availableRoles: roles,
+  codeOnChange: function(){},
+  serviceRolesOnDoubleClick: function(){},
+  availableRolesOnDoubleClick: function(){},
+  serviceRoleOnAddition: function(){}
 }
 
 export default Cases;

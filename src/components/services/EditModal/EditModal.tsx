@@ -30,6 +30,8 @@ interface IEditModalState {
   longDescriptionUrl: string;
   longDescriptionUrlActive: boolean;
   longDescription: string;
+  serviceRoles: string[];
+  availableRoles: string[];
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -50,9 +52,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     shortDescription: '',
     longDescriptionUrl: '',
     longDescriptionUrlActive: false,
-    longDescription: ''
+    longDescription: '',
+    serviceRoles: [''],
+    availableRoles: this.props.roles.slice() // get an array copy
   }
-
+  
   toggleTab = (tab:string) => {
     this.setState({
       activeTab: tab
@@ -150,6 +154,60 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     }
   }
 
+  serviceRoleOnAddition = (role:string) => {
+    let serviceRoles = this.state.serviceRoles;
+    
+    // push and sort in the serviceRoles
+    serviceRoles.push(role);
+    serviceRoles.sort();
+
+    this.setState({
+      serviceRoles: serviceRoles
+    });
+  }
+
+  serviceRolesOnDoubleClick = (role:string) => {
+    const serviceRolesIndex = this.state.serviceRoles.indexOf(role),
+          roleAlreadyExists = this.props.roles.indexOf(role) > -1;          
+
+    let availableRoles = this.state.availableRoles,
+        serviceRoles = this.state.serviceRoles;
+
+    // Remove from available roles
+    serviceRoles.splice(serviceRolesIndex, 1);
+
+    // chek if service exists in roles prop
+    if (roleAlreadyExists){
+      // Push to service roles and sort
+      availableRoles.push(role);
+      availableRoles.sort();
+    }
+
+    this.setState({
+      availableRoles: availableRoles,
+      serviceRoles:serviceRoles
+    });
+  }
+
+  availableRolesOnDoubleClick = (role:string) => {
+    const availableRolesIndex = this.state.availableRoles.indexOf(role);          
+
+    let availableRoles = this.state.availableRoles,
+        serviceRoles = this.state.serviceRoles;
+
+    // Remove from available roles
+    availableRoles.splice(availableRolesIndex, 1);
+
+    // Push to service roles and sort
+    serviceRoles.push(role);
+    serviceRoles.sort();
+
+    this.setState({
+      availableRoles: availableRoles,
+      serviceRoles:serviceRoles
+    });
+  }
+
   render(){
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
@@ -182,7 +240,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           longDescriptionUrlActiveOnChange={this.longDescriptionUrlActiveOnChange}
           dropdownOpen={this.state.dropdownOpen}
           toggleDropdown={this.toggleDropdown}
-          roles={this.props.roles}
+          availableRoles={this.state.availableRoles}
+          serviceRoles={this.state.serviceRoles}
+          serviceRolesOnDoubleClick={this.serviceRolesOnDoubleClick}
+          availableRolesOnDoubleClick={this.availableRolesOnDoubleClick}
+          serviceRoleOnAddition={this.serviceRoleOnAddition}
           codeOnChange={this.codeOnChange}/>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
