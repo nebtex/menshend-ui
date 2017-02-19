@@ -12,12 +12,22 @@ describe('EditModal', () => {
 
     const testProps = Cases['Default'];
 
+    beforeEach(() => {
+      editModal = mount(<EditModal {...testProps} />);
+    });
+
+    it('should have default expected values', () => {
+      const state = editModal.state();
+
+      expect(state.name).toEqual('Unknown service');
+      expect(state.shortDescription).toEqual('');
+      expect(state.longDescription).toEqual('');
+      expect(state.subdomain).toEqual('');
+      expect(state.logo).toEqual('https://placehold.it/64x64');
+    });
+
     describe('Roles TabPane' ,() => {
       const testRole = 'role 1';
-     
-      beforeEach(() => {
-        editModal = mount(<EditModal {...testProps} />);
-      });
 
       it('should move a role from available roles to service roles when double click over role is triggered', () => {
 
