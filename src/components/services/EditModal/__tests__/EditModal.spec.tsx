@@ -26,6 +26,33 @@ describe('EditModal', () => {
       expect(state.logo).toEqual('https://placehold.it/64x64');
     });
 
+    it('should have an alphanumeric subdomain', () => {
+      const nonAlphanumeric = '-#$non-alphanumeric34';
+      const alphanumeric = 'subdomainAlphanumeric123';
+
+      editModal.instance().subdomainOnChange({target:{value:nonAlphanumeric}});
+      expect(editModal.state().subdomain).toEqual('');
+
+      editModal.instance().subdomainOnChange({target:{value:alphanumeric}});
+      expect(editModal.state().subdomain).toEqual(alphanumeric);
+    });
+
+    it("should set name error true if name is empty at form's validation", () => {
+      editModal.setState({name:''});
+      editModal.instance().saveService();
+
+      expect(editModal.instance().formHasNoErrors()).toEqual(false);
+      expect(editModal.state().nameError).toEqual(true);
+    });
+
+    it("should set subdomain error true if subdomain is empty at form's validation", () => {
+      editModal.setState({subdomain:''});
+      editModal.instance().saveService();
+
+      expect(editModal.instance().formHasNoErrors()).toEqual(false);
+      expect(editModal.state().subdomainError).toEqual(true);
+    });
+
     describe('Roles TabPane' ,() => {
       const testRole = 'role 1';
 
@@ -92,6 +119,20 @@ describe('EditModal', () => {
       expect(state.longDescription).toEqual(service.long_description);
       expect(state.subdomain).toEqual(service.subDomain);
       expect(state.logo).toEqual(service.logo);
+    });
+
+    it('should set the right available roles having into account the service roles', () => {
+      let availableRoles = editModal.state().availableRoles,
+          serviceRoles = editModal.state().serviceRoles;
+
+      let exists:boolean = false;
+
+      serviceRoles.forEach((role:string) => {
+        if(availableRoles.includes(role)){
+          exists = true;
+        }
+      });
+      expect(exists).toEqual(false);
     });
   });
 });
