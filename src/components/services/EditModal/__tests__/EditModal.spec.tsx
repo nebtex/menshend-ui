@@ -74,6 +74,14 @@ describe('EditModal', () => {
     });
 
     it('should have the service values as state', () => {
+      const service = editModal.props().service,
+            state = editModal.state();
+
+      expect(state.name).toEqual(service.name);
+      expect(state.shortDescription).toEqual(service.short_description);
+      expect(state.longDescription).toEqual(service.long_description);
+      expect(state.subdomain).toEqual(service.subDomain);
+      expect(state.logo).toEqual(service.logo);
     });
   });
 });
