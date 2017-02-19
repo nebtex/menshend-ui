@@ -29,8 +29,7 @@ describe('SessionCounter', () => {
           expect(sessionCounter.find('.displayItem').length).toEqual(3);
           expect(sessionCounter.find('.displayItem').first().find('div').at(1).text()).toEqual(hours.toString());
           expect(sessionCounter.find('.displayItem').at(1).find('div').at(1).text()).toEqual(minutes.toString());
-          expect(sessionCounter.find('.displayItem').at(2).find('div').at(1).text()).toEqual(seconds.toString());
-          console.log(sessionCounter.find('.displayItem').at(2).find('div').at(1).text(), seconds.toString());          
+          expect(sessionCounter.find('.displayItem').at(2).find('div').at(1).text()).toEqual(seconds.toString());       
           done();
         }, 1300);
       }catch(e) {
