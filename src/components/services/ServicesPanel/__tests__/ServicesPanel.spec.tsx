@@ -75,4 +75,32 @@ describe('ServicesPanel', () => {
 
       expect(servicesPanel.find('h3').first().text()).toEqual('No services found');
   });
+
+  it('should render the right search indicator in search bar depending on searching state', () => {
+    servicesPanel.setState({loadingSearch:false, searchValue:''});
+    expect(servicesPanel.find('.rowHead').first().find('i').length).toEqual(0);
+
+    servicesPanel.setState({loadingSearch:false, searchValue:'mysearchcriteria'});
+    expect(servicesPanel.find('.rowHead').first().find('i').length).toEqual(1);
+    expect(servicesPanel.find('.rowHead').first().find('i').html()).toContain('fa fa-times fa-lg');
+    
+    servicesPanel.setState({loadingSearch:true, searchValue:'mysearchcriteria'});
+    expect(servicesPanel.find('.rowHead').first().find('i').length).toEqual(1);
+    expect(servicesPanel.find('.rowHead').first().find('i').html()).toContain('fa fa-pulse fa-spinner');
+  });
+
+  it(`should set the right searching state after a second 
+      depending on the searchOnChangeMethod actioned by user input`, (done) => {
+    servicesPanel.instance().searchOnChange({target:{value:'mysearchcriteria'}, persist: () => {}});
+    expect(servicesPanel.state().searchValue).toEqual('mysearchcriteria');
+    expect(servicesPanel.state().loadingSearch).toEqual(true);
+    try {
+      setTimeout(()=>{
+        expect(servicesPanel.state().loadingSearch).toEqual(false);
+        done();
+      }, 2000);
+    }catch (e){
+      done.fail(e);
+    }
+  });
 });
