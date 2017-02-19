@@ -4,6 +4,7 @@ function loadStories() {
     require('../src/components/login/EnvironmentCard/__tests__/EnvironmentCard.story');
 require('../src/components/login/LoginForm/__tests__/LoginForm.story');
 require('../src/components/login/ServiceInfoCard/__tests__/ServiceInfoCard.story');
+require('../src/components/login/SessionCounter/__tests__/SessionCounter.story');
 require('../src/components/services/EditModal/__tests__/EditModal.story');
 require('../src/components/services/EditModal/EditModalBody/__tests__/EditModalBody.story');
 require('../src/components/services/EditModal/EditModalHeader/__tests__/EditModalHeader.story');

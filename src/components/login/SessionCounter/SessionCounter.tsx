@@ -6,7 +6,7 @@ const HOUR = 3600000;
 const MINUTE = 60000;
 const SECOND = 1000;
 
-interface ISessionCounterProps {
+export interface ISessionCounterProps {
   expiresAt: number;
 }
 
@@ -27,17 +27,27 @@ export default class SessionCounter extends React.Component<ISessionCounterProps
 
   componentDidMount(){
     counterInterval = setInterval(() => {
-      let time = this.props.expiresAt - Date.now();
+      let time = this.props.expiresAt - Date.now(),
+          expired = time < 0 ? true : false;
 
       let seconds = Math.floor((time / SECOND) % 60);
       let minutes = Math.floor((time / MINUTE) % 60);
       let hours = Math.floor((time / HOUR));
 
-      this.setState({
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds
-      });
+      if (expired){
+        clearInterval(counterInterval);
+        this.setState({
+          hours: 0,
+          minutes: 0,
+          seconds: 0
+        })
+      }else {
+        this.setState({
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds
+        });
+      }
     }, 1000);
   };
 
