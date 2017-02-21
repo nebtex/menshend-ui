@@ -32,10 +32,13 @@ interface IEditModalState {
   longDescription: string;
   serviceRoles: string[];
   availableRoles: string[];
+  longDescriptionUrlError: boolean;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
       SHORT_DESCRIPTION_LENGTH = 100;
+
+const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}');
 
 export default class EditModal extends React.Component<IEditModalProps, IEditModalState>{
   
@@ -57,6 +60,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       longDescriptionUrlActive: false,
       longDescription: this.props.service ? this.props.service.long_description : '',
       serviceRoles: this.props.service ? this.props.service.roles.slice() : [''],
+      longDescriptionUrlError: false,
       availableRoles: this.getAvailableRoles() 
     }
   }
@@ -144,12 +148,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     });
   }
 
-  formHasNoErrors = () => {
-    let nameError = this.state.name.trim() === '',
-        subdomainError = this.state.subdomain.trim() === '';
-    return !nameError && !subdomainError ;
-  }
-
   shortDescriptionOnChange = (e:any) => {
     this.setState({
       shortDescription: e.target.value.substring(0, SHORT_DESCRIPTION_LENGTH)
@@ -163,13 +161,21 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   }
 
   saveService = () => {
-    if(this.formHasNoErrors()){
+    const nameError = this.state.name.trim() === '',
+          subdomainError = this.state.subdomain.trim() === '',
+          longDescriptionUrlError = !urlRegExp.test(this.state.longDescriptionUrl) || 
+                                    (this.state.longDescriptionUrl === '' && this.state.longDescriptionUrlActive);
+
+    if(!nameError && !subdomainError && !longDescriptionUrlError){
       // @TODO: Send data here
       console.log('There are no errors');
     }else{
+      const activeTab = (nameError || subdomainError) ? 'general' : ( longDescriptionUrlError ? 'longDescription': this.state.activeTab);
       this.setState({
-        nameError: this.state.name.trim() === '',
-        subdomainError: this.state.subdomain.trim() === ''
+        nameError,
+        subdomainError,
+        longDescriptionUrlError,
+        activeTab
       });
     }
   }
@@ -255,6 +261,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           longDescription={this.state.longDescription}
           longDescriptionOnChange={this.longDescriptionOnChange}
           longDescriptionUrl={this.state.longDescriptionUrl}
+          longDescriptionUrlError={this.state.longDescriptionUrlError}
           longDescriptionUrlOnChange={this.longDescriptionUrlOnChange}
           longDescriptionUrlActive={this.state.longDescriptionUrlActive}
           longDescriptionUrlActiveOnChange={this.longDescriptionUrlActiveOnChange}

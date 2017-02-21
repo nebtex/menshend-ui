@@ -41,7 +41,6 @@ describe('EditModal', () => {
       editModal.setState({name:''});
       editModal.instance().saveService();
 
-      expect(editModal.instance().formHasNoErrors()).toEqual(false);
       expect(editModal.state().nameError).toEqual(true);
     });
 
@@ -49,8 +48,17 @@ describe('EditModal', () => {
       editModal.setState({subdomain:''});
       editModal.instance().saveService();
 
-      expect(editModal.instance().formHasNoErrors()).toEqual(false);
       expect(editModal.state().subdomainError).toEqual(true);
+    });
+
+    it("should set long description url error true if url is empty/invalid and url is active at form's validation", () => {
+      editModal.setState({longDescriptionUrl:''});
+      editModal.instance().saveService();
+      expect(editModal.state().longDescriptionUrlError).toEqual(true);
+
+      editModal.setState({longDescriptionUrl:'fdasffdsa'});
+      editModal.instance().saveService();
+      expect(editModal.state().longDescriptionUrlError).toEqual(true);
     });
 
     describe('Roles TabPane' ,() => {

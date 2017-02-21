@@ -21,7 +21,8 @@ Cases['Long Description URL Active']={
   codeOnChange: function(){},
   serviceRolesOnDoubleClick: function(){},
   availableRolesOnDoubleClick: function(){},
-  serviceRoleOnAddition: function(){}
+  serviceRoleOnAddition: function(){},
+  longDescriptionUrlError: false
 }
 
 Cases['Long Description URL Inactive']= {
@@ -42,7 +43,8 @@ Cases['Long Description URL Inactive']= {
   codeOnChange: function(){},
   serviceRolesOnDoubleClick: function(){},
   availableRolesOnDoubleClick: function(){},
-  serviceRoleOnAddition: function(){}
+  serviceRoleOnAddition: function(){},
+  longDescriptionUrlError: false
 }
 
 Cases['Subdomain Error']= {
@@ -63,7 +65,8 @@ Cases['Subdomain Error']= {
   codeOnChange: function(){},
   serviceRolesOnDoubleClick: function(){},
   availableRolesOnDoubleClick: function(){},
-  serviceRoleOnAddition: function(){}
+  serviceRoleOnAddition: function(){},
+  longDescriptionUrlError: false
 }
 
 Cases['Name Error']= {
@@ -85,7 +88,30 @@ Cases['Name Error']= {
   codeOnChange: function(){},
   serviceRolesOnDoubleClick: function(){},
   availableRolesOnDoubleClick: function(){},
-  serviceRoleOnAddition: function(){}
+  serviceRoleOnAddition: function(){},
+  longDescriptionUrlError: false
+}
+
+Cases['URL Error']= {
+  activeTab:'longDescription',
+  toggleTab: function(){},
+  selectRole: function(){},
+  subdomainOnChange: function(){},
+  nameOnChange: function(){},
+  logoOnError: function(){},
+  logoOnChange: function(){},
+  shortDescriptionOnChange: function(){},
+  longDescriptionOnChange: function(){},
+  longDescriptionUrlOnChange: function(){},
+  longDescriptionUrlActiveOnChange:function(){},
+  toggleDropdown: function(){},
+  availableRoles: roles,
+  codeOnChange: function(){},
+  serviceRolesOnDoubleClick: function(){},
+  availableRolesOnDoubleClick: function(){},
+  serviceRoleOnAddition: function(){},
+  longDescriptionUrlError: true,
+  longDescriptionUrlActive: true
 }
 
 export default Cases;

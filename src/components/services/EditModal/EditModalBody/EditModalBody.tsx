@@ -38,6 +38,7 @@ export interface IEditModalBodyProps {
   serviceRolesOnDoubleClick:any;
   availableRolesOnDoubleClick:any;
   serviceRoleOnAddition:any;
+  longDescriptionUrlError:boolean;
 }
 
 interface IEditModalBodyState {
@@ -108,6 +109,22 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
         </div>
       </FormGroup>
     )
+  }
+
+  getLongDescriptionUrlFormGroup = () => {
+    const danger = this.props.longDescriptionUrlActive && this.props.longDescriptionUrlError;
+
+    return (
+      <FormGroup disabled={!this.props.longDescriptionUrlActive} color={danger ? "danger" : null} className="longDescriptionUrlFormGroup">
+        <Input 
+          value={this.props.longDescriptionUrl} 
+          onChange={this.props.longDescriptionUrlOnChange} 
+          disabled={!this.props.longDescriptionUrlActive}
+          state={danger ? 'danger': null}
+          className="longDescriptionUrlInput"/>
+          {danger ? <FormFeedback>Please enter a valid URL</FormFeedback> : null}
+      </FormGroup>
+    );
   }
 
   getLogoFormGroup = () => {
@@ -182,7 +199,8 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
 
     let subdomainFormGroup = this.getSubdomainFormGroup(),
         nameFormGroup = this.getNameFormGroup(),
-        logoFormGroup = this.getLogoFormGroup();
+        logoFormGroup = this.getLogoFormGroup(),
+        longDescriptionUrlFormGroup = this.getLongDescriptionUrlFormGroup();
     
     let availableRolesListGroup = this.getAvailableRolesListGroup(),
         serviceRolesListGroup = this.getServiceRolesListGroup();
@@ -255,13 +273,7 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                   URL
                 </Label>
               </FormGroup>
-              <FormGroup disabled={!this.props.longDescriptionUrlActive} >
-                <Input 
-                  value={this.props.longDescriptionUrl} 
-                  onChange={this.props.longDescriptionUrlOnChange} 
-                  disabled={!this.props.longDescriptionUrlActive} 
-                  className="longDescriptionUrlInput"/>
-              </FormGroup>
+              {longDescriptionUrlFormGroup}
               <p className={styles.longDescriptionMessage}>Put the service long description here, You can use markdown in this field</p>
               <FormGroup disabled={this.props.longDescriptionUrlActive} 
                 className={styles.longDescriptionTextAreaContainer}>
