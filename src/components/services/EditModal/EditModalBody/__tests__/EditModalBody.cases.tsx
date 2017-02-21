@@ -92,7 +92,7 @@ Cases['Name Error']= {
   longDescriptionUrlError: false
 }
 
-Cases['URL Error']= {
+Cases['URL Error'] = {
   activeTab:'longDescription',
   toggleTab: function(){},
   selectRole: function(){},
@@ -112,6 +112,27 @@ Cases['URL Error']= {
   serviceRoleOnAddition: function(){},
   longDescriptionUrlError: true,
   longDescriptionUrlActive: true
+}
+
+Cases['No service roles'] = {
+  toggleTab: function(){},
+  selectRole: function(){},
+  subdomainOnChange: function(){},
+  nameOnChange: function(){},
+  logoOnError: function(){},
+  logoOnChange: function(){},
+  shortDescriptionOnChange: function(){},
+  longDescriptionOnChange: function(){},
+  longDescriptionUrlOnChange: function(){},
+  longDescriptionUrlActiveOnChange:function(){},
+  toggleDropdown: function(){},
+  availableRoles: roles,
+  codeOnChange: function(){},
+  serviceRolesOnDoubleClick: function(){},
+  availableRolesOnDoubleClick: function(){},
+  serviceRoleOnAddition: function(){},
+  longDescriptionUrlError: false,
+  longDescriptionUrlActive: false
 }
 
 export default Cases;

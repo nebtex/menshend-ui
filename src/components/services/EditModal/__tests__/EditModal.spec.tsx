@@ -107,6 +107,11 @@ describe('EditModal', () => {
         expect(serviceRoles.includes(newTestRole)).toEqual(false);
         expect(availableRoles.includes(newTestRole)).toEqual(false);
       });
+
+      it('should set new created role as the active role', () => {
+        editModal.instance().serviceRoleOnAddition('mytestrole');
+        expect(editModal.state().activeRole).toEqual('mytestrole');
+      });
     });
   });
 
@@ -141,6 +146,10 @@ describe('EditModal', () => {
         }
       });
       expect(exists).toEqual(false);
+    });
+
+    it('should set the first role of service if it exists as active role', () => {
+      expect(editModal.state().activeRole).toEqual(editModal.props().service.roles[0]);
     });
   });
 });

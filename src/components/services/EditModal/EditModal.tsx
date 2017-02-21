@@ -46,7 +46,7 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     super(props);
     this.state = {
       activeTab: 'general',
-      activeRole: 'All',
+      activeRole: this.getInitialActiveRole(),
       backendRule: '',
       dropdownOpen: false,
       subdomain: this.props.service ? this.props.service.subDomain : '',
@@ -188,7 +188,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     serviceRoles.sort();
 
     this.setState({
-      serviceRoles: serviceRoles
+      serviceRoles: serviceRoles,
+      activeRole: role
     });
   }
 
@@ -232,6 +233,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       availableRoles: availableRoles,
       serviceRoles:serviceRoles
     });
+  }
+
+  getInitialActiveRole = () => {
+    const serviceRoles = this.props.service && this.props.service.roles ? this.props.service.roles : [''];
+    return serviceRoles[0];
   }
 
   render(){

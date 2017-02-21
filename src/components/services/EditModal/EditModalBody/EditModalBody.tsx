@@ -3,7 +3,7 @@ import * as classnames from 'classnames';
 import MonacoEditor from 'react-monaco-editor';
 import { ModalBody, Nav, NavItem, NavLink, TabContent, TabPane, Form, FormGroup, ListGroup, 
          ListGroupItem, FormFeedback, Input, Label, Dropdown, DropdownItem, DropdownMenu, 
-         DropdownToggle, Row , Button} from 'reactstrap';
+         DropdownToggle, Row , Button, Tooltip} from 'reactstrap';
 
 let styles = require('./EditModalBody.scss');
          
@@ -67,7 +67,9 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
   }
 
   state = {
-    newRole:''
+    newRole:'',
+    impersonateTooltipOpen: false,
+    proxyTooltipOpen: false 
   }
 
   getSubdomainFormGroup = () => {
@@ -189,7 +191,8 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
     });
   }
 
-  render() {
+  getCodeEditorSection = () => {
+    const { serviceRoles } = this.props;
     const requireConfig = {
       url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
       paths: {
@@ -197,13 +200,83 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
       }
     };
 
-    let subdomainFormGroup = this.getSubdomainFormGroup(),
+   if(serviceRoles.length === 1 && serviceRoles[0] === ''){
+     return <div><h6 className={styles.codeEditorNoRoles}>Please pick/create a role before writing the proxy logic</h6></div>;
+   }else {
+    return (
+      <div>
+        <h5>Backend rule</h5>
+        <Row className={styles.rolesRow}>
+          <FormGroup check>
+            <Label check>
+              <Input type="checkbox" />{' '}
+              Active
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label id="impersonateTooltip" check>
+              <Input type="checkbox" />{' '}
+              Impersonate within role
+            </Label>
+            <Tooltip placement="top" isOpen={this.state.impersonateTooltipOpen} target="impersonateTooltip" toggle={this.toggleImpersonateTooltip}>
+              If this is an active user, it can impersonate other users in the role without special permission needed
+            </Tooltip>            
+          </FormGroup>
+          <FormGroup check>
+            <Label id="proxyTooltip" check>
+              <Input type="checkbox" />{' '}
+              Proxy
+            </Label>
+            <Tooltip placement="top" isOpen={this.state.proxyTooltipOpen} target="proxyTooltip" toggle={this.toggleProxyTooltip}>
+              If this property is not active the user will be redirected with a 302 HTTP code
+            </Tooltip>                        
+          </FormGroup>
+          <Dropdown isOpen={this.props.dropdownOpen} toggle={this.props.toggleDropdown} className={styles.rolesDropdown}>
+            <DropdownToggle caret>
+              {this.props.activeRole}
+            </DropdownToggle>
+            <DropdownMenu className={styles.rolesContainer}>
+              {this.props.serviceRoles.map((role, index) => {
+                return <DropdownItem key={index} onClick={() => { this.props.selectRole(role) }} className="role">{role}</DropdownItem>
+              })}
+            </DropdownMenu>
+          </Dropdown>
+        </Row>
+        <MonacoEditor 
+          height={300}
+          language='lua'
+          requireConfig={requireConfig}
+          onChange={this.props.codeOnChange}
+          defaultValue="__=== type your code here ==="
+          options={{
+            theme:'vs-dark'
+          }}/>
+      </div>
+    );
+   }
+  }
+
+  toggleImpersonateTooltip = () => {
+    this.setState({
+      impersonateTooltipOpen: !this.state.impersonateTooltipOpen
+    });
+  }
+
+  toggleProxyTooltip = () => {
+    this.setState({
+      proxyTooltipOpen: !this.state.proxyTooltipOpen
+    });
+  }
+
+  render() {
+    const subdomainFormGroup = this.getSubdomainFormGroup(),
         nameFormGroup = this.getNameFormGroup(),
         logoFormGroup = this.getLogoFormGroup(),
         longDescriptionUrlFormGroup = this.getLongDescriptionUrlFormGroup();
     
-    let availableRolesListGroup = this.getAvailableRolesListGroup(),
-        serviceRolesListGroup = this.getServiceRolesListGroup();
+    const availableRolesListGroup = this.getAvailableRolesListGroup(),
+        serviceRolesListGroup = this.getServiceRolesListGroup(),
+        codeEditorSection = this.getCodeEditorSection();
 
     return (
       <ModalBody>
@@ -215,6 +288,14 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                 onClick={() => { this.props.toggleTab('general'); }}
               >
                 General
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.props.activeTab === 'roles' })}
+                onClick={() => { this.props.toggleTab('roles'); }}
+              >
+                Roles
               </NavLink>
             </NavItem>
             <NavItem>
@@ -231,14 +312,6 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                 onClick={() => { this.props.toggleTab('longDescription'); }}
               >
                 Long description
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: this.props.activeTab === 'roles' })}
-                onClick={() => { this.props.toggleTab('roles'); }}
-              >
-                Roles
               </NavLink>
             </NavItem>
           </Nav>
@@ -306,44 +379,7 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
           </TabContent>
         </div>
         <hr/>
-        <h5>Backend rule</h5>
-        <Row className={styles.rolesRow}>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" />{' '}
-              All the roles
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" />{' '}
-              Per role
-            </Label>
-          </FormGroup>
-          <Dropdown isOpen={this.props.dropdownOpen} toggle={this.props.toggleDropdown} className={styles.rolesDropdown}>
-            <DropdownToggle caret>
-              {this.props.activeRole}
-            </DropdownToggle>
-            <DropdownMenu className={styles.rolesContainer}>
-              <DropdownItem onClick={() => { this.props.selectRole('All') }}>{'All'}</DropdownItem>
-              <DropdownItem divider />
-              {this.props.serviceRoles.map((role, index) => {
-                return <DropdownItem key={index} onClick={() => { this.props.selectRole(role) }} className="role">{role}</DropdownItem>
-              })}
-            </DropdownMenu>
-          </Dropdown>
-        </Row>
-        <FormGroup>
-          <MonacoEditor 
-            height={300}
-            language='lua'
-            requireConfig={requireConfig}
-            onChange={this.props.codeOnChange}
-            defaultValue="__=== type your code here ==="
-            options={{
-              theme:'vs-dark'
-            }}/>
-        </FormGroup>
+        {codeEditorSection}
       </ModalBody>
     );
   }

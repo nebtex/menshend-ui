@@ -67,4 +67,14 @@ describe('EditModalBody', () => {
       expect(editModalBody.find('FormGroup').at(0).find('FormFeedback').first().text()).toEqual('This field is required');
     });
   });
+
+  describe('No service roles', () => {
+    beforeEach(()=> {
+      editModalBody = mount(<EditModalBody {...Cases['No service roles']}/>)
+    });
+
+    it('should render correctly', () => {
+      expect(editModalBody.find('.codeEditorNoRoles').text()).toEqual('Please pick/create a role before writing the proxy logic');
+    });
+  });
 });
