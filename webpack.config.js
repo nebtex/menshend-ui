@@ -8,7 +8,11 @@ var config = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js"]
+    extensions: ["", ".ts", ".tsx", ".js"],
+    alias: {
+      "react": "preact-compat",
+      "react-dom": "preact-compat"
+    }
   },
   module: {
     loaders: [
