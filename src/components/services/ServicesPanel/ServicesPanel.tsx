@@ -1,9 +1,12 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import { IService, IUser } from '../../../models/interface';
-import { Col, Container, Row, Form, FormGroup, Input, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
 import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
+import EditModal from '../EditModal/EditModal';
+import { Col, Container, Row, Form, FormGroup, Input, Dropdown, 
+         DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
+
 let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
@@ -16,6 +19,8 @@ interface IServicesPanelState {
   loadingSearch: boolean;
   searchValue: string;
   activeRole: string;
+  editModalOpen: boolean;
+  modalService?: IService;
 }
 
 let searchTimeout: any;
@@ -27,7 +32,15 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     dropdownOpen: false,
     searchValue: '',
     activeRole: 'All',
-    loadingSearch: false
+    loadingSearch: false,
+    editModalOpen: false,
+    modalService: this.props.services[0]
+  }
+
+  toggleEditModalOpen = () => {
+    this.setState({
+      editModalOpen: !this.state.editModalOpen
+    });
   }
 
   toggle = () => {
@@ -42,7 +55,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
   }
 
-  getRolesDropdown = () => {
+  getRoles = () => {
     let roles: string[] = [];
     this.props.services.forEach(service => {
       service.roles.forEach(role => {
@@ -59,6 +72,11 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         return 1;
       }
     });
+    return roles;
+  }
+
+  getRolesDropdown = () => {
+    const roles = this.getRoles();
 
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className={styles.rolesDropdown}>
@@ -138,10 +156,31 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return searchIndicator;
   }
 
+  getEditModal = () => {
+    if (this.state.editModalOpen){
+      return (
+        <EditModal 
+          roles={this.getRoles()} 
+          toggle={this.toggleEditModalOpen} 
+          isOpen={this.state.editModalOpen}
+          service={this.state.modalService}/>
+      );
+    }
+    return null;
+  }
+
+  setModalService = (service:IService) => {
+    this.setState({
+      modalService:service,
+      editModalOpen: true
+    });
+  }
+
   render() {
     let rolesDropdown = this.getRolesDropdown(),
       services = this.getServices(),
-      searchIndicator = this.getSearchIndicator();
+      searchIndicator = this.getSearchIndicator(),
+      editModal = this.getEditModal();
 
     return (
       <Container fluid className={styles.panelContainer}>
@@ -160,8 +199,13 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           </Col>
         </Row>
         <Row className={styles.serviceList}>
-          <ServicesList services={services} user={this.props.user} loading={this.state.loadingSearch}/>
+          <ServicesList 
+            services={services} 
+            user={this.props.user} 
+            loading={this.state.loadingSearch} 
+            openEditModal={this.setModalService}/>
         </Row>
+        {editModal}
       </Container>
     );
   }

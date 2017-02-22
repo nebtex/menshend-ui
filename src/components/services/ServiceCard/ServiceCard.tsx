@@ -8,6 +8,7 @@ let styles = require('./ServiceCard.scss');
 export interface IServiceCardProps {
   service: IService;
   user: IUser;
+  openEditModal: any;
 }
 
 interface IServiceCardState {
@@ -36,7 +37,8 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   }
 
   editService = (e:any) => {
-    e.stopPropagation();
+    this.props.openEditModal(this.props.service);
+    e.stopPropagation();    
   }
 
   deleteService = (e:any) => {

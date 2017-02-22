@@ -14,6 +14,7 @@ interface IServicesListProps {
   services: IService[];
   user: IUser;
   loading: boolean;
+  openEditModal: any;
 }
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{
@@ -67,7 +68,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
             let colStyle = lastRow ? {flexBasis: (100/this.state.itemsPerRow) + '%', flexGrow: 0} : null;
             return (
               <Col  className={styles.col} key={rowItemIndex} style={colStyle}>
-                <ServiceCard service={service} user={user}/>
+                <ServiceCard service={service} user={user} openEditModal={this.props.openEditModal}/>
               </Col>
             );
           })}

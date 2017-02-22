@@ -16,7 +16,8 @@ Cases['User is admin'] = {
     expiresAt: Date.now() + 3600000,
     isAdmin: true,
 	  canImpersonate:true
-  }
+  },
+  openEditModal: () => {}
 }
 
 Cases['User is not admin'] = {
@@ -32,7 +33,8 @@ Cases['User is not admin'] = {
     expiresAt: Date.now() + 3600000,
     isAdmin: false,
 	  canImpersonate:true
-  }
+  },
+  openEditModal: () => {}
 }
 
 export default Cases;

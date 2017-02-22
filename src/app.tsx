@@ -4,11 +4,12 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Container } from 'reactstrap';
 import Login from './containers/Login';
+import Services from './containers/Services';
 
-class App extends React.Component<{},{}> {
+export default class App extends React.Component<{},{}> {
   render() {
     return (
-      <Login/>
+      <Services/>
     );
   }
 }
