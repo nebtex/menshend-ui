@@ -76,15 +76,15 @@ export default class EditServiceFormStore {
     this.roles.delete(role)
   }
 
-  @action clientApiGetService = (role: string) => {
+  @action clientApiGetService = () => {
     // call "/v1/api/admin/service/{subDomain}"
   }
 
-  @action clientApiSaveService = (role: string) => {
+  @action clientApiSaveService = () => {
     // call "/v1/api/admin/service/save"
   }
 
-  @action clientApiDeleteService = (role: string) => {
+  @action clientApiDeleteService = () => {
     // call "/v1/api/admin/service/delete"
   }
 }
