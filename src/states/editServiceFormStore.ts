@@ -24,6 +24,13 @@ export default class EditServiceFormStore {
   //all the roles this come from read all the current available services
   @observable allRoles:string[] = []
 
+  //About roles, serviceRoles and allRoles, interaction
+  // if  a new serviceRoles is created a role should be created to
+  // if  a  serviceRoles is deleted the role in roles map should not change (this is only done just before to send the api request)
+  // if a existing serviceRoles is move to AllRoles, the role in the roles map should not change
+  // if a role is moved from AllRoles to a  serviceRoles, and the role not exist in the service map, it should create a new one
+
+
   @action updateLuaScript = (value: string, role: string) => {
     //check if role exist [before save the lua script]
     if (!this.roles.has(role)) return;
