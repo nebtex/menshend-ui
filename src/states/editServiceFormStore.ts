@@ -14,7 +14,15 @@ export default class EditServiceFormStore {
   @observable shortDescription: string = ''
   @observable longDescription: string = ''
   @observable longDescriptionUrl: String = ''
+  //those are the roles that will be send to the backend
+  //before the api call the save function it should check the serviceRoles
+  //and remove all the roles in the roles map, not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
+  //service roles this is useful for maintain a track of the roles that will be
+  //send to the backend
+  @observable serviceRoles: string[]
+  //all the roles this come from read all the current available services
+  @observable allRoles:string[] = []
 
   @action updateLuaScript = (value: string, role: string) => {
     //check if role exist [before save the lua script]
@@ -63,6 +71,7 @@ export default class EditServiceFormStore {
   @action addRole = (role: string) => {
     //if role already exist leave
     if (this.roles.has(role)) return;
+
     let NewRole: IServiceRole = {
       luaScript: "default lua code",
       impersonateWithinRole: false,
