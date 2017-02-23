@@ -1,85 +1,90 @@
-import { observable } from 'mobx';
+import { observable, action, ObservableMap } from 'mobx';
 
-interface IEditServiceForm {
-  luaScript:string;
+interface IServiceRole {
+  luaScript: string;
   impersonateWithinRole: boolean;
   proxy: boolean;
   isActive: boolean;
-
-  subDomain:string;
-  logo:string;
-  name: string;
-  shortDescription: string;
-  longDescription: string;
-  longDescriptionUrl: string;
-  roles: string[];
 }
 
 export default class EditServiceFormStore {
-  @observable editServiceForm: IEditServiceForm =  {
-    luaScript:'',
-    impersonateWithinRole: false,
-    proxy: false,
-    isActive: true,
+  @observable subDomain: string = ''
+  @observable logo: string = ''
+  @observable name: string = ''
+  @observable shortDescription: string = ''
+  @observable longDescription: string = ''
+  @observable longDescriptionUrl: String = ''
+  @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
 
-    subDomain:'',
-    logo:'',
-    name: '',
-    shortDescription: '',
-    longDescription: '',
-    longDescriptionUrl: '',
-    roles: ['']
-  };
-  
-  updateLuaScript = (value:string) => {
-    this.editServiceForm.luaScript = value;
+  @action updateLuaScript = (value: string, role: string) => {
+    //check if role exist [before save the lua script]
+    if (!this.roles.has(role)) return;
+    let txRole = this.roles.get(role)
+    txRole.luaScript = value
+    this.roles.set(role, txRole);
   }
 
-  updateImpersonateWithinRole = (value:boolean) => {
+  @action updateImpersonateWithinRole = (value: boolean, role: string) => {
     this.editServiceForm.impersonateWithinRole = value;
   }
 
-  updateProxy = (value:boolean) => {
+  @action updateProxy = (value: boolean, role: string) => {
     this.editServiceForm.proxy = value;
   }
 
-  updateIsActive = (value:boolean) => {
+  @action updateIsActive = (value: boolean, role: string) => {
     this.editServiceForm.isActive = value;
   }
 
-  updateSubDomain = (value:string) => {
+  @action updateSubDomain = (value: string) => {
     this.editServiceForm.luaScript = value;
   }
 
-  updateName = (value:string) => {
+  @action updateName = (value: string) => {
     this.editServiceForm.name = value;
   }
 
-  updateLogo = (value:string) => {
+  @action updateLogo = (value: string) => {
     this.editServiceForm.logo = value;
   }
 
-  updateShortDescription = (value:string) => {
+  @action updateShortDescription = (value: string) => {
     this.editServiceForm.shortDescription = value;
   }
 
-  updateLongDescription = (value:string) => {
+  @action updateLongDescription = (value: string) => {
     this.editServiceForm.longDescription = value;
   }
 
-  updateLongDescriptionUrl = (value:string) => {
+  @action updateLongDescriptionUrl = (value: string) => {
     this.editServiceForm.longDescriptionUrl = value;
   }
 
-  addRole = (role:string) => {
-    this.editServiceForm.roles.push(role);
-    this.editServiceForm.roles.sort();    
+  @action addRole = (role: string) => {
+    //if role already exist leave
+    if (this.roles.has(role)) return;
+    let NewRole: IServiceRole = {
+      luaScript: "default lua code",
+      impersonateWithinRole: false,
+      proxy: true,
+      isActive: true,
+    }
+    this.roles.set(role, NewRole);
   }
 
-  deleteRole = (role:string) => {
-    const roleIndex = this.editServiceForm.roles.indexOf(role);
-    if(roleIndex > -1){
-      this.editServiceForm.roles.splice(roleIndex, 1);
-    }
+  @action deleteRole = (role: string) => {
+    this.roles.delete(role)
+  }
+
+  @action clientApiGetService = (role: string) => {
+    // call "/v1/api/admin/service/{subDomain}"
+  }
+
+  @action clientApiSaveService = (role: string) => {
+    // call "/v1/api/admin/service/save"
+  }
+
+  @action clientApiDeleteService = (role: string) => {
+    // call "/v1/api/admin/service/delete"
   }
 }
