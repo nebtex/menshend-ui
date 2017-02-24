@@ -13,7 +13,18 @@ class ServiceListStore {
   @observable services: ObservableMap<IService> = observable.map<IService>({})
 
   @computed getRoles = () => {
-    //@TODO: calculate the list of all the roles 
+    let roles:string[] = []
+
+    this.services.forEach( service => {
+      let serviceRoles = service.roles;
+      serviceRoles.forEach( role => {
+        if(roles.indexOf(role) === -1 )
+          roles.push(role)
+      });
+    });
+    roles.sort()
+    
+    return roles;
   }
 
   @action clientApiGetServiceList = () => {
