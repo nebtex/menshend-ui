@@ -13,26 +13,28 @@ export default class EditServiceFormStore {
   @observable name: string = ''
   @observable shortDescription: string = ''
   @observable longDescription: string = ''
-  @observable longDescriptionUrl: String = ''
+  @observable longDescriptionUrl: string = ''
+  
   //those are the roles that will be send to the backend
   //before the api call the save function it should check the serviceRoles
   //and remove all the roles in the roles map, not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
+  
   //service roles this is useful for maintain a track of the roles that will be
   //send to the backend
   @observable serviceRoles: string[]
+
   //all the roles this come from read all the current available services
   @observable allRoles:string[] = []
 
   //About roles, serviceRoles and allRoles, interaction
-  // if  a new serviceRoles is created a role should be created to
-  // if  a  serviceRoles is deleted the role in roles map should not change (this is only done just before to send the api request)
-  // if a existing serviceRoles is move to AllRoles, the role in the roles map should not change
-  // if a role is moved from AllRoles to a  serviceRoles, and the role not exist in the service map, it should create a new one
+  // if  a new serviceRoles is created a role should be created too (Done)
+  // if  a  serviceRoles is deleted the role in roles map should not change (this is only done just before to send the api request) (Done)
+  // if a existing serviceRoles is move to AllRoles, the role in the roles map should not change (Done)
+  // if a role is moved from AllRoles to a  serviceRoles, and the role not exist in the service map, it should create a new one (Done) -> this is because the addServiceRole already does that
 
 
   @action updateLuaScript = (value: string, role: string) => {
-    //check if role exist [before save the lua script]
     if (!this.roles.has(role)) return;
     let txRole = this.roles.get(role)
     txRole.luaScript = value
@@ -40,39 +42,48 @@ export default class EditServiceFormStore {
   }
 
   @action updateImpersonateWithinRole = (value: boolean, role: string) => {
-    this.editServiceForm.impersonateWithinRole = value;
+    if (!this.roles.has(role)) return;
+    let txRole = this.roles.get(role)
+    txRole.impersonateWithinRole = value
+    this.roles.set(role, txRole);
   }
 
   @action updateProxy = (value: boolean, role: string) => {
-    this.editServiceForm.proxy = value;
+    if (!this.roles.has(role)) return;
+    let txRole = this.roles.get(role)
+    txRole.proxy = value
+    this.roles.set(role, txRole);
   }
 
   @action updateIsActive = (value: boolean, role: string) => {
-    this.editServiceForm.isActive = value;
+    if (!this.roles.has(role)) return;
+    let txRole = this.roles.get(role)
+    txRole.isActive = value
+    this.roles.set(role, txRole);
   }
 
   @action updateSubDomain = (value: string) => {
-    this.editServiceForm.luaScript = value;
+    this.subDomain = value;
   }
 
   @action updateName = (value: string) => {
-    this.editServiceForm.name = value;
+    this.name = value;
   }
 
   @action updateLogo = (value: string) => {
-    this.editServiceForm.logo = value;
+    this.logo = value;
   }
 
   @action updateShortDescription = (value: string) => {
-    this.editServiceForm.shortDescription = value;
+    this.shortDescription = value;
   }
 
   @action updateLongDescription = (value: string) => {
-    this.editServiceForm.longDescription = value;
+    this.longDescription = value;
   }
 
   @action updateLongDescriptionUrl = (value: string) => {
-    this.editServiceForm.longDescriptionUrl = value;
+    this.longDescriptionUrl = value;
   }
 
   @action addRole = (role: string) => {
@@ -80,7 +91,7 @@ export default class EditServiceFormStore {
     if (this.roles.has(role)) return;
 
     let NewRole: IServiceRole = {
-      luaScript: "default lua code",
+      luaScript: "__==== your code here ====",
       impersonateWithinRole: false,
       proxy: true,
       isActive: true,
@@ -90,6 +101,41 @@ export default class EditServiceFormStore {
 
   @action deleteRole = (role: string) => {
     this.roles.delete(role)
+  }
+
+  @action addServiceRole = (role:string) => {
+    if(this.serviceRoles.indexOf(role)>-1) return;
+    this.serviceRoles.push(role);
+    this.serviceRoles.sort();
+    this.addRole(role);
+  }
+
+  @action deleteServiceRole = (role:string) => {
+    const roleIndex = this.serviceRoles.indexOf(role);
+    if(roleIndex === -1) return;
+    this.serviceRoles.splice(roleIndex, 1);
+  }
+
+  @action addToAllRoles = (role:string) => {
+    if(this.allRoles.indexOf(role)>-1) return;
+    this.allRoles.push(role);
+    this.allRoles.sort();
+  }
+
+  @action deleteFromAllRoles = (role:string) => {
+    const roleIndex = this.serviceRoles.indexOf(role);
+    if(roleIndex === -1) return;
+    this.allRoles.splice(roleIndex, 1);
+  }
+
+  @action moveRoleFromAllToService = (role:string) => {
+    this.deleteFromAllRoles(role);
+    this.addServiceRole(role);
+  }
+
+  @action moveRoleFromServiceToAll = (role:string) => {
+    this.deleteServiceRole(role);
+    this.addToAllRoles(role);
   }
 
   @action clientApiGetService = () => {
