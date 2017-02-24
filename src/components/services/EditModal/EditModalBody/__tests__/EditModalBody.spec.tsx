@@ -49,7 +49,6 @@ describe('EditModalBody', () => {
     });
 
     it('should render correctly', () => {
-      console.log(editModalBody.find('.longDescriptionUrlFormGroup').first().html());
       expect(editModalBody.find('.longDescriptionUrlFormGroup').first().html()).toContain('danger');
       expect(editModalBody.find('.longDescriptionUrlFormGroup').first().find('input').html()).toContain('danger');
       expect(editModalBody.find('.longDescriptionUrlFormGroup').first().html()).toContain('Please enter a valid URL');
