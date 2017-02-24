@@ -22,7 +22,7 @@ class ServiceListStore {
           roles.push(role)
       });
     });
-    roles.sort()
+    roles.sort();
     
     return roles;
   }
