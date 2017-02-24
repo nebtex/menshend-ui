@@ -138,7 +138,7 @@ export default class EditServiceFormStore {
     this.addToAllRoles(role);
   }
 
-  @action clientApiGetService = () => {
+  @action clientApiGetService = (subDomain:string) => {
     // call "/v1/api/admin/service/{subDomain}"
   }
 
