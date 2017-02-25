@@ -1,4 +1,5 @@
 /// <reference types='jest' />
+import { toJS } from 'mobx';
 
 import ServiceListStore from "../serviceListStore";
 
@@ -40,7 +41,7 @@ describe('editServiceFormStore', () => {
       try {
         setTimeout (() => {
           serviceListStore.clientApiGetServiceList().then((serviceList:any) => {
-            expect(serviceListStore.services.toJS()).toEqual(expectedServices);
+            expect(toJS(serviceListStore.services)).toEqual(expectedServices);
             done();
           })
         }, 3000);
