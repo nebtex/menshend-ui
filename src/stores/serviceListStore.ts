@@ -13,7 +13,7 @@ interface IService {
 export default class ServiceListStore {
   @observable services: ObservableMap<IService> = observable.map<IService>({})
 
-  @computed getRoles = () => {
+  @computed get roles(){
     let roles:string[] = []
 
     this.services.forEach( service => {
@@ -31,7 +31,11 @@ export default class ServiceListStore {
   @action clientApiGetServiceList = () => {
     // GET /v1/api/client/service/list
     return fetch('/v1/api/client/service/list').then((response:any) => {
-
+      if(response.ok){
+        return response.json().then((data:any) => {
+          // Set the services ObservableMap with the obtained data
+        });
+      }
     }).catch(() => {
 
     });

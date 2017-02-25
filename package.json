@@ -79,6 +79,7 @@
       "tsx",
       "js"
     ],
+    "automock": false,
     "setupFiles": [
       "./scripts/setupJest.js"
     ]
