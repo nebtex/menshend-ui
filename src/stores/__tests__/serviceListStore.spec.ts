@@ -29,25 +29,46 @@ const expectedServices = {
 }
 
 describe('editServiceFormStore', () => {
-  describe('Default', () => {
-    let serviceListStore:ServiceListStore;
+  let serviceListStore:ServiceListStore;
+  fetch.get('*', JSON.stringify(expectedServices));
 
-    beforeEach(() => {
-      serviceListStore = new ServiceListStore();
-    });
+  beforeEach(() => {
+    serviceListStore = new ServiceListStore();
+  });
 
-    it('should set the services list when client api get service list is called', (done) => {
-      fetch.get('*', JSON.stringify(expectedServices));
-      try {
-        setTimeout (() => {
-          serviceListStore.clientApiGetServiceList().then((serviceList:any) => {
-            expect(toJS(serviceListStore.services)).toEqual(expectedServices);
-            done();
+  it('should set the services list when client api get service list is called', (done) => {
+    try {
+      setTimeout (() => {
+        serviceListStore.clientApiGetServiceList().then(() => {
+          expect(toJS(serviceListStore.services)).toEqual(expectedServices);
+          done();
+        })
+      }, 1000);
+    }catch (e){
+      done.fail(e);
+    }
+  });
+
+  it('should set the available roles from get services', (done) => {
+    try {
+      setTimeout (() => {
+        serviceListStore.clientApiGetServiceList().then(() => {
+          let allExist = true;
+          const roles = serviceListStore.roles;
+
+          serviceListStore.services.forEach((service) => {
+            service.roles.forEach((role) => {
+              if (roles.indexOf(role) === -1)
+                allExist = false;
+            })
           })
-        }, 3000);
-      }catch (e){
-        done.fail(e);
-      }
-    });
+
+          expect(allExist).toEqual(true);          
+          done();
+        })
+      }, 1000);
+    }catch (e){
+      done.fail(e);
+    }
   });
 });
