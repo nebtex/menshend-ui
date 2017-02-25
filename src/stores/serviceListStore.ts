@@ -34,6 +34,7 @@ export default class ServiceListStore {
       if(response.ok){
         return response.json().then((data:any) => {
           // Set the services ObservableMap with the obtained data
+          return true;
         });
       }
     }).catch(() => {
