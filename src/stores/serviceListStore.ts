@@ -1,5 +1,4 @@
 import { observable, action, ObservableMap, computed } from 'mobx';
-import fetch = require('isomorphic-fetch');
 
 interface IService {
   logo: string;
@@ -34,13 +33,11 @@ export default class ServiceListStore {
       if(response.ok){
         return response.json().then((data:any) => {
           Object.keys(data).forEach((key:string) => {
-            this.services.set(key, data[key])
+            this.services.set(key, data[key]);
           });
           return true;
         });
       }
-    }).catch(() => {
-
     });
   }
 }
