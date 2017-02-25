@@ -1,4 +1,5 @@
 import { observable, action, ObservableMap, computed } from 'mobx';
+import fetch = require('isomorphic-fetch');
 
 interface IService {
   logo: string;
@@ -9,7 +10,7 @@ interface IService {
   roles: string[];
 }
 
-class ServiceListStore {
+export default class ServiceListStore {
   @observable services: ObservableMap<IService> = observable.map<IService>({})
 
   @computed getRoles = () => {
@@ -23,11 +24,16 @@ class ServiceListStore {
       });
     });
     roles.sort();
-    
+
     return roles;
   }
 
   @action clientApiGetServiceList = () => {
     // GET /v1/api/client/service/list
+    return fetch('/v1/api/client/service/list').then((response:any) => {
+
+    }).catch(() => {
+
+    });
   }
 }

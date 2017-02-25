@@ -12,7 +12,9 @@
   "devDependencies": {
     "@types/classnames": "^0.0.32",
     "@types/fuse": "^2.5.1",
+    "@types/isomorphic-fetch": "^0.0.33",
     "@types/node": "^7.0.4",
+    "@types/promise": "^7.1.30",
     "@types/react": "^15.0.4",
     "@types/react-dom": "^0.14.21",
     "@types/react-infinite": "^0.0.29",
@@ -21,6 +23,7 @@
     "css-loader": "^0.26.1",
     "dummy-json": "^2.0.0",
     "jest": "^18.1.0",
+    "jest-fetch-mock": "^1.0.8",
     "json-loader": "^0.5.4",
     "node-sass": "^4.3.0",
     "react-addons-test-utils": "^15.4.2",
@@ -44,11 +47,13 @@
     "font-awesome": "^4.7.0",
     "fuse.js": "^2.6.1",
     "identity-obj-proxy": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "mobx": "^3.0.2",
     "mobx-react": "^4.1.0",
     "mobx-react-devtools": "^4.2.11",
     "preact": "^7.2.0",
     "preact-compat": "^3.13.1",
+    "promise": "^7.1.1",
     "rc-css-transition-group": "^2.1.4",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
@@ -73,6 +78,9 @@
       "ts",
       "tsx",
       "js"
+    ],
+    "setupFiles": [
+      "./scripts/setupJest.js"
     ]
   }
 }

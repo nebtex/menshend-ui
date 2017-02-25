@@ -117,6 +117,10 @@
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-3.2.0.tgz#b9afac537ef30c4ca3aa1a6bea08c039011073d4"
 
+"@types/isomorphic-fetch@^0.0.33":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.33.tgz#3ea1b86f8b73e6a7430d01d4dbd5b1f63fd72718"
+
 "@types/jest@^18.1.0":
   version "18.1.0"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-18.1.0.tgz#ed18f4c75b3d76de966f543fb6e3bad77d3caa17"
@@ -124,6 +128,10 @@
 "@types/node@^7.0.4":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.4.tgz#9aabc135979ded383325749f508894c662948c8b"
+
+"@types/promise@^7.1.30":
+  version "7.1.30"
+  resolved "https://registry.yarnpkg.com/@types/promise/-/promise-7.1.30.tgz#1b6714b321fdfc54d1527e7a17116a0e1f2ab810"
 
 "@types/react-dom@^0.14.21":
   version "0.14.21"
@@ -2940,7 +2948,7 @@ isobject@^2.0.0:
   dependencies:
     isarray "1.0.0"
 
-isomorphic-fetch@^2.1.1:
+isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   dependencies:
@@ -3107,6 +3115,12 @@ jest-environment-node@^18.1.0:
   dependencies:
     jest-mock "^18.0.0"
     jest-util "^18.1.0"
+
+jest-fetch-mock@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/jest-fetch-mock/-/jest-fetch-mock-1.0.8.tgz#96140764478da9eaeb7a4d6bc96ab0e3aa7c9d61"
+  dependencies:
+    whatwg-fetch "1.0.0"
 
 jest-file-exists@^17.0.0:
   version "17.0.0"
@@ -5956,9 +5970,9 @@ whatwg-encoding@^1.0.1:
   dependencies:
     iconv-lite "0.4.13"
 
-whatwg-fetch@>=0.10.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.2.tgz#fe294d1d89e36c5be8b3195057f2e4bc74fc980e"
+whatwg-fetch@1.0.0, whatwg-fetch@>=0.10.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-1.0.0.tgz#01c2ac4df40e236aaa18480e3be74bd5c8eb798e"
 
 whatwg-url@^4.1.0:
   version "4.3.0"
