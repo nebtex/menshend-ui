@@ -33,7 +33,9 @@ export default class ServiceListStore {
     return fetch('/v1/api/client/service/list').then((response:any) => {
       if(response.ok){
         return response.json().then((data:any) => {
-          // Set the services ObservableMap with the obtained data
+          Object.keys(data).forEach((key:string) => {
+            this.services.set(key, data[key])
+          });
           return true;
         });
       }
