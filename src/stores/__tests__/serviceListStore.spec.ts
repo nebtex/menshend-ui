@@ -42,6 +42,8 @@ describe('editServiceFormStore', () => {
         serviceListStore.clientApiGetServiceList().then(() => {
           expect(toJS(serviceListStore.services)).toEqual(expectedServices);
           done();
+        }).catch((e:any) => {
+          done.fail(e);
         })
       }, 1000);
     }catch (e){
@@ -65,6 +67,8 @@ describe('editServiceFormStore', () => {
 
           expect(allExist).toEqual(true);          
           done();
+        }).catch((e:any) => {
+          done.fail(e);
         })
       }, 1000);
     }catch (e){

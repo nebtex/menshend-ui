@@ -1,10 +1,17 @@
-import { observable, action, ObservableMap } from 'mobx';
+import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
+import ServiceListStore from './serviceListStore';
 
 interface IServiceRole {
   luaScript: string;
   impersonateWithinRole: boolean;
   proxy: boolean;
   isActive: boolean;
+}
+
+interface IResponse {
+  success: boolean;
+  message: string;
+  roles: {[id:string]:any}
 }
 
 export default class EditServiceFormStore {
@@ -14,6 +21,7 @@ export default class EditServiceFormStore {
   @observable shortDescription: string = ''
   @observable longDescription: string = ''
   @observable longDescriptionUrl: string = ''
+  @observable response: IResponse;
   
   //those are the roles that will be send to the backend
   //before the api call the save function it should check the serviceRoles
@@ -22,10 +30,10 @@ export default class EditServiceFormStore {
   
   //service roles this is useful for maintain a track of the roles that will be
   //send to the backend
-  @observable serviceRoles: string[]
+  @observable serviceRoles: IObservableArray<string> = observable.array<string>([])
 
   //all the roles this come from read all the current available services
-  @observable allRoles:string[] = []
+  @observable allRoles: IObservableArray<string> = observable.array<string>([])
 
   //About roles, serviceRoles and allRoles, interaction
   // if  a new serviceRoles is created a role should be created too (Done)
@@ -111,9 +119,7 @@ export default class EditServiceFormStore {
   }
 
   @action deleteServiceRole = (role:string) => {
-    const roleIndex = this.serviceRoles.indexOf(role);
-    if(roleIndex === -1) return;
-    this.serviceRoles.splice(roleIndex, 1);
+    this.serviceRoles.remove(role);
   }
 
   @action addToAllRoles = (role:string) => {
@@ -123,9 +129,7 @@ export default class EditServiceFormStore {
   }
 
   @action deleteFromAllRoles = (role:string) => {
-    const roleIndex = this.serviceRoles.indexOf(role);
-    if(roleIndex === -1) return;
-    this.allRoles.splice(roleIndex, 1);
+    this.allRoles.remove(role);
   }
 
   @action moveRoleFromAllToService = (role:string) => {
@@ -140,13 +144,52 @@ export default class EditServiceFormStore {
 
   @action clientApiGetService = (subDomain:string) => {
     // call "/v1/api/admin/service/{subDomain}"
+    fetch(`/v1/api/admin/service/${subDomain}`).then((response:any) => {
+      if(response.ok){
+        return response.json();
+      }else {
+        throw new Error('There was a problem with the obtained response')        
+      }
+    })
   }
 
   @action clientApiSaveService = () => {
     // call "/v1/api/admin/service/save"
+    let body:any = {}
+
+    body.subDomain = this.subDomain
+    body.logo = this.logo
+    body.name = this.name
+    body.shortDescription = this.shortDescription
+    body.longDescription = this.longDescription
+    body.longDescriptionUrl = this.longDescriptionUrl
+    body.roles = toJS(this.roles)
+
+    return fetch('/v1/api/admin/service/save', { method: 'post', body: body }).then((response:any) => {
+      if(response.ok){
+        return response.json().then((data:any) => {
+          this.response = data;
+          return true;
+        });
+      }else {
+        throw new Error('There was a problem with the obtained response')        
+      }
+    })
   }
 
   @action clientApiDeleteService = () => {
     // call "/v1/api/admin/service/delete"
+    let body:any = {}
+
+    return fetch('/v1/api/admin/service/delete', { method: 'post', body: body }).then((response:any) => {
+      if(response.ok){
+        return response.json().then((data:any) => {
+          this.response = data;
+          return true;
+        });
+      }else {
+        throw new Error('There was a problem with the obtained response')
+      }
+    })
   }
 }
