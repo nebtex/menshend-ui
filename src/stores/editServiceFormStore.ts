@@ -28,19 +28,13 @@ export default class EditServiceFormStore {
   //and remove all the roles in the roles map, not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
   
-  //service roles this is useful for maintain a track of the roles that will be
-  //send to the backend
+  //service roles this is useful for maintain a track of the roles that will be send to the backend
   @observable serviceRoles: IObservableArray<string> = observable.array<string>([])
 
   //all the roles this come from read all the current available services
   @observable allRoles: IObservableArray<string> = observable.array<string>([])
 
-  //About roles, serviceRoles and allRoles, interaction
-  // if  a new serviceRoles is created a role should be created too (Done)
-  // if  a  serviceRoles is deleted the role in roles map should not change (this is only done just before to send the api request) (Done)
   // if a existing serviceRoles is move to AllRoles, the role in the roles map should not change (Done)
-  // if a role is moved from AllRoles to a  serviceRoles, and the role not exist in the service map, it should create a new one (Done) -> this is because the addServiceRole already does that
-
 
   @action updateLuaScript = (value: string, role: string) => {
     if (!this.roles.has(role)) return;
@@ -156,6 +150,17 @@ export default class EditServiceFormStore {
   @action clientApiSaveService = () => {
     // call "/v1/api/admin/service/save"
     let body:any = {}
+    let rolesToDelete: string[] = []
+
+    // clean the roles map before api call
+    this.roles.forEach((role:IServiceRole, key:string) => {
+      if(this.serviceRoles.indexOf(key) === -1)
+        rolesToDelete.push(key)
+    })
+
+    rolesToDelete.forEach((role:string) => {
+      this.roles.delete(role)
+    })
 
     body.subDomain = this.subDomain
     body.logo = this.logo
