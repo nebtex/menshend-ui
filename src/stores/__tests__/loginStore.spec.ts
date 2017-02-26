@@ -1,10 +1,34 @@
 /// <reference types='jest' />
+import LoginStore from '../loginStore';
+
+const expectedResponse = {
+  isLogged: true,
+  isAdmin: true,
+  canImpersonate: true,
+  sessionExpiresAt: Date.now() + 36000000
+}
 
 describe('editServiceFormStore', () => {
-  describe('Default', () => {
-    it('should ...', () => {
-      let mock = jest.fn();
-      
-    });
+  
+  let loginStore:LoginStore;
+  fetch.get('*', JSON.stringify(expectedResponse));
+
+  beforeEach(() => {
+    loginStore = new LoginStore();  
+  });
+
+  it('should receive the expected response when get status API is called', done => {
+    try {
+      setTimeout(() => {
+        loginStore.clientApiLoginStatus().then(() => {
+          expect(loginStore.loginStatus).toEqual(expectedResponse);
+          done();
+        }).catch((e:any) => {
+          done.fail(e);
+        });
+      }, 1000)
+    }catch (e) {
+      done.fail(e);
+    }
   });
 });
