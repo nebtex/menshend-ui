@@ -23,7 +23,7 @@ export default class EditServiceFormStore {
   @observable longDescriptionUrl: string = ''
   @observable response: IResponse;
   
-  // roles that will be sent to the backend, remove all the roles in the roles map, not defined in serviceRoles
+  // roles that will be sent to backend, remove all the roles in the roles map that are not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
   
   //service roles this is useful for maintain a track of the roles that will be send to the backend
