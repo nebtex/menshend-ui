@@ -172,6 +172,8 @@ export default class EditServiceFormStore {
       if(response.ok){
         return response.json().then((data:any) => {
           this.response = data;
+          // @TODO: is the current subdomain the correct param?
+          this.clientApiGetService(this.subDomain);
           return true;
         });
       }else {
