@@ -2,6 +2,7 @@
 import { toJS } from 'mobx';
 
 import ServiceListStore from "../serviceListStore";
+import * as fetchMock from "fetch-mock";
 
 const expectedServices = {
   "Bellgate":{
@@ -30,7 +31,7 @@ const expectedServices = {
 
 describe('editServiceFormStore', () => {
   let serviceListStore:ServiceListStore;
-  fetch.get('*', JSON.stringify(expectedServices));
+  fetchMock.get('*', JSON.stringify(expectedServices));
 
   beforeEach(() => {
     serviceListStore = new ServiceListStore();

@@ -117,6 +117,12 @@
   version "0.31.32"
   resolved "https://registry.yarnpkg.com/@types/es6-shim/-/es6-shim-0.31.32.tgz#8196c09e1e40ac977c713bf258090989f501d8ff"
 
+"@types/fetch-mock@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@types/fetch-mock/-/fetch-mock-5.8.0.tgz#a3606fc384ee8ab96f7bd715677dd61adf740728"
+  dependencies:
+    "@types/whatwg-fetch" "*"
+
 "@types/fuse@^2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@types/fuse/-/fuse-2.5.1.tgz#d154acf6a6c19e0920b9f41a6f0632eb26578075"
@@ -165,6 +171,16 @@
 "@types/react@*", "@types/react@^15.0.4":
   version "15.0.4"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.4.tgz#97aedbba00448a137331aa8450232124aeb8d426"
+
+"@types/whatwg-fetch@*":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@types/whatwg-fetch/-/whatwg-fetch-0.0.33.tgz#19c0d2863c8cb2380f21a1c736b79cbf7895bb13"
+  dependencies:
+    "@types/whatwg-streams" "*"
+
+"@types/whatwg-streams@*":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@types/whatwg-streams/-/whatwg-streams-0.0.2.tgz#58eb11cf9ab33a2b55878d568ad7e9b933e67f7d"
 
 abab@^1.0.0:
   version "1.0.3"

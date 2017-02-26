@@ -14,6 +14,22 @@ interface IResponse {
   roles: {[id:string]:any}
 }
 
+interface IServicePayload {
+  subDomain: string;
+  logo: string;
+  name: string; 
+  shortDescription: string;
+  longDescription: string;
+  longDescriptionUrl: string;
+  roles: {[role:string]:IServiceRole}
+}
+
+interface IServiceResponse {
+  success: boolean;
+  message: string;
+  service: IServicePayload;
+}
+
 export default class EditServiceFormStore {
   @observable subDomain: string = ''
   @observable logo: string = ''
@@ -132,11 +148,45 @@ export default class EditServiceFormStore {
     this.addToAllRoles(role);
   }
 
+  @action save = () => {
+    let rolesToDelete: string[] = []
+    
+    // clean the roles map before api call
+    this.roles.forEach((role:IServiceRole, key:string) => {
+      if(this.serviceRoles.indexOf(key) === -1)
+        rolesToDelete.push(key)
+    })
+
+    rolesToDelete.forEach((role:string) => {
+      this.roles.delete(role)
+    })
+
+    return Promise.all([this.clientApiSaveService(), this.clientApiDeleteService(rolesToDelete)]).then(() => {
+      return this.clientApiGetService(this.subDomain).then(() => {
+        return true;
+      }).catch((e:any) => {
+        throw new Error (e);
+      })
+    });
+  }
+
   @action clientApiGetService = (subDomain:string) => {
     // call "/v1/api/admin/service/{subDomain}"
-    fetch(`/v1/api/admin/service/${subDomain}`).then((response:any) => {
+    return fetch(`/v1/api/admin/service/${subDomain}`).then((response:any) => {
       if(response.ok){
-        return response.json();
+        return response.json().then((data:IServiceResponse) => {
+          this.subDomain = data.service.subDomain;
+          this.logo = data.service.logo;
+          this.name = data.service.name;
+          this.shortDescription = data.service.shortDescription;
+          this.longDescription = data.service.longDescription;
+          this.longDescriptionUrl = data.service.longDescriptionUrl;
+
+          Object.keys(data.service.roles).forEach((key) => {
+            this.roles.set(key, data.service.roles[key]);
+          });
+          return true;
+        });
       }else {
         throw new Error('There was a problem with the obtained response')        
       }
@@ -148,17 +198,6 @@ export default class EditServiceFormStore {
   @action clientApiSaveService = () => {
     // call "/v1/api/admin/service/save"
     let body:any = {}
-    let rolesToDelete: string[] = []
-
-    // clean the roles map before api call
-    this.roles.forEach((role:IServiceRole, key:string) => {
-      if(this.serviceRoles.indexOf(key) === -1)
-        rolesToDelete.push(key)
-    })
-
-    rolesToDelete.forEach((role:string) => {
-      this.roles.delete(role)
-    })
 
     body.subDomain = this.subDomain
     body.logo = this.logo
@@ -182,9 +221,12 @@ export default class EditServiceFormStore {
     });
   }
 
-  @action clientApiDeleteService = () => {
+  @action clientApiDeleteService = (rolesToDelete:string[]) => {
     // call "/v1/api/admin/service/delete"
-    let body:any = {}
+    let body:any = {
+      subDomain: this.subDomain,
+      roles: rolesToDelete
+    }
 
     return fetch('/v1/api/admin/service/delete', { method: 'post', body: body }).then((response:any) => {
       if(response.ok){

@@ -13,6 +13,7 @@
     "@types/classnames": "^0.0.32",
     "@types/es6-promise": "^0.0.32",
     "@types/es6-shim": "^0.31.32",
+    "@types/fetch-mock": "^5.8.0",
     "@types/fuse": "^2.5.1",
     "@types/isomorphic-fetch": "^0.0.33",
     "@types/node": "^7.0.4",

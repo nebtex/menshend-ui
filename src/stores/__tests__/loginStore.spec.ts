@@ -1,5 +1,6 @@
 /// <reference types='jest' />
 import LoginStore from '../loginStore';
+import * as fetchMock from "fetch-mock";
 
 const expectedResponse = {
   isLogged: true,
@@ -11,7 +12,7 @@ const expectedResponse = {
 describe('editServiceFormStore', () => {
   
   let loginStore:LoginStore;
-  fetch.get('*', JSON.stringify(expectedResponse));
+  fetchMock.get('*', JSON.stringify(expectedResponse));
 
   beforeEach(() => {
     loginStore = new LoginStore();  

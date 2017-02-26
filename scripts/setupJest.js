@@ -1,1 +1,1 @@
-global.fetch = require('fetch-mock');
+global.fetch = require('isomorphic-fetch');
