@@ -9,9 +9,10 @@
     "removeComments": true,
     "experimentalDecorators": true,
     "target": "ES5",
-    "types": ["node"]
+    "types": ["node", "es6-shim", "isomorphic-fetch"]
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }

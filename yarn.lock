@@ -109,6 +109,14 @@
   dependencies:
     "@types/react" "*"
 
+"@types/es6-promise@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/es6-promise/-/es6-promise-0.0.32.tgz#3bcf44fb1e429f3df76188c8c6d874463ba371fd"
+
+"@types/es6-shim@^0.31.32":
+  version "0.31.32"
+  resolved "https://registry.yarnpkg.com/@types/es6-shim/-/es6-shim-0.31.32.tgz#8196c09e1e40ac977c713bf258090989f501d8ff"
+
 "@types/fuse@^2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@types/fuse/-/fuse-2.5.1.tgz#d154acf6a6c19e0920b9f41a6f0632eb26578075"
@@ -128,10 +136,6 @@
 "@types/node@^7.0.4":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.4.tgz#9aabc135979ded383325749f508894c662948c8b"
-
-"@types/promise@^7.1.30":
-  version "7.1.30"
-  resolved "https://registry.yarnpkg.com/@types/promise/-/promise-7.1.30.tgz#1b6714b321fdfc54d1527e7a17116a0e1f2ab810"
 
 "@types/react-dom@^0.14.21":
   version "0.14.21"
@@ -2102,7 +2106,15 @@ es5-shim@^4.5.9:
   version "4.5.9"
   resolved "https://registry.yarnpkg.com/es5-shim/-/es5-shim-4.5.9.tgz#2a1e2b9e583ff5fed0c20a3ee2cbf3f75230a5c0"
 
-es6-shim@^0.35.1:
+es6-promise@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
+
+es6-promises@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/es6-promises/-/es6-promises-1.0.10.tgz#69b989b98c85983be3a59488cc8a0d6791751e55"
+
+es6-shim@^0.35.1, es6-shim@^0.35.3:
   version "0.35.3"
   resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.3.tgz#9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26"
 
