@@ -20,8 +20,8 @@ export default class LoginStore {
       }else {
         throw new Error('There was a problem with the response')
       }
-    }).catch(() => {
-
+    }).catch((e:any) => {
+      throw new Error(e)
     });
   }
 }

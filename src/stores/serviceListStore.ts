@@ -37,7 +37,11 @@ export default class ServiceListStore {
           });
           return true;
         });
+      }else {
+        throw new Error('There was a problem with the response');
       }
+    }).catch((e:any) => {
+      throw new Error(e)
     });
   }
 }

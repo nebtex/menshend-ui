@@ -23,9 +23,7 @@ export default class EditServiceFormStore {
   @observable longDescriptionUrl: string = ''
   @observable response: IResponse;
   
-  //those are the roles that will be send to the backend
-  //before the api call the save function it should check the serviceRoles
-  //and remove all the roles in the roles map, not defined in serviceRoles
+  // roles that will be sent to the backend, remove all the roles in the roles map, not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
   
   //service roles this is useful for maintain a track of the roles that will be send to the backend
@@ -33,8 +31,6 @@ export default class EditServiceFormStore {
 
   //all the roles this come from read all the current available services
   @observable allRoles: IObservableArray<string> = observable.array<string>([])
-
-  // if a existing serviceRoles is move to AllRoles, the role in the roles map should not change (Done)
 
   @action updateLuaScript = (value: string, role: string) => {
     if (!this.roles.has(role)) return;
@@ -144,7 +140,9 @@ export default class EditServiceFormStore {
       }else {
         throw new Error('There was a problem with the obtained response')        
       }
-    })
+    }).catch((e:any) => {
+      throw new Error(e)
+    });
   }
 
   @action clientApiSaveService = () => {
@@ -179,7 +177,9 @@ export default class EditServiceFormStore {
       }else {
         throw new Error('There was a problem with the obtained response')        
       }
-    })
+    }).catch((e:any) => {
+      throw new Error(e)
+    });
   }
 
   @action clientApiDeleteService = () => {
@@ -195,6 +195,8 @@ export default class EditServiceFormStore {
       }else {
         throw new Error('There was a problem with the obtained response')
       }
-    })
+    }).catch((e:any) => {
+      throw new Error(e)
+    });
   }
 }
