@@ -157,10 +157,6 @@ export default class EditServiceFormStore {
         rolesToDelete.push(key)
     })
 
-    rolesToDelete.forEach((role:string) => {
-      this.roles.delete(role)
-    })
-
     return Promise.all([this.clientApiSaveService(), this.clientApiDeleteService(rolesToDelete)]).then(() => {
       return this.clientApiGetService(this.subDomain).then(() => {
         return true;
@@ -198,6 +194,11 @@ export default class EditServiceFormStore {
   @action clientApiSaveService = () => {
     // call "/v1/api/admin/service/save"
     let body:any = {}
+    let filteredRoles:ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
+
+    this.serviceRoles.forEach(role => {
+      filteredRoles.set(role, this.roles.get(role))
+    });
 
     body.subDomain = this.subDomain
     body.logo = this.logo
@@ -205,7 +206,7 @@ export default class EditServiceFormStore {
     body.shortDescription = this.shortDescription
     body.longDescription = this.longDescription
     body.longDescriptionUrl = this.longDescriptionUrl
-    body.roles = toJS(this.roles)
+    body.roles = toJS(filteredRoles)
 
     return fetch('/v1/api/admin/service/save', { method: 'post', body: body }).then((response:any) => {
       if(response.ok){
