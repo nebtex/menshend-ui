@@ -6,8 +6,8 @@ var template = `
     "adminService": [
       {{#repeat 20}}
       {
-        "id": "service_{{int 1 3}}.",
-        "roleId": "role_{{int 1 3}}",
+        "id": "service_{{int 0 3}}.",
+        "roleId": "role_{{int 0 3}}",
         "logo": "http://placehold.it/64x64",
         "name": "{{company}}",
         "shortDescription": "{{lorem 10}}",
@@ -44,7 +44,33 @@ var template = `
         ]
       }
       {{/repeat}}
-    ]
+    ],
+    "clientServices": [
+      {{#repeat 8}}
+      {
+        "id": "service_{{@index}}.",
+        "logo": "http://placehold.it/64x64",
+        "name": "string",
+        "shortDescription": "{{lorem 10}}",
+        "longDescription": "{{lorem 20}}",
+        "roles": {
+          {{#repeat 8}}
+          "role-{{int 0 20}}": {
+            "secretPaths": [
+              "string"
+            ]
+          }
+          {{/repeat}}
+        }
+      }
+      {{/repeat}}      
+    ],
+    "clientStatus": {
+      "isLogged": true,
+      "isAdmin": true,
+      "canImpersonate": true,
+      "sessionExpiresAt": 0
+    }
   }
 `;
 

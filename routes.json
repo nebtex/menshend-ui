@@ -1,3 +1,5 @@
 {
-  "/v1/api/admin/role/:roleId/service/:serviceId": "/adminService?id=:serviceId&roleId=:roleId"
+  "/v1/api/admin/role/:roleId/service/:serviceId": "/adminService?id=:serviceId&roleId=:roleId",
+  "/v1/api/client/services": "/clientServices",
+  "/v1/api/client/status": "/clientStatus"
 }
