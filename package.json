@@ -27,6 +27,7 @@
     "fetch-mock": "^5.9.4",
     "jest": "^18.1.0",
     "json-loader": "^0.5.4",
+    "json-server": "^0.9.5",
     "node-sass": "^4.3.0",
     "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",

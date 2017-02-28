@@ -1,0 +1,765 @@
+
+  {
+    "adminService": [
+      {
+        "id": "service_1.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Baramax",
+        "shortDescription": "Mollis placerat dictum dolor proin, sit cursus vitae et justo.",
+        "longDescription": "Velit mollis aenean orci pellentesque. In suscipit viverra vulputate sollicitudin massa. Ipsum aliquam enim cras. Erat natoque sapien felis eros.",
+        "longDescriptionUrl": "baramax.net/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_3",
+        "logo": "http://placehold.it/64x64",
+        "name": "Pancast",
+        "shortDescription": "Id eu vehicula vulputate vulputate sodales. Curabitur elementum sem tristique.",
+        "longDescription": "Bibendum enim sem nisi velit vulputate tortor, risus suscipit eti au tempor dignissim, eu vulputate cras in sem eros accumsan.",
+        "longDescriptionUrl": "pancast.net/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "CoreXTS",
+        "shortDescription": "Lacinia neque sodales aliquam aliquam magna, elementum suscipit rhoncus aliquet.",
+        "longDescription": "Velit etiam felis hendrerit ex sagittis id pretium et turpis condimentum curabitur aliquam sagittis mollis massa. Consequat consectetur vestibulum pharetra.",
+        "longDescriptionUrl": "corexts.net/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Playtech",
+        "shortDescription": "Morbi in vel est suscipit. Lacinia metus hendrerit etiam sapien.",
+        "longDescription": "Lacus etiam mollis scelerisque massa faucibus sollicitudin, nam magna lobortis vestibulum nisl commodo. Tristique laoreet magna ac lectus condimentum ornare.",
+        "longDescriptionUrl": "playtech.mobi/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_3",
+        "logo": "http://placehold.it/64x64",
+        "name": "WestGate",
+        "shortDescription": "Maecenas consequat eros erat quisque, sagittis ex donec purus e.",
+        "longDescription": "Aenean lorem scelerisque vehicula vestibulum. Au eros scelerisque lacinia, cursus scelerisque mollis mollis hendrerit sapien consequat erat, lectus curabitur a.",
+        "longDescriptionUrl": "westgate.mobi/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": true,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_2.",
+        "roleId": "role_3",
+        "logo": "http://placehold.it/64x64",
+        "name": "Keysoft",
+        "shortDescription": "Sapien elementum velit gravida augue cras, enim metus pretium nam.",
+        "longDescription": "Eros maximus ornare et vehicula orci dignissim. Massa euismod cras elementum pharetra. Dui bibendum augue magna. Cras au pretium mattis.",
+        "longDescriptionUrl": "keysoft.org/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_3",
+        "logo": "http://placehold.it/64x64",
+        "name": "Solexis",
+        "shortDescription": "Tempus neque metus pulvinar vestibulum vel in vulputate arcu faucibus.",
+        "longDescription": "Suscipit hendrerit tristique morbi ipsum arcu eti neque, at tempor mauris lacinia, tempor tortor aliquet fringilla, e porttitor ex eros.",
+        "longDescriptionUrl": "solexis.me/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": true,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_3.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "StrategyLine",
+        "shortDescription": "Id velit ipsum etiam sodales. Scelerisque laoreet ac orci diam.",
+        "longDescription": "Eros faucibus eget aliquam finibus sem pellentesque. Eti quis at proin at commodo. Laoreet placerat morbi elit et sodales tortor.",
+        "longDescriptionUrl": "strategyline.co/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Conixco",
+        "shortDescription": "Lacus nam ac quisque elementum scelerisque tempor. Justo aliquet orci.",
+        "longDescription": "Blandit aliquet elementum ligula fringilla vehicula, ut amet imperdiet arcu, posuere auctor pharetra hendrerit. Velit ligula ligula quis sem consectetur.",
+        "longDescriptionUrl": "conixco.xyz/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": true,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": false,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_2.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Polycore",
+        "shortDescription": "Sagittis gravida dolor auctor posuere eros tincidunt donec nisl turpis.",
+        "longDescription": "Tincidunt consequat nibh ante sapien augue sed cursus lacus. Massa condimentum lacus etiam. Ex i gravida sapien, i erat nisl.",
+        "longDescriptionUrl": "polycore.org/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": false,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_3.",
+        "roleId": "role_2",
+        "logo": "http://placehold.it/64x64",
+        "name": "CoreMax",
+        "shortDescription": "Auctor eget metus hendrerit maecenas, pellentesque ipsum turpis viverra dictum.",
+        "longDescription": "I dignissim au augue aliquet au eti, elit vestibulum rhoncus mi lectus vestibulum diam enim. Nisl nulla diam aenean pulvinar.",
+        "longDescriptionUrl": "coremax.biz/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": false,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_2",
+        "logo": "http://placehold.it/64x64",
+        "name": "MediaDime",
+        "shortDescription": "Pretium hendrerit eti adipiscing i et. Cras orci aliquet placerat.",
+        "longDescription": "Placerat cras eti cursus eget imperdiet elementum orci, ut pretium eget ornare curabitur condimentum at mauris. Ligula nisi sed rhoncus.",
+        "longDescriptionUrl": "mediadime.gov/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_2",
+        "logo": "http://placehold.it/64x64",
+        "name": "Connic",
+        "shortDescription": "Maecenas faucibus augue amet amet. Velit rhoncus vitae eget imperdiet.",
+        "longDescription": "Laoreet faucibus commodo morbi proin diam, mi turpis bibendum vehicula blandit gravida. Bibendum justo ornare non, arcu pretium aliquet fringilla.",
+        "longDescriptionUrl": "connic.name/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_2.",
+        "roleId": "role_2",
+        "logo": "http://placehold.it/64x64",
+        "name": "MultiServ",
+        "shortDescription": "Neque massa laoreet non erat natoque placerat purus sapien pellentesque.",
+        "longDescription": "Eros eti est mattis ipsum iaculis consectetur, laoreet euismod erat vehicula. A mi eget nisi natoque donec dignissim elementum aliquam.",
+        "longDescriptionUrl": "multiserv.co/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": true,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Freecast",
+        "shortDescription": "Rhoncus scelerisque quis mattis gravida, maximus sem mattis nam gravida.",
+        "longDescription": "Placerat maximus dictum elit massa, natoque iaculis vitae felis at porttitor. Quis lorem lorem velit. Lacus ante condimentum orci curabitur.",
+        "longDescriptionUrl": "freecast.net/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_3.",
+        "roleId": "role_2",
+        "logo": "http://placehold.it/64x64",
+        "name": "Infratouch",
+        "shortDescription": "Proin sodales sollicitudin nisi ultrices. Eros nam sapien neque sapien.",
+        "longDescription": "Hendrerit nibh pretium ultricies pharetra orci euismod, sem nulla neque viverra elit sit natoque lacinia aliquam ligula. Lacus dignissim dictum.",
+        "longDescriptionUrl": "infratouch.co/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": false,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_2.",
+        "roleId": "role_3",
+        "logo": "http://placehold.it/64x64",
+        "name": "PeerSys",
+        "shortDescription": "E curabitur lorem condimentum blandit, morbi cras blandit eu lobortis.",
+        "longDescription": "Porttitor placerat leo nisi ligula, posuere ultrices ex in imperdiet vitae, vulputate consectetur consectetur lectus rhoncus lacinia ornare ultrices rhoncus.",
+        "longDescriptionUrl": "peersys.info/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": false,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": false,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_3.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Quadtek",
+        "shortDescription": "Felis sit consequat placerat adipiscing faucibus donec cursus laoreet a.",
+        "longDescription": "Cursus maximus nibh amet finibus. Lacus lacus leo i maecenas aliquam vitae. Natoque purus est sit accumsan lacus velit rhoncus.",
+        "longDescriptionUrl": "quadtek.edu/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": true,
+        "isActive": false,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": false,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_3.",
+        "roleId": "role_3",
+        "logo": "http://placehold.it/64x64",
+        "name": "Hypervision",
+        "shortDescription": "Posuere iaculis sit pretium purus tempor turpis nibh tortor cursus.",
+        "longDescription": "Gravida enim consectetur ante rhoncus ac mauris curabitur augue dictum nisi. Porttitor sollicitudin ac sapien accumsan lobortis. Gravida non ac.",
+        "longDescriptionUrl": "hypervision.name/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": true,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": false,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": false,
+          "optionsPassthrough": true,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      },
+      {
+        "id": "service_1.",
+        "roleId": "role_1",
+        "logo": "http://placehold.it/64x64",
+        "name": "Coolinga",
+        "shortDescription": "Lacinia viverra felis diam dignissim sagittis nulla vehicula facilisis ultricies.",
+        "longDescription": "Placerat nisl aenean facilisis i morbi turpis eti tristique commodo iaculis pretium faucibus. A quisque curabitur tempus, gravida donec leo.",
+        "longDescriptionUrl": "coolinga.mobi/longDescription",
+        "proxyCode": "__ === your code here ===",
+        "proxyCodeLanguage": 0,
+        "impersonateWithinRole": true,
+        "isActive": true,
+        "strategy": 0,
+        "cache": {
+          "active": true,
+          "ttl": 0
+        },
+        "cors": {
+          "allowedOrigins": [
+            "string"
+          ],
+          "allowedMethods": [
+            "string"
+          ],
+          "allowedHeaders": [
+            "string"
+          ],
+          "allowCredentials": true,
+          "optionsPassthrough": true,
+          "maxAge": true,
+          "exposedHeaders": [
+            "string"
+          ]
+        },
+        "secretPaths": [
+          "string"
+        ]
+      }
+    ]
+  }
