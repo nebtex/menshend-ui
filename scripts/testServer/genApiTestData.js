@@ -6,8 +6,8 @@ var template = `
     "adminService": [
       {{#repeat 5}}
       {
-        "id": "service_{{@index}}.",
-        "roleId": "role_{{int 0 3}}",
+        "id": "service-{{@index}}.",
+        "roleId": "role-{{int 0 3}}",
         "logo": "http://placehold.it/64x64",
         "name": "{{company}}",
         "shortDescription": "{{lorem 10}}",
@@ -48,7 +48,7 @@ var template = `
     "clientServices": [
       {{#repeat 8}}
       {
-        "id": "service_{{@index}}.",
+        "id": "service-{{@index}}.",
         "logo": "http://placehold.it/64x64",
         "name": "string",
         "shortDescription": "{{lorem 10}}",
@@ -75,7 +75,7 @@ var template = `
 `;
 
 var result = dummyjson.parse(template);
-fs.writeFile("../db.json", result, function(err) {
+fs.writeFile("db.json", result, function(err) {
     if(err) {
         console.log(err);
     }
