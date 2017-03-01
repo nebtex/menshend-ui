@@ -14,15 +14,9 @@ describe('FullModal', () => {
       fullModal = mount(<FullModal {...Cases['Default']} toggle={toggleMock} />);
     });
 
-    it('Should call toggle when the close button is clicked', () => {
-      fullModal.find("button").simulate("click")
-      expect(toggleMock.mock.calls.length).toEqual(1);
-
-    });
     it('Should close the modal when the esc key button is pressed', () => {
-      fullModal.first().simulate('keyPress', {keyCode: 27});
+      fullModal.instance().handleEscape({keyCode: 27});
       expect(toggleMock.mock.calls.length).toEqual(1);
-
     });
   });
 

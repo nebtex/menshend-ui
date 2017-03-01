@@ -24,6 +24,15 @@ export default class FullModal extends React.Component<IFullModalProps, IFullMod
 			}
 		}
 	}
+	
+	componentDidMount = () => {
+		window.addEventListener('keydown', this.handleEscape);
+	}
+
+	componentWillUnmount = () => {
+		window.removeEventListener('keydown', this.handleEscape);
+	}
+
 	render() {
 		if (!this.props.isOpen) return null;
 		return (

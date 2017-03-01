@@ -1,5 +1,6 @@
 .modalContainer {
 	width: 100%;
+	min-height: 100%;
 	max-width: initial;
 	margin:0;
 	>div {
@@ -8,13 +9,6 @@
 	}
 }
 
-.navbar {
-	background-color: #e3f2fd;
-	flex-direction: row;
-	>a {
-		flex-grow: 1;
-	}
-	button {
-		cursor: pointer;
-	}
+.closeButton {
+	float: right;
 }
