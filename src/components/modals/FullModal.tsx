@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import { Navbar, NavbarToggler, NavbarBrand, Collapse, Form, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Navbar, NavbarToggler, NavbarBrand, Collapse, Form, Nav, NavItem, NavLink, Button, Modal, ModalHeader } from 'reactstrap';
 
 let styles = require('./FullModal.scss');
 
@@ -27,21 +27,10 @@ export default class FullModal extends React.Component<IFullModalProps, IFullMod
 	render() {
 		if (!this.props.isOpen) return null;
 		return (
-			<div onKeyPress={this.handleEscape} className={styles.modalContainer}>
-				<Navbar fixed="top" className={classnames(styles.navbar, this.props.className)} light>
-					<NavbarBrand href="#">{this.props.title}</NavbarBrand>
-					<Collapse isOpen={true} navbar>
-						<Nav className="ml-auto" navbar>
-							<NavItem>
-								<Button color="danger" outline onClick={this.props.toggle}>Close</Button>
-							</NavItem>
-						</Nav>
-					</Collapse>
-				</Navbar>
-				<div className={styles.modalContent}>
-					{this.props.children}
-				</div>
-			</div>
+			<Modal toggle={this.props.toggle} isOpen={this.props.isOpen} className={styles.modalContainer}>
+				<ModalHeader toggle={this.props.toggle}>{this.props.title}</ModalHeader>
+				{this.props.children}
+			</Modal>
 		)
 	}
 }

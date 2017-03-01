@@ -1,9 +1,11 @@
 .modalContainer {
-	position: absolute;
-	top: 0;
-	background: #fff;
 	width: 100%;
-	margin: 0 -16px;
+	max-width: initial;
+	margin:0;
+	>div {
+		border: none;
+		border-radius: 0px;
+	}
 }
 
 .navbar {
