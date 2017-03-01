@@ -1,9 +1,9 @@
 .modalContainer {
 	width: 100%;
-	min-height: 100%;
 	max-width: initial;
 	margin:0;
 	>div {
+		min-height: 100vh;
 		border: none;
 		border-radius: 0px;
 	}
