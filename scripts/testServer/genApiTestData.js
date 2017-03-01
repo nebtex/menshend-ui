@@ -1,5 +1,6 @@
 var fs = require('fs');
 var dummyjson = require('dummy-json');
+var path = require('path')
 
 var template = `
   {
@@ -75,7 +76,7 @@ var template = `
 `;
 
 var result = dummyjson.parse(template);
-fs.writeFile("db.json", result, function(err) {
+fs.writeFile(path.join(__dirname, 'db.json'), result, function(err) {
     if(err) {
         console.log(err);
     }

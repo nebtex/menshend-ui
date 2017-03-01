@@ -3,15 +3,15 @@
     {
       "id": "service-1.",
       "roleId": "role-0",
-      "logo": "http://placehold.it/64x64",
-      "name": "Citisys",
-      "shortDescription": "Nisl morbi pellentesque euismod dui est erat orci et nunc.",
-      "longDescription": "Lacus aliquet sodales justo mi, risus commodo vitae erat ornare aliquet lobortis consequat aliquam rhoncus facilisis morbi blandit ante maecenas.",
-      "longDescriptionUrl": "citisys.info/longDescription",
+      "logo": "http://placehold.it/64x64.png",
+      "name": "Terralabs",
+      "shortDescription": "short description changed",
+      "longDescription": "Tortor est e cursus lorem ligula quisque dolor, bibendum faucibus justo eget in etiam, vel eti quis tempus euismod ante.",
+      "longDescriptionUrl": "terralabs.org/longDescription",
       "proxyCode": "__ === your code here ===",
       "proxyCodeLanguage": 0,
       "impersonateWithinRole": true,
-      "isActive": false,
+      "isActive": true,
       "strategy": 0,
       "cache": {
         "active": false,
@@ -27,8 +27,8 @@
         "allowedHeaders": [
           "string"
         ],
-        "allowCredentials": false,
-        "optionsPassthrough": false,
+        "allowCredentials": true,
+        "optionsPassthrough": true,
         "maxAge": true,
         "exposedHeaders": [
           "string"

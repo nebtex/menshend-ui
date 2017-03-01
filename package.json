@@ -6,7 +6,9 @@
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-monaco-editor&&ln -s `pwd`/types/react-monaco-editor `pwd`/node_modules/@types/react-monaco-editor",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
+    "pretest": "sh scripts/testServer/pretest.sh",
     "test": "jest && codecov -t $CODECOV_TOKEN",
+    "postest": "sh scripts/testServer/postest.sh",    
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {

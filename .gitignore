@@ -3,3 +3,5 @@ dist/
 .DS_Store
 coverage/
 yarn-error.log
+nohup.out
+server_test_pid.txt

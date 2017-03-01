@@ -1,16 +1,10 @@
 var jsonServer = require('json-server')
 var server = jsonServer.create()
-var router = jsonServer.router('db.json')
+var path = require('path')
+var router = jsonServer.router(path.join(__dirname, 'db.json'))
 var middlewares = jsonServer.defaults()
 
 server.use(middlewares)
-
-// Custom responses for /v1/api/admin/role/:roleId/service/:serviceId
-// server.put('/v1/api/admin/role/:roleId/service/:serviceId', function (req, res, next) {
-//   // res.jsonp(req.body)
-//   next()
-// })
-
 
 // Default routes
 server.use(jsonServer.rewriter({

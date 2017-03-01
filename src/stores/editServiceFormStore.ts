@@ -1,5 +1,6 @@
 import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
 import ServiceListStore from './serviceListStore';
+import { AdminApi, AdminServicePayload } from '../api/api';
 
 interface IServiceRole {
   luaScript: string;
@@ -8,36 +9,15 @@ interface IServiceRole {
   isActive: boolean;
 }
 
-interface IResponse {
-  success: boolean;
-  message: string;
-  roles: {[id:string]:any}
-}
-
-interface IServicePayload {
-  subDomain: string;
-  logo: string;
-  name: string; 
-  shortDescription: string;
-  longDescription: string;
-  longDescriptionUrl: string;
-  roles: {[role:string]:IServiceRole}
-}
-
-interface IServiceResponse {
-  success: boolean;
-  message: string;
-  service: IServicePayload;
-}
-
 export default class EditServiceFormStore {
+  adminApi:AdminApi = new AdminApi();
+
   @observable subDomain: string = ''
   @observable logo: string = ''
   @observable name: string = ''
   @observable shortDescription: string = ''
   @observable longDescription: string = ''
   @observable longDescriptionUrl: string = ''
-  @observable response: IResponse;
   
   // roles that will be sent to backend, remove all the roles in the roles map that are not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
@@ -157,87 +137,31 @@ export default class EditServiceFormStore {
         rolesToDelete.push(key)
     })
 
-    return Promise.all([this.clientApiSaveService(), this.clientApiDeleteService(rolesToDelete)]).then(() => {
-      return this.clientApiGetService(this.subDomain).then(() => {
-        return true;
-      }).catch((e:any) => {
-        throw new Error (e);
-      })
-    });
+    // return Promise.all([this.clientApiSaveService(), this.clientApiDeleteService(rolesToDelete)]).then(() => {
+    //   return this.clientApiGetService(this.subDomain).then(() => {
+    //     return true;
+    //   }).catch((e:any) => {
+    //     throw new Error (e);
+    //   })
+    // });
   }
 
-  @action clientApiGetService = (subDomain:string) => {
-    // call "/v1/api/admin/service/{subDomain}"
-    return fetch(`/v1/api/admin/service/${subDomain}`).then((response:any) => {
-      if(response.ok){
-        return response.json().then((data:IServiceResponse) => {
-          this.subDomain = data.service.subDomain;
-          this.logo = data.service.logo;
-          this.name = data.service.name;
-          this.shortDescription = data.service.shortDescription;
-          this.longDescription = data.service.longDescription;
-          this.longDescriptionUrl = data.service.longDescriptionUrl;
-
-          Object.keys(data.service.roles).forEach((key) => {
-            this.roles.set(key, data.service.roles[key]);
-          });
-          return true;
-        });
-      }else {
-        throw new Error('There was a problem with the obtained response')        
-      }
+  @action apiGetService = (roleId:string, serviceId:string) => {
+    return this.adminApi.adminGetService({roleId, serviceId}).then((servicePayload:AdminServicePayload) => {
     }).catch((e:any) => {
       throw new Error(e)
     });
   }
 
-  @action clientApiSaveService = () => {
-    // call "/v1/api/admin/service/save"
-    let body:any = {}
-    let filteredRoles:ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
-
-    this.serviceRoles.forEach(role => {
-      filteredRoles.set(role, this.roles.get(role))
-    });
-
-    body.subDomain = this.subDomain
-    body.logo = this.logo
-    body.name = this.name
-    body.shortDescription = this.shortDescription
-    body.longDescription = this.longDescription
-    body.longDescriptionUrl = this.longDescriptionUrl
-    body.roles = toJS(filteredRoles)
-
-    return fetch('/v1/api/admin/service/save', { method: 'post', body: body }).then((response:any) => {
-      if(response.ok){
-        return response.json().then((data:any) => {
-          this.response = data;
-          return true;
-        });
-      }else {
-        throw new Error('There was a problem with the obtained response')        
-      }
+  @action apiSaveService = (roleId:string, serviceId:string) => {
+    return this.adminApi.adminGetService({roleId, serviceId}).then((servicePayload:AdminServicePayload) => {
     }).catch((e:any) => {
       throw new Error(e)
     });
   }
 
-  @action clientApiDeleteService = (rolesToDelete:string[]) => {
-    // call "/v1/api/admin/service/delete"
-    let body:any = {
-      subDomain: this.subDomain,
-      roles: rolesToDelete
-    }
-
-    return fetch('/v1/api/admin/service/delete', { method: 'post', body: body }).then((response:any) => {
-      if(response.ok){
-        return response.json().then((data:any) => {
-          this.response = data;
-          return true;
-        });
-      }else {
-        throw new Error('There was a problem with the obtained response')
-      }
+  @action apiDeleteService = (roleId:string, serviceId:string) => {
+    return this.adminApi.adminGetService({roleId, serviceId}).then((response:any) => {
     }).catch((e:any) => {
       throw new Error(e)
     });
