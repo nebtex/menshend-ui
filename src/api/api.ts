@@ -26,7 +26,6 @@ import * as querystring from "querystring";
 import * as url from "url";
 
 import * as isomorphicFetch from "isomorphic-fetch";
-import * as assign from "core-js/library/fn/object/assign";
 
 interface Dictionary<T> { [index: string]: T; }
 export interface FetchAPI { (url: string, init?: any): Promise<any>; }
