@@ -12,7 +12,11 @@ To start developing
 
 	yarn start
 
-To test the project
+To test the project, make sure you have json-server installed as a global:
+
+	npm install -g json-server
+
+then
 
 	yarn test
 

@@ -4,9 +4,9 @@ var dummyjson = require('dummy-json');
 var template = `
   {
     "adminService": [
-      {{#repeat 20}}
+      {{#repeat 5}}
       {
-        "id": "service_{{int 0 3}}.",
+        "id": "service_{{@index}}.",
         "roleId": "role_{{int 0 3}}",
         "logo": "http://placehold.it/64x64",
         "name": "{{company}}",
