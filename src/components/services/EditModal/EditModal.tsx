@@ -245,7 +245,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
 
     return (
-      <div>
       <FullModal title={title} isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
         <EditModalBody 
           activeTab={this.state.activeTab}
@@ -284,7 +283,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}
         </ModalFooter>
       </FullModal>
-      </div>
     );
   }
 }

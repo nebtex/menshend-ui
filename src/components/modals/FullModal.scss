@@ -1,5 +1,9 @@
-.modalContent {
-    margin-top: 96px;
+.modalContainer {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    margin: 0 -16px;
 }
 
 .navbar {
