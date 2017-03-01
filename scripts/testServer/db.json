@@ -1,595 +1,521 @@
-
-  {
-    "adminService": [
-      {
-        "id": "service-0.",
-        "roleId": "role-0",
-        "logo": "http://placehold.it/64x64",
-        "name": "Terralabs",
-        "shortDescription": "Lacinia aenean amet iaculis placerat nisl. Dignissim curabitur mattis sapien.",
-        "longDescription": "Tortor est e cursus lorem ligula quisque dolor, bibendum faucibus justo eget in etiam, vel eti quis tempus euismod ante.",
-        "longDescriptionUrl": "terralabs.org/longDescription",
-        "proxyCode": "__ === your code here ===",
-        "proxyCodeLanguage": 0,
-        "impersonateWithinRole": true,
-        "isActive": true,
-        "strategy": 0,
-        "cache": {
-          "active": false,
-          "ttl": 0
-        },
-        "cors": {
-          "allowedOrigins": [
-            "string"
-          ],
-          "allowedMethods": [
-            "string"
-          ],
-          "allowedHeaders": [
-            "string"
-          ],
-          "allowCredentials": true,
-          "optionsPassthrough": true,
-          "maxAge": true,
-          "exposedHeaders": [
-            "string"
-          ]
-        },
-        "secretPaths": [
+{
+  "adminService": [
+    {
+      "id": "service-1.",
+      "roleId": "role-0",
+      "logo": "http://placehold.it/64x64",
+      "name": "Citisys",
+      "shortDescription": "Nisl morbi pellentesque euismod dui est erat orci et nunc.",
+      "longDescription": "Lacus aliquet sodales justo mi, risus commodo vitae erat ornare aliquet lobortis consequat aliquam rhoncus facilisis morbi blandit ante maecenas.",
+      "longDescriptionUrl": "citisys.info/longDescription",
+      "proxyCode": "__ === your code here ===",
+      "proxyCodeLanguage": 0,
+      "impersonateWithinRole": true,
+      "isActive": false,
+      "strategy": 0,
+      "cache": {
+        "active": false,
+        "ttl": 0
+      },
+      "cors": {
+        "allowedOrigins": [
+          "string"
+        ],
+        "allowedMethods": [
+          "string"
+        ],
+        "allowedHeaders": [
+          "string"
+        ],
+        "allowCredentials": false,
+        "optionsPassthrough": false,
+        "maxAge": true,
+        "exposedHeaders": [
           "string"
         ]
       },
-      {
-        "id": "service-1.",
-        "roleId": "role-0",
-        "logo": "http://placehold.it/64x64",
-        "name": "Citisys",
-        "shortDescription": "Nisl morbi pellentesque euismod dui est erat orci et nunc.",
-        "longDescription": "Lacus aliquet sodales justo mi, risus commodo vitae erat ornare aliquet lobortis consequat aliquam rhoncus facilisis morbi blandit ante maecenas.",
-        "longDescriptionUrl": "citisys.info/longDescription",
-        "proxyCode": "__ === your code here ===",
-        "proxyCodeLanguage": 0,
-        "impersonateWithinRole": true,
-        "isActive": false,
-        "strategy": 0,
-        "cache": {
-          "active": false,
-          "ttl": 0
-        },
-        "cors": {
-          "allowedOrigins": [
-            "string"
-          ],
-          "allowedMethods": [
-            "string"
-          ],
-          "allowedHeaders": [
-            "string"
-          ],
-          "allowCredentials": false,
-          "optionsPassthrough": false,
-          "maxAge": true,
-          "exposedHeaders": [
-            "string"
-          ]
-        },
-        "secretPaths": [
+      "secretPaths": [
+        "string"
+      ]
+    },
+    {
+      "id": "service-2.",
+      "roleId": "role-3",
+      "logo": "http://placehold.it/64x64",
+      "name": "FortyFour",
+      "shortDescription": "Orci a a ante augue dictum lacinia. Tristique sollicitudin nibh.",
+      "longDescription": "Sit tincidunt mattis e auctor hendrerit neque. Maximus ornare etiam ultrices hendrerit natoque. Justo aliquam consectetur quisque turpis tempus dolor.",
+      "longDescriptionUrl": "fortyfour.biz/longDescription",
+      "proxyCode": "__ === your code here ===",
+      "proxyCodeLanguage": 0,
+      "impersonateWithinRole": false,
+      "isActive": true,
+      "strategy": 0,
+      "cache": {
+        "active": false,
+        "ttl": 0
+      },
+      "cors": {
+        "allowedOrigins": [
+          "string"
+        ],
+        "allowedMethods": [
+          "string"
+        ],
+        "allowedHeaders": [
+          "string"
+        ],
+        "allowCredentials": true,
+        "optionsPassthrough": true,
+        "maxAge": true,
+        "exposedHeaders": [
           "string"
         ]
       },
-      {
-        "id": "service-2.",
-        "roleId": "role-3",
-        "logo": "http://placehold.it/64x64",
-        "name": "FortyFour",
-        "shortDescription": "Orci a a ante augue dictum lacinia. Tristique sollicitudin nibh.",
-        "longDescription": "Sit tincidunt mattis e auctor hendrerit neque. Maximus ornare etiam ultrices hendrerit natoque. Justo aliquam consectetur quisque turpis tempus dolor.",
-        "longDescriptionUrl": "fortyfour.biz/longDescription",
-        "proxyCode": "__ === your code here ===",
-        "proxyCodeLanguage": 0,
-        "impersonateWithinRole": false,
-        "isActive": true,
-        "strategy": 0,
-        "cache": {
-          "active": false,
-          "ttl": 0
-        },
-        "cors": {
-          "allowedOrigins": [
-            "string"
-          ],
-          "allowedMethods": [
-            "string"
-          ],
-          "allowedHeaders": [
-            "string"
-          ],
-          "allowCredentials": true,
-          "optionsPassthrough": true,
-          "maxAge": true,
-          "exposedHeaders": [
-            "string"
-          ]
-        },
-        "secretPaths": [
+      "secretPaths": [
+        "string"
+      ]
+    },
+    {
+      "id": "service-3.",
+      "roleId": "role-0",
+      "logo": "http://placehold.it/64x64",
+      "name": "Infracom",
+      "shortDescription": "Purus eu ornare ultrices augue proin, ultrices euismod id proin.",
+      "longDescription": "Leo elementum nunc fringilla id erat i dignissim quis adipiscing. Mi scelerisque sodales ut. Maecenas mauris dui lectus a nibh.",
+      "longDescriptionUrl": "infracom.biz/longDescription",
+      "proxyCode": "__ === your code here ===",
+      "proxyCodeLanguage": 0,
+      "impersonateWithinRole": true,
+      "isActive": false,
+      "strategy": 0,
+      "cache": {
+        "active": true,
+        "ttl": 0
+      },
+      "cors": {
+        "allowedOrigins": [
+          "string"
+        ],
+        "allowedMethods": [
+          "string"
+        ],
+        "allowedHeaders": [
+          "string"
+        ],
+        "allowCredentials": false,
+        "optionsPassthrough": true,
+        "maxAge": false,
+        "exposedHeaders": [
           "string"
         ]
       },
-      {
-        "id": "service-3.",
-        "roleId": "role-0",
-        "logo": "http://placehold.it/64x64",
-        "name": "Infracom",
-        "shortDescription": "Purus eu ornare ultrices augue proin, ultrices euismod id proin.",
-        "longDescription": "Leo elementum nunc fringilla id erat i dignissim quis adipiscing. Mi scelerisque sodales ut. Maecenas mauris dui lectus a nibh.",
-        "longDescriptionUrl": "infracom.biz/longDescription",
-        "proxyCode": "__ === your code here ===",
-        "proxyCodeLanguage": 0,
-        "impersonateWithinRole": true,
-        "isActive": false,
-        "strategy": 0,
-        "cache": {
-          "active": true,
-          "ttl": 0
-        },
-        "cors": {
-          "allowedOrigins": [
-            "string"
-          ],
-          "allowedMethods": [
-            "string"
-          ],
-          "allowedHeaders": [
-            "string"
-          ],
-          "allowCredentials": false,
-          "optionsPassthrough": true,
-          "maxAge": false,
-          "exposedHeaders": [
-            "string"
-          ]
-        },
-        "secretPaths": [
+      "secretPaths": [
+        "string"
+      ]
+    },
+    {
+      "id": "service-4.",
+      "roleId": "role-1",
+      "logo": "http://placehold.it/64x64",
+      "name": "Seelogic",
+      "shortDescription": "Augue eros au maecenas lectus dictum sem purus turpis elementum.",
+      "longDescription": "Eros lacinia orci pharetra donec facilisis auctor i justo consectetur. Nunc sit nisi ex. Consectetur imperdiet lectus vehicula nisi blandit.",
+      "longDescriptionUrl": "seelogic.info/longDescription",
+      "proxyCode": "__ === your code here ===",
+      "proxyCodeLanguage": 0,
+      "impersonateWithinRole": true,
+      "isActive": false,
+      "strategy": 0,
+      "cache": {
+        "active": false,
+        "ttl": 0
+      },
+      "cors": {
+        "allowedOrigins": [
+          "string"
+        ],
+        "allowedMethods": [
+          "string"
+        ],
+        "allowedHeaders": [
+          "string"
+        ],
+        "allowCredentials": false,
+        "optionsPassthrough": false,
+        "maxAge": true,
+        "exposedHeaders": [
           "string"
         ]
       },
-      {
-        "id": "service-4.",
-        "roleId": "role-1",
-        "logo": "http://placehold.it/64x64",
-        "name": "Seelogic",
-        "shortDescription": "Augue eros au maecenas lectus dictum sem purus turpis elementum.",
-        "longDescription": "Eros lacinia orci pharetra donec facilisis auctor i justo consectetur. Nunc sit nisi ex. Consectetur imperdiet lectus vehicula nisi blandit.",
-        "longDescriptionUrl": "seelogic.info/longDescription",
-        "proxyCode": "__ === your code here ===",
-        "proxyCodeLanguage": 0,
-        "impersonateWithinRole": true,
-        "isActive": false,
-        "strategy": 0,
-        "cache": {
-          "active": false,
-          "ttl": 0
-        },
-        "cors": {
-          "allowedOrigins": [
-            "string"
-          ],
-          "allowedMethods": [
-            "string"
-          ],
-          "allowedHeaders": [
-            "string"
-          ],
-          "allowCredentials": false,
-          "optionsPassthrough": false,
-          "maxAge": true,
-          "exposedHeaders": [
-            "string"
-          ]
-        },
-        "secretPaths": [
-          "string"
-        ]
-      }
-    ],
-    "clientServices": [
-      {
-        "id": "service-0.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Magna rhoncus adipiscing bibendum consequat ac. Non sagittis ornare gravida.",
-        "longDescription": "Etiam condimentum sodales non neque quisque accumsan porttitor nisl. Maecenas dignissim id etiam. Et e purus a aenean laoreet nisl.",
-        "roles": {
-          "role-4": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-18": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-19": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-8": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-17": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-6": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-1.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Mollis leo nibh euismod quisque. I bibendum lorem natoque sodales.",
-        "longDescription": "Aliquet nibh vestibulum faucibus posuere. Vitae natoque lacus mi. Nam nunc vehicula suscipit pulvinar tincidunt e, a consectetur ultricies sed.",
-        "roles": {
-          "role-11": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-13": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-20": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-20": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-10": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-17": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-15": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-3": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-2.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Facilisis metus tempor felis auctor consectetur ex sed amet sagittis.",
-        "longDescription": "Suscipit commodo ipsum tristique pretium tempor gravida. Pellentesque dui sodales lobortis gravida. Finibus commodo nibh elit, vulputate cursus est scelerisque.",
-        "roles": {
-          "role-6": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-8": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-19": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-13": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-15": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-20": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-3.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Pretium non sodales leo aenean. Nisi et pellentesque placerat ultrices.",
-        "longDescription": "Lorem ultrices quisque justo ligula elementum, placerat aliquet etiam pharetra sem. Commodo porttitor sapien lobortis proin bibendum augue rhoncus natoque.",
-        "roles": {
-          "role-15": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-4": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-20": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-1": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-19": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-0": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-5": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-18": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-4.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Ac porttitor lacus mattis pharetra tempus imperdiet tortor sit consequat.",
-        "longDescription": "Lorem eget laoreet lobortis quisque. Cursus pretium sagittis ac. Non aenean condimentum tincidunt pretium. Tristique iaculis mauris vel iaculis ligula.",
-        "roles": {
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-6": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-20": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-17": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-19": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-5": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-14": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-0": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-5.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Massa curabitur au pharetra magna dictum leo. Risus sit imperdiet.",
-        "longDescription": "Massa scelerisque scelerisque sapien finibus lorem nam. Sed sit ipsum magna velit sollicitudin. Velit auctor at vel i aliquam pharetra.",
-        "roles": {
-          "role-0": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-5": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-14": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-3": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-8": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-19": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-6.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Sapien au nulla donec etiam, id pretium lacinia maecenas nibh.",
-        "longDescription": "Tristique accumsan nibh facilisis et. Accumsan arcu pulvinar vitae sagittis faucibus eu risus. Lacinia eget e bibendum, tincidunt facilisis facilisis.",
-        "roles": {
-          "role-18": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-13": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-7": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-6": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-2": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      },
-      {
-        "id": "service-7.",
-        "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "Placerat natoque lectus nibh eget mauris sapien, pretium pulvinar pharetra.",
-        "longDescription": "Augue ultrices bibendum dignissim scelerisque. Sit felis leo enim, morbi id lacinia faucibus pharetra ligula ut. Non sit tortor pretium.",
-        "roles": {
-          "role-16": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-4": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-13": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-2": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-2": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-19": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-12": {
-            "secretPaths": [
-              "string"
-            ]
-          },
-          "role-11": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-        }
-      }
-    ],
-    "clientStatus": {
-      "isLogged": true,
-      "isAdmin": true,
-      "canImpersonate": true,
-      "sessionExpiresAt": 0
+      "secretPaths": [
+        "string"
+      ]
     }
+  ],
+  "clientServices": [
+    {
+      "id": "service-0.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Magna rhoncus adipiscing bibendum consequat ac. Non sagittis ornare gravida.",
+      "longDescription": "Etiam condimentum sodales non neque quisque accumsan porttitor nisl. Maecenas dignissim id etiam. Et e purus a aenean laoreet nisl.",
+      "roles": {
+        "role-4": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-18": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-12": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-19": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-8": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-17": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-6": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-1.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Mollis leo nibh euismod quisque. I bibendum lorem natoque sodales.",
+      "longDescription": "Aliquet nibh vestibulum faucibus posuere. Vitae natoque lacus mi. Nam nunc vehicula suscipit pulvinar tincidunt e, a consectetur ultricies sed.",
+      "roles": {
+        "role-11": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-13": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-20": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-10": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-17": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-15": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-3": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-2.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Facilisis metus tempor felis auctor consectetur ex sed amet sagittis.",
+      "longDescription": "Suscipit commodo ipsum tristique pretium tempor gravida. Pellentesque dui sodales lobortis gravida. Finibus commodo nibh elit, vulputate cursus est scelerisque.",
+      "roles": {
+        "role-6": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-8": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-12": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-19": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-13": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-15": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-20": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-3.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Pretium non sodales leo aenean. Nisi et pellentesque placerat ultrices.",
+      "longDescription": "Lorem ultrices quisque justo ligula elementum, placerat aliquet etiam pharetra sem. Commodo porttitor sapien lobortis proin bibendum augue rhoncus natoque.",
+      "roles": {
+        "role-15": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-4": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-20": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-1": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-19": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-0": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-5": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-18": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-4.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Ac porttitor lacus mattis pharetra tempus imperdiet tortor sit consequat.",
+      "longDescription": "Lorem eget laoreet lobortis quisque. Cursus pretium sagittis ac. Non aenean condimentum tincidunt pretium. Tristique iaculis mauris vel iaculis ligula.",
+      "roles": {
+        "role-12": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-6": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-20": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-17": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-19": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-5": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-14": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-0": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-5.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Massa curabitur au pharetra magna dictum leo. Risus sit imperdiet.",
+      "longDescription": "Massa scelerisque scelerisque sapien finibus lorem nam. Sed sit ipsum magna velit sollicitudin. Velit auctor at vel i aliquam pharetra.",
+      "roles": {
+        "role-0": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-5": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-12": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-14": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-3": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-8": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-19": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-6.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Sapien au nulla donec etiam, id pretium lacinia maecenas nibh.",
+      "longDescription": "Tristique accumsan nibh facilisis et. Accumsan arcu pulvinar vitae sagittis faucibus eu risus. Lacinia eget e bibendum, tincidunt facilisis facilisis.",
+      "roles": {
+        "role-18": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-13": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-12": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-7": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-6": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-2": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    },
+    {
+      "id": "service-7.",
+      "logo": "http://placehold.it/64x64",
+      "name": "string",
+      "shortDescription": "Placerat natoque lectus nibh eget mauris sapien, pretium pulvinar pharetra.",
+      "longDescription": "Augue ultrices bibendum dignissim scelerisque. Sit felis leo enim, morbi id lacinia faucibus pharetra ligula ut. Non sit tortor pretium.",
+      "roles": {
+        "role-16": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-4": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-13": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-2": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-19": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-12": {
+          "secretPaths": [
+            "string"
+          ]
+        },
+        "role-11": {
+          "secretPaths": [
+            "string"
+          ]
+        }
+      }
+    }
+  ],
+  "clientStatus": {
+    "isLogged": true,
+    "isAdmin": true,
+    "canImpersonate": true,
+    "sessionExpiresAt": 0
   }
+}

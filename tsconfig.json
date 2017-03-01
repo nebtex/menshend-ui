@@ -9,7 +9,7 @@
     "removeComments": true,
     "experimentalDecorators": true,
     "target": "ES5",
-    "types": ["node", "es6-shim", "isomorphic-fetch"]
+    "types": ["node", "isomorphic-fetch", "core-js"]
   },
   "exclude": [
     "node_modules",

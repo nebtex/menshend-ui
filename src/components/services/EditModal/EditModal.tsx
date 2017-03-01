@@ -6,6 +6,7 @@ import EditModalBody from './EditModalBody/EditModalBody';
 import EditModalHeader from './EditModalHeader/EditModalHeader';
 let styles = require('./EditModal.scss');
 import { Modal, ModalFooter, Button, Card, CardBlock, CardTitle, CardText } from 'reactstrap';
+import  FullModal from '../../modals/FullModal';
 
 
 export interface IEditModalProps {
@@ -241,12 +242,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
   }
 
   render(){
+    const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
+
     return (
-      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
-        <EditModalHeader 
-          service={this.props.service ? true : false}
-          toggle={this.props.toggle}
-        />
+      <div>
+      <FullModal title={title} isOpen={this.props.isOpen} toggle={this.props.toggle} className={styles.modal}>
         <EditModalBody 
           activeTab={this.state.activeTab}
           toggleTab={this.toggleTab}
@@ -283,7 +283,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}
         </ModalFooter>
-      </Modal>
+      </FullModal>
+      </div>
     );
   }
 }

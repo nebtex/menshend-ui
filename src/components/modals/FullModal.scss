@@ -1,0 +1,14 @@
+.modalContent {
+    margin-top: 96px;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+    flex-direction: row;
+    >a {
+        flex-grow: 1;
+    }
+    button {
+        cursor: pointer;
+    }
+}

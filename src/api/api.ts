@@ -35,7 +35,7 @@ const BASE_PATH = "https://virtserver.swaggerhub.com/criloz/kuper/1.0.0".replace
 
 export interface FetchArgs {
     url: string;
-    options: any; 
+    options: any;
 }
 
 export class BaseAPI {
@@ -58,6 +58,7 @@ export interface AdminServicePayload {
     "longDescriptionUrl"?: string;
     "proxyCode"?: string;
     "proxyCodeLanguage"?: number;
+    "csrf"?: boolean;
     "impersonateWithinRole"?: boolean;
     "isActive"?: boolean;
     "strategy"?: number;
@@ -88,8 +89,8 @@ export interface ClientRole {
 /**
  * a (key, Role) map. `default`is an example key
  */
-export interface ClientRoleMap extends null<String, ClientRole> {
-    "default"?: ClientRole;
+export interface ClientRoleMap {
+    [x: string]: ClientRole;
 }
 
 export interface ClientService {
@@ -123,7 +124,7 @@ export const AdminApiFetchParamCreactor = {
      * @param roleId role name
      * @param serviceId service unique identifer
      */
-    adminDeleteService(params: {  roleId: string; serviceId: string; }): FetchArgs {
+    adminDeleteService(params: { roleId: string; serviceId: string; }): FetchArgs {
         // verify required parameter "roleId" is set
         if (params["roleId"] == null) {
             throw new Error("Missing required parameter roleId when calling adminDeleteService");
@@ -133,8 +134,8 @@ export const AdminApiFetchParamCreactor = {
             throw new Error("Missing required parameter serviceId when calling adminDeleteService");
         }
         const baseUrl = `/v1/api/admin/role/{roleId}/service/{serviceId}`
-            .replace(`{${"roleId"}}`, `${ params.roleId }`)
-            .replace(`{${"serviceId"}}`, `${ params.serviceId }`);
+            .replace(`{${"roleId"}}`, `${params.roleId}`)
+            .replace(`{${"serviceId"}}`, `${params.serviceId}`);
         let urlObj = url.parse(baseUrl, true);
         let fetchOptions: RequestInit = { method: "DELETE" };
 
@@ -152,7 +153,7 @@ export const AdminApiFetchParamCreactor = {
      * @param roleId role name
      * @param serviceId service unique identifer
      */
-    adminGetService(params: {  roleId: string; serviceId: string; }): FetchArgs {
+    adminGetService(params: { roleId: string; serviceId: string; }): FetchArgs {
         // verify required parameter "roleId" is set
         if (params["roleId"] == null) {
             throw new Error("Missing required parameter roleId when calling adminGetService");
@@ -162,8 +163,8 @@ export const AdminApiFetchParamCreactor = {
             throw new Error("Missing required parameter serviceId when calling adminGetService");
         }
         const baseUrl = `/v1/api/admin/role/{roleId}/service/{serviceId}`
-            .replace(`{${"roleId"}}`, `${ params.roleId }`)
-            .replace(`{${"serviceId"}}`, `${ params.serviceId }`);
+            .replace(`{${"roleId"}}`, `${params.roleId}`)
+            .replace(`{${"serviceId"}}`, `${params.serviceId}`);
         let urlObj = url.parse(baseUrl, true);
         let fetchOptions: RequestInit = { method: "GET" };
 
@@ -182,7 +183,7 @@ export const AdminApiFetchParamCreactor = {
      * @param serviceId service unique identifer
      * @param body 
      */
-    adminSaveService(params: {  roleId: string; serviceId: string; body: AdminServicePayload; }): FetchArgs {
+    adminSaveService(params: { roleId: string; serviceId: string; body: AdminServicePayload; }): FetchArgs {
         // verify required parameter "roleId" is set
         if (params["roleId"] == null) {
             throw new Error("Missing required parameter roleId when calling adminSaveService");
@@ -196,8 +197,8 @@ export const AdminApiFetchParamCreactor = {
             throw new Error("Missing required parameter body when calling adminSaveService");
         }
         const baseUrl = `/v1/api/admin/role/{roleId}/service/{serviceId}`
-            .replace(`{${"roleId"}}`, `${ params.roleId }`)
-            .replace(`{${"serviceId"}}`, `${ params.serviceId }`);
+            .replace(`{${"roleId"}}`, `${params.roleId}`)
+            .replace(`{${"serviceId"}}`, `${params.serviceId}`);
         let urlObj = url.parse(baseUrl, true);
         let fetchOptions: RequestInit = { method: "PUT" };
 
@@ -225,7 +226,7 @@ export const AdminApiFp = {
      * @param roleId role name
      * @param serviceId service unique identifer
      */
-    adminDeleteService(params: { roleId: string; serviceId: string;  }): (fetch: FetchAPI, basePath?: string) => Promise<AdminServicePayload> {
+    adminDeleteService(params: { roleId: string; serviceId: string; }): (fetch: FetchAPI, basePath?: string) => Promise<any> {
         const fetchArgs = AdminApiFetchParamCreactor.adminDeleteService(params);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
@@ -242,7 +243,7 @@ export const AdminApiFp = {
      * @param roleId role name
      * @param serviceId service unique identifer
      */
-    adminGetService(params: { roleId: string; serviceId: string;  }): (fetch: FetchAPI, basePath?: string) => Promise<AdminServicePayload> {
+    adminGetService(params: { roleId: string; serviceId: string; }): (fetch: FetchAPI, basePath?: string) => Promise<AdminServicePayload> {
         const fetchArgs = AdminApiFetchParamCreactor.adminGetService(params);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
@@ -260,7 +261,7 @@ export const AdminApiFp = {
      * @param serviceId service unique identifer
      * @param body 
      */
-    adminSaveService(params: { roleId: string; serviceId: string; body: AdminServicePayload;  }): (fetch: FetchAPI, basePath?: string) => Promise<AdminServicePayload> {
+    adminSaveService(params: { roleId: string; serviceId: string; body: AdminServicePayload; }): (fetch: FetchAPI, basePath?: string) => Promise<AdminServicePayload> {
         const fetchArgs = AdminApiFetchParamCreactor.adminSaveService(params);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
@@ -283,7 +284,7 @@ export class AdminApi extends BaseAPI {
      * @param roleId role name
      * @param serviceId service unique identifer
      */
-    adminDeleteService(params: {  roleId: string; serviceId: string; }) {
+    adminDeleteService(params: { roleId: string; serviceId: string; }) {
         return AdminApiFp.adminDeleteService(params)(this.fetch, this.basePath);
     }
     /** 
@@ -291,7 +292,7 @@ export class AdminApi extends BaseAPI {
      * @param roleId role name
      * @param serviceId service unique identifer
      */
-    adminGetService(params: {  roleId: string; serviceId: string; }) {
+    adminGetService(params: { roleId: string; serviceId: string; }) {
         return AdminApiFp.adminGetService(params)(this.fetch, this.basePath);
     }
     /** 
@@ -300,7 +301,7 @@ export class AdminApi extends BaseAPI {
      * @param serviceId service unique identifer
      * @param body 
      */
-    adminSaveService(params: {  roleId: string; serviceId: string; body: AdminServicePayload; }) {
+    adminSaveService(params: { roleId: string; serviceId: string; body: AdminServicePayload; }) {
         return AdminApiFp.adminSaveService(params)(this.fetch, this.basePath);
     }
 };
@@ -315,7 +316,7 @@ export const AdminApiFactory = function (fetch?: FetchAPI, basePath?: string) {
          * @param roleId role name
          * @param serviceId service unique identifer
          */
-        adminDeleteService(params: {  roleId: string; serviceId: string; }) {
+        adminDeleteService(params: { roleId: string; serviceId: string; }) {
             return AdminApiFp.adminDeleteService(params)(fetch, basePath);
         },
         /** 
@@ -323,7 +324,7 @@ export const AdminApiFactory = function (fetch?: FetchAPI, basePath?: string) {
          * @param roleId role name
          * @param serviceId service unique identifer
          */
-        adminGetService(params: {  roleId: string; serviceId: string; }) {
+        adminGetService(params: { roleId: string; serviceId: string; }) {
             return AdminApiFp.adminGetService(params)(fetch, basePath);
         },
         /** 
@@ -332,7 +333,7 @@ export const AdminApiFactory = function (fetch?: FetchAPI, basePath?: string) {
          * @param serviceId service unique identifer
          * @param body 
          */
-        adminSaveService(params: {  roleId: string; serviceId: string; body: AdminServicePayload; }) {
+        adminSaveService(params: { roleId: string; serviceId: string; body: AdminServicePayload; }) {
             return AdminApiFp.adminSaveService(params)(fetch, basePath);
         },
     }
@@ -347,7 +348,7 @@ export const AuthApiFetchParamCreactor = {
      * login using a github token
      * @param token github token
      */
-    githubLogin(params: {  token: string; }): FetchArgs {
+    githubLogin(params: { token: string; }): FetchArgs {
         // verify required parameter "token" is set
         if (params["token"] == null) {
             throw new Error("Missing required parameter token when calling githubLogin");
@@ -407,7 +408,7 @@ export const AuthApiFetchParamCreactor = {
      * login using a raw vault token
      * @param token vault token
      */
-    tokenLogin(params: {  token: string; }): FetchArgs {
+    tokenLogin(params: { token: string; }): FetchArgs {
         // verify required parameter "token" is set
         if (params["token"] == null) {
             throw new Error("Missing required parameter token when calling tokenLogin");
@@ -434,7 +435,7 @@ export const AuthApiFetchParamCreactor = {
      * @param username username
      * @param password password
      */
-    userPassLogin(params: {  username: string; password: string; }): FetchArgs {
+    userPassLogin(params: { username: string; password: string; }): FetchArgs {
         // verify required parameter "username" is set
         if (params["username"] == null) {
             throw new Error("Missing required parameter username when calling userPassLogin");
@@ -444,7 +445,7 @@ export const AuthApiFetchParamCreactor = {
             throw new Error("Missing required parameter password when calling userPassLogin");
         }
         const baseUrl = `/v1/api/auth/login/userpass/{username}`
-            .replace(`{${"username"}}`, `${ params.username }`);
+            .replace(`{${"username"}}`, `${params.username}`);
         let urlObj = url.parse(baseUrl, true);
         let fetchOptions: RequestInit = { method: "POST" };
 
@@ -471,7 +472,7 @@ export const AuthApiFp = {
      * login using a github token
      * @param token github token
      */
-    githubLogin(params: { token: string;  }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
+    githubLogin(params: { token: string; }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
         const fetchArgs = AuthApiFetchParamCreactor.githubLogin(params);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
@@ -517,7 +518,7 @@ export const AuthApiFp = {
      * login using a raw vault token
      * @param token vault token
      */
-    tokenLogin(params: { token: string;  }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
+    tokenLogin(params: { token: string; }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
         const fetchArgs = AuthApiFetchParamCreactor.tokenLogin(params);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
@@ -534,7 +535,7 @@ export const AuthApiFp = {
      * @param username username
      * @param password password
      */
-    userPassLogin(params: { username: string; password: string;  }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
+    userPassLogin(params: { username: string; password: string; }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
         const fetchArgs = AuthApiFetchParamCreactor.userPassLogin(params);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
@@ -556,7 +557,7 @@ export class AuthApi extends BaseAPI {
      * login using a github token
      * @param token github token
      */
-    githubLogin(params: {  token: string; }) {
+    githubLogin(params: { token: string; }) {
         return AuthApiFp.githubLogin(params)(this.fetch, this.basePath);
     }
     /** 
@@ -575,7 +576,7 @@ export class AuthApi extends BaseAPI {
      * login using a raw vault token
      * @param token vault token
      */
-    tokenLogin(params: {  token: string; }) {
+    tokenLogin(params: { token: string; }) {
         return AuthApiFp.tokenLogin(params)(this.fetch, this.basePath);
     }
     /** 
@@ -583,7 +584,7 @@ export class AuthApi extends BaseAPI {
      * @param username username
      * @param password password
      */
-    userPassLogin(params: {  username: string; password: string; }) {
+    userPassLogin(params: { username: string; password: string; }) {
         return AuthApiFp.userPassLogin(params)(this.fetch, this.basePath);
     }
 };
@@ -597,7 +598,7 @@ export const AuthApiFactory = function (fetch?: FetchAPI, basePath?: string) {
          * login using a github token
          * @param token github token
          */
-        githubLogin(params: {  token: string; }) {
+        githubLogin(params: { token: string; }) {
             return AuthApiFp.githubLogin(params)(fetch, basePath);
         },
         /** 
@@ -616,7 +617,7 @@ export const AuthApiFactory = function (fetch?: FetchAPI, basePath?: string) {
          * login using a raw vault token
          * @param token vault token
          */
-        tokenLogin(params: {  token: string; }) {
+        tokenLogin(params: { token: string; }) {
             return AuthApiFp.tokenLogin(params)(fetch, basePath);
         },
         /** 
@@ -624,7 +625,7 @@ export const AuthApiFactory = function (fetch?: FetchAPI, basePath?: string) {
          * @param username username
          * @param password password
          */
-        userPassLogin(params: {  username: string; password: string; }) {
+        userPassLogin(params: { username: string; password: string; }) {
             return AuthApiFp.userPassLogin(params)(fetch, basePath);
         },
     }
