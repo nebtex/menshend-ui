@@ -1,2 +1,1 @@
-kill -9 `cat server_test_pid.txt`
-rm server_test_pid.txt
+kill -9 `pgrep -f 'node scripts/testServer/testServerApi.js'`

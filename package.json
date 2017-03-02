@@ -8,7 +8,7 @@
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "pretest": "sh scripts/testServer/pretest.sh",
     "test": "jest && codecov -t $CODECOV_TOKEN",
-    "postest": "sh scripts/testServer/postest.sh",    
+    "posttest": "sh scripts/testServer/postest.sh",    
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
