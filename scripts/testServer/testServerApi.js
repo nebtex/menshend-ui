@@ -8,9 +8,7 @@ server.use(middlewares)
 
 // Default routes
 server.use(jsonServer.rewriter({
-  "/v1/api/admin/role/:roleId/service/:serviceId": "/adminService/:serviceId?roleId=:roleId",
-  "/v1/api/client/services": "/clientServices",
-  "/v1/api/client/status": "/clientStatus"
+  "/v1/adminServices/:serviceId": "/adminService/:serviceId"
 }))
 
 server.use(router)
