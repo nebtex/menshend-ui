@@ -18,6 +18,7 @@ var template = `
         "proxyCodeLanguage": 0,
         "impersonateWithinRole": {{boolean}},
         "isActive": {{boolean}},
+        "csrf": {{boolean}},
         "strategy": 0,
         "cache": {
           "active": {{boolean}},

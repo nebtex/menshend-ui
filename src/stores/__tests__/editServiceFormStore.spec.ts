@@ -3,17 +3,18 @@ import EditServiceFormStore from '../editServiceFormStore';
 import { toJS } from 'mobx';
 
 const expectedGetService = {
-  "id": "service-1.",
-  "roleId": "role-0",
-  "logo": "http://placehold.it/64x64.png",
-  "name": "Terralabs",
-  "shortDescription": "short description changed",
-  "longDescription": "Tortor est e cursus lorem ligula quisque dolor, bibendum faucibus justo eget in etiam, vel eti quis tempus euismod ante.",
-  "longDescriptionUrl": "terralabs.org/longDescription",
+  "id": "service-0.",
+  "roleId": "role-1",
+  "logo": "http://placehold.it/64x64",
+  "name": "LexiconLabs",
+  "shortDescription": "Eros blandit proin sit gravida ornare lectus velit proin quisque.",
+  "longDescription": "Gravida tristique ac sapien i mattis facilisis. Purus pellentesque aliquet leo. Sem sit pellentesque fringilla in, sit non at velit.",
+  "longDescriptionUrl": "lexiconlabs.eu/longDescription",
   "proxyCode": "__ === your code here ===",
   "proxyCodeLanguage": 0,
   "impersonateWithinRole": true,
   "isActive": true,
+  "csrf": true,
   "strategy": 0,
   "cache": {
     "active": false,
@@ -29,9 +30,9 @@ const expectedGetService = {
     "allowedHeaders": [
       "string"
     ],
-    "allowCredentials": true,
-    "optionsPassthrough": true,
-    "maxAge": true,
+    "allowCredentials": false,
+    "optionsPassthrough": false,
+    "maxAge": false,
     "exposedHeaders": [
       "string"
     ]
@@ -51,13 +52,21 @@ describe('editServiceFormStore', () => {
   it('should set the corresponding observables with the obtained data from API Get service', done => {
     try {
       setTimeout(() => {
-        editServiceFormStore.apiGetService('service-1.').then(() => {
+        editServiceFormStore.apiGetService('service-0.').then(() => {
           expect(editServiceFormStore.name).toEqual(expectedGetService.name);
           expect(editServiceFormStore.logo).toEqual(expectedGetService.logo);
           expect(editServiceFormStore.shortDescription).toEqual(expectedGetService.shortDescription);
           expect(editServiceFormStore.longDescription).toEqual(expectedGetService.longDescription);
           expect(editServiceFormStore.longDescriptionUrl).toEqual(expectedGetService.longDescriptionUrl);
-          //@TODO: check the missing properties
+          expect(editServiceFormStore.proxyCode).toEqual(expectedGetService.proxyCode)
+          expect(editServiceFormStore.proxyCodeLanguage).toEqual(expectedGetService.proxyCodeLanguage)
+          expect(editServiceFormStore.csrf).toEqual(expectedGetService.csrf)
+          expect(editServiceFormStore.impersonateWithinRole).toEqual(expectedGetService.impersonateWithinRole)
+          expect(editServiceFormStore.isActive).toEqual(expectedGetService.isActive)
+          expect(editServiceFormStore.strategy).toEqual(expectedGetService.strategy)
+          expect(JSON.stringify(editServiceFormStore.cache)).toEqual(JSON.stringify(expectedGetService.cache))
+          expect(JSON.stringify(editServiceFormStore.cors)).toEqual(JSON.stringify(expectedGetService.cors))
+          expect(JSON.stringify(editServiceFormStore.secretPaths)).toEqual(JSON.stringify(expectedGetService.secretPaths))
           done();
         }).catch((e:any) => {
           done.fail(e);

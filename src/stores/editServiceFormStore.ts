@@ -12,12 +12,24 @@ interface IServiceRole {
 export default class EditServiceFormStore {
   adminApi: AdminApi = new AdminApi();
 
+  @observable roleId: string = ''
   @observable subDomain: string = ''
   @observable logo: string = ''
   @observable name: string = ''
   @observable shortDescription: string = ''
   @observable longDescription: string = ''
   @observable longDescriptionUrl: string = ''
+  @observable proxyCode: string = '__=== your code here ==='
+
+  // @TODO: Set the default values of nexts vars
+  @observable csrf: boolean
+  @observable impersonateWithinRole: boolean
+  @observable proxyCodeLanguage: number
+  @observable isActive: boolean
+  @observable strategy: number
+  @observable cache: AdminServiceCache
+  @observable cors: AdminServiceCors
+  @observable secretPaths: string[]
 
   // roles that will be sent to backend, remove all the roles in the roles map that are not defined in serviceRoles
   @observable roles: ObservableMap<IServiceRole> = observable.map<IServiceRole>({})
@@ -140,21 +152,21 @@ export default class EditServiceFormStore {
 
   @action apiGetService = (serviceId:string) => {
     return this.adminApi.adminGetService({id:serviceId}).then((service:AdminService) => {
-      //roleId ?
+      this.roleId = service.roleId
       this.name = service.name;
       this.logo = service.logo;
       this.shortDescription = service.shortDescription;
       this.longDescription = service.longDescription;
       this.longDescriptionUrl = service.longDescriptionUrl;
-      //proxyCode?
-      //proxyCodeLanguage ?
-      //csrf ?
-      //impersonateWithinRole ?
-      //isActive ?
-      //strategy ?
-      //cache?
-      //cors?
-      //secretPaths?
+      this.proxyCode = service.proxyCode
+      this.proxyCodeLanguage = service.proxyCodeLanguage
+      this.csrf = service.csrf
+      this.impersonateWithinRole = service.impersonateWithinRole
+      this.isActive = service.isActive
+      this.strategy = service.strategy
+      this.cache = service.cache
+      this.cors = service.cors
+      this.secretPaths = service.secretPaths
       return true;
     }).catch((e:any) => {
       console.log('there was a problem', e);
@@ -165,32 +177,21 @@ export default class EditServiceFormStore {
   @action apiSaveService = (serviceId:string) => {
     let service: AdminService = {
       id:serviceId,
-      roleId: "", //@TODO: How to get this param?
+      roleId:this.roleId,
       logo: this.logo,
       name: this.name,
       shortDescription: this.shortDescription,
       longDescription: this.longDescription,
       longDescriptionUrl: this.longDescriptionUrl,
-      proxyCode: "", //@TODO: How to get this param?
-      proxyCodeLanguage: 0, //@TODO: How to get this param?
-      csrf: true, //@TODO: How to get this param?
-      impersonateWithinRole: true, //@TODO: How to get this param?
-      isActive: true, //@TODO: How to get this param?
-      strategy: 0, //@TODO: How to get this param?
-      cache: {
-        "active": true, //@TODO: How to get this param?
-        "ttl": 120 //@TODO: How to get this param?
-      },
-      cors: {
-        "allowedOrigins": ["Array<string>"], //@TODO: How to get this param?
-        "allowedMethods": ["Array<string>"], //@TODO: How to get this param?
-        "allowedHeaders": ["Array<string>"], //@TODO: How to get this param?
-        "allowCredentials": true, //@TODO: How to get this param?
-        "optionsPassthrough": true, //@TODO: How to get this param?
-        "maxAge": true, //@TODO: How to get this param?
-        "exposedHeaders": ["Array<string>"] //@TODO: How to get this param?
-      },
-      secretPaths: ["Array<string>"]
+      proxyCode: this.proxyCode,
+      proxyCodeLanguage: this.proxyCodeLanguage,
+      csrf: this.csrf,
+      impersonateWithinRole: this.impersonateWithinRole,
+      isActive: this.isActive,
+      strategy: this.strategy,
+      cache: toJS(this.cache),
+      cors: toJS(this.cors),
+      secretPaths: this.secretPaths
     }
 
     return this.adminApi.adminSaveService({id:serviceId, body:service}).then((service:AdminService)=>{
