@@ -30,7 +30,7 @@ import * as isomorphicFetch from "isomorphic-fetch";
 interface Dictionary<T> { [index: string]: T; }
 export interface FetchAPI { (url: string, init?: any): Promise<any>; }
 
-const BASE_PATH = "https://virtserver.swaggerhub.com/criloz/kuper/1.0.0".replace(/\/+$/, '');
+const BASE_PATH = process.env.NODE_ENV === 'test' ? "http://localhost:3000" : "https://virtserver.swaggerhub.com/criloz/kuper/1.0.0".replace(/\/+$/, '');
 
 export interface FetchArgs {
     url: string;

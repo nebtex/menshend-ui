@@ -2,6 +2,45 @@
 import EditServiceFormStore from '../editServiceFormStore';
 import { toJS } from 'mobx';
 
+const expectedGetService = {
+  "id": "service-1.",
+  "roleId": "role-0",
+  "logo": "http://placehold.it/64x64.png",
+  "name": "Terralabs",
+  "shortDescription": "short description changed",
+  "longDescription": "Tortor est e cursus lorem ligula quisque dolor, bibendum faucibus justo eget in etiam, vel eti quis tempus euismod ante.",
+  "longDescriptionUrl": "terralabs.org/longDescription",
+  "proxyCode": "__ === your code here ===",
+  "proxyCodeLanguage": 0,
+  "impersonateWithinRole": true,
+  "isActive": true,
+  "strategy": 0,
+  "cache": {
+    "active": false,
+    "ttl": 0
+  },
+  "cors": {
+    "allowedOrigins": [
+      "string"
+    ],
+    "allowedMethods": [
+      "string"
+    ],
+    "allowedHeaders": [
+      "string"
+    ],
+    "allowCredentials": true,
+    "optionsPassthrough": true,
+    "maxAge": true,
+    "exposedHeaders": [
+      "string"
+    ]
+  },
+  "secretPaths": [
+    "string"
+  ]
+}
+
 describe('editServiceFormStore', () => {
   let editServiceFormStore:EditServiceFormStore;
 
@@ -9,8 +48,24 @@ describe('editServiceFormStore', () => {
     editServiceFormStore = new EditServiceFormStore();
   });
   
-  it('should set the corresponding observables with the obtained data from API Get service', () => {
-    
+  it('should set the corresponding observables with the obtained data from API Get service', done => {
+    try {
+      setTimeout(() => {
+        editServiceFormStore.apiGetService('service-1.').then(() => {
+          expect(editServiceFormStore.name).toEqual(expectedGetService.name);
+          expect(editServiceFormStore.logo).toEqual(expectedGetService.logo);
+          expect(editServiceFormStore.shortDescription).toEqual(expectedGetService.shortDescription);
+          expect(editServiceFormStore.longDescription).toEqual(expectedGetService.longDescription);
+          expect(editServiceFormStore.longDescriptionUrl).toEqual(expectedGetService.longDescriptionUrl);
+          //@TODO: check the missing properties
+          done();
+        }).catch((e:any) => {
+          done.fail(e);
+        });
+      }, 3000)
+    }catch(e){
+      done.fail(e);
+    }
   });
 
   it('should set the observable response with the obtained response when API save is called', () => {
