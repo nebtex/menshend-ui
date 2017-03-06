@@ -159,8 +159,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   getEditModal = () => {
     if (this.state.editModalOpen){
       return (
-        <EditModal 
-          roles={this.getRoles()} 
+        <EditModal
           toggle={this.toggleEditModalOpen} 
           isOpen={this.state.editModalOpen}
           service={this.state.modalService}/>

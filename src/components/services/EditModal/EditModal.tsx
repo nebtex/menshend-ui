@@ -12,17 +12,13 @@ import  FullModal from '../../modals/FullModal';
 export interface IEditModalProps {
   isOpen: boolean;
   toggle: any;
-  roles: string[];
   service?: IService;
 }
 
 interface IEditModalState {
   dropdownOpen: boolean;
   activeTab: string;
-  activeRole: string;
   backendRule: string;
-  subdomain: string;
-  subdomainError: boolean;
   name: string;
   nameError: boolean;
   logo: string;
@@ -31,8 +27,6 @@ interface IEditModalState {
   longDescriptionUrl: string;
   longDescriptionUrlActive: boolean;
   longDescription: string;
-  serviceRoles: string[];
-  availableRoles: string[];
   longDescriptionUrlError: boolean;
 }
 
@@ -47,11 +41,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     super(props);
     this.state = {
       activeTab: 'general',
-      activeRole: this.getInitialActiveRole(),
       backendRule: '',
       dropdownOpen: false,
-      subdomain: this.props.service ? this.props.service.subDomain : '',
-      subdomainError: false,
       name: this.props.service ? this.props.service.name : 'Unknown service',
       nameError: false,
       logo: this.props.service ? this.props.service.logo : DEFAULT_LOGO,
@@ -60,37 +51,13 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       longDescriptionUrl: '',
       longDescriptionUrlActive: false,
       longDescription: this.props.service ? this.props.service.long_description : '',
-      serviceRoles: this.props.service ? this.props.service.roles.slice() : [''],
-      longDescriptionUrlError: false,
-      availableRoles: this.getAvailableRoles() 
+      longDescriptionUrlError: false
     }
-  }
-
-  getAvailableRoles = () => {
-    let availableRoles:string[] = this.props.roles.slice(), // get an array copy
-        service  = this.props.service;
-
-    if(service && service.roles){
-      service.roles.forEach((role:string) => {
-        const index = availableRoles.indexOf(role);
-        if(index > -1){
-          availableRoles.splice(index, 1);
-        }
-      });
-    }
-
-    return availableRoles;
   }
 
   toggleTab = (tab:string) => {
     this.setState({
       activeTab: tab
-    });
-  }
-
-  selectRole = (role:string) => {
-    this.setState({
-      activeRole: role
     });
   }
 
@@ -104,18 +71,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     this.setState({
       backendRule: newValue
     });
-  }
-
-  subdomainOnChange = (e:any) => {
-    // Only alphanumeric
-    let value = e.target.value,
-        regex = /^[a-z0-9]+$/i;
-
-    if(regex.test(value) || value === ''){
-      this.setState({
-        subdomain: value
-      });
-    }
   }
 
   nameOnChange = (e:any) => {
@@ -163,82 +118,20 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
 
   saveService = () => {
     const nameError = this.state.name.trim() === '',
-          subdomainError = this.state.subdomain.trim() === '',
           longDescriptionUrlError = !urlRegExp.test(this.state.longDescriptionUrl) || 
                                     (this.state.longDescriptionUrl === '' && this.state.longDescriptionUrlActive);
 
-    if(!nameError && !subdomainError && !longDescriptionUrlError){
+    if(!nameError && !longDescriptionUrlError){
       // @TODO: Send data here
       console.log('There are no errors');
     }else{
-      const activeTab = (nameError || subdomainError) ? 'general' : ( longDescriptionUrlError ? 'longDescription': this.state.activeTab);
+      const activeTab = nameError ? 'general' : ( longDescriptionUrlError ? 'longDescription': this.state.activeTab);
       this.setState({
         nameError,
-        subdomainError,
         longDescriptionUrlError,
         activeTab
       });
     }
-  }
-
-  serviceRoleOnAddition = (role:string) => {
-    let serviceRoles = this.state.serviceRoles;
-    
-    // push and sort in the serviceRoles
-    serviceRoles.push(role);
-    serviceRoles.sort();
-
-    this.setState({
-      serviceRoles: serviceRoles,
-      activeRole: role
-    });
-  }
-
-  serviceRolesOnDoubleClick = (role:string) => {
-    const serviceRolesIndex = this.state.serviceRoles.indexOf(role),
-          roleAlreadyExists = this.props.roles.indexOf(role) > -1;          
-
-    let availableRoles = this.state.availableRoles,
-        serviceRoles = this.state.serviceRoles;
-
-    // Remove from available roles
-    serviceRoles.splice(serviceRolesIndex, 1);
-
-    // chek if service exists in roles prop
-    if (roleAlreadyExists){
-      // Push to service roles and sort
-      availableRoles.push(role);
-      availableRoles.sort();
-    }
-
-    this.setState({
-      availableRoles: availableRoles,
-      serviceRoles:serviceRoles
-    });
-  }
-
-  availableRolesOnDoubleClick = (role:string) => {
-    const availableRolesIndex = this.state.availableRoles.indexOf(role);          
-
-    let availableRoles = this.state.availableRoles,
-        serviceRoles = this.state.serviceRoles;
-
-    // Remove from available roles
-    availableRoles.splice(availableRolesIndex, 1);
-
-    // Push to service roles and sort
-    serviceRoles.push(role);
-    serviceRoles.sort();
-
-    this.setState({
-      availableRoles: availableRoles,
-      serviceRoles:serviceRoles
-    });
-  }
-
-  getInitialActiveRole = () => {
-    const serviceRoles = this.props.service && this.props.service.roles ? this.props.service.roles : [''];
-    return serviceRoles[0];
   }
 
   render(){
@@ -249,11 +142,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
         <EditModalBody 
           activeTab={this.state.activeTab}
           toggleTab={this.toggleTab}
-          activeRole={this.state.activeRole}
-          selectRole={this.selectRole}
-          subdomain={this.state.subdomain}
-          subdomainOnChange={this.subdomainOnChange}
-          subdomainError={this.state.subdomainError}
           name={this.state.name}
           nameError={this.state.nameError}
           nameOnChange={this.nameOnChange}
@@ -272,11 +160,6 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           longDescriptionUrlActiveOnChange={this.longDescriptionUrlActiveOnChange}
           dropdownOpen={this.state.dropdownOpen}
           toggleDropdown={this.toggleDropdown}
-          availableRoles={this.state.availableRoles}
-          serviceRoles={this.state.serviceRoles}
-          serviceRolesOnDoubleClick={this.serviceRolesOnDoubleClick}
-          availableRolesOnDoubleClick={this.availableRolesOnDoubleClick}
-          serviceRoleOnAddition={this.serviceRoleOnAddition}
           codeOnChange={this.codeOnChange}/>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>

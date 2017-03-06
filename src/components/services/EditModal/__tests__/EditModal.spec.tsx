@@ -22,19 +22,7 @@ describe('EditModal', () => {
       expect(state.name).toEqual('Unknown service');
       expect(state.shortDescription).toEqual('');
       expect(state.longDescription).toEqual('');
-      expect(state.subdomain).toEqual('');
       expect(state.logo).toEqual('https://placehold.it/64x64');
-    });
-
-    it('should have an alphanumeric subdomain', () => {
-      const nonAlphanumeric = '-#$non-alphanumeric34';
-      const alphanumeric = 'subdomainAlphanumeric123';
-
-      editModal.instance().subdomainOnChange({target:{value:nonAlphanumeric}});
-      expect(editModal.state().subdomain).toEqual('');
-
-      editModal.instance().subdomainOnChange({target:{value:alphanumeric}});
-      expect(editModal.state().subdomain).toEqual(alphanumeric);
     });
 
     it("should set name error true if name is empty at form's validation", () => {
@@ -42,13 +30,6 @@ describe('EditModal', () => {
       editModal.instance().saveService();
 
       expect(editModal.state().nameError).toEqual(true);
-    });
-
-    it("should set subdomain error true if subdomain is empty at form's validation", () => {
-      editModal.setState({subdomain:''});
-      editModal.instance().saveService();
-
-      expect(editModal.state().subdomainError).toEqual(true);
     });
 
     it("should set long description url error true if url is empty/invalid and url is active at form's validation", () => {
@@ -59,59 +40,6 @@ describe('EditModal', () => {
       editModal.setState({longDescriptionUrl:'fdasffdsa'});
       editModal.instance().saveService();
       expect(editModal.state().longDescriptionUrlError).toEqual(true);
-    });
-
-    describe('Roles TabPane' ,() => {
-      const testRole = 'role 1';
-
-      it('should move a role from available roles to service roles when double click over role is triggered', () => {
-
-        let availableRoles = editModal.state().availableRoles,
-            serviceRoles = editModal.state().serviceRoles;
-        
-        expect(availableRoles.includes(testRole)).toEqual(true);
-        expect(serviceRoles.includes(testRole)).toEqual(false);
-
-        editModal.instance().availableRolesOnDoubleClick(testRole);
-        expect(availableRoles.includes(testRole)).toEqual(false);
-        expect(serviceRoles.includes(testRole)).toEqual(true);
-      });
-
-      it(`should move a role from service roles to available roles 
-          when double click over role is triggered and role exists in props`, () => {
-
-        let availableRoles = editModal.state().availableRoles,
-            serviceRoles = editModal.state().serviceRoles;
-
-        editModal.instance().availableRolesOnDoubleClick(testRole);
-        expect(availableRoles.includes(testRole)).toEqual(false);
-        expect(serviceRoles.includes(testRole)).toEqual(true);
-
-        editModal.instance().serviceRolesOnDoubleClick(testRole);
-        expect(serviceRoles.includes(testRole)).toEqual(false);
-        expect(availableRoles.includes(testRole)).toEqual(true);
-        expect(editModal.props().roles.includes(testRole)).toEqual(true);
-      });
-
-      it(`should remove a role from service roles and does not move that role to available roles 
-          when double click over role is triggered and role does not exist in props`, () => {
-        
-        const newTestRole = 'newTestRole';
-        let availableRoles = editModal.state().availableRoles,
-            serviceRoles = editModal.state().serviceRoles;
-
-        editModal.instance().serviceRoleOnAddition(newTestRole);
-        expect(serviceRoles.includes(newTestRole)).toEqual(true);
-        
-        editModal.instance().serviceRolesOnDoubleClick(newTestRole);
-        expect(serviceRoles.includes(newTestRole)).toEqual(false);
-        expect(availableRoles.includes(newTestRole)).toEqual(false);
-      });
-
-      it('should set new created role as the active role', () => {
-        editModal.instance().serviceRoleOnAddition('mytestrole');
-        expect(editModal.state().activeRole).toEqual('mytestrole');
-      });
     });
   });
 
@@ -130,26 +58,7 @@ describe('EditModal', () => {
       expect(state.name).toEqual(service.name);
       expect(state.shortDescription).toEqual(service.short_description);
       expect(state.longDescription).toEqual(service.long_description);
-      expect(state.subdomain).toEqual(service.subDomain);
       expect(state.logo).toEqual(service.logo);
-    });
-
-    it('should set the right available roles having into account the service roles', () => {
-      let availableRoles = editModal.state().availableRoles,
-          serviceRoles = editModal.state().serviceRoles;
-
-      let exists:boolean = false;
-
-      serviceRoles.forEach((role:string) => {
-        if(availableRoles.includes(role)){
-          exists = true;
-        }
-      });
-      expect(exists).toEqual(false);
-    });
-
-    it('should set the first role of service if it exists as active role', () => {
-      expect(editModal.state().activeRole).toEqual(editModal.props().service.roles[0]);
     });
   });
 });
