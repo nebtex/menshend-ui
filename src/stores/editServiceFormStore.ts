@@ -19,7 +19,7 @@ export default class EditServiceFormStore {
   @observable strategy: number
   @observable cache: AdminServiceCache
   @observable cors: AdminServiceCors
-  @observable secretPaths: string[]
+  @observable secretPaths: IObservableArray<string> = observable.array([])
 
   @action updateRoleId = (roleId:string) => {
     this.roleId = roleId
@@ -69,26 +69,24 @@ export default class EditServiceFormStore {
     this.strategy = strategy
   }
 
-  //@TODO: How to manage this
-  @action updateCache = () => {
-
+  @action updateCache = (cache:AdminServiceCache) => {
+    this.cache = cache
   }
 
-  //@TODO: How to manage this
-  @action updateCors = () => {
-
+  @action updateCors = (cors:AdminServiceCors) => {
+    this.cors = cors
   }
 
-  //@TODO: How to manage this
-  @action updateSecretPaths = () => {
-
+  @action addSecretPath = (secretPath:string) => {
+    if(this.secretPaths.indexOf(secretPath) > -1) return;
+    this.secretPaths.push(secretPath)
   }
 
-  //service roles this is useful for maintain a track of the roles that will be send to the backend
-  @observable serviceRoles: IObservableArray<string> = observable.array<string>([])
-
-  //all the roles this come from read all the current available services
-  @observable allRoles: IObservableArray<string> = observable.array<string>([])
+  @action removeSecretPath = (secretPath:string) => {
+    const index = this.secretPaths.indexOf(secretPath)
+    if(index === -1) return;
+    this.secretPaths.splice(index, 1);
+  }
 
   @action apiGetService = (serviceId:string) => {
     return this.adminApi.adminGetService({id:serviceId}).then((service:AdminService) => {
@@ -106,7 +104,10 @@ export default class EditServiceFormStore {
       this.strategy = service.strategy
       this.cache = service.cache
       this.cors = service.cors
-      this.secretPaths = service.secretPaths
+      service.secretPaths.forEach((service:string) => {
+        this.secretPaths.push(service)
+      });
+
       return true;
     }).catch((e:any) => {
       console.log('there was a problem', e);
@@ -116,7 +117,6 @@ export default class EditServiceFormStore {
 
   @action apiSaveService = (serviceId:string) => {
     let service: AdminService = {
-      id:serviceId,
       roleId:this.roleId,
       logo: this.logo,
       name: this.name,
