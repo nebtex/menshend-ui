@@ -35,6 +35,8 @@ interface IEditModalState {
   allowCredentials: boolean;
   optionsPassthrough: boolean;
   maxAge: boolean;
+  ttl: number;
+  cacheActive: boolean;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -66,7 +68,9 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       exposedHeaders: ['mock1', 'mock2', 'mock3'],
       allowCredentials: true,
       optionsPassthrough: true,
-      maxAge: true
+      maxAge: true,
+      ttl: 120,
+      cacheActive: true
     }
   }
 
@@ -227,6 +231,18 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     });
   }
 
+  cacheActiveOnChange = (evt:any) => {
+    this.setState({
+      cacheActive: !this.state.cacheActive
+    });
+  }
+
+  ttlOnChange = (evt:any) => {
+    this.setState({
+      ttl: evt.target.value
+    });
+  }
+
   render(){
     const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
 
@@ -271,7 +287,11 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           maxAge={this.state.maxAge}
           allowCredentialsOnChange={this.allowCredentialsOnChange}
           optionsPassthroughOnChange={this.optionsPassthroughOnChange}
-          maxAgeOnChange={this.maxAgeOnChange}/>
+          maxAgeOnChange={this.maxAgeOnChange}
+          cacheActive={this.state.cacheActive}
+          cacheActiveOnChange={this.cacheActiveOnChange}
+          ttl={this.state.ttl}
+          ttlOnChange={this.ttlOnChange}/>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}

@@ -48,6 +48,10 @@ export interface IEditModalBodyProps {
   allowCredentialsOnChange?: any;
   optionsPassthroughOnChange?: any;
   maxAgeOnChange?: any;
+  cacheActive?: boolean;
+  cacheActiveOnChange?: any;
+  ttl?: number;
+  ttlOnChange?: any;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -273,13 +277,21 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
               <Form>
                 <FormGroup>
                   <Label check>
-                    <Input type="checkbox" />{' '}
+                    <Input 
+                      type="checkbox"
+                      checked={this.props.cacheActive}
+                      onChange={this.props.cacheActiveOnChange}/>{' '}
                     Active
                   </Label>
                 </FormGroup>
                 <FormGroup>
                   <Label for="TTL">TTL</Label>
-                  <Input type="number" name="TTL" id="TTL"/>
+                  <Input 
+                    type="number"
+                    name="TTL"
+                    id="TTL"
+                    value={this.props.ttl}
+                    onChange={this.props.ttlOnChange}/>
                 </FormGroup>
               </Form>
             </TabPane>
