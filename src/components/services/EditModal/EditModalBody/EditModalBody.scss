@@ -133,18 +133,9 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-.editableListCoupleFormGroup {
-  display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
-  flex-basis: 100%;
 }
 
 .editableListFormGroup {
-  flex-basis: 300px;
-  padding: 8px;
-  flex-shrink: 0;
-  flex-grow: 1;
+  width: 100%;
 }

@@ -314,43 +314,38 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                     </Label>
                   </FormGroup>
                 </div>
-                <FormGroup></FormGroup>
-                <div className={styles.editableListCoupleFormGroup}>
-                  <FormGroup className={styles.editableListFormGroup}>
-                    <Label>Allowed Origins</Label>
-                    <EditableList 
-                      items={this.props.allowedOrigins} 
-                      handleAdd={this.props.handleAllowedOriginsAdd} 
-                      handleDelete={this.props.handleAllowedOriginsDelete}
-                      placeholder="New allowed origin"/>
-                  </FormGroup>
-                  <FormGroup className={styles.editableListFormGroup}>
-                    <Label>Allowed Methods</Label>
-                    <EditableList 
-                      items={this.props.allowedMethods} 
-                      handleAdd={this.props.handleAllowedMethodsAdd} 
-                      handleDelete={this.props.handleAllowedMethodsDelete}
-                      placeholder="New allowed method"/>
-                  </FormGroup>
-                </div>
-                <div className={styles.editableListCoupleFormGroup}>
-                  <FormGroup className={styles.editableListFormGroup}>
-                    <Label>Allowed Headers</Label>
-                    <EditableList 
-                      items={this.props.allowedHeaders} 
-                      handleAdd={this.props.handleAllowedHeadersAdd} 
-                      handleDelete={this.props.handleAllowedHeadersDelete}
-                      placeholder="New allowed header"/>
-                  </FormGroup>
-                  <FormGroup className={styles.editableListFormGroup}>
-                    <Label>Exposed Headers</Label>
-                    <EditableList 
-                      items={this.props.exposedHeaders} 
-                      handleAdd={this.props.handleExposedHeadersAdd} 
-                      handleDelete={this.props.handleExposedHeadersDelete}
-                      placeholder="New exposed header"/>
-                  </FormGroup>
-                </div>
+                <FormGroup className={styles.editableListFormGroup}>
+                  <Label>Allowed Origins</Label>
+                  <EditableList 
+                    items={this.props.allowedOrigins} 
+                    handleAdd={this.props.handleAllowedOriginsAdd} 
+                    handleDelete={this.props.handleAllowedOriginsDelete}
+                    placeholder="New allowed origin"/>
+                </FormGroup>
+                <FormGroup className={styles.editableListFormGroup}>
+                  <Label>Allowed Methods</Label>
+                  <EditableList 
+                    items={this.props.allowedMethods} 
+                    handleAdd={this.props.handleAllowedMethodsAdd} 
+                    handleDelete={this.props.handleAllowedMethodsDelete}
+                    placeholder="New allowed method"/>
+                </FormGroup>
+                <FormGroup className={styles.editableListFormGroup}>
+                  <Label>Allowed Headers</Label>
+                  <EditableList 
+                    items={this.props.allowedHeaders} 
+                    handleAdd={this.props.handleAllowedHeadersAdd} 
+                    handleDelete={this.props.handleAllowedHeadersDelete}
+                    placeholder="New allowed header"/>
+                </FormGroup>
+                <FormGroup className={styles.editableListFormGroup}>
+                  <Label>Exposed Headers</Label>
+                  <EditableList 
+                    items={this.props.exposedHeaders} 
+                    handleAdd={this.props.handleExposedHeadersAdd} 
+                    handleDelete={this.props.handleExposedHeadersDelete}
+                    placeholder="New exposed header"/>
+                </FormGroup>
               </Form>
             </TabPane>
           </TabContent>

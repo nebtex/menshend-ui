@@ -76,8 +76,10 @@ export default class EditableList extends React.Component<IEditableListProps, IE
   render() {
     const items = this.getItems();
     return (
-      <div>
-        {items}
+      <div className={styles.editableList}>
+        <div className={styles.itemsContainer}>
+          {items}
+        </div>
         <div className={styles.inputContainer}>
           <Input
             className={styles.input}

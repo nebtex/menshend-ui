@@ -5,6 +5,8 @@
   padding: 6px;
   margin: 4px;
   background: #F5F5F5;
+  flex-basis: 200px;
+  flex-grow: 1;
 }
 
 .label {
@@ -24,6 +26,7 @@
 .inputContainer{
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .input{
@@ -36,4 +39,15 @@
   flex-grow: 0;
   flex-basis: 80px;
   margin: 2px 4px;
+}
+
+.editableList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
