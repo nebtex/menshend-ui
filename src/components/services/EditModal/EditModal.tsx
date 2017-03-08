@@ -28,6 +28,10 @@ interface IEditModalState {
   longDescriptionUrlActive: boolean;
   longDescription: string;
   longDescriptionUrlError: boolean;
+  allowedOrigins: string[];
+  allowedMethods: string[];
+  allowedHeaders: string[];
+  exposedHeaders: string[];
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -51,7 +55,12 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       longDescriptionUrl: '',
       longDescriptionUrlActive: false,
       longDescription: this.props.service ? this.props.service.long_description : '',
-      longDescriptionUrlError: false
+      longDescriptionUrlError: false,
+      //@TODO: Remove this mock data, this data should be get from mobx store through the wrapper
+      allowedOrigins: ['mock1', 'mock2', 'mock3'],
+      allowedMethods: ['mock1', 'mock2', 'mock3'],
+      allowedHeaders: ['mock1', 'mock2', 'mock3'],
+      exposedHeaders: ['mock1', 'mock2', 'mock3']
     }
   }
 
@@ -134,6 +143,66 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     }
   }
 
+  handleAllowedOriginsAdd = (allowedOrigin:string) => {
+    if(this.state.allowedOrigins.includes(allowedOrigin)) return;
+    let allowedOrigins = this.state.allowedOrigins;
+    allowedOrigins.push(allowedOrigin);
+    this.setState({allowedOrigins:allowedOrigins});
+  }
+
+  handleAllowedOriginsDelete = (allowedOrigin:string) => {
+    if(!this.state.allowedOrigins.includes(allowedOrigin)) return;
+    const index = this.state.allowedOrigins.indexOf(allowedOrigin);
+    let allowedOrigins = this.state.allowedOrigins;
+    allowedOrigins.splice(index, 1);
+    this.setState({allowedOrigins:allowedOrigins});
+  }
+
+  handleAllowedMethodsAdd = (allowedMethod:string) => {
+    if(this.state.allowedMethods.includes(allowedMethod)) return;
+    let allowedMethods = this.state.allowedMethods;
+    allowedMethods.push(allowedMethod);
+    this.setState({allowedMethods:allowedMethods});
+  }
+
+  handleAllowedMethodsDelete = (allowedMethod:string) => {
+    if(!this.state.allowedMethods.includes(allowedMethod)) return;
+    const index = this.state.allowedMethods.indexOf(allowedMethod);
+    let allowedMethods = this.state.allowedMethods;
+    allowedMethods.splice(index, 1);
+    this.setState({allowedMethods:allowedMethods});
+  }
+
+  handleAllowedHeadersAdd = (allowedHeader:string) => {
+    if(this.state.allowedHeaders.includes(allowedHeader)) return;
+    let allowedHeaders = this.state.allowedHeaders;
+    allowedHeaders.push(allowedHeader);
+    this.setState({allowedHeaders:allowedHeaders});
+  }
+
+  handleAllowedHeadersDelete = (allowedHeader:string) => {
+    if(!this.state.allowedHeaders.includes(allowedHeader)) return;
+    const index = this.state.allowedHeaders.indexOf(allowedHeader);
+    let allowedHeaders = this.state.allowedHeaders;
+    allowedHeaders.splice(index, 1);
+    this.setState({allowedHeaders:allowedHeaders});
+  }
+
+  handleExposedHeadersAdd = (exposedHeader:string) => {
+    if(this.state.exposedHeaders.includes(exposedHeader)) return;
+    let exposedHeaders = this.state.exposedHeaders;
+    exposedHeaders.push(exposedHeader);
+    this.setState({exposedHeaders:exposedHeaders});
+  }
+
+  handleExposedHeadersDelete = (exposedHeader:string) => {
+    if(!this.state.exposedHeaders.includes(exposedHeader)) return;
+    const index = this.state.exposedHeaders.indexOf(exposedHeader);
+    let exposedHeaders = this.state.exposedHeaders;
+    exposedHeaders.splice(index, 1);
+    this.setState({exposedHeaders:exposedHeaders});
+  }
+
   render(){
     const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
 
@@ -160,7 +229,19 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           longDescriptionUrlActiveOnChange={this.longDescriptionUrlActiveOnChange}
           dropdownOpen={this.state.dropdownOpen}
           toggleDropdown={this.toggleDropdown}
-          codeOnChange={this.codeOnChange}/>
+          codeOnChange={this.codeOnChange}
+          allowedOrigins={this.state.allowedOrigins}
+          handleAllowedOriginsAdd={this.handleAllowedOriginsAdd}
+          handleAllowedOriginsDelete={this.handleAllowedOriginsDelete}
+          allowedMethods={this.state.allowedMethods}
+          handleAllowedMethodsAdd={this.handleAllowedMethodsAdd}
+          handleAllowedMethodsDelete={this.handleAllowedMethodsDelete}
+          allowedHeaders={this.state.allowedHeaders}
+          handleAllowedHeadersAdd={this.handleAllowedHeadersAdd}
+          handleAllowedHeadersDelete={this.handleAllowedHeadersDelete}
+          exposedHeaders={this.state.exposedHeaders}
+          handleExposedHeadersAdd={this.handleExposedHeadersAdd}
+          handleExposedHeadersDelete={this.handleExposedHeadersDelete}/>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}

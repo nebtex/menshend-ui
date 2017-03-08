@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import MonacoEditor from 'react-monaco-editor';
+import EditableList from '../../../general/EditableList/EditableList';
 import { ModalBody, Nav, NavItem, NavLink, TabContent, TabPane, Form, FormGroup, ListGroup, 
          ListGroupItem, FormFeedback, Input, Label, Dropdown, DropdownItem, DropdownMenu, 
          DropdownToggle, Row , Button, Tooltip} from 'reactstrap';
@@ -29,6 +30,18 @@ export interface IEditModalBodyProps {
   toggleDropdown: any;
   codeOnChange: any;
   longDescriptionUrlError:boolean;
+  allowedOrigins?: string[];
+  handleAllowedOriginsAdd?: any;
+  handleAllowedOriginsDelete?: any;
+  allowedMethods?: string[];
+  handleAllowedMethodsAdd?: any;
+  handleAllowedMethodsDelete?: any;
+  allowedHeaders?: string[];
+  handleAllowedHeadersAdd?: any;
+  handleAllowedHeadersDelete?: any;
+  exposedHeaders?: string[];
+  handleExposedHeadersAdd?: any;
+  handleExposedHeadersDelete?: any;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -191,6 +204,22 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                 Long description
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.props.activeTab === 'cache' })}
+                onClick={() => { this.props.toggleTab('cache'); }}
+              >
+                Cache
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.props.activeTab === 'cors' })}
+                onClick={() => { this.props.toggleTab('cors'); }}
+              >
+                CORS
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={this.props.activeTab}>
             <TabPane tabId="general">
@@ -233,6 +262,60 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
                   value={this.props.longDescription}
                   onChange={this.props.longDescriptionOnChange}/>
               </FormGroup>
+            </TabPane>
+            <TabPane tabId="cache">
+              <Form>
+                <FormGroup>
+                  <Label check>
+                    <Input type="checkbox" />{' '}
+                    Active
+                  </Label>
+                </FormGroup>
+                <FormGroup>
+                  <Label for="TTL">TTL</Label>
+                  <Input type="number" name="TTL" id="TTL"/>
+                </FormGroup>
+              </Form>
+            </TabPane>
+            <TabPane tabId="cors">
+              <Form onSubmit={(evt:any) => {evt.preventDefault()}} className={styles.allowedOriginsForm}>
+                <div className={styles.editableListCoupleFormGroup}>
+                  <FormGroup className={styles.editableListFormGroup}>
+                    <Label>Allowed Origins</Label>
+                    <EditableList 
+                      items={this.props.allowedOrigins} 
+                      handleAdd={this.props.handleAllowedOriginsAdd} 
+                      handleDelete={this.props.handleAllowedOriginsDelete}
+                      placeholder="New allowed origin"/>
+                  </FormGroup>
+                  <FormGroup className={styles.editableListFormGroup}>
+                    <Label>Allowed Methods</Label>
+                    <EditableList 
+                      items={this.props.allowedMethods} 
+                      handleAdd={this.props.handleAllowedMethodsAdd} 
+                      handleDelete={this.props.handleAllowedMethodsDelete}
+                      placeholder="New allowed method"/>
+                  </FormGroup>
+                </div>
+                <div className={styles.editableListCoupleFormGroup}>
+                  <FormGroup className={styles.editableListFormGroup}>
+                    <Label>Allowed Headers</Label>
+                    <EditableList 
+                      items={this.props.allowedHeaders} 
+                      handleAdd={this.props.handleAllowedHeadersAdd} 
+                      handleDelete={this.props.handleAllowedHeadersDelete}
+                      placeholder="New allowed header"/>
+                  </FormGroup>
+                  <FormGroup className={styles.editableListFormGroup}>
+                    <Label>Exposed Headers</Label>
+                    <EditableList 
+                      items={this.props.exposedHeaders} 
+                      handleAdd={this.props.handleExposedHeadersAdd} 
+                      handleDelete={this.props.handleExposedHeadersDelete}
+                      placeholder="New exposed header"/>
+                  </FormGroup>
+                </div>
+              </Form>
             </TabPane>
           </TabContent>
         </div>

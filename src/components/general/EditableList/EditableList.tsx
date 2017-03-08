@@ -71,7 +71,7 @@ export default class EditableList extends React.Component<IEditableListProps, IE
     return (
       <div>
         {items}
-        <Input onChange={this.onChange} value={this.state.inputValue} onKeyDown={this.onKeydown}/>
+        <Input onChange={this.onChange} value={this.state.inputValue} onKeyDown={this.onKeydown} placeholder={this.props.placeholder}/>
       </div>
     );
   }
