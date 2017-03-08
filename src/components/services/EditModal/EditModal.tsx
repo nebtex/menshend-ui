@@ -37,6 +37,7 @@ interface IEditModalState {
   maxAge: boolean;
   ttl: number;
   cacheActive: boolean;
+  secretPaths: string[];
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -70,7 +71,8 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       optionsPassthrough: true,
       maxAge: true,
       ttl: 120,
-      cacheActive: true
+      cacheActive: true,
+      secretPaths: ['secret1', 'secret2']
     }
   }
 
@@ -243,6 +245,21 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     });
   }
 
+  handleSecretPathsAdd = (secretPath:string) => {
+    if(this.state.secretPaths.includes(secretPath)) return;
+    let secretPaths = this.state.secretPaths;
+    secretPaths.push(secretPath);
+    this.setState({secretPaths:secretPaths});
+  }
+
+  handleSecretPathsDelete = (secretPath:string) => {
+    if(!this.state.secretPaths.includes(secretPath)) return;
+    const index = this.state.secretPaths.indexOf(secretPath);
+    let secretPaths = this.state.secretPaths;
+    secretPaths.splice(index, 1);
+    this.setState({secretPaths:secretPaths});
+  }
+
   render(){
     const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
 
@@ -291,7 +308,10 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           cacheActive={this.state.cacheActive}
           cacheActiveOnChange={this.cacheActiveOnChange}
           ttl={this.state.ttl}
-          ttlOnChange={this.ttlOnChange}/>
+          ttlOnChange={this.ttlOnChange}
+          secretPaths={this.state.secretPaths}
+          handleSecretPathsAdd={this.handleSecretPathsAdd}
+          handleSecretPathsDelete={this.handleSecretPathsDelete}/>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}
