@@ -44,21 +44,6 @@ export default class BackendSection extends React.Component<IBackendSectionProps
         <hr/>
         <h5>Backend rule</h5>
         <Row className={styles.rolesRow}>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" />{' '}
-              Active
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label id="proxyTooltip" check>
-              <Input type="checkbox" />{' '}
-              Proxy
-            </Label>
-            <Tooltip placement="top" isOpen={this.state.proxyTooltipOpen} target="proxyTooltip" toggle={this.toggleProxyTooltip}>
-              If this property is not active the user will be redirected with a 302 HTTP code
-            </Tooltip>                        
-          </FormGroup>
         </Row>
         <MonacoEditor 
           height={300}

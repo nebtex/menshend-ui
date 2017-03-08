@@ -15,29 +15,30 @@ export interface IEditModalProps {
   service?: IService;
 }
 
+//@TODO: translate the corresponding state vars into props
 interface IEditModalState {
   dropdownOpen: boolean;
   activeTab: string;
-  backendRule: string;
-  name: string;
+  backendRule: string; //Prop
+  name: string; //Prop
   nameError: boolean;
-  logo: string;
+  logo: string; //Prop
   logoError: boolean;
-  shortDescription: string;
-  longDescriptionUrl: string;
+  shortDescription: string; //Prop
+  longDescriptionUrl: string; //Prop
   longDescriptionUrlActive: boolean;
-  longDescription: string;
+  longDescription: string; //Prop
   longDescriptionUrlError: boolean;
-  allowedOrigins: string[];
-  allowedMethods: string[];
-  allowedHeaders: string[];
-  exposedHeaders: string[];
-  allowCredentials: boolean;
-  optionsPassthrough: boolean;
-  maxAge: boolean;
-  ttl: number;
-  cacheActive: boolean;
-  secretPaths: string[];
+  allowedOrigins: string[];//Prop
+  allowedMethods: string[];//Prop
+  allowedHeaders: string[];//Prop
+  exposedHeaders: string[];//Prop
+  allowCredentials: boolean;//Prop
+  optionsPassthrough: boolean;//Prop
+  maxAge: boolean;//Prop
+  ttl: number;//Prop
+  cacheActive: boolean;//Prop
+  secretPaths: string[];//Prop
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
