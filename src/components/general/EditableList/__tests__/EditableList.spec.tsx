@@ -11,6 +11,10 @@ describe('EditableList', () => {
 
   });
 
+  it('should call the handleAddition prop with the current inputValue state when add button is clicked', () => {
+
+  });
+
   it('should call the handleDelete with the item prop when delete button is clicked in one item', () => {
 
   });

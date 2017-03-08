@@ -3,8 +3,8 @@
   border-radius: .25rem;
   display: flex;
   padding: 6px;
-  margin-bottom: 4px;
-  background: #EEEEEE;
+  margin: 4px;
+  background: #F5F5F5;
 }
 
 .label {
@@ -13,10 +13,27 @@
 
 .deleteButton {
   flex-grow: 0;
-  flex-basis: 20px;
+  flex-basis: 16px;
   color: #adadad;
   &:hover {
     color: #0275d8;
     cursor: pointer;
   }
+}
+
+.inputContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input{
+  flex-grow: 1;
+  flex-basis: 60%;
+  margin: 2px 4px;  
+}
+
+.addButton{
+  flex-grow: 0;
+  flex-basis: 80px;
+  margin: 2px 4px;
 }

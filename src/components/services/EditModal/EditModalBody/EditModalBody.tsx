@@ -42,6 +42,12 @@ export interface IEditModalBodyProps {
   exposedHeaders?: string[];
   handleExposedHeadersAdd?: any;
   handleExposedHeadersDelete?: any;
+  allowCredentials?: boolean;
+  optionsPassthrough?: boolean;
+  maxAge?: boolean;
+  allowCredentialsOnChange?: any;
+  optionsPassthroughOnChange?: any;
+  maxAgeOnChange?: any;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -278,7 +284,37 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
               </Form>
             </TabPane>
             <TabPane tabId="cors">
-              <Form onSubmit={(evt:any) => {evt.preventDefault()}} className={styles.allowedOriginsForm}>
+              <Form onSubmit={(evt:any) => {evt.preventDefault()}} className={styles.corsForm}>
+                <div className={styles.inlineCorsFields}>
+                  <FormGroup>
+                    <Label check>
+                      <Input 
+                        type="checkbox"
+                        checked={this.props.allowCredentials}
+                        onChange={this.props.allowCredentialsOnChange} />
+                        {' '} allowCredentials
+                    </Label>
+                  </FormGroup>
+                  <FormGroup>
+                    <Label check>
+                      <Input 
+                        type="checkbox"
+                        checked={this.props.optionsPassthrough}
+                        onChange={this.props.optionsPassthroughOnChange} />
+                        {' '} optionsPassthrough
+                    </Label>
+                  </FormGroup>
+                  <FormGroup>
+                    <Label check>
+                      <Input 
+                        type="checkbox"
+                        checked={this.props.maxAge}
+                        onChange={this.props.maxAgeOnChange} />
+                        {' '} maxAge
+                    </Label>
+                  </FormGroup>
+                </div>
+                <FormGroup></FormGroup>
                 <div className={styles.editableListCoupleFormGroup}>
                   <FormGroup className={styles.editableListFormGroup}>
                     <Label>Allowed Origins</Label>

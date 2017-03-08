@@ -123,10 +123,16 @@
   text-align: center;
 }
 
-.allowedOriginsForm {
+.corsForm {
   padding-top: 8px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.inlineCorsFields {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .editableListCoupleFormGroup {

@@ -32,6 +32,9 @@ interface IEditModalState {
   allowedMethods: string[];
   allowedHeaders: string[];
   exposedHeaders: string[];
+  allowCredentials: boolean;
+  optionsPassthrough: boolean;
+  maxAge: boolean;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -60,7 +63,10 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       allowedOrigins: ['mock1', 'mock2', 'mock3'],
       allowedMethods: ['mock1', 'mock2', 'mock3'],
       allowedHeaders: ['mock1', 'mock2', 'mock3'],
-      exposedHeaders: ['mock1', 'mock2', 'mock3']
+      exposedHeaders: ['mock1', 'mock2', 'mock3'],
+      allowCredentials: true,
+      optionsPassthrough: true,
+      maxAge: true
     }
   }
 
@@ -203,6 +209,24 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     this.setState({exposedHeaders:exposedHeaders});
   }
 
+  maxAgeOnChange = (evt:any) => {
+    this.setState({
+      maxAge: !this.state.maxAge
+    });
+  }
+
+  optionsPassthroughOnChange = (evt:any) => {
+    this.setState({
+      optionsPassthrough: !this.state.optionsPassthrough
+    });
+  }
+
+  allowCredentialsOnChange = (evt:any) => {
+    this.setState({
+      allowCredentials: !this.state.allowCredentials
+    });
+  }
+
   render(){
     const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
 
@@ -241,7 +265,13 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           handleAllowedHeadersDelete={this.handleAllowedHeadersDelete}
           exposedHeaders={this.state.exposedHeaders}
           handleExposedHeadersAdd={this.handleExposedHeadersAdd}
-          handleExposedHeadersDelete={this.handleExposedHeadersDelete}/>
+          handleExposedHeadersDelete={this.handleExposedHeadersDelete}
+          allowCredentials={this.state.allowCredentials}
+          optionsPassthrough={this.state.optionsPassthrough}
+          maxAge={this.state.maxAge}
+          allowCredentialsOnChange={this.allowCredentialsOnChange}
+          optionsPassthroughOnChange={this.optionsPassthroughOnChange}
+          maxAgeOnChange={this.maxAgeOnChange}/>
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}

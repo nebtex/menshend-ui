@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input, FormGroup } from 'reactstrap';
+import { Input, Button } from 'reactstrap';
 let styles = require('./EditableList.scss');
 
 // ***** Editable List Item Component
@@ -66,12 +66,27 @@ export default class EditableList extends React.Component<IEditableListProps, IE
     }
   }
 
+  addOnClick = () => {
+    this.props.handleAdd(this.state.inputValue);
+    this.setState({
+      inputValue:''
+    })
+  }
+
   render() {
     const items = this.getItems();
     return (
       <div>
         {items}
-        <Input onChange={this.onChange} value={this.state.inputValue} onKeyDown={this.onKeydown} placeholder={this.props.placeholder}/>
+        <div className={styles.inputContainer}>
+          <Input
+            className={styles.input}
+            onChange={this.onChange}
+            value={this.state.inputValue}
+            onKeyDown={this.onKeydown}
+            placeholder={this.props.placeholder}/>
+          <Button color="secondary" className={styles.addButton} onClick={this.addOnClick}>Add</Button>
+        </div>
       </div>
     );
   }
