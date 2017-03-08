@@ -69,13 +69,82 @@ export default class EditServiceFormStore {
     this.strategy = strategy
   }
 
-  @action updateCache = (cache:AdminServiceCache) => {
-    this.cache = cache
+  // **** Cache ****
+  @action updateTTL = (ttl:number) => {
+    this.cache.ttl = ttl
   }
 
-  @action updateCors = (cors:AdminServiceCors) => {
-    this.cors = cors
+  @action updateCacheActive = (cacheActive:boolean) => {
+    this.cache.active = cacheActive
   }
+
+  // **** CORS *****
+
+  @action updateAllowCredentials = (allowCredentials:boolean) => {
+    this.cors.allowCredentials = allowCredentials;
+  }
+
+  @action updateOptionsPassthrough = (optionsPassthrough:boolean) => {
+    this.cors.optionsPassthrough = optionsPassthrough;
+  }
+
+  @action updateMaxAge = (maxAge:boolean) => {
+    this.cors.maxAge = maxAge;
+  }
+
+  @action addAllowedOrigin = (allowedOrigin:string) => {
+    if(this.cors.allowedOrigins.includes(allowedOrigin)) return;
+    let allowedOrigins = this.cors.allowedOrigins;
+    allowedOrigins.push(allowedOrigin);
+  }
+
+  @action deleteAllowedOrigin = (allowedOrigin:string) => {
+    if(!this.cors.allowedOrigins.includes(allowedOrigin)) return;
+    const index = this.cors.allowedOrigins.indexOf(allowedOrigin);
+    let allowedOrigins = this.cors.allowedOrigins;
+    allowedOrigins.splice(index, 1);
+  }
+
+  @action addAllowedMethod = (allowedMethod:string) => {
+    if(this.cors.allowedMethods.includes(allowedMethod)) return;
+    let allowedMethods = this.cors.allowedMethods;
+    allowedMethods.push(allowedMethod);
+  }
+
+  @action deleteAllowedMethod = (allowedMethod:string) => {
+    if(!this.cors.allowedMethods.includes(allowedMethod)) return;
+    const index = this.cors.allowedMethods.indexOf(allowedMethod);
+    let allowedMethods = this.cors.allowedMethods;
+    allowedMethods.splice(index, 1);
+  }
+
+  @action addAllowedHeaders = (allowedHeader:string) => {
+    if(this.cors.allowedHeaders.includes(allowedHeader)) return;
+    let allowedHeaders = this.cors.allowedHeaders;
+    allowedHeaders.push(allowedHeader);
+  }
+
+  @action deleteAllowedHeaders = (allowedHeader:string) => {
+    if(!this.cors.allowedHeaders.includes(allowedHeader)) return;
+    const index = this.cors.allowedHeaders.indexOf(allowedHeader);
+    let allowedHeaders = this.cors.allowedHeaders;
+    allowedHeaders.splice(index, 1);
+  }
+
+  @action addExposedHeader = (exposedHeader:string) => {
+    if(this.cors.exposedHeaders.includes(exposedHeader)) return;
+    let exposedHeaders = this.cors.exposedHeaders;
+    exposedHeaders.push(exposedHeader);
+  }
+
+  @action deleteExposedHeaders = (exposedHeader:string) => {
+    if(!this.cors.exposedHeaders.includes(exposedHeader)) return;
+    const index = this.cors.exposedHeaders.indexOf(exposedHeader);
+    let exposedHeaders = this.cors.exposedHeaders;
+    exposedHeaders.splice(index, 1);
+  }
+
+  // **** Secret Paths ****
 
   @action addSecretPath = (secretPath:string) => {
     if(this.secretPaths.indexOf(secretPath) > -1) return;
@@ -87,6 +156,8 @@ export default class EditServiceFormStore {
     if(index === -1) return;
     this.secretPaths.splice(index, 1);
   }
+
+  // **** Api Client Calls ****
 
   @action apiGetService = (serviceId:string) => {
     return this.adminApi.adminGetService({id:serviceId}).then((service:AdminService) => {
