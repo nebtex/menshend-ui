@@ -43,7 +43,7 @@ interface IEditModalState {
   csrf: boolean; //Prop
   impersonateWithinRole: boolean; //Prop
   isActive: boolean; //Prop
-  strategies: any
+  strategies: any; //Prop
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
