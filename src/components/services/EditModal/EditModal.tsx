@@ -39,6 +39,11 @@ interface IEditModalState {
   ttl: number;//Prop
   cacheActive: boolean;//Prop
   secretPaths: string[];//Prop
+  strategy: number; //prop
+  csrf: boolean; //Prop
+  impersonateWithinRole: boolean; //Prop
+  isActive: boolean; //Prop
+  strategies: any
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64',
@@ -73,7 +78,12 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
       maxAge: true,
       ttl: 120,
       cacheActive: true,
-      secretPaths: ['secret1', 'secret2']
+      secretPaths: ['secret1', 'secret2'],
+      csrf: true,
+      impersonateWithinRole: true,
+      isActive: true,
+      strategy: 0,
+      strategies: {"Proxy": 0, "Another Strategy": 1}
     }
   }
 
@@ -261,6 +271,30 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
     this.setState({secretPaths:secretPaths});
   }
 
+  strategyOnChange = (value:number) => {
+    this.setState({
+      strategy:value
+    });
+  }
+
+  csrfOnChange = () => {
+    this.setState({
+      csrf: !this.state.csrf
+    });
+  }
+
+  impersonateWithinRoleOnChange = () => {
+    this.setState({
+      impersonateWithinRole: !this.state.impersonateWithinRole
+    });
+  }
+  
+  isActiveOnChange = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    });
+  }
+
   render(){
     const title = this.props.service ? `Edit ${this.props.service.name}`: 'New service';
 
@@ -312,7 +346,16 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           ttlOnChange={this.ttlOnChange}
           secretPaths={this.state.secretPaths}
           handleSecretPathsAdd={this.handleSecretPathsAdd}
-          handleSecretPathsDelete={this.handleSecretPathsDelete}/>
+          handleSecretPathsDelete={this.handleSecretPathsDelete}
+          strategies={this.state.strategies}
+          strategy={this.state.strategy}
+          strategyOnChange={this.strategyOnChange}
+          csrf={this.state.csrf}
+          csrfOnChange={this.csrfOnChange}
+          impersonateWithinRole={this.state.impersonateWithinRole}
+          impersonateWithinRoleOnChange={this.impersonateWithinRoleOnChange}
+          isActive={this.state.isActive}
+          isActiveOnChange={this.isActiveOnChange} />
         <ModalFooter>
           <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           <Button color="primary" onClick={this.saveService}>Save</Button>{' '}

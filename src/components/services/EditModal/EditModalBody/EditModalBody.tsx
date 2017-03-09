@@ -59,6 +59,15 @@ export interface IEditModalBodyProps {
   secretPaths?: string[];
   handleSecretPathsAdd?: any;
   handleSecretPathsDelete?: any;
+  strategies?: any;
+  strategy?: number;
+  strategyOnChange?: any;
+  csrf?: boolean;
+  csrfOnChange?: any;
+  impersonateWithinRole?: boolean;
+  impersonateWithinRoleOnChange?: any;
+  isActive?: boolean;
+  isActiveOnChange?: any;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
@@ -133,7 +142,17 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
           </TabContent>  
         </div>
         <hr/>
-        <BackendSection codeOnChange={this.props.codeOnChange} />
+        <BackendSection 
+          codeOnChange={this.props.codeOnChange} 
+          strategy={this.props.strategy}
+          strategyOnChange={this.props.strategyOnChange}
+          csrf={this.props.csrf}
+          csrfOnChange={this.props.csrfOnChange}
+          impersonateWithinRole={this.props.impersonateWithinRole}
+          impersonateWithinRoleOnChange={this.props.impersonateWithinRoleOnChange}
+          isActive={this.props.isActive}
+          isActiveOnChange={this.props.isActiveOnChange} 
+          strategies={this.props.strategies} />
       </ModalBody>
     );
   }
