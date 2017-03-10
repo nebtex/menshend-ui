@@ -82,23 +82,30 @@ Cases['Service'] = {
   },
   "cors": {
     "allowedOrigins": [
-      "string"
+      "allowed-origin-1",
+      "allowed-origin-2"
     ],
     "allowedMethods": [
-      "string"
+      "POST",
+      "GET",
+      "PUT"
     ],
     "allowedHeaders": [
-      "string"
+      "allowed-header-1",
+      "allowed-header-2",
+      "allowed-header-3"
     ],
     "allowCredentials": false,
     "optionsPassthrough": false,
     "maxAge": false,
     "exposedHeaders": [
-      "string"
+      "exposed-header-1",
+      "exposed-header-2"
     ]
   },
   "secretPaths": [
-    "string"
+    "secret-path-1",
+    "secret-path-2"
   ]
 };
 
