@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { TabPane, Form, FormFeedback, FormGroup, Label, Input } from 'reactstrap';
+import BackendSection from './BackendSection/BackendSection';
 let styles = require('./GeneralSection.scss');
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
@@ -12,6 +13,16 @@ interface IGeneralSectionProps {
   logoOnChange?: any;
   logoError?: boolean;
   logoOnError?: any;
+  codeOnChange?: any;
+  strategy?: number;
+  strategyOnChange?: any;
+  csrf?: boolean;
+  csrfOnChange?: any;
+  impersonateWithinRole?: boolean;
+  impersonateWithinRoleOnChange?: any;
+  isActive?: boolean;
+  isActiveOnChange?: any;
+  strategies?: any;
 }
 
 export default class GeneralSection extends React.Component<IGeneralSectionProps, {}>{
@@ -68,10 +79,20 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
 
     return (
       <TabPane tabId="general">
-        <Form className={styles.generalForm}>
-          { nameFormGroup }
-          { logoFormGroup }
-        </Form>
+        { nameFormGroup }
+        { logoFormGroup }
+        <hr/>
+        <BackendSection
+          codeOnChange={this.props.codeOnChange} 
+          strategy={this.props.strategy}
+          strategyOnChange={this.props.strategyOnChange}
+          csrf={this.props.csrf}
+          csrfOnChange={this.props.csrfOnChange}
+          impersonateWithinRole={this.props.impersonateWithinRole}
+          impersonateWithinRoleOnChange={this.props.impersonateWithinRoleOnChange}
+          isActive={this.props.isActive}
+          isActiveOnChange={this.props.isActiveOnChange} 
+          strategies={this.props.strategies} />
       </TabPane>
     );
   }

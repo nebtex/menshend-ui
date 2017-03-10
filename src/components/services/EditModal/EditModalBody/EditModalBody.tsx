@@ -7,7 +7,6 @@ import LongDescriptionSection from './LongDescriptionSection/LongDescriptionSect
 import CacheSection from './CacheSection/CacheSection';
 import CorsSection from './CorsSection/CorsSection';
 import SecretPathsSection from './SecretPathsSection/SecretPathsSection';
-import BackendSection from './BackendSection/BackendSection';
 import { ModalBody, TabContent } from 'reactstrap';
 import { AdminServiceCache, AdminServiceCors } from '../../../../api/api';
 
@@ -79,7 +78,17 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps, 
               logo={this.props.logo}
               logoOnChange={this.props.logoOnChange}
               logoError={this.props.logoError}
-              logoOnError={this.props.logoOnError}/>
+              logoOnError={this.props.logoOnError}
+              codeOnChange={this.props.codeOnChange} 
+              strategy={this.props.strategy}
+              strategyOnChange={this.props.strategyOnChange}
+              csrf={this.props.csrf}
+              csrfOnChange={this.props.csrfOnChange}
+              impersonateWithinRole={this.props.impersonateWithinRole}
+              impersonateWithinRoleOnChange={this.props.impersonateWithinRoleOnChange}
+              isActive={this.props.isActive}
+              isActiveOnChange={this.props.isActiveOnChange} 
+              strategies={this.props.strategies} />
             <ShortDescriptionSection 
               shortDescription={this.props.shortDescription} 
               shortDescriptionOnChange={this.props.shortDescriptionOnChange} />
@@ -114,18 +123,6 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps, 
               handleSecretPathsDelete={this.props.handleSecretPathsDelete} />
           </TabContent>  
         </div>
-        <hr/>
-        <BackendSection
-          codeOnChange={this.props.codeOnChange} 
-          strategy={this.props.strategy}
-          strategyOnChange={this.props.strategyOnChange}
-          csrf={this.props.csrf}
-          csrfOnChange={this.props.csrfOnChange}
-          impersonateWithinRole={this.props.impersonateWithinRole}
-          impersonateWithinRoleOnChange={this.props.impersonateWithinRoleOnChange}
-          isActive={this.props.isActive}
-          isActiveOnChange={this.props.isActiveOnChange} 
-          strategies={this.props.strategies} />
       </ModalBody>
     );
   }

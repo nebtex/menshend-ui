@@ -82,7 +82,6 @@ export default class BackendSection extends React.Component<IBackendSectionProps
     
     return (
       <div>
-        <hr/>
         <h5>Backend rule</h5>
         <Row className={styles.rolesRow}>
           <FormGroup check>
