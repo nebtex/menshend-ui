@@ -4,11 +4,16 @@ import { NavLink, Nav, NavItem} from 'reactstrap';
 let styles = require('./NavBar.scss');
 
 interface INavBarProps {
-  activeTab: string;
-  toggleTab: any;
+  activeTab?: string;
+  toggleTab?: any;
 }
 
 export default class NavBar extends React.Component<INavBarProps, {}>{
+
+  static defaultProps = {
+    activeTab: 'general'
+  }
+
   render(){
     return (
       <Nav className={styles.navBar} tabs>

@@ -9,52 +9,42 @@ import CorsSection from './CorsSection/CorsSection';
 import SecretPathsSection from './SecretPathsSection/SecretPathsSection';
 import BackendSection from './BackendSection/BackendSection';
 import { ModalBody, TabContent } from 'reactstrap';
+import { AdminServiceCache, AdminServiceCors } from '../../../../api/api';
 
 let styles = require('./EditModalBody.scss');
          
 export interface IEditModalBodyProps {
-  activeTab?: string;
-  toggleTab: any;
   name?: string;
   nameError?: boolean;
-  nameOnChange: any;
+  nameOnChange?: any;
   logo?: string;
   logoError?: boolean;
-  logoOnError: any;
-  logoOnChange: any;
+  logoOnError?: any;
+  logoOnChange?: any;
   shortDescription?: string;
-  shortDescriptionOnChange: any;
+  shortDescriptionOnChange?: any;
   longDescription?: string;
-  longDescriptionOnChange: any;
+  longDescriptionOnChange?: any;
   longDescriptionUrl?: string;
-  longDescriptionUrlOnChange: any;
+  longDescriptionUrlOnChange?: any;
   longDescriptionUrlActive?: boolean;
-  longDescriptionUrlActiveOnChange: any;
-  dropdownOpen?: boolean;
-  toggleDropdown: any;
-  codeOnChange: any;
-  longDescriptionUrlError:boolean;
-  allowedOrigins?: string[];
+  longDescriptionUrlActiveOnChange?: any;
+  codeOnChange?: any;
+  longDescriptionUrlError?:boolean;
+  cors?: AdminServiceCors;
   handleAllowedOriginsAdd?: any;
   handleAllowedOriginsDelete?: any;
-  allowedMethods?: string[];
   handleAllowedMethodsAdd?: any;
   handleAllowedMethodsDelete?: any;
-  allowedHeaders?: string[];
   handleAllowedHeadersAdd?: any;
   handleAllowedHeadersDelete?: any;
-  exposedHeaders?: string[];
   handleExposedHeadersAdd?: any;
   handleExposedHeadersDelete?: any;
-  allowCredentials?: boolean;
-  optionsPassthrough?: boolean;
-  maxAge?: boolean;
   allowCredentialsOnChange?: any;
   optionsPassthroughOnChange?: any;
   maxAgeOnChange?: any;
-  cacheActive?: boolean;
+  cache?: AdminServiceCache;
   cacheActiveOnChange?: any;
-  ttl?: number;
   ttlOnChange?: any;
   secretPaths?: string[];
   handleSecretPathsAdd?: any;
@@ -68,25 +58,15 @@ export interface IEditModalBodyProps {
   impersonateWithinRoleOnChange?: any;
   isActive?: boolean;
   isActiveOnChange?: any;
+  activeTab?: string;
+  toggleTab?: any;
 }
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
 
-export default class EditModalBody extends React.Component<IEditModalBodyProps,{}>{
-  static defaultProps = {
-    activeTab: 'general',
-    name: 'Unknown service',
-    nameError: false,
-    logo: DEFAULT_LOGO,
-    logoError: false,
-    shortDescription: '',
-    longDescription: '',
-    longDescriptionUrl: '',
-    longDescriptionUrlActive: false,
-    dropdownOpen: false
-  }
-
+export default class EditModalBody extends React.Component<IEditModalBodyProps, {}>{
   render() {
+    //@TODO: Show the corresponding tab taking into account the errors
     return (
       <ModalBody>
         <div>
@@ -112,27 +92,20 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
               longDescriptionUrl={this.props.longDescriptionUrl}
               longDescriptionUrlError={this.props.longDescriptionUrlError} />
             <CacheSection
-              cacheActive={this.props.cacheActive}
+              cache={this.props.cache} 
               cacheActiveOnChange={this.props.cacheActiveOnChange}
-              ttl={this.props.ttl}
               ttlOnChange={this.props.ttlOnChange} />
             <CorsSection
-              allowCredentials={this.props.allowCredentials}
+              cors={this.props.cors}
               allowCredentialsOnChange={this.props.allowCredentialsOnChange}
-              optionsPassthrough={this.props.optionsPassthrough}
               optionsPassthroughOnChange={this.props.optionsPassthroughOnChange}
-              maxAge={this.props.maxAge}
               maxAgeOnChange={this.props.maxAgeOnChange}
-              allowedOrigins={this.props.allowedOrigins}
               handleAllowedOriginsAdd={this.props.handleAllowedOriginsAdd}
               handleAllowedOriginsDelete={this.props.handleAllowedOriginsDelete}
-              allowedMethods={this.props.allowedMethods}
               handleAllowedMethodsAdd={this.props.handleAllowedMethodsAdd}
               handleAllowedMethodsDelete={this.props.handleAllowedMethodsDelete}
-              allowedHeaders={this.props.allowedHeaders}
               handleAllowedHeadersAdd={this.props.handleAllowedHeadersAdd}
               handleAllowedHeadersDelete={this.props.handleAllowedHeadersDelete}
-              exposedHeaders={this.props.exposedHeaders}
               handleExposedHeadersAdd={this.props.handleExposedHeadersAdd}
               handleExposedHeadersDelete={this.props.handleExposedHeadersDelete} />
             <SecretPathsSection
@@ -142,7 +115,7 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps,{
           </TabContent>  
         </div>
         <hr/>
-        <BackendSection 
+        <BackendSection
           codeOnChange={this.props.codeOnChange} 
           strategy={this.props.strategy}
           strategyOnChange={this.props.strategyOnChange}

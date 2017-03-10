@@ -13,6 +13,12 @@ interface ILongDescriptionSectionProps {
 }
 
 export default class LongDescriptionSection extends React.Component<ILongDescriptionSectionProps, {}> {
+  
+  static defaultProps = {
+    longDescription: '',
+    longDescriptionUrl: '',
+    longDescriptionUrlActive: false
+  }
 
   getLongDescriptionUrlFormGroup = () => {
     const danger = this.props.longDescriptionUrlActive && this.props.longDescriptionUrlError;

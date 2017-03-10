@@ -4,16 +4,16 @@ import MonacoEditor from 'react-monaco-editor';
 let styles = require('./BackendSection.scss');
 
 interface IBackendSectionProps {
-  codeOnChange: any;
-  strategy: number;
-  strategyOnChange: any;
-  csrf: boolean;
-  csrfOnChange: any;
-  impersonateWithinRole: boolean;
-  impersonateWithinRoleOnChange: any;
-  isActive: boolean;
-  isActiveOnChange: any;
-  strategies: any;
+  codeOnChange?: any;
+  strategy?: number;
+  strategyOnChange?: any;
+  csrf?: boolean;
+  csrfOnChange?: any;
+  impersonateWithinRole?: boolean;
+  impersonateWithinRoleOnChange?: any;
+  isActive?: boolean;
+  isActiveOnChange?: any;
+  strategies?: any;
 }
 
 interface IBackendSectionState {
@@ -23,6 +23,14 @@ interface IBackendSectionState {
 }
 
 export default class BackendSection extends React.Component<IBackendSectionProps, {}>{
+  static defaultProps = {
+    proxyCode: '__=== Your code here ===',
+    strategy: 0,
+    csrf: true,
+    impersonateWithinRole: true,
+    isActive: true,
+    strategies: {'Proxy': 0}
+  }
 
   state = {
     impersonateTooltipOpen: false,
@@ -79,20 +87,29 @@ export default class BackendSection extends React.Component<IBackendSectionProps
         <Row className={styles.rolesRow}>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" onChange={this.props.csrfOnChange}/>{' '}
-                csrf
+              <Input 
+                type="checkbox"
+                onChange={this.props.csrfOnChange}
+                checked={this.props.csrf}/>
+                {' '} csrf
             </Label>
           </FormGroup>
-          <FormGroup check onChange={this.props.impersonateWithinRoleOnChange}>
+          <FormGroup check>
             <Label check>
-              <Input type="checkbox" />{' '}
-                impersonateWithinRole
+              <Input 
+                type="checkbox"
+                onChange={this.props.impersonateWithinRoleOnChange}
+                checked={this.props.impersonateWithinRole}/>
+                {' '} impersonateWithinRole
             </Label>
           </FormGroup>
-          <FormGroup check onChange={this.props.isActiveOnChange}>
+          <FormGroup check>
             <Label check>
-              <Input type="checkbox" />{' '}
-                isActive
+              <Input 
+                type="checkbox"
+                onChange={this.props.isActiveOnChange}
+                checked={this.props.isActive}/>
+                {' '} isActive
             </Label>
           </FormGroup>
           <FormGroup>

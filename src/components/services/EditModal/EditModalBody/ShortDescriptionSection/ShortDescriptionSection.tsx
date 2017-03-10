@@ -5,11 +5,16 @@ let styles = require('./ShortDescriptionSection.scss');
 const SHORT_DESCRIPTION_LENGTH = 100;
 
 interface IShortDescriptionSectionProps {
-  shortDescription: string;
-  shortDescriptionOnChange: any;
+  shortDescription?: string;
+  shortDescriptionOnChange?: any;
 }
 
 export default class ShortDescriptionSection extends React.Component<IShortDescriptionSectionProps, {}>{
+
+  static defaultProps = {
+    shortDescription: ''
+  }
+
   render() {
     return (
       <TabPane tabId="shortDescription">

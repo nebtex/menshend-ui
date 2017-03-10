@@ -2,8 +2,14 @@ import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx'
 import ServiceListStore from './serviceListStore';
 import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors } from '../api/api';
 
+const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}');
+
 export default class EditServiceFormStore {
   adminApi: AdminApi = new AdminApi();
+
+  strategies = {
+    "Proxy": 0
+  }
 
   @observable roleId: string = ''
   @observable logo: string = ''
@@ -21,12 +27,24 @@ export default class EditServiceFormStore {
   @observable cors: AdminServiceCors
   @observable secretPaths: IObservableArray<string> = observable.array([])
 
+  // **** Errors ****
+  @observable nameError: boolean
+  @observable logoError: boolean
+  @observable longDescriptionUrlError: boolean
+
+  // **** Aux observables
+  @observable longDescriptionUrlActive: boolean
+
   @action updateRoleId = (roleId:string) => {
     this.roleId = roleId
   }
 
   @action updateLogo = (logo:string) => {
     this.logo = logo
+  }
+
+  @action updateLogoError = (logoError: boolean) => {
+    this.logoError = logoError
   }
 
   @action updateName = (name:string) => {
@@ -69,7 +87,12 @@ export default class EditServiceFormStore {
     this.strategy = strategy
   }
 
+  @action updateLongDescriptionUrlActive = (urlActive:boolean) => {
+    this.longDescriptionUrlActive = urlActive;
+  }
+
   // **** Cache ****
+
   @action updateTTL = (ttl:number) => {
     this.cache.ttl = ttl
   }
@@ -118,13 +141,13 @@ export default class EditServiceFormStore {
     allowedMethods.splice(index, 1);
   }
 
-  @action addAllowedHeaders = (allowedHeader:string) => {
+  @action addAllowedHeader = (allowedHeader:string) => {
     if(this.cors.allowedHeaders.includes(allowedHeader)) return;
     let allowedHeaders = this.cors.allowedHeaders;
     allowedHeaders.push(allowedHeader);
   }
 
-  @action deleteAllowedHeaders = (allowedHeader:string) => {
+  @action deleteAllowedHeader = (allowedHeader:string) => {
     if(!this.cors.allowedHeaders.includes(allowedHeader)) return;
     const index = this.cors.allowedHeaders.indexOf(allowedHeader);
     let allowedHeaders = this.cors.allowedHeaders;
@@ -137,7 +160,7 @@ export default class EditServiceFormStore {
     exposedHeaders.push(exposedHeader);
   }
 
-  @action deleteExposedHeaders = (exposedHeader:string) => {
+  @action deleteExposedHeader = (exposedHeader:string) => {
     if(!this.cors.exposedHeaders.includes(exposedHeader)) return;
     const index = this.cors.exposedHeaders.indexOf(exposedHeader);
     let exposedHeaders = this.cors.exposedHeaders;
@@ -151,10 +174,22 @@ export default class EditServiceFormStore {
     this.secretPaths.push(secretPath)
   }
 
-  @action removeSecretPath = (secretPath:string) => {
+  @action deleteSecretPath = (secretPath:string) => {
     const index = this.secretPaths.indexOf(secretPath)
     if(index === -1) return;
     this.secretPaths.splice(index, 1);
+  }
+
+  // **** Save service ****
+
+  @action saveService = () => {
+    this.nameError = this.name.trim() === '';
+    this.longDescriptionUrlError = !urlRegExp.test(this.longDescriptionUrl) || (this.longDescriptionUrl === '' && this.longDescriptionUrlActive);
+
+    if(!this.nameError && !this.longDescriptionUrlError){
+      // @TODO: Send data here and check the logo error behavior, this is a component state
+      console.log('There are no errors');
+    }
   }
 
   // **** Api Client Calls ****

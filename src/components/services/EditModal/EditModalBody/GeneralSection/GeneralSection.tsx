@@ -5,16 +5,22 @@ let styles = require('./GeneralSection.scss');
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
 
 interface IGeneralSectionProps {
-  name: string;
-  nameError: boolean;
-  nameOnChange: any;
-  logo: string;
-  logoOnChange: any;
-  logoError: boolean;
-  logoOnError: any;
+  name?: string;
+  nameError?: boolean;
+  nameOnChange?: any;
+  logo?: string;
+  logoOnChange?: any;
+  logoError?: boolean;
+  logoOnError?: any;
 }
 
 export default class GeneralSection extends React.Component<IGeneralSectionProps, {}>{
+  static defaultProps = {
+    name: 'Unknown service',
+    nameError: false,
+    logo: DEFAULT_LOGO,
+    logoError: false
+  }
 
   getNameFormGroup = () => {
     let name = this.props.name,
@@ -43,8 +49,14 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
           <Label>Logo</Label>
         </div>
         <div>
-          <Input placeholder='url' value={this.props.logo} onChange={this.props.logoOnChange}></Input>
-          <img src={this.props.logoError ? DEFAULT_LOGO : this.props.logo} height={64} width={64} className={styles.logo} onError={this.props.logoOnError}/>
+          <Input placeholder='url' value={this.props.logo} onChange={this.props.logoOnChange} />
+          <img 
+            src={this.props.logoError ? DEFAULT_LOGO : this.props.logo} 
+            height={64} 
+            width={64} 
+            className={styles.logo} 
+            onError={() => {this.props.logoOnError(true)}}
+            onLoad={() => {this.props.logoOnError(false)}} />
         </div>
       </div>
     );

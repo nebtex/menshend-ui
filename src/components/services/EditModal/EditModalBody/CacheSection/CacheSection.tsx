@@ -1,15 +1,22 @@
 import * as React from 'react';
 import { TabPane, Form, FormGroup, Label, Input } from 'reactstrap';
+import { AdminServiceCache } from '../../../../../api/api';
 let styles = require('./CacheSection.scss');
 
 interface ICacheSectionProps {
-  cacheActive: boolean;
+  cache: AdminServiceCache;
   cacheActiveOnChange: any;
-  ttl: number;
   ttlOnChange: any;
 }
 
 export default class CacheSection extends React.Component<ICacheSectionProps, {}>{
+  static defaultProps = {
+    cache: {
+      ttl: 120,
+      active: true
+    }
+  }
+
   render() {
     return (
       <TabPane tabId="cache">
@@ -18,7 +25,7 @@ export default class CacheSection extends React.Component<ICacheSectionProps, {}
             <Label check>
               <Input 
                 type="checkbox"
-                checked={this.props.cacheActive}
+                checked={this.props.cache.active}
                 onChange={this.props.cacheActiveOnChange}/>{' '}
               Active
             </Label>
@@ -29,7 +36,7 @@ export default class CacheSection extends React.Component<ICacheSectionProps, {}
               type="number"
               name="TTL"
               id="TTL"
-              value={this.props.ttl}
+              value={this.props.cache.ttl}
               onChange={this.props.ttlOnChange}/>
           </FormGroup>
         </Form>

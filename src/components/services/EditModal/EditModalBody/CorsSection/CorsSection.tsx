@@ -1,30 +1,37 @@
 import * as React from 'react';
 import { TabPane, FormGroup, Label, Input } from 'reactstrap';
 import EditableList from '../../../../general/EditableList/EditableList';
+import { AdminServiceCors } from '../../../../../api/api';
 let styles = require('./CorsSection.scss');
 
 interface ICorsSectionProps {
-  allowCredentials: boolean;
+  cors: AdminServiceCors;
   allowCredentialsOnChange: any;
-  optionsPassthrough: boolean;
   optionsPassthroughOnChange: any;
-  maxAge: boolean;
   maxAgeOnChange: any;
-  allowedOrigins: string[];
   handleAllowedOriginsAdd: any;
   handleAllowedOriginsDelete: any;
-  allowedMethods: string[];
   handleAllowedMethodsAdd: any;
   handleAllowedMethodsDelete: any;
-  allowedHeaders: string[];
   handleAllowedHeadersAdd: any;
   handleAllowedHeadersDelete: any;
-  exposedHeaders: string[];
-  handleExposedHeadersAdd: string[];
-  handleExposedHeadersDelete: string[];
+  handleExposedHeadersAdd: any;
+  handleExposedHeadersDelete: any;
 }
 
 export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
+  static defaultProps = {
+    cors: {
+      allowedOrigins: new Array(),
+      allowedMethods: new Array(),
+      allowedHeaders: new Array(),
+      exposedHeaders: new Array(),
+      allowCredentials: false,
+      optionsPassthrough: false,
+      maxAge: false
+    }
+  }
+
   render() {
     return (
       <TabPane tabId="cors">
@@ -33,7 +40,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
             <Label check>
               <Input 
                 type="checkbox"
-                checked={this.props.allowCredentials}
+                checked={this.props.cors.allowCredentials}
                 onChange={this.props.allowCredentialsOnChange} />
                 {' '} allowCredentials
             </Label>
@@ -42,7 +49,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
             <Label check>
               <Input 
                 type="checkbox"
-                checked={this.props.optionsPassthrough}
+                checked={this.props.cors.optionsPassthrough}
                 onChange={this.props.optionsPassthroughOnChange} />
                 {' '} optionsPassthrough
             </Label>
@@ -51,7 +58,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
             <Label check>
               <Input 
                 type="checkbox"
-                checked={this.props.maxAge}
+                checked={this.props.cors.maxAge}
                 onChange={this.props.maxAgeOnChange} />
                 {' '} maxAge
             </Label>
@@ -60,7 +67,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
         <FormGroup className={styles.editableListFormGroup}>
           <Label>Allowed Origins</Label>
           <EditableList 
-            items={this.props.allowedOrigins} 
+            items={this.props.cors.allowedOrigins} 
             handleAdd={this.props.handleAllowedOriginsAdd} 
             handleDelete={this.props.handleAllowedOriginsDelete}
             placeholder="New allowed origin"/>
@@ -68,7 +75,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
         <FormGroup className={styles.editableListFormGroup}>
           <Label>Allowed Methods</Label>
           <EditableList 
-            items={this.props.allowedMethods} 
+            items={this.props.cors.allowedMethods} 
             handleAdd={this.props.handleAllowedMethodsAdd} 
             handleDelete={this.props.handleAllowedMethodsDelete}
             placeholder="New allowed method"/>
@@ -76,7 +83,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
         <FormGroup className={styles.editableListFormGroup}>
           <Label>Allowed Headers</Label>
           <EditableList 
-            items={this.props.allowedHeaders} 
+            items={this.props.cors.allowedHeaders} 
             handleAdd={this.props.handleAllowedHeadersAdd} 
             handleDelete={this.props.handleAllowedHeadersDelete}
             placeholder="New allowed header"/>
@@ -84,7 +91,7 @@ export default class CorsSection extends React.Component<ICorsSectionProps, {}>{
         <FormGroup className={styles.editableListFormGroup}>
           <Label>Exposed Headers</Label>
           <EditableList 
-            items={this.props.exposedHeaders} 
+            items={this.props.cors.exposedHeaders} 
             handleAdd={this.props.handleExposedHeadersAdd} 
             handleDelete={this.props.handleExposedHeadersDelete}
             placeholder="New exposed header"/>
