@@ -7,22 +7,39 @@ import { shallow, mount, render } from 'enzyme';
 
 describe('GeneralSection', () => {
   let generalSection:any;
+  let nameOnChangeMock:any;
+  let logoOnChangeMock:any;
 
   describe('Default', () => {
 
     const testProps = Cases['Default'];
 
     beforeEach(() => {
-      generalSection = mount(<GeneralSection {...testProps} />);
+      nameOnChangeMock = jest.fn();
+      logoOnChangeMock = jest.fn();
+      generalSection = mount(
+        <GeneralSection 
+          {...testProps} 
+          nameOnChange={nameOnChangeMock}
+          logoOnChange={logoOnChangeMock} />
+      );
     });
 
     it("should render correctly", () => {
-      
+      expect(generalSection.find('BackendSection').length).toEqual(1);
     });
 
-    it("should call the nameOnChange prop when specified action is performed" ,() => {})
+    it("should call the nameOnChange prop when specified action is performed" ,() => {
+      const nameInput = generalSection.find('Input').first();
+      nameInput.simulate('change');
+      expect(nameOnChangeMock).toBeCalled();
+    });
 
-    it("should call the logoOnChange prop when specified action is performed" ,() => {})
+    it("should call the logoOnChange prop when specified action is performed" ,() => {
+      const logoInput = generalSection.find('Input').at(1);
+      logoInput.simulate('change');
+      expect(logoOnChangeMock).toBeCalled();
+    });
   });
 
   describe('Data defined', () => {
@@ -34,7 +51,8 @@ describe('GeneralSection', () => {
     });
 
     it("should render correctly", () => {
-      
+      expect(generalSection.find('Input').first().props().value).toEqual(Cases['Data defined'].name);
+      expect(generalSection.find('Input').at(1).props().value).toEqual(Cases['Data defined'].logo);
     });
   });
 
@@ -47,7 +65,8 @@ describe('GeneralSection', () => {
     });
 
     it("should render correctly", () => {
-      
+      expect(generalSection.find('FormGroup').first().props().color).toEqual('danger');
+      expect(generalSection.find('Input').first().props().state).toEqual('danger');
     });
   });
 
@@ -60,7 +79,7 @@ describe('GeneralSection', () => {
     });
 
     it("should render correctly", () => {
-      
+      expect(generalSection.find('img').first().props().src).toEqual('https://placehold.it/64x64');      
     });
   });
 });

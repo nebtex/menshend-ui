@@ -16,7 +16,7 @@ Cases['Default'] = {
   maxAgeOnChange: function() {}
 }
 
-Cases['Cors Defined'] = {
+Cases['Data defined'] = {
   cors: {
     allowedOrigins: ['allowedOrigins1', 'allowedOrigins2'],
     allowedMethods: ['allowedMethods1', 'allowedMethods2'],

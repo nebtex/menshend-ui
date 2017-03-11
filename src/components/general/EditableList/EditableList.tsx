@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Input, Button } from 'reactstrap';
+import * as classnames from 'classnames';
 let styles = require('./EditableList.scss');
 
 // ***** Editable List Item Component
@@ -13,7 +14,7 @@ const EditableListItem = (props:IEditableListItemProps) => {
   return (
     <div className={styles.item}>
       <div className={styles.label}> {props.item} </div>
-      <div className={styles.deleteButton} onClick={props.handleDelete}><i className="fa fa-times"/></div>
+      <div className={classnames(styles.deleteButton, 'deleteButton')} onClick={props.handleDelete}><i className="fa fa-times"/></div>
     </div>
   );
 }
