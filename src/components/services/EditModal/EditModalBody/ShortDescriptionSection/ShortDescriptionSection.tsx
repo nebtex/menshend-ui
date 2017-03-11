@@ -4,9 +4,9 @@ let styles = require('./ShortDescriptionSection.scss');
 
 const SHORT_DESCRIPTION_LENGTH = 100;
 
-interface IShortDescriptionSectionProps {
+export interface IShortDescriptionSectionProps {
   shortDescription?: string;
-  shortDescriptionOnChange?: any;
+  shortDescriptionOnChange: any;
 }
 
 export default class ShortDescriptionSection extends React.Component<IShortDescriptionSectionProps, {}>{

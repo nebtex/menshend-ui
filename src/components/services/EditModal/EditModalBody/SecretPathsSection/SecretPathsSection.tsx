@@ -2,10 +2,10 @@ import * as React from 'react';
 import { TabPane, Label, FormGroup } from 'reactstrap';
 import EditableList from '../../../../general/EditableList/EditableList';
 
-interface ISecretPathsSectionProps {
+export interface ISecretPathsSectionProps {
   secretPaths?: string[];
-  handleSecretPathsAdd?: any;
-  handleSecretPathsDelete?: any;
+  handleSecretPathsAdd: any;
+  handleSecretPathsDelete: any;
 }
 
 export default class SecretPathsSection extends React.Component<ISecretPathsSectionProps,{}> {

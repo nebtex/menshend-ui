@@ -3,10 +3,10 @@ import { TabPane, Form, FormGroup, Label, Input } from 'reactstrap';
 import { AdminServiceCache } from '../../../../../api/api';
 let styles = require('./CacheSection.scss');
 
-interface ICacheSectionProps {
-  cache: AdminServiceCache;
-  cacheActiveOnChange: any;
-  ttlOnChange: any;
+export interface ICacheSectionProps {
+  cache?: AdminServiceCache;
+  cacheActiveOnChange?: any;
+  ttlOnChange?: any;
 }
 
 export default class CacheSection extends React.Component<ICacheSectionProps, {}>{

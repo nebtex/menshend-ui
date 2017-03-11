@@ -3,7 +3,7 @@ import { Row, Label, Input, FormGroup, Tooltip, Dropdown, DropdownItem, Dropdown
 import MonacoEditor from 'react-monaco-editor';
 let styles = require('./BackendSection.scss');
 
-interface IBackendSectionProps {
+export interface IBackendSectionProps {
   codeOnChange?: any;
   strategy?: number;
   strategyOnChange?: any;

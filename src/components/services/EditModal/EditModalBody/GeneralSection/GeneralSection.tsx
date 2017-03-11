@@ -5,23 +5,23 @@ let styles = require('./GeneralSection.scss');
 
 const DEFAULT_LOGO = 'https://placehold.it/64x64';
 
-interface IGeneralSectionProps {
+export interface IGeneralSectionProps {
   name?: string;
   nameError?: boolean;
-  nameOnChange?: any;
+  nameOnChange: any;
   logo?: string;
-  logoOnChange?: any;
+  logoOnChange: any;
   logoError?: boolean;
-  logoOnError?: any;
-  codeOnChange?: any;
+  logoOnError: any;
+  codeOnChange: any;
   strategy?: number;
-  strategyOnChange?: any;
+  strategyOnChange: any;
   csrf?: boolean;
-  csrfOnChange?: any;
+  csrfOnChange: any;
   impersonateWithinRole?: boolean;
-  impersonateWithinRoleOnChange?: any;
+  impersonateWithinRoleOnChange: any;
   isActive?: boolean;
-  isActiveOnChange?: any;
+  isActiveOnChange: any;
   strategies?: any;
 }
 

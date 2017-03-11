@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { TabPane, FormGroup, FormFeedback, Label, Input } from 'reactstrap';
-let styles = require('./LongDescription.scss');
+let styles = require('./LongDescriptionSection.scss');
 
-interface ILongDescriptionSectionProps {
-  longDescriptionUrlActive:boolean;
+export interface ILongDescriptionSectionProps {
+  longDescriptionUrlActive?:boolean;
   longDescriptionUrlActiveOnChange: any;
-  longDescription: string;
+  longDescription?: string;
   longDescriptionOnChange: any;
   longDescriptionUrlOnChange: any;
-  longDescriptionUrl: string;
-  longDescriptionUrlError: boolean;
+  longDescriptionUrl?: string;
+  longDescriptionUrlError?: boolean;
 }
 
 export default class LongDescriptionSection extends React.Component<ILongDescriptionSectionProps, {}> {

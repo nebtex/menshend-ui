@@ -4,8 +4,8 @@ import EditableList from '../../../../general/EditableList/EditableList';
 import { AdminServiceCors } from '../../../../../api/api';
 let styles = require('./CorsSection.scss');
 
-interface ICorsSectionProps {
-  cors: AdminServiceCors;
+export interface ICorsSectionProps {
+  cors?: AdminServiceCors;
   allowCredentialsOnChange: any;
   optionsPassthroughOnChange: any;
   maxAgeOnChange: any;
