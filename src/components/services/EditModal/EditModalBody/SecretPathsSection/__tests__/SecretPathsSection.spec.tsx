@@ -48,7 +48,7 @@ describe('SecretPathsSection', () => {
     });
 
     it("should render correctly", () => {
-      expect(JSON.stringify(secretPathsSection.find('EditableList').props().items)).toEqual(JSON.stringify(Cases['Data defined'].secretPaths);
+      expect(JSON.stringify(secretPathsSection.find('EditableList').props().items)).toEqual(JSON.stringify(Cases['Data defined'].secretPaths));
     });
 
     it("should call the handleSecretPathDelete prop when specified action is performed" ,() => {
