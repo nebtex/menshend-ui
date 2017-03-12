@@ -4,7 +4,7 @@ import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors } from '../
 
 const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}');
 
-export default class EditServiceFormStore {
+class EditServiceFormStore {
   adminApi: AdminApi = new AdminApi();
 
   strategies = {
@@ -255,3 +255,7 @@ export default class EditServiceFormStore {
     });
   }
 }
+
+const editServiceFormStore = new EditServiceFormStore();
+
+export default editServiceFormStore;
