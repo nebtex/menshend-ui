@@ -9,6 +9,9 @@ export interface IGeneralSectionProps {
   name?: string;
   nameError?: boolean;
   nameOnChange: any;
+  subdomain?: string;
+  subdomainOnChange?: any;
+  subdomainError?: boolean;
   logo?: string;
   logoOnChange: any;
   logoError?: boolean;
@@ -30,7 +33,9 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
     name: 'Unknown service',
     nameError: false,
     logo: DEFAULT_LOGO,
-    logoError: false
+    logoError: false,
+    subdomainError: false,
+    subdomain: ''
   }
 
   getNameFormGroup = () => {
@@ -73,13 +78,34 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
     );
   }
 
+  getSubdomainFormGroup = () => {
+    const { subdomain, subdomainError } = this.props;
+
+    return (
+      <FormGroup color={subdomainError ? "danger" : null} className={styles.subdomainFormGroup}>
+        <div>
+          <Label>Subdomain</Label>
+        </div>
+        <div>
+          <Input
+            value={subdomain} 
+            onChange={this.props.subdomainOnChange} 
+            state={subdomainError ? "danger" : null} />
+            {subdomainError ? <FormFeedback>This field is required</FormFeedback> : null}        
+        </div>
+      </FormGroup>
+    );
+  }
+
   render() {
     const nameFormGroup = this.getNameFormGroup(),
+          subdomainFormGroup = this.getSubdomainFormGroup(),
           logoFormGroup = this.getLogoFormGroup();
 
     return (
       <TabPane tabId="general">
         { nameFormGroup }
+        { subdomainFormGroup }
         { logoFormGroup }
         <hr/>
         <BackendSection

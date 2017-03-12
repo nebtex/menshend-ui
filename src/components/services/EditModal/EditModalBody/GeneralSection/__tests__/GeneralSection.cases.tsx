@@ -10,12 +10,14 @@ Cases['Default'] = {
   strategyOnChange: function(){},
   csrfOnChange: function(){},
   impersonateWithinRoleOnChange: function(){},
-  isActiveOnChange: function(){}
+  isActiveOnChange: function(){},
+  subdomainOnChange: function(){}
 }
 
 Cases['Data defined'] = {
   name: 'service-name',
   logo: testLogo,
+  subdomain: 'test-subdomain',
   nameOnChange: function(){},
   logoOnChange: function(){},
   logoOnError: function(){},
@@ -23,7 +25,8 @@ Cases['Data defined'] = {
   strategyOnChange: function(){},
   csrfOnChange: function(){},
   impersonateWithinRoleOnChange: function(){},
-  isActiveOnChange: function(){}
+  isActiveOnChange: function(){},
+  subdomainOnChange: function(){}
 }
 
 Cases['Name error'] = {
@@ -36,7 +39,22 @@ Cases['Name error'] = {
   strategyOnChange: function(){},
   csrfOnChange: function(){},
   impersonateWithinRoleOnChange: function(){},
-  isActiveOnChange: function(){}
+  isActiveOnChange: function(){},
+  subdomainOnChange: function(){}
+}
+
+Cases['Subdomain error'] = {
+  subdomain: '',
+  subdomainError: true,
+  nameOnChange: function(){},
+  logoOnChange: function(){},
+  logoOnError: function(){},
+  codeOnChange: function(){},
+  strategyOnChange: function(){},
+  csrfOnChange: function(){},
+  impersonateWithinRoleOnChange: function(){},
+  isActiveOnChange: function(){},
+  subdomainOnChange: function(){}
 }
 
 Cases['Logo error'] = {
@@ -49,7 +67,8 @@ Cases['Logo error'] = {
   strategyOnChange: function(){},
   csrfOnChange: function(){},
   impersonateWithinRoleOnChange: function(){},
-  isActiveOnChange: function(){}
+  isActiveOnChange: function(){},
+  subdomainOnChange: function(){}
 }
 
 export default Cases;

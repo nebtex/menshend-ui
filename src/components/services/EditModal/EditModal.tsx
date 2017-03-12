@@ -14,6 +14,9 @@ export interface IEditModalProps {
   toggle: any;
   codeOnChange?: any;
   name?: string;
+  subdomain?: string;
+  subdomainOnChange?: any;
+  subdomainError?: boolean;
   nameOnChange?: any;
   nameError?: boolean;
   logo?: string;
@@ -85,6 +88,9 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
         <EditModalBody
           name={this.props.name}
           nameError={this.props.nameError}
+          subdomain={this.props.subdomain}
+          subdomainOnChange={this.props.subdomainOnChange}
+          subdomainError={this.props.subdomainError}
           nameOnChange={this.props.nameOnChange}
           logo={this.props.logo}
           logoError={this.props.logoError}

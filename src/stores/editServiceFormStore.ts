@@ -12,6 +12,8 @@ class EditServiceFormStore {
   }
 
   @observable roleId: string = ''
+  @observable subdomain: string = ''
+  @observable subdomainError: boolean
   @observable logo: string = ''
   @observable name: string = ''
   @observable shortDescription: string = ''
@@ -41,6 +43,10 @@ class EditServiceFormStore {
 
   @action updateLogo = (logo:string) => {
     this.logo = logo
+  }
+
+  @action updateSubdomain = (subdomain:string) => {
+    this.subdomain = subdomain
   }
 
   @action updateLogoError = (logoError: boolean) => {
@@ -184,9 +190,10 @@ class EditServiceFormStore {
 
   @action saveService = () => {
     this.nameError = this.name.trim() === '';
+    this.subdomainError = this.subdomain.trim() === '';
     this.longDescriptionUrlError = !urlRegExp.test(this.longDescriptionUrl) || (this.longDescriptionUrl === '' && this.longDescriptionUrlActive);
 
-    if(!this.nameError && !this.longDescriptionUrlError){
+    if(!this.nameError && !this.longDescriptionUrlError && !this.subdomainError){
       // @TODO: Send data here and check the logo error behavior, this is a component state
       console.log('There are no errors');
     }

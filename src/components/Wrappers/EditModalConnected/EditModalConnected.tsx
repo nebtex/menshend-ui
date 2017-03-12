@@ -20,6 +20,9 @@ interface IEditModalConnected {
           toggle={toggle}
           codeOnChange={this.store.updateProxyCode}
           name={this.store.name}
+          subdomain={this.store.subdomain}
+          subdomainOnChange={this.store.updateSubdomain}
+          subdomainError={this.store.subdomainError}
           nameOnChange={this.store.updateName}
           nameError={this.store.nameError}
           logo={this.store.logo}

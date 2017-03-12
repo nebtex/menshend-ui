@@ -16,6 +16,9 @@ export interface IEditModalBodyProps {
   name?: string;
   nameError?: boolean;
   nameOnChange?: any;
+  subdomain?: string;
+  subdomainOnChange?: any;
+  subdomainError?: boolean;
   logo?: string;
   logoError?: boolean;
   logoOnError?: any;
@@ -75,6 +78,9 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps, 
               name={this.props.name}
               nameError={this.props.nameError}
               nameOnChange={this.props.nameOnChange}
+              subdomain={this.props.subdomain}
+              subdomainOnChange={this.props.subdomainOnChange}
+              subdomainError={this.props.subdomainError}
               logo={this.props.logo}
               logoOnChange={this.props.logoOnChange}
               logoError={this.props.logoError}
