@@ -3,18 +3,18 @@ import editServiceFormStore from '../editServiceFormStore';
 import { toJS } from 'mobx';
 
 const expectedGetService = {
-  "id": "service-0.",
-  "roleId": "role-1",
+  "id": "roles/role-0/subdomain-0",
+  "roleId": "role-0",
   "logo": "http://placehold.it/64x64",
-  "name": "LexiconLabs",
-  "shortDescription": "Eros blandit proin sit gravida ornare lectus velit proin quisque.",
-  "longDescription": "Gravida tristique ac sapien i mattis facilisis. Purus pellentesque aliquet leo. Sem sit pellentesque fringilla in, sit non at velit.",
-  "longDescriptionUrl": "lexiconlabs.eu/longDescription",
+  "name": "SkyCenta",
+  "shortDescription": "Non tempor ante facilisis sagittis scelerisque orci morbi sed eti.",
+  "longDescription": "Leo viverra pretium lobortis consectetur eros. Elit condimentum etiam metus nunc gravida imperdiet. Orci aliquet au eget, neque nibh facilisis.",
+  "longDescriptionUrl": "skycenta.gov/longDescription",
   "proxyCode": "__ === your code here ===",
   "proxyCodeLanguage": 0,
-  "impersonateWithinRole": true,
+  "impersonateWithinRole": false,
   "isActive": true,
-  "csrf": true,
+  "csrf": false,
   "strategy": 0,
   "cache": {
     "active": false,
@@ -30,7 +30,7 @@ const expectedGetService = {
     "allowedHeaders": [
       "string"
     ],
-    "allowCredentials": false,
+    "allowCredentials": true,
     "optionsPassthrough": false,
     "maxAge": false,
     "exposedHeaders": [
@@ -51,7 +51,7 @@ describe('editServiceFormStore', () => {
   it('should set the corresponding observables with the obtained data from API Get service', done => {
     try {
       setTimeout(() => {
-        store.apiGetService('service-0.').then(() => {
+        store.apiGetService(expectedGetService.id).then(() => {
           expect(store.name).toEqual(expectedGetService.name);
           expect(store.logo).toEqual(expectedGetService.logo);
           expect(store.shortDescription).toEqual(expectedGetService.shortDescription);

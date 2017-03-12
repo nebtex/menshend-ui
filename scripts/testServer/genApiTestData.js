@@ -7,8 +7,8 @@ var template = `
     "adminService": [
       {{#repeat 5}}
       {
-        "id": "service-{{@index}}.",
-        "roleId": "role-{{int 0 3}}",
+        "id": "roles/role-{{@index}}/subdomain-{{@index}}",
+        "roleId": "role-{{@index}}",
         "logo": "http://placehold.it/64x64",
         "name": "{{company}}",
         "shortDescription": "{{lorem 10}}",
