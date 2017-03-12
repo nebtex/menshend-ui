@@ -7,19 +7,25 @@ import { shallow, mount, render } from 'enzyme';
 
 describe('NavBar', () => {
   let navBar:any;
+  let toggleTabMock:any;
 
   describe('Default', () => {
 
     const testProps = Cases['Default'];
 
     beforeEach(() => {
-      navBar = mount(<NavBar {...testProps} />);
+      toggleTabMock = jest.fn();
+      navBar = mount(
+        <NavBar 
+        {...testProps}
+        toggleTab={toggleTabMock}
+      />);
     });
 
-    it("should render correctly", () => {
-      
+    it("should call the toggleTab prop when specified action is performed" ,() => {
+      const navLink = navBar.find('NavLink').first();
+      navLink.simulate('click');
+      expect(toggleTabMock).toBeCalled();
     });
-
-    it("should call the toggleTab prop when specified action is performed" ,() => {})
   });
 });
