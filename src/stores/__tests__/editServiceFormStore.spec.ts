@@ -1,5 +1,5 @@
 /// <reference types='jest' />
-import EditServiceFormStore from '../editServiceFormStore';
+import editServiceFormStore from '../editServiceFormStore';
 import { toJS } from 'mobx';
 
 const expectedGetService = {
@@ -43,30 +43,29 @@ const expectedGetService = {
 }
 
 describe('editServiceFormStore', () => {
-  let editServiceFormStore:EditServiceFormStore;
-
+  let store: any;
   beforeEach (() => {
-    editServiceFormStore = new EditServiceFormStore();
+    store = editServiceFormStore;
   });
   
   it('should set the corresponding observables with the obtained data from API Get service', done => {
     try {
       setTimeout(() => {
-        editServiceFormStore.apiGetService('service-0.').then(() => {
-          expect(editServiceFormStore.name).toEqual(expectedGetService.name);
-          expect(editServiceFormStore.logo).toEqual(expectedGetService.logo);
-          expect(editServiceFormStore.shortDescription).toEqual(expectedGetService.shortDescription);
-          expect(editServiceFormStore.longDescription).toEqual(expectedGetService.longDescription);
-          expect(editServiceFormStore.longDescriptionUrl).toEqual(expectedGetService.longDescriptionUrl);
-          expect(editServiceFormStore.proxyCode).toEqual(expectedGetService.proxyCode)
-          expect(editServiceFormStore.proxyCodeLanguage).toEqual(expectedGetService.proxyCodeLanguage)
-          expect(editServiceFormStore.csrf).toEqual(expectedGetService.csrf)
-          expect(editServiceFormStore.impersonateWithinRole).toEqual(expectedGetService.impersonateWithinRole)
-          expect(editServiceFormStore.isActive).toEqual(expectedGetService.isActive)
-          expect(editServiceFormStore.strategy).toEqual(expectedGetService.strategy)
-          expect(JSON.stringify(editServiceFormStore.cache)).toEqual(JSON.stringify(expectedGetService.cache))
-          expect(JSON.stringify(editServiceFormStore.cors)).toEqual(JSON.stringify(expectedGetService.cors))
-          expect(JSON.stringify(editServiceFormStore.secretPaths)).toEqual(JSON.stringify(expectedGetService.secretPaths))
+        store.apiGetService('service-0.').then(() => {
+          expect(store.name).toEqual(expectedGetService.name);
+          expect(store.logo).toEqual(expectedGetService.logo);
+          expect(store.shortDescription).toEqual(expectedGetService.shortDescription);
+          expect(store.longDescription).toEqual(expectedGetService.longDescription);
+          expect(store.longDescriptionUrl).toEqual(expectedGetService.longDescriptionUrl);
+          expect(store.proxyCode).toEqual(expectedGetService.proxyCode)
+          expect(store.proxyCodeLanguage).toEqual(expectedGetService.proxyCodeLanguage)
+          expect(store.csrf).toEqual(expectedGetService.csrf)
+          expect(store.impersonateWithinRole).toEqual(expectedGetService.impersonateWithinRole)
+          expect(store.isActive).toEqual(expectedGetService.isActive)
+          expect(store.strategy).toEqual(expectedGetService.strategy)
+          expect(JSON.stringify(store.cache)).toEqual(JSON.stringify(expectedGetService.cache))
+          expect(JSON.stringify(store.cors)).toEqual(JSON.stringify(expectedGetService.cors))
+          expect(JSON.stringify(store.secretPaths)).toEqual(JSON.stringify(expectedGetService.secretPaths))
           done();
         }).catch((e:any) => {
           done.fail(e);

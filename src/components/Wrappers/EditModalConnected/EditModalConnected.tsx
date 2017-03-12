@@ -9,23 +9,7 @@ interface IEditModalConnected {
 }
 
 @observer class EditModalConnected extends React.Component<IEditModalConnected, {}>{
-  store = new editServiceFormStore();
-  
-  state = {
-    roleId: this.store.roleId,
-    logo: this.store.logo,
-    name: this.store.name,
-    shortDescription: this.store.shortDescription,
-    longDescription: this.store.longDescription,
-    longDescriptionUrl: this.store.longDescriptionUrl,
-    csrf: this.store.csrf,
-    impersonateWithinRole: this.store.impersonateWithinRole,
-    isActive: this.store.isActive,
-    strategy: this.store.strategy,
-    cache: this.store.cache,
-    cors: this.store.cors,
-    secretPaths: this.store.secretPaths
-  }
+  store = editServiceFormStore;
 
   render(){
     const { isOpen, toggle } = this.props;
