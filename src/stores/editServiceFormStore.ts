@@ -195,6 +195,7 @@ class EditServiceFormStore {
 
     if(!this.nameError && !this.longDescriptionUrlError && !this.subdomainError){
       // @TODO: Send data here and check the logo error behavior, this is a component state
+      // @TODO: Set the right url based on the role and the subdomain
       console.log('There are no errors');
     }
   }
