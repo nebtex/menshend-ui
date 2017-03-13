@@ -50,6 +50,7 @@ export default class Services extends React.Component<{}, {}>{
           services = {mockServices}
           user = {mockUser}
         />
+        {this.props.children}
       </div>
     );
   }

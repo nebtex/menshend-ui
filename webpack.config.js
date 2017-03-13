@@ -3,7 +3,7 @@ var webpack = require("webpack");
 
 var config = {
   devtool: 'inline-source-map',
-  entry: ["./src/app.tsx"],
+  entry: ["./src/index.tsx"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
