@@ -1,2 +1,1 @@
-export NODE_ENV='DEV'
-nohup node scripts/testServer/testServerApi.js &
+node scripts/testServer/testServerApi.js &
