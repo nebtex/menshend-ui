@@ -75,7 +75,7 @@ Cases['Service'] = {
   impersonateWithinRole: true,
   isActive: true,
   csrf: true,
-  strategy: 0,
+  strategy: 'proxy',
   "cache": {
     "active": false,
     "ttl": 0

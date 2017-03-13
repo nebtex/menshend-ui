@@ -1,5 +1,5 @@
 import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
-import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors } from '../api/api';
+import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors, AdminServiceProxyCodeLanguageEnum, AdminServiceStrategyEnum } from '../api/api';
 import networkStore from './networkStore';
 
 const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}');
@@ -22,9 +22,9 @@ class EditServiceFormStore {
   @observable proxyCode: string = '__=== your code here ==='
   @observable csrf: boolean
   @observable impersonateWithinRole: boolean
-  @observable proxyCodeLanguage: string
+  @observable proxyCodeLanguage: AdminServiceProxyCodeLanguageEnum
   @observable isActive: boolean
-  @observable strategy: string
+  @observable strategy: AdminServiceStrategyEnum
   @observable cache: AdminServiceCache
   @observable cors: AdminServiceCors
   @observable secretPaths: IObservableArray<string> = observable.array([])
@@ -81,7 +81,7 @@ class EditServiceFormStore {
     this.impersonateWithinRole = impersonateWithinRole
   }
 
-  @action updateProxyCodeLanguage = (proxyCodeLanguage:string) => {
+  @action updateProxyCodeLanguage = (proxyCodeLanguage:AdminServiceProxyCodeLanguageEnum) => {
     this.proxyCodeLanguage = proxyCodeLanguage
   }
 
@@ -89,7 +89,7 @@ class EditServiceFormStore {
     this.isActive = isActive
   }
 
-  @action updateStrategy = (strategy:string) => {
+  @action updateStrategy = (strategy:AdminServiceStrategyEnum) => {
     this.strategy = strategy
   }
 

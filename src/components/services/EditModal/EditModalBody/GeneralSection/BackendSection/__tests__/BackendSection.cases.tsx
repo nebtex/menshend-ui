@@ -8,15 +8,15 @@ Cases['Default'] = {
   csrfOnChange: function() {},
   impersonateWithinRoleOnChange: function() {},
   isActiveOnChange: function() {},
-  strategies: {'Proxy': 0, 'SecondStrategy': 1}  
+  strategies: {'Proxy': 'proxy', 'SecondStrategy': 'secondStrategy'}
 }
 
 Cases['Data defined'] = {
-  strategy: 0,
+  strategy: 'proxy',
   csrf: true,
   impersonateWithinRole: false,
   isActive: true,
-  strategies: {'Proxy': 0, 'SecondStrategy': 1},
+  strategies: {'Proxy': 'proxy', 'SecondStrategy': 'secondStrategy'},
   codeOnChange: function() {},
   strategyOnChange: function() {},
   csrfOnChange: function() {},
