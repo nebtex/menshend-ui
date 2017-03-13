@@ -32,7 +32,6 @@ class ServiceListStore {
     return this.clientApi.listAvailableServices({}).then((clientServicesList:ClientService[]) => {
       this.services.clear()
       clientServicesList.forEach((service) => {
-        console.log(service);
         this.services.push(service);
       });
       return true;

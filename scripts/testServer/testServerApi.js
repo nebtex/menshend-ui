@@ -58,7 +58,7 @@ server.delete('/v1/adminServices/roles/role-0/subdomain-0', function (req, res) 
 });
 
 server.use(jsonServer.rewriter({
-  '/v1/api/client/service/list': '/clientServices'
+  '/v1/clientServices': '/clientServices'
 }));
 
 server.use(router)

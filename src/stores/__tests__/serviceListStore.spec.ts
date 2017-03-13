@@ -6,92 +6,43 @@ import * as fetchMock from "fetch-mock";
 
 const expectedServices = [
   {
-    "id": "service-0.",
+    "id": "roles/role-0/subdomain-0",
+    "roleId": "role-0",
+    "subDomain": "subdomain-0",
     "logo": "http://placehold.it/64x64",
-    "name": "string",
-    "shortDescription": "Scelerisque lacus sapien tristique rhoncus nisl, porttitor erat est e.",
-    "longDescription": "Diam aliquam adipiscing vehicula gravida gravida. Ex sem adipiscing felis. Vestibulum vehicula e tortor, etiam mollis velit cras sagittis pulvinar.",
-    "roles": {
-      "role-11": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-10": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-5": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-6": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-0": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-12": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-15": {
-        "secretPaths": [
-          "string"
-        ]
-      }
-    }
+    "name": "Sealine",
+    "longDescription": "Auctor tristique vulputate erat eti mattis. Vestibulum posuere nisi nibh justo, ut morbi sit consequat risus, laoreet lacinia dictum eros.",
+    "longDescriptionUrl": "sealine.mobi/longDescription",
+    "impersonateWithinRole": true,
+    "secretPaths": [
+      "string"
+    ]
   },
   {
-    "id": "service-1.",
+    "id": "roles/role-1/subdomain-1",
+    "roleId": "role-1",
+    "subDomain": "subdomain-1",
     "logo": "http://placehold.it/64x64",
-    "name": "string",
-    "shortDescription": "Natoque morbi vestibulum neque ex. Mollis scelerisque orci maximus dictum.",
-    "longDescription": "Ut proin tempor ligula justo ac ante, curabitur tristique felis viverra aliquet viverra erat vitae finibus vel dignissim mollis vestibulum.",
-    "roles": {
-      "role-4": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-16": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-2": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-14": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-9": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-8": {
-        "secretPaths": [
-          "string"
-        ]
-      },
-      "role-11": {
-        "secretPaths": [
-          "string"
-        ]
-      }
-    }
+    "name": "Keysoft",
+    "longDescription": "Elit suscipit velit vehicula ligula tempus dignissim faucibus, donec sodales eget nisi rhoncus viverra lorem cras, auctor non dui dui.",
+    "longDescriptionUrl": "keysoft.edu/longDescription",
+    "impersonateWithinRole": false,
+    "secretPaths": [
+      "string"
+    ]
+  },
+  {
+    "id": "roles/role-2/subdomain-2",
+    "roleId": "role-2",
+    "subDomain": "subdomain-2",
+    "logo": "http://placehold.it/64x64",
+    "name": "LoopSys",
+    "longDescription": "A sit nulla vehicula neque. Ante ac natoque accumsan laoreet au ut hendrerit erat ipsum sollicitudin condimentum eros tincidunt i.",
+    "longDescriptionUrl": "loopsys.club/longDescription",
+    "impersonateWithinRole": false,
+    "secretPaths": [
+      "string"
+    ]
   }
 ]
 
@@ -100,36 +51,45 @@ describe('editServiceFormStore', () => {
 
   beforeEach(() => {
     store = serviceListStore;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
   });
 
   it('should set the services list when client api get service list is called', (done) => {
-    done()
-    // try {
-    //   setTimeout (() => {
-    //     store.clientApiGetServiceList().then(() => {
-    //       expect(toJS(store.services)).toEqual(expectedServices);
-    //       done();
-    //     }).catch((e:any) => {
-    //       done.fail(e);
-    //     })
-    //   }, 1000);
-    // }catch (e){
-    //   done.fail(e);
-    // }
+    try {
+      setTimeout (() => {
+        store.clientApiGetServiceList().then(() => {
+          expect(toJS(store.services)).toEqual(expectedServices);
+          done();
+        }).catch((e:any) => {
+          done.fail(e);
+        })
+      }, 1000);
+    }catch (e){
+      done.fail(e);
+    }
   });
 
   it('should set the available roles from get services', (done) => {
-    done()
-    // try {
-    //   setTimeout (() => {
-    //     store.clientApiGetServiceList().then(() => {        
-    //       done();
-    //     }).catch((e:any) => {
-    //       done.fail(e);
-    //     })
-    //   }, 1000);
-    // }catch (e){
-    //   done.fail(e);
-    // }
+    try {
+      setTimeout (() => {
+        store.clientApiGetServiceList().then(() => {
+          const expectedRoles = [];
+          const storeRoles = store.roles;          
+          expectedServices.forEach((service) => {
+            let role = service.roleId;
+            if(!expectedRoles.includes(role))
+              expectedRoles.push(role);
+          });
+          expectedRoles.sort()
+
+          expect(storeRoles).toEqual(expectedRoles);
+          done();
+        }).catch((e:any) => {
+          done.fail(e);
+        })
+      }, 1000);
+    }catch (e){
+      done.fail(e);
+    }
   });
 });

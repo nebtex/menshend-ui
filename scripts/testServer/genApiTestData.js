@@ -48,22 +48,19 @@ var template = `
       {{/repeat}}
     ],
     "clientServices": [
-      {{#repeat 8}}
+      {{#repeat 3}}
       {
-        "id": "service-{{@index}}.",
+        "id": "roles/role-{{@index}}/subdomain-{{@index}}",
+        "roleId": "role-{{@index}}",
+        "subDomain": "subdomain-{{@index}}",
         "logo": "http://placehold.it/64x64",
-        "name": "string",
-        "shortDescription": "{{lorem 10}}",
+        "name": "{{company}}",
         "longDescription": "{{lorem 20}}",
-        "roles": {
-          {{#repeat 8}}
-          "role-{{int 0 20}}": {
-            "secretPaths": [
-              "string"
-            ]
-          }
-          {{/repeat}}
-        }
+        "longDescriptionUrl": "{{domain}}/longDescription",
+        "impersonateWithinRole": {{boolean}},
+        "secretPaths": [
+          "string"
+        ]
       }
       {{/repeat}}      
     ],
