@@ -5,7 +5,7 @@ let styles = require('./BackendSection.scss');
 
 export interface IBackendSectionProps {
   codeOnChange?: any;
-  strategy?: number;
+  strategy?: string;
   strategyOnChange?: any;
   csrf?: boolean;
   csrfOnChange?: any;

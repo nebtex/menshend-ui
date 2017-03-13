@@ -17,7 +17,7 @@ export interface IGeneralSectionProps {
   logoError?: boolean;
   logoOnError: any;
   codeOnChange: any;
-  strategy?: number;
+  strategy?: string;
   strategyOnChange: any;
   csrf?: boolean;
   csrfOnChange: any;

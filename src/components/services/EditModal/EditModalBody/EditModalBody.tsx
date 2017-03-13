@@ -52,7 +52,7 @@ export interface IEditModalBodyProps {
   handleSecretPathsAdd?: any;
   handleSecretPathsDelete?: any;
   strategies?: any;
-  strategy?: number;
+  strategy?: string;
   strategyOnChange?: any;
   csrf?: boolean;
   csrfOnChange?: any;

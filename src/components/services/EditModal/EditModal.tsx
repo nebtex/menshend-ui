@@ -35,7 +35,7 @@ export interface IEditModalProps {
   cache?:AdminServiceCache;
   cors?: AdminServiceCors;
   secretPaths?: string[];
-  strategy?: number;
+  strategy?: string;
   csrf?: boolean;
   impersonateWithinRole?: boolean;
   isActive?: boolean;

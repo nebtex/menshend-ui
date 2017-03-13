@@ -22,9 +22,9 @@ class EditServiceFormStore {
   @observable proxyCode: string = '__=== your code here ==='
   @observable csrf: boolean
   @observable impersonateWithinRole: boolean
-  @observable proxyCodeLanguage: number
+  @observable proxyCodeLanguage: string
   @observable isActive: boolean
-  @observable strategy: number
+  @observable strategy: string
   @observable cache: AdminServiceCache
   @observable cors: AdminServiceCors
   @observable secretPaths: IObservableArray<string> = observable.array([])
@@ -81,7 +81,7 @@ class EditServiceFormStore {
     this.impersonateWithinRole = impersonateWithinRole
   }
 
-  @action updateProxyCodeLanguage = (proxyCodeLanguage:number) => {
+  @action updateProxyCodeLanguage = (proxyCodeLanguage:string) => {
     this.proxyCodeLanguage = proxyCodeLanguage
   }
 
@@ -89,7 +89,7 @@ class EditServiceFormStore {
     this.isActive = isActive
   }
 
-  @action updateStrategy = (strategy:number) => {
+  @action updateStrategy = (strategy:string) => {
     this.strategy = strategy
   }
 
