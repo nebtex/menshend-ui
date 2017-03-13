@@ -41,14 +41,21 @@ const mockUser = {
   canImpersonate:true
 }
 
-export default class Services extends React.Component<{}, {}>{
+interface IServicesProps {
+  params: any;
+}
+
+export default class Services extends React.Component<IServicesProps, {}>{
   render(){
+    const { role, subdomain } = this.props.params;
+
     return (
       <div>
         <NavBar environment={mockEnvironment}/>
         <ServicesPanel 
           services = {mockServices}
           user = {mockUser}
+          activeRole = {role}
         />
         {this.props.children}
       </div>

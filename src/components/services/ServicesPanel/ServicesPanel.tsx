@@ -4,6 +4,7 @@ import { IService, IUser } from '../../../models/interface';
 import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
 import EditModal from '../EditModal/EditModal';
+import { Link } from 'react-router';
 import { Col, Container, Row, Form, FormGroup, Input, Dropdown, 
          DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
 
@@ -12,13 +13,13 @@ let styles = require('./ServicesPanel.scss');
 export interface IServicesPanelProps {
   services: IService[];
   user: IUser;
+  activeRole?: string;
 }
 
 interface IServicesPanelState {
   dropdownOpen: boolean;
   loadingSearch: boolean;
   searchValue: string;
-  activeRole: string;
   editModalOpen: boolean;
   modalService?: IService;
 }
@@ -31,10 +32,13 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   state = {
     dropdownOpen: false,
     searchValue: '',
-    activeRole: 'All',
     loadingSearch: false,
     editModalOpen: false,
     modalService: this.props.services[0]
+  }
+
+  static defaultProps = {
+    activeRole: 'All'
   }
 
   toggleEditModalOpen = () => {
@@ -49,12 +53,6 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
   }
 
-  selectRole = (role: string) => {
-    this.setState({
-      activeRole: role
-    });
-  }
-
   getRoles = () => {
     let roles: string[] = [];
     this.props.services.forEach(service => {
@@ -66,11 +64,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
 
     roles.sort(function (a, b) {
-      if (a.toLowerCase() < b.toLowerCase()) {
-        return -1;
-      } else {
-        return 1;
-      }
+      return a.localeCompare(b);
     });
     return roles;
   }
@@ -81,13 +75,19 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className={styles.rolesDropdown}>
         <DropdownToggle caret>
-          {this.state.activeRole}
+          {this.props.activeRole}
         </DropdownToggle>
         <DropdownMenu className={styles.rolesContainer}>
-          <DropdownItem onClick={() => { this.selectRole('All') }}>{'All'}</DropdownItem>
+          <DropdownItem className={styles.roleDropdownItem}> 
+            <Link to={`/ui/services`} className={styles.roleLink}>{'All'}</Link>
+          </DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
-            return <DropdownItem key={index} onClick={() => { this.selectRole(role) }} className="role">{role}</DropdownItem>
+            return( 
+              <DropdownItem key={index} className={classnames("role", styles.roleDropdownItem)}>
+                <Link to={`/ui/services/role/${role}`} className={styles.roleLink}>{role}</Link>
+              </DropdownItem>
+            );
           })}
         </DropdownMenu>
       </Dropdown>
@@ -117,9 +117,9 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     let services = this.props.services;
 
     // Active Filter
-    if (this.state.activeRole !== 'All') {
+    if (this.props.activeRole !== 'All') {
       services = services.filter((service) => {
-        return service.roles.indexOf(this.state.activeRole) > -1;
+        return service.roles.indexOf(this.props.activeRole) > -1;
       });
     }
 

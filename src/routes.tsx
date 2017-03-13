@@ -12,6 +12,8 @@ const routes = (
       <Route component={App} path="ui">
         <IndexRoute component={Login} />
         <Route path="services" component={Services}>
+          <Route path="role/:role"/>
+          <Route path="role/:role/:subdmain" />
         </Route>
       </Route>
     </Route>

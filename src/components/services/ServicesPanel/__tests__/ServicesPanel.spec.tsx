@@ -30,7 +30,7 @@ describe('ServicesPanel', () => {
 
     let dropDownItemsTexts = servicesPanel.find('DropdownItem .role').map((node:any) => { return node.text()});
 
-    expect(roles.sort().toString() === dropDownItemsTexts.sort().toString()).toEqual(true);
+    expect(JSON.stringify(roles.sort())).toEqual(JSON.stringify(dropDownItemsTexts.sort()));
   });
 
   it('should render only services with the selected role', () => {
