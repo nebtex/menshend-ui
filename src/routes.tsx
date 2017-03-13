@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute, IndexRedirect } from 'react-router';
 import App from './containers/App';
 import Login from './containers/Login';
 import Services from './containers/Services';
 import EditModalWrapper from './components/wrappers/EditModalWrapper/EditModalWrapper'
 
 const routes = (
-  <Router history={browserHistory}>
-    <Route component={App} path="/ui">
-      <IndexRoute component={Login} />
-      <Route path="services" component={Services} />
+  <Router history={hashHistory}>
+    <Route path="/">
+      <IndexRedirect to="ui"/>
+      <Route component={App} path="ui">
+        <IndexRoute component={Login} />
+        <Route path="services" component={Services}>
+        </Route>
+      </Route>
     </Route>
   </Router>
 );
