@@ -1,6 +1,6 @@
 import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
-import ServiceListStore from './serviceListStore';
 import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors } from '../api/api';
+import networkStore from './networkStore';
 
 const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}');
 
