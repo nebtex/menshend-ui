@@ -1,1 +1,1 @@
-node scripts/testServer/testServerApi.js &
+nohup node scripts/testServer/testServerApi.js &
