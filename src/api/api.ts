@@ -57,16 +57,18 @@ export interface AdminService {
     "longDescription"?: string;
     "longDescriptionUrl"?: string;
     "proxyCode"?: string;
-    "proxyCodeLanguage"?: number;
+    "proxyCodeLanguage"?: AdminServiceProxyCodeLanguageEnum;
     "csrf"?: boolean;
     "impersonateWithinRole"?: boolean;
     "isActive"?: boolean;
-    "strategy"?: number;
+    "strategy"?: AdminServiceStrategyEnum;
     "cache"?: AdminServiceCache;
     "cors"?: AdminServiceCors;
     "secretPaths"?: Array<string>;
 }
 
+export type AdminServiceProxyCodeLanguageEnum = "yaml" | "lua";
+export type AdminServiceStrategyEnum = "proxy" | "redirect" | "port-forward";
 export interface AdminServiceCache {
     "active"?: boolean;
     "ttl"?: number;
@@ -87,15 +89,45 @@ export interface Auth {
     "authProvider"?: number;
 }
 
+/**
+ * this object represent a service for user without admin access
+ */
 export interface ClientService {
-    "id"?: string;
+    /**
+     * service id `/roles/{role-name}/{subdomain}/`
+     */
+    "id": string;
+    /**
+     * role name
+     */
     "roleId"?: string;
+    /**
+     * subdomain
+     */
     "subDomain"?: string;
+    /**
+     * url where the logo of this service is stored
+     */
     "logo"?: string;
+    /**
+     * name
+     */
     "name"?: string;
+    /**
+     * max 100 characters
+     */
     "shortDescription"?: string;
+    /**
+     * support markdown
+     */
     "longDescription"?: string;
+    /**
+     * if this propertie is true, any user with access to this service  can impersonate anothers users, this only work within the service and role, without the need of special permission, `md-user` and `md-groups` can be user in the query params to select the user / group to impersonate
+     */
     "impersonateWithinRole"?: boolean;
+    /**
+     * list of secret vault paths relate with this service.
+     */
     "secretPaths"?: Array<string>;
 }
 
@@ -110,6 +142,9 @@ export interface LoginStatus {
     "sessionExpiresAt"?: number;
 }
 
+/**
+ * vault secret object
+ */
 export interface Secret {
     "requestId"?: string;
     "leaseDuration"?: number;

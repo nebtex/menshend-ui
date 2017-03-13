@@ -1,6 +1,6 @@
 import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
 
-export default class NetworkStore {
+class NetworkStore {
   @observable lastResponseCode: string = ''
   @observable lastResponseMessage: string = ''
 
@@ -12,3 +12,7 @@ export default class NetworkStore {
     this.lastResponseMessage = value;
   }
 }
+
+const networkStore = new NetworkStore();
+
+export default networkStore;

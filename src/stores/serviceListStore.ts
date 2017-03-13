@@ -1,4 +1,5 @@
-import { observable, action, ObservableMap, computed } from 'mobx';
+import { observable, action, ObservableMap, computed, IObservableArray } from 'mobx';
+import { ClientApi, ClientService } from '../api/api';
 
 interface IService {
   logo: string;
@@ -9,18 +10,18 @@ interface IService {
   roles: string[];
 }
 
-export default class ServiceListStore {
-  @observable services: ObservableMap<IService> = observable.map<IService>({})
+class ServiceListStore {
+  clientApi: ClientApi = new ClientApi();
+
+  @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
 
   @computed get roles(){
     let roles:string[] = []
 
     this.services.forEach( service => {
-      let serviceRoles = service.roles;
-      serviceRoles.forEach( role => {
-        if(roles.indexOf(role) === -1 )
-          roles.push(role)
-      });
+      let role = service.roleId;
+      if(roles.indexOf(role) === -1 )
+        roles.push(role)
     });
     roles.sort();
 
@@ -28,20 +29,20 @@ export default class ServiceListStore {
   }
 
   @action clientApiGetServiceList = () => {
-    // GET /v1/api/client/service/list
-    return fetch('/v1/api/client/service/list').then((response:any) => {
-      if(response.ok){
-        return response.json().then((data:any) => {
-          Object.keys(data).forEach((key:string) => {
-            this.services.set(key, data[key]);
-          });
-          return true;
-        });
-      }else {
-        throw new Error('There was a problem with the response');
-      }
+    return this.clientApi.listAvailableServices({}).then((clientServicesList:ClientService[]) => {
+      this.services.clear()
+      clientServicesList.forEach((service) => {
+        console.log(service);
+        this.services.push(service);
+      });
+      return true;
     }).catch((e:any) => {
+      console.log(e);
       throw new Error(e)
     });
   }
 }
+
+const serviceListStore = new ServiceListStore();
+
+export default serviceListStore;

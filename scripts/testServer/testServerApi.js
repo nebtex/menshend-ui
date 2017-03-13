@@ -57,6 +57,10 @@ server.delete('/v1/adminServices/roles/role-0/subdomain-0', function (req, res) 
   res.jsonp({});
 });
 
+server.use(jsonServer.rewriter({
+  '/v1/api/client/service/list': '/clientServices'
+}));
+
 server.use(router)
 server.listen(3000, function () {
   console.log('JSON Server is running')
