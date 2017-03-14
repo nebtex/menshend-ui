@@ -45,10 +45,11 @@ interface IEditModalConnected {
           cache={this.store.cache}
           secretPaths={this.store.secretPaths}
           strategy={this.store.strategy}
+          codeLanguage={this.store.proxyCodeLanguage}
+          codeLanguageOnChange={this.store.updateProxyCodeLanguage}
           csrf={this.store.csrf}
           impersonateWithinRole={this.store.impersonateWithinRole}
           isActive={this.store.isActive}
-          strategies={this.store.strategies}
           handleAllowedOriginsAdd={this.store.addAllowedOrigin}
           handleAllowedOriginsDelete={this.store.deleteAllowedOrigin}
           handleAllowedMethodsAdd={this.store.addAllowedMethod}

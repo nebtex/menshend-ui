@@ -51,13 +51,14 @@ describe('editServiceFormStore', () => {
 
   beforeEach(() => {
     store = serviceListStore;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
   });
 
   it('should set the services list when client api get service list is called', (done) => {
     try {
       setTimeout (() => {
         store.clientApiGetServiceList().then(() => {
+
           expect(toJS(store.services)).toEqual(expectedServices);
           done();
         }).catch((e:any) => {

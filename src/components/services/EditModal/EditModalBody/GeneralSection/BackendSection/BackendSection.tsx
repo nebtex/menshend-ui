@@ -1,42 +1,49 @@
 import * as React from 'react';
 import { Row, Label, Input, FormGroup, Tooltip, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import MonacoEditor from 'react-monaco-editor';
+import HelpButton from '../../../../../general/HelpButton/HelpButton';
 let styles = require('./BackendSection.scss');
 
 export interface IBackendSectionProps {
   codeOnChange?: any;
   strategy?: string;
   strategyOnChange?: any;
+  codeLanguage?: string;
+  codeLanguageOnChange?: any;
   csrf?: boolean;
   csrfOnChange?: any;
   impersonateWithinRole?: boolean;
   impersonateWithinRoleOnChange?: any;
   isActive?: boolean;
   isActiveOnChange?: any;
-  strategies?: any;
 }
 
 interface IBackendSectionState {
   impersonateTooltipOpen: boolean;
   proxyTooltipOpen: boolean;
   strategiesDropdownOpen: boolean;
+  languagesDropdownOpen: boolean;
 }
 
 export default class BackendSection extends React.Component<IBackendSectionProps, {}>{
+  strategies = ['proxy', 'port-forward', 'redirect']
+
+  languages = ['lua', 'yml']
+
   static defaultProps = {
     proxyCode: '__=== Your code here ===',
-    strategy: 0,
+    strategy: 'proxy',
     csrf: true,
-    impersonateWithinRole: true,
+    impersonateWithinRole: false,
     isActive: true,
-    strategies: {'Proxy': 0}
+    codeLanguage: 'lua'
   }
 
   state = {
     impersonateTooltipOpen: false,
     proxyTooltipOpen: false ,
-    activeStrategy: 'Proxy',
-    strategiesDropdownOpen: false
+    strategiesDropdownOpen: false,
+    languagesDropdownOpen: false
   }
   
   toggleImpersonateTooltip = () => {
@@ -57,19 +64,19 @@ export default class BackendSection extends React.Component<IBackendSectionProps
     });
   }
 
-  getActiveStrategyName = () => {
-    let name:string;
-    Object.keys(this.props.strategies).forEach((key:string) => {
-      if(this.props.strategies[key] === this.props.strategy){
-        name = key;
-        return false;
-      }
+  toggleLanguagesDropdown = () => {
+    this.setState({
+      languagesDropdownOpen: !this.state.languagesDropdownOpen
     });
-    return name;
   }
 
-  getStrategyCode = (value: string) => {
-    return this.props.strategies[value];
+  getEditorDefaultValue = () => {
+    switch(this.props.codeLanguage){
+      case 'lua':
+        return '__==== your code here ====';
+      case 'yml':
+        return '#=== your code here ===='
+    }
   }
 
   render() {
@@ -84,52 +91,91 @@ export default class BackendSection extends React.Component<IBackendSectionProps
       <div>
         <h5>Backend rule</h5>
         <Row className={styles.rolesRow}>
-          <FormGroup check>
+          <FormGroup check className={styles.rolesRowFormGroup}>
             <Label check>
               <Input 
                 type="checkbox"
                 onChange={this.props.csrfOnChange}
                 checked={this.props.csrf}/>
-                {' '} csrf
+                {' '} CSRF Protection
             </Label>
+            <HelpButton
+              content='Some content about CSRF Protection value'
+              linkLabel='View more'
+              link='#'
+            />
           </FormGroup>
-          <FormGroup check>
+          <FormGroup check className={styles.rolesRowFormGroup}>
             <Label check>
               <Input 
                 type="checkbox"
                 onChange={this.props.impersonateWithinRoleOnChange}
                 checked={this.props.impersonateWithinRole}/>
-                {' '} impersonateWithinRole
+                {' '} Impersonate within role
             </Label>
+            <HelpButton
+              content='Some content about impersonate within role value'
+              linkLabel='View more'
+              link='#'
+            />
           </FormGroup>
-          <FormGroup check>
+          <FormGroup check className={styles.rolesRowFormGroup}>
             <Label check>
               <Input 
                 type="checkbox"
                 onChange={this.props.isActiveOnChange}
                 checked={this.props.isActive}/>
-                {' '} isActive
+                {' '} Is active
             </Label>
+            <HelpButton
+              content='Some content about is Active value'
+              linkLabel='View more'
+              link='#'
+            />
           </FormGroup>
-          <FormGroup>
-            <Dropdown isOpen={this.state.strategiesDropdownOpen} toggle={this.toggleStrategiesDropdown}>
-              <DropdownToggle caret>
-                { this.getActiveStrategyName() }
+          <FormGroup className={styles.rolesRowFormGroup}>
+            <Label>Strategy</Label>
+            <Dropdown isOpen={this.state.strategiesDropdownOpen} toggle={this.toggleStrategiesDropdown} className={styles.rowDropdown}>
+              <DropdownToggle caret className={styles.capitalizeDropdownItem}>
+                { this.props.strategy }
               </DropdownToggle>
               <DropdownMenu>
-                {Object.keys(this.props.strategies).map((key:string, index:number) => {
-                  return <DropdownItem key={index} onClick={() => { this.props.strategyOnChange(this.getStrategyCode(key))}}>{key}</DropdownItem>
+                {this.strategies.map((strategy:string, index:number) => {
+                  return <DropdownItem key={index} onClick={() => { this.props.strategyOnChange(strategy)}} className={styles.capitalizeDropdownItem}>{strategy}</DropdownItem>
                 })}
               </DropdownMenu>
             </Dropdown>
+            <HelpButton
+              content='Some content about strategy value'
+              linkLabel='View more'
+              link='#'
+            />
+          </FormGroup>
+          <FormGroup className={styles.rolesRowFormGroup}>
+            <Label>Language</Label>
+            <Dropdown isOpen={this.state.languagesDropdownOpen} toggle={this.toggleLanguagesDropdown} className={styles.rowDropdown}>
+              <DropdownToggle caret className={styles.capitalizeDropdownItem}>
+                { this.props.codeLanguage }
+              </DropdownToggle>
+              <DropdownMenu>
+                {this.languages.map((language:string, index:number) => {
+                  return <DropdownItem key={index} onClick={() => { this.props.codeLanguageOnChange(language)}} className={styles.capitalizeDropdownItem}>{language}</DropdownItem>
+                })}
+              </DropdownMenu>
+            </Dropdown>
+            <HelpButton
+              content='Some content about code language value'
+              linkLabel='View more'
+              link='#'
+            />
           </FormGroup>
         </Row>
         <MonacoEditor 
           height={300}
-          language='lua'
+          language={this.props.codeLanguage}
           requireConfig={requireConfig}
           onChange={this.props.codeOnChange}
-          defaultValue="__=== type your code here ==="
+          defaultValue={this.getEditorDefaultValue()}
           options={{
             theme:'vs-dark'
           }}/>

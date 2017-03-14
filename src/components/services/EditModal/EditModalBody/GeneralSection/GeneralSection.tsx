@@ -19,13 +19,14 @@ export interface IGeneralSectionProps {
   codeOnChange: any;
   strategy?: string;
   strategyOnChange: any;
+  codeLanguage?: string;
+  codeLanguageOnChange?: any;
   csrf?: boolean;
   csrfOnChange: any;
   impersonateWithinRole?: boolean;
   impersonateWithinRoleOnChange: any;
   isActive?: boolean;
   isActiveOnChange: any;
-  strategies?: any;
 }
 
 export default class GeneralSection extends React.Component<IGeneralSectionProps, {}>{
@@ -118,7 +119,8 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
           impersonateWithinRoleOnChange={this.props.impersonateWithinRoleOnChange}
           isActive={this.props.isActive}
           isActiveOnChange={this.props.isActiveOnChange} 
-          strategies={this.props.strategies} />
+          codeLanguage={this.props.codeLanguage}
+          codeLanguageOnChange={this.props.codeLanguageOnChange}/>
       </TabPane>
     );
   }

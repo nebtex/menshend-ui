@@ -1,0 +1,11 @@
+.helpButton {
+  &:hover{
+    cursor: pointer;
+    color: #0275d8;
+  }
+}
+
+.helpLink {
+  float: right;
+  margin-bottom: 8px;
+}

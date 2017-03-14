@@ -36,10 +36,11 @@ export interface IEditModalProps {
   cors?: AdminServiceCors;
   secretPaths?: string[];
   strategy?: string;
+  codeLanguage?: string;
+  codeLanguageOnChange?: any;
   csrf?: boolean;
   impersonateWithinRole?: boolean;
   isActive?: boolean;
-  strategies?: any;
   handleAllowedOriginsAdd?: any;
   handleAllowedOriginsDelete?: any;
   handleAllowedMethodsAdd?: any;
@@ -124,9 +125,10 @@ export default class EditModal extends React.Component<IEditModalProps, IEditMod
           secretPaths={this.props.secretPaths}
           handleSecretPathsAdd={this.props.handleSecretPathsAdd}
           handleSecretPathsDelete={this.props.handleSecretPathsDelete}
-          strategies={this.props.strategies}
           strategy={this.props.strategy}
           strategyOnChange={this.props.strategyOnChange}
+          codeLanguage={this.props.codeLanguage}
+          codeLanguageOnChange={this.props.codeLanguageOnChange}
           csrf={this.props.csrf}
           csrfOnChange={this.props.csrfOnChange}
           impersonateWithinRole={this.props.impersonateWithinRole}

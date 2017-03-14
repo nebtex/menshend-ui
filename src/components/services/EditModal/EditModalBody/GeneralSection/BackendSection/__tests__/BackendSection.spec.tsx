@@ -11,6 +11,7 @@ describe('BackendSection', () => {
   let csrfOnChangeMock:any;
   let impersonateWithinRoleOnChangeMock:any;
   let isActiveOnChangeMock:any;
+  let codeLanguageOnChangeMock:any;
 
   describe('Default', () => {
 
@@ -21,6 +22,7 @@ describe('BackendSection', () => {
       csrfOnChangeMock = jest.fn();
       impersonateWithinRoleOnChangeMock = jest.fn();
       isActiveOnChangeMock = jest.fn();
+      codeLanguageOnChangeMock = jest.fn();
       backendSection = mount(
         <BackendSection 
           {...testProps}
@@ -28,11 +30,12 @@ describe('BackendSection', () => {
           csrfOnChange = {csrfOnChangeMock}
           impersonateWithinRoleOnChange = {impersonateWithinRoleOnChangeMock}
           isActiveOnChange = {isActiveOnChangeMock}
+          codeLanguageOnChange = {codeLanguageOnChangeMock}
       />);
     });
 
     it("should render correctly", () => {
-      expect(backendSection.find('FormGroup').length).toEqual(4);
+      expect(backendSection.find('FormGroup').length).toEqual(5);
       expect(backendSection.find('MonacoEditor').length).toEqual(1);
     });
 
@@ -59,6 +62,12 @@ describe('BackendSection', () => {
       dropdownItem.simulate('click');
       expect(strategyOnChangeMock).toBeCalled();
     });
+
+    it("should call the codeLanguageOnChange prop when specified action is performed" ,() => {
+      const dropdownItem = backendSection.find('Dropdown').at(1).find('.dropdown-item').first();
+      dropdownItem.simulate('click');
+      expect(codeLanguageOnChangeMock).toBeCalled();
+    });
   });
 
   describe('Data defined', () => {
@@ -73,7 +82,6 @@ describe('BackendSection', () => {
       expect(backendSection.find('Input').first().props().checked).toEqual(Cases['Data defined'].csrf);
       expect(backendSection.find('Input').at(1).props().checked).toEqual(Cases['Data defined'].impersonateWithinRole);
       expect(backendSection.find('Input').at(2).props().checked).toEqual(Cases['Data defined'].isActive);
-      expect(backendSection.find('DropdownItem').length).toEqual(Object.keys(Cases['Data defined'].strategies).length);
     });
   });
 });

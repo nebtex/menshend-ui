@@ -7,10 +7,6 @@ const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|ww
 class EditServiceFormStore {
   adminApi: AdminApi = new AdminApi();
 
-  strategies = {
-    "Proxy": 0
-  }
-
   @observable roleId: string = ''
   @observable subdomain: string = ''
   @observable subdomainError: boolean
@@ -19,7 +15,7 @@ class EditServiceFormStore {
   @observable shortDescription: string = ''
   @observable longDescription: string = ''
   @observable longDescriptionUrl: string = ''
-  @observable proxyCode: string = '__=== your code here ==='
+  @observable proxyCode: string = ''
   @observable csrf: boolean
   @observable impersonateWithinRole: boolean
   @observable proxyCodeLanguage: AdminServiceProxyCodeLanguageEnum

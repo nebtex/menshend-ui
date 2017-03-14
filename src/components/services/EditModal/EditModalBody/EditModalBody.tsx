@@ -51,9 +51,10 @@ export interface IEditModalBodyProps {
   secretPaths?: string[];
   handleSecretPathsAdd?: any;
   handleSecretPathsDelete?: any;
-  strategies?: any;
   strategy?: string;
   strategyOnChange?: any;
+  codeLanguage?: string;
+  codeLanguageOnChange?: any;
   csrf?: boolean;
   csrfOnChange?: any;
   impersonateWithinRole?: boolean;
@@ -88,13 +89,14 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps, 
               codeOnChange={this.props.codeOnChange} 
               strategy={this.props.strategy}
               strategyOnChange={this.props.strategyOnChange}
+              codeLanguage={this.props.codeLanguage}
+              codeLanguageOnChange={this.props.codeLanguageOnChange}
               csrf={this.props.csrf}
               csrfOnChange={this.props.csrfOnChange}
               impersonateWithinRole={this.props.impersonateWithinRole}
               impersonateWithinRoleOnChange={this.props.impersonateWithinRoleOnChange}
               isActive={this.props.isActive}
-              isActiveOnChange={this.props.isActiveOnChange} 
-              strategies={this.props.strategies} />
+              isActiveOnChange={this.props.isActiveOnChange} />
             <ShortDescriptionSection 
               shortDescription={this.props.shortDescription} 
               shortDescriptionOnChange={this.props.shortDescriptionOnChange} />
