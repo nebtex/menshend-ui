@@ -97,7 +97,7 @@ export default class BackendSection extends React.Component<IBackendSectionProps
                 type="checkbox"
                 onChange={this.props.csrfOnChange}
                 checked={this.props.csrf}/>
-                {' '} CSRF Protection
+                {' '} CSRF protection
             </Label>
             <HelpButton
               content='Some content about CSRF Protection value'
