@@ -14,6 +14,8 @@ interface IHelpButtonProps {
   className?: string;
   link?: string;
   linkLabel?: string;
+  offsetY?: number;
+  offsetX?: number;
 }
 
 export default class HelpButton extends React.Component<IHelpButtonProps, IHelpButtonState> {
@@ -23,7 +25,9 @@ export default class HelpButton extends React.Component<IHelpButtonProps, IHelpB
     placement: 'bottom',
     className: '',
     link:'',
-    linkLabel:''
+    linkLabel:'',
+    offsetX: 0,
+    offsetY: 0
   }
 
   state = {
@@ -48,7 +52,7 @@ export default class HelpButton extends React.Component<IHelpButtonProps, IHelpB
     return (
       <span>
         <i className={classnames("fa fa-question-circle", styles.helpButton, this.props.className)} id={id} onClick={this.toggle}/>
-        <Popover placement={this.props.placement} isOpen={this.state.popoverOpen} target={id} toggle={this.toggle}>
+        <Popover placement={this.props.placement} isOpen={this.state.popoverOpen} target={id} toggle={this.toggle} style={{top:this.props.offsetY +'px', left:this.props.offsetX+'px'}}>
           <PopoverTitle>Help</PopoverTitle>
           <PopoverContent>
             <ReactMarkdown source={ this.props.content }/>
