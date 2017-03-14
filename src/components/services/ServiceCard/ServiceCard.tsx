@@ -2,11 +2,12 @@ import * as classnames from 'classnames';
 import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { Container, Row, Col, Card, CardBlock, CardImg, CardTitle, CardText, Button, Badge, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { IService, IUser } from '../../../models/interface';
+import { IUser } from '../../../models/interface';
+import { ClientService } from '../../../api/api';
 let styles = require('./ServiceCard.scss');
 
 export interface IServiceCardProps {
-  service: IService;
+  service: ClientService;
   user: IUser;
   openEditModal: any;
 }
@@ -23,9 +24,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   getRolesBadges = () => {
     return (
       <div className={styles.rolesContainer}>
-        {this.props.service.roles.map((role, index) => {
-          return <Badge className={styles.roleBadge} key={index}>{role}</Badge>
-        })}      
+        <Badge className={styles.roleBadge}>{this.props.service.roleId}</Badge>
       </div>
     );
   }
@@ -73,7 +72,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
               <CardBlock className={styles.secondBlock}>
                 <CardTitle>{service.name}</CardTitle>
                 <CardText>
-                  {service.short_description}
+                  {service.shortDescription}
                 </CardText>
               </CardBlock> 
             </Col>
@@ -87,7 +86,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
           <ModalHeader toggle={this.toggleDescription}> {service.name} </ModalHeader>
           <ModalBody>
-            <ReactMarkdown source={ service.long_description }/>
+            <ReactMarkdown source={ service.longDescription }/>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggleDescription}>OK</Button>

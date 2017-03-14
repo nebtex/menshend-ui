@@ -5,13 +5,14 @@ import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
 import EditModal from '../EditModal/EditModal';
 import { Link } from 'react-router';
+import { ClientService } from '../../../api/api';
 import { Col, Container, Row, Form, FormGroup, Input, Dropdown, 
          DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
 
 let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
-  services: IService[];
+  services: ClientService[];
   user: IUser;
   activeRole?: string;
 }
@@ -21,13 +22,13 @@ interface IServicesPanelState {
   loadingSearch: boolean;
   searchValue: string;
   editModalOpen: boolean;
-  modalService?: IService;
+  modalService?: ClientService;
 }
 
 let searchTimeout: any;
 
 export default class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
-  previousServices:IService[];
+  previousServices:ClientService[];
 
   state = {
     dropdownOpen: false,
@@ -56,11 +57,9 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   getRoles = () => {
     let roles: string[] = [];
     this.props.services.forEach(service => {
-      service.roles.forEach(role => {
-        if (roles.indexOf(role) === -1) {
-          roles.push(role);
-        }
-      });
+      if (roles.indexOf(service.roleId) === -1) {
+        roles.push(service.roleId);
+      }
     });
 
     roles.sort(function (a, b) {
@@ -119,7 +118,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     // Active Filter
     if (this.props.activeRole !== 'All') {
       services = services.filter((service) => {
-        return service.roles.indexOf(this.props.activeRole) > -1;
+        return service.roleId === this.props.activeRole;
       });
     }
 
@@ -130,7 +129,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
       let options = {
         keys: ['name', 'long_description', 'short_description']
       };
-      let f = new Fuse<IService>(services, options);
+      let f = new Fuse<ClientService>(services, options);
       services = f.search(this.state.searchValue);
       this.previousServices = services;
     } else if(this.state.loadingSearch){
@@ -167,7 +166,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return null;
   }
 
-  setModalService = (service:IService) => {
+  setModalService = (service:ClientService) => {
     this.setState({
       modalService:service,
       editModalOpen: true

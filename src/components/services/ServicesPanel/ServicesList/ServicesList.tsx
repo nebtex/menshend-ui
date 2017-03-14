@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as classnames from 'classnames';
 import Infinite = require('react-infinite');
 import { Col, Row } from 'reactstrap';
-import { IService, IUser } from '../../../../models/interface';
+import { IUser } from '../../../../models/interface';
+import { ClientService } from '../../../../api/api';
 import ServiceCard from '../../ServiceCard/ServiceCard';
 let styles = require('./ServicesList.scss');
 
@@ -11,7 +12,7 @@ interface IServicesListState {
 }
 
 interface IServicesListProps {
-  services: IService[];
+  services: ClientService[];
   user: IUser;
   loading: boolean;
   openEditModal: any;
@@ -64,7 +65,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
 
       rowComponents.push(
         <Row className={rowClassname} key={rowIndex}>
-          {row.map( (service:IService, rowItemIndex:number) =>{
+          {row.map( (service:ClientService, rowItemIndex:number) =>{
             let colStyle = lastRow ? {flexBasis: (100/this.state.itemsPerRow) + '%', flexGrow: 0} : null;
             return (
               <Col  className={styles.col} key={rowItemIndex} style={colStyle}>

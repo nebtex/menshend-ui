@@ -21,11 +21,9 @@ describe('ServicesPanel', () => {
   it('should render the roles dropdown with the services prop roles as items', () => {
     let roles: string[] = [];
     servicesPanel.props().services.forEach((service:any) => {
-      service.roles.forEach((role:string) => {
-        if (roles.indexOf(role) === -1) {
-          roles.push(role);
-        }
-      });
+      if (roles.indexOf(service.roleId) === -1) {
+        roles.push(service.roleId);
+      }
     });
 
     let dropDownItemsTexts = servicesPanel.find('DropdownItem .role').map((node:any) => { return node.text()});

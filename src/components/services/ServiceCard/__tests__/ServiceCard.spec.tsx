@@ -22,7 +22,7 @@ describe('ServiceCard', () => {
 
     it('should render correctly', () => {
       expect(serviceCard.find('CardTitle').first().text()).toEqual(testProps.service.name);
-      expect(serviceCard.find('CardText').first().text()).toMatch(testProps.service.short_description);
+      expect(serviceCard.find('CardText').first().text()).toMatch(testProps.service.shortDescription);
       expect(serviceCard.find('CardImg').first().props().src).toEqual(testProps.service.logo);
     });
   });

@@ -5,11 +5,13 @@ let Cases : {[id:string]:IServiceCardProps} = {};
 
 Cases['User is admin'] = {
   service: {
+    id: 'role/role2/subdomain13',
+    subDomain: 'subdomain13',
     name: 'My Test Service', 
-    short_description: 'My test service short description',
-    long_description: 'My test service long description', 
+    shortDescription: 'My test service short description',
+    longDescription: 'My test service long description', 
     logo: testLogo,
-    roles: ['role1', 'role2', 'role3']
+    roleId: 'role2'
   },
   user: {
     isLogged: true,
@@ -22,11 +24,13 @@ Cases['User is admin'] = {
 
 Cases['User is not admin'] = {
   service: {
+    id:'role/role1/subdomain12',
+    subDomain: 'subdomain12',
     name: 'My Test Service', 
-    short_description: 'My test service short description',
-    long_description: 'My test service long description', 
+    shortDescription: 'My test service short description',
+    longDescription: 'My test service long description', 
     logo: testLogo,
-    roles: ['role1', 'role2', 'role3']
+    roleId: 'role1'
   },
   user: {
     isLogged: true,

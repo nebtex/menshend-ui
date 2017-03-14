@@ -5,14 +5,16 @@ var template = `
   [
     {{#repeat 1000}}
     {
-      "name": "{{company}}",
-      "short_description": "short description {{lorem 10}}",
-      "long_description": "long description {{lorem 30}}",
+      "id": "roles/role-{{@index}}/subdomain-{{@index}}",
+      "roleId": "role-{{@index}}",
+      "subDomain": "subdomain-{{@index}}",
       "logo": "http://placehold.it/64x64",
-      "roles": [
-        {{#repeat 3}}
-          "{{lorem 1}}"
-        {{/repeat}}
+      "name": "{{company}}",
+      "longDescription": "{{lorem 20}}",
+      "longDescriptionUrl": "{{domain}}/longDescription",
+      "impersonateWithinRole": {{boolean}},
+      "secretPaths": [
+        "string"
       ]
     }
     {{/repeat}}
