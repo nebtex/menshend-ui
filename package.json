@@ -2,7 +2,7 @@
   "name": "react-typescript-boilerplate",
   "scripts": {
     "build": "webpack --config ./webpack.production.config.js --progress",
-    "start": "webpack-dev-server --progress --inline --hot --history-api-fallback",
+    "start": "webpack-dev-server",
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-monaco-editor&&ln -s `pwd`/types/react-monaco-editor `pwd`/node_modules/@types/react-monaco-editor",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
@@ -39,7 +39,8 @@
     "ts-jest": "^18.0.2",
     "ts-loader": "^2.0.0",
     "typescript": "^2.2.1",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",

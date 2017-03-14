@@ -5,11 +5,18 @@ var config = {
   devtool: 'inline-source-map',
   entry: ["./src/index.tsx"],
   output: {
-    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
   },
+  devServer: {
+    port: 8081,
+    colors: true,
+    historyApiFallback: {
+      index: '/index.html'
+    },
+    hot: true
+  },
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js"],
     alias: {
       "react": "preact-compat",
       "react-dom": "preact-compat",
@@ -28,13 +35,16 @@ var config = {
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
       },
       {
-        test: /\.scss$/,
-        loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-          'resolve-url',
-          'sass?sourceMap'
-        ]
+        test: /\.(scss)$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:6]'
+        }, {
+          loader: 'resolve-url-loader'
+        }, {
+          loader: 'sass-loader'
+        }]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
