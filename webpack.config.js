@@ -10,10 +10,8 @@ var config = {
   devServer: {
     port: 8081,
     colors: true,
-    historyApiFallback: {
-      index: '/index.html'
-    },
-    hot: true
+    inline: true,
+    historyApiFallback: true
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
