@@ -1,7 +1,13 @@
 .helpButton {
+  position: relative;
+  > i {
+    color:#9E9E9E;
+  }
   &:hover{
+    > i {
     cursor: pointer;
     color: #0275d8;
+    }
   }
 }
 

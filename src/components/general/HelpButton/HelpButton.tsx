@@ -9,6 +9,7 @@ interface IHelpButtonState {
 }
 
 interface IHelpButtonProps {
+  title?: string;
   content?: string;
   placement?: string;
   className?: string;
@@ -21,6 +22,7 @@ interface IHelpButtonProps {
 export default class HelpButton extends React.Component<IHelpButtonProps, IHelpButtonState> {
   
   static defaultProps = {
+    title: 'Help',
     content: '',
     placement: 'bottom',
     className: '',
@@ -50,10 +52,24 @@ export default class HelpButton extends React.Component<IHelpButtonProps, IHelpB
   render() {
     const id = this.getIdentifier();
     return (
-      <span>
-        <i className={classnames("fa fa-question-circle", styles.helpButton, this.props.className)} id={id} onClick={this.toggle}/>
-        <Popover placement={this.props.placement} isOpen={this.state.popoverOpen} target={id} toggle={this.toggle} style={{top:this.props.offsetY +'px', left:this.props.offsetX+'px'}}>
-          <PopoverTitle>Help</PopoverTitle>
+      <span className={classnames(styles.helpButton, this.props.className)}>
+        <i className="fa fa-question-circle" id={id} onClick={this.toggle}/>
+        <Popover
+          placement={this.props.placement}
+          isOpen={this.state.popoverOpen}
+          target={id}
+          toggle={this.toggle}
+          style={{top:this.props.offsetY +'px', left:this.props.offsetX+'px', maxWidth: '360px'}}
+          tether={{
+            constraints: [
+              {
+                to: 'scrollParent',
+                attachment: 'together',
+                pin: true
+              }
+            ]}
+          }>
+          <PopoverTitle>{this.props.title}</PopoverTitle>
           <PopoverContent>
             <ReactMarkdown source={ this.props.content }/>
             {this.props.link ? <a href={this.props.link} className={styles.helpLink}>{this.props.linkLabel}</a> : null}
