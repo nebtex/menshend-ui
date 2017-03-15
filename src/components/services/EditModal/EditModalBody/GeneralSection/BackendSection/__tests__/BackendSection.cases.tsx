@@ -11,8 +11,7 @@ Cases['Default'] = {
 }
 
 Cases['Data defined'] = {
-  strategy: 'proxy',
-  csrf: true,
+  strategy: 'redirect',
   impersonateWithinRole: false,
   isActive: true,
   codeOnChange: function() {},
@@ -20,6 +19,13 @@ Cases['Data defined'] = {
   csrfOnChange: function() {},
   impersonateWithinRoleOnChange: function() {},
   isActiveOnChange: function() {}
+}
+
+Cases['Proxy as strategy'] = {
+  strategy: 'proxy',
+  csrf: true,
+  impersonateWithinRole: false,
+  isActive: true
 }
 
 export default Cases;

@@ -86,25 +86,29 @@ export default class BackendSection extends React.Component<IBackendSectionProps
         'vs': 'https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/min/vs'
       }
     };
+
+    console.log(this.props.strategyOnChange);
     
     return (
       <div>
         <h5>Backend rule</h5>
         <Row className={styles.rolesRow}>
-          <FormGroup check className={styles.rolesRowFormGroup}>
-            <Label check>
-              <Input 
-                type="checkbox"
-                onChange={this.props.csrfOnChange}
-                checked={this.props.csrf}/>
-                {' '} CSRF protection
-            </Label>
-            <HelpButton
-              content='Some content about CSRF Protection value'
-              linkLabel='View more'
-              link='#'
-            />
-          </FormGroup>
+          {this.props.strategy === 'proxy' ?
+            <FormGroup check className={styles.rolesRowFormGroup}>
+              <Label check>
+                <Input 
+                  type="checkbox"
+                  onChange={this.props.csrfOnChange}
+                  checked={this.props.csrf}/>
+                  {' '} CSRF protection
+              </Label>
+              <HelpButton
+                content='Some content about CSRF Protection value'
+                linkLabel='View more'
+                link='#'
+              />
+            </FormGroup>: null
+          }
           <FormGroup check className={styles.rolesRowFormGroup}>
             <Label check>
               <Input 

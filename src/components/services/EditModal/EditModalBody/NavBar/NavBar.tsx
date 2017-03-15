@@ -5,13 +5,15 @@ let styles = require('./NavBar.scss');
 
 export interface INavBarProps {
   activeTab?: string;
+  proxyActive?: boolean;
   toggleTab: any;
 }
 
 export default class NavBar extends React.Component<INavBarProps, {}>{
 
   static defaultProps = {
-    activeTab: 'general'
+    activeTab: 'general',
+    proxyActive: false
   }
 
   render(){
@@ -49,14 +51,17 @@ export default class NavBar extends React.Component<INavBarProps, {}>{
             Cache
           </NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: this.props.activeTab === 'cors' })}
-            onClick={() => { this.props.toggleTab('cors'); }}
-          >
-            CORS
-          </NavLink>
-        </NavItem>
+        {
+          this.props.proxyActive ?
+          <NavItem>
+            <NavLink
+              className={classnames({ active: this.props.activeTab === 'cors' })}
+              onClick={() => { this.props.toggleTab('cors'); }}
+            >
+              CORS
+            </NavLink>
+          </NavItem>: null
+        }
         <NavItem>
           <NavLink
             className={classnames({ active: this.props.activeTab === 'secretPaths' })}

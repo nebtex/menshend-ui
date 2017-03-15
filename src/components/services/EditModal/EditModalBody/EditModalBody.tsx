@@ -70,10 +70,12 @@ const DEFAULT_LOGO = 'https://placehold.it/64x64';
 export default class EditModalBody extends React.Component<IEditModalBodyProps, {}>{
   render() {
     //@TODO: Show the corresponding tab taking into account the errors
+    const proxyActive = this.props.strategy === 'proxy';
+    
     return (
       <ModalBody>
         <div>
-          <NavBar activeTab={this.props.activeTab} toggleTab={this.props.toggleTab}/>
+          <NavBar activeTab={this.props.activeTab} toggleTab={this.props.toggleTab} proxyActive={proxyActive}/>
           <TabContent activeTab={this.props.activeTab}>
             <GeneralSection
               name={this.props.name}
@@ -112,19 +114,21 @@ export default class EditModalBody extends React.Component<IEditModalBodyProps, 
               cache={this.props.cache} 
               cacheActiveOnChange={this.props.cacheActiveOnChange}
               ttlOnChange={this.props.ttlOnChange} />
-            <CorsSection
-              cors={this.props.cors}
-              allowCredentialsOnChange={this.props.allowCredentialsOnChange}
-              optionsPassthroughOnChange={this.props.optionsPassthroughOnChange}
-              maxAgeOnChange={this.props.maxAgeOnChange}
-              handleAllowedOriginsAdd={this.props.handleAllowedOriginsAdd}
-              handleAllowedOriginsDelete={this.props.handleAllowedOriginsDelete}
-              handleAllowedMethodsAdd={this.props.handleAllowedMethodsAdd}
-              handleAllowedMethodsDelete={this.props.handleAllowedMethodsDelete}
-              handleAllowedHeadersAdd={this.props.handleAllowedHeadersAdd}
-              handleAllowedHeadersDelete={this.props.handleAllowedHeadersDelete}
-              handleExposedHeadersAdd={this.props.handleExposedHeadersAdd}
-              handleExposedHeadersDelete={this.props.handleExposedHeadersDelete} />
+            {this.props.strategy === 'proxy' ?
+              <CorsSection
+                cors={this.props.cors}
+                allowCredentialsOnChange={this.props.allowCredentialsOnChange}
+                optionsPassthroughOnChange={this.props.optionsPassthroughOnChange}
+                maxAgeOnChange={this.props.maxAgeOnChange}
+                handleAllowedOriginsAdd={this.props.handleAllowedOriginsAdd}
+                handleAllowedOriginsDelete={this.props.handleAllowedOriginsDelete}
+                handleAllowedMethodsAdd={this.props.handleAllowedMethodsAdd}
+                handleAllowedMethodsDelete={this.props.handleAllowedMethodsDelete}
+                handleAllowedHeadersAdd={this.props.handleAllowedHeadersAdd}
+                handleAllowedHeadersDelete={this.props.handleAllowedHeadersDelete}
+                handleExposedHeadersAdd={this.props.handleExposedHeadersAdd}
+                handleExposedHeadersDelete={this.props.handleExposedHeadersDelete} /> : null
+            }
             <SecretPathsSection
               secretPaths={this.props.secretPaths}
               handleSecretPathsAdd={this.props.handleSecretPathsAdd}

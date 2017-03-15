@@ -84,4 +84,9 @@ describe('BackendSection', () => {
       expect(backendSection.find('Input').at(2).props().checked).toEqual(Cases['Data defined'].isActive);
     });
   });
+
+  describe('Proxy as strategy', () => {
+    it("should render the csrf formgroup", () => {
+    });
+  });
 });

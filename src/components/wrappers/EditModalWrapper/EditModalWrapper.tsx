@@ -16,6 +16,8 @@ interface IEditModalConnected {
     const { isOpen, toggle } = this.props;
     const { role, subdomain } = this.props.params;
 
+    console.log(this.store);
+
     return (
       <div>
         <EditModal 

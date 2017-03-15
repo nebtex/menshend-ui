@@ -7,4 +7,10 @@ Cases['Default'] = {
   toggleTab: function(){}
 }
 
+Cases['Proxy active'] = {
+  activeTab: 'general',
+  toggleTab: function(){},
+  proxyActive: true
+}
+
 export default Cases;

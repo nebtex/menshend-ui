@@ -28,4 +28,9 @@ describe('NavBar', () => {
       expect(toggleTabMock).toBeCalled();
     });
   });
+
+  describe('Proxy active', () => {
+    it("should render the CORS tab when proxyActive is true" ,() => {
+    });
+  });
 });
