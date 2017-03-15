@@ -37,7 +37,7 @@ export default class CacheSection extends React.Component<ICacheSectionProps, {}
               name="TTL"
               id="TTL"
               value={this.props.cache.ttl}
-              onChange={this.props.ttlOnChange}/>
+              onChange={(e:any) => {this.props.ttlOnChange(e.target.value)}}/>
           </FormGroup>
         </Form>
       </TabPane>

@@ -79,14 +79,13 @@ describe('BackendSection', () => {
     });
 
     it("should render correctly", () => {
-      expect(backendSection.find('Input').first().props().checked).toEqual(Cases['Data defined'].csrf);
-      expect(backendSection.find('Input').at(1).props().checked).toEqual(Cases['Data defined'].impersonateWithinRole);
-      expect(backendSection.find('Input').at(2).props().checked).toEqual(Cases['Data defined'].isActive);
+      expect(backendSection.find('Input').at(0).props().checked).toEqual(Cases['Data defined'].impersonateWithinRole);
+      expect(backendSection.find('Input').at(1).props().checked).toEqual(Cases['Data defined'].isActive);
     });
   });
 
   describe('Proxy as strategy', () => {
-    it("should render the csrf formgroup", () => {
+    it("should render the csrf formgroup", () => {   
     });
   });
 });

@@ -27,7 +27,7 @@ export default class LongDescriptionSection extends React.Component<ILongDescrip
       <FormGroup disabled={!this.props.longDescriptionUrlActive} color={danger ? "danger" : null} className="longDescriptionUrlFormGroup">
         <Input 
           value={this.props.longDescriptionUrl} 
-          onChange={this.props.longDescriptionUrlOnChange} 
+          onChange={(e:any) => {this.props.longDescriptionUrlOnChange(e.target.value)}} 
           disabled={!this.props.longDescriptionUrlActive}
           state={danger ? 'danger': null}
           className="longDescriptionUrlInput"/>
@@ -60,7 +60,7 @@ export default class LongDescriptionSection extends React.Component<ILongDescrip
             disabled={this.props.longDescriptionUrlActive} 
             className={styles.longDescriptionTextArea} 
             value={this.props.longDescription}
-            onChange={this.props.longDescriptionOnChange}/>
+            onChange={(e:any) => {this.props.longDescriptionOnChange(e.target.value)}}/>
         </FormGroup>
       </TabPane>
     );

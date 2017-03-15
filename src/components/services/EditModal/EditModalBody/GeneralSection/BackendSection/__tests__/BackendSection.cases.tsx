@@ -11,7 +11,7 @@ Cases['Default'] = {
 }
 
 Cases['Data defined'] = {
-  strategy: 'redirect',
+  strategy: 'redirect',  
   impersonateWithinRole: false,
   isActive: true,
   codeOnChange: function() {},

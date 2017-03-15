@@ -24,7 +24,7 @@ export default class ShortDescriptionSection extends React.Component<IShortDescr
               type="textarea" 
               value={this.props.shortDescription} 
               maxLength={SHORT_DESCRIPTION_LENGTH} 
-              onChange={this.props.shortDescriptionOnChange} />
+              onChange={(e:any) => {this.props.shortDescriptionOnChange(e.target.value)}}/>
               <p>{this.props.shortDescription.length}/{SHORT_DESCRIPTION_LENGTH} </p>
           </FormGroup>
         </Form>

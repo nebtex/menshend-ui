@@ -87,8 +87,6 @@ export default class BackendSection extends React.Component<IBackendSectionProps
       }
     };
 
-    console.log(this.props.strategyOnChange);
-    
     return (
       <div>
         <h5>Backend rule</h5>

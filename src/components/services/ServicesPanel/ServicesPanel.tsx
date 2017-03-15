@@ -155,17 +155,6 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return searchIndicator;
   }
 
-  getEditModal = () => {
-    if (this.state.editModalOpen){
-      return (
-        <EditModal
-          toggle={this.toggleEditModalOpen} 
-          isOpen={this.state.editModalOpen} />
-      );
-    }
-    return null;
-  }
-
   setModalService = (service:ClientService) => {
     this.setState({
       modalService:service,
@@ -176,8 +165,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   render() {
     let rolesDropdown = this.getRolesDropdown(),
       services = this.getServices(),
-      searchIndicator = this.getSearchIndicator(),
-      editModal = this.getEditModal();
+      searchIndicator = this.getSearchIndicator();
 
     return (
       <Container fluid className={styles.panelContainer}>
@@ -202,7 +190,6 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
             loading={this.state.loadingSearch} 
             openEditModal={this.setModalService}/>
         </Row>
-        {editModal}
       </Container>
     );
   }

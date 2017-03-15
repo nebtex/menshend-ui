@@ -10,19 +10,12 @@ const routes = (
     <Route component={App} path="/">
       <IndexRedirect to="/ui"/>
       <Route path="/ui" component={Login} />
-      <Route path="/ui/services" component={Services} />
-      <Route path="/ui/services/role/:role" component={Services}/>
-      <Route path="/ui/services/role/:role/:subdmain" component={EditModalWrapper}/>
+      <Route path="/ui/services" component={Services}>
+        <Route path="role/:role"/>
+        <Route path="role/:role/:subdmain" component={EditModalWrapper}/>
+      </Route>
     </Route>
   </Router>
 )
-
-/*const routes = (
-  <Router history={browserHistory}>
-    <Route component={App} path="/ui">
-      <IndexRoute component={Services} />
-    </Route>
-  </Router>
-);*/
 
 export default routes;

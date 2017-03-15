@@ -51,7 +51,7 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
         <div>
           <Input
             value={this.props.name} 
-            onChange={this.props.nameOnChange} 
+            onChange={(e:any) => {this.props.nameOnChange(e.target.value)}}
             state={nameError ? "danger" : null} />
             {nameError ? <FormFeedback>This field is required</FormFeedback> : null}        
         </div>
@@ -66,12 +66,13 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
           <Label>Logo</Label>
         </div>
         <div>
-          <Input placeholder='url' value={this.props.logo} onChange={this.props.logoOnChange} />
+          <Input placeholder='url' value={this.props.logo} onChange={(e:any) => {this.props.logoOnChange(e.target.value)}} />
+          {/* @TODO: there's an error here with the logoOnerror*/}
           <img 
             src={this.props.logoError ? DEFAULT_LOGO : this.props.logo} 
             height={64} 
             width={64} 
-            className={styles.logo} 
+            className={styles.logo}
             onError={() => {this.props.logoOnError(true)}}
             onLoad={() => {this.props.logoOnError(false)}} />
         </div>
@@ -90,7 +91,7 @@ export default class GeneralSection extends React.Component<IGeneralSectionProps
         <div>
           <Input
             value={subdomain} 
-            onChange={this.props.subdomainOnChange} 
+            onChange={(e:any) => {this.props.subdomainOnChange(e.target.value)}}
             state={subdomainError ? "danger" : null} />
             {subdomainError ? <FormFeedback>This field is required</FormFeedback> : null}        
         </div>

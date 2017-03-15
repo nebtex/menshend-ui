@@ -16,13 +16,24 @@ class EditServiceFormStore {
   @observable longDescription: string = ''
   @observable longDescriptionUrl: string = ''
   @observable proxyCode: string = ''
-  @observable csrf: boolean
-  @observable impersonateWithinRole: boolean
-  @observable proxyCodeLanguage: AdminServiceProxyCodeLanguageEnum
-  @observable isActive: boolean
-  @observable strategy: AdminServiceStrategyEnum
-  @observable cache: AdminServiceCache
-  @observable cors: AdminServiceCors
+  @observable csrf: boolean = true
+  @observable impersonateWithinRole: boolean = false
+  @observable proxyCodeLanguage: AdminServiceProxyCodeLanguageEnum = 'lua'
+  @observable isActive: boolean = true
+  @observable strategy: AdminServiceStrategyEnum = 'proxy'
+  @observable cache: AdminServiceCache = {
+    active: true,
+    ttl: 120
+  }
+  @observable cors: AdminServiceCors = {
+    allowCredentials: false,
+    optionsPassthrough: false,
+    maxAge: false,
+    allowedOrigins: new Array(),
+    allowedHeaders: new Array(),
+    allowedMethods: new Array(),
+    exposedHeaders: new Array()
+  }
   @observable secretPaths: IObservableArray<string> = observable.array([])
 
   // **** Errors ****
@@ -69,28 +80,28 @@ class EditServiceFormStore {
     this.proxyCode = proxyCode
   }
 
-  @action updateCsrf = (csrf:boolean) => {
-    this.csrf = csrf
+  @action updateCsrf = () => {
+    this.csrf = !this.csrf
   }
 
-  @action updateImpersonateWithinRole = (impersonateWithinRole:boolean) => {
-    this.impersonateWithinRole = impersonateWithinRole
+  @action updateImpersonateWithinRole = () => {
+    this.impersonateWithinRole = !this.impersonateWithinRole
   }
 
   @action updateProxyCodeLanguage = (proxyCodeLanguage:AdminServiceProxyCodeLanguageEnum) => {
     this.proxyCodeLanguage = proxyCodeLanguage
   }
 
-  @action updateIsActive = (isActive:boolean) => {
-    this.isActive = isActive
+  @action updateIsActive = () => {
+    this.isActive = !this.isActive
   }
 
   @action updateStrategy = (strategy:AdminServiceStrategyEnum) => {
     this.strategy = strategy
   }
 
-  @action updateLongDescriptionUrlActive = (urlActive:boolean) => {
-    this.longDescriptionUrlActive = urlActive;
+  @action updateLongDescriptionUrlActive = () => {
+    this.longDescriptionUrlActive = !this.longDescriptionUrlActive;
   }
 
   // **** Cache ****
@@ -99,22 +110,22 @@ class EditServiceFormStore {
     this.cache.ttl = ttl
   }
 
-  @action updateCacheActive = (cacheActive:boolean) => {
-    this.cache.active = cacheActive
+  @action updateCacheActive = () => {
+    this.cache.active = !this.cache.active
   }
 
   // **** CORS *****
 
-  @action updateAllowCredentials = (allowCredentials:boolean) => {
-    this.cors.allowCredentials = allowCredentials;
+  @action updateAllowCredentials = () => {
+    this.cors.allowCredentials = !this.cors.allowCredentials;
   }
 
-  @action updateOptionsPassthrough = (optionsPassthrough:boolean) => {
-    this.cors.optionsPassthrough = optionsPassthrough;
+  @action updateOptionsPassthrough = () => {
+    this.cors.optionsPassthrough = !this.cors.optionsPassthrough;
   }
 
-  @action updateMaxAge = (maxAge:boolean) => {
-    this.cors.maxAge = maxAge;
+  @action updateMaxAge = () => {
+    this.cors.maxAge = !this.cors.maxAge;
   }
 
   @action addAllowedOrigin = (allowedOrigin:string) => {
