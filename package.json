@@ -1,14 +1,14 @@
 {
   "name": "react-typescript-boilerplate",
   "scripts": {
-    "build": "webpack --config ./webpack.production.config.js --progress",
-    "start": "webpack-dev-server",
+    "build": "webpack --config ./webpack.production.js --progress",
+    "start": "webpack-dev-server --config ./webpack.dev.js",
     "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-monaco-editor&&ln -s `pwd`/types/react-monaco-editor `pwd`/node_modules/@types/react-monaco-editor",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "pretest": ". scripts/testServer/pretest.sh",
     "test": "jest && codecov -t $CODECOV_TOKEN",
-    "posttest": ". scripts/testServer/postest.sh",    
+    "posttest": ". scripts/testServer/postest.sh",
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
@@ -40,7 +40,8 @@
     "ts-loader": "^2.0.0",
     "typescript": "^2.2.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",
@@ -78,7 +79,9 @@
   "jest": {
     "collectCoverage": true,
     "coverageDirectory": "./coverage/",
-    "coveragePathIgnorePatterns": ["<rootDir>/src/api"],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/api"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(scss)$": "identity-obj-proxy"

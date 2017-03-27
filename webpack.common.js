@@ -1,18 +1,7 @@
-var path = require("path");
-var webpack = require("webpack");
+const webpack = require("webpack");
 
-var config = {
-  devtool: 'inline-source-map',
+const config = {
   entry: ["./src/index.tsx"],
-  output: {
-    filename: "bundle.js"
-  },
-  devServer: {
-    port: 8081,
-    colors: true,
-    inline: true,
-    historyApiFallback: true
-  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     alias: {
