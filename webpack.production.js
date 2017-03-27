@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const webpackMerge = require('webpack-merge');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const commonConfig = require('./webpack.common.js');
 
 const config = webpackMerge(commonConfig, {
