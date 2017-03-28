@@ -5349,9 +5349,9 @@ react@^15.1.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-reactstrap@^4.0.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-4.2.0.tgz#52658ac3bfdec5d62b3d76b68451deb41366416d"
+reactstrap@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-4.3.0.tgz#64a99716bd0d5f3969260b34dac7870de8425b13"
   dependencies:
     classnames "^2.2.3"
     lodash.isfunction "^3.0.8"
