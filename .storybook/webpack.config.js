@@ -17,7 +17,7 @@ module.exports = function(storybookBaseConfig, configType) {
   },
   {
     test: /\.tsx?$/,
-    loaders: ["ts-loader"],
+    loaders: ["awesome-typescript-loader"],
     include: path.resolve(__dirname, '../')
   });
   

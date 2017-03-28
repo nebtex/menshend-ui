@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import '!style-loader!css-loader!sass-loader!./styles/app.scss';
 import * as React from "react";
 import * as ReactDOM from "react-dom";

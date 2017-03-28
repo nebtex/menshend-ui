@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const path = require("path");
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
-const BabiliPlugin = require('babili-webpack-plugin');
 const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 const config = webpackMerge(commonConfig, {
