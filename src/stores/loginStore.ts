@@ -1,27 +1,20 @@
 import { observable, action, ObservableMap } from 'mobx';
+import { LoginStatus, AuthApi } from '../api/api';
 
-interface ILoginStatus {
-  isLogged: boolean;
-  isAdmin: boolean;
-  canImpersonate: boolean;
-  sessionExpiresAt: number;
-}
+const authApi: AuthApi = new AuthApi();
 
 export default class LoginStore {
-  @observable loginStatus:ILoginStatus;
+  @observable loginStatus:LoginStatus;
 
   @action clientApiLoginStatus = () => {
-    // GET /v1/api/client/status
-    return fetch('/v1/api/client/status').then((response:any) => {
-      if(response.ok){
-        return response.json().then((data:any) => {
-          this.loginStatus = data;
-        })
-      }else {
-        throw new Error('There was a problem with the response')
-      }
-    }).catch((e:any) => {
-      throw new Error(e)
-    });
+    authApi.loginStatus().then((data:LoginStatus) => {
+      this.loginStatus = data;
+    })
+  }
+
+  @action clientApiLogout = () => {
+    authApi.loginStatus().then((data:LoginStatus) => {
+      //@TODO: What to do here?
+    })
   }
 }
