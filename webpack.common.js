@@ -4,7 +4,13 @@ const pkg = require('./package.json')
 const config = {
   entry: {
     bundle: "./src/index.tsx",
-    vendor: ['reactstrap']
+    vendor: [
+      'reactstrap',
+      'mobx',
+      'commonmark',
+      'react-router',
+      'tether'
+    ]
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -49,8 +55,7 @@ const config = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      chunks: ['common']
+        name: 'vendor'
     })
   ]
 };
