@@ -31,7 +31,7 @@ import * as assign from "core-js/library/fn/object/assign";
 interface Dictionary<T> { [index: string]: T; }
 export interface FetchAPI { (url: string, init?: any): Promise<any>; }
 
-const BASE_PATH = process.env.NODE_ENV === 'test' ? "http://localhost:3000" : "https://virtserver.swaggerhub.com/criloz/kuper/1.0.0".replace(/\/+$/, '');
+const BASE_PATH = "https://virtserver.swaggerhub.com/nebtex/Menshend/1.0.0".replace(/\/+$/, '');
 
 export interface FetchArgs {
     url: string;
@@ -49,86 +49,47 @@ export class BaseAPI {
 }
 
 export interface AdminService {
-    "id"?: string;
-    "roleId"?: string;
-    "logo"?: string;
-    "name"?: string;
-    "shortDescription"?: string;
-    "longDescription"?: string;
-    "longDescriptionUrl"?: string;
-    "proxyCode"?: string;
-    "proxyCodeLanguage"?: AdminServiceProxyCodeLanguageEnum;
-    "csrf"?: boolean;
+    "meta"?: Metadata;
+    "strategy"?: AdminServiceStrategy;
+    "resolver"?: AdminServiceResolver;
+    "cache"?: ServiceCache;
     "impersonateWithinRole"?: boolean;
     "isActive"?: boolean;
-    "strategy"?: AdminServiceStrategyEnum;
-    "cache"?: AdminServiceCache;
-    "cors"?: AdminServiceCors;
+    "fullUrl"?: string;
     "secretPaths"?: Array<string>;
 }
 
-export type AdminServiceProxyCodeLanguageEnum = "yaml" | "lua";
-export type AdminServiceStrategyEnum = "proxy" | "redirect" | "port-forward";
-export interface AdminServiceCache {
-    "active"?: boolean;
-    "ttl"?: number;
+export interface AdminServiceResolver {
+    "lua"?: LuaResolver;
+    "yaml"?: YAMLResolver;
 }
 
-export interface AdminServiceCors {
+export interface AdminServiceStrategy {
+    "proxy"?: Proxy;
+    "redirect"?: Redirect;
+    "portForward"?: PortForward;
+}
+
+export interface ClientService {
+    "meta"?: Metadata;
+    "impersonateWithinRole"?: boolean;
+    "fullUrl"?: string;
+    "isActive"?: boolean;
+    "secretPaths"?: Array<string>;
+}
+
+export interface Cors {
     "allowedOrigins"?: Array<string>;
     "allowedMethods"?: Array<string>;
     "allowedHeaders"?: Array<string>;
     "allowCredentials"?: boolean;
     "optionsPassthrough"?: boolean;
-    "maxAge"?: boolean;
+    "maxAge"?: number;
     "exposedHeaders"?: Array<string>;
 }
 
-export interface Auth {
-    "data"?: any;
-    "authProvider"?: number;
-}
-
-/**
- * this object represent a service for user without admin access
- */
-export interface ClientService {
-    /**
-     * service id `/roles/{role-name}/{subdomain}/`
-     */
-    "id": string;
-    /**
-     * role name
-     */
-    "roleId"?: string;
-    /**
-     * subdomain
-     */
-    "subDomain"?: string;
-    /**
-     * url where the logo of this service is stored
-     */
-    "logo"?: string;
-    /**
-     * name
-     */
-    "name"?: string;
-    /**
-     * max 100 characters
-     */
-    "shortDescription"?: string;
-    /**
-     * support markdown
-     */
-    "longDescription"?: string;
-    /**
-     * if this propertie is true, any user with access to this service  can impersonate anothers users, this only work within the service and role, without the need of special permission, `md-user` and `md-groups` can be user in the query params to select the user / group to impersonate
-     */
-    "impersonateWithinRole"?: boolean;
-    /**
-     * list of secret vault paths relate with this service.
-     */
-    "secretPaths"?: Array<string>;
+export interface Flash {
+    "flashes"?: Array<string>;
 }
 
 export interface InlineResponse500 {
@@ -140,6 +101,47 @@ export interface LoginStatus {
     "isAdmin"?: boolean;
     "canImpersonate"?: boolean;
     "sessionExpiresAt"?: number;
+}
+
+export interface LongDescriptionLocal {
+    "content"?: string;
+}
+
+export interface LongDescriptionRemote {
+    "content"?: string;
+    "url"?: string;
+}
+
+export interface LuaResolver {
+    "content"?: string;
+    "makeBodyAvailable"?: boolean;
+}
+
+export interface Metadata {
+    "id"?: string;
+    "roleId"?: string;
+    "logo"?: string;
+    "name"?: string;
+    "description"?: string;
+    "subDomain"?: string;
+    "tags"?: Array<string>;
+    "longDescription"?: MetadataLongDescription;
+}
+
+export interface MetadataLongDescription {
+    "remote"?: LongDescriptionRemote;
+    "local"?: LongDescriptionLocal;
+}
+
+export interface PortForward {
+}
+
+export interface Proxy {
+    "cors"?: Cors;
+    "csrf"?: boolean;
+}
+
+export interface Redirect {
 }
 
 /**
@@ -169,6 +171,22 @@ export interface SecretWrapInfo {
     "ttl"?: number;
     "creationTime"?: number;
     "wrappedAccessor"?: string;
+}
+
+export interface ServiceCache {
+    "ttl"?: number;
+}
+
+export interface Space {
+    "logo"?: string;
+    "name"?: string;
+    "shortDescription"?: string;
+    "longDescription"?: string;
+    "host"?: string;
+}
+
+export interface YAMLResolver {
+    "content"?: string;
 }
 
 
@@ -431,32 +449,6 @@ export const AdminApiFactory = function (fetch?: FetchAPI, basePath?: string) {
  */
 export const AuthApiFetchParamCreactor = {
     /** 
-     * login
-     * @param auth auth object
-     */
-    login(params: {  auth: Auth; }): FetchArgs {
-        // verify required parameter "auth" is set
-        if (params["auth"] == null) {
-            throw new Error("Missing required parameter auth when calling login");
-        }
-        const baseUrl = `/v1/account`;
-        let urlObj = url.parse(baseUrl, true);
-        let fetchOptions: RequestInit = { method: "PUT" };
-
-        let contentTypeHeader: Dictionary<string>;
-        contentTypeHeader = { "Content-Type": "application/json" };
-        if (params["auth"]) {
-            fetchOptions.body = JSON.stringify(params["auth"] || {});
-        }
-        if (contentTypeHeader) {
-            fetchOptions.headers = contentTypeHeader;
-        }
-        return {
-            url: url.format(urlObj),
-            options: fetchOptions,
-        };
-    },
-    /** 
      * get login status
      */
     loginStatus(): FetchArgs {
@@ -497,22 +489,6 @@ export const AuthApiFetchParamCreactor = {
  */
 export const AuthApiFp = {
     /** 
-     * login
-     * @param auth auth object
-     */
-    login(params: { auth: Auth;  }): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
-        const fetchArgs = AuthApiFetchParamCreactor.login(params);
-        return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
-            return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.json();
-                } else {
-                    throw response;
-                }
-            });
-        };
-    },
-    /** 
      * get login status
      */
     loginStatus(): (fetch: FetchAPI, basePath?: string) => Promise<LoginStatus> {
@@ -549,13 +525,6 @@ export const AuthApiFp = {
  */
 export class AuthApi extends BaseAPI {
     /** 
-     * login
-     * @param auth auth object
-     */
-    login(params: {  auth: Auth; }) {
-        return AuthApiFp.login(params)(this.fetch, this.basePath);
-    }
-    /** 
      * get login status
      */
     loginStatus() {
@@ -574,13 +543,6 @@ export class AuthApi extends BaseAPI {
  */
 export const AuthApiFactory = function (fetch?: FetchAPI, basePath?: string) {
     return {
-        /** 
-         * login
-         * @param auth auth object
-         */
-        login(params: {  auth: Auth; }) {
-            return AuthApiFp.login(params)(fetch, basePath);
-        },
         /** 
          * get login status
          */
@@ -681,6 +643,77 @@ export const ClientApiFactory = function (fetch?: FetchAPI, basePath?: string) {
 
 
 /**
+ * FlashesApi - fetch parameter creator
+ */
+export const FlashesApiFetchParamCreactor = {
+    /** 
+     * list current flashes (only makes sense in browsers)
+     */
+    getFlashes(): FetchArgs {
+        const baseUrl = `/v1/flashes`;
+        let urlObj = url.parse(baseUrl, true);
+        let fetchOptions: RequestInit = { method: "GET" };
+
+        let contentTypeHeader: Dictionary<string>;
+        if (contentTypeHeader) {
+            fetchOptions.headers = contentTypeHeader;
+        }
+        return {
+            url: url.format(urlObj),
+            options: fetchOptions,
+        };
+    },
+}
+
+/**
+ * FlashesApi - functional programming interface
+ */
+export const FlashesApiFp = {
+    /** 
+     * list current flashes (only makes sense in browsers)
+     */
+    getFlashes(): (fetch: FetchAPI, basePath?: string) => Promise<Flash> {
+        const fetchArgs = FlashesApiFetchParamCreactor.getFlashes();
+        return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
+            return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        };
+    },
+};
+
+/**
+ * FlashesApi - object-oriented interface
+ */
+export class FlashesApi extends BaseAPI {
+    /** 
+     * list current flashes (only makes sense in browsers)
+     */
+    getFlashes() {
+        return FlashesApiFp.getFlashes()(this.fetch, this.basePath);
+    }
+};
+
+/**
+ * FlashesApi - factory interface
+ */
+export const FlashesApiFactory = function (fetch?: FetchAPI, basePath?: string) {
+    return {
+        /** 
+         * list current flashes (only makes sense in browsers)
+         */
+        getFlashes() {
+            return FlashesApiFp.getFlashes()(fetch, basePath);
+        },
+    }
+};
+
+
+/**
  * SecretsApi - fetch parameter creator
  */
 export const SecretsApiFetchParamCreactor = {
@@ -755,6 +788,77 @@ export const SecretsApiFactory = function (fetch?: FetchAPI, basePath?: string) 
          */
         readSecret(params: {  id: string; }) {
             return SecretsApiFp.readSecret(params)(fetch, basePath);
+        },
+    }
+};
+
+
+/**
+ * SpaceApi - fetch parameter creator
+ */
+export const SpaceApiFetchParamCreactor = {
+    /** 
+     * get lab metadata (name, log, description)
+     */
+    getSpace(): FetchArgs {
+        const baseUrl = `/v1/space`;
+        let urlObj = url.parse(baseUrl, true);
+        let fetchOptions: RequestInit = { method: "GET" };
+
+        let contentTypeHeader: Dictionary<string>;
+        if (contentTypeHeader) {
+            fetchOptions.headers = contentTypeHeader;
+        }
+        return {
+            url: url.format(urlObj),
+            options: fetchOptions,
+        };
+    },
+}
+
+/**
+ * SpaceApi - functional programming interface
+ */
+export const SpaceApiFp = {
+    /** 
+     * get lab metadata (name, log, description)
+     */
+    getSpace(): (fetch: FetchAPI, basePath?: string) => Promise<Space> {
+        const fetchArgs = SpaceApiFetchParamCreactor.getSpace();
+        return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
+            return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        };
+    },
+};
+
+/**
+ * SpaceApi - object-oriented interface
+ */
+export class SpaceApi extends BaseAPI {
+    /** 
+     * get lab metadata (name, log, description)
+     */
+    getSpace() {
+        return SpaceApiFp.getSpace()(this.fetch, this.basePath);
+    }
+};
+
+/**
+ * SpaceApi - factory interface
+ */
+export const SpaceApiFactory = function (fetch?: FetchAPI, basePath?: string) {
+    return {
+        /** 
+         * get lab metadata (name, log, description)
+         */
+        getSpace() {
+            return SpaceApiFp.getSpace()(fetch, basePath);
         },
     }
 };
