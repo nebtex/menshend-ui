@@ -19,7 +19,10 @@ const config = webpackMerge(commonConfig, {
       },
       concurrency: 3,
     })
-  ]
+  ],
+  externals: {
+    reactstrap: 'reactstrap'
+  }
 });
 
 module.exports = config;

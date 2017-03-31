@@ -42,9 +42,6 @@ const config = {
         loader: 'json-loader'
       }
     ]
-  },
-  externals: {
-    reactstrap: 'reactstrap'
   }
 };
 
