@@ -1,7 +1,11 @@
 const webpack = require("webpack");
+const pkg = require('./package.json')
 
 const config = {
-  entry: ["./src/index.tsx"],
+  entry: {
+    bundle: "./src/index.tsx",
+    vendor: ['reactstrap']
+  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     alias: {
@@ -42,7 +46,13 @@ const config = {
         loader: 'json-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendors',
+      chunks: ['common']
+    })
+  ]
 };
 
 module.exports = config;

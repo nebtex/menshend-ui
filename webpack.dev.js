@@ -11,7 +11,7 @@ const config = webpackMerge(commonConfig, {
     historyApiFallback: true
   },
   output: {
-    filename: "bundle.js"
+    filename: "[name].js"
   }
 });
 
