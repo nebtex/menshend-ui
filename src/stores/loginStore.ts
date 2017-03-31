@@ -6,7 +6,7 @@ const authApi: AuthApi = new AuthApi();
 export default class LoginStore {
   @observable loginStatus:LoginStatus;
 
-  @action clientApiLoginStatus = () => {
+  @action load = () => {
     authApi.loginStatus().then((data:LoginStatus) => {
       this.loginStatus = data;
     })
