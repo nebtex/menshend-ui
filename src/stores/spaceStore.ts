@@ -38,6 +38,6 @@ class SpaceStore {
   }
 }
 
-const spaceStore: SpaceStore = new SpaceStore();
+const spaceStore = new SpaceStore();
 
 export default spaceStore;
