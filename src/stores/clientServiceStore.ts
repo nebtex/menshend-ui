@@ -8,7 +8,10 @@ class ClientServiceStore {
   @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
 
   constructor() {
-    this.services = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
+    const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
+    storagedServices.forEach(service => {
+      this.services.push(service);
+    });
   }
 
   @action onload() {
