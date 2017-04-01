@@ -19,7 +19,11 @@ interface ILoginState {
   loginFormActiveTab: ActiveTabType;
 }
 
-export default class Login extends React.Component<{}, ILoginState>{
+interface ILoginProps {
+  flashes: string[]
+}
+
+export default class Login extends React.Component<ILoginProps, ILoginState>{
   constructor(props:any){
     super(props);
     this.state = {
@@ -61,7 +65,7 @@ export default class Login extends React.Component<{}, ILoginState>{
             <Col className={styles.rightSide}>
               <h3>{message}</h3>
               <ServiceInfoCard />
-              <ErrorsPanel />
+              <ErrorsPanel flashes={this.props.flashes}/>
               <LoginForm
                 githubLogin={this.githubLogin}
                 tokenLogin={this.tokenLogin}

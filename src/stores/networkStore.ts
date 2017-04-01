@@ -6,8 +6,8 @@ interface IResponse {
 }
 
 class NetworkStore {
-  @observable pendingRequest:number
-  @observable lastResponse:IResponse
+  @observable pendingRequest:number = 0
+  @observable lastResponse:IResponse = {statusCode:0, message: 'none'}
   
   @action updateLastResponse = ({statusCode, message}:IResponse) => {
     this.lastResponse.message = message;

@@ -46,4 +46,6 @@ class LoginStore {
 
 const loginStore = new LoginStore();
 
+loginStore.load();
+
 export default loginStore;
