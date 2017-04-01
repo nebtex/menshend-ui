@@ -1,20 +1,35 @@
 import { observable, action, ObservableMap } from 'mobx';
 import { LoginStatus, AuthApi } from '../api/api';
+import networkStore from './networkStore';
 
 const authApi: AuthApi = new AuthApi();
 
 export default class LoginStore {
-  @observable loginStatus:LoginStatus;
+  @observable isLogged: boolean;
+  @observable isAdmin: boolean;
+  @observable canImpersonate: boolean;
+  @observable sessionExpiresAt: number;
 
-  @action load = () => {
-    authApi.loginStatus().then((data:LoginStatus) => {
-      this.loginStatus = data;
-    })
+  constructor(){
+    const loginStatus: LoginStatus = JSON.parse(localStorage.getItem('loginStatus')) ? JSON.parse(localStorage.getItem('loginStatus')) : {};
+    this.isLogged = loginStatus.isLogged;
+    this.isAdmin = loginStatus.isAdmin;
+    this.canImpersonate = loginStatus.canImpersonate;
+    this.sessionExpiresAt = loginStatus.sessionExpiresAt;
   }
 
-  @action clientApiLogout = () => {
+  @action load = () => {
+    networkStore.addPendingRequest();
     authApi.loginStatus().then((data:LoginStatus) => {
-      //@TODO: What to do here?
-    })
+      this.isLogged = data.isLogged;
+      this.isAdmin = data.isAdmin;
+      this.canImpersonate = data.canImpersonate;
+      this.sessionExpiresAt = data.sessionExpiresAt;
+      localStorage.setItem('loginStatus', JSON.stringify(data));
+      networkStore.removePendingRequest();
+    }).catch((response:Response) => {
+      networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
+      networkStore.removePendingRequest();      
+    });
   }
 }
