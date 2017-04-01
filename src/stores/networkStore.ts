@@ -1,10 +1,25 @@
 import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
 
-class NetworkStore {
-  @observable lastResponseMessage: string = ''
+interface IResponse {
+  statusCode:number
+  message:string
+}
 
-  @action updateLastResponseMessage = (value:string) => {
-    this.lastResponseMessage = value;
+class NetworkStore {
+  @observable pendingRequest:number
+  @observable lastResponse:IResponse
+  
+  @action updateLastResponse = ({statusCode, message}:IResponse) => {
+    this.lastResponse.message = message;
+    this.lastResponse.statusCode = statusCode;
+  }
+
+  @action addPendingRequest = () => {
+    this.pendingRequest += 1;
+  }
+
+  @action removePendingRequest = () => {
+    this.pendingRequest -= 1;
   }
 }
 
