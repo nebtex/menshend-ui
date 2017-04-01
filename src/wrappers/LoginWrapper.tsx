@@ -9,9 +9,17 @@ import spaceStore from '../stores/spaceStore';
 
 @observer class LoginWrapper extends React.Component<{}, {}>{
   render() {
+    const flashes = flashStore.flashes;
+    const space = {
+      host: spaceStore.host,
+      logo: spaceStore.logo,
+      longDescription: spaceStore.longDescription,
+      shortDescription: spaceStore.shortDescription
+    }
+
     return (
       <div>
-        <Login flashes={flashStore.flashes}/>
+        <Login flashes={flashes} space={space}/>
       </div>
     );
   }

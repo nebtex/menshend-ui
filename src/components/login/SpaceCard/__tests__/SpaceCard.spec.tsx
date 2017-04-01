@@ -1,8 +1,8 @@
 /// <reference types='jest' />
 
 import * as React from 'react';
-import  EnvironmentCard from '../EnvironmentCard';
-import  Cases from './EnvironmentCard.cases';
+import  EnvironmentCard from '../SpaceCard';
+import  Cases from './SpaceCard.cases';
 import { shallow, mount, render } from 'enzyme';
 
 describe('EnvironmentCard', () => {
@@ -17,14 +17,14 @@ describe('EnvironmentCard', () => {
     });
 
     it('should render correctly when environment is passed via props', () => {
-      expect(environmentCard.find('h1').first().text()).toEqual(testProps.environment.name);
-      expect(environmentCard.find('p').first().text()).toMatch(testProps.environment.short_description);
+      expect(environmentCard.find('h1').first().text()).toEqual(testProps.space.name);
+      expect(environmentCard.find('p').first().text()).toMatch(testProps.space.shortDescription);
     });
 
     it('should have the expected props', () => {
-      expect(environmentCard.props().environment.name).toEqual(testProps.environment.name);
-      expect(environmentCard.props().environment.short_description).toMatch(testProps.environment.short_description);
-      expect(environmentCard.props().environment.long_description).toEqual(testProps.environment.long_description);
+      expect(environmentCard.props().environment.name).toEqual(testProps.space.name);
+      expect(environmentCard.props().environment.short_description).toMatch(testProps.space.shortDescription);
+      expect(environmentCard.props().environment.long_description).toEqual(testProps.space.longDescription);
     });
   });
 

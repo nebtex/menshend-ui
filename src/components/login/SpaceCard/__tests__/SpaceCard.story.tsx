@@ -1,15 +1,15 @@
 
 import * as React from "react";
 import { storiesOf, action } from "@kadira/storybook";
-import Cases from "./EnvironmentCard.cases";
-import EnvironmentCard from '../EnvironmentCard';
+import Cases from "./SpaceCard.cases";
+import SpaceCard from '../SpaceCard';
 
-const story = storiesOf('<EnvironmentCard />', module);
+const story = storiesOf('<SpaceCard />', module);
 let key: string;
 
 function element(iKey: string) {
     return function () {
-        return <EnvironmentCard {...Cases[iKey]} />
+        return <SpaceCard {...Cases[iKey]} />
     }
 }
 

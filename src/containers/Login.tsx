@@ -2,9 +2,11 @@ import * as React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginForm';
 import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard';
-import EnvironmentCard from '../components/login/EnvironmentCard/EnvironmentCard';
+import SpaceCard from '../components/login/SpaceCard/SpaceCard';
 import ErrorsPanel from '../components/login/ErrorsPanel/ErrorsPanel';
 import { IUser } from '../models/interface';
+import { Space } from '../api/api';
+import { observer } from 'mobx-react';
 let logo = require('../assets/octopus-logo.svg');
 let styles = require('./Login.scss');
 
@@ -21,9 +23,10 @@ interface ILoginState {
 
 interface ILoginProps {
   flashes: string[]
+  space: Space;
 }
 
-export default class Login extends React.Component<ILoginProps, ILoginState>{
+ @observer class Login extends React.Component<ILoginProps, ILoginState>{
   constructor(props:any){
     super(props);
     this.state = {
@@ -56,11 +59,11 @@ export default class Login extends React.Component<ILoginProps, ILoginState>{
       <div className={styles.container} > 
         <Container>
           <Row>
-            <EnvironmentCard />
+            <SpaceCard space={this.props.space} />
           </Row>
           <Row>
             <Col md="12" lg="6" className={styles.logoContainer}>
-              <img src={ logo } className={styles.logo}/>
+              <img src={ this.props.space.logo === "" ? logo : this.props.space.logo } className={styles.logo}/>
             </Col>
             <Col className={styles.rightSide}>
               <h3>{message}</h3>
@@ -81,3 +84,5 @@ export default class Login extends React.Component<ILoginProps, ILoginState>{
     );
   }
 }
+
+export default Login;

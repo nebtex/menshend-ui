@@ -1,27 +1,28 @@
 import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { Container, Row, Popover, PopoverTitle, PopoverContent, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { ISpace} from '../../../models/interface';
+import { Space } from '../../../api/api';
+import { observer } from 'mobx-react';
 let octopusLogo = require('../../../assets/octopus-logo.svg');
 
-export interface IEnvironmentCardProps {
-    environment?:ISpace;
+export interface ISpaceCardProps {
+    space?:Space;
 }
 
-interface IEnvironmentCardState {
+interface ISpaceCardState {
   longDescriptionOpen:boolean;
 }
 
-export default class EnvironmentCard extends React.Component<IEnvironmentCardProps, IEnvironmentCardState>{
+@observer class SpaceCard extends React.Component<ISpaceCardProps, ISpaceCardState>{
   state = {
     longDescriptionOpen: false
   }
 
-  static defaultProps:IEnvironmentCardProps = {
-    environment: {
+  static defaultProps:ISpaceCardProps = {
+    space: {
       name: 'Kuper',
-      short_description: 'Kuper is a modern  auth proxy that use vault and consul for manage access policies',
-      long_description: '',
+      shortDescription: 'Kuper is a modern  auth proxy that use vault and consul for manage access policies',
+      longDescription: '',
       logo: octopusLogo
     }
   }
@@ -33,15 +34,15 @@ export default class EnvironmentCard extends React.Component<IEnvironmentCardPro
   }
 
   render(){
-    let environment = this.props.environment;
+    const { space } = this.props;
     return (
       <Container>
-        <h1>{ environment.name }</h1>
-        <p>{ environment.short_description } <a href="#" onClick={this.toggleDescription}> View more </a></p>
+        <h1>{ space.name }</h1>
+        <p>{ space.shortDescription } <a href="#" onClick={this.toggleDescription}> View more </a></p>
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
-          <ModalHeader toggle={this.toggleDescription}> {environment.name} </ModalHeader>
+          <ModalHeader toggle={this.toggleDescription}> {space.name} </ModalHeader>
           <ModalBody>
-            <ReactMarkdown source={ environment.long_description }/>
+            <ReactMarkdown source={ space.longDescription }/>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggleDescription}>OK</Button>
@@ -51,3 +52,5 @@ export default class EnvironmentCard extends React.Component<IEnvironmentCardPro
     );
   }
 }
+
+export default SpaceCard;
