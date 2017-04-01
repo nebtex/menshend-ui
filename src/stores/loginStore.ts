@@ -1,10 +1,11 @@
 import { observable, action, ObservableMap } from 'mobx';
 import { LoginStatus, AuthApi } from '../api/api';
 import networkStore from './networkStore';
+import clientServiceStore from './clientServiceStore';
 
 const authApi: AuthApi = new AuthApi();
 
-export default class LoginStore {
+class LoginStore {
   @observable isLogged: boolean;
   @observable isAdmin: boolean;
   @observable canImpersonate: boolean;
@@ -25,7 +26,15 @@ export default class LoginStore {
       this.isAdmin = data.isAdmin;
       this.canImpersonate = data.canImpersonate;
       this.sessionExpiresAt = data.sessionExpiresAt;
+      
+      // Set localStorage with the obtained Data
       localStorage.setItem('loginStatus', JSON.stringify(data));
+
+      // Call clientServiceStore.load() if isLogged
+      if(data.isLogged)
+        clientServiceStore.load();
+
+      // Update networkStore
       networkStore.updateLastResponse({message:'OK', statusCode: 200});
       networkStore.removePendingRequest();
     }).catch((response:Response) => {
@@ -34,3 +43,7 @@ export default class LoginStore {
     });
   }
 }
+
+const loginStore = new LoginStore();
+
+export default loginStore;

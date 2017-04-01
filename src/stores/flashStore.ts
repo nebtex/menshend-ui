@@ -30,4 +30,6 @@ class FlastStore {
 
 const flashStore = new FlastStore();
 
+flashStore.load();
+
 export default flashStore;

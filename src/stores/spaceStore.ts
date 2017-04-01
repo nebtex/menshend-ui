@@ -40,4 +40,6 @@ class SpaceStore {
 
 const spaceStore = new SpaceStore();
 
+spaceStore.load();
+
 export default spaceStore;

@@ -14,7 +14,7 @@ class ClientServiceStore {
     });
   }
 
-  @action onload() {
+  @action load() {
     networkStore.addPendingRequest();
     clientApi.listAvailableServices({}).then((services:ClientService[]) => {
       services.forEach(service => {
