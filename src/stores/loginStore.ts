@@ -26,6 +26,7 @@ export default class LoginStore {
       this.canImpersonate = data.canImpersonate;
       this.sessionExpiresAt = data.sessionExpiresAt;
       localStorage.setItem('loginStatus', JSON.stringify(data));
+      networkStore.updateLastResponse({message:'OK', statusCode: 200});
       networkStore.removePendingRequest();
     }).catch((response:Response) => {
       networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
