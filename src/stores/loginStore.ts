@@ -10,6 +10,7 @@ class LoginStore {
   @observable isAdmin: boolean;
   @observable canImpersonate: boolean;
   @observable sessionExpiresAt: number;
+  @observable loginError: string = '';
 
   constructor(){
     const loginStatus: LoginStatus = JSON.parse(localStorage.getItem('loginStatus')) ? JSON.parse(localStorage.getItem('loginStatus')) : {};
@@ -41,6 +42,10 @@ class LoginStore {
       networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
       networkStore.removePendingRequest();      
     });
+  }
+
+  @action updateLoginError = (loginError:string) => {
+    this.loginError = loginError;
   }
 }
 

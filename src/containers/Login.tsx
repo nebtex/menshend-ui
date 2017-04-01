@@ -24,6 +24,7 @@ interface ILoginState {
 interface ILoginProps {
   flashes: string[]
   space: Space;
+  loginError: string;
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -54,6 +55,7 @@ interface ILoginProps {
 
   render(){
     let message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
+    console.log('error:', this.props.loginError);
 
     return (
       <div className={styles.container} > 

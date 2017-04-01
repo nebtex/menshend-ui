@@ -4,6 +4,7 @@ import { Container, Row, Popover, PopoverTitle, PopoverContent, Modal, ModalHead
 import { Space } from '../../../api/api';
 import { observer } from 'mobx-react';
 let octopusLogo = require('../../../assets/octopus-logo.svg');
+let styles = require('./SpaceCard.scss');
 
 export interface ISpaceCardProps {
     space?:Space;
@@ -39,7 +40,7 @@ interface ISpaceCardState {
       <Container>
         <h1>{ space.name }</h1>
         <p>{ space.shortDescription } <a href="#" onClick={this.toggleDescription}> View more </a></p>
-        <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
+        <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} className={styles.modal}>
           <ModalHeader toggle={this.toggleDescription}> {space.name} </ModalHeader>
           <ModalBody>
             <ReactMarkdown source={ space.longDescription }/>
