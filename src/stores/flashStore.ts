@@ -6,12 +6,6 @@ const flashesApi = new FlashesApi();
 
 class FlastStore {
   @observable flashes:IObservableArray<string> = observable.array<string>([]);
-  constructor() {
-    const flash:Flash = localStorage.getItem('flash') ? JSON.parse(localStorage.getItem('flash')) : {flashes:[]};
-    flash.flashes.forEach(flash => {
-      this.flashes.push(flash);
-    });
-  }
 
   @action load() {
     networkStore.addPendingRequest();
