@@ -6,7 +6,7 @@ import EditModalBody from './EditModalBody/EditModalBody';
 import EditModalHeader from './EditModalHeader/EditModalHeader';
 import { Modal, ModalFooter, Button, Card, CardBlock, CardTitle, CardText } from 'reactstrap';
 import  FullModal from '../../modals/FullModal';
-import { AdminServiceCache, AdminServiceCors } from '../../../api/api';
+// import { AdminServiceCache, AdminServiceCors } from '../../../api/api';
 let styles = require('./EditModal.scss');
 
 export interface IEditModalProps {

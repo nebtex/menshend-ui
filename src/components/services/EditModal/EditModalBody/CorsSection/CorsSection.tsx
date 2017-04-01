@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { TabPane, FormGroup, Label, Input } from 'reactstrap';
 import EditableList from '../../../../general/EditableList/EditableList';
-import { AdminServiceCors } from '../../../../../api/api';
+// import { AdminServiceCors } from '../../../../../api/api';
 import HelpButton from '../../../../general/HelpButton/HelpButton';
 let styles = require('./CorsSection.scss');
 
 export interface ICorsSectionProps {
-  cors?: AdminServiceCors;
+  // cors?: AdminServiceCors;
+  cors?: any;
   allowCredentialsOnChange: any;
   optionsPassthroughOnChange: any;
   maxAgeOnChange: any;

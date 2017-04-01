@@ -1,5 +1,6 @@
 import { observable, action, ObservableMap, toJS, IObservableArray } from 'mobx';
-import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors, AdminServiceProxyCodeLanguageEnum, AdminServiceStrategyEnum } from '../api/api';
+// import { AdminApi, AdminService, AdminServiceCache, AdminServiceCors, AdminServiceProxyCodeLanguageEnum, AdminServiceStrategyEnum } from '../api/api';
+import { AdminApi, AdminService } from '../api/api';
 import networkStore from './networkStore';
 
 const urlRegExp = new RegExp('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}');
@@ -18,14 +19,18 @@ class EditServiceFormStore {
   @observable proxyCode: string = ''
   @observable csrf: boolean = true
   @observable impersonateWithinRole: boolean = false
-  @observable proxyCodeLanguage: AdminServiceProxyCodeLanguageEnum = 'lua'
+  // @observable proxyCodeLanguage: AdminServiceProxyCodeLanguageEnum = 'lua'
+  @observable proxyCodeLanguage: any = 'lua'
   @observable isActive: boolean = true
-  @observable strategy: AdminServiceStrategyEnum = 'proxy'
-  @observable cache: AdminServiceCache = {
+  // @observable strategy: AdminServiceStrategyEnum = 'proxy'
+  @observable strategy: any = 'proxy'
+  // @observable cache: AdminServiceCache = {
+  @observable cache: any = {
     active: true,
     ttl: 120
   }
-  @observable cors: AdminServiceCors = {
+  // @observable cors: AdminServiceCors = {
+  @observable cors: any = {
     allowCredentials: false,
     optionsPassthrough: false,
     maxAge: false,
@@ -88,7 +93,8 @@ class EditServiceFormStore {
     this.impersonateWithinRole = !this.impersonateWithinRole
   }
 
-  @action updateProxyCodeLanguage = (proxyCodeLanguage:AdminServiceProxyCodeLanguageEnum) => {
+  // @action updateProxyCodeLanguage = (proxyCodeLanguage:AdminServiceProxyCodeLanguageEnum) => {
+  @action updateProxyCodeLanguage = (proxyCodeLanguage:any) => {
     this.proxyCodeLanguage = proxyCodeLanguage
   }
 
@@ -96,7 +102,8 @@ class EditServiceFormStore {
     this.isActive = !this.isActive
   }
 
-  @action updateStrategy = (strategy:AdminServiceStrategyEnum) => {
+  // @action updateStrategy = (strategy:AdminServiceStrategyEnum) => {
+  @action updateStrategy = (strategy:any) => {
     this.strategy = strategy
   }
 
@@ -210,7 +217,8 @@ class EditServiceFormStore {
   // **** Api Client Calls ****
 
   @action apiGetService = (serviceId:string) => {
-    return this.adminApi.adminGetService({id:serviceId}).then((service:AdminService) => {
+    // return this.adminApi.adminGetService({id:serviceId}).then((service:AdminService) => {
+    return this.adminApi.adminGetService({id:serviceId}).then((service:any) => {
       this.roleId = service.roleId
       this.name = service.name;
       this.logo = service.logo;
@@ -237,7 +245,8 @@ class EditServiceFormStore {
   }
 
   @action apiSaveService = (serviceId:string) => {
-    let service: AdminService = {
+    // let service: AdminService = {
+    let service: any = {
       roleId:this.roleId,
       logo: this.logo,
       name: this.name,

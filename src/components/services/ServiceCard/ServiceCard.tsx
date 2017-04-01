@@ -7,7 +7,8 @@ import { ClientService } from '../../../api/api';
 let styles = require('./ServiceCard.scss');
 
 export interface IServiceCardProps {
-  service: ClientService;
+  // service: ClientService;
+  service: any;
   user: IUser;
   openEditModal: any;
 }

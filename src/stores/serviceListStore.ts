@@ -15,18 +15,19 @@ class ServiceListStore {
 
   @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
 
-  @computed get roles(){
-    let roles:string[] = []
+  //@TODO: Check this computed method, it is failing because some changes in api client
+  // @computed get roles(){
+  //   let roles:string[] = []
 
-    this.services.forEach( service => {
-      let role = service.roleId;
-      if(roles.indexOf(role) === -1 )
-        roles.push(role)
-    });
-    roles.sort();
+  //   this.services.forEach( service => {
+  //     let role = service.roleId;
+  //     if(roles.indexOf(role) === -1 )
+  //       roles.push(role)
+  //   });
+  //   roles.sort();
 
-    return roles;
-  }
+  //   return roles;
+  // }
 
   @action clientApiGetServiceList = () => {
     return this.clientApi.listAvailableServices({}).then((clientServicesList:ClientService[]) => {

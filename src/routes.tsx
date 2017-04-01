@@ -3,7 +3,6 @@ import { Router, Route, browserHistory, IndexRoute, IndexRedirect } from 'react-
 import App from './containers/App';
 import Login from './containers/Login';
 import Services from './containers/Services';
-import EditModalWrapper from './components/wrappers/EditModalWrapper/EditModalWrapper'
 
 const routes = (
   <Router history={browserHistory}>
@@ -12,7 +11,6 @@ const routes = (
       <Route path="/ui" component={Login} />
       <Route path="/ui/services" component={Services}>
         <Route path="role/:role"/>
-        <Route path="role/:role/:subdmain" component={EditModalWrapper}/>
       </Route>
     </Route>
   </Router>

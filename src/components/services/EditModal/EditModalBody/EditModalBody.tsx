@@ -8,7 +8,7 @@ import CacheSection from './CacheSection/CacheSection';
 import CorsSection from './CorsSection/CorsSection';
 import SecretPathsSection from './SecretPathsSection/SecretPathsSection';
 import { ModalBody, TabContent } from 'reactstrap';
-import { AdminServiceCache, AdminServiceCors } from '../../../../api/api';
+// import { AdminServiceCache, AdminServiceCors } from '../../../../api/api';
 
 let styles = require('./EditModalBody.scss');
          
@@ -33,7 +33,8 @@ export interface IEditModalBodyProps {
   longDescriptionUrlActiveOnChange?: any;
   codeOnChange?: any;
   longDescriptionUrlError?:boolean;
-  cors?: AdminServiceCors;
+  // cors?: AdminServiceCors;
+  cors?: any;
   handleAllowedOriginsAdd?: any;
   handleAllowedOriginsDelete?: any;
   handleAllowedMethodsAdd?: any;
@@ -45,7 +46,8 @@ export interface IEditModalBodyProps {
   allowCredentialsOnChange?: any;
   optionsPassthroughOnChange?: any;
   maxAgeOnChange?: any;
-  cache?: AdminServiceCache;
+  // cache?: AdminServiceCache;
+  cache?: any;
   cacheActiveOnChange?: any;
   ttlOnChange?: any;
   secretPaths?: string[];

@@ -12,7 +12,8 @@ import { Col, Container, Row, Form, FormGroup, Input, Dropdown,
 let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
-  services: ClientService[];
+  // services: ClientService[];
+  services: any[];
   user: IUser;
   activeRole?: string;
 }
@@ -22,7 +23,8 @@ interface IServicesPanelState {
   loadingSearch: boolean;
   searchValue: string;
   editModalOpen: boolean;
-  modalService?: ClientService;
+  // modalService?: ClientService;
+  modalService?: any;
 }
 
 let searchTimeout: any;
