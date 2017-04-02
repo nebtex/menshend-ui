@@ -1,5 +1,19 @@
 import * as React from 'react';
-import { Form, FormGroup, Label, Input, Button , Card, CardBlock, FormFeedback } from 'reactstrap';
+import { 
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Button,
+  Card,
+  CardBlock,
+  FormFeedback,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle, 
+  DropdownMenu 
+} from 'reactstrap';
+let styles = require('./UserPassForm.scss');
 
 interface IUserPassFormProps {
   handleLogin(user:string, pass:string) : void;
@@ -10,12 +24,18 @@ interface IUserPassFormState {
   user:string;
   pass:string;
   error?:boolean;
+  dropdownOpen?:boolean;
+  activeMethod?:string;
 }
 
 export default class UserPassForm extends React.Component<IUserPassFormProps, IUserPassFormState>{
+  dropdownOptions = ["vault", "rados", "ldap"]
+
   state = {
     user: '',
-    pass: ''
+    pass: '',
+    dropdownOpen: false,
+    activeMethod: 'vault'
   };
 
   userOnChange = (evt:any) => {
@@ -39,6 +59,33 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
     return this.props.error ? <FormFeedback>There was a problem with your credentials</FormFeedback> : null;
   };
 
+  toggleDropdown = () => {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+  dropdownOptionOnClick = (option:string) => {
+    this.setState({
+      activeMethod: option
+    });
+  }
+
+  getMethodDropdown = () => {
+    return (
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown} className={styles.methodDropdown}>
+        <DropdownToggle caret>
+          {this.state.activeMethod}
+        </DropdownToggle>
+        <DropdownMenu>
+          {this.dropdownOptions.map((option, index) => {
+            return <DropdownItem key={index} onClick={() => this.dropdownOptionOnClick(option)}>{option}</DropdownItem>
+          })}
+        </DropdownMenu>
+      </Dropdown>
+    );
+  }
+
   render(){
     let error = this.props.error,
         errorMessage = this.getErrorMessageComponent();
@@ -53,6 +100,10 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
           <Label for="password">Password</Label>
           <Input type="password" id="password" value={this.state.pass} onChange={this.passOnChange} state={error ? "danger" : null}/>
           { errorMessage }
+        </FormGroup>
+        <FormGroup>
+          <Label>Method</Label>
+          {this.getMethodDropdown()}
         </FormGroup>
         <Button >Login</Button>
       </Form>
