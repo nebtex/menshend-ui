@@ -9,10 +9,7 @@ let key: string;
 
 function element(iKey: string) {
     return function () {
-        return <LoginForm {...Cases[iKey]}
-         userPassLogin={action("userPassLogin (user:string, password: string)")}
-         tokenLogin={action("tokenLogin (token:string)")}
-         githubLogin={action("githubLogin ()")}/>
+        return <LoginForm {...Cases[iKey]}/>
     }
 }
 

@@ -12,9 +12,6 @@ let styles = require('./LoginForm.scss');
 export type ActiveTabType = 'UserPassTab' | 'TokenTab';
 
 export interface ILoginFormProps {
-  githubLogin() : void;
-  tokenLogin(token:string) : void;
-  userPassLogin(user:string, pass:string) : void;
   status?: LoginStatus;
   activeTab: ActiveTabType;
   toggleTab(tab?:ActiveTabType) : void;
@@ -57,17 +54,17 @@ export interface ILoginFormProps {
                 <CardBlock>
                   <Row>
                     <Col md="5" style={{borderRight: "1px solid rgba(0,0,0,.125)"}}>
-                      <GithubLogin handleLogin={this.props.githubLogin} error={this.props.error === 'Github'}/>
+                      <GithubLogin error={this.props.error === 'Github'}/>
                     </Col>
                     <Col md="7">
-                      <UserPassForm handleLogin={this.props.userPassLogin} error={this.props.error === 'Username/Password'}/>
+                      <UserPassForm error={this.props.error === 'Username/Password'}/>
                     </Col>
                   </Row>  
                 </CardBlock>
               </Card>
             </TabPane>
             <TabPane tabId="TokenTab">
-              <TokenForm handleLogin={this.props.tokenLogin} error={this.props.error === 'Token'}/>
+              <TokenForm error={this.props.error === 'Token'}/>
             </TabPane>
           </TabContent>
         </div>

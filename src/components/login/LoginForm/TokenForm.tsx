@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Form, FormGroup, Label, Input, Button , Card, CardBlock, FormFeedback } from 'reactstrap';
 
 interface ITokenFormProps {
-  handleLogin(token:string) : void;
   error:boolean;
 }
 

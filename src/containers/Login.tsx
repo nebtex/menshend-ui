@@ -37,18 +37,6 @@ interface ILoginProps {
     }
   }
 
-  githubLogin = () => {
-    console.log('Getting logged in github');
-  }
-
-  tokenLogin = (token:string) => {
-    console.log('Login with this token: ', token);
-  }
-
-  userPassLogin = (user:string, pass:string) => {
-    console.log('Login with these credentials: ', user, pass);
-  }
-
   toggleTabLoginForm = (tab:ActiveTabType) => {
     this.setState({
       loginFormActiveTab: tab
@@ -91,9 +79,6 @@ interface ILoginProps {
               <ServiceInfoCard />
               <ErrorsPanel flashes={this.props.flashes}/>
               <LoginForm
-                githubLogin={this.githubLogin}
-                tokenLogin={this.tokenLogin}
-                userPassLogin={this.userPassLogin}
                 activeTab={activeTab}
                 toggleTab={this.toggleTabLoginForm}
                 status={this.props.loginStatus}

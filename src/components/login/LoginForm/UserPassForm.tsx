@@ -16,7 +16,6 @@ import {
 let styles = require('./UserPassForm.scss');
 
 interface IUserPassFormProps {
-  handleLogin(user:string, pass:string) : void;
   error:boolean;
 }
 
