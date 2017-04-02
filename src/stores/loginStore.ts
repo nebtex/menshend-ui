@@ -12,14 +12,6 @@ class LoginStore {
   @observable sessionExpiresAt: number;
   @observable loginError: string = '';
 
-  constructor(){
-    const loginStatus: LoginStatus = JSON.parse(localStorage.getItem('loginStatus')) ? JSON.parse(localStorage.getItem('loginStatus')) : {};
-    this.isLogged = loginStatus.isLogged;
-    this.isAdmin = loginStatus.isAdmin;
-    this.canImpersonate = loginStatus.canImpersonate;
-    this.sessionExpiresAt = loginStatus.sessionExpiresAt;
-  }
-
   @action load = () => {
     networkStore.addPendingRequest();
     authApi.loginStatus().then((data:LoginStatus) => {
