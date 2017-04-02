@@ -26,7 +26,9 @@ export interface ILoginFormProps {
       return (
         <div className={styles.container}>
           <SessionCounter expiresAt={status.sessionExpiresAt}/>
-          <Button color="danger" className={styles.logout} >Logout</Button>
+            <Form action="/uilogout" method="post">
+              <Button color="danger" className={styles.logout} >Logout</Button>
+            </Form>
         </div>
       );
     } else {
