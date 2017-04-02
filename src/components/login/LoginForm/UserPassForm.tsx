@@ -68,12 +68,12 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
   getMethodDropdown = () => {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown} className={styles.methodDropdown}>
-        <DropdownToggle caret>
+        <DropdownToggle onClick={(evt:any) => {evt.preventDefault()}} caret>
           {this.state.activeMethod}
         </DropdownToggle>
         <DropdownMenu>
           {this.dropdownOptions.map((option, index) => {
-            return <DropdownItem key={index} onClick={() => this.dropdownOptionOnClick(option)}>{option}</DropdownItem>
+            return <DropdownItem key={index} onClick={(evt:any) => {evt.preventDefault(); this.dropdownOptionOnClick(option)}}>{option}</DropdownItem>
           })}
         </DropdownMenu>
       </Dropdown>
