@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Button } from 'reactstrap';
+import { Button , Form } from 'reactstrap';
 
 interface IGithubLoginProps {
-  handleLogin() : void;
   error:boolean;
 }
 
@@ -10,9 +9,12 @@ export default class GithubLogin extends React.Component<IGithubLoginProps, {}>{
   render(){
     let error = this.props.error;
     return (
-      <Button style={{width:'100%'}} onClick={this.props.handleLogin} outline={error} color={error ? "danger" : "secondary"}>
-        <i className="fa fa-github fa-lg"/> | Github Login
-      </Button>
+      <Form action="/uilogin" method="post">
+        <input type="hidden" name="method" value="Github"/>
+        <Button style={{width:'100%'}} outline={error} color={error ? "danger" : "secondary"}>
+          <i className="fa fa-github fa-lg"/> | Github Login
+        </Button>
+      </Form>
     );
   }
 }

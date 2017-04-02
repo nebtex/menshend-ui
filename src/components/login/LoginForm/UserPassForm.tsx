@@ -50,11 +50,6 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
     });
   };
 
-  handleLogin = (evt:any) => {
-    evt.preventDefault();
-    this.props.handleLogin(this.state.user, this.state.pass);
-  };
-
   getErrorMessageComponent = () => {
     return this.props.error ? <FormFeedback>There was a problem with your credentials</FormFeedback> : null;
   };
@@ -91,14 +86,14 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
         errorMessage = this.getErrorMessageComponent();
 
     return (
-      <Form  onSubmit={this.handleLogin}>
+      <Form action="/uilogin" method="post">
         <FormGroup color={error ? "danger" : null}>
           <Label for="user">User</Label>
           <Input type="text" name="user" id="user" value={this.state.user} onChange={this.userOnChange} state={error ? "danger" : null}/>
         </FormGroup>
         <FormGroup color={error ? "danger" : null}>
           <Label for="password">Password</Label>
-          <Input type="password" id="password" value={this.state.pass} onChange={this.passOnChange} state={error ? "danger" : null}/>
+          <Input type="password" id="password" name="password" value={this.state.pass} onChange={this.passOnChange} state={error ? "danger" : null}/>
           { errorMessage }
         </FormGroup>
         <FormGroup>

@@ -16,11 +16,6 @@ export default class TokenForm extends React.Component<ITokenFormProps, ITokenFo
     token: ''
   };
 
-  handleLogin = (evt:any) => {
-    evt.preventDefault();
-    this.props.handleLogin(this.state.token);
-  };
-
   tokenOnChange = (evt:any) => {
     this.setState({
       token: evt.target.value
@@ -38,7 +33,7 @@ export default class TokenForm extends React.Component<ITokenFormProps, ITokenFo
     return (
       <Card>
         <CardBlock>
-          <Form onSubmit={this.handleLogin}>
+          <Form action="/uilogin" method="post">
             <FormGroup color={error ? "danger" : null}>
               <Label for="token">Token</Label>
               <Input type="text" name="token" id="token" value={this.state.token} onChange={this.tokenOnChange} state={error ? "danger" : null}/>
