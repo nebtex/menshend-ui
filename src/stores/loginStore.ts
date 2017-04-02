@@ -19,9 +19,6 @@ class LoginStore {
       this.isAdmin = data.isAdmin;
       this.canImpersonate = data.canImpersonate;
       this.sessionExpiresAt = data.sessionExpiresAt;
-      
-      // Set localStorage with the obtained Data
-      localStorage.setItem('loginStatus', JSON.stringify(data));
 
       // Call clientServiceStore.load() if isLogged
       if(data.isLogged)
