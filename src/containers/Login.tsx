@@ -4,8 +4,7 @@ import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginFor
 import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard';
 import SpaceCard from '../components/login/SpaceCard/SpaceCard';
 import ErrorsPanel from '../components/login/ErrorsPanel/ErrorsPanel';
-import { IUser } from '../models/interface';
-import { Space } from '../api/api';
+import { Space , LoginStatus } from '../api/api';
 import { observer } from 'mobx-react';
 let logo = require('../assets/octopus-logo.svg');
 let styles = require('./Login.scss');
@@ -25,6 +24,7 @@ interface ILoginProps {
   flashes: string[]
   space: Space;
   loginError: string;
+  loginStatus: LoginStatus;
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -67,6 +67,10 @@ interface ILoginProps {
           activeTab = 'TokenTab'
           this.errorTab = true
         break;
+        default:
+          activeTab = 'UserPassTab'
+          this.errorTab = true
+        break;
       }
     }else {
       activeTab = this.state.loginFormActiveTab;
@@ -92,7 +96,7 @@ interface ILoginProps {
                 userPassLogin={this.userPassLogin}
                 activeTab={activeTab}
                 toggleTab={this.toggleTabLoginForm}
-                user={mockUser}
+                status={this.props.loginStatus}
                 error={loginError}
               />
             </Col>

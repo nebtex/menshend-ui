@@ -29,10 +29,20 @@ interface ILoginWrapperProps {
       shortDescription: spaceStore.shortDescription
     }
     const loginError = loginStore.loginError;
-
+    const loginStatus = {
+      isAdmin: loginStore.isAdmin,
+      canImpersonate: loginStore.canImpersonate,
+      sessionExpiresAt: loginStore.sessionExpiresAt,
+      isLogged: loginStore.isLogged
+    }
+    
     return (
       <div>
-        <Login flashes={flashes} space={space} loginError={loginError}/>
+        <Login 
+          flashes={flashes}
+          space={space}
+          loginError={loginError}
+          loginStatus={loginStatus} />
       </div>
     );
   }

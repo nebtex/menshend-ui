@@ -4,8 +4,9 @@ import * as classnames from 'classnames';
 import UserPassForm from './UserPassForm';
 import TokenForm from './TokenForm';
 import GithubLogin from './GithubLogin';
-import { IUser } from '../../../models/interface';
+import { LoginStatus } from '../../../api/api';
 import SessionCounter from '../SessionCounter/SessionCounter';
+import { observer } from 'mobx-react';
 let styles = require('./LoginForm.scss');
 
 export type ActiveTabType = 'UserPassTab' | 'TokenTab';
@@ -14,20 +15,20 @@ export interface ILoginFormProps {
   githubLogin() : void;
   tokenLogin(token:string) : void;
   userPassLogin(user:string, pass:string) : void;
-  user: IUser;
+  status?: LoginStatus;
   activeTab: ActiveTabType;
   toggleTab(tab?:ActiveTabType) : void;
   error?: string;
 }
 
-export default class LoginForm extends React.Component<ILoginFormProps, {}> {
+ @observer class LoginForm extends React.Component<ILoginFormProps, {}> {
   getActiveComponent = () => {
-    let user = this.props.user;
+    const status = this.props.status;
 
-    if (user.isLogged){
+    if (status.isLogged){
       return (
         <div className={styles.container}>
-          <SessionCounter expiresAt={user.expiresAt}/>
+          <SessionCounter expiresAt={status.sessionExpiresAt}/>
           <Button color="danger" className={styles.logout} >Logout</Button>
         </div>
       );
@@ -56,10 +57,10 @@ export default class LoginForm extends React.Component<ILoginFormProps, {}> {
                 <CardBlock>
                   <Row>
                     <Col md="5" style={{borderRight: "1px solid rgba(0,0,0,.125)"}}>
-                      <GithubLogin handleLogin={this.props.githubLogin} error={this.props.user.loginError === 'Github'}/>
+                      <GithubLogin handleLogin={this.props.githubLogin} error={this.props.error === 'Github'}/>
                     </Col>
                     <Col md="7">
-                      <UserPassForm handleLogin={this.props.userPassLogin} error={this.props.user.loginError === 'Username/Password'}/>
+                      <UserPassForm handleLogin={this.props.userPassLogin} error={this.props.error === 'Username/Password'}/>
                     </Col>
                   </Row>  
                 </CardBlock>
@@ -79,3 +80,5 @@ export default class LoginForm extends React.Component<ILoginFormProps, {}> {
     return activeComponent;
   }
 }
+
+export default LoginForm;

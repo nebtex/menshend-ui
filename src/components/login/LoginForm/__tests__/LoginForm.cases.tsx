@@ -22,9 +22,9 @@ Cases["default"] = {
     tokenLogin,
     userPassLogin,
     toggleTab,
-    user: {
+    status: {
         isLogged: false,
-        expiresAt: Date.now() + 3600000
+        sessionExpiresAt: Date.now() + 3600000
     },
     activeTab: 'UserPassTab'
 }
@@ -34,9 +34,9 @@ Cases["User is logged"] = {
     tokenLogin,
     userPassLogin,
     toggleTab,
-    user: {
+    status: {
         isLogged: true,
-        expiresAt: Date.now() + 3600000
+        sessionExpiresAt: Date.now() + 3600000
     },
     activeTab: 'UserPassTab'
 }
@@ -46,11 +46,11 @@ Cases["Github error"] = {
     tokenLogin,
     userPassLogin,
     toggleTab,
-    user: {
+    status: {
         isLogged: false,
-        expiresAt: Date.now() + 3600000,
-        loginError: "Github"
+        sessionExpiresAt: Date.now() + 3600000,
     },
+    error: "Github",
     activeTab: 'UserPassTab'
 }
 
@@ -59,11 +59,11 @@ Cases["Username error"] = {
     tokenLogin,
     userPassLogin,
     toggleTab,
-    user: {
+    status: {
         isLogged: false,
-        expiresAt: Date.now() + 3600000,
-        loginError: "Username/Password"
+        sessionExpiresAt: Date.now() + 3600000,
     },
+    error: "Username/Password",
     activeTab: 'UserPassTab'
 }
 
@@ -72,11 +72,11 @@ Cases["Token error"] = {
     tokenLogin,
     userPassLogin,
     toggleTab,
-    user: {
+    status: {
         isLogged: false,
-        expiresAt: Date.now() + 3600000,
-        loginError: "Token"
+        sessionExpiresAt: Date.now() + 3600000,
     },
+    error: "Token",
     activeTab: 'TokenTab'
 }
 
