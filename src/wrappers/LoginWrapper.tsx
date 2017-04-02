@@ -18,8 +18,8 @@ interface ILoginWrapperProps {
 
 @observer class LoginWrapper extends React.Component<ILoginWrapperProps, {}>{
   render() {
-    if(this.props.location.query.error)
-      loginStore.updateLoginError(this.props.location.query.error);
+    if(this.props.location.query.loginError)
+      loginStore.updateLoginError(this.props.location.query.loginError);
     
     const flashes = flashStore.flashes;
     const space = {

@@ -17,6 +17,7 @@ export interface ILoginFormProps {
   user: IUser;
   activeTab: ActiveTabType;
   toggleTab(tab?:ActiveTabType) : void;
+  error?: string;
 }
 
 export default class LoginForm extends React.Component<ILoginFormProps, {}> {
@@ -65,7 +66,7 @@ export default class LoginForm extends React.Component<ILoginFormProps, {}> {
               </Card>
             </TabPane>
             <TabPane tabId="TokenTab">
-              <TokenForm handleLogin={this.props.tokenLogin} error={this.props.user.loginError === 'Token'}/>
+              <TokenForm handleLogin={this.props.tokenLogin} error={this.props.error === 'Token'}/>
             </TabPane>
           </TabContent>
         </div>

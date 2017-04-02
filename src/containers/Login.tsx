@@ -28,6 +28,8 @@ interface ILoginProps {
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
+  errorTab = false;
+
   constructor(props:any){
     super(props);
     this.state = {
@@ -55,7 +57,20 @@ interface ILoginProps {
 
   render(){
     let message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
-    console.log('error:', this.props.loginError);
+
+    const loginError = this.props.loginError
+    let activeTab:ActiveTabType;
+
+    if(loginError && !this.errorTab){
+      switch(loginError){
+        case 'Token':
+          activeTab = 'TokenTab'
+          this.errorTab = true
+        break;
+      }
+    }else {
+      activeTab = this.state.loginFormActiveTab;
+    }
 
     return (
       <div className={styles.container} > 
@@ -75,9 +90,10 @@ interface ILoginProps {
                 githubLogin={this.githubLogin}
                 tokenLogin={this.tokenLogin}
                 userPassLogin={this.userPassLogin}
-                activeTab={this.state.loginFormActiveTab}
+                activeTab={activeTab}
                 toggleTab={this.toggleTabLoginForm}
                 user={mockUser}
+                error={loginError}
               />
             </Col>
           </Row>
