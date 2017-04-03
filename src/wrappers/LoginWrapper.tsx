@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import Login from '../containers/Login';
-
+import { toJS } from 'mobx';
 import loginStore from '../stores/loginStore';
 import networkStore from '../stores/networkStore';
 import flashStore from '../stores/flashStore';
 import spaceStore from '../stores/spaceStore';
+import clientServiceStore from '../stores/clientServiceStore';
 
 interface ILoginWrapperProps {
   location?: any;
@@ -21,6 +22,9 @@ interface ILoginWrapperProps {
     if(this.props.location.query.loginError)
       loginStore.updateLoginError(this.props.location.query.loginError);
     
+    if(this.props.location.query.Subdomain)
+      clientServiceStore.updateCurrentService(this.props.location.query.Subdomain)
+    
     const flashes = flashStore.flashes;
     const space = {
       host: spaceStore.host,
@@ -35,6 +39,8 @@ interface ILoginWrapperProps {
       sessionExpiresAt: loginStore.sessionExpiresAt,
       isLogged: loginStore.isLogged
     }
+
+    const currentService = toJS(clientServiceStore.currentService);
     
     return (
       <div>
@@ -42,7 +48,8 @@ interface ILoginWrapperProps {
           flashes={flashes}
           space={space}
           loginError={loginError}
-          loginStatus={loginStatus} />
+          loginStatus={loginStatus} 
+          service={currentService} />
       </div>
     );
   }

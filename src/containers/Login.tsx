@@ -4,7 +4,7 @@ import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginFor
 import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard';
 import SpaceCard from '../components/login/SpaceCard/SpaceCard';
 import ErrorsPanel from '../components/login/ErrorsPanel/ErrorsPanel';
-import { Space , LoginStatus } from '../api/api';
+import { Space , LoginStatus, ClientService } from '../api/api';
 import { observer } from 'mobx-react';
 let logo = require('../assets/octopus-logo.svg');
 let styles = require('./Login.scss');
@@ -25,6 +25,7 @@ interface ILoginProps {
   space: Space;
   loginError: string;
   loginStatus: LoginStatus;
+  service: ClientService;
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -76,7 +77,7 @@ interface ILoginProps {
             </Col>
             <Col className={styles.rightSide}>
               <h3>{message}</h3>
-              <ServiceInfoCard />
+              <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
               <ErrorsPanel flashes={this.props.flashes}/>
               <LoginForm
                 activeTab={activeTab}

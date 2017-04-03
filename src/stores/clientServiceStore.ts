@@ -6,12 +6,19 @@ const clientApi = new ClientApi();
 
 class ClientServiceStore {
   @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
+  @observable currentService:ClientService
 
   constructor() {
     const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
     storagedServices.forEach(service => {
       this.services.push(service);
     });
+  }
+
+  @action updateCurrentService = (subdomain:string) => {
+    const index = this.services.map(service => service.meta.subDomain).indexOf(subdomain);
+    if(index > -1)
+      this.currentService = this.services[index]
   }
 
   @action load() {
@@ -31,5 +38,7 @@ class ClientServiceStore {
 }
 
 const clientServiceStore:ClientServiceStore = new ClientServiceStore();
+
+clientServiceStore.load();
 
 export default clientServiceStore; 
