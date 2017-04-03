@@ -83,8 +83,7 @@ interface ILoginProps {
                 activeTab={activeTab}
                 toggleTab={this.toggleTabLoginForm}
                 status={this.props.loginStatus}
-                error={loginError}
-              />
+                error={loginError} />
             </Col>
           </Row>
         </Container>

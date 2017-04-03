@@ -22,6 +22,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
   }
 
   static defaultProps:IServiceInfoCardProps = {
+    //@TODO remove service default prop, it is only for test
     service:{
       meta: {
         name: 'Unknown',
@@ -29,7 +30,6 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
         longDescription: {},
         logo: ''
       },
-      // @TODO: This is only for test purposes
       secretPaths: ['secret1', 'secret2']
     },
     userIsLogged: false
@@ -51,7 +51,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
   getSecretButton = () => {
     const { service, userIsLogged } = this.props;
 
-    if(service.secretPaths && service.secretPaths.length > 0 && userIsLogged){
+    if(service && service.secretPaths && service.secretPaths.length > 0 && userIsLogged){
       return (
         <CardText>
           <Button onClick={this.toggleSecretsModal}>Secrets</Button>
@@ -64,28 +64,30 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
   getSecretModal = () => {
     const { service } = this.props;
 
-    return (
-      <Modal isOpen={this.state.secretsModalOpen} toggle={this.toggleSecretsModal} className={styles.secretsModal}>
-        <ModalHeader toggle={this.toggleSecretsModal}> Secrets </ModalHeader>
-        <ModalBody>
-          <ListGroup>
-            {service.secretPaths.map((secret, index) => {
-              return <SecretElement key={index} secret={secret} serviceId={service.meta.id}/>
-            })}
-          </ListGroup>
-        </ModalBody>
-        <ModalFooter>
-          <Button color="secondary" onClick={this.toggleSecretsModal}>OK</Button>
-        </ModalFooter>
-      </Modal>
-    )
+    if(service && service.secretPaths){
+      return (
+        <Modal isOpen={this.state.secretsModalOpen} toggle={this.toggleSecretsModal} className={styles.secretsModal}>
+          <ModalHeader toggle={this.toggleSecretsModal}> Secrets </ModalHeader>
+          <ModalBody>
+            <ListGroup>
+              {service.secretPaths.map((secret, index) => {
+                return <SecretElement key={index} secret={secret} serviceId={service.meta.id}/>
+              })}
+            </ListGroup>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={this.toggleSecretsModal}>OK</Button>
+          </ModalFooter>
+        </Modal>
+      )
+    }
+    return null;
   }
 
   getDescriptionModal = () => {
-    let meta = this.props.service.meta || {};
+    let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
     
     let longDescription:string;
-
     if(meta.longDescription && meta.longDescription.local && meta.longDescription.local.content) {
       longDescription = meta.longDescription.local.content;
     } else if(meta.longDescription && meta.longDescription.remote && meta.longDescription.remote.content) {
@@ -96,7 +98,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
 
     return (
       <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} className={styles.serviceInfoModal}>
-        <ModalHeader toggle={this.toggleDescription}> {meta.name} </ModalHeader>
+        <ModalHeader toggle={this.toggleDescription}> {meta.name || 'Unknown'} </ModalHeader>
         <ModalBody>
           <ReactMarkdown source={longDescription}/>
         </ModalBody>
@@ -112,7 +114,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const secretModal = this.getSecretModal();
     const descriptionModal = this.getDescriptionModal();
 
-    let meta = this.props.service.meta || {};
+    let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
 
     return (
       <Card className={styles.ServiceInfoCard} onClick={this.toggleDescription}>
@@ -126,7 +128,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
             <CardBlock>
               <CardTitle>{meta.name}</CardTitle>
               <CardText>
-                {meta.description}
+                {meta.description || 'Unknown service'}
               </CardText>
               {secretsButton}
             </CardBlock> 

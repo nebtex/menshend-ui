@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { ListGroupItem, Button, Collapse, Card, CardBlock } from 'reactstrap';
+import { ListGroupItem, Button, Collapse, Card, CardBlock, Alert } from 'reactstrap';
 import { SecretsApi } from '../../../api/api'
+import * as classnames from 'classnames';
 let styles = require('./SecretElement.scss');
 
 interface ISecretElementProps {
@@ -11,6 +12,7 @@ interface ISecretElementProps {
 interface ISecretElementState {
   loading: boolean;
   data: string;
+  error: boolean;
 }
 
 const secretsApi = new SecretsApi();
@@ -18,7 +20,8 @@ const secretsApi = new SecretsApi();
 export default class SecretElement extends React.Component<ISecretElementProps, {}> {
   state = {
     data: '',
-    loading: false
+    loading: false,
+    error: false
   }
 
   handleRead = () => {
@@ -29,11 +32,20 @@ export default class SecretElement extends React.Component<ISecretElementProps, 
         data: JSON.stringify(data),
         loading: false
       })
+    }).catch((response:Response) => {
+      this.setState({
+        data: JSON.stringify({
+          code: response.status,
+          message: response.statusText
+        }),
+        error: true,
+        loading: false
+      })
     });
 
     this.setState({
       loading: true
-    })
+    });
   }
 
   getReadButton = () => {
@@ -44,22 +56,34 @@ export default class SecretElement extends React.Component<ISecretElementProps, 
     }
   }
 
+  getResponseComponent = () => {
+    if(this.state.error && this.state.data !== ''){
+      return(
+        <Alert color="danger">{this.state.data}</Alert>
+      );
+    }else if (this.state.data !== '') {
+      return(
+        <Card>
+          <CardBlock>
+            {this.state.data}
+          </CardBlock>
+        </Card>
+      );
+    }
+  }
+
   render() {
     const readButton = this.getReadButton();
-
+    const responseComponent = this.getResponseComponent();
+    
     return (
       <ListGroupItem>
         <div className={styles.mainRow}>
           <span className={styles.secret}>{this.props.secret}</span>
           {readButton}
         </div>
-
-        <Collapse isOpen={this.state.data!==''}>
-          <Card>
-            <CardBlock>
-              {this.state.data}
-            </CardBlock>
-          </Card>
+        <Collapse isOpen={this.state.data!==''} className={styles.collapse}>
+          {responseComponent}
         </Collapse>
       </ListGroupItem>
     );
