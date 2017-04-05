@@ -1,8 +1,11 @@
 import { observable, action, IObservableArray, toJS } from 'mobx';
 import networkStore from './networkStore'; 
 import { ClientApi, ClientService } from '../api/api';
+import { BasePath } from './variables'
 
 const clientApi = new ClientApi();
+clientApi.basePath = BasePath
+
 
 class ClientServiceStore {
   @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])

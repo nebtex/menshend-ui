@@ -9,6 +9,7 @@ const routes = (
     <Route component={App} path="/">
       <IndexRedirect to="/login"/>
       <Route path="/login" component={LoginWrapper} />
+      <Route path="/services" component={Services} />
     </Route>
   </Router>
 )

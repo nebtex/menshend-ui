@@ -1,11 +1,12 @@
 import { observable, action, IObservableArray } from 'mobx';
 import { FlashesApi, Flash } from '../api/api';
 import networkStore from './networkStore';
-
+import { BasePath } from './variables'
 const flashesApi = new FlashesApi();
+flashesApi.basePath = BasePath
 
 class FlastStore {
-  @observable flashes:IObservableArray<string> = observable.array<string>([]);
+  @observable flashes: IObservableArray<string> = observable.array<string>([]);
 
   @action load() {
     networkStore.addPendingRequest();
@@ -13,10 +14,10 @@ class FlastStore {
       flash.flashes.forEach(flash => {
         this.flashes.push(flash);
       });
-      networkStore.updateLastResponse({message:'OK', statusCode: 200});
+      networkStore.updateLastResponse({ message: 'OK', statusCode: 200 });
       networkStore.removePendingRequest();
-    }).catch((response:Response) => {
-      networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
+    }).catch((response: Response) => {
+      networkStore.updateLastResponse({ message: response.statusText, statusCode: response.status });
       networkStore.removePendingRequest();
     });
   }

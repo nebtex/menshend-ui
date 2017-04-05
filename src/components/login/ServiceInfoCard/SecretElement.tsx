@@ -1,3 +1,4 @@
+import { BasePath } from '../../../stores/variables';
 import * as React from 'react';
 import { ListGroupItem, Button, Collapse, Card, CardBlock, Alert } from 'reactstrap';
 import { SecretsApi } from '../../../api/api'
@@ -17,6 +18,8 @@ interface ISecretElementState {
 
 const secretsApi = new SecretsApi();
 
+secretsApi.basePath = BasePath
+
 export default class SecretElement extends React.Component<ISecretElementProps, {}> {
   state = {
     data: '',
@@ -27,12 +30,12 @@ export default class SecretElement extends React.Component<ISecretElementProps, 
   handleRead = () => {
     const { secret, serviceId } = this.props;
 
-    secretsApi.readSecret({id:serviceId+'/'+secret}).then((data) => {
+    secretsApi.readSecret({ id: serviceId + '/' + secret }).then((data) => {
       this.setState({
         data: JSON.stringify(data),
         loading: false
       })
-    }).catch((response:Response) => {
+    }).catch((response: Response) => {
       this.setState({
         data: JSON.stringify({
           code: response.status,
@@ -50,19 +53,19 @@ export default class SecretElement extends React.Component<ISecretElementProps, 
 
   getReadButton = () => {
     if (this.state.loading) {
-      return <Button color="secondary" size="sm" disabled className={styles.readButton}><i className="fa fa-pulse fa-spinner"/></Button>
-    }else {
+      return <Button color="secondary" size="sm" disabled className={styles.readButton}><i className="fa fa-pulse fa-spinner" /></Button>
+    } else {
       return <Button color="secondary" size="sm" onClick={this.handleRead} className={styles.readButton}>Read</Button>
     }
   }
 
   getResponseComponent = () => {
-    if(this.state.error && this.state.data !== ''){
-      return(
+    if (this.state.error && this.state.data !== '') {
+      return (
         <Alert color="danger">{this.state.data}</Alert>
       );
-    }else if (this.state.data !== '') {
-      return(
+    } else if (this.state.data !== '') {
+      return (
         <Card>
           <CardBlock>
             {this.state.data}
@@ -75,14 +78,14 @@ export default class SecretElement extends React.Component<ISecretElementProps, 
   render() {
     const readButton = this.getReadButton();
     const responseComponent = this.getResponseComponent();
-    
+
     return (
       <ListGroupItem>
         <div className={styles.mainRow}>
           <span className={styles.secret}>{this.props.secret}</span>
           {readButton}
         </div>
-        <Collapse isOpen={this.state.data!==''} className={styles.collapse}>
+        <Collapse isOpen={this.state.data !== ''} className={styles.collapse}>
           {responseComponent}
         </Collapse>
       </ListGroupItem>

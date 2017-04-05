@@ -2,8 +2,11 @@ import { observable, action, ObservableMap } from 'mobx';
 import { LoginStatus, AuthApi } from '../api/api';
 import networkStore from './networkStore';
 import clientServiceStore from './clientServiceStore';
+import { BasePath } from './variables'
 
 const authApi: AuthApi = new AuthApi();
+authApi.basePath = BasePath
+
 
 class LoginStore {
   @observable isLogged: boolean;

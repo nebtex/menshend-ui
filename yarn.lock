@@ -2668,6 +2668,10 @@ fecha@^1.1.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/fecha/-/fecha-1.2.2.tgz#14d95d8c8831366846e6cc90f2c870229e7ad1f9"
 
+fetch-intercept@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/fetch-intercept/-/fetch-intercept-2.2.3.tgz#8cfc03237347be1fecd571006cd8490983a7fed5"
+
 fetch-mock@^5.9.4:
   version "5.9.4"
   resolved "https://registry.yarnpkg.com/fetch-mock/-/fetch-mock-5.9.4.tgz#80f736db4d12d3621577665cc6fbbf125638092a"
@@ -6884,6 +6888,10 @@ xdg-basedir@^2.0.0:
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-2.0.0.tgz#edbc903cc385fc04523d966a335504b5504d1bd2"
   dependencies:
     os-homedir "^1.0.0"
+
+xhook@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/xhook/-/xhook-1.4.3.tgz#b7f09ea52ee5cbf8a32ceff190b5dd79c8c169e7"
 
 xml-name-validator@^2.0.1:
   version "2.0.1"

@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack --config ./webpack.production.js --progress",
     "start": "webpack-dev-server --config ./webpack.dev.js",
-    "fix-types": "rm -rf node_modules/@types/reactstrap&&ln -s `pwd`/types/reactstrap `pwd`/node_modules/@types/reactstrap && rm -rf node_modules/@types/react-monaco-editor&&ln -s `pwd`/types/react-monaco-editor `pwd`/node_modules/@types/react-monaco-editor",
+    "fix-types": "bash ./scripts/fixTypes.sh",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "test": "jest && codecov -t $CODECOV_TOKEN",
@@ -57,6 +57,7 @@
     "es6-promise": "^4.0.5",
     "es6-promises": "^1.0.10",
     "es6-shim": "^0.35.3",
+    "fetch-intercept": "^2.2.3",
     "font-awesome": "^4.7.0",
     "fuse.js": "^2.6.1",
     "identity-obj-proxy": "^3.0.0",
@@ -73,7 +74,8 @@
     "react-markdown": "^2.4.4",
     "react-monaco-editor": "^0.7.3",
     "react-router": "^3.0.2",
-    "reactstrap": "^4.3.0"
+    "reactstrap": "^4.3.0",
+    "xhook": "^1.4.3"
   },
   "jest": {
     "collectCoverage": true,

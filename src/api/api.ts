@@ -862,4 +862,3 @@ export const SpaceApiFactory = function (fetch?: FetchAPI, basePath?: string) {
         },
     }
 };
-
