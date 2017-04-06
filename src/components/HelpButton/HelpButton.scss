@@ -1,0 +1,20 @@
+.helpButton {
+  position: relative;
+  margin-right: 8px;
+  > i {
+    color:#9E9E9E;
+  }
+  &:hover{
+    > i {
+    cursor: pointer;
+    color: #0275d8;
+    }
+  }
+}
+
+.modalLink {
+  float: right;
+  margin-bottom: 8px;
+  color:#0275d8 !important;
+  cursor: pointer;
+}

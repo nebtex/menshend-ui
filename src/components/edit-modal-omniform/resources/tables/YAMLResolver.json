@@ -1,0 +1,21 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "name": "content", 
+        "required": true, 
+        "schema": "io.omniql.core.v1alpha/String"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "description": {
+        "short": "Allow define the backend service as yaml"
+      }, 
+      "name": "YAMLResolver", 
+      "resource": "AdminService"
+    }
+  }
+}

@@ -52,4 +52,6 @@ declare namespace ReactStrap {
     export function ListGroup(props: any): React.Component<any, any>
     export function ListGroupItem(props: any): React.Component<any, any>
     export function Alert(props: any): React.Component<any, any>
+    export function FormText(props: any): React.Component<any, any>
 }
+

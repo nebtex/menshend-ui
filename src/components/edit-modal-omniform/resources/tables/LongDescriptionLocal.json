@@ -1,0 +1,20 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "content filled by the user (supports markdown)"
+        }, 
+        "name": "content", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "LongDescriptionLocal", 
+      "resource": "AdminService"
+    }
+  }
+}

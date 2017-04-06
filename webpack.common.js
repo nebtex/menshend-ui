@@ -8,7 +8,6 @@ const config = {
       'reactstrap',
       'mobx',
       'commonmark',
-      'react-router',
       'tether'
     ]
   },

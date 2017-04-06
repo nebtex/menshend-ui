@@ -1,0 +1,67 @@
+.item {  }
+
+.itemLabel {
+  flex-grow: 1;
+}
+
+.deleteButton {
+  flex-grow: 0;
+  flex-basis: 16px;
+  color: #adadad;
+  &:hover {
+    color: #0275d8;
+    cursor: pointer;
+  }
+}
+
+.inputContainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.input{
+  flex-grow: 1;
+  flex-basis: 60%;
+}
+
+.addButton{
+  flex-grow: 0;
+  flex-basis: 80px;
+  margin: 2px 4px;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.requiredSymbol {
+  float: right;
+  color: #d9534f;
+}
+
+.label {
+  margin-right: 8px;
+}
+
+.validInput {
+  border-color: #5cb85c;
+}
+
+.invalidInput {
+  border-color: #d9534f;
+}
+
+.validFeedback {
+  color: #5cb85c;
+}
+
+.invalidFeedback {
+  color: #d9534f;
+}
+
+.feedback {
+  width: 100%;
+}

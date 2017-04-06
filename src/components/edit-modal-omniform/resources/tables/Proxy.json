@@ -1,0 +1,27 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "active csrf protection on this endpoint"
+        }, 
+        "name": "csrf", 
+        "schema": "io.omniql.core.v1alpha/Boolean"
+      }, 
+      {
+        "description": {
+          "short": "enable cross-origin resource sharing"
+        }, 
+        "name": "cors", 
+        "schema": "io.menshend.v1alpha/Table/Cors"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "Proxy", 
+      "resource": "AdminService"
+    }
+  }
+}

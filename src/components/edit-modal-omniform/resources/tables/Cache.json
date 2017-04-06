@@ -1,0 +1,21 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "cache time to live in seconds"
+        }, 
+        "name": "ttl", 
+        "required": true, 
+        "schema": "io.omniql.core.v1alpha/Integer"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "Cache", 
+      "resource": "AdminService"
+    }
+  }
+}

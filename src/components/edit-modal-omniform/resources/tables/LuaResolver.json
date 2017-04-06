@@ -1,0 +1,31 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "lua script code"
+        }, 
+        "name": "content", 
+        "required": true, 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "pass the request body to the lua script for futher analysis, this only work on strategies that support this operation (proxy, redirect)"
+        }, 
+        "name": "makeBodyAvailable", 
+        "schema": "io.omniql.core.v1alpha/Boolean"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "description": {
+        "short": "define the backend service as a lua script"
+      }, 
+      "name": "LuaResolver", 
+      "resource": "AdminService"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "long": "AllowedOrigins is a list of origins a cross-domain request can be executed from.\nIf the special \"*\" value is present in the list, all origins will be allowed.\nAn origin may contain a wildcard (*) to replace 0 or more characters\n(i.e.: http://*.domain.com). Usage of wildcards implies a small performance penality.\nOnly one wildcard can be used per origin.\nDefault value is [\"*\"]\n"
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "allowedOrigins", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "description": {
+          "long": "AllowedMethods is a list of methods the client is allowed to use with\ncross-domain requests. Default value is simple methods (GET and POST)\n"
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "allowedMethods", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "description": {
+          "long": "AllowedHeaders is list of non simple headers the client is allowed to use with\ncross-domain requests.\nIf the special \"*\" value is present in the list, all headers will be allowed.\nDefault value is [] but \"Origin\" is always appended to the list.\n"
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "allowedHeaders", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "description": {
+          "long": "ExposedHeaders indicates which headers are safe to expose to the API of a CORS\nAPI specification\n"
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "exposedHeaders", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "description": {
+          "long": "AllowCredentials indicates whether the request can include user credentials like\ncookies, HTTP authentication or client side SSL certificates.\n"
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "allowCredentials", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "name": "maxAge", 
+        "schema": "io.omniql.core.v1alpha/Integer"
+      }, 
+      {
+        "description": {
+          "long": "OptionsPassthrough instructs preflight to let other potential next handlers to\nprocess the OPTIONS method. Turn this on if your application handles OPTIONS.\n"
+        }, 
+        "name": "process", 
+        "schema": "io.omniql.core.v1alpha/Boolean"
+      }, 
+      {
+        "description": {
+          "long": "Debugging flag adds additional output to debug server side CORS issues\n"
+        }, 
+        "name": "Debug", 
+        "schema": "io.omniql.core.v1alpha/Boolean"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "description": "Cors options", 
+      "name": "Cors", 
+      "resource": "AdminService"
+    }
+  }
+}

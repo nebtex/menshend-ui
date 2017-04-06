@@ -1,0 +1,27 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "URL of the README.md file"
+        }, 
+        "name": "url", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "this will store the README.md contents"
+        }, 
+        "name": "content", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "LongDescriptionRemote", 
+      "resource": "AdminService"
+    }
+  }
+}

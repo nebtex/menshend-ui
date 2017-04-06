@@ -1,0 +1,12 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "field": [], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "Redirect", 
+      "resource": "AdminService"
+    }
+  }
+}

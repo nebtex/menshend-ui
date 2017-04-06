@@ -1,0 +1,68 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Resource", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "give to all the users the ability to change their vault token display_name within this role/service"
+        }, 
+        "name": "impersonateWithinRole", 
+        "schema": "io.omniql.core.v1alpha/Boolean"
+      }, 
+      {
+        "description": {
+          "short": "enable/disable this service"
+        }, 
+        "name": "isActive", 
+        "schema": "io.omniql.core.v1alpha/Boolean"
+      }, 
+      {
+        "description": {
+          "short": "vault secrets asociate with this service."
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "secretPaths", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "description": {
+          "short": "Metadata associate with this service, name, logo, etc."
+        }, 
+        "name": "meta", 
+        "required": true, 
+        "schema": "io.menshend.v1alpha/Table/Metadata"
+      }, 
+      {
+        "description": {
+          "short": "allow to define services policies programmatically (supported: lua and yaml)"
+        }, 
+        "name": "resolver", 
+        "required": true, 
+        "schema": "io.menshend.v1alpha/Union/Resolver"
+      }, 
+      {
+        "description": {
+          "short": "this  defines how the reverse proxy works"
+        }, 
+        "name": "strategy", 
+        "required": true, 
+        "schema": "io.menshend.v1alpha/Union/Strategy"
+      }, 
+      {
+        "description": {
+          "short": "enable cache over the result of a Resolver"
+        }, 
+        "name": "cache", 
+        "schema": "io.menshend.v1alpha/Table/Cache"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "description": {
+        "short": "full Service schema"
+      }, 
+      "name": "AdminService"
+    }
+  }
+}

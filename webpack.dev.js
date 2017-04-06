@@ -8,7 +8,10 @@ const config = webpackMerge(commonConfig, {
     port: 8081,
     colors: true,
     inline: true,
-    historyApiFallback: true
+    historyApiFallback: {
+      disableDotRule: true
+    }
+
   },
   output: {
     filename: "[name].js"

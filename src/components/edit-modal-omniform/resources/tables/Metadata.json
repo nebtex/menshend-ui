@@ -1,0 +1,69 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [
+      {
+        "description": {
+          "short": "unique id of the service"
+        }, 
+        "name": "id", 
+        "required": true, 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "role unique id"
+        }, 
+        "name": "roleId", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "should ends in ."
+        }, 
+        "name": "subDomain", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "human readable service name"
+        }, 
+        "name": "name", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "full url of the service logo a image with 64x64px"
+        }, 
+        "name": "logo", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "service description"
+        }, 
+        "name": "description", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
+        "description": {
+          "short": "tags"
+        }, 
+        "items": "io.omniql.core.v1alpha/String", 
+        "name": "tags", 
+        "schema": "io.omniql.core.v1alpha/Vector"
+      }, 
+      {
+        "name": "longDescription", 
+        "schema": "io.menshend.v1alpha/Union/LongDescription"
+      }
+    ], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "description": "AdminService metadata", 
+      "name": "Metadata", 
+      "resource": "AdminService"
+    }
+  }
+}

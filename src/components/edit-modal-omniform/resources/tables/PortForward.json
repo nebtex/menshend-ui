@@ -1,0 +1,12 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Table", 
+  "spec": {
+    "fields": [], 
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "PortForward", 
+      "resource": "AdminService"
+    }
+  }
+}

@@ -3,8 +3,6 @@ import * as classnames from 'classnames';
 import { IService, IUser } from '../../../models/interface';
 import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
-import EditModal from '../EditModal/EditModal';
-import { Link } from 'react-router';
 import { ClientService } from '../../../api/api';
 import { Col, Container, Row, Form, FormGroup, Input, Dropdown, 
          DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
@@ -80,13 +78,13 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         </DropdownToggle>
         <DropdownMenu className={styles.rolesContainer}>
           <DropdownItem className={styles.roleDropdownItem}> 
-            <Link to={`/ui/services`} className={styles.roleLink}>{'All'}</Link>
+           {"<Link to={`/ui/services`} className={styles.roleLink}>{'All'}</Link>"}
           </DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
             return( 
               <DropdownItem key={index} className={classnames("role", styles.roleDropdownItem)}>
-                <Link to={`/ui/services/role/${role}`} className={styles.roleLink}>{role}</Link>
+                {"<Link to={`/ui/services/role/${role}`} className={styles.roleLink}>{role}</Link>"}
               </DropdownItem>
             );
           })}

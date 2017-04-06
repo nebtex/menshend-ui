@@ -1,0 +1,15 @@
+{
+  "api": "io.omniql.core.v1alpha", 
+  "kind": "Union", 
+  "spec": {
+    "meta": {
+      "application": "io.menshend.v1alpha", 
+      "name": "Resolver", 
+      "resource": "AdminService"
+    }, 
+    "schemas": [
+      "io.menshend.v1alpha/Table/LuaResolver", 
+      "io.menshend.v1alpha/Table/YAMLResolver"
+    ]
+  }
+}

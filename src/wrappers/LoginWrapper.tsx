@@ -8,8 +8,7 @@ import flashStore from '../stores/flashStore';
 import spaceStore from '../stores/spaceStore';
 import clientServiceStore from '../stores/clientServiceStore';
 
-interface ILoginWrapperProps {
-  location?: any;
+interface ILoginWrapperProps  {
   params?: any;
   route?: any;
   routeParams?: any;
@@ -19,11 +18,6 @@ interface ILoginWrapperProps {
 
 @observer class LoginWrapper extends React.Component<ILoginWrapperProps, {}>{
   render() {
-    if(this.props.location.query.loginError)
-      loginStore.updateLoginError(this.props.location.query.loginError);
-    
-    if(this.props.location.query.Subdomain)
-      clientServiceStore.updateCurrentService(this.props.location.query.Subdomain)
     
     const flashes = flashStore.flashes;
     const space = {

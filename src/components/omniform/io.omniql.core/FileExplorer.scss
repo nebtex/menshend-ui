@@ -1,0 +1,58 @@
+@import "../../../../node_modules/font-awesome/scss/_variables.scss";
+@import "../../../../node_modules/font-awesome/scss/_mixins.scss";
+$basePadding:24px;
+.item {
+  padding-left: $basePadding;
+  height: 48px;
+  cursor: pointer;
+  text-transform: lowercase;
+  .content {
+    height: 100%;
+    margin: 0;
+  }
+
+  &.highlighted {
+    z-index: 2;
+    color: #fff!important;
+    background-color: #0275d8;
+    border-color: #0275d8;
+    &:hover {
+      z-index: 2;
+      color: #fff!important;
+      background-color: #0275d8;
+      border-color: #0275d8;
+    }
+  }
+}
+
+.padding {
+  width: $basePadding;
+  height: 100%;
+}
+
+.folder {
+  .state {
+    height: 100%;
+    text-align: center;
+    width: $basePadding;
+  }
+  .close {
+    @include fa-icon();
+     &:before {
+      content: $fa-var-caret-right
+    }
+  }
+  .open {
+    @include fa-icon();
+     &:before {
+      content: $fa-var-caret-down
+    }
+  }
+}
+
+.file {
+  .state {
+    height: 100%;
+    width: $basePadding;
+  }
+}

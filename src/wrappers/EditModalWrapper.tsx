@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import EditModal from '../components/services/EditModal/EditModal';
 import editServiceFormStore from '../stores/editServiceFormStore';
 
 interface IEditModalConnectedState {
@@ -22,11 +21,7 @@ interface IEditModalConnectedState {
     const { isOpen } = this.state;
     return (
       <div>
-        <EditModal 
-          store={editServiceFormStore}
-          isOpen={isOpen}
-          toggle={this.toggle}
-       />
+
       </div>
     );
   }
