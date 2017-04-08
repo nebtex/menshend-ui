@@ -62,10 +62,18 @@ interface ILoginProps {
     }
   }
 
-  render(){
-    let message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
+  getErrorsPanel = () => {
+    if(this.props.flashes && this.props.flashes.length > 0){
+      return <ErrorsPanel flashes={this.props.flashes}/>;
+    }
+    return null;
+  }
 
+  render(){
+    const message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
     const loginError = this.props.loginError
+
+    const errorPanel = this.getErrorsPanel();
 
     return (
       <div className={styles.container} > 
@@ -80,7 +88,7 @@ interface ILoginProps {
             <Col className={styles.rightSide}>
               <h3>{message}</h3>
               <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
-              <ErrorsPanel flashes={this.props.flashes}/>
+              {errorPanel}
               <LoginForm
                 activeTab={this.state.loginFormActiveTab}
                 toggleTab={this.toggleTabLoginForm}
