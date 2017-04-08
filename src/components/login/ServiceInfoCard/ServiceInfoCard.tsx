@@ -53,7 +53,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const { service, userIsLogged } = this.props;
 
     if(service && service.secretPaths && service.secretPaths.length > 0 && userIsLogged){
-      return <Button size="sm" onClick={this.toggleSecretsModal}>Secrets</Button>;
+      return <Button size="sm" outline color="secondary" onClick={this.toggleSecretsModal}>Secrets</Button>;
     }
     return null;
   }
@@ -87,7 +87,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const hasRemotDescription = meta.longDescription && meta.longDescription.remote && meta.longDescription.remote.content;
 
     if(hasRemotDescription || hasLocalDescription){
-      return <Button outline color="primary" size="sm" onClick={this.toggleDescription}>View more</Button>
+      return <Button outline color="info" size="sm" onClick={this.toggleDescription}>View more</Button>
     }
     return null;
   }
@@ -157,7 +157,10 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
               </CardText>
               <CardText className={styles.buttonsContainer}>
                 {secretsButton}{' '}
-                {viewMore}
+                {viewMore}{' '}
+                <a href={this.props.service.fullUrl}>
+                  <Button color="primary" outline size="sm">Go</Button>
+                </a>
               </CardText>
             </CardBlock>
           </Col>
