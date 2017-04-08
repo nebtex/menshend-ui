@@ -20,7 +20,7 @@ export interface IMonacoProps {
     editorDidMount?: { (editor: monaco.editor.IStandaloneCodeEditor, monaco: any): void },
     editorWillMount?: { (monaco: any): void },
     onChange?: { (value: any, evt: any): void },
-    requireConfig?: { url?: string, paths?: { vs?: string } },
+    requireConfig?:any,
 }
 
 export default class Monaco extends React.Component<IMonacoProps, {}> {
@@ -41,7 +41,7 @@ export default class Monaco extends React.Component<IMonacoProps, {}> {
         editorDidMount: noop,
         editorWillMount: noop,
         onChange: noop,
-        requireConfig: { url: "/vs/loader.js" },
+        requireConfig: { baseUrl: "/static", url: "/static/vs/loader.js" },
     };
 
     constructor(props: IMonacoProps) {
@@ -94,7 +94,7 @@ export default class Monaco extends React.Component<IMonacoProps, {}> {
             }
 
             // Load monaco
-            window.require([`vs/editor/editor.main`], () => {
+            window.require([`/static/vs/editor/editor.main`], () => {
                 console.log("initializing monaco");
                 this.initMonaco();
             });
