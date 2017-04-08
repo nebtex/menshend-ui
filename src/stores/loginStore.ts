@@ -15,6 +15,8 @@ class LoginStore {
   @observable sessionExpiresAt: number;
   @observable loginError: string = '';
 
+  @observable loading:boolean = true;
+
   @action load = () => {
     networkStore.addPendingRequest();
     authApi.loginStatus().then((data:LoginStatus) => {
@@ -27,10 +29,16 @@ class LoginStore {
       if(data.isLogged)
         clientServiceStore.load();
 
+      // set the loading observable as false
+      this.loading = false;
+
       // Update networkStore
       networkStore.updateLastResponse({message:'OK', statusCode: 200});
       networkStore.removePendingRequest();
     }).catch((response:Response) => {
+      // set the loading observable as false
+      this.loading = false;
+      
       networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
       networkStore.removePendingRequest();      
     });

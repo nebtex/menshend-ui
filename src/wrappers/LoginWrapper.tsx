@@ -36,6 +36,8 @@ interface ILoginWrapperProps  {
     }
 
     const currentService = toJS(clientServiceStore.currentService);
+
+    const loadingLogin = loginStore.loading;
     
     return (
       <div>
@@ -44,7 +46,8 @@ interface ILoginWrapperProps  {
           space={space}
           loginError={loginError}
           loginStatus={loginStatus} 
-          service={currentService} />
+          service={currentService} 
+          loading={loadingLogin} />
       </div>
     );
   }

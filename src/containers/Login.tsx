@@ -26,6 +26,7 @@ interface ILoginProps {
   loginError: string;
   loginStatus: LoginStatus;
   service: ClientService;
+  loading: boolean;
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -69,11 +70,25 @@ interface ILoginProps {
     return null;
   }
 
+  getLoginForm = () => { 
+    if(!this.props.loading){
+      const loginError = this.props.loginError
+      return (
+        <LoginForm
+          activeTab={this.state.loginFormActiveTab}
+          toggleTab={this.toggleTabLoginForm}
+          status={this.props.loginStatus}
+          error={loginError} />
+      );
+    } 
+    return null;
+  }
+
   render(){
     const message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
-    const loginError = this.props.loginError
 
     const errorPanel = this.getErrorsPanel();
+    const loginForm = this.getLoginForm();
 
     return (
       <div className={styles.container} > 
@@ -89,11 +104,7 @@ interface ILoginProps {
               <h3>{message}</h3>
               <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
               {errorPanel}
-              <LoginForm
-                activeTab={this.state.loginFormActiveTab}
-                toggleTab={this.toggleTabLoginForm}
-                status={this.props.loginStatus}
-                error={loginError} />
+              {loginForm}
             </Col>
           </Row>
         </Container>
