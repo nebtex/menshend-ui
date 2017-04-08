@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button, ListGroup } from 'reactstrap';
+import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button, ListGroup, Badge } from 'reactstrap';
 import * as ReactMarkdown from 'react-markdown';
 import { ClientService } from '../../../api/api';
 import SecretElement from './SecretElement';
+import router from '../../../stores/router';
+import { views } from '../../../routes';
 let styles = require('./ServiceInfoCard.scss');
 
 export interface IServiceInfoCardProps {
@@ -51,7 +53,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const { service, userIsLogged } = this.props;
 
     if(service && service.secretPaths && service.secretPaths.length > 0 && userIsLogged){
-      return <Button size="sm" onClick={this.toggleSecretsModal}>Secrets</Button>;
+      return <Button size="sm" outline color="secondary" onClick={this.toggleSecretsModal}>Secrets</Button>;
     }
     return null;
   }
@@ -85,7 +87,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const hasRemotDescription = meta.longDescription && meta.longDescription.remote && meta.longDescription.remote.content;
 
     if(hasRemotDescription || hasLocalDescription){
-      return <Button outline color="primary" size="sm" onClick={this.toggleDescription}>View more</Button>
+      return <Button outline color="info" size="sm" onClick={this.toggleDescription}>View more</Button>
     }
     return null;
   }
@@ -115,14 +117,29 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     );
   }
 
+  getTagsRenderer = () => {
+    let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
+    if(meta && meta.tags && meta.tags.length > 0){
+      return (
+        <div className={styles.tagsRenderer}>
+          {meta.tags.map((tag, index) => {
+            return <Badge key={index} onClick={() => {router.goTo(views.services, null, null, {tag:tag})}}>{tag}</Badge>
+          })}
+        </div>
+      )
+    }
+    return null;
+  }
+
   render(){
     const secretsButton = this.getSecretButton();
     const viewMore = this.getViewLongDescriptionButton();
     const secretModal = this.getSecretModal();
     const descriptionModal = this.getDescriptionModal();
 
-    let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
-    
+    const meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
+    const tagsRenderer = this.getTagsRenderer();
+
     return (
       <Card className={styles.ServiceInfoCard}>
         <Row>
@@ -136,10 +153,14 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
               <CardTitle>{meta.name}</CardTitle>
               <CardText>
                 {meta.description || 'Unknown service'}
+                {tagsRenderer}
               </CardText>
               <CardText className={styles.buttonsContainer}>
                 {secretsButton}{' '}
-                {viewMore}
+                {viewMore}{' '}
+                <a href={this.props.service.fullUrl}>
+                  <Button color="primary" outline size="sm">Go</Button>
+                </a>
               </CardText>
             </CardBlock>
           </Col>

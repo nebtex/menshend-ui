@@ -20,7 +20,7 @@ const store = {
   router: routerStore
 };
 
-const views = {
+export const views = {
   login: new Route({
     path: '/login',
     component: <LoginWrapper />,
@@ -70,9 +70,6 @@ const routes = (
   <Provider store={store}>
     <MobxRouter />
   </Provider>
-
 )
-
-
 
 export default routes;
