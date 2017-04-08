@@ -36,6 +36,9 @@ const Table: React.StatelessComponent<RowTable> = (props: RowTable) => {
             return null;
           }
           let widget = props.widgetMap.get(fieldName)
+          if (widget.props.generated) {
+              return null
+          }
           return (
             <Row className={props.theme.row} key={index}>
               <Col className={styles.col}>

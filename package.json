@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",
+    "@nebtex/hashmap": "^1.0.2",
     "@types/core-js": "^0.9.35",
     "@types/enzyme": "^2.7.2",
     "@types/history": "^4.5.0",

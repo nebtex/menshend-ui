@@ -1,4 +1,5 @@
 import omniFormStore, { OmniForm } from '../omniform/io.omniql.core/Builder';
+import adminStore from '../../stores/editServiceFormStore'
 import {
     CoreTypes,
     OmniDescription,
@@ -19,8 +20,6 @@ import Union from '../omniform/io.omniql.core/Union';
 import StringVector from '../omniform/io.omniql.core/StringVector';
 import { OmniExplorer, ViewContainer } from '../omniform/io.omniql.core/OmniExplorer';
 import { observer } from 'mobx-react'
-import 'bootstrap/dist/css/bootstrap.css';
-import '!style-loader!css-loader!sass-loader!./styles/app.scss';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Container } from 'reactstrap';
@@ -127,11 +126,39 @@ widgetStore.set(new SchemaKey({
     realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/Vector"),
     items: OmniSchemaID.fromString("io.omniql.core.v1alpha/String")
 }), new SchemaValue(StringVector, []));
+let generated = new SchemaValue()
+generated.props = {generated: true}
+
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Resource/AdminService"),  fieldName:"fullUrl"}), generated);
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/Metadata"),  fieldName:"id"}), generated);
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/LongDescriptionRemote"),  fieldName:"content"}), generated);
+
+let metadataRows = new SchemaValue()
+metadataRows.props = {rows: [["roleId", "subDomain"]]}
+widgetStore.set(new SchemaKey({ realm: 'View', schema: OmniSchemaID.fromString("io.menshend.v1alpha/Table/Metadata")}), metadataRows);
 
 
-let omniForm = omniFormStore.build(schemaStore.get(OmniSchemaID.fromString("io.menshend.v1alpha/Resource/AdminService"))) as OmniForm
-//register widget 
 
+
+let required = new SchemaValue()
+required.props = {required: true}
+let textArea = new SchemaValue()
+textArea.props = {textArea: true}
+let image = new SchemaValue()
+image.props = {image: true}
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/Metadata"),  fieldName:"roleId"}), required);
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/Metadata"),  fieldName:"subDomain"}), required);
+
+
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/Metadata"),  fieldName:"description"}), textArea);
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/LongDescriptionLocal"),  fieldName:"content"}), textArea);
+
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String"), scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/Metadata"),  fieldName:"logo"}), image);
+
+
+export const adminForm = omniFormStore.build(schemaStore.get(OmniSchemaID.fromString("io.menshend.v1alpha/Resource/AdminService"))) as OmniForm
+adminStore.omniForm = adminForm
+/*
 
 @observer
 export class ModalContent extends React.Component<{}, {}> {
@@ -140,7 +167,7 @@ export class ModalContent extends React.Component<{}, {}> {
             <Container fluid>
                 <Row>
                     <Col xs="3">
-                        <OmniExplorer omniForm={omniForm} on={{ itemClick: function (id: OmniFormID) { omniForm.setView(id); console.log(id) } }} />
+                        <OmniExplorer omniForm={omniForm} on={{ itemClick: function (id: OmniFormID) { omniForm.setView(id); } }} />
                     </Col>
                     <Col>
                         <ViewContainer id={omniForm.currentView}></ViewContainer>
@@ -154,3 +181,4 @@ export class ModalContent extends React.Component<{}, {}> {
 export class ServiceEditModal extends React.Component<{}, {}>{
 
 }
+*/

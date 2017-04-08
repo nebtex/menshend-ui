@@ -66,7 +66,6 @@ export class FormField<T> implements IFormField<T>{
         this.valid = ValidationState.NONE;
         this.on = {
             change: (nv: T) => {
-                console.log(nv)
                 this.value = nv
             },
             validate: () => {
@@ -402,6 +401,7 @@ export class SchemaKey {
 export interface IRendererProps<T> {
     field?: IFormField<T>
     theme?: any
+    generated?: boolean
 }
 
 export interface IRenderer<T> extends React.StatelessComponent<IRendererProps<T>> { }
@@ -445,6 +445,7 @@ export class OmniFormID {
     parent?: OmniFormID
     id: [OmniFormTypes, number]
     children: OmniFormID[]
+    name: string
     private _hash: string
     constructor(objectID: [OmniFormTypes, number], parent?: OmniFormID) {
         this.children = []
@@ -455,13 +456,33 @@ export class OmniFormID {
             this.parent.children.push(this)
         }
     }
+
+
+    isField(): boolean {
+        return this.id[0] == OmniFormTypes.Field
+    }
     isTable(): boolean {
         return this.id[0] == OmniFormTypes.Table
     }
     isUnion(): boolean {
         return this.id[0] == OmniFormTypes.Union
     }
+    fieldPath(): string[] {
+        if (this.parent) {
+            if (this.parent.name) {
+                let parentPath = this.parent.fieldPath()
+                parentPath.push(this.name)
+                return parentPath
+            }
 
+        }
+        if (!this.name) {
+            return []
+        }
+        return [this.name]
+
+
+    }
     hash() {
         if (this._hash) {
             return this._hash
@@ -483,6 +504,8 @@ export interface FieldInline extends Inline {
     id: OmniFormID
     renderer: IRenderer<any>;
     props: IRendererProps<any>
+    parentSchema: OmniSchema
+    name: string
 }
 
 
@@ -492,6 +515,7 @@ export interface ITableProps {
     help?: OmniDescription
     name?: string
     widgetMap?: Map<string, FieldInline>
+    style?:any
 }
 
 
@@ -500,7 +524,7 @@ export interface IEnumProps extends IRendererProps<number> {
 }
 
 export interface IUnionProps {
-    selector?: { renderer: React.StatelessComponent<IEnumProps>, props: IEnumProps },
+    selector?: { renderer: any, props: any },
     tables?: { renderer: React.StatelessComponent<ITableProps>, props: ITableProps }[]
     theme?: any
 }

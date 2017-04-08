@@ -9,6 +9,9 @@ export interface IFullModalProps {
 	isOpen?: boolean
 	toggle?: { (): void }
 	title?: string
+	on?: {
+		mount?: { (): void }
+	}
 }
 
 export interface IFullModalState { }
@@ -17,6 +20,9 @@ export interface IFullModalState { }
  * use this component when you need a full size modal
  */
 export default class FullModal extends React.Component<IFullModalProps, IFullModalState>{
+	public static defaultProps: Partial<IFullModalProps> = {
+		on: { mount: () => { } }
+	};
 	handleEscape = (event: any) => {
 		if (event.keyCode == 27) {
 			if (this.props.isOpen) {
@@ -24,9 +30,13 @@ export default class FullModal extends React.Component<IFullModalProps, IFullMod
 			}
 		}
 	}
-	
+
 	componentDidMount = () => {
 		window.addEventListener('keydown', this.handleEscape);
+		  setTimeout(() => {
+           this.props.on.mount()
+        }, 250);
+		
 	}
 
 	componentWillUnmount = () => {

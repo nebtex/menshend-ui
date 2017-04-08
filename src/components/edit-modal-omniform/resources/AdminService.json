@@ -4,6 +4,10 @@
   "spec": {
     "fields": [
       {
+        "name": "fullUrl", 
+        "schema": "io.omniql.core.v1alpha/String"
+      }, 
+      {
         "description": {
           "short": "give to all the users the ability to change their vault token display_name within this role/service"
         }, 
@@ -11,6 +15,7 @@
         "schema": "io.omniql.core.v1alpha/Boolean"
       }, 
       {
+        "default": true, 
         "description": {
           "short": "enable/disable this service"
         }, 

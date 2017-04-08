@@ -12,8 +12,11 @@ export interface IStringTheme {
 	requiredSymbol?: string;
 	shortHelp?: string;
 }
-
-const String: IRenderer<string> = (props: IRendererProps<string>) => {
+interface IStringProps extends IRendererProps<string>{
+	textArea: boolean
+	image: boolean
+}
+const String: IRenderer<string> = (props: IStringProps) => {
 	let stateColor;
 	let field = props.field
 	let theme = props.theme
@@ -33,8 +36,10 @@ const String: IRenderer<string> = (props: IRendererProps<string>) => {
 			<Label for={field.id} className={theme.label}>{field.label} &nbsp;</Label>
 			{field.help && field.help.long ? <HelpButton content={field.help.long} /> : null}
 			{field.required ? <span className={theme.requiredSymbol}>●</span> : null}
+			{props.image?<img src={props.field.value} width="64"/>:null}
 			<Input
 				state={stateColor}
+				type={props.textArea?'textarea':'text'}
 				placeholder={field.placeholder}
 				value={field.value}
 				onChange={(evt: any) => { field.on.change(evt.target.value) }}

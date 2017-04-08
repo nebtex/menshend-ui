@@ -36,7 +36,7 @@ const Enum: React.StatelessComponent<IEnumProps> = (props: IEnumProps) => {
 				disabled={field.disabled}
 				id={field.id}>
 				{props.options.map((option, index) => {
-					return <option key={index} value={option} selected={field.value == index}>{option}</option>
+					return <option key={index} value={index} selected={field.value == index}>{option}</option>
 				})}
 			</Input>
 			{field.error ?

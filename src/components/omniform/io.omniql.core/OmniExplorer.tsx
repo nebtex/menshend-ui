@@ -1,11 +1,13 @@
-import { TableView } from './Builder';
+import { TableView, UnionView } from './Builder';
 import * as React from 'react';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroup, ListGroupItem,Container, Row } from 'reactstrap';
 let styles = require('./FileExplorer.scss');
 import * as classnames from 'classnames';
-import { FieldInline, OmniFormID, View } from '../base';
+import { FieldInline, FormField, IEnumProps, OmniFormID, View } from '../base';
 import omniFormStore, { OmniForm } from './Builder'
 import { observer } from 'mobx-react';
+import Enum from './Enum';
+
 
 interface ITheme {
   padding: string;
@@ -83,7 +85,6 @@ export class OmniExplorer extends React.Component<IOmniExplorerProps, any> {
   };
 
   buildExplorer = (ids: OmniFormID[], deepLevel: number): React.ReactElement<any>[] => {
-    console.log(ids);
     ids = ids || [];
     let components: React.ReactElement<any>[] = []
 
@@ -103,7 +104,14 @@ export class OmniExplorer extends React.Component<IOmniExplorerProps, any> {
             viewChildren.push(c)
           }
         }
-
+      }
+      if (id.isUnion()) {
+        let uv = view as UnionView
+        for (let c of uv.field.value.children) {
+          if (c.isTable() || c.isUnion()) {
+            viewChildren.push(c)
+          }
+        }
       }
 
       let itemStyle: string = viewChildren.length > 0 ? this.props.theme.folder : this.props.theme.file
@@ -137,6 +145,37 @@ interface ViewContainerProps {
 
 }
 
+
+
+@observer
+export class TableContainer extends React.Component<ViewContainerProps, any>{
+  buildMap(id: OmniFormID): Map<string, FieldInline> {
+    let result = new Map<string, FieldInline>()
+    if (id.isTable()) {
+      for (let c of id.children) {
+        if (c.isTable() || c.isUnion()) {
+          continue
+        }
+        let field = omniFormStore.objects.get(c) as FieldInline
+        result.set(field.props.field.name, field)
+      }
+    }
+    return result
+  }
+  render() {
+    let id = this.props.id;
+    if (id.isTable()) {
+      let view = omniFormStore.objects.get(id) as TableView
+
+      let widgetMap = this.buildMap(id)
+      return <view.renderer {...view.props} widgetMap={widgetMap} style={{overflowY:"scroll"}} />
+    }
+    return null
+  }
+}
+
+
+
 @observer
 export class ViewContainer extends React.Component<ViewContainerProps, any>{
   buildMap(id: OmniFormID): Map<string, FieldInline> {
@@ -153,11 +192,37 @@ export class ViewContainer extends React.Component<ViewContainerProps, any>{
     return result
   }
   render() {
+    let OEnum = observer(Enum)
     let id = this.props.id;
-    let view = omniFormStore.objects.get(id) as TableView
     if (id.isTable()) {
-      let widgetMap = this.buildMap(id)
-      return <view.renderer {...view.props} widgetMap={widgetMap} />
+      return <TableContainer id={id} />
+
+    } else if (id.isUnion()) {
+      let view = omniFormStore.objects.get(id) as UnionView
+      let options: string[] = []
+      let optionsId: OmniFormID[]=[]
+      for(let tid of view.id.children){
+        let tView = omniFormStore.objects.get(tid) as TableView
+        options.push(tView.name)
+        optionsId.push(tView.id)
+
+      }
+      let tableId = view.field.value
+
+        view.nField.on.change = (v:number)=>{
+            view.nField.value = v
+            view.field.value = optionsId[v]
+    }
+      return<Container styles={{"width": "100%"}} fluid>
+        <Container fluid>
+        <Row>
+            <OEnum options={options} field={view.nField} />
+        </Row>
+        </Container>
+        <hr/>
+        <TableContainer id={tableId} />
+       </Container>
+
     }
     return null
   }

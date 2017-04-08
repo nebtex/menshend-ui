@@ -99,6 +99,13 @@
     webpack-dev-middleware "^1.6.0"
     webpack-hot-middleware "^2.13.2"
 
+"@nebtex/hashmap@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@nebtex/hashmap/-/hashmap-1.0.2.tgz#e215c65063ba2432316e681a4d6e9ac94ae13031"
+  dependencies:
+    mobx "^3.1.8"
+    object-hash "^1.1.7"
+
 "@types/cheerio@*":
   version "0.17.31"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.17.31.tgz#bfeda3e3e8647a6e49b2998d137c81d5d8ab52d0"
@@ -4466,6 +4473,10 @@ mobx@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.1.0.tgz#e5f15b475efdd1eea1f5c43a0afccde6e6f322ee"
 
+mobx@^3.1.8:
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.1.9.tgz#ed4af9d874ff6032c7af91fc1b87d9d33122a557"
+
 monaco-editor@~0.7.x:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.7.0.tgz#db4ae9f9eeb8f419c7922c14e1dcdbfe33c925c4"
@@ -4734,6 +4745,10 @@ object-assign@^3.0.0:
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+
+object-hash@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.1.7.tgz#a8d83fdf5d4583a4e2e7ffc18e8915e08482ef52"
 
 object-is@^1.0.1:
   version "1.0.1"

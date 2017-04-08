@@ -34,10 +34,10 @@ const views = {
   editModal: new Route({
     path: '/services/roles/:roleId/:subdomain',
     component: <Services />,
-    onEnter: (route:any, params:any, store:any, queryParams:any) => {
+    onEnter: (route: any, params: any, store: any, queryParams: any) => {
       adminStore.roleId = params.roleId
       adminStore.subdomain = params.subdomain
-      adminStore.load()
+      adminStore.showModal = true
     }
   })
 };
