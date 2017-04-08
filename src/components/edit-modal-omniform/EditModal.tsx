@@ -17,6 +17,8 @@ import Boolean from '../omniform/io.omniql.core/Boolean';
 import Integer from '../omniform/io.omniql.core/Integer';
 import TableWidget from '../omniform/io.omniql.core/Table';
 import Union from '../omniform/io.omniql.core/Union';
+import Code from '../omniform/io.omniql.core/Code';
+
 import StringVector from '../omniform/io.omniql.core/StringVector';
 import { OmniExplorer, ViewContainer } from '../omniform/io.omniql.core/OmniExplorer';
 import { observer } from 'mobx-react'
@@ -126,6 +128,10 @@ widgetStore.set(new SchemaKey({
     realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/Vector"),
     items: OmniSchemaID.fromString("io.omniql.core.v1alpha/String")
 }), new SchemaValue(StringVector, []));
+widgetStore.set(new SchemaKey({ realm: 'Inline', schema: OmniSchemaID.fromString("io.omniql.core.v1alpha/String") , scope:OmniSchemaID.fromString("io.menshend.v1alpha/Table/LuaResolver"),  fieldName:"content"}), new SchemaValue(Code, ""));
+
+
+
 let generated = new SchemaValue()
 generated.props = {generated: true}
 

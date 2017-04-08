@@ -2,7 +2,7 @@
   "name": "react-typescript-boilerplate",
   "scripts": {
     "build": "webpack --config ./webpack.production.js --progress",
-    "start": "webpack-dev-server --config ./webpack.dev.js",
+    "start": "webpack-dev-server --config ./webpack.dev.js --content-base public",
     "fix-types": "bash ./scripts/fixTypes.sh",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
