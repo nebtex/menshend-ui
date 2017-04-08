@@ -8,6 +8,7 @@ import { MobxRouter, RouterStore, startRouter, Route } from 'mobx-router';
 import routerStore from './stores/router'
 import adminStore from './stores/editServiceFormStore'
 import loginStore from './stores/loginStore'
+import clientServiceStore from './stores/clientServiceStore'
 
 import { Provider } from 'mobx-react';
 import { observe } from "mobx"
@@ -26,6 +27,9 @@ const views = {
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       if(queryParams.loginError)
         loginStore.updateLoginError(queryParams.loginError);
+
+      if(queryParams.subdomain)
+        clientServiceStore.updateCurrentService(queryParams.subdomain);
     }
   }),
   services: new Route({

@@ -6,7 +6,6 @@ import { BasePath } from './variables'
 const clientApi = new ClientApi();
 clientApi.basePath = BasePath
 
-
 class ClientServiceStore {
   @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
   @observable currentService:ClientService
