@@ -44,26 +44,28 @@ interface ILoginProps {
     });
   }
 
+  componentWillReceiveProps(nextProps:ILoginProps) {
+    const { loginError } = nextProps;
+    let activeTab: ActiveTabType;
+    if(loginError){
+      switch(loginError){
+        case 'Token':
+          activeTab = 'TokenTab'
+        break;
+        default:
+          activeTab = 'UserPassTab'
+        break;
+      }
+      this.setState({
+        loginFormActiveTab: activeTab
+      })
+    }
+  }
+
   render(){
     let message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
 
     const loginError = this.props.loginError
-    let activeTab:ActiveTabType;
-
-    if(loginError && !this.errorTab){
-      switch(loginError){
-        case 'Token':
-          activeTab = 'TokenTab'
-          this.errorTab = true
-        break;
-        default:
-          activeTab = 'UserPassTab'
-          this.errorTab = true
-        break;
-      }
-    }else {
-      activeTab = this.state.loginFormActiveTab;
-    }
 
     return (
       <div className={styles.container} > 
@@ -80,7 +82,7 @@ interface ILoginProps {
               <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
               <ErrorsPanel flashes={this.props.flashes}/>
               <LoginForm
-                activeTab={activeTab}
+                activeTab={this.state.loginFormActiveTab}
                 toggleTab={this.toggleTabLoginForm}
                 status={this.props.loginStatus}
                 error={loginError} />

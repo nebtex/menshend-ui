@@ -25,7 +25,10 @@ export interface ILoginFormProps {
     if (status.isLogged){
       return (
         <div className={styles.container}>
-          <SessionCounter expiresAt={status.sessionExpiresAt}/>
+            {status.sessionExpiresAt === 0 ?
+              <h4 className={styles.neverExpire}>* Your session will never expire*</h4>:
+              <SessionCounter expiresAt={status.sessionExpiresAt}/>
+            }
             <Form action="/uilogout" method="post">
               <Button color="danger" className={styles.logout} >Logout</Button>
             </Form>

@@ -7,6 +7,7 @@ import { History } from 'history'
 import { MobxRouter, RouterStore, startRouter, Route } from 'mobx-router';
 import routerStore from './stores/router'
 import adminStore from './stores/editServiceFormStore'
+import loginStore from './stores/loginStore'
 
 import { Provider } from 'mobx-react';
 import { observe } from "mobx"
@@ -21,7 +22,11 @@ const store = {
 const views = {
   login: new Route({
     path: '/login',
-    component: <LoginWrapper />
+    component: <LoginWrapper />,
+    onEnter: (route: any, params: any, store: any, queryParams: any) => {
+      if(queryParams.loginError)
+        loginStore.updateLoginError(queryParams.loginError);
+    }
   }),
   services: new Route({
     path: '/services',
