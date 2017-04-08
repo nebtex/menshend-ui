@@ -22,17 +22,16 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
   }
 
   static defaultProps:IServiceInfoCardProps = {
-    //@TODO remove service default prop, it is only for test
-    service:{
-      meta: {
-        name: 'Unknown',
-        description: 'Unknown service',
-        longDescription: {},
-        logo: ''
-      },
-      secretPaths: ['secret1', 'secret2']
-    },
-    userIsLogged: false
+    //@TODO remove service default prop, it is only for test purposes
+    // service:{
+    //   meta: {
+    //     name: 'Unknown',
+    //     description: 'Unknown service',
+    //     longDescription: {},
+    //     logo: ''
+    //   },
+    //   secretPaths: ['secret1', 'secret2']
+    // }
   }
 
   toggleDescription = () => {

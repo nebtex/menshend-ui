@@ -20,12 +20,7 @@ interface ISpaceCardState {
   }
 
   static defaultProps:ISpaceCardProps = {
-    space: {
-      name: 'Kuper',
-      shortDescription: 'Kuper is a modern  auth proxy that use vault and consul for manage access policies',
-      longDescription: '',
-      logo: octopusLogo
-    }
+    space: {}
   }
 
   toggleDescription = () => {
@@ -38,8 +33,11 @@ interface ISpaceCardState {
     const { space } = this.props;
     return (
       <Container>
-        <h1>{ space.name }</h1>
-        <p>{ space.shortDescription } <a href="#" onClick={this.toggleDescription}> View more </a></p>
+        <h1>{ space.name || 'Menshend' }</h1>
+        <p>
+          { space.shortDescription }
+          {space.longDescription ? <a href="#" onClick={this.toggleDescription}> View more </a> : null}
+        </p>
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} className={styles.modal}>
           <ModalHeader toggle={this.toggleDescription}> {space.name} </ModalHeader>
           <ModalBody>
