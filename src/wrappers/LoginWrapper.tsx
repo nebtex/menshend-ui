@@ -21,6 +21,7 @@ interface ILoginWrapperProps  {
     
     const flashes = flashStore.flashes;
     const space = {
+      name: spaceStore.name,
       host: spaceStore.host,
       logo: spaceStore.logo,
       longDescription: spaceStore.longDescription,
