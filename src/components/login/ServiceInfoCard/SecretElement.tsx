@@ -3,6 +3,7 @@ import * as React from 'react';
 import { ListGroupItem, Button, Collapse, Card, CardBlock, Alert } from 'reactstrap';
 import { SecretsApi } from '../../../api/api'
 import * as classnames from 'classnames';
+import * as JSONPretty from 'react-json-pretty';
 let styles = require('./SecretElement.scss');
 
 interface ISecretElementProps {
@@ -62,15 +63,13 @@ export default class SecretElement extends React.Component<ISecretElementProps, 
   getResponseComponent = () => {
     if (this.state.error && this.state.data !== '') {
       return (
-        <Alert color="danger">{this.state.data}</Alert>
+        <Alert color="danger">
+          <JSONPretty json={this.state.data}/>          
+        </Alert>
       );
     } else if (this.state.data !== '') {
       return (
-        <Card>
-          <CardBlock>
-            {this.state.data}
-          </CardBlock>
-        </Card>
+        <JSONPretty json={this.state.data}/>
       );
     }
   }

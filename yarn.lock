@@ -184,6 +184,12 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-json-pretty@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@types/react-json-pretty/-/react-json-pretty-1.3.1.tgz#3a0f66d188b7e3bbda67bc707bc7382ae6901a7e"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-test-renderer@^15.4.2":
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-15.4.2.tgz#4cc8232db85f13a63411b2487fbe1d3251e11f3f"
@@ -5504,6 +5510,10 @@ react-inspector@^1.1.0:
   dependencies:
     babel-runtime "^6.9.2"
     is-dom "^1.0.5"
+
+react-json-pretty@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-json-pretty/-/react-json-pretty-1.5.0.tgz#7c64873baff670fbdfb1dfa717c1551a24ee91b6"
 
 react-komposer@^1.9.0:
   version "1.13.1"
