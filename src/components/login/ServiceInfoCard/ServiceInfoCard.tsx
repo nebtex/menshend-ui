@@ -122,7 +122,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const descriptionModal = this.getDescriptionModal();
 
     let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
-
+    
     return (
       <Card className={styles.ServiceInfoCard}>
         <Row>
@@ -138,7 +138,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
                 {meta.description || 'Unknown service'}
               </CardText>
               <CardText className={styles.buttonsContainer}>
-                {secretsButton}
+                {secretsButton}{' '}
                 {viewMore}
               </CardText>
             </CardBlock>

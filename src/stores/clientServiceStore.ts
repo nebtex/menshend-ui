@@ -9,6 +9,7 @@ clientApi.basePath = BasePath
 class ClientServiceStore {
   @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
   @observable currentService:ClientService
+  currentDomain:string;
 
   constructor() {
     const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
@@ -18,6 +19,7 @@ class ClientServiceStore {
   }
 
   @action updateCurrentService = (subdomain:string) => {
+    this.currentDomain = subdomain;
     const index = this.services.map(service => service.meta.subDomain).indexOf(subdomain);
     if(index > -1)
       this.currentService = this.services[index]
@@ -30,6 +32,7 @@ class ClientServiceStore {
         this.services.push(service);
       });
       localStorage.setItem('clientServices', JSON.stringify(toJS(this.services)));
+      this.updateCurrentService(this.currentDomain);
       networkStore.updateLastResponse({message:'OK', statusCode: 200});
       networkStore.removePendingRequest();
     }).catch((response:Response) => {
