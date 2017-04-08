@@ -7,15 +7,13 @@ const clientApi = new ClientApi();
 clientApi.basePath = BasePath
 
 class ClientServiceStore {
-  @observable services: IObservableArray<ClientService> = observable.array<ClientService>([])
+  @observable services: Array<ClientService>
   @observable currentService:ClientService
   currentDomain:string;
 
   constructor() {
     const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
-    storagedServices.forEach(service => {
-      this.services.push(service);
-    });
+    this.services = storagedServices;
   }
 
   @action updateCurrentService = (subdomain:string) => {
@@ -28,9 +26,7 @@ class ClientServiceStore {
   @action load() {
     networkStore.addPendingRequest();
     clientApi.listAvailableServices({}).then((services:ClientService[]) => {
-      services.forEach(service => {
-        this.services.push(service);
-      });
+      this.services = services;
       localStorage.setItem('clientServices', JSON.stringify(toJS(this.services)));
       this.updateCurrentService(this.currentDomain);
       networkStore.updateLastResponse({message:'OK', statusCode: 200});
