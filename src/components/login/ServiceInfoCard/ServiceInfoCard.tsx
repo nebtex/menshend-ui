@@ -51,11 +51,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     const { service, userIsLogged } = this.props;
 
     if(service && service.secretPaths && service.secretPaths.length > 0 && userIsLogged){
-      return (
-        <CardText>
-          <Button onClick={this.toggleSecretsModal}>Secrets</Button>
-        </CardText>
-      );
+      return <Button size="sm" onClick={this.toggleSecretsModal}>Secrets</Button>;
     }
     return null;
   }
@@ -79,6 +75,17 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
           </ModalFooter>
         </Modal>
       )
+    }
+    return null;
+  }
+
+  getViewLongDescriptionButton = () => {
+    const meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};    
+    const hasLocalDescription = meta.longDescription && meta.longDescription.local && meta.longDescription.local.content;
+    const hasRemotDescription = meta.longDescription && meta.longDescription.remote && meta.longDescription.remote.content;
+
+    if(hasRemotDescription || hasLocalDescription){
+      return <Button outline color="primary" size="sm" onClick={this.toggleDescription}>View more</Button>
     }
     return null;
   }
@@ -110,13 +117,14 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
 
   render(){
     const secretsButton = this.getSecretButton();
+    const viewMore = this.getViewLongDescriptionButton();
     const secretModal = this.getSecretModal();
     const descriptionModal = this.getDescriptionModal();
 
     let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
 
     return (
-      <Card className={styles.ServiceInfoCard} onClick={this.toggleDescription}>
+      <Card className={styles.ServiceInfoCard}>
         <Row>
           <Col md='2'>
             <CardBlock>
@@ -129,8 +137,11 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
               <CardText>
                 {meta.description || 'Unknown service'}
               </CardText>
-              {secretsButton}
-            </CardBlock> 
+              <CardText className={styles.buttonsContainer}>
+                {secretsButton}
+                {viewMore}
+              </CardText>
+            </CardBlock>
           </Col>
         </Row>
         { secretModal }
