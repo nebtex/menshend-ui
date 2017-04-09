@@ -9,7 +9,9 @@ clientApi.basePath = BasePath
 class ClientServiceStore {
   @observable services: Array<ClientService>
   @observable currentService:ClientService
-  currentDomain:string;
+  @observable currentRole:string
+  @observable availableRoles: Array<string>
+  currentDomain:string
 
   constructor() {
     const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
@@ -17,10 +19,22 @@ class ClientServiceStore {
   }
 
   @action updateCurrentService = (subdomain:string) => {
-    this.currentDomain = subdomain;
-    const index = this.services.map(service => service.meta.subDomain).indexOf(subdomain);
-    if(index > -1)
-      this.currentService = this.services[index]
+    this.currentDomain = subdomain.endsWith('.') ? subdomain : subdomain + '.';
+    const obtainedServices = this.services.filter(service => service.meta.subDomain === this.currentDomain)
+    const obtainedRoles = obtainedServices.map(service => service.meta.roleId)
+
+    if((this.currentService && this.currentService.meta.subDomain !== obtainedServices[0].meta.subDomain) || !this.currentRole){
+      this.currentRole = obtainedServices[0].meta.roleId
+    }
+
+    this.availableRoles = obtainedRoles
+    this.currentService = obtainedServices[0]
+  }
+
+  @action updateRole = (role:string) => {
+    const obtainedService = this.services.filter(service => (service.meta.roleId === role && service.meta.subDomain === this.currentDomain))[0]
+    this.currentService = obtainedService
+    this.currentRole = role
   }
 
   @action load() {
