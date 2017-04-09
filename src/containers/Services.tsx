@@ -57,7 +57,7 @@ export default class Services extends React.Component<IServicesProps, {}>{
           <Alert color="danger" style={{ visibility: errorVisibility }}>{adminStore.error}</Alert>
           <Container style={{ width: "100%" }}>
             <Row flex>
-              <Col xs="3">
+              <Col sm="12" lg="3">
                 <OmniExplorer omniForm={adminForm} on={{ itemClick: function (id: OmniFormID) { adminForm.setView(id); } }} />
               </Col>
               <Col>

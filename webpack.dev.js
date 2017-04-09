@@ -20,10 +20,10 @@ const config = webpackMerge(commonConfig, {
 
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: 'node_modules/monaco-editor/min/vs',
-      to: '/static/vs',
-    }])
+   // new CopyWebpackPlugin([{
+     // from: 'node_modules/monaco-editor/min/vs',
+      //to: '/static/vs',
+   // }])
   ]
 });
 
