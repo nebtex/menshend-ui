@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
-import { Container, Row, Popover, PopoverTitle, PopoverContent, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
+import { Popover, PopoverTitle, PopoverContent, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Space } from '../../../api/api';
 import { observer } from 'mobx-react';
 let octopusLogo = require('../../../assets/octopus-logo.svg');
@@ -32,7 +32,7 @@ interface ISpaceCardState {
   render(){
     const { space } = this.props;
     return (
-      <Container>
+      <div>
         <h1>{ space.name || 'Menshend' }</h1>
         <p>
           { space.shortDescription }
@@ -47,7 +47,7 @@ interface ISpaceCardState {
             <Button color="secondary" onClick={this.toggleDescription}>OK</Button>
           </ModalFooter>
         </Modal>
-      </Container>
+      </div>
     );
   }
 }

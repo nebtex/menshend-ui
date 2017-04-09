@@ -155,12 +155,12 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     return (
       <Card className={styles.ServiceInfoCard}>
         <Row>
-          <Col md='2'>
+          <div className={styles.logoContainer}>
             <CardBlock>
               {meta.logo ? (<CardImg width="64" height="64" src={meta.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
             </CardBlock>
-          </Col>
-          <Col md='10'>
+          </div>
+          <div className={styles.infoContainer}>
             <CardBlock>
               <CardTitle>{meta.name}</CardTitle>
               <CardText>
@@ -173,7 +173,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
                 {goButton}
               </CardText>
             </CardBlock>
-          </Col>
+          </div>
         </Row>
         { secretModal }
         { descriptionModal }

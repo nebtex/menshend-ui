@@ -27,3 +27,12 @@
     cursor: pointer;
   }
 }
+
+.logoContainer {
+  flex-basis: 72px;
+  flex-grow: 0;
+}
+
+.infoContainer {
+  flex-grow: 1;
+}

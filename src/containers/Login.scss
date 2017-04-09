@@ -1,12 +1,22 @@
+@media (min-width: 1200px){
+  .container {
+    width: 1140px;
+    max-width: 100%;
+    margin: auto;      
+  }
+}
+
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
-  padding-top: 2.5rem; 
+  padding:16px; 
 }
 
 .rightSide {
   display: flex;
+  flex-grow: 1;
+  flex-basis: 512px;
   flex-direction: column;
 }
 
@@ -14,9 +24,21 @@
   justify-content: center;
   align-items: flex-start;
   display: flex;
-  min-height: 608px;
+  flex-grow: 1;
 }
 
 .logo {
+  max-width: 440px;
   width: 100%;
+}
+
+.firstRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.secondRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }

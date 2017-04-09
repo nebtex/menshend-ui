@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginForm';
 import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard';
 import SpaceCard from '../components/login/SpaceCard/SpaceCard';
@@ -92,22 +92,20 @@ interface ILoginProps {
 
     return (
       <div className={styles.container} > 
-        <Container>
-          <Row>
-            <SpaceCard space={this.props.space} />
-          </Row>
-          <Row>
-            <Col md="12" lg="6" className={styles.logoContainer}>
-              <img src={ this.props.space.logo === "" ? logo : this.props.space.logo } className={styles.logo}/>
-            </Col>
-            <Col className={styles.rightSide}>
-              <h3>{message}</h3>
-              <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
-              {errorPanel}
-              {loginForm}
-            </Col>
-          </Row>
-        </Container>
+        <div className={styles.firstRow}>
+          <SpaceCard space={this.props.space} />
+        </div>
+        <div className={styles.secondRow}>
+          <div className={styles.logoContainer}>
+            <img src={ this.props.space.logo === "" ? logo : this.props.space.logo } className={styles.logo}/>
+          </div>
+          <div className={styles.rightSide}>
+            <h3>{message}</h3>
+            <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
+            {errorPanel}
+            {loginForm}
+          </div>
+        </div>
       </div>
     );
   }
