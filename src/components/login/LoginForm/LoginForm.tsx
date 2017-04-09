@@ -58,11 +58,10 @@ export interface ILoginFormProps {
               <Card>
                 <CardBlock>
                   <Row>
-                    <Col md="5" style={{borderRight: "1px solid rgba(0,0,0,.125)"}}>
-                      <GithubLogin error={this.props.error === 'Github'}/>
-                    </Col>
-                    <Col md="7">
+                    <Col>
                       <UserPassForm error={this.props.error === 'Username/Password'}/>
+                      <p className={styles.canTryMessage}>Or you can try: </p>
+                      <GithubLogin error={this.props.error === 'Github'}/>
                     </Col>
                   </Row>  
                 </CardBlock>
