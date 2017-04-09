@@ -27,6 +27,9 @@ interface ILoginProps {
   loginStatus: LoginStatus;
   service: ClientService;
   loading: boolean;
+  availableRoles?:Array<string>
+  currentRole?:string
+  handleRoleUpdate?:{(role:string):void}
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -101,7 +104,12 @@ interface ILoginProps {
           </Col>
           <Col className={styles.rightSide} sm="12" lg="auto">
             <h3>{message}</h3>
-            <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
+            <ServiceInfoCard 
+              service={this.props.service}
+              userIsLogged={this.props.loginStatus.isLogged}
+              availableRoles={this.props.availableRoles}
+              currentRole={this.props.currentRole} 
+              handleRoleUpdate={this.props.handleRoleUpdate} />
             {errorPanel}
             {loginForm}
           </Col>

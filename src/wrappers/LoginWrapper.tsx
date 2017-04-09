@@ -17,6 +17,10 @@ interface ILoginWrapperProps  {
 }
 
 @observer class LoginWrapper extends React.Component<ILoginWrapperProps, {}>{
+  handleRoleUpdate = (role:string) => {
+    clientServiceStore.updateRole(role)
+  }
+
   render() {
     
     const flashes = flashStore.flashes;
@@ -39,6 +43,9 @@ interface ILoginWrapperProps  {
 
     const loadingLogin = loginStore.loading;
     
+    const availableRoles = toJS(clientServiceStore.availableRoles)
+    const currentRole = clientServiceStore.currentRole
+
     return (
       <div>
         <Login 
@@ -47,7 +54,10 @@ interface ILoginWrapperProps  {
           loginError={loginError}
           loginStatus={loginStatus} 
           service={currentService} 
-          loading={loadingLogin} />
+          loading={loadingLogin} 
+          availableRoles={availableRoles}
+          currentRole={currentRole}
+          handleRoleUpdate={this.handleRoleUpdate} />
       </div>
     );
   }

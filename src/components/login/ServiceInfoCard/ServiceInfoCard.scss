@@ -1,5 +1,6 @@
 .ServiceInfoCard {
   width: 100%;
+  display: flex;
   margin: 0.5rem 0;
 }
 
@@ -34,5 +35,17 @@
 }
 
 .infoContainer {
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.titleRow {
+  display: flex;
+}
+
+.title {
   flex-grow: 1;
 }

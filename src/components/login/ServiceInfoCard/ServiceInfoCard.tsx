@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button, ListGroup, Badge } from 'reactstrap';
+import { Container, Row, Col, Card, CardBlock, CardImg, CardText, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Button, ListGroup, Badge, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 import * as ReactMarkdown from 'react-markdown';
 import { ClientService } from '../../../api/api';
 import SecretElement from './SecretElement';
@@ -10,31 +10,25 @@ let styles = require('./ServiceInfoCard.scss');
 export interface IServiceInfoCardProps {
   service?:ClientService;
   userIsLogged?:boolean;
+  availableRoles?:Array<string>
+  currentRole?:string
+  handleRoleUpdate?:{(role:string):void}
 }
 
 interface IServiceInfoCardState {
   longDescriptionOpen:boolean;
   secretsModalOpen:boolean;
+  rolesDropdownOpen:boolean;
 }
 
 export default class ServiceInfoCard extends React.Component<IServiceInfoCardProps, IServiceInfoCardState>{
   state = {
     longDescriptionOpen: false,
-    secretsModalOpen: false
+    secretsModalOpen: false,
+    rolesDropdownOpen: false
   }
 
-  static defaultProps:IServiceInfoCardProps = {
-    //@TODO remove service default prop, it is only for test purposes
-    // service:{
-    //   meta: {
-    //     name: 'Unknown',
-    //     description: 'Unknown service',
-    //     longDescription: {},
-    //     logo: ''
-    //   },
-    //   secretPaths: ['secret1', 'secret2']
-    // }
-  }
+  static defaultProps:IServiceInfoCardProps = {}
 
   toggleDescription = () => {
     this.setState({
@@ -142,7 +136,33 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     return null;
   }
 
+  toggleRolesDropdown = () => {
+    this.setState({
+      rolesDropdownOpen: !this.state.rolesDropdownOpen
+    });
+  }
+
+  getRolesDropdown = () => {
+    const { currentRole, availableRoles } = this.props;
+    if(currentRole && availableRoles && availableRoles.length > 0){
+      return (
+        <Dropdown isOpen={this.state.rolesDropdownOpen} toggle={this.toggleRolesDropdown}>
+          <DropdownToggle caret>
+            {currentRole}
+          </DropdownToggle>
+          <DropdownMenu>
+            {availableRoles.map((role, index) => {
+              return <DropdownItem key={index} onClick={()=>{this.props.handleRoleUpdate(role)}}>{role}</DropdownItem>              
+            })}
+          </DropdownMenu>
+        </Dropdown>
+      );
+    }
+    return null;
+  }
+
   render(){
+    const rolesDropdown = this.getRolesDropdown();
     const secretsButton = this.getSecretButton();
     const viewMore = this.getViewLongDescriptionButton();
     const goButton = this.getGoButton();
@@ -154,7 +174,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
 
     return (
       <Card className={styles.ServiceInfoCard}>
-        <Row>
+        <div className={styles.wrapper}>
           <div className={styles.logoContainer}>
             <CardBlock>
               {meta.logo ? (<CardImg width="64" height="64" src={meta.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
@@ -162,7 +182,10 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
           </div>
           <div className={styles.infoContainer}>
             <CardBlock>
-              <CardTitle>{meta.name}</CardTitle>
+              <div className={styles.titleRow}>
+                <CardTitle className={styles.title}>{meta.name}</CardTitle>
+                {rolesDropdown}
+              </div>
               <CardText>
                 {meta.description || 'Unknown service'}
                 {tagsRenderer}
@@ -174,7 +197,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
               </CardText>
             </CardBlock>
           </div>
-        </Row>
+        </div>
         { secretModal }
         { descriptionModal }
       </Card>
