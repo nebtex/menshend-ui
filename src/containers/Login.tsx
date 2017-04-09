@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
 import LoginForm, { ActiveTabType } from '../components/login/LoginForm/LoginForm';
 import ServiceInfoCard from '../components/login/ServiceInfoCard/ServiceInfoCard';
 import SpaceCard from '../components/login/SpaceCard/SpaceCard';
@@ -95,17 +95,17 @@ interface ILoginProps {
         <div className={styles.firstRow}>
           <SpaceCard space={this.props.space} />
         </div>
-        <div className={styles.secondRow}>
-          <div className={styles.logoContainer}>
+        <Row>
+          <Col className={styles.logoContainer} xs="12" lg="auto">
             <img src={ this.props.space.logo === "" ? logo : this.props.space.logo } className={styles.logo}/>
-          </div>
-          <div className={styles.rightSide}>
+          </Col>
+          <Col className={styles.rightSide} sm="12" lg="auto">
             <h3>{message}</h3>
             <ServiceInfoCard service={this.props.service} userIsLogged={this.props.loginStatus.isLogged}/>
             {errorPanel}
             {loginForm}
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     );
   }

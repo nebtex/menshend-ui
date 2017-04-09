@@ -6,6 +6,12 @@
   }
 }
 
+@media (max-width: 991px){
+  .rightSide {
+    flex-grow: 1;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -14,10 +20,10 @@
 }
 
 .rightSide {
-  display: flex;
-  flex-grow: 1;
-  flex-basis: 512px;
-  flex-direction: column;
+  // display: flex;
+  // flex-grow: 0;
+  flex-basis: 440px;
+  // flex-direction: column;
 }
 
 .logoContainer {
