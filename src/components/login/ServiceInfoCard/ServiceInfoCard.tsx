@@ -131,9 +131,21 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
     return null;
   }
 
+  getGoButton = () => {
+    if(this.props.service && this.props.service.fullUrl) {
+      return (
+        <a href={this.props.service.fullUrl}>
+          <Button color="primary" outline size="sm">Go</Button>
+        </a>
+      );
+    }
+    return null;
+  }
+
   render(){
     const secretsButton = this.getSecretButton();
     const viewMore = this.getViewLongDescriptionButton();
+    const goButton = this.getGoButton();
     const secretModal = this.getSecretModal();
     const descriptionModal = this.getDescriptionModal();
 
@@ -158,9 +170,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
               <CardText className={styles.buttonsContainer}>
                 {secretsButton}{' '}
                 {viewMore}{' '}
-                <a href={this.props.service.fullUrl}>
-                  <Button color="primary" outline size="sm">Go</Button>
-                </a>
+                {goButton}
               </CardText>
             </CardBlock>
           </Col>
