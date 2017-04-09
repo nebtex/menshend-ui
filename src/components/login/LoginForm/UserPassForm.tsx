@@ -99,7 +99,7 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
           <Label>Method</Label>
           {this.getMethodDropdown()}
         </FormGroup>
-        <Button >Login</Button>
+        <Button block>Login</Button>
       </Form>
     );
   }
