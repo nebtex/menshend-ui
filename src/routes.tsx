@@ -38,7 +38,10 @@ export const views = {
   }),
   servicesByRole: new Route({
     path: '/services/roles/:roleId',
-    component: <ServicesWrapper />
+    component: <ServicesWrapper />,
+    onEnter: (route: any, params: any, store: any, queryParams: any) => {
+      // @TODO: What to do with the param.roleId
+    }
   }),
   editModal: new Route({
     path: '/services/roles/:roleId/:subdomain',
@@ -52,19 +55,6 @@ export const views = {
 };
 
 startRouter(views, store);
-
-
-/*observableHistory.listen((location, action) => {
-  const query = parseQueryString(location.search)
-  console.log(location.search, location.hash, action)
- 
-  if (this.props.match.pathlocation.state.query.loginError)
-    //  loginStore.updateLoginError(this.props.location.state.query.loginError);
- 
-    //if(this.props.location.state.query.Subdomain)
-    //  clientServiceStore.updateCurrentService(this.props.location.state.query.Subdomain)
-})
-})*/
 
 const routes = (
   <Provider store={store}>

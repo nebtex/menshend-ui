@@ -78,14 +78,14 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           {this.props.activeRole}
         </DropdownToggle>
         <DropdownMenu className={styles.rolesContainer}>
-          <DropdownItem className={styles.roleDropdownItem}> 
-           {"<Link to={`/ui/services`} className={styles.roleLink}>{'All'}</Link>"}
+          <DropdownItem>
+           All
           </DropdownItem>
           <DropdownItem divider />
           {roles.map((role, index) => {
             return( 
-              <DropdownItem key={index} className={classnames("role", styles.roleDropdownItem)}>
-                {"<Link to={`/ui/services/role/${role}`} className={styles.roleLink}>{role}</Link>"}
+              <DropdownItem key={index}>
+                {role}
               </DropdownItem>
             );
           })}

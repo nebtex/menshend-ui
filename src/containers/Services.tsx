@@ -39,7 +39,6 @@ export default class Services extends React.Component<IServicesProps, {}>{
         <ServicesPanel
           services={this.props.services}
           loginStatus={this.props.loginStatus} />
-
         {this.props.children}
       </div>
     );
