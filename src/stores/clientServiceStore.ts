@@ -11,6 +11,7 @@ class ClientServiceStore {
   @observable currentService:ClientService
   @observable currentRole:string
   @observable availableRoles: Array<string>
+  @observable roleServicesList: string 
   currentDomain:string
 
   constructor() {
@@ -35,6 +36,10 @@ class ClientServiceStore {
     const obtainedService = this.services.filter(service => (service.meta.roleId === role && service.meta.subDomain === this.currentDomain))[0]
     this.currentService = obtainedService
     this.currentRole = role
+  }
+
+  @action updateRoleServicesList = (roleId:string) => {
+    this.roleServicesList = roleId;
   }
 
   @action load() {

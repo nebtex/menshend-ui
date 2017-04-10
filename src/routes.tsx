@@ -40,7 +40,7 @@ export const views = {
     path: '/services/roles/:roleId',
     component: <ServicesWrapper />,
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
-      // @TODO: What to do with the param.roleId
+      clientServiceStore.updateRoleServicesList(params.roleId);
     }
   }),
   editModal: new Route({

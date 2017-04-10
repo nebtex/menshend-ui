@@ -16,6 +16,7 @@ interface IServicesListProps {
   loginStatus: any;
   loading: boolean;
   openEditModal: any;
+  activeRoleId?: string;
 }
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{

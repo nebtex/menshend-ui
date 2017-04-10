@@ -14,6 +14,8 @@ interface IServicesProps {
   services?: Array<ClientService>;
   loginStatus?: any;
   space?: any;
+  activeRoleId?: string;
+  handleRoleNavigation?: any;
 }
 
 export default class Services extends React.Component<IServicesProps, {}>{
@@ -38,7 +40,9 @@ export default class Services extends React.Component<IServicesProps, {}>{
         <NavBar environment={this.props.space} />
         <ServicesPanel
           services={this.props.services}
-          loginStatus={this.props.loginStatus} />
+          loginStatus={this.props.loginStatus} 
+          activeRoleId={this.props.activeRoleId}
+          handleRoleNavigation={this.props.handleRoleNavigation}/>
         {this.props.children}
       </div>
     );

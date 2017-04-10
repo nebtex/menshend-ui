@@ -5,10 +5,18 @@ import { toJS } from 'mobx';
 import clientServiceStore from '../stores/clientServiceStore';
 import loginStore from '../stores/loginStore';
 import spaceStore from '../stores/spaceStore';
+import router from '../stores/router';
+import { views } from '../routes';
 
 @observer class ServicesWrapper extends React.Component<{}, {}>{
+  handleRoleNavigation = (roleId:string) => {
+    router.goTo(views.servicesByRole, {roleId:roleId})
+  }
+
   render() {
     const services = toJS(clientServiceStore.services);
+    const activeRoleId = clientServiceStore.roleServicesList;
+
     const loginStatus = {
       isAdmin: loginStore.isAdmin,
       canImpersonate: loginStore.canImpersonate,
@@ -29,7 +37,9 @@ import spaceStore from '../stores/spaceStore';
         <Services 
           services={services}
           loginStatus={loginStatus}
-          space={space} />
+          space={space} 
+          activeRoleId={activeRoleId}
+          handleRoleNavigation={this.handleRoleNavigation} />
       </div>
     );
   }

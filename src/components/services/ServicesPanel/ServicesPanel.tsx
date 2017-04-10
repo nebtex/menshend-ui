@@ -10,10 +10,10 @@ import { Col, Container, Row, Form, FormGroup, Input, Dropdown,
 let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
-  // services: ClientService[];
   services?: Array<ClientService>;
   loginStatus?: any;
-  activeRole?: string;
+  activeRoleId?: string;
+  handleRoleNavigation?: any;
 }
 
 interface IServicesPanelState {
@@ -39,7 +39,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
   }
 
   static defaultProps = {
-    activeRole: 'All'
+    activeRoleId: 'All'
   }
 
   toggleEditModalOpen = () => {
@@ -75,7 +75,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className={styles.rolesDropdown}>
         <DropdownToggle caret>
-          {this.props.activeRole}
+          {this.props.activeRoleId}
         </DropdownToggle>
         <DropdownMenu className={styles.rolesContainer}>
           <DropdownItem>
@@ -84,7 +84,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
           <DropdownItem divider />
           {roles.map((role, index) => {
             return( 
-              <DropdownItem key={index}>
+              <DropdownItem key={index} onClick={() => {this.props.handleRoleNavigation(role)}}>
                 {role}
               </DropdownItem>
             );
@@ -117,9 +117,9 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     let services = this.props.services;
 
     // Active Filter
-    if (this.props.activeRole !== 'All') {
+    if (this.props.activeRoleId !== 'All') {
       services = services.filter((service) => {
-        return service.meta.roleId === this.props.activeRole;
+        return service.meta.roleId === this.props.activeRoleId;
       });
     }
 
@@ -189,7 +189,8 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
             services={services} 
             loginStatus={this.props.loginStatus} 
             loading={this.state.loadingSearch} 
-            openEditModal={this.setModalService}/>
+            openEditModal={this.setModalService} 
+            activeRoleId={this.props.activeRoleId}/>
         </Row>
       </Container>
     );
