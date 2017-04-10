@@ -20,7 +20,7 @@ export interface IMonacoProps {
     editorDidMount?: { (editor: monaco.editor.IStandaloneCodeEditor, monaco: any): void },
     editorWillMount?: { (monaco: any): void },
     onChange?: { (value: any, evt: any): void },
-    requireConfig?: { url?: string, paths?: { vs?: string } },
+    requireConfig?:any,
 }
 
 export default class Monaco extends React.Component<IMonacoProps, {}> {
@@ -37,11 +37,11 @@ export default class Monaco extends React.Component<IMonacoProps, {}> {
         defaultValue: '',
         language: 'javascript',
         theme: 'vs',
-        options: {},
+        options: {baseUrl: "/static/"},
         editorDidMount: noop,
         editorWillMount: noop,
         onChange: noop,
-        requireConfig: { url: "/vs/loader.js" },
+        requireConfig: { baseUrl: "/static/", url: "/static/vs/loader.js", paths:{vs: "/vs"} },
     };
 
     constructor(props: IMonacoProps) {
@@ -85,17 +85,14 @@ export default class Monaco extends React.Component<IMonacoProps, {}> {
         const loaderUrl = requireConfig.url || this.defaultProps.requireConfig.url;
         const onGotAmdLoader = () => {
             console.log("yo got AMDLoader");
-
+            window.require.config({paths:{"vs": "/static/vs"}});
             if (window.__REACT_MONACO_EDITOR_LOADER_ISPENDING__) {
-                // Do not use webpack
-                if (requireConfig.paths && requireConfig.paths.vs) {
-                    window.require.config(requireConfig);
-                }
+               
             }
 
             // Load monaco
             window.require([`vs/editor/editor.main`], () => {
-                console.log("initializing monaco");
+               // console.log("initializing monaco");
                 this.initMonaco();
             });
 
@@ -145,6 +142,7 @@ export default class Monaco extends React.Component<IMonacoProps, {}> {
         if (typeof monaco !== 'undefined') {
             // Before initializing monaco editor
             this.editorWillMount(monaco);
+            
             this.editor = monaco.editor.create(containerElement, {
                 value,
                 language,

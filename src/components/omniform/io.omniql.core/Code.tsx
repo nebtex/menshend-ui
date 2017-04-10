@@ -33,8 +33,8 @@ const Code: React.StatelessComponent<IRendererProps<string>> = (props: IRenderer
         <Monaco
           width='100%'
           height='100%'
-          language='yaml'
-          theme='vs'
+          language='lua'
+          theme='vs-dark'
           options={{ readOnly: field.disabled }}
           value={field.value}
           onChange={(value: string, evt: any) => field.on.change(value)} />
