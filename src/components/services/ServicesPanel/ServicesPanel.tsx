@@ -11,8 +11,8 @@ let styles = require('./ServicesPanel.scss');
 
 export interface IServicesPanelProps {
   // services: ClientService[];
-  services: any[];
-  user: IUser;
+  services?: Array<ClientService>;
+  loginStatus?: any;
   activeRole?: string;
 }
 
@@ -28,7 +28,7 @@ interface IServicesPanelState {
 let searchTimeout: any;
 
 export default class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
-  previousServices:ClientService[];
+  previousServices:Array<ClientService>;
 
   state = {
     dropdownOpen: false,
@@ -54,11 +54,12 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     });
   }
 
+  //@TODO: Get this from store
   getRoles = () => {
     let roles: string[] = [];
     this.props.services.forEach(service => {
-      if (roles.indexOf(service.roleId) === -1) {
-        roles.push(service.roleId);
+      if (roles.indexOf(service.meta.roleId) === -1) {
+        roles.push(service.meta.roleId);
       }
     });
 
@@ -118,7 +119,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     // Active Filter
     if (this.props.activeRole !== 'All') {
       services = services.filter((service) => {
-        return service.roleId === this.props.activeRole;
+        return service.meta.roleId === this.props.activeRole;
       });
     }
 
@@ -186,7 +187,7 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
         <Row className={styles.serviceList}>
           <ServicesList 
             services={services} 
-            user={this.props.user} 
+            loginStatus={this.props.loginStatus} 
             loading={this.state.loadingSearch} 
             openEditModal={this.setModalService}/>
         </Row>

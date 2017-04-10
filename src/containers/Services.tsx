@@ -8,46 +8,15 @@ import adminStore from '../stores/editServiceFormStore'
 import { adminForm } from '../components/edit-modal-omniform/EditModal'
 import { OmniExplorer, ViewContainer } from '../components/omniform/io.omniql.core/OmniExplorer'
 import { OmniFormID } from '../components/omniform/base'
-const mockEnvironment = {
-  name: 'Kuper',
-  short_description: 'short description',
-  long_description: 'long_description',
-  logo: ''
-};
-
-const mockServices = [
-  {
-    id: 'role/role2/subdomain13',
-    subDomain: 'subdomain13',
-    name: 'My Test Service',
-    shortDescription: 'My test service short description',
-    longDescription: 'My test service long description',
-    logo: "http://placehold.it/64x64",
-    roleId: 'role2'
-  },
-  {
-    id: 'role/role1/subdomain13',
-    subDomain: 'subdomain13',
-    name: 'My Test Service',
-    shortDescription: 'My test service short description',
-    longDescription: 'My test service long description',
-    logo: "http://placehold.it/64x64",
-    roleId: 'role1'
-  }
-];
-
-const mockUser = {
-  isLogged: true,
-  expiresAt: Date.now() + 3600000,
-  isAdmin: true,
-  canImpersonate: true
-}
+import { ClientService } from '../api/api';
 
 interface IServicesProps {
+  services?: Array<ClientService>;
+  loginStatus?: any;
+  space?: any;
 }
-@observer
-export default class Services extends React.Component<IServicesProps, {}>{
 
+export default class Services extends React.Component<IServicesProps, {}>{
   render() {
     const errorVisibility = adminStore.error ? "visible" : "hidden"
 
@@ -66,11 +35,10 @@ export default class Services extends React.Component<IServicesProps, {}>{
             </Row>
           </Container>
         </FullModal>
-        <NavBar environment={mockEnvironment} />
+        <NavBar environment={this.props.space} />
         <ServicesPanel
-          services={mockServices}
-          user={mockUser}
-          activeRole={"roleId"} />
+          services={this.props.services}
+          loginStatus={this.props.loginStatus} />
 
         {this.props.children}
       </div>

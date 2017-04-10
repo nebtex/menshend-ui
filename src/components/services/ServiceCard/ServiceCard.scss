@@ -33,13 +33,17 @@
   padding: 1.25rem 0;
 }
 
-.cardContainer{
+.cardContainer {
   display: flex;
   padding:16px;
   flex-direction: column;
   height: 100%;
 }
 
-.rowHeader{
+.rowHeader {
   flex-grow: 1;
+}
+
+.modal {
+  max-width: 80%;
 }

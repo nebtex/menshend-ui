@@ -2,7 +2,7 @@ import { ILoginFormProps } from './components/login/LoginForm/LoginForm';
 import * as React from 'react';
 import App from './containers/App';
 import LoginWrapper from './wrappers/LoginWrapper';
-import Services from './containers/Services';
+import ServicesWrapper from './wrappers/ServicesWrapper';
 import { History } from 'history'
 import { MobxRouter, RouterStore, startRouter, Route } from 'mobx-router';
 import routerStore from './stores/router'
@@ -34,15 +34,15 @@ export const views = {
   }),
   services: new Route({
     path: '/services',
-    component: <Services />
+    component: <ServicesWrapper />
   }),
   servicesByRole: new Route({
     path: '/services/roles/:roleId',
-    component: <Services />
+    component: <ServicesWrapper />
   }),
   editModal: new Route({
     path: '/services/roles/:roleId/:subdomain',
-    component: <Services />,
+    component: <ServicesWrapper />,
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       adminStore.roleId = params.roleId
       adminStore.subdomain = params.subdomain

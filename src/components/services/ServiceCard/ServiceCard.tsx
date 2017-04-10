@@ -8,8 +8,8 @@ let styles = require('./ServiceCard.scss');
 
 export interface IServiceCardProps {
   // service: ClientService;
-  service: any;
-  user: IUser;
+  service: ClientService;
+  loginStatus: any;
   openEditModal: any;
 }
 
@@ -25,7 +25,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   getRolesBadges = () => {
     return (
       <div className={styles.rolesContainer}>
-        <Badge className={styles.roleBadge}>{this.props.service.roleId}</Badge>
+        <Badge className={styles.roleBadge}>{this.props.service.meta.roleId}</Badge>
       </div>
     );
   }
@@ -50,12 +50,21 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   }
 
   render(){
-    let service = this.props.service,
-        user = this.props.user;
+    const { service, loginStatus } = this.props;
+    const { meta } = service;
         
-    let editButton = user.isAdmin ? (<Button onClick={this.editService} className={styles.button} color="primary" outline>Edit</Button>) : null,
-        deleteButton = user.isAdmin ? (<Button onClick={this.deleteService} className={styles.button} color="danger" outline>Delete</Button>) : null,
+    const editButton = loginStatus.isAdmin ? (<Button onClick={this.editService} className={styles.button} color="primary" outline>Edit</Button>) : null,
+        deleteButton = loginStatus.isAdmin ? (<Button onClick={this.deleteService} className={styles.button} color="danger" outline>Delete</Button>) : null,
         rolesBadges = this.getRolesBadges();
+    
+    let longDescription:string;
+    if(meta.longDescription && meta.longDescription.local && meta.longDescription.local.content) {
+      longDescription = meta.longDescription.local.content;
+    } else if(meta.longDescription && meta.longDescription.remote && meta.longDescription.remote.content) {
+      longDescription = meta.longDescription.remote.content;
+    } else {
+      longDescription = ''
+    }
 
     return (
       <Card onClick={this.toggleDescription} className={styles.card}>
@@ -63,7 +72,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
           <Row className={styles.rowHeader}>
             <Col xs="4">
               <CardBlock>
-                {service.logo ? (<CardImg width="64" height="64" src={service.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
+                {service.meta.logo ? (<CardImg width="64" height="64" src={service.meta.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
               </CardBlock>
               <Row className={styles.rolesBadgesRow}>
                 {rolesBadges}
@@ -71,9 +80,9 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
             </Col>
             <Col>
               <CardBlock className={styles.secondBlock}>
-                <CardTitle>{service.name}</CardTitle>
+                <CardTitle>{service.meta.name}</CardTitle>
                 <CardText>
-                  {service.shortDescription}
+                  {service.meta.description}
                 </CardText>
               </CardBlock> 
             </Col>
@@ -84,10 +93,10 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
             <Button className={styles.button} onClick={this.goToService} color="success" outline>Go</Button>
           </Row>
         </div>
-        <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} >
-          <ModalHeader toggle={this.toggleDescription}> {service.name} </ModalHeader>
+        <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} className={styles.modal}>
+          <ModalHeader toggle={this.toggleDescription}> {service.meta.name} </ModalHeader>
           <ModalBody>
-            <ReactMarkdown source={ service.longDescription }/>
+            <ReactMarkdown source={ longDescription }/>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggleDescription}>OK</Button>

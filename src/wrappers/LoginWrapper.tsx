@@ -8,15 +8,7 @@ import flashStore from '../stores/flashStore';
 import spaceStore from '../stores/spaceStore';
 import clientServiceStore from '../stores/clientServiceStore';
 
-interface ILoginWrapperProps  {
-  params?: any;
-  route?: any;
-  routeParams?: any;
-  router?: any;
-  routes?: any;
-}
-
-@observer class LoginWrapper extends React.Component<ILoginWrapperProps, {}>{
+@observer class LoginWrapper extends React.Component<{}, {}>{
   handleRoleUpdate = (role:string) => {
     clientServiceStore.updateRole(role)
   }

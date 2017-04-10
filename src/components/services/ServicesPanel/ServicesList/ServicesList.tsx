@@ -12,13 +12,17 @@ interface IServicesListState {
 }
 
 interface IServicesListProps {
-  services: ClientService[];
-  user: IUser;
+  services: Array<ClientService>;
+  loginStatus: any;
   loading: boolean;
   openEditModal: any;
 }
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{
+  static defaultProps = {
+    services: new Array()
+  }
+
   getItemsPerRow = () => {
     let width = window.innerWidth;
     if (width >= 1100){
@@ -49,8 +53,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
   }
 
   getRows = () => {
-    let user = this.props.user
-    let services = this.props.services || [];
+    const { loginStatus, services } = this.props;
     let rowComponents:any[] = [];
     let rows:any[] = [], tempArray:any;
 
@@ -69,7 +72,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
             let colStyle = lastRow ? {flexBasis: (100/this.state.itemsPerRow) + '%', flexGrow: 0} : null;
             return (
               <Col  className={styles.col} key={rowItemIndex} style={colStyle}>
-                <ServiceCard service={service} user={user} openEditModal={this.props.openEditModal}/>
+                <ServiceCard service={service} loginStatus={loginStatus} openEditModal={this.props.openEditModal}/>
               </Col>
             );
           })}
