@@ -1,0 +1,50 @@
+.section {
+  padding: 24px 0;
+}
+
+.descriptionImageContainer {
+  text-align: center;
+}
+
+.descriptionInfo {
+  text-align: justify;
+}
+
+.featureDescription {
+  text-align: justify;
+}
+
+.featureHeader {
+  padding: 1rem 0;
+}
+
+.sectionHeader {
+  justify-content: center;
+  >h3 {
+    margin-bottom: 2rem;
+  }
+}
+
+.footer {
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  >a {
+    padding:0 8px;
+  }
+}
+
+.footerMessage {
+  text-align:center;
+}
+
+.descriptionImage {
+  max-width: 100%;
+  height: auto;
+}
