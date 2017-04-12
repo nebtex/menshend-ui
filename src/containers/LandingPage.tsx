@@ -5,19 +5,31 @@ import * as ReactMarkdown from 'react-markdown';
 let styles = require('./LandingPage.scss');
 
 export class LandingPage extends React.Component<{},{}>{
+  refs: {
+    scrollSpyList: HTMLDivElement;
+  } = {
+    scrollSpyList: null
+  }
+
+  fixSpyListPosition = () => {
+    const spyListOffset = this.refs.scrollSpyList.getBoundingClientRect();
+    //@TODO it's neccessary to compare the scrollSpyList with the elements container
+    //@TODO Fix the styles
+    if(spyListOffset.top <= 0){
+      this.refs.scrollSpyList.style.position = 'fixed';
+      this.refs.scrollSpyList.style.top = '0px';
+    }
+  } 
+
   componentDidMount() {
-    Events.scrollEvent.register('begin', function(to:any, element:any) {
-      console.log("begin", arguments);
-    });
-    Events.scrollEvent.register('end', function(to:any, element:any) {
-      console.log("end", arguments);
-    });
+    window.addEventListener('scroll', this.fixSpyListPosition);
     scrollSpy.update();
   }
 
   componentWillUnmount() {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
+    window.removeEventListener('scroll', this.fixSpyListPosition);
   }
 
   getMainDescriptionSection = () => {
@@ -119,7 +131,7 @@ export class LandingPage extends React.Component<{},{}>{
         </Row>
         <Row>
           <Col md="3">
-            <div className={styles.scrollSpyLinks}>
+            <div className={styles.scrollSpyLinks} ref={(i: any) => { this.refs.scrollSpyList = i; }}>
               <ul className="nav nav-pills" style={{flexDirection:'column'}}>
                 <li className="nav-item">
                   <Link activeClass="active" className="nav-link" to="test1" spy={true} smooth={true} duration={500}>
@@ -194,7 +206,7 @@ export class LandingPage extends React.Component<{},{}>{
   render(){
     const mainDescriptionSection = this.getMainDescriptionSection();
     const featuresSection = this.getFeaturesSection();
-    const ScrollspySection = this.getScrollspySection();
+    const scrollspySection = this.getScrollspySection();
     const gettingStartedSection = this.getGettingStartedSection();
     const footer = this.getFooter();
     return (
@@ -207,7 +219,7 @@ export class LandingPage extends React.Component<{},{}>{
         <div>
           {mainDescriptionSection}
           {featuresSection}
-          {ScrollspySection}
+          {scrollspySection}
           {gettingStartedSection}
           {footer}
         </div>
