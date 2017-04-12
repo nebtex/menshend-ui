@@ -48,3 +48,13 @@
   max-width: 100%;
   height: auto;
 }
+
+.scrollSpyContainer {
+  height: 800px;
+  overflow-y: scroll;
+}
+
+.scrollSpyElement {
+  text-align: justify;
+  margin-bottom: 32px;
+}

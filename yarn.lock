@@ -190,6 +190,12 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-scroll@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@types/react-scroll/-/react-scroll-0.0.31.tgz#1bb26bfd9f595da6403c2f13c2f9a3ed4d2929fa"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-test-renderer@^15.4.2":
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-15.4.2.tgz#4cc8232db85f13a63411b2487fbe1d3251e11f3f"
@@ -5590,6 +5596,12 @@ react-monaco-editor@^0.7.3:
     monaco-editor "~0.7.x"
     react "^15.1.0"
     react-dom "^15.2.1"
+
+react-scroll@^1.4.8:
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.4.8.tgz#e441ecad47f319011ef7b973b5629876bfce5327"
+  dependencies:
+    object-assign "^4.0.1"
 
 react-simple-di@^1.2.0:
   version "1.2.0"

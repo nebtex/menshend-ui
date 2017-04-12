@@ -9,6 +9,11 @@ body, html, #root {
     display: flex;
   }
 
+  .isCurrent {
+    background:red;
+    color:blue;
+  }
+
   // JSON pretty
   .json-pretty {
     line-height: 1.3;
