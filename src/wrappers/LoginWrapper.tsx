@@ -6,6 +6,8 @@ import loginStore from '../stores/loginStore';
 import networkStore from '../stores/networkStore';
 import flashStore from '../stores/flashStore';
 import spaceStore from '../stores/spaceStore';
+import router from '../stores/router';
+import { views } from '../routes';
 import clientServiceStore from '../stores/clientServiceStore';
 
 @observer class LoginWrapper extends React.Component<{}, {}>{
@@ -13,8 +15,11 @@ import clientServiceStore from '../stores/clientServiceStore';
     clientServiceStore.updateRole(role)
   }
 
+  handleTagNavigation = (tag:string) => {
+    router.goTo(views.services, null, null, {tag:tag})
+  }
+
   render() {
-    
     const flashes = flashStore.flashes;
     const space = {
       name: spaceStore.name,
@@ -49,7 +54,8 @@ import clientServiceStore from '../stores/clientServiceStore';
           loading={loadingLogin} 
           availableRoles={availableRoles}
           currentRole={currentRole}
-          handleRoleUpdate={this.handleRoleUpdate} />
+          handleRoleUpdate={this.handleRoleUpdate} 
+          handleTagNavigation={this.handleTagNavigation}/>
       </div>
     );
   }

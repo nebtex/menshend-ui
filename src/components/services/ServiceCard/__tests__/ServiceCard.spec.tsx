@@ -13,7 +13,7 @@ describe('ServiceCard', () => {
     const testProps = Cases['User is admin'];
 
     beforeEach(() => {
-      serviceCard = mount(<ServiceCard {...testProps} />);
+      // serviceCard = mount(<ServiceCard {...testProps} />);
     });
 
     it('should render all the buttons', () => {
@@ -32,7 +32,7 @@ describe('ServiceCard', () => {
     let testProps = Cases['User is not admin'];
 
     beforeEach(() => {
-      serviceCard = mount(<ServiceCard {...Cases['User is not admin']} />);
+      // serviceCard = mount(<ServiceCard {...Cases['User is not admin']} />);
     });
 
     it('should render only "Go" button', () => {

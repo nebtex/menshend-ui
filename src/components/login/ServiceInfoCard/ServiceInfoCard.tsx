@@ -13,6 +13,7 @@ export interface IServiceInfoCardProps {
   availableRoles?:Array<string>
   currentRole?:string
   handleRoleUpdate?:{(role:string):void}
+  handleTagNavigation?: any;
 }
 
 interface IServiceInfoCardState {
@@ -117,7 +118,7 @@ export default class ServiceInfoCard extends React.Component<IServiceInfoCardPro
       return (
         <div className={styles.tagsRenderer}>
           {meta.tags.map((tag, index) => {
-            return <Badge key={index} onClick={() => {router.goTo(views.services, null, null, {tag:tag})}}>{tag}</Badge>
+            return <Badge key={index} onClick={() => {this.props.handleTagNavigation(tag)}}>{tag}</Badge>
           })}
         </div>
       )

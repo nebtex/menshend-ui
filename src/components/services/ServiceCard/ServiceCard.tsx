@@ -8,9 +8,9 @@ let styles = require('./ServiceCard.scss');
 
 export interface IServiceCardProps {
   // service: ClientService;
-  service: ClientService;
-  loginStatus: any;
-  openEditModal: any;
+  service?: ClientService;
+  loginStatus?: any;
+  openEditModal?: any;
 }
 
 interface IServiceCardState {

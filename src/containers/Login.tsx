@@ -30,6 +30,7 @@ interface ILoginProps {
   availableRoles?:Array<string>
   currentRole?:string
   handleRoleUpdate?:{(role:string):void}
+  handleTagNavigation?: any;
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -109,7 +110,8 @@ interface ILoginProps {
               userIsLogged={this.props.loginStatus.isLogged}
               availableRoles={this.props.availableRoles}
               currentRole={this.props.currentRole} 
-              handleRoleUpdate={this.props.handleRoleUpdate} />
+              handleRoleUpdate={this.props.handleRoleUpdate} 
+              handleTagNavigation={this.props.handleTagNavigation} />
             {errorPanel}
             {loginForm}
           </Col>

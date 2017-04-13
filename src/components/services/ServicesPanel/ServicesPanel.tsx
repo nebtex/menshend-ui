@@ -34,12 +34,12 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     dropdownOpen: false,
     searchValue: '',
     loadingSearch: false,
-    editModalOpen: false,
-    modalService: this.props.services[0]
+    editModalOpen: false
   }
 
   static defaultProps = {
-    activeRoleId: 'All'
+    activeRoleId: 'All',
+    services: new Array()
   }
 
   toggleEditModalOpen = () => {
