@@ -9,6 +9,7 @@
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
     "test": "jest -i",
+    "coverage": "codecov",
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
