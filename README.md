@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/NebTex/react-typescript-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/NebTex/react-typescript-boilerplate)
+[![codecov](https://codecov.io/gh/NebTex/menshend-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/NebTex/menshend-ui)
 [![Build Status](https://travis-ci.org/nebtex/menshend-ui.svg?branch=master)](https://travis-ci.org/nebtex/menshend-ui)
 
 React Typescript Boilerplate
