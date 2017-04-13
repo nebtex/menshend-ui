@@ -4,20 +4,31 @@ import { Link, Element, Events, scrollSpy, animateScroll, Button } from 'react-s
 import * as ReactMarkdown from 'react-markdown';
 let styles = require('./LandingPage.scss');
 
+const PADDING_LIST_CONTAINER = 15;
+
 export class LandingPage extends React.Component<{},{}>{
   refs: {
     scrollSpyList: HTMLDivElement;
+    scrollElements: HTMLDivElement;
+    listContainer: any;
   } = {
-    scrollSpyList: null
+    scrollSpyList: null,
+    scrollElements: null,
+    listContainer: null
   }
 
   fixSpyListPosition = () => {
     const spyListOffset = this.refs.scrollSpyList.getBoundingClientRect();
-    //@TODO it's neccessary to compare the scrollSpyList with the elements container
-    //@TODO Fix the styles
-    if(spyListOffset.top <= 0){
+    const spyElementsOffset = this.refs.scrollElements.getBoundingClientRect();
+    const listContainer:HTMLDivElement = this.refs.listContainer.getDOMNode();
+    
+    if(spyElementsOffset.top <= 0){
       this.refs.scrollSpyList.style.position = 'fixed';
+      this.refs.scrollSpyList.style.width = listContainer.offsetWidth - (PADDING_LIST_CONTAINER * 2) + 'px';
       this.refs.scrollSpyList.style.top = '0px';
+    }else {
+      this.refs.scrollSpyList.style.position = 'relative';
+      this.refs.scrollSpyList.style.width = '100%';
     }
   } 
 
@@ -130,8 +141,8 @@ export class LandingPage extends React.Component<{},{}>{
           <h3>Scrollspy Section</h3>
         </Row>
         <Row>
-          <Col md="3">
-            <div className={styles.scrollSpyLinks} ref={(i: any) => { this.refs.scrollSpyList = i; }}>
+          <Col md="3" ref={(element: any) => { this.refs.listContainer = element; }}>
+            <div className={styles.scrollSpyLinks} ref={(i: HTMLDivElement) => { this.refs.scrollSpyList = i; }}>
               <ul className="nav nav-pills" style={{flexDirection:'column'}}>
                 <li className="nav-item">
                   <Link activeClass="active" className="nav-link" to="test1" spy={true} smooth={true} duration={500}>
@@ -157,7 +168,7 @@ export class LandingPage extends React.Component<{},{}>{
             </div>
           </Col>
           <Col md="9">
-            <div>
+            <div ref={(i: any) => { this.refs.scrollElements = i; }}>
               <Element name="test1" className={styles.scrollSpyElement}>
                 <h5>Test 1</h5>
                 test 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet massa lacus, quis auctor ex fringilla non. Praesent ut varius est, sed feugiat nisi. Maecenas arcu dui, varius in suscipit pulvinar, euismod nec enim. Cras blandit leo et magna aliquam feugiat. Vivamus efficitur purus vel eros facilisis tincidunt. Nunc gravida enim eget porta gravida. Nam gravida eros ac maximus vehicula. Mauris ullamcorper purus eu ante volutpat, at bibendum eros vulputate. Duis pretium rhoncus nunc. Suspendisse est libero, ullamcorper sed blandit pellentesque, bibendum vitae massa. Sed viverra nec tellus eget facilisis. Suspendisse feugiat tortor nec nisl fringilla, a tempor lectus placerat. Nulla tincidunt, libero eget dapibus hendrerit, augue metus elementum augue, sed varius purus leo a tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet massa lacus, quis auctor ex fringilla non. Praesent ut varius est, sed feugiat nisi. Maecenas arcu dui, varius in suscipit pulvinar, euismod nec enim. Cras blandit leo et magna aliquam feugiat. Vivamus efficitur purus vel eros facilisis tincidunt. Nunc gravida enim eget porta gravida. Nam gravida eros ac maximus vehicula. Mauris ullamcorper purus eu ante volutpat, at bibendum eros vulputate. Duis pretium rhoncus nunc. Suspendisse est libero, ullamcorper sed blandit pellentesque, bibendum vitae massa. Sed viverra nec tellus eget facilisis. Suspendisse feugiat tortor nec nisl fringilla, a tempor lectus placerat. Nulla tincidunt, libero eget dapibus hendrerit, augue metus elementum augue, sed varius purus leo a tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet massa lacus, quis auctor ex fringilla non. Praesent ut varius est, sed feugiat nisi. Maecenas arcu dui, varius in suscipit pulvinar, euismod nec enim. Cras blandit leo et magna aliquam feugiat. Vivamus efficitur purus vel eros facilisis tincidunt. Nunc gravida enim eget porta gravida. Nam gravida eros ac maximus vehicula. Mauris ullamcorper purus eu ante volutpat, at bibendum eros vulputate. Duis pretium rhoncus nunc. Suspendisse est libero, ullamcorper sed blandit pellentesque, bibendum vitae massa. Sed viverra nec tellus eget facilisis. Suspendisse feugiat tortor nec nisl fringilla, a tempor lectus placerat. Nulla tincidunt, libero eget dapibus hendrerit, augue metus elementum augue, sed varius purus leo a tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet massa lacus, quis auctor ex fringilla non. Praesent ut varius est, sed feugiat nisi. Maecenas arcu dui, varius in suscipit pulvinar, euismod nec enim. Cras blandit leo et magna aliquam feugiat. Vivamus efficitur purus vel eros facilisis tincidunt. Nunc gravida enim eget porta gravida. Nam gravida eros ac maximus vehicula. Mauris ullamcorper purus eu ante volutpat, at bibendum eros vulputate. Duis pretium rhoncus nunc. Suspendisse est libero, ullamcorper sed blandit pellentesque, bibendum vitae massa. Sed viverra nec tellus eget facilisis. Suspendisse feugiat tortor nec nisl fringilla, a tempor lectus placerat. Nulla tincidunt, libero eget dapibus hendrerit, augue metus elementum augue, sed varius purus leo a tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet massa lacus, quis auctor ex fringilla non.
