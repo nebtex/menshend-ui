@@ -8,7 +8,7 @@
     "fix-types": "bash ./scripts/fixTypes.sh",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",
-    "test": "jest",
+    "test": "jest -i",
     "storybook": "node scripts/storybook.js && start-storybook -p 6006"
   },
   "devDependencies": {
