@@ -3,7 +3,6 @@ import * as React from 'react';
 import App from './containers/App';
 import LoginWrapper from './wrappers/LoginWrapper';
 import ServicesWrapper from './wrappers/ServicesWrapper';
-import { LandingPage } from './containers/LandingPage';
 import { History } from 'history'
 import { MobxRouter, RouterStore, startRouter, Route } from 'mobx-router';
 import routerStore from './stores/router'
@@ -22,10 +21,6 @@ const store = {
 };
 
 export const views = {
-  landing: new Route({
-    path: '/',
-    component: <LandingPage />
-  }),
   login: new Route({
     path: '/login',
     component: <LoginWrapper />,

@@ -3,6 +3,8 @@
   "scripts": {
     "build": "webpack --config ./webpack.production.js --progress",
     "start": "webpack-dev-server --config ./webpack.dev.js",
+    "build:landing": "webpack --config ./webpack.landing.prod.js --progress",
+    "start:landing": "webpack-dev-server --config ./webpack.landing.dev.js",
     "fix-types": "bash ./scripts/fixTypes.sh",
     "fix-fuse": "node scripts/fuseFix.js",
     "postinstall": "yarn fix-types && yarn fix-fuse",

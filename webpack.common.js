@@ -3,7 +3,6 @@ const pkg = require('./package.json')
 
 const config = {
   entry: {
-    bundle: "./src/index.tsx",
     vendor: [
       'reactstrap',
       'mobx',

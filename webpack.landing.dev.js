@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path')
 const config = webpackMerge(commonConfig, {
   entry: {
-    bundle: "./src/index.tsx"
+    bundle: "./src/landing/index.tsx"
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -20,7 +20,6 @@ const config = webpackMerge(commonConfig, {
   output: {
     filename: "[name].js",
     publicPath: '/'
-
   }
 });
 
