@@ -22,7 +22,7 @@ production build:
     - yarn global add jest
     - export PATH="./node_modules/.bin:$PATH"
     - yarn build
-    - yanr build:landing
+    - yarn build:landing
 
 push:
   only:
