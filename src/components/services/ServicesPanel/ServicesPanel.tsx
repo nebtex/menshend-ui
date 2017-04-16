@@ -14,6 +14,7 @@ export interface IServicesPanelProps {
   loginStatus?: any;
   activeRoleId?: string;
   handleRoleNavigation?: any;
+  handleTagNavigation?: {(tag:string):void};
 }
 
 interface IServicesPanelState {
@@ -190,7 +191,8 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
             loginStatus={this.props.loginStatus} 
             loading={this.state.loadingSearch} 
             openEditModal={this.setModalService} 
-            activeRoleId={this.props.activeRoleId}/>
+            activeRoleId={this.props.activeRoleId} 
+            handleTagNavigation={this.props.handleTagNavigation} />
         </Row>
       </Container>
     );

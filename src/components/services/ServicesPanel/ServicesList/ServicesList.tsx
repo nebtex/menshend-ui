@@ -17,6 +17,7 @@ interface IServicesListProps {
   loading: boolean;
   openEditModal: any;
   activeRoleId?: string;
+  handleTagNavigation?: {(tag:string):void};
 }
 
 export default class ServicesList extends React.Component<IServicesListProps,{}>{
@@ -73,7 +74,7 @@ export default class ServicesList extends React.Component<IServicesListProps,{}>
             let colStyle = lastRow ? {flexBasis: (100/this.state.itemsPerRow) + '%', flexGrow: 0} : null;
             return (
               <Col  className={styles.col} key={rowItemIndex} style={colStyle}>
-                <ServiceCard service={service} loginStatus={loginStatus} openEditModal={this.props.openEditModal}/>
+                <ServiceCard service={service} loginStatus={loginStatus} openEditModal={this.props.openEditModal} handleTagNavigation={this.props.handleTagNavigation}/>
               </Col>
             );
           })}
