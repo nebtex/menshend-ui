@@ -41,6 +41,9 @@ export const views = {
     component: <ServicesWrapper />,
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       clientServiceStore.updateRoleServicesList(params.roleId);
+    },
+    onParamsChange: (route: any, params: any, store: any) => {
+      clientServiceStore.updateRoleServicesList(params.roleId);
     }
   }),
   editModal: new Route({

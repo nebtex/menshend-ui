@@ -3,6 +3,7 @@ import * as classnames from 'classnames';
 import { IService, IUser } from '../../../models/interface';
 import ServicesList from './ServicesList/ServicesList';
 import Fuse = require('fuse.js');
+import { observer } from 'mobx-react';
 import { ClientService } from '../../../api/api';
 import { Col, Container, Row, Form, FormGroup, Input, Dropdown, 
          DropdownItem, DropdownMenu, DropdownToggle, Label } from 'reactstrap';
@@ -28,7 +29,7 @@ interface IServicesPanelState {
 
 let searchTimeout: any;
 
-export default class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
+@observer class ServicesPanel extends React.Component<IServicesPanelProps, IServicesPanelState>{
   previousServices:Array<ClientService>;
 
   state = {
@@ -76,10 +77,10 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className={styles.rolesDropdown}>
         <DropdownToggle caret>
-          {this.props.activeRoleId}
+          {this.props.activeRoleId || 'All'}
         </DropdownToggle>
         <DropdownMenu className={styles.rolesContainer}>
-          <DropdownItem>
+          <DropdownItem onClick={() => {this.props.handleRoleNavigation()}}>
            All
           </DropdownItem>
           <DropdownItem divider />
@@ -198,3 +199,5 @@ export default class ServicesPanel extends React.Component<IServicesPanelProps, 
     );
   }
 }
+
+export default ServicesPanel;
