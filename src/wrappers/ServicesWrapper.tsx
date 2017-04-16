@@ -7,6 +7,7 @@ import loginStore from '../stores/loginStore';
 import spaceStore from '../stores/spaceStore';
 import router from '../stores/router';
 import { views } from '../routes';
+let styles = require('./ServicesWrapper.scss');
 
 @observer class ServicesWrapper extends React.Component<{}, {}>{
   handleRoleNavigation = (roleId:string) => {
@@ -37,7 +38,7 @@ import { views } from '../routes';
     }
 
     return (
-      <div>
+      <div className={styles.container}>
         <Services 
           services={services}
           loginStatus={loginStatus}
