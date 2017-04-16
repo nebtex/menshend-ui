@@ -21,10 +21,6 @@
   justify-content: flex-end;
 }
 
-.button {
-  margin:0 4px;
-}
-
 .rolesContainer{
   padding: 0 15px;
 }
@@ -44,7 +40,11 @@
   flex-grow: 1;
 }
 
-.modal {
+.serviceInfoModal {
+  max-width: 80%;
+}
+
+.secretsModal {
   max-width: 80%;
 }
 
@@ -56,4 +56,18 @@
     margin-top: 8px;
     cursor: pointer;
   }
+}
+
+.buttonsContainer {
+  display: flex;
+}
+
+.adminButtons {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.standarButtons {
+  flex-grow: 1;
+  text-align: right;
 }

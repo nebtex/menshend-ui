@@ -13,6 +13,10 @@ import { views } from '../routes';
     router.goTo(views.servicesByRole, {roleId:roleId})
   }
 
+  handleTagNavigation = (tag:string) => {
+    router.goTo(views.services, null, null, {tag:tag})
+  }
+
   render() {
     const services = toJS(clientServiceStore.services);
     const activeRoleId = clientServiceStore.roleServicesList;
@@ -39,7 +43,8 @@ import { views } from '../routes';
           loginStatus={loginStatus}
           space={space} 
           activeRoleId={activeRoleId}
-          handleRoleNavigation={this.handleRoleNavigation} />
+          handleRoleNavigation={this.handleRoleNavigation}
+          handleTagNavigation={this.handleTagNavigation} />
       </div>
     );
   }
