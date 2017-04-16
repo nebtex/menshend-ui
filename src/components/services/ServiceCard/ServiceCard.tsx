@@ -22,12 +22,18 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
     longDescriptionOpen: false
   }
 
-  getRolesBadges = () => {
-    return (
-      <div className={styles.rolesContainer}>
-        <Badge className={styles.roleBadge}>{this.props.service.meta.roleId}</Badge>
-      </div>
-    );
+  getTagsRenderer = () => {
+    let meta = this.props.service && this.props.service.meta ? this.props.service.meta : {};
+    if(meta && meta.tags && meta.tags.length > 0){
+      return (
+        <div className={styles.tagsRenderer}>
+          {meta.tags.map((tag, index) => {
+            return <Badge key={index}>{tag}</Badge>
+          })}
+        </div>
+      )
+    }
+    return null;
   }
 
   toggleDescription = () => {
@@ -55,7 +61,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
         
     const editButton = loginStatus.isAdmin ? (<Button onClick={this.editService} className={styles.button} color="primary" outline>Edit</Button>) : null,
         deleteButton = loginStatus.isAdmin ? (<Button onClick={this.deleteService} className={styles.button} color="danger" outline>Delete</Button>) : null,
-        rolesBadges = this.getRolesBadges();
+        tagsRenderer = this.getTagsRenderer();
     
     let longDescription:string;
     if(meta.longDescription && meta.longDescription.local && meta.longDescription.local.content) {
@@ -73,10 +79,8 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
             <Col xs="4">
               <CardBlock>
                 {service.meta.logo ? (<CardImg width="64" height="64" src={service.meta.logo}/>) : (<i className="fa fa-server" style={{fontSize:'64px'}}/>) }
+                <CardText>{tagsRenderer}</CardText>
               </CardBlock>
-              <Row className={styles.rolesBadgesRow}>
-                {rolesBadges}
-              </Row>
             </Col>
             <Col>
               <CardBlock className={styles.secondBlock}>

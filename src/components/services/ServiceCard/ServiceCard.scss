@@ -47,3 +47,13 @@
 .modal {
   max-width: 80%;
 }
+
+.tagsRenderer {
+  display: flex;
+  flex-wrap: wrap;
+  span {
+    margin-right: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+}
