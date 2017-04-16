@@ -10,6 +10,8 @@ stages:
   - push
 
 production build:
+  only:
+    - master
   stage: build
   script:
     - apt-get update -y && apt-get install apt-transport-https -y
@@ -20,9 +22,11 @@ production build:
     - yarn global add jest
     - export PATH="./node_modules/.bin:$PATH"
     - yarn build
-    - yanr build:landing
-    
+    - yarn build:landing
+
 push:
+  only:
+    - master
   stage: push
   script:
     - git config --global user.name "nebot"
