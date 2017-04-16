@@ -10,7 +10,7 @@ const config = webpackMerge(commonConfig, {
   entry: {
     bundle: "./src/index.tsx"
   },
-  devtool: "source-map",
+  devtool: "none",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js"

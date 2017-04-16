@@ -1,0 +1,39 @@
+image: node:6
+
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+  - node_modules/
+  untracked: true
+stages:
+  - build
+  - push
+
+production build:
+  stage: build
+  script:
+    - apt-get update -y && apt-get install apt-transport-https -y
+    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+    - apt-get update -y && apt-get install git yarn -y
+    - yarn install
+    - yarn global add jest
+    - export PATH="./node_modules/.bin:$PATH"
+    - yarn build
+    - yanr build:landing
+    
+push:
+  stage: push
+  script:
+    - git config --global user.name "nebot"
+    - git config --global user.email devbot@nebtex.com
+    - printf "$nebot_key" > $HOME/.ssh/id_rsa
+    - printf "$nebot_gpg" > $HOME/private.key
+    - gpg --import $HOME/private.key
+    - chmod 400 $HOME/.ssh/id_rsa
+    - git clone git@github.com:nebtex/menshend.git
+    - cp dist/* menshend/ui/*
+    - cd menshend 
+    - git commit -S -m "update ui to latest version"
+    - git push origin master
+
