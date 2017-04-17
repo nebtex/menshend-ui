@@ -34,16 +34,24 @@ export const views = {
   }),
   services: new Route({
     path: '/services',
-    component: <ServicesWrapper />
+    component: <ServicesWrapper />,
+    onEnter: (route: any, params: any, store: any, queryParams: any) => {
+      clientServiceStore.updateQueryTag(queryParams.tag)
+    },
+    onParamsChange: (route: any, params: any, store: any, queryParams: any) => {
+      clientServiceStore.updateQueryTag(queryParams.tag)
+    }
   }),
   servicesByRole: new Route({
     path: '/services/roles/:roleId',
     component: <ServicesWrapper />,
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       clientServiceStore.updateRoleServicesList(params.roleId);
+      clientServiceStore.updateQueryTag(queryParams.tag)
     },
-    onParamsChange: (route: any, params: any, store: any) => {
+    onParamsChange: (route: any, params: any, store: any, queryParams: any) => {
       clientServiceStore.updateRoleServicesList(params.roleId);
+      clientServiceStore.updateQueryTag(queryParams.tag)
     }
   }),
   editModal: new Route({

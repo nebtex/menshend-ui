@@ -12,6 +12,7 @@ class ClientServiceStore {
   @observable currentRole:string
   @observable availableRoles: Array<string>
   @observable roleServicesList: string 
+  @observable queryTag: string
   currentDomain:string
 
   constructor() {
@@ -40,6 +41,10 @@ class ClientServiceStore {
 
   @action updateRoleServicesList = (roleId:string) => {
     this.roleServicesList = roleId;
+  }
+
+  @action updateQueryTag = (tag:string) => {
+    this.queryTag = tag;
   }
 
   @action load() {

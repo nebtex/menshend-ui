@@ -15,6 +15,7 @@ interface IServicesProps {
   loginStatus?: any;
   space?: any;
   activeRoleId?: string;
+  queryTag?: string;
   handleRoleNavigation?: any;
   handleTagNavigation?: {(tag:string):void};
 }
@@ -43,6 +44,7 @@ export default class Services extends React.Component<IServicesProps, {}>{
           services={this.props.services}
           loginStatus={this.props.loginStatus} 
           activeRoleId={this.props.activeRoleId}
+          queryTag={this.props.queryTag}
           handleRoleNavigation={this.props.handleRoleNavigation} 
           handleTagNavigation={this.props.handleTagNavigation} />
         {this.props.children}

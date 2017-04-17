@@ -21,7 +21,7 @@ let styles = require('./ServicesWrapper.scss');
   render() {
     const services = toJS(clientServiceStore.services);
     const activeRoleId = clientServiceStore.roleServicesList;
-
+    const queryTag = clientServiceStore.queryTag;
     const loginStatus = {
       isAdmin: loginStore.isAdmin,
       canImpersonate: loginStore.canImpersonate,
@@ -45,7 +45,8 @@ let styles = require('./ServicesWrapper.scss');
           space={space} 
           activeRoleId={activeRoleId}
           handleRoleNavigation={this.handleRoleNavigation}
-          handleTagNavigation={this.handleTagNavigation} />
+          handleTagNavigation={this.handleTagNavigation}
+          queryTag={queryTag} />
       </div>
     );
   }
