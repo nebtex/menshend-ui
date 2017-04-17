@@ -23,6 +23,10 @@ production build:
     - export PATH="./node_modules/.bin:$PATH"
     - yarn build
     - yarn build:landing
+  artifacts:
+    paths:
+    - dist
+    - dist_landing
 
 publish_landing:
   only:
@@ -32,7 +36,10 @@ publish_landing:
     - wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
     - wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
     - apt-get update -y && apt-get install s3cmd -y
-    - s3cmd sync ./dist_landing  s3://menshend.io/
+    - s3cmd sync ./dist_landing/  s3://menshend.io/
+  artifacts:
+    paths:
+    - dist_landing
 
 push:
   only:
@@ -50,8 +57,10 @@ push:
     - git clone git@github.com:nebtex/menshend.git
     - rm -rf  menshend/ui
     - mkdir -p menshend/ui
-    - cp dist/* menshend/ui/*
+    - cp ./dist/* menshend/ui/*
     - cd menshend 
     - git commit -S -m "update ui to the latest version"
     - git push origin master
-
+  artifacts:
+    paths:
+    - dist
