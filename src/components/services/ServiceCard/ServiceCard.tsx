@@ -184,7 +184,12 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
             </Col>
             <Col>
               <CardBlock className={styles.secondBlock}>
-                <CardTitle>{service.meta.name}</CardTitle>
+                <div className={styles.titleRow}>
+                  <CardTitle className={styles.title}>
+                    {service.meta.name}
+                  </CardTitle>
+                  <Badge color="primary" pill className={styles.roleBadge}>{service.meta.roleId}</Badge>
+                </div>
                 <CardText>
                   {service.meta.description}
                 </CardText>
@@ -192,10 +197,10 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
             </Col>
           </Row>
           <CardText className={styles.buttonsContainer}>
-            <div className={styles.adminButtons}>
+            {/*<div className={styles.adminButtons}>
               {deleteButton}{' '}
               {editButton}{' '}
-            </div>
+            </div>*/}
             <div className={styles.standarButtons}>
               {secretsButton}{' '}
               {viewMore}{' '}
