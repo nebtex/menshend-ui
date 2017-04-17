@@ -59,6 +59,7 @@ push:
     - mkdir -p menshend/ui
     - cp -r ./dist/* menshend/ui/
     - cd menshend 
+    - git add .
     - git commit -S -m "update ui to the latest version"
     - git push origin master
   artifacts:
