@@ -5,9 +5,9 @@ cache:
   paths:
   - node_modules/
   untracked: true
+  
 stages:
   - build
-  - push
 
 production build:
   only:
@@ -25,30 +25,10 @@ production build:
     - rm -rf dist_landing
     - yarn build
     - yarn build:landing
-  artifacts:
-    expire_in: 1 hrs
-    paths:
-    - dist
-    - dist_landing
-
-publish_landing:
-  only:
-    - master
-  stage: push
-  script:
     - wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
     - wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
     - apt-get update -y && apt-get install s3cmd -y
     - s3cmd sync ./dist_landing/  s3://menshend.io/
-  artifacts:
-    paths:
-    - dist_landing
-
-push:
-  only:
-    - master
-  stage: push
-  script:
     - mkdir -p $HOME/.ssh
     - ssh-keyscan github.com >> ~/.ssh/known_hosts
     - git config --global user.name "nebot"
@@ -67,6 +47,3 @@ push:
     - git add .
     - git commit -S -m "update ui to the latest version"
     - git push origin master
-  artifacts:
-    paths:
-    - dist
