@@ -16,6 +16,7 @@ export interface IServicesPanelProps {
   activeRoleId?: string;
   handleRoleNavigation?: any;
   handleTagNavigation?: {(tag:string):void};
+  queryTag?: string;
 }
 
 interface IServicesPanelState {
@@ -125,12 +126,18 @@ let searchTimeout: any;
       });
     }
 
+    if (this.props.queryTag) {
+      services = services.filter((service) => {
+        return service.meta.tags.includes(this.props.queryTag);
+      });
+    }
+
     if (this.state.searchValue === ''){
       this.previousServices = services;
     } else if (this.state.searchValue !== '' && !this.state.loadingSearch) {
       // Apply search criteria
       let options = {
-        keys: ['name', 'long_description', 'short_description']
+        keys: ['meta.name', 'meta.long_description', 'meta.description']
       };
       let f = new Fuse<ClientService>(services, options);
       services = f.search(this.state.searchValue);

@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist_landing/
 .DS_Store
 coverage/
 yarn-error.log
