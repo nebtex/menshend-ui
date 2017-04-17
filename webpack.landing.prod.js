@@ -9,9 +9,9 @@ const config = webpackMerge(commonConfig, {
   entry: {
     bundle: "./src/landing/index.tsx"
   },
-  devtool: "source-map",
+  devtool: "none",
   output: {
-    path: path.resolve(__dirname, "dist/landing"),
+    path: path.resolve(__dirname, "dist_landing"),
     filename: "[name].js"
   },
   plugins: [

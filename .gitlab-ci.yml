@@ -24,19 +24,32 @@ production build:
     - yarn build
     - yarn build:landing
 
+publish_landing:
+  only:
+    - master
+  stage: push
+  script:
+    - wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
+    - wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
+    - apt-get update -y && apt-get install s3cmd -y
+    - s3cmd sync ./dist_landing  s3://menshend.io/
+
 push:
   only:
     - master
   stage: push
   script:
+    - mkdir -p $HOME/.ssh
+    - ssh-keyscan github.com >> ~/.ssh/known_hosts
     - git config --global user.name "nebot"
     - git config --global user.email devbot@nebtex.com
-    - printf "$nebot_key" > $HOME/.ssh/id_rsa
-    - printf "$nebot_gpg" > $HOME/private.key
+    - echo -e "$nebot_key" > $HOME/.ssh/id_rsa
+    - echo -e "$nebot_gpg" > $HOME/private.key
     - gpg --import $HOME/private.key
-    - mkdir -p $HOME/.ssh
     - chmod 400 $HOME/.ssh/id_rsa
     - git clone git@github.com:nebtex/menshend.git
+    - rm -rf  menshend/ui
+    - mkdir -p menshend/ui
     - cp dist/* menshend/ui/*
     - cd menshend 
     - git commit -S -m "update ui to the latest version"
