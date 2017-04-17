@@ -29,7 +29,9 @@ publish_landing:
     - master
   stage: push
   script:
-    - apt install s3cmd -y
+    - wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
+    - wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
+    - apt-get update -y && apt-get install s3cmd -y
     - s3cmd sync ./dist_landing  s3://menshend.io/
 
 push:
@@ -46,7 +48,8 @@ push:
     - gpg --import $HOME/private.key
     - chmod 400 $HOME/.ssh/id_rsa
     - git clone git@github.com:nebtex/menshend.git
-    - rm -rf  menshend/ui/*
+    - rm -rf  menshend/ui
+    - mkdir -p menshend/ui
     - cp dist/* menshend/ui/*
     - cd menshend 
     - git commit -S -m "update ui to the latest version"
