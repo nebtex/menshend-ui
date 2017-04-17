@@ -101,6 +101,11 @@ let searchTimeout: any;
     evt.persist();
     let searchValue: any = evt && evt.target ? evt.target.value : null;
 
+    const tagPattern = /^tag:/i;
+    if(tagPattern.test(searchValue)){
+      this.props.handleTagNavigation(searchValue.replace(tagPattern, ''));
+    }
+
     if (searchTimeout)
       clearTimeout(searchTimeout);
 
@@ -135,7 +140,7 @@ let searchTimeout: any;
     if (this.state.searchValue === ''){
       this.previousServices = services;
     } else if (this.state.searchValue !== '' && !this.state.loadingSearch) {
-      // Apply search criteria
+      // Apply search criteria\
       let options = {
         keys: ['meta.name', 'meta.long_description', 'meta.description']
       };
