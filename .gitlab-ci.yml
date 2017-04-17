@@ -32,8 +32,8 @@ push:
     - git config --global user.name "nebot"
     - git config --global user.email devbot@nebtex.com
     - mkdir -p $HOME/.ssh
-    - printf "$nebot_key" > $HOME/.ssh/id_rsa
-    - printf "$nebot_gpg" > $HOME/private.key
+    - echo -e "$nebot_key" > $HOME/.ssh/id_rsa
+    - echo -e "$nebot_gpg" > $HOME/private.key
     - gpg --import $HOME/private.key
     - chmod 400 $HOME/.ssh/id_rsa
     - git clone git@github.com:nebtex/menshend.git
