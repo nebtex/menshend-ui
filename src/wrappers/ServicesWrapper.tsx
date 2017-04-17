@@ -11,7 +11,7 @@ let styles = require('./ServicesWrapper.scss');
 
 @observer class ServicesWrapper extends React.Component<{}, {}>{
   handleRoleNavigation = (roleId:string) => {
-    router.goTo(views.servicesByRole, {roleId:roleId})
+    router.goTo(views.servicesByRole, {roleId:roleId});
   }
 
   handleTagNavigation = (tag:string) => {
