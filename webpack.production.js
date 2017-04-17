@@ -12,12 +12,12 @@ const config = webpackMerge(commonConfig, {
   },
   devtool: "none",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/static"),
     filename: "[name].js"
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'index.html' }
+      { from: 'index.html', to: "../index.html" }
     ]),
     new BabiliPlugin()
   ]
