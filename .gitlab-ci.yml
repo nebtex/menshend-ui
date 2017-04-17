@@ -24,6 +24,14 @@ production build:
     - yarn build
     - yarn build:landing
 
+publish_landing:
+  only:
+    - master
+  stage: push
+  script:
+    - apt install s3cmd -y
+    - s3cmd sync ./dist_landing  s3://menshend.io/
+     
 push:
   only:
     - master
@@ -39,6 +47,7 @@ push:
     - gpg --import $HOME/private.key
     - chmod 400 $HOME/.ssh/id_rsa
     - git clone git@github.com:nebtex/menshend.git
+    - rm -rf  menshend/ui/*
     - cp dist/* menshend/ui/*
     - cd menshend 
     - git commit -S -m "update ui to the latest version"
