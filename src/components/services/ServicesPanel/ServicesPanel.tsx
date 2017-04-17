@@ -131,30 +131,32 @@ let searchTimeout: any;
       });
     }
 
+    // if query tag exists does not apply the search criteria
     if (this.props.queryTag) {
       services = services.filter((service) => {
         return service.meta.tags.includes(this.props.queryTag);
       });
-    }
-
-    if (this.state.searchValue === ''){
-      this.previousServices = services;
-    } else if (this.state.searchValue !== '' && !this.state.loadingSearch) {
-      // Apply search criteria\
-      let options = {
-        keys: ['meta.name', 'meta.long_description', 'meta.description']
-      };
-      let f = new Fuse<ClientService>(services, options);
-      services = f.search(this.state.searchValue);
-      this.previousServices = services;
-    } else if(this.state.loadingSearch){
-      services = this.previousServices;
+    } else {
+      if (this.state.searchValue === ''){
+        this.previousServices = services;
+      } else if (this.state.searchValue !== '' && !this.state.loadingSearch) {
+        // Apply search criteria\
+        let options = {
+          keys: ['meta.name', 'meta.long_description', 'meta.description']
+        };
+        let f = new Fuse<ClientService>(services, options);
+        services = f.search(this.state.searchValue);
+        this.previousServices = services;
+      } else if(this.state.loadingSearch){
+        services = this.previousServices;
+      }
     }
 
     return services;
   }
 
   cleanSearch = () => {
+    this.props.handleTagNavigation('');
     this.setState({
       searchValue: ''
     });
@@ -162,7 +164,7 @@ let searchTimeout: any;
 
   getSearchIndicator = () => {
     let searchIndicator: any = null;
-    if (this.state.searchValue && !this.state.loadingSearch) {
+    if ((this.state.searchValue && !this.state.loadingSearch) || this.props.queryTag) {
       searchIndicator = <i className={classnames("fa fa-times fa-lg", styles.cleanSearchBtn)} onClick={this.cleanSearch} />;
     } else if (this.state.loadingSearch) {
       searchIndicator = <i className={classnames("fa fa-pulse fa-spinner", styles.searchIndicator)} />;
@@ -177,10 +179,31 @@ let searchTimeout: any;
     });
   }
 
+  getSearchInput = () => {
+    let searchValue = '';
+
+    if(this.state.searchValue){
+      searchValue = this.state.searchValue;
+    }else if(!this.state.searchValue && this.props.queryTag){
+      searchValue = 'tag:'+this.props.queryTag;
+    }
+    return <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={searchValue} />
+  }
+
+  componentWillReceiveProps(nextProps:IServicesPanelProps){
+    if(nextProps.queryTag !== this.props.queryTag){
+      this.setState({
+        searchValue: 'tag:' + nextProps.queryTag,
+        loadingSearch: false
+      })
+    }
+  }
+
   render() {
     let rolesDropdown = this.getRolesDropdown(),
       services = this.getServices(),
-      searchIndicator = this.getSearchIndicator();
+      searchIndicator = this.getSearchIndicator(),
+      searchInput = this.getSearchInput();
 
     return (
       <Container fluid className={styles.panelContainer}>
@@ -188,7 +211,7 @@ let searchTimeout: any;
           <Col>
             <Form onSubmit={(evt: any) => { evt.preventDefault() }} className={styles.searchForm} inline>
                 <FormGroup className={styles.searchFormGroup}>
-                  <Input type="test" placeholder="Search" onChange={this.searchOnChange} className={styles.searchInput} value={this.state.searchValue} />
+                  {searchInput}
                   {searchIndicator}
                 </FormGroup>
                 <FormGroup className={styles.rolesFormGroup}>
