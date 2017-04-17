@@ -58,6 +58,7 @@ push:
     - git clone git@github.com:nebtex/menshend.git
     - rm -rf  menshend/ui
     - mkdir -p menshend/ui
+    - rm -rf ./dist/landing
     - cp -r ./dist/* menshend/ui/
     - cd menshend 
     - git add .
