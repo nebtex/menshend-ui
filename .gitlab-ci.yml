@@ -53,6 +53,7 @@ push:
     - echo -e "$nebot_key" > $HOME/.ssh/id_rsa
     - echo -e "$nebot_gpg" > $HOME/private.key
     - gpg --import $HOME/private.key
+    - git config --global user.signingkey $nebot_secret_key_gpg
     - chmod 400 $HOME/.ssh/id_rsa
     - git clone git@github.com:nebtex/menshend.git
     - rm -rf  menshend/ui
