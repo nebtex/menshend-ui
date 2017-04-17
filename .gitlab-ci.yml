@@ -21,6 +21,8 @@ production build:
     - yarn install
     - yarn global add jest
     - export PATH="./node_modules/.bin:$PATH"
+    - rm -rf dist
+    - rm -rf dist_landing
     - yarn build
     - yarn build:landing
   artifacts:
