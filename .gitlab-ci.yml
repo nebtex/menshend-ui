@@ -24,6 +24,7 @@ production build:
     - yarn build
     - yarn build:landing
   artifacts:
+    expire_in: 1 hrs
     paths:
     - dist
     - dist_landing
