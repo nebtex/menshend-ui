@@ -10,7 +10,7 @@ const config = webpackMerge(commonConfig, {
   },
   devtool: 'inline-source-map',
   devServer: {
-    publicPath: '/',
+    publicPath: '/static',
     port: 8081,
     inline: true,
     historyApiFallback: {
@@ -19,7 +19,7 @@ const config = webpackMerge(commonConfig, {
   },
   output: {
     filename: "[name].js",
-    publicPath: '/'
+    publicPath: '/static'
   }
 });
 
