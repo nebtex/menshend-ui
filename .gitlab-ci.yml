@@ -31,14 +31,13 @@ publish_landing:
   script:
     - apt install s3cmd -y
     - s3cmd sync ./dist_landing  s3://menshend.io/
-     
+
 push:
   only:
     - master
   stage: push
   script:
     - mkdir -p $HOME/.ssh
-    - ssh-keygen -R github.com
     - ssh-keyscan github.com >> ~/.ssh/known_hosts
     - git config --global user.name "nebot"
     - git config --global user.email devbot@nebtex.com
