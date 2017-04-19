@@ -1,11 +1,5 @@
 image: node:6
 
-cache:
-  key: "$CI_COMMIT_REF_NAME"
-  paths:
-  - node_modules/
-  untracked: true
-  
 stages:
   - build
 
