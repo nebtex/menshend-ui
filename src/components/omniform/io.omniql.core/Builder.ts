@@ -107,7 +107,7 @@ export class OmniForm {
     setValue(path: string[], input: AdminService) {
         let obj: any = input
         path.forEach((p: string, index: number) => {
-            console.log(p.startsWith("Union/"), "&&&&&&&32323&")
+            //console.log(p.startsWith("Union/"), "&&&&&&&32323&")
             if (p.startsWith("Union/")) {
                 return
             }
@@ -124,7 +124,7 @@ export class OmniForm {
         for (let obj of values) {
             if (obj.id.isField()) {
                 let fieldLine = obj as FieldInline
-                console.log(obj.id.fieldPath(), fieldLine.props)
+                //console.log(obj.id.fieldPath(), fieldLine.props)
                 let newValue = this.getValue(obj.id.fieldPath(), input)
                 if (newValue) {
                     fieldLine.props.field.value = newValue
@@ -182,7 +182,7 @@ export class OmniFormStore {
                 formField.label = toHuman(field.name).toLowerCase()
                 formField.name = field.name
                 let props = Object.assign(fv.props || {}, { field: formField }) as { required?: boolean }
-                console.log(props, field.name, parent.id.hash())
+                //console.log(props, field.name, parent.id.hash())
 
                 if (props.required) {
                     formField.required = props.required
