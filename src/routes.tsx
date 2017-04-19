@@ -35,10 +35,10 @@ export const views = {
     path: '/login',
     component: <LoginWrapper />,
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
-      if(queryParams.loginError)
+      if(queryParams && queryParams.loginError)
         loginStore.updateLoginError(queryParams.loginError);
 
-      if(queryParams.subdomain)
+      if(queryParams && queryParams.subdomain)
         clientServiceStore.updateCurrentService(queryParams.subdomain);
     }
   }),
