@@ -21,6 +21,16 @@ const store = {
 };
 
 export const views = {
+  index: new Route({
+    path:'/',
+    onEnter: (route: any, params: any, store: any, queryParams: any) => {
+      if (loginStore.isLogged) {
+        routerStore.goTo(views.services);
+      } else {
+        routerStore.goTo(views.login);       
+      }
+    }
+  }),
   login: new Route({
     path: '/login',
     component: <LoginWrapper />,
