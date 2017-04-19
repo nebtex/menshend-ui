@@ -180,3 +180,7 @@ https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html
 In some cases the typing definitions for some dependences are already defined, but maybe the right way to import this is unknown, in that case check this resource:    
 
 https://github.com/DefinitelyTyped/DefinitelyTyped/ 
+
+## Licensing
+
+*menshend-ui* is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
