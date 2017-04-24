@@ -88,6 +88,7 @@ export default class UserPassForm extends React.Component<IUserPassFormProps, IU
     return (
       <Form action="/ui/login" method="post">
         <Input type="hidden" name="gorilla.csrf.Token" value={csrf_token} />
+        <Input type="hidden" name="method" value={this.state.activeMethod} />
         <FormGroup color={error ? "danger" : null}>
           <Label for="user">User</Label>
           <Input type="text" name="user" id="user" value={this.state.user} onChange={this.userOnChange} state={error ? "danger" : null}/>
