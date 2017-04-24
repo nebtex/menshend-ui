@@ -1,10 +1,11 @@
 import { observable, action } from 'mobx';
 import { SpaceApi, Space } from '../api/api';
 import networkStore from './networkStore';
-import { BasePath } from './variables'
+import { BasePath, ownFetch } from './variables'
 
 const spaceApi = new SpaceApi();
 spaceApi.basePath = BasePath
+spaceApi.fetch = ownFetch;
 
 class SpaceStore {
   @observable logo: string;

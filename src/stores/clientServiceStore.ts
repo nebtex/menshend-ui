@@ -1,68 +1,82 @@
-import { observable, action, IObservableArray, toJS } from 'mobx';
-import networkStore from './networkStore'; 
-import { ClientApi, ClientService } from '../api/api';
-import { BasePath } from './variables'
+import {observable, action, toJS} from "mobx";
+import networkStore from "./networkStore";
+import {ClientApi, ClientService} from "../api/api";
+import {ownFetch, BasePath} from "./variables";
 
 const clientApi = new ClientApi();
-clientApi.basePath = BasePath
+clientApi.basePath = BasePath;
+clientApi.fetch = ownFetch;
+
 
 class ClientServiceStore {
-  @observable services: Array<ClientService>
-  @observable currentService:ClientService
-  @observable currentRole:string
-  @observable availableRoles: Array<string>
-  @observable roleServicesList: string 
-  @observable queryTag: string
-   @observable currentDomain:string
+    @observable services: Array<ClientService>
+    @observable currentService: ClientService
+    @observable currentRole: string
+    @observable availableRoles: Array<string>
+    @observable roleServicesList: string
+    @observable queryTag: string
+    @observable currentDomain: string
 
-  constructor() {
-    const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
-    this.services = storagedServices;
-  }
-
-  @action updateCurrentService = (subdomain:string) => {
-    this.currentDomain = subdomain.endsWith('.') ? subdomain : subdomain + '.';
-    const obtainedServices = this.services.filter(service => service.meta.subDomain === this.currentDomain)
-    const obtainedRoles = obtainedServices.map(service => service.meta.roleId)
-
-    if((this.currentService && this.currentService.meta.subDomain !== obtainedServices[0].meta.subDomain) || !this.currentRole){
-      this.currentRole = obtainedServices[0].meta.roleId
+    constructor() {
+        const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
+        this.services = storagedServices;
     }
 
-    this.availableRoles = obtainedRoles
-    this.currentService = obtainedServices[0]
-  }
+    @action updateCurrentService = (subdomain: string) => {
+        this.currentDomain = subdomain.endsWith('.') ? subdomain : subdomain + '.';
+        console.log(subdomain)
+        const obtainedServices = toJS(this.services).filter((service) => {
+            if (!service) return false
+            if (!service) return false
+            if (!service.meta) return false
 
-  @action updateRole = (role:string) => {
-    const obtainedService = this.services.filter(service => (service.meta.roleId === role && service.meta.subDomain === this.currentDomain))[0]
-    this.currentService = obtainedService
-    this.currentRole = role
-  }
+            return service.meta.subDomain === this.currentDomain
+        })
+        console.log(obtainedServices)
+        const obtainedRoles = obtainedServices.map(service => service && service.meta && service.meta.roleId)
 
-  @action updateRoleServicesList = (roleId:string) => {
-    this.roleServicesList = roleId;
-  }
+        if ((this.currentService && this.currentService.meta && this.currentService.meta.subDomain !== obtainedServices[0].meta.subDomain) || !this.currentRole) {
+            this.currentRole = obtainedServices[0] && obtainedServices[0].meta.roleId
+        }
 
-  @action updateQueryTag = (tag:string) => {
-    this.queryTag = tag;
-  }
+        this.availableRoles = obtainedRoles
+        this.currentService = obtainedServices[0]
+    }
 
-  @action load() {
-    networkStore.addPendingRequest();
-    clientApi.listAvailableServices({}).then((services:ClientService[]) => {
-      this.services = services;
-      localStorage.setItem('clientServices', JSON.stringify(toJS(this.services)));
-      this.updateCurrentService(this.currentDomain);
-      networkStore.updateLastResponse({message:'OK', statusCode: 200});
-      networkStore.removePendingRequest();
-    }).catch((response:Response) => {
-      networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
-      networkStore.removePendingRequest();
-    });
-  }
+    @action updateRole = (role: string) => {
+        const obtainedService = this.services.filter(service => ( service && service.meta && (service.meta.roleId === role && service.meta.subDomain === this.currentDomain)))[0]
+        this.currentService = obtainedService
+        this.currentRole = role
+    }
+
+    @action updateRoleServicesList = (roleId: string) => {
+        this.roleServicesList = roleId;
+    }
+
+    @action updateQueryTag = (tag: string) => {
+        this.queryTag = tag;
+    }
+
+    @action load() {
+        networkStore.addPendingRequest();
+        clientApi.listAvailableServices({}).then((services: ClientService[]) => {
+            this.services = services;
+            console.log(services)
+            localStorage.setItem('clientServices', JSON.stringify(services));
+            this.updateCurrentService(this.currentDomain);
+            networkStore.updateLastResponse({message: 'OK', statusCode: 200});
+            networkStore.removePendingRequest();
+        }).catch((response: Response) => {
+            networkStore.updateLastResponse({
+                message: response.statusText,
+                statusCode: response.status
+            });
+            networkStore.removePendingRequest();
+        });
+    }
 }
 
-const clientServiceStore:ClientServiceStore = new ClientServiceStore();
+const clientServiceStore: ClientServiceStore = new ClientServiceStore();
 
 clientServiceStore.load();
 

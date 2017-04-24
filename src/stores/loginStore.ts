@@ -2,10 +2,11 @@ import { observable, action, ObservableMap } from 'mobx';
 import { LoginStatus, AuthApi } from '../api/api';
 import networkStore from './networkStore';
 import clientServiceStore from './clientServiceStore';
-import { BasePath } from './variables'
+import { BasePath, ownFetch} from './variables'
 
 const authApi: AuthApi = new AuthApi();
 authApi.basePath = BasePath
+authApi.fetch = ownFetch;
 
 
 class LoginStore {

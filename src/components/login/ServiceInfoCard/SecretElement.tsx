@@ -1,4 +1,4 @@
-import { BasePath } from '../../../stores/variables';
+import { BasePath, ownFetch} from '../../../stores/variables';
 import * as React from 'react';
 import { ListGroupItem, Button, Collapse, Card, CardBlock, Alert } from 'reactstrap';
 import { SecretsApi } from '../../../api/api'
@@ -20,6 +20,8 @@ interface ISecretElementState {
 const secretsApi = new SecretsApi();
 
 secretsApi.basePath = BasePath
+secretsApi.fetch = ownFetch;
+
 
 export default class SecretElement extends React.Component<ISecretElementProps, {}> {
   state = {

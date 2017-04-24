@@ -1,9 +1,10 @@
 import { observable, action, IObservableArray } from 'mobx';
 import { FlashesApi, Flash } from '../api/api';
 import networkStore from './networkStore';
-import { BasePath } from './variables'
+import { BasePath, ownFetch} from './variables'
 const flashesApi = new FlashesApi();
 flashesApi.basePath = BasePath
+flashesApi.fetch = ownFetch;
 
 class FlastStore {
   @observable flashes: IObservableArray<string> = observable.array<string>([]);
