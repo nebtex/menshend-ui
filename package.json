@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-boilerplate",
   "scripts": {
-    "build": "webpack --config ./webpack.production.js --progress",
+    "build": "set \"NODE_ENV=production\" && webpack --config ./webpack.production.js --progress",
     "start": "webpack-dev-server --config ./webpack.dev.js",
     "build:landing": "webpack --config ./webpack.landing.prod.js --progress",
     "start:landing": "webpack-dev-server --config ./webpack.landing.dev.js",
