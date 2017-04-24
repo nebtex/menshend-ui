@@ -29,7 +29,7 @@ export interface ILoginFormProps {
               <h4 className={styles.neverExpire}>Your session will never expire</h4>:
               <SessionCounter expiresAt={status.sessionExpiresAt}/>
             }
-            <Form action="/uilogout" method="post">
+            <Form action="/ui/logout" method="get">
               <Button color="danger" className={styles.logout} >Logout</Button>
             </Form>
         </div>

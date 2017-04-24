@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { Form, FormGroup, Label, Input, Button , Card, CardBlock, FormFeedback } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Card, CardBlock, FormFeedback } from 'reactstrap';
+import clientServiceStore from '../../../stores/clientServiceStore'
+declare var csrf_token: string
 
 interface ITokenFormProps {
-  error:boolean;
+  error: boolean;
 }
 
 interface ITokenFormState {
-  token:string;
-  error?:boolean;
+  token: string;
+  error?: boolean;
 }
 
 export default class TokenForm extends React.Component<ITokenFormProps, ITokenFormState>{
@@ -15,7 +17,7 @@ export default class TokenForm extends React.Component<ITokenFormProps, ITokenFo
     token: ''
   };
 
-  tokenOnChange = (evt:any) => {
+  tokenOnChange = (evt: any) => {
     this.setState({
       token: evt.target.value
     });
@@ -25,18 +27,19 @@ export default class TokenForm extends React.Component<ITokenFormProps, ITokenFo
     return this.props.error ? <FormFeedback>There was a problem with the given token</FormFeedback> : null;
   };
 
-  render(){
+  render() {
     let error = this.props.error,
-        errorMessage = this.getErrorMessageComponent();
+      errorMessage = this.getErrorMessageComponent();
 
     return (
       <Card>
         <CardBlock>
-          <Form action="/uilogin" method="post">
+          <Form action="/ui/login" method="post">
             <FormGroup color={error ? "danger" : null}>
+              <Input type="hidden" name="gorilla.csrf.Token" value={csrf_token} />
               <Label for="token">Token</Label>
-              <Input type="text" name="token" id="token" value={this.state.token} onChange={this.tokenOnChange} state={error ? "danger" : null}/>
-              { errorMessage }
+              <Input type="text" name="token" id="token" value={this.state.token} onChange={this.tokenOnChange} state={error ? "danger" : null} />
+              {errorMessage}
             </FormGroup>
             <Button>Login</Button>
           </Form>

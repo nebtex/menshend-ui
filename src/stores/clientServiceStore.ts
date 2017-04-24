@@ -13,7 +13,7 @@ class ClientServiceStore {
   @observable availableRoles: Array<string>
   @observable roleServicesList: string 
   @observable queryTag: string
-  currentDomain:string
+   @observable currentDomain:string
 
   constructor() {
     const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
