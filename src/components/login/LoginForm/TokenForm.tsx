@@ -37,6 +37,8 @@ export default class TokenForm extends React.Component<ITokenFormProps, ITokenFo
           <Form action="/ui/login" method="post">
             <FormGroup color={error ? "danger" : null}>
               <Input type="hidden" name="gorilla.csrf.Token" value={csrf_token} />
+              <Input type="hidden" name="method" value="token" />
+
               <Label for="token">Token</Label>
               <Input type="text" name="token" id="token" value={this.state.token} onChange={this.tokenOnChange} state={error ? "danger" : null} />
               {errorMessage}
