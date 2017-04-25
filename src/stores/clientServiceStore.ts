@@ -2,7 +2,7 @@ import {observable, action, toJS} from "mobx";
 import networkStore from "./networkStore";
 import {ClientApi, ClientService} from "../api/api";
 import {ownFetch, BasePath} from "./variables";
-
+declare var localStorage:any
 const clientApi = new ClientApi();
 clientApi.basePath = BasePath;
 clientApi.fetch = ownFetch;
