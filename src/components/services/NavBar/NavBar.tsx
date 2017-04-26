@@ -29,19 +29,6 @@ export default class NavBar extends React.Component<INavBarProps, {}>{
       <Navbar color="faded" light toggleable>
         <NavbarToggler right onClick={this.toggle} />
         <NavbarBrand href="#">{this.props.environment.name}</NavbarBrand>
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="#">Services</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Audit Log</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Services</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
       </Navbar>
     );
   }
