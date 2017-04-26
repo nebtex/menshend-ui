@@ -8,6 +8,7 @@ let styles = require('./SpaceCard.scss');
 
 export interface ISpaceCardProps {
     space?:Space;
+    className?: string;
 }
 
 interface ISpaceCardState {
@@ -32,7 +33,7 @@ interface ISpaceCardState {
   render(){
     const { space } = this.props;
     return (
-      <div>
+      <div className={styles.spaceCard}>
         <h1>{ space.name || 'Menshend' }</h1>
         <p>
           { space.shortDescription }

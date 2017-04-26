@@ -97,7 +97,8 @@ interface ILoginProps {
     return (
       <div className={styles.container} > 
         <div className={styles.firstRow}>
-          <SpaceCard space={this.props.space} />
+          <SpaceCard space={this.props.space}/>
+          <Button className={styles.viewServicesBtn} onClick={() =>  this.props.handleTagNavigation()}>View services</Button>
         </div>
         <Row>
           <Col className={styles.logoContainer} xs="12" lg="auto">

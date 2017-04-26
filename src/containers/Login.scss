@@ -6,7 +6,7 @@
   }
 }
 
-@media (max-width: 991px){
+@media (max-width: 1085px){
   .rightSide {
     flex-grow: 1;
   }
@@ -28,7 +28,6 @@
   align-items: flex-start;
   display: flex;
   flex-grow: 1;
-  max-width: 50%;
 }
 
 .logo {
@@ -39,10 +38,16 @@
 .firstRow {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .secondRow {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.viewServicesBtn {
+  flex-grow: 0;
+  flex-basis: 120px;
 }
