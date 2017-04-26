@@ -31,6 +31,7 @@ interface ILoginProps {
   currentRole?:string
   handleRoleUpdate?:{(role:string):void}
   handleTagNavigation?: any;
+  currentDomain?: string;
 }
 
  @observer class Login extends React.Component<ILoginProps, ILoginState>{
@@ -82,7 +83,8 @@ interface ILoginProps {
           activeTab={this.state.loginFormActiveTab}
           toggleTab={this.toggleTabLoginForm}
           status={this.props.loginStatus}
-          error={loginError} />
+          error={loginError} 
+          currentDomain={this.props.currentDomain} />
       );
     } 
     return null;

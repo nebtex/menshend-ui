@@ -16,6 +16,7 @@ export interface ILoginFormProps {
   activeTab: ActiveTabType;
   toggleTab(tab?:ActiveTabType) : void;
   error?: string;
+  currentDomain?: string;
 }
 
  @observer class LoginForm extends React.Component<ILoginFormProps, {}> {
@@ -61,7 +62,7 @@ export interface ILoginFormProps {
                     <Col>
                       <UserPassForm error={this.props.error === 'Username/Password'}/>
                       <p className={styles.canTryMessage}>Or you can try: </p>
-                      <GithubLogin error={this.props.error === 'Github'}/>
+                      <GithubLogin error={this.props.error === 'Github'}  currentDomain={this.props.currentDomain}/>
                     </Col>
                   </Row>  
                 </CardBlock>

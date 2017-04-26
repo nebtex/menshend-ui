@@ -1,0 +1,1 @@
+global.csrf_token = 'test_token'

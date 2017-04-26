@@ -18,13 +18,12 @@ class ClientServiceStore {
     @observable currentDomain: string
 
     constructor() {
-        const storagedServices: ClientService[] = localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
+        const storagedServices: ClientService[] = localStorage && localStorage.getItem('clientServices') ? JSON.parse(localStorage.getItem('clientServices')) : [];
         this.services = storagedServices;
     }
 
     @action updateCurrentService = (subdomain: string) => {
         this.currentDomain = subdomain.endsWith('.') ? subdomain : subdomain + '.';
-        console.log(subdomain)
         const obtainedServices = toJS(this.services).filter((service) => {
             if (!service) return false
             if (!service) return false
@@ -32,7 +31,6 @@ class ClientServiceStore {
 
             return service.meta.subDomain === this.currentDomain
         })
-        console.log(obtainedServices)
         const obtainedRoles = obtainedServices.map(service => service && service.meta && service.meta.roleId)
 
         if ((this.currentService && this.currentService.meta && this.currentService.meta.subDomain !== obtainedServices[0].meta.subDomain) || !this.currentRole) {

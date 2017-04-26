@@ -42,7 +42,7 @@ interface ISpaceCardState {
         <Modal isOpen={this.state.longDescriptionOpen} toggle={this.toggleDescription} className={styles.modal}>
           <ModalHeader toggle={this.toggleDescription}> {space.name} </ModalHeader>
           <ModalBody>
-            <ReactMarkdown source={ space.longDescription }/>
+            <ReactMarkdown source={ space.longDescription || '' }/>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggleDescription}>OK</Button>

@@ -37,6 +37,7 @@ import clientServiceStore from '../stores/clientServiceStore';
     }
 
     const currentService = toJS(clientServiceStore.currentService);
+    const currentDomain = clientServiceStore.currentDomain;
 
     const loadingLogin = loginStore.loading;
     
@@ -55,7 +56,8 @@ import clientServiceStore from '../stores/clientServiceStore';
           availableRoles={availableRoles}
           currentRole={currentRole}
           handleRoleUpdate={this.handleRoleUpdate} 
-          handleTagNavigation={this.handleTagNavigation}/>
+          handleTagNavigation={this.handleTagNavigation}
+          currentDomain={currentDomain}/>
       </div>
     );
   }
