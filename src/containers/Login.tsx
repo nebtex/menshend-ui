@@ -9,13 +9,6 @@ import { observer } from 'mobx-react';
 let logo = require('../assets/octopus-logo.svg');
 let styles = require('./Login.scss');
 
-let mockUser = {
-  user: 'myuser',
-  pass: 'mypass',
-  isLogged: false,
-  expiresAt: Date.now() + 3600000
-}
-
 interface ILoginState {
   loginFormActiveTab: ActiveTabType;
 }
@@ -90,17 +83,25 @@ interface ILoginProps {
     return null;
   }
 
+  getViewServicesBtn = () => {
+    if(this.props.loginStatus.isLogged) {
+      return <Button className={styles.viewServicesBtn} onClick={() =>  this.props.handleTagNavigation()}>View services</Button>
+    }
+    return null;
+  }
+
   render(){
-    const message = mockUser.isLogged ? 'You are logged in:' : 'You are trying to login to:';
+    const message = this.props.loginStatus.isLogged ? 'You are logged in:' : 'You are trying to login to:';
 
     const errorPanel = this.getErrorsPanel();
     const loginForm = this.getLoginForm();
+    const viewServicesBtn = this.getViewServicesBtn();
 
     return (
       <div className={styles.container} > 
         <div className={styles.firstRow}>
           <SpaceCard space={this.props.space}/>
-          <Button className={styles.viewServicesBtn} onClick={() =>  this.props.handleTagNavigation()}>View services</Button>
+          {viewServicesBtn}
         </div>
         <Row>
           <Col className={styles.logoContainer} xs="12" lg="auto">
