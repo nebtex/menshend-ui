@@ -78,7 +78,7 @@ export default class ServiceInfoCard extends React.Component<IServiceCardProps, 
   getGoButton = () => {
     if(this.props.service && this.props.service.fullUrl) {
       return (
-        <a href={this.props.service.fullUrl}>
+        <a href={this.props.service.fullUrl} target="_blank">
           <Button color="primary" outline size="sm">Go</Button>
         </a>
       );
