@@ -45,6 +45,12 @@ export const views = {
   services: new Route({
     path: '/services',
     component: <ServicesWrapper />,
+    beforeEnter: (route:any, params:any, store:any) => {
+      if (!loginStore.isLogged) {
+        routerStore.goTo(views.login);   
+        return false;
+      }
+    },
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       clientServiceStore.updateQueryTag(queryParams.tag)
     },
@@ -55,6 +61,12 @@ export const views = {
   servicesByRole: new Route({
     path: '/services/roles/:roleId',
     component: <ServicesWrapper />,
+    beforeEnter: (route:any, params:any, store:any) => {
+      if (!loginStore.isLogged) {
+        routerStore.goTo(views.login);   
+        return false;
+      }
+    },
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       clientServiceStore.updateRoleServicesList(params.roleId);
       clientServiceStore.updateQueryTag(queryParams.tag)
@@ -67,6 +79,12 @@ export const views = {
   editModal: new Route({
     path: '/services/roles/:roleId/:subdomain',
     component: <ServicesWrapper />,
+    beforeEnter: (route:any, params:any, store:any) => {
+      if (!loginStore.isLogged) {
+        routerStore.goTo(views.login);
+        return false;
+      }
+    },
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
       adminStore.roleId = params.roleId
       adminStore.subdomain = params.subdomain
