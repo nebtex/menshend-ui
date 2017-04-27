@@ -39,7 +39,7 @@ export default class Services extends React.Component<IServicesProps, {}>{
             </Row>
           </Container>
         </FullModal>
-        <NavBar environment={this.props.space} />
+        <NavBar environment={this.props.space} loginStatus={this.props.loginStatus}/>
         <ServicesPanel
           services={this.props.services}
           loginStatus={this.props.loginStatus} 
