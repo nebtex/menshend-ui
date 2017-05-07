@@ -4,6 +4,7 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BabiliPlugin = require("babili-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = webpackMerge(commonConfig, {
   entry: {
@@ -11,13 +12,20 @@ const config = webpackMerge(commonConfig, {
   },
   devtool: "",
   output: {
-    path: path.resolve(__dirname, "dist/static"),
-    filename: "[name].js"
+    path: path.resolve(__dirname, "dist"),
+    filename: "static/[name].js"
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'index.html', to: "../index.html" }
-    ]),
+    new webpack.optimize.CommonsChunkPlugin({
+      name:'vendor',
+      filename: 'static/vendor.js', 
+      minChunks: Infinity
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'templates/index.html',
+      excludeChunks: ['bundle', 'vendor']
+    }),
     new BabiliPlugin()
   ]
 });

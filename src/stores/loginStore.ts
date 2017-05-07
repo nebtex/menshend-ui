@@ -41,7 +41,7 @@ class LoginStore {
       this.loading = false;
       
       networkStore.updateLastResponse({message:response.statusText, statusCode: response.status});
-      networkStore.removePendingRequest();      
+      networkStore.removePendingRequest();
     });
   }
 

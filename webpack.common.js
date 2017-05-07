@@ -1,5 +1,5 @@
 const webpack = require("webpack");
-const pkg = require('./package.json')
+const pkg = require('./package.json');
 
 const config = {
   entry: {
@@ -50,14 +50,7 @@ const config = {
         loader: 'json-loader'
       }
     ]
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name:'vendor',
-      filename: 'vendor.js', 
-      minChunks: Infinity
-    })
-  ]
+  }
 };
 
 module.exports = config;

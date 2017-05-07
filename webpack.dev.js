@@ -14,13 +14,21 @@ const config = webpackMerge(commonConfig, {
     port: 8081,
     inline: true,
     historyApiFallback: {
-      disableDotRule: true
+      disableDotRule: true,
+      index: 'templates/index.html'
     }
   },
   output: {
     filename: "[name].js",
     publicPath: '/static'
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name:'vendor',
+      filename: 'vendor.js', 
+      minChunks: Infinity
+    })
+  ]
 });
 
 module.exports = config;

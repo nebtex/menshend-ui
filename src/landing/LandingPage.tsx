@@ -54,7 +54,11 @@ export class LandingPage extends React.Component<{},{}>{
       <Container className={styles.section}>
         <Row>
           <Col xs="12" md="5">
-            <h1>Menshend</h1>
+            <div className={styles.titleContainer}>
+              <h1>Menshend</h1>
+              <a className="github-button" href="https://github.com/nebtex/menshend" data-size="large" data-show-count="true" aria-label="Star nebtex/menshend on GitHub">Star</a>
+              <a className="github-button" href="https://github.com/nebtex/menshend/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork nebtex/menshend on GitHub">Fork</a>
+            </div>
             <p className={styles.descriptionInfo}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet massa lacus, quis auctor ex fringilla non. Praesent ut varius est, sed feugiat nisi. Maecenas arcu dui, varius in suscipit pulvinar, euismod nec enim.</p>
           </Col>
           <Col xs="12" md="7" className={styles.descriptionImageContainer}>

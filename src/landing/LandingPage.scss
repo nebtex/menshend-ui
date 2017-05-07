@@ -58,3 +58,14 @@
   text-align: justify;
   margin-bottom: 32px;
 }
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  > h1 {
+    flex-grow: 1;
+  }
+  > iframe {
+    margin-left: 8px;
+  }
+}
