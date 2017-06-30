@@ -35,6 +35,7 @@ export const views = {
     path: '/login',
     component: <LoginWrapper />,
     onEnter: (route: any, params: any, store: any, queryParams: any) => {
+
       if(queryParams && queryParams.loginError)
         loginStore.updateLoginError(queryParams.loginError);
 
