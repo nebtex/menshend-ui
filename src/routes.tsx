@@ -25,9 +25,9 @@ export const views = {
     path:'/',
     beforeEnter: (route: any, params: any, store: any, queryParams: any) => {
       if (loginStore.isLogged) {
-        routerStore.goTo(views.services);
+        window.location.href= "/services"
       } else {
-        routerStore.goTo(views.login);       
+        window.location.href= "/login"
       }
     }
   }),
